@@ -1,262 +1,133 @@
-# 📺 Croudly Live Streaming – Self-Hosted MediaSoup + HLS Setup
+# CrowdStream
 
-> Scalable livestreaming for Croudly using WebRTC + HLS (10K+ viewers)
-
----
-
-## 🧠 Architecture
-
-Broadcaster (WebRTC)
-│
-MediaSoup SFU (self-hosted)
-│
-FFmpeg (transcode to HLS)
-│
-Nginx/CDN (serve HLS viewers)
-
-- **MediaSoup** handles real-time WebRTC for small rooms (<500 viewers).
-- **FFmpeg** extracts the stream and transcodes to `.m3u8` & `.ts`.
-- **HLS** is served via Nginx (or S3/CDN) to scale playback to thousands.
+Open-source real-time live streaming infrastructure built for interactive, multi-host experiences at scale. Extracted from production use in [Croudly](https://github.com/Harxhit/croudly), CrowdStream combines WebRTC, MediaSoup SFU routing, TURN/STUN networking, and HLS delivery into a modular, self-hostable backend.
 
 ---
 
-## 🛠 Stack
+## Overview
 
-| Tool      | Purpose                              |
-| --------- | ------------------------------------ |
-| MediaSoup | SFU WebRTC routing                   |
-| FFmpeg    | Convert WebRTC to HLS                |
-| Nginx     | Serve HLS files (or RTMP for input)  |
-| Node.js   | Signaling server + MediaSoup control |
-| React     | Broadcaster / Viewer frontend        |
+Most open-source streaming solutions either rely on RTMP (high latency) or peer-to-peer WebRTC (does not scale). CrowdStream bridges that gap — low-latency WebRTC for broadcasters and co-hosts, SFU routing for efficient media distribution, and an HLS pipeline for large-scale viewer delivery from a single backend.
 
 ---
 
-### Architecture
+## Features
 
-Browser (Broadcaster / Viewer)
-│
-│ Socket.IO (WebSocket signaling)
-│
-Node.js Signaling Server
-│
-│ mediasoup API
-│
-mediasoup Workers → Routers → WebRTC Transports → Producers / Consumers
-
-- **Socket.IO** is used only for signaling (room creation, transport setup, consume/produce).
-- **mediasoup** handles all real-time media routing.
-- The **frontend** mirrors backend room state for debugging and UI sync.
+- WebRTC-based low-latency live streaming for broadcasters
+- MediaSoup SFU routing — no peer-to-peer mesh required
+- Multi-host and co-host session support
+- Real-time chat and audience interaction over WebSocket
+- TURN/STUN connectivity via Coturn for NAT traversal
+- HLS pipeline (FFmpeg) for scalable viewer delivery
+- CDN and Nginx-ready media serving
+- Modular Node.js and TypeScript backend
+- AWS EC2 deployment with Nginx reverse proxy
 
 ---
 
-## 🧩 Backend Data Model
-
-Each live room is stored in backend memory:
-
-```bash
-Room {
-router: Router,
-webRtcServer: WebRtcServer,
-broadcasters: Map<socketId, Broadcaster>,
-viewers: Map<socketId, Viewer>
-}
-
-Broadcaster {
-transports: Map<"producer", WebRtcTransport>,
-producers: Map<producerId, Producer>
-}
-
-Viewer {
-transports: Map<"consumer", WebRtcTransport>,
-consumers: Map<consumerId, Consumer>
-}
-```
-
-This allows:
-
-- Multiple hosts per room
-- Independent audio/video stream per host
-
-🎬 Live Stream Lifecycle
-
-1️⃣ Host creates a room
-
-#### Frontend
-
-```bash
-socket.emit("createRoom")
-```
-
-#### Backend
-
-```bash
-- create roomId
-- create mediasoup Router
-- create WebRtcServer
-- add broadcaster
-- save room in memory
-- socket.data.roomId = roomId
-- emit "roomCreated"
-```
-
-#### Frontend
-
-- receive roomId
-- create local Room(roomId)
-- store in frontend memory
-- display roomId in UI
-
-2️⃣ Router RTP Capability handshake
-
-#### Frontend
-
-```bash
-socket.emit("getRouterRtpCapabilities", { roomId })
-```
-
-#### Backend
-
-```bash
-socket.emit("routerRtpCapabilities", router.rtpCapabilities)
-```
-
-#### Frontend
-
-```bash
-device = new mediasoup.Device()
-device.load(routerRtpCapabilities)
-```
-
-This allows browser and mediasoup to agree on codecs (VP8, H264, Opus, etc).
-
-3️⃣ Broadcaster transport
-
-#### Frontend
-
-```bash
-socket.emit("createBroadcasterTransport", { roomId })
-```
-
-#### Backend
-
-```bash
-router.createWebRtcTransport()
-save in room.broadcasters[hostId]
-emit "broadcasterTransportCreated"
-```
-
-#### Frontend
-
-```bash
-sendTransport = device.createSendTransport(params)
-sendTransport.on("connect") → socket.emit("connectBroadcasterTransport", dtls)
-```
-
-4️⃣ Host produces media
-
-#### Frontend
+## Architecture
 
 ```
-getUserMedia()
-sendTransport.produce(video)
-sendTransport.produce(audio)
+                ┌────────────────────┐
+                │   Web Frontend     │
+                │  (WebRTC Client)   │
+                └──────────┬─────────┘
+                           │
+                     WebSocket Signaling
+                           │
+                           ▼
+                ┌────────────────────┐
+                │  Node.js Backend   │
+                │  + Express API     │
+                └──────────┬─────────┘
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+              ▼            ▼            ▼
+        ┌──────────┐ ┌──────────┐ ┌──────────┐
+        │MediaSoup │ │ Coturn   │ │ FFmpeg   │
+        │   SFU    │ │TURN/STUN │ │ HLS Pipe │
+        └────┬─────┘ └──────────┘ └────┬─────┘
+             │                         │
+             │                   .m3u8 + .ts segments
+             │                         │
+             ▼                         ▼
+      Real-time WebRTC           Nginx / CDN
+         Streaming                 Delivery
+             │                         │
+             └──────────────┬──────────┘
+                            ▼
+                         Viewers
 ```
 
-#### Backend
+---
+
+## How It Works
+
+### Low-Latency Streaming
+
+Broadcasters connect via WebRTC. Media is routed through MediaSoup SFU, which forwards streams to consumers without requiring a peer-to-peer mesh. This significantly reduces per-host bandwidth and enables sessions with multiple active senders.
+
+### NAT Traversal
+
+Many users are behind NATs or corporate firewalls. Coturn (TURN/STUN) acts as a relay to establish WebRTC media paths in cases where direct ICE connectivity fails, improving connection success rates across network environments.
+
+### HLS Pipeline
+
+For large-scale viewer delivery, CrowdStream pipes media through FFmpeg, which transcodes and segments the stream into HLS format:
 
 ```
-transport.produce()
-save producer in room.broadcasters[hostId]
-emit "produced"
+WebRTC / RTMP / File Input
+          ↓
+    FFmpeg Processing
+          ↓
+ HLS Segments (.ts files)
+ Playlist     (.m3u8)
+          ↓
+ Nginx / CDN Delivery
+          ↓
+       Viewers
 ```
 
-Media is now flowing into mediasoup.
+HLS enables CDN integration, recording, replay support, and reliable delivery at viewer counts that WebRTC alone cannot support.
 
-5️⃣ Viewer joins
+---
 
-#### Frontend
+## Tech Stack
 
-```
-socket.emit("joinRoom", { roomId })
-```
+| Technology   | Role                                      |
+|--------------|-------------------------------------------|
+| Node.js      | Backend runtime                           |
+| TypeScript   | Type safety across the codebase           |
+| Express.js   | REST API and signaling endpoints          |
+| MediaSoup    | SFU media routing                         |
+| WebRTC       | Low-latency real-time media transport     |
+| Coturn       | TURN/STUN NAT traversal                   |
+| FFmpeg       | Media transcoding and HLS generation      |
+| WebSocket    | Real-time signaling between peers         |
+| AWS EC2      | Backend hosting                           |
+| Nginx        | Media serving and reverse proxy           |
+| HLS          | Scalable viewer-side stream delivery      |
 
-#### Backend
+---
 
-```
-add viewer
-emit routerRtpCapabilities
-```
+## Deployment
 
-#### Frontend
+Backend services are deployed on AWS EC2:
 
-```
-device.load(routerRtpCapabilities)
-```
+- **MediaSoup workers** handle SFU media routing
+- **Coturn** manages TURN relay traffic on its own port range
+- **Node.js** handles REST API and WebSocket signaling
+- **FFmpeg** runs as a child process generating HLS segments
+- **Nginx** serves `.m3u8` playlists and `.ts` segments, and acts as reverse proxy for the API
 
-6️⃣ Viewer transport
+A sample `docker-compose.yml` and Nginx configuration are included for local development and self-hosted deployments.
 
-#### Frontend
+---
 
-```
-socket.emit("createViewerTransport", { roomId })
-```
+## Roadmap
 
-#### Backend
-
-```
-create recv transport
-save in room.viewers[viewerId]
-emit "viewerTransportCreated"
-```
-
-#### Frontend
-
-```
-recvTransport = device.createRecvTransport()
-recvTransport.on("connect") → socket.emit("connectConsumerTransport")
-```
-
-7️⃣ Viewer consumes
-
-#### Frontend
-
-```
-socket.emit("consume", {
-roomId,
-rtpCapabilities: device.rtpCapabilities
-})
-```
-
-#### Backend
-
-```
-for each producer:
-router.canConsume()
-transport.consume()
-emit "consumerCreated"
-```
-
-#### Frontend
-
-```
-transport.consume()
-attach tracks to <video>
-socket.emit("resumeConsumer")
-```
-
-Viewer now sees and hears all broadcasters.
-
-### Multi-Host Support
-
-Backend memory allows:
-
-```
-room.broadcasters = {
-hostId → { transports, producers },
-coHost1 → { transports, producers },
-coHost2 → { transports, producers }
-}
-```
-
-Viewers consume all producers from all hosts.
+- [ ] WHIP/WHEP ingest support
+- [ ] Recording storage to S3
+- [ ] Horizontal MediaSoup worker scaling
+- [ ] Viewer analytics endpoint
+- [ ] Docker Compose production profile
