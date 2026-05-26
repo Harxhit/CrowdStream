@@ -1,133 +1,71 @@
 # CrowdStream
 
-Open-source real-time live streaming infrastructure built for interactive, multi-host experiences at scale. Extracted from production use in [Croudly](https://github.com/Harxhit/croudly), CrowdStream combines WebRTC, MediaSoup SFU routing, TURN/STUN networking, and HLS delivery into a modular, self-hostable backend.
-
----
-
-## Overview
-
-Most open-source streaming solutions either rely on RTMP (high latency) or peer-to-peer WebRTC (does not scale). CrowdStream bridges that gap — low-latency WebRTC for broadcasters and co-hosts, SFU routing for efficient media distribution, and an HLS pipeline for large-scale viewer delivery from a single backend.
+Real-time live streaming infrastructure built for scale. CrowdStream enables low-latency broadcaster-to-audience sessions with live chat, reactions, co-broadcasting, and viewer presence — self-hosted, no third-party streaming dependency.
 
 ---
 
 ## Features
 
-- WebRTC-based low-latency live streaming for broadcasters
-- MediaSoup SFU routing — no peer-to-peer mesh required
-- Multi-host and co-host session support
-- Real-time chat and audience interaction over WebSocket
-- TURN/STUN connectivity via Coturn for NAT traversal
-- HLS pipeline (FFmpeg) for scalable viewer delivery
-- CDN and Nginx-ready media serving
-- Modular Node.js and TypeScript backend
-- AWS EC2 deployment with Nginx reverse proxy
+- Live video and audio broadcasting over WebRTC
+- Multi-viewer delivery via MediaSoup SFU (no peer-to-peer mesh)
+- Real-time chat during live sessions
+- Real-time emoji reactions
+- Co-broadcasting (multiple active broadcasters in a single room)
+- Live viewer count
+- NAT traversal via Coturn (TURN/STUN)
 
 ---
 
 ## Architecture
 
 ```
-                ┌────────────────────┐
-                │   Web Frontend     │
-                │  (WebRTC Client)   │
-                └──────────┬─────────┘
-                           │
-                     WebSocket Signaling
-                           │
-                           ▼
-                ┌────────────────────┐
-                │  Node.js Backend   │
-                │  + Express API     │
-                └──────────┬─────────┘
-                           │
-              ┌────────────┼────────────┐
-              │            │            │
-              ▼            ▼            ▼
-        ┌──────────┐ ┌──────────┐ ┌──────────┐
-        │MediaSoup │ │ Coturn   │ │ FFmpeg   │
-        │   SFU    │ │TURN/STUN │ │ HLS Pipe │
-        └────┬─────┘ └──────────┘ └────┬─────┘
-             │                         │
-             │                   .m3u8 + .ts segments
-             │                         │
-             ▼                         ▼
-      Real-time WebRTC           Nginx / CDN
-         Streaming                 Delivery
-             │                         │
-             └──────────────┬──────────┘
-                            ▼
-                         Viewers
+      Client
+        |
+        | WebSocket (Signaling) + WebRTC (Media)
+        |
+Node.js Signaling Server  <------->  MongoDB
+        |                            (Room state, viewer sessions)
+        |
+MediaSoup SFU (Workers per CPU core)
+        |
+   [Broadcaster Producer]
+        |
+   [Viewer Consumers] 
+        |
+     Coturn
+  (TURN/STUN Relay)
 ```
-
----
-
-## How It Works
-
-### Low-Latency Streaming
-
-Broadcasters connect via WebRTC. Media is routed through MediaSoup SFU, which forwards streams to consumers without requiring a peer-to-peer mesh. This significantly reduces per-host bandwidth and enables sessions with multiple active senders.
-
-### NAT Traversal
-
-Many users are behind NATs or corporate firewalls. Coturn (TURN/STUN) acts as a relay to establish WebRTC media paths in cases where direct ICE connectivity fails, improving connection success rates across network environments.
-
-### HLS Pipeline
-
-For large-scale viewer delivery, CrowdStream pipes media through FFmpeg, which transcodes and segments the stream into HLS format:
-
-```
-WebRTC / RTMP / File Input
-          ↓
-    FFmpeg Processing
-          ↓
- HLS Segments (.ts files)
- Playlist     (.m3u8)
-          ↓
- Nginx / CDN Delivery
-          ↓
-       Viewers
-```
-
-HLS enables CDN integration, recording, replay support, and reliable delivery at viewer counts that WebRTC alone cannot support.
 
 ---
 
 ## Tech Stack
 
-| Technology   | Role                                      |
-|--------------|-------------------------------------------|
-| Node.js      | Backend runtime                           |
-| TypeScript   | Type safety across the codebase           |
-| Express.js   | REST API and signaling endpoints          |
-| MediaSoup    | SFU media routing                         |
-| WebRTC       | Low-latency real-time media transport     |
-| Coturn       | TURN/STUN NAT traversal                   |
-| FFmpeg       | Media transcoding and HLS generation      |
-| WebSocket    | Real-time signaling between peers         |
-| AWS EC2      | Backend hosting                           |
-| Nginx        | Media serving and reverse proxy           |
-| HLS          | Scalable viewer-side stream delivery      |
+### Backend
+- **Node.js** — Signaling server, WebSocket handling, REST API
+- **MediaSoup** — WebRTC SFU. Spawns one worker process per CPU core. Media plane runs in C++ off the Node.js event loop.
+- **MongoDB** — Room documents, viewer session tracking, broadcaster metadata
+- **Coturn** — Self-hosted TURN/STUN server for ICE relay and NAT traversal
+- **FFmpeg** — Media processing pipeline (image/thumbnail handling, future recording)
+
+### Infrastructure
+- **AWS EC2** — Compute. Required for static public IP (MediaSoup ICE candidates) and consistent CPU core allocation for MediaSoup workers.
 
 ---
 
-## Deployment
+## Current Status
 
-Backend services are deployed on AWS EC2:
-
-- **MediaSoup workers** handle SFU media routing
-- **Coturn** manages TURN relay traffic on its own port range
-- **Node.js** handles REST API and WebSocket signaling
-- **FFmpeg** runs as a child process generating HLS segments
-- **Nginx** serves `.m3u8` playlists and `.ts` segments, and acts as reverse proxy for the API
-
-A sample `docker-compose.yml` and Nginx configuration are included for local development and self-hosted deployments.
+Broadcaster and viewer are functional on a local network. Cross-network WebRTC transport configuration (public IP announcement + Coturn relay path) is in progress.
 
 ---
 
 ## Roadmap
 
-- [ ] WHIP/WHEP ingest support
-- [ ] Recording storage to S3
-- [ ] Horizontal MediaSoup worker scaling
-- [ ] Viewer analytics endpoint
-- [ ] Docker Compose production profile
+- [ ] Cross-network WebRTC (public transport configuration)
+- [ ] Authentication and session tokens
+- [ ] Co-broadcast (multi-producer rooms)
+- [ ] Chat and reaction system
+- [ ] Viewer count persistence
+- [ ] Stream recording pipeline
+- [ ] CDN delivery for large audiences
+
+---
