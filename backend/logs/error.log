@@ -1,0 +1,1087 @@
+2025-08-03 23:01:47 error: TypeError: Cannot read properties of undefined (reading 'createWorker')
+    at initWorker (D:\Web-Development\Projects\Croudly\live\backend\src\mediasoup\worker.ts:11:20)
+    at setup (D:\Web-Development\Projects\Croudly\live\backend\src\mediasoup\transport.ts:17:28)
+    at Object.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\mediasoup\transport.ts:37:1)
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module.m._compile (D:\Web-Development\Projects\Croudly\live\backend\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Object.require.extensions.<computed> [as .ts] (D:\Web-Development\Projects\Croudly\live\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+2025-08-03 23:01:49 error: TypeError: Cannot read properties of undefined (reading 'createWorker')
+    at initWorker (D:\Web-Development\Projects\Croudly\live\backend\src\mediasoup\worker.ts:11:20)
+    at createRouter (D:\Web-Development\Projects\Croudly\live\backend\src\mediasoup\router.ts:81:34)
+    at D:\Web-Development\Projects\Croudly\live\backend\src\index.ts:24:23
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-08-03 23:03:14 error: UnsupportedError: media codec not supported [mimeType:video/H265]
+    at Object.generateRouterRtpCapabilities (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\ortc.js:167:19)
+    at WorkerImpl.createRouter (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Worker.js:336:38)
+    at createRouter (D:\Web-Development\Projects\Croudly\live\backend\src\mediasoup\router.ts:82:31)
+    at async D:\Web-Development\Projects\Croudly\live\backend\src\index.ts:24:5
+2025-08-10 11:02:51 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:51:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:14:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewerSocket.handler.ts:15:49)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-10 11:06:38 error: SocketId did not come through
+2025-08-10 11:06:38 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:51:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:14:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewerSocket.handler.ts:15:49)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-10 11:06:38 error: SocketId did not come through
+2025-08-10 11:06:38 error: SocketId did not come through
+2025-08-10 11:06:38 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:51:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:14:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewerSocket.handler.ts:15:49)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-10 11:06:38 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:51:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:14:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewerSocket.handler.ts:15:49)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-12 18:11:09 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:54:20)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:24:35)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-12 18:11:11 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:54:20)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:24:35)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-12 18:13:30 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:54:20)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:24:35)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-12 18:15:09 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:54:20)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:24:35)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-12 18:16:02 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:54:20)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:25:35)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-12 18:16:34 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:54:20)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:25:35)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-12 18:17:09 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-08-12 18:18:10 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-08-12 18:24:00 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-08-12 18:27:56 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-08-12 18:30:54 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-08-18 20:39:46 error: ValidationError: Transport validation failed: transportId: Path `transportId` is required.
+    at model.Document.invalidate (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mongoose\lib\document.js:3358:32)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\mongoose\lib\document.js:3119:17
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\mongoose\lib\schemaType.js:1410:9
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-24 16:39:55 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-08-24 18:51:26 error: Viewer does not exist with socketId : SJi8ihm2jnYd-uqZAAAD
+2025-08-24 18:52:08 error: Viewer does not exist with socketId : HQb1SNpzcP2yJz8tAAAF
+2025-08-24 18:54:36 error: Viewer does not exist with socketId : wod_KzIBm_Ej67auAAAE
+2025-08-25 15:23:24 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-08-25 15:28:56 error: TypeError: missing webRtcServer, listenInfos and listenIps (one of them is mandatory)
+    at RouterImpl.createWebRtcTransport (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Router.js:157:19)
+    at createWebRtcTransport (D:\Web-Development\Projects\Croudly\live\backend\src\mediasoup\transport.ts:29:34)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\registerViewer.handler.ts:65:58)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-25 19:03:47 error: Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.kez1ma6.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)
+2025-08-25 19:04:28 error: Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.kez1ma6.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)
+2025-08-25 19:05:09 error: Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.kez1ma6.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)
+2025-08-26 18:10:15 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:80:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:19:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\registerViewer.handler.ts:20:25)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-26 18:39:13 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:80:20)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:36:27)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-26 18:45:18 error: RTC Failed Error: Room not found
+2025-08-26 18:49:10 error: RTC Failed Error: Room not found
+2025-08-26 19:01:12 error: RTC Failed Error: Room not found
+2025-08-26 22:34:24 error: TypeError: transport.produce is not a function
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:207:40)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-26 22:39:48 error: TypeError: transport.produce is not a function
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:207:40)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-26 22:42:56 error: TypeError: Cannot read properties of undefined (reading 'id')
+    at D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:200:28
+    at Array.find (<anonymous>)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:199:48)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-08-28 13:40:14 error: Viewer does not exist with socketId : undefined
+2025-08-28 13:40:14 error: Viewer does not exist with socketId : undefined
+2025-08-28 13:43:46 error: Viewer consumer does not exist
+2025-08-28 13:43:46 error: Viewer consumer does not exist
+2025-08-28 13:48:00 error: Viewer consumer does not exist
+2025-08-28 13:48:01 error: Viewer consumer does not exist
+2025-08-28 13:48:44 error: Viewer consumer does not exist
+2025-08-28 13:48:44 error: Viewer consumer does not exist
+2025-08-28 13:51:30 error: Viewer consumer does not exist
+2025-08-28 13:51:30 error: Viewer consumer does not exist
+2025-08-28 13:54:58 error: Viewer consumer does not exist
+2025-08-28 13:54:58 error: Viewer consumer does not exist
+2025-08-28 13:56:05 error: Viewer consumer does not exist
+2025-08-28 13:56:05 error: Viewer consumer does not exist
+2025-08-28 13:59:48 error: Viewer consumer does not exist
+2025-08-28 13:59:48 error: Viewer consumer does not exist
+2025-08-28 14:30:17 error: Error connecting transport
+2025-08-28 14:30:18 error: Error: MID already exists in RTP listener [mid:0] [method:transport.produce]
+    at Channel.processResponse (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:251:33)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mediasoup\node\lib\Channel.js:76:34)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+2025-09-02 13:42:07 error: TypeError: Cannot read properties of undefined (reading 'readyState')
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:250:64)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-09-03 16:06:20 error: MongoNetworkError: read ECONNRESET
+    at Connection.onSocketError (D:\Web-Development\Projects\Croudly\live\backend\node_modules\mongodb\src\cmap\connection.ts:308:18)
+    at TLSSocket.emit (node:events:531:35)
+    at TLSSocket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2025-09-03 17:24:50 error: Viewer consumer does not exist
+2025-09-03 17:24:50 error: Viewer already exists in the database
+2025-09-03 17:38:18 error: Viewer already exists in the database
+2025-09-05 11:26:03 error: ReferenceError: window is not defined
+    at requestToBecomeCoHost (D:\Web-Development\Projects\Croudly\live\backend\src\utils\coHost.utils.ts:25:26)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\broadcaster.handler.ts:283:50)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-09-07 10:01:24 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:83:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:19:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\registerViewer.handler.ts:18:25)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-09-08 11:55:45 error: Viewer already exists in the database
+2025-09-15 13:26:13 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:83:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:19:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\registerViewer.handler.ts:17:25)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+    at D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-09-15 13:26:15 error: Error: Room not found
+    at getRoom (D:\Web-Development\Projects\Croudly\live\backend\src\rooms\room.store.ts:83:20)
+    at joinAsViewer (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\viewer.handler.ts:19:23)
+    at Socket.<anonymous> (D:\Web-Development\Projects\Croudly\live\backend\src\handlers\registerViewer.handler.ts:17:25)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at Socket.emitUntyped (D:\Web-Development\Projects\Croudly\live\backend\node_modules\socket.io\dist\typed-events.js:69:22)
+   
+2026-01-07 11:15:26 error: Error: Room not found
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:83:20)
+    at joinAsViewer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:19:23)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:17:25)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-07 11:17:32 error: Error creating transport
+2026-01-07 11:17:40 error: MongooseError: Operation `viewers.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-01-07 11:19:08 error: Error creating transport
+2026-01-07 11:19:14 error: MongooseError: Operation `viewers.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-01-07 11:21:11 error: Error creating transport
+2026-01-07 12:07:17 error: Error creating transport
+2026-01-09 14:36:24 error: Room not found
+2026-01-09 14:36:24 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:36:24 error: Room not found
+2026-01-09 14:36:24 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:36:24 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:36:24 error: Broadcaster not found
+2026-01-09 14:36:24 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:198:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:142:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:36:57 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:37:47 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:38:48 error: Room not found
+2026-01-09 14:38:48 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:38:48 error: Room not found
+2026-01-09 14:38:48 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:38:49 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:38:49 error: Broadcaster not found
+2026-01-09 14:38:49 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:198:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:142:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:39:15 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:41:00 error: Room not found
+2026-01-09 14:41:00 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:41:00 error: Room not found
+2026-01-09 14:41:00 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:41:01 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:41:01 error: Broadcaster not found
+2026-01-09 14:41:01 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:198:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:142:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:41:04 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:42:15 error: Room not found
+2026-01-09 14:42:15 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:42:15 error: Room not found
+2026-01-09 14:42:15 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:42:16 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:42:16 error: Broadcaster not found
+2026-01-09 14:42:16 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:198:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:142:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:42:19 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:42:51 error: Room not found
+2026-01-09 14:42:51 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:42:51 error: Room not found
+2026-01-09 14:42:51 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:42:52 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:42:52 error: Broadcaster not found
+2026-01-09 14:42:52 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:198:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:142:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:43:05 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:44:31 error: Room not found
+2026-01-09 14:44:31 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:44:31 error: Room not found
+2026-01-09 14:44:31 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:44:32 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:44:32 error: Broadcaster not found
+2026-01-09 14:44:32 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:198:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:142:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:45:12 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:47:18 error: Room not found
+2026-01-09 14:47:18 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:47:18 error: Room not found
+2026-01-09 14:47:18 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:32:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:47:19 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:47:19 error: Broadcaster not found
+2026-01-09 14:47:19 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:200:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:142:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:49:38 error: Room not found
+2026-01-09 14:49:38 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:156:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:49:38 error: Room not found
+2026-01-09 14:49:38 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:160:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:49:38 error: Room not found
+2026-01-09 14:49:38 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:135:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:31:29)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:49:39 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:49:39 error: Broadcaster not found
+2026-01-09 14:49:39 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:200:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:141:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:50:42 error: Room not found
+2026-01-09 14:50:42 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:136:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:157:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:50:42 error: Room not found
+2026-01-09 14:50:42 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:161:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:21)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:50:42 error: Room not found
+2026-01-09 14:50:42 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:136:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:31:29)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:50:43 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:50:43 error: Broadcaster not found
+2026-01-09 14:50:43 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:201:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:141:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:52:25 error: Room not found
+2026-01-09 14:52:25 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:136:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:157:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:52:25 error: Room not found
+2026-01-09 14:52:25 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:161:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:52:25 error: Room not found
+2026-01-09 14:52:25 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:136:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:31:29)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:52:26 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:52:26 error: Broadcaster not found
+2026-01-09 14:52:26 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:201:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:141:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:54:30 error: Room not found
+2026-01-09 14:54:30 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:136:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:157:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:54:30 error: Room not found
+2026-01-09 14:54:30 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:161:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:29:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:54:30 error: Room not found
+2026-01-09 14:54:30 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:136:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:31:29)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:54:30 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 14:54:30 error: Broadcaster not found
+2026-01-09 14:54:30 error: Error
+    at saveBroadcasterTransport (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:201:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:141:31)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 14:58:11 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 15:00:18 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 15:04:00 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 15:05:20 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 15:05:38 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 15:13:43 error: TypeError: logging_1.default.alert is not a function
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:17:14)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-09 15:14:15 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 15:34:48 error: Error finding transport with 35da2f99-deb6-433a-8f25-b7786281cc73
+2026-01-09 15:35:33 error: Error finding transport with ecfb9469-c1cd-492e-9110-40b4d19b8ea4
+2026-01-09 15:38:23 error: Error: wrong webRtcServerId (no associated WebRtcServer found) [method:router.createWebRtcTransportWithServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-09 16:48:47 error: TypeError: caps is not an object
+    at Object.validateRtpCapabilities (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/ortc.js:34:15)
+    at WebRtcTransportImpl.consume (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Transport.js:337:14)
+    at consume (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:169:43)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:117:38)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-09 16:50:55 error: TypeError: Cannot read properties of undefined (reading 'resume')
+    at resumeConsumer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/consumer/consumer.handler.ts:69:20)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:139:19)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-09 16:51:05 error: TypeError: Cannot read properties of undefined (reading 'resume')
+    at resumeConsumer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/consumer/consumer.handler.ts:69:20)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:139:19)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-09 17:06:50 error: Room not found
+2026-01-09 17:06:50 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at joinAsViewer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:20:25)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-09 17:06:50 error: Room does not exist with let remoteVideoEl; let remoteAudioEl;  socket.on("consumerCreated", async (consumers) => {   if (!consumerTransport) return;   if (!Array.isArray(consumers)) return;    for (const params of consumers) {     const consumer = await consumerTransport.consume({       id: params.id,       producerId: params.producerId,       kind: params.kind,       rtpParameters: params.rtpParameters,       paused: true     });      await consumer.resume();     socket.emit("resumeConsumer", { consumerId: consumer.id });      if (consumer.kind === "video") {       if (!remoteVideoEl) {         remoteVideoEl = document.createElement("video");         remoteVideoEl.autoplay = true;         remoteVideoEl.muted = true;         remoteVideoEl.playsInline = true;         remoteVideoEl.style.width = "100%";         remoteVideoEl.style.height = "100%";          document           .getElementById("remoteVideoContainer")           .appendChild(remoteVideoEl);       }        const stream = new MediaStream();       stream.addTrack(consumer.track);       remoteVideoEl.srcObject = stream;        consumer.track.onunmute = async () => {         try {           await remoteVideoEl.play();         } catch {}       };     }      if (consumer.kind === "audio") {       if (!remoteAudioEl) {         remoteAudioEl = document.createElement("audio");         remoteAudioEl.autoplay = true;         remoteAudioEl.controls = true;         document.body.appendChild(remoteAudioEl);       }        const stream = new MediaStream();       stream.addTrack(consumer.track);       remoteAudioEl.srcObject = stream;     }   } });
+2026-01-09 17:06:50 error: Room not found
+2026-01-09 17:06:50 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:23:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-09 17:06:50 error: Room router not found
+2026-01-13 18:58:24 error: Room not found
+2026-01-13 18:58:24 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at joinAsViewer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:20:25)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-13 18:58:24 error: Room does not exist with b4c7894f-eaa8-4d19-8347-751dec87b10f
+2026-01-13 18:58:24 error: Room not found
+2026-01-13 18:58:24 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:23:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-13 18:58:24 error: Room router not found
+2026-01-14 11:39:46 error: Room not found
+2026-01-14 11:39:46 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at joinAsViewer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:20:25)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 11:39:46 error: Room does not exist with     async renderMedia(roomId:string, viewerVideo:any){          const room = frontendMemoryRoom.get(roomId);          if(!room) throw new Error('Room not found');                   const mediaStream = new MediaStream()                  const consumers = room.consumers;          consumers.forEach((c) => {             const track = c.track             console.log('Consumers track', track)             mediaStream.addTrack(track)         })         viewerVideo.current.srcObject = mediaStream         if(viewerVideo.current){             await viewerVideo.current.play()         }else{             console.error('Video play error')         }     }
+2026-01-14 11:39:46 error: Room not found
+2026-01-14 11:39:46 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:23:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 11:39:46 error: Room router not found
+2026-01-14 21:03:19 error: Room not found
+2026-01-14 21:03:19 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at joinAsViewer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:20:25)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 21:03:19 error: Room does not exist with             cs
+2026-01-14 21:03:19 error: Room not found
+2026-01-14 21:03:19 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:23:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:03:19 error: Room router not found
+2026-01-14 21:03:25 error: Room not found
+2026-01-14 21:03:25 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at joinAsViewer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:20:25)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 21:03:25 error: Room does not exist with             cs
+2026-01-14 21:03:25 error: Room not found
+2026-01-14 21:03:25 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:23:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:03:25 error: Room router not found
+2026-01-14 21:58:05 error: Error: port bind failed due to address not available [protocol:udp, ip:'172.31.15.89', port:41490, attempt:1/10000] [method:worker.createWebRtcServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-14 21:58:05 error: Error creating web rtc server
+2026-01-14 21:58:05 error: Error
+    at createRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:94:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:22:20)
+2026-01-14 21:58:05 error: Room not found
+2026-01-14 21:58:05 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:151:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:05 error: Room not found
+2026-01-14 21:58:05 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:155:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:05 error: Room not found
+2026-01-14 21:58:05 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:55:27)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 21:58:05 error: Error in room router
+2026-01-14 21:58:15 error: Error: port bind failed due to address not available [protocol:udp, ip:'172.31.15.89', port:44466, attempt:1/10000] [method:worker.createWebRtcServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-14 21:58:15 error: Error creating web rtc server
+2026-01-14 21:58:15 error: Error
+    at createRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:94:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:22:20)
+2026-01-14 21:58:15 error: Room not found
+2026-01-14 21:58:15 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:151:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:15 error: Room not found
+2026-01-14 21:58:15 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:155:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:16 error: Room not found
+2026-01-14 21:58:16 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:55:27)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 21:58:16 error: Error in room router
+2026-01-14 21:58:29 error: Error: port bind failed due to address not available [protocol:udp, ip:'172.31.15.89', port:47906, attempt:1/10000] [method:worker.createWebRtcServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-14 21:58:29 error: Error creating web rtc server
+2026-01-14 21:58:29 error: Error
+    at createRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:94:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:22:20)
+2026-01-14 21:58:29 error: Room not found
+2026-01-14 21:58:29 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:151:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:29 error: Room not found
+2026-01-14 21:58:29 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:155:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:29 error: Room not found
+2026-01-14 21:58:29 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:55:27)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 21:58:29 error: Error in room router
+2026-01-14 21:58:35 error: Error: port bind failed due to address not available [protocol:udp, ip:'172.31.15.89', port:43602, attempt:1/10000] [method:worker.createWebRtcServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-14 21:58:35 error: Error creating web rtc server
+2026-01-14 21:58:35 error: Error
+    at createRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:94:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:22:20)
+2026-01-14 21:58:35 error: Room not found
+2026-01-14 21:58:35 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:151:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:35 error: Room not found
+2026-01-14 21:58:35 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:155:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:58:35 error: Room not found
+2026-01-14 21:58:35 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:55:27)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 21:58:35 error: Error in room router
+2026-01-14 21:59:10 error: Error: port bind failed due to address not available [protocol:udp, ip:'172.31.15.89', port:48034, attempt:1/10000] [method:worker.createWebRtcServer]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-14 21:59:10 error: Error creating web rtc server
+2026-01-14 21:59:10 error: Error
+    at createRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:94:13)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:22:20)
+2026-01-14 21:59:10 error: Room not found
+2026-01-14 21:59:10 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:151:18)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:59:10 error: Room not found
+2026-01-14 21:59:10 error: Error
+    at addBroadcaster (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:155:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:28:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-14 21:59:10 error: Room not found
+2026-01-14 21:59:10 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:130:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/broadcaster.handler.ts:55:27)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-14 21:59:10 error: Error in room router
+2026-01-15 14:58:41 error: Error: uv_udp_bind() failed [protocol:udp, ip:'127.0.0.1', port:3478]: address already in use [method:router.createWebRtcTransport]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-15 14:58:52 error: Error: uv_udp_bind() failed [protocol:udp, ip:'127.0.0.1', port:3478]: address already in use [method:router.createWebRtcTransport]
+    at Channel.processResponse (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:251:33)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/mediasoup/node/lib/Channel.js:76:34)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Socket.Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+2026-01-15 18:41:57 error: Error finding transport with b428fcf1-4bd4-4a9c-905a-aea56c1208f0
+2026-01-15 18:47:20 error: Error finding transport with 212c79f4-973d-4314-a20f-23cd669dca68
+2026-01-15 18:50:26 error: Error finding transport with a4484574-c84e-4b1a-9822-b946278cd4f0
+2026-01-15 18:50:29 error: Error finding transport with 6dbd58fe-3923-4bec-a982-e2ce84c73213
+2026-01-15 20:09:42 error: Room not found
+2026-01-15 20:09:42 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:118:13)
+    at joinAsViewer (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/viewer.handler.ts:17:25)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:19:25)
+    at Socket.emit (node:events:508:28)
+    at Socket.emit (node:domain:489:12)
+    at Socket.emitUntyped (/home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/Web-Development/Projects/Croudly/live/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-15 20:09:42 error: Room does not exist with http://localhost:5173/, {"iceServers":[{"urls":["stun:stun.l.google.com:19302"]}],"bundlePolicy":"max-bundle"},  ICE connection state: new => "checking" => "checking" => "checking" => "checking" Connection state: new => "connecting" => "connecting" => "connecting" => "connecting" Signaling state: new => "stable" => "stable" => "stable" => "stable" ICE Candidate pair: ICE candidate grid Time	Event 15/01/2026, 20:08:03	 setRemoteDescription (type: "offer", 4 sections) 15/01/2026, 20:08:03	 setLocalDescription (type: "answer", 4 sections) 15/01/2026, 20:08:03	 onsignalingstatechange 15/01/2026, 20:08:03	 oniceconnectionstatechange 15/01/2026, 20:08:03	 onconnectionstatechange 15/01/2026, 20:08:11	 setRemoteDescription (type: "offer", 4 sections) 15/01/2026, 20:08:11	 setLocalDescription (type: "answer", 4 sections) 15/01/2026, 20:08:11	 onsignalingstatechange 15/01/2026, 20:08:11	 oniceconnectionstatechange 15/01/2026, 20:08:11	 onconnectionstatechange 15/01/2026, 20:08:13	 setRemoteDescription (type: "offer", 4 sections) 15/01/2026, 20:08:13	 setLocalDescription (type: "answer", 4 sections) 15/01/2026, 20:08:13	 onsignalingstatechange 15/01/2026, 20:08:13	 oniceconnectionstatechange 15/01/2026, 20:08:13	 onconnectionstatechange 15/01/2026, 20:08:16	 setRemoteDescription (type: "offer", 4 sections) 15/01/2026, 20:08:16	 setLocalDescription (type: "answer", 4 sections) 15/01/2026, 20:08:16	 onsignalingstatechange 15/01/2026, 20:08:16	 oniceconnectionstatechange 15/01/2026, 20:08:16	 onconnectionstatechange "connecting" Stats Tables Filter statistics by type including  separate multiple values by `,` media-playout (kind=audio, id=AP) certificate (id=CF77:6F:A1:89:0D:1C:BB:23:3F:8C:8F:0D:AC:CA:5E:0B:3C:79:48:0C:F4:6C:F5:46:A6:2C:9E:14:DD:EE:D3:BD) candidate-pair (state=waiting, id=CPU+xaswUZ_iRlzaCCz) local-candidate (candidateType=host, tcpType=active, id=I22My44Q9) local-candidate (candidateType=srflx, id=I3a/hIda6) local-candidate (candidateType=host, id=IPOMDMn1o) local-candidate (candidateType=host, tcpType=active, id=IU+xaswUZ) local-candidate (candidateType=host, id=Ih6nMiuxt) remote-candidate (candidateType=host, tcpType=passive, id=IiRlzaCCz) peer-connection (id=P) transport (iceState=checking, dtlsState=new, id=T01) Filter statistics graphs by type including  separate multiple values by `,` Stats graphs for media-playout (kind=audio, id=AP) Stats graphs for candidate-pair (state=waiting, id=CPU+xaswUZ_iRlzaCCz) Stats graphs for peer-connection (id=P)
+2026-01-15 20:09:42 error: Room not found
+2026-01-15 20:09:42 error: Error
+    at getRoom (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/rooms/room.store.ts:118:13)
+    at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:22:27)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-15 20:09:42 error: Room router not found

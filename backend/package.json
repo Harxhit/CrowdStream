@@ -1,0 +1,26 @@
+{
+  "name": "livefeature",
+  "version": "1.0.0",
+  "description": "> Backend system for scalable HTTP Live Streaming (HLS) using FFmpeg, built with Node.js and TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts"
+  },
+  "author": "Harshit Singh Parihar",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mediasoup": "^3.18.0",
+    "mediasoup-client": "^3.15.2",
+    "mongoose": "^8.17.0",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
