@@ -1,6 +1,6 @@
 import {io} from 'socket.io-client'
 
-const socket = io("http://65.0.239.130:3000")
+const socket = io("http://13.232.120.1:3000")
 
 
 socket.on('connect', () => {
