@@ -21,7 +21,6 @@ const initWorker = async () => {
     return; 
   }
   logger.info('Creation of worker successfully executed', Date.now() - startTime)
-
   return worker; 
 
  } catch (error:any) {
