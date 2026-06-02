@@ -1,11 +1,11 @@
 import logger from "../utils/logging";
-import { memoryRoom } from "../rooms/room.store";
 import canConsume from "../utils/canConsumer.util";
 import type {
   RtpCapabilities,
   Consumer,
 } from "mediasoup/node/lib/types";
 import { getErrorDetails } from "../utils/error.util";
+import { getRoom } from "../rooms/room.store";
 
 // Pause viewer consumer
 const pauseConsumer = async (
@@ -18,14 +18,9 @@ const pauseConsumer = async (
   try {
     logger.info("Pause consumer started");
 
-    const room = memoryRoom.get(roomId);
+    const room = getRoom(roomId)
 
-    if (!room) {
-      logger.error("Room not found");
-      return;
-    }
-
-    const viewer = room.viewers.get(socketId);
+    const viewer = room?.viewers.get(socketId);
 
     if (!viewer) {
       logger.error("Viewer not found");
@@ -64,14 +59,9 @@ const resumeConsumer = async(
   try {
     logger.info("Resume consumer started");
 
-    const room = memoryRoom.get(roomId);
+    const room = getRoom(roomId);
 
-    if (!room) {
-      logger.error("Room not found");
-      return;
-    }
-
-    const viewer = room.viewers.get(socketId);
+    const viewer = room?.viewers.get(socketId);
 
     if (!viewer) {
       logger.error("Viewer not found");
@@ -109,14 +99,9 @@ const closeConsumer = (
   try {
     logger.info("Close consumer started");
 
-    const room = memoryRoom.get(roomId);
+    const room = getRoom(roomId)
 
-    if (!room) {
-      logger.error("Room not found");
-      return;
-    }
-
-    const viewer = room.viewers.get(socketId);
+    const viewer = room?.viewers.get(socketId);
 
     if (!viewer) {
       logger.error("Viewer not found in room");
@@ -154,14 +139,9 @@ const manageMultiStreamConsumers = (
   rtpCapabilities: RtpCapabilities
 ): void => {
   try {
-    const room = memoryRoom.get(roomId);
+    const room = getRoom(roomId)
 
-    if (!room) {
-      logger.error("Room not found");
-      return;
-    }
-
-    const viewer = room.viewers.get(socketId);
+    const viewer = room?.viewers.get(socketId);
 
     if (!viewer) {
       logger.error("Viewer not found");

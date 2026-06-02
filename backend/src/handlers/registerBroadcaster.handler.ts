@@ -2,12 +2,13 @@ import logger from "../utils/logging";
 import {
   createRoom,
   getRoom,
-  addBroadcaster,
-  saveBroadcasterTransport,
   createRoomId,
 } from "../rooms/room.store";
-import { Socket } from "socket.io";
+import { addBroadcaster , saveBroadcasterTransport} from "../utils/broadcaster.util";
+import type { Socket } from "socket.io";
 import {  createWebRtcTransport } from "../mediasoup/transport";
+import apiError from '../utils/apiError'
+
 
 const registerBroadcasterHandler = async (socket: Socket) => {
   // Creates a new room
@@ -19,7 +20,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       const roomId = await createRoomId();
 
       //Creates the room
-      const room = await createRoom(roomId)
+      const _room = await createRoom(roomId)
 
       //Saving roomId into socket data
       socket.data.roomId = roomId;
@@ -33,7 +34,6 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       socket.emit("roomCreated", { roomId });
 
       logger.info('Create room listner exceuted successfully')
-
     } catch (error:any) {
       logger.error('Live room creation error', {
         message: (error as Error).message,
@@ -43,14 +43,15 @@ const registerBroadcasterHandler = async (socket: Socket) => {
   });
 
   //Sends router capabilites
-  socket.on("getRouterRtpCapabilities", async ({ roomId }) => {
+  socket.on("getRouterRtpCapabilities", ({ roomId }) => {
     try {
-      logger.info("Get getRouterRtpCapabilities socket lister started",roomId)
+      logger.info("Get getRouterRtpCapabilities started",roomId)
 
       if (!roomId) {
-        logger.error('RoomID not came from frontend')
-        return
+        logger.error('RoomID not found:',roomId)
+        throw new apiError(404,'RoomId not found')
       }
+      
       //Gets the room
       const room = getRoom(roomId);
 
@@ -59,11 +60,8 @@ const registerBroadcasterHandler = async (socket: Socket) => {
 
       if (!router) {
         logger.error('Error in room router')
-        return
+        throw new apiError(404,'Room router not found')
       }
-
-      console.info('Router capabilites', router.rtpCapabilities)
-
       //Emiting event
       socket.emit("routerRtpCapabilities", {
         routerRtpCapabilities: router.rtpCapabilities,
@@ -81,7 +79,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
   //Creates transport for the broadcaster
   socket.on("createBroadcasterTransport", async ({ roomId }) => {
     try {
-      logger.info('Create broadcaster lister started')
+      logger.info('Create broadcaster transport started')
 
       //Fetches the room
       const room = getRoom(roomId);
@@ -90,9 +88,8 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       const router = room?.router;
       if (!router) {
         logger.error("Error getting router")
-        return
+        throw new apiError(404,'Router not found')
       }
-      // Gets webRtcServer
 
       // Creates broadcaster transport
       const broadcasterTransport =  await createWebRtcTransport(router);
@@ -120,27 +117,26 @@ const registerBroadcasterHandler = async (socket: Socket) => {
     "connectBroadcasterTransport",
     async ({ transportId, dtlsParameters }) => {
       try {
-
         logger.info('Connect broadcaster transport lister started')
 
         const roomId = socket.data.roomId;
         if (!roomId) {
-          logger.error('RoomId not found from the socket data')
-          return
+          logger.error('RoomId not found')
+          throw new apiError(404,'RoomId not found')
         }
-
         const room = getRoom(roomId);
         const broadcaster = room?.broadcasters.get(socket.id)
 
         if (!broadcaster) {
           logger.error('Broadcaster does not exist')
-          return
+          throw new apiError(404, 'Broadcaster not found')
         }
+        //Get broadacaster producer transport
         const broadcasterTransport = broadcaster.transports.get('producer')
 
         if(!broadcasterTransport){
           logger.error(`Error finding transport with ${transportId}`)
-          return; 
+          throw new apiError(404, `Error finding transport with ${transportId}`) 
         }
 
         await broadcasterTransport.connect({dtlsParameters});
@@ -163,28 +159,29 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       logger.info('Producer listener started', JSON.stringify(producerData))
 
       //Producer data
-      const { transportId, kind, rtpParameters, appData } = producerData;
+      const { _transportId, kind, rtpParameters, appData } = producerData;
 
       //RoomId in the socket data
       const roomId = socket.data.roomId;
       if (!roomId) {
         logger.error("Room Id not found")
-        return
+        throw new apiError(404,'RoomId not found')
       }
   
       const room = getRoom(roomId);
   
-      let broadcaster = room?.broadcasters.get(socket.id);
+      const broadcaster = room?.broadcasters.get(socket.id);
   
       if (!broadcaster) {
-        return; 
+        logger.error('Broadcaster not found')
+        throw new apiError(404,'Broadcaster not found')
       }
       
       //Finds broadcaster transport
       const broadcasterTransport = broadcaster.transports.get('producer')
       if (!broadcasterTransport) {
-        logger.error('Broadcaster transport not found')
-        return; 
+        logger.error('Broadcaster producer transport not found')
+        throw new apiError(404,'Broadcaster producer transport not found'); 
       }
 
       //Create producer
@@ -195,8 +192,8 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       })
   
       if (!broadcaster.producers) {
-        logger.error('Error creating producer')
-        return 
+        logger.error('Error creating broadcaster producer')
+        throw new apiError(404,'Error creating broadcaster producer');  
       }
 
       //Setting the producer
