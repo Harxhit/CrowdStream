@@ -132,6 +132,7 @@ const closeConsumer = (
     }
 
     consumer.close();
+    viewer.consumers.delete(consumerId);
 
     logger.info(
       "Close consumer successfully executed",
