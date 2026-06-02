@@ -18,6 +18,8 @@ const addBroadcaster = async (roomId: string, socketId: string) => {
       message: (error as Error).message, 
       stack : (error as Error).stack
     })
+
+    throw new apiError(500,'Internal server error')
   }
 };
 
@@ -39,12 +41,13 @@ const saveBroadcasterTransport = async (
 
     broadcaster.transports.set('producer', transport)
 
-    logger.info('Add Broadcaster transport executed successfully')
   } catch (error : any) {
     logger.error('Internal server error', {
       message : (error as Error).message, 
       stack:  (error as Error).stack
     })
+
+    throw new apiError(500,'Internal server error')
   }
 };
 

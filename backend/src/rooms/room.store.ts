@@ -104,6 +104,8 @@ const getRoom = (roomId: string) => {
       message : (error as Error).message, 
       stack : (error as Error).stack
     })
+
+    throw new apiError(500,'Room not found')
   }
 };
 
