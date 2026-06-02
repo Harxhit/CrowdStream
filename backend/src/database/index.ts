@@ -1,22 +1,16 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import ApiError from "../utils/apiError";
+import apiError from "../utils/apiError";
 import logger from "../utils/logging";
 
 dotenv.config();
 
-const connectToDataBase = async () => {
+const connectToDataBase = async ():Promise<void> => {
   const connectionString = process.env.MONGO_DB_URL;
 
-  if (!connectionString) {
-    throw new ApiError(404, "Wrong connection string");
+  if (connectionString === undefined || connectionString.trim() === '') {
+    throw new apiError(404, "Wrong connection string");
   }
-  console.log(
-    "Connecting to DB:",
-    connectionString,
-    "DB Name:",
-    process.env.DATABASE_NAME
-  );
 
   try {
     const connection = await mongoose.connect(connectionString, {
@@ -25,7 +19,7 @@ const connectToDataBase = async () => {
     logger.info("Database connected successfully", connection.connection.host);
   } catch (error) {
     logger.error(error);
-    process.exit(1);
+    throw new apiError(500,'Database connection failed')
   }
 };
 

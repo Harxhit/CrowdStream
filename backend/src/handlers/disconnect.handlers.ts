@@ -1,84 +1,151 @@
-import ApiError from "../utils/apiError";
-import { rooms } from "../rooms/room.store";
-import { Socket } from "socket.io";
+import apiError from "../utils/apiError";
+import { getRoom } from "../rooms/room.store";
+import type { Socket } from "socket.io";
 import logger from "../utils/logging";
+import { getErrorDetails } from "../utils/error.util";
 
-const handleDisconnect = async (socket: Socket) => {
+// Clean up broadcaster
+const cleanUpBroadcaster = (
+  roomId: string,
+  socketId: string
+): void => {
+  try {
+    const room = getRoom(roomId);
+
+    const broadcaster = room?.broadcasters.get(socketId);
+
+    if (broadcaster === undefined) {
+      logger.error("Broadcaster not found");
+      throw new apiError(
+        404,
+        `Broadcaster not found: ${socketId}`
+      );
+    }
+
+    broadcaster.transports.forEach((transport) => {
+      transport.close();
+    });
+
+    broadcaster.producers.forEach((producer) => {
+      producer.close();
+    });
+
+    room?.broadcasters.delete(socketId);
+
+    logger.info("Cleanup", {
+      message: "Broadcaster cleanup successful",
+    });
+  } catch (error: unknown) {
+    logger.error(
+      "Broadcaster cleanup failed",
+      getErrorDetails(error)
+    );
+    throw new apiError(
+      500,
+      "Broadcaster cleanup failed"
+    );
+  }
+};
+
+// Clean up viewer
+const cleanupViewer = (
+  roomId: string,
+  socketId: string
+): void => {
+  try {
+    const room = getRoom(roomId);
+    const viewer = room?.viewers.get(socketId);
+
+    if (viewer === undefined) {
+      logger.error("Viewer not found");
+      throw new apiError(
+        404,
+        `Viewer not found: ${socketId}`
+      );
+    }
+
+    viewer.transport?.forEach((transport) => {
+      transport.close();
+    });
+
+    viewer.consumers.forEach((consumer) => {
+      consumer.close();
+    });
+
+    room?.viewers.delete(socketId);
+
+    logger.info("Cleanup", {
+      message: `Viewer ${socketId} cleanup successful`,
+    });
+  } catch (error: unknown) {
+    logger.error(
+      "Viewer cleanup failed",
+      getErrorDetails(error)
+    );
+    throw new apiError(
+      500,
+      "Viewer cleanup failed"
+    );
+  }
+};
+
+// Handle disconnect
+const handleDisconnect =(
+  socket: Socket
+): void => {
   try {
     const socketId = socket.id;
-    const roomId = socket.data.roomId;
-    if (!roomId) return;
 
-    const room = rooms.get(roomId);
-    if (!room) return;
+    const roomId =
+      typeof socket.data.roomId === "string"
+        ? socket.data.roomId
+        : undefined;
 
-    if (socketId in room.viewers) {
-      await cleanupViewer(roomId, socketId);
-      logger.log("info", { message: "All clean up for the viewer are done" });
-    } else if (socketId in room.broadcasters) {
-      await cleanUpBroadcaster(roomId, socketId);
-      logger.log("info", {
-        message: "All clean up for the broadcaster are done",
+    if (roomId === undefined || roomId === "") {
+      logger.error("RoomId not found");
+      return;
+    }
+
+    const room = getRoom(roomId);
+
+    if (!room) {
+      logger.error("Room not found");
+      return;
+    }
+
+    if (room.viewers.has(socketId)) {
+      cleanupViewer(roomId, socketId);
+
+      logger.info("Viewer", {
+        message: "Viewer cleanup completed",
+      });
+
+      return;
+    }
+
+    if (room.broadcasters.has(socketId)) {
+      cleanUpBroadcaster(roomId, socketId);
+
+      logger.info("Broadcaster", {
+        message:
+          "Broadcaster cleanup completed",
       });
     }
-  } catch (error) {
-    console.log("Error during cleanup", error);
+  } catch (error: unknown) {
+    logger.error(
+      "Disconnect cleanup failed",
+      getErrorDetails(error)
+    );
+
+    throw new apiError(
+      500,
+      "Cleanup failed"
+    );
   }
 };
 
-// Clean up broadcaster resources
-const cleanUpBroadcaster = async (roomId: string, socketId: string) => {
-  const room = rooms.get(roomId);
-  if (!room) throw new ApiError(404, `Room not found: ${roomId}`);
-
-  const broadcaster = room.broadcasters[socketId];
-  if (!broadcaster)
-    throw new ApiError(404, `Broadcaster not found: ${socketId}`);
-
-  // Closes all transports
-  for (const t of broadcaster.transports) {
-    if (t?.broadcasterTransport?.close) {
-      t.broadcasterTransport.close();
-    }
-  }
-
-  // Closes all producers
-  for (const producer of broadcaster.producers) {
-    if (producer?.close) {
-      producer.close();
-    }
-  }
-
-  delete room.broadcasters[socketId];
-  logger.log("info", {
-    message: `Broadcaster with socketId: ${socketId} has left the live stream`,
-  });
+export {
+  handleDisconnect,
+  cleanUpBroadcaster,
+  cleanupViewer,
 };
-
-// Clean up viewer resources
-const cleanupViewer = async (roomId: string, socketId: string) => {
-  const room = rooms.get(roomId);
-  if (!room) throw new ApiError(404, `Room not found: ${roomId}`);
-
-  const viewer = room.viewers[socketId];
-  if (!viewer) throw new ApiError(404, `Viewer not found: ${socketId}`);
-
-  // Closes transport if exists
-  if (viewer.transport?.close) {
-    viewer.transport.close();
-  }
-
-  // Closes all consumers
-  if (viewer.consumers) {
-    for (const consumer of Object.values(viewer.consumers)) {
-      if (consumer?.close) consumer.close();
-    }
-  }
-
-  delete room.viewers[socketId];
-  logger.log("info", {
-    message: `Viewer with socketId: ${socketId} has left the live stream`,
-  });
-};
-
-export { handleDisconnect, cleanUpBroadcaster, cleanupViewer };
