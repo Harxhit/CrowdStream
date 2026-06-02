@@ -1,6 +1,5 @@
 import type {
   Router,
-  WebRtcServer,
 } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
 import dotenv from 'dotenv'

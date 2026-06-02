@@ -1,6 +1,8 @@
 import * as mediasoup from "mediasoup";
 import type { WorkerLogTag, WorkerSettings } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
+import apiError from '../utils/apiError'
+
 
 const mediaSoupConfig: WorkerSettings = {
   logLevel: "warn",
@@ -17,10 +19,10 @@ const initWorker = async () => {
 
   const worker = await mediasoup.createWorker(mediaSoupConfig)
   if(!worker){
-    logger.warn('Error in the creation of worker')
+    logger.error('Error in the creation of worker')
     return; 
   }
-  logger.info('Creation of worker successfully executed', Date.now() - startTime)
+  logger.info('Worker created successfully', Date.now() - startTime)
   return worker; 
 
  } catch (error:any) {
@@ -28,6 +30,12 @@ const initWorker = async () => {
     message: (error as Error).message, 
     stack : (error as Error).stack
   })
+
+  throw new apiError(
+    500,
+    'Worker creation failed'
+  );
  }
 };
+
 export { initWorker };

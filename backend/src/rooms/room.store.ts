@@ -1,8 +1,7 @@
 import { Router, WebRtcServer, WebRtcTransport , Producer , Worker} from "mediasoup/node/lib/types";
 import { randomUUID } from "crypto";
 import logger from "../utils/logging";
-
-//Mediasoup
+import apiError from '../utils/apiError'
 import { createRouter } from "../mediasoup/router";
 import { initWorker } from "../mediasoup/worker";
 import type { Consumer } from "mediasoup/node/lib/types";
@@ -47,35 +46,19 @@ const createRoom = async (roomId : string) => {
   try {
     logger.info('Create room started')
 
-    // logger.info('Create live room started', {
-    //   ip : request.ip, 
-    //   user : request.ip,
-    //   apiRoute: request.route
-    // })
-
     const worker = await initWorker();
-
     if(!worker){
-      logger.error('Error in the creation of the worker')
-      // return response.status(400).json({
-      //   success: false, 
-      //   message : 'Error creating the worker'
-      // })
-      throw new Error
+      throw new apiError(404,'Worker not created'); 
     }
-    
-    // const room = await LiveRoom.create({
-    //   experienceRoomId,
-    //   hostUserId, 
-    //   status : 'live',
-    // })
 
+    //Creates router
     const router = await createRouter(roomId, worker);
 
+    //Get rtp capabilities
     const routerRtpCapabilites = router?.rtpCapabilities;
     if(!routerRtpCapabilites){
       logger.error('Cannot fetch router capabilites')
-      throw new Error
+      throw new apiError(404,'Rtp capabilites error')
     }
 
     //Memory room
@@ -110,11 +93,10 @@ const getRoom = (roomId: string) => {
 
     if (!room) {
       logger.error('Room not found')
-      throw new Error
+      throw new apiError(404, 'Room not found')
     }
 
     logger.info('Get room executed successfully', Date.now() - startTime)
-
     return room;
     
   } catch (error:any) {
@@ -125,69 +107,6 @@ const getRoom = (roomId: string) => {
   }
 };
 
-//Registers the broadcaster(user who streams) into the room
-const addBroadcaster = async (roomId: string, socketId: string) => {
-  const startTime = Date.now()
-  try {
-    logger.info('Add broadcaster started')
-
-    const room = getRoom(roomId);
-
-    if(!room){
-      logger.error('Room not found')
-      throw new Error
-    }
-
-    room.broadcasters.set(socketId, {
-      transports : new Map(), 
-      producers: new Map(), 
-      joinedAt : Date.now(), 
-      role : 'host'
-    })
-
-    logger.info('Added broadcaster into memory room',Date.now() - startTime)
-
-    return;
- 
-  } catch (error) {
-    logger.error("Internal server error", {
-      message: (error as Error).message, 
-      stack : (error as Error).stack
-    })
-  }
-};
-
-//Saves the broadcaster channels
-const saveBroadcasterTransport = async (
-  roomId: string,
-  socketId: string,
-  transport: any
-) => {
-  const startTime = Date.now()
-  try {
-    const room = memoryRoom.get(roomId)
-    if(!room){
-      logger.error("Room not found")
-      throw new Error
-    }
-    const broadcaster = room.broadcasters.get(socketId)
-
-    if(!broadcaster){
-      logger.error("Broadcaster not found")
-      throw new Error
-    }
-
-    broadcaster.transports.set('producer',transport)
-
-    logger.info('Save broadcaster transport executed successfully', Date.now() - startTime)
-    return
-  } catch (error : any) {
-    logger.error('Internal server error', {
-      message : (error as Error).message, 
-      stack:  (error as Error).stack
-    })
-  }
-};
 
 //Saves broadcaster video/streams
 const saveProducer = async (
@@ -358,10 +277,7 @@ const removeBroadcaster = async (roomId: string, socketId: string) => {
 export {
   createRoom,
   getRoom,
-  addBroadcaster,
-  saveBroadcasterTransport,
   saveProducer,
-  memoryRoom,
   createRoomId,
   addViewer,
   removeViewer,
