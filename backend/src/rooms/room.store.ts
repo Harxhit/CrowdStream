@@ -5,6 +5,7 @@ import logger from "../utils/logging";
 //Mediasoup
 import { createRouter } from "../mediasoup/router";
 import { initWorker } from "../mediasoup/worker";
+import type { Consumer } from "mediasoup/node/lib/types";
 
 //DB
 import { Request,Response } from "express";
@@ -24,7 +25,7 @@ type Broadcaster = {
 export type Viewer = {
   transport?: Map<TransportType, WebRtcTransport>;
   rtpCapabilities?: any;
-  consumers: Map<string, any>;
+  consumers: Map<string, Consumer>;
   joinedAt: number;
   role: "viewer" | "co-host";
 };
