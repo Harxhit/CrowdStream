@@ -7,15 +7,9 @@ import { createRouter } from "../mediasoup/router";
 import { initWorker } from "../mediasoup/worker";
 import type { Consumer } from "mediasoup/node/lib/types";
 
-//DB
-import { Request,Response } from "express";
-import LiveRoom from "../models/liveRoom.models";
-
-
 type TransportType = "producer" | "consumer";
 
-
-type Broadcaster = {
+export type Broadcaster = {
   transports: Map<string, WebRtcTransport>;
   producers: Map<string,Producer>;
   joinedAt: number;
