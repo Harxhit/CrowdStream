@@ -110,7 +110,7 @@ const connectConsumerTransport = async (
     
     logger.info('Connect consumer executed successfully')
 
-    return await transport.connect({ dtlsParameters });
+    return void await transport.connect({ dtlsParameters });
   
   } catch (error) {
    logger.error('Internal server error',{
@@ -159,7 +159,7 @@ const consume = async (
 
         const consumer = await transport?.consume({
           producerId : producer.id, 
-          rtpCapabilities : rtpCapabilities, 
+          rtpCapabilities, 
           paused : true
         })
         

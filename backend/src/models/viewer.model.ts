@@ -1,4 +1,4 @@
-import mongoose, { Document, Model } from "mongoose";
+import mongoose, { type Document, type Model } from "mongoose";
 
 interface ViewerAttrs {
   roomId: string;
@@ -16,7 +16,7 @@ interface ViewerDoc extends Document {
 }
 
 interface ViewerModel extends Model<ViewerDoc> {
-  build(attrs: ViewerAttrs): ViewerDoc;
+  build: (attrs: ViewerAttrs) => ViewerDoc;
 }
 
 const viewerSchema = new mongoose.Schema<ViewerDoc>({

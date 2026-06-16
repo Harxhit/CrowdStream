@@ -2,3 +2,4 @@
 node_modules
 croudly-turn-key.pem
 .dockerignore
+.claude

@@ -1,4 +1,4 @@
-import { Router, WebRtcServer, WebRtcTransport , Producer , Worker} from "mediasoup/node/lib/types";
+import { type Router, WebRtcServer, type WebRtcTransport , type Producer , type Worker} from "mediasoup/node/lib/types";
 import { randomUUID } from "crypto";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
@@ -8,27 +8,27 @@ import type { Consumer } from "mediasoup/node/lib/types";
 
 type TransportType = "producer" | "consumer";
 
-export type Broadcaster = {
+export interface Broadcaster {
   transports: Map<string, WebRtcTransport>;
   producers: Map<string,Producer>;
   joinedAt: number;
   role: "host" | "co-host";
-};
+}
 
-export type Viewer = {
+export interface Viewer {
   transport?: Map<TransportType, WebRtcTransport>;
   rtpCapabilities?: any;
   consumers: Map<string, Consumer>;
   joinedAt: number;
   role: "viewer" | "co-host";
-};
+}
 
-type Room = {
+interface Room {
   router: Router;
   broadcasters: Map<string, Broadcaster>;
   viewers: Map<string, Viewer>;
   worker: Worker
-};
+}
 
 //Stores room data
 const memoryRoom = new Map<string, Room>();

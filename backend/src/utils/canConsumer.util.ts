@@ -22,9 +22,9 @@ const canConsume = (
 
     if(router.canConsume({producerId, rtpCapabilities})){
       return true
-    }else{
-      return false
     }
+      return false
+    
   } catch (error) {
     logger.error('Internal server error',{
       message : (error as Error).message, 

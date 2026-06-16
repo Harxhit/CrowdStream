@@ -1,7 +1,7 @@
 import cors from "cors";
 import {server} from './utils/socket.util'
 import app from "./app";
-import { Request , Response } from "express";
+import type { Request , Response } from "express";
 
 app.use(cors());
 

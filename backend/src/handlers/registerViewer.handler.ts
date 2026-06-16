@@ -1,4 +1,4 @@
-import { Socket } from "socket.io";
+import type { Socket } from "socket.io";
 import {  createConsumerTransport, joinAsViewer } from "./viewer.handler";
 import { getRoom } from "../rooms/room.store";
 import logger from "../utils/logging";
@@ -37,7 +37,7 @@ const registerViewerHanlder = async (socket: Socket) => {
 
       
       //Emits rtp capabilities
-      cb({rtpCapabilities: rtpCapabilities});
+      cb({rtpCapabilities});
 
       logger.info('Join viewer listner successfully executed')
     } catch (error) {
