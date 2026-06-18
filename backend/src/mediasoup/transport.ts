@@ -2,9 +2,7 @@ import type {
   Router,
 } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
-import dotenv from 'dotenv'
-
-dotenv.config()
+import {config} from '../index'
 
 
 //Creates webRtc transport
@@ -18,8 +16,8 @@ const createWebRtcTransport = async (
     const transport = await router.createWebRtcTransport({
       listenIps : [
         {
-          ip: "0.0.0.0",
-          announcedIp : '13.232.120.1'
+          ip: config.publicIp,
+          announcedIp : config.announcedIp
         },
       ],
       enableUdp: true,
