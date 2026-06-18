@@ -2,13 +2,13 @@ import * as mediasoup from "mediasoup";
 import type { WorkerLogTag, WorkerSettings } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
-
+import {config} from '../index'
 
 const mediaSoupConfig: WorkerSettings = {
   logLevel: "warn",
   logTags: ["info", "ice", "dtls", "srtp", "rtcp"] as WorkerLogTag[],
-  rtcMinPort: 40000,
-  rtcMaxPort: 49999,
+  rtcMinPort: config.rtcMinPort,
+  rtcMaxPort: config.rtcMaxPort,
 };
 
 //Creates a mediasoup worker(core process for media)

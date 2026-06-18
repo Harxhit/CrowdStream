@@ -76,13 +76,13 @@ class Viewer{
             dtlsParameters,
             iceServers: [
                 {
-                urls: [
-                    "turn:65.0.239.130:3478?transport=udp",
-                    "turn:65.0.239.130:3478?transport=tcp",
-                    "turns:65.0.239.130:5349?transport=tcp"
-                ],
-                username: "myuser",
-                credential: "mypassword"
+            urls: [
+                import.meta.env.VITE_TURN_UDP_URL,
+                import.meta.env.VITE_TURN_TCP_URL,
+                import.meta.env.VITE_TURNS_TCP_URL,
+            ],
+                username: import.meta.env.VITE_TURN_USERNAME,
+                credential: import.meta.env.VITE_TURN_CREDENTIAL
                 }
             ],
             iceTransportPolicy: "all"

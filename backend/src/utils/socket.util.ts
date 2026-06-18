@@ -4,27 +4,27 @@ import app from "../app";
 import logger from "./logging";
 import registerBroadcasterHandler from "../handlers/registerBroadcaster.handler";
 import registerViewerHanlder from "../handlers/registerViewer.handler";
-
+import {config} from '../index'
 
 const server = createServer(app);
 const io = new Server (server, {
   cors: {
-    origin: "*",
+    origin: config.corsOrigin,
     methods: ["GET", "POST"],
   },
 });
 
 
 io.on("connection", (socket) => {
-    logger.info(`Client connected: ${socket.id}`);
+  logger.info(`Client connected: ${socket.id}`);
 
-    registerBroadcasterHandler(socket);
-    registerViewerHanlder(socket);
+  registerBroadcasterHandler(socket);
+  registerViewerHanlder(socket);
 
-    socket.on("disconnect", async (reason) => {
-        logger.info(`User disconnected ${socket.id} beacuse of ${reason}`)
+  socket.on("disconnect", async (reason) => {
+    logger.info(`User disconnected ${socket.id} beacuse of ${reason}`)
 
-    });
+  });
 });
   
 
