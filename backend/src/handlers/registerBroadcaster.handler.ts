@@ -6,73 +6,96 @@ import {
 } from "../rooms/room.store";
 import { addBroadcaster , saveBroadcasterTransport} from "../utils/broadcaster.util";
 import type { Socket } from "socket.io";
-import {  createWebRtcTransport } from "../mediasoup/transport";
+import { createWebRtcTransport } from "../mediasoup/transport";
 import apiError from '../utils/apiError'
-
+import { getRouter } from "../mediasoup/router";
 
 const registerBroadcasterHandler = async (socket: Socket) => {
-  // Creates a new room
-  socket.on("createRoom", async () => {
+  // Creates a memory room
+  socket.on("createRoom", async (_, ack) => {
+    const startTime = Date.now()
     try {
-      logger.info('Create room listner started')
+      logger.info('Room creation started')
 
-      //Creates the roomId
       const roomId = await createRoomId();
 
-      //Creates the room
       const _room = await createRoom(roomId)
 
-      //Saving roomId into socket data
-      socket.data.roomId = roomId;
-
-      //Adding broadcaster to the room
+      socket.data.roomId = roomId;  //Stores roomId into socket data
+ 
       await addBroadcaster(roomId, socket.id);
 
-      logger.info('Broadcaster created successfully')
+      logger.info("Room created successfully",{
+        event: 'ROOM_CREATED',
+        roomId: roomId, 
+        broadcasterSocketId: socket.id, 
+        durationMs: Date.now() - startTime
+      })
 
-      //Emiting event
-      socket.emit("roomCreated", { roomId });
+      ack({
+        success: true, 
+        roomId
+      })
 
-      logger.info('Create room listner exceuted successfully')
     } catch (error:any) {
       logger.error('Live room creation error', {
         message: (error as Error).message,
         stack : (error as Error).stack
       })
+
+      ack({
+        success: false, 
+        code: 'ROOM_CREATION_FAILED'
+      })
     }
   });
 
   //Sends router capabilites
-  socket.on("getRouterRtpCapabilities", ({ roomId }) => {
+  socket.on("getRouterRtpCapabilities", (roomId, ack) => {
+    const startTime = Date.now(); 
     try {
-      logger.info("Get getRouterRtpCapabilities started",roomId)
+      logger.info("Get getRouterRtpCapabilities started")
 
       if (!roomId) {
-        logger.error('RoomID not found:',roomId)
+        logger.error('RoomID not found')
         throw new apiError(404,'RoomId not found')
       }
       
-      //Gets the room
-      const room = getRoom(roomId);
-
-      //Gets the router
-      const router = room?.router;
-
+      const router = getRouter(roomId); 
       if (!router) {
         logger.error('Error in room router')
+        ack({
+          success:false, 
+          code: 'ROUTER_NOT_FOUND'
+        })
         throw new apiError(404,'Room router not found')
-      }
-      //Emiting event
-      socket.emit("routerRtpCapabilities", {
-        routerRtpCapabilities: router.rtpCapabilities,
-      });
 
-      logger.info('Get getRouterRtpCapabilities socket lister executed successfully')
+      } 
+
+      const rtpCapabilites = router?.rtpCapabilities; 
+
+      logger.info('Rtp capabilities fetched successfully',{
+        roomId: roomId, 
+        routerId: router.id, 
+        rtpCapabilites: rtpCapabilites, 
+        durationMs: Date.now() - startTime
+      })
+
+      ack({
+        success: true, 
+        rtpCapabilites
+      })
+
     } catch (error) {
       logger.error('Getting rtp capabilites error', {
         message : (error as Error).message, 
         stack: (error as Error).stack
       });
+
+      ack({
+        success: false,
+        code: 'RTP_CAPABILITES_ERROR'
+      })
     }
   });
 
@@ -90,9 +113,8 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         logger.error("Error getting router")
         throw new apiError(404,'Router not found')
       }
-
       // Creates broadcaster transport
-      const broadcasterTransport =  await createWebRtcTransport(router);
+      const broadcasterTransport =  await createWebRtcTransport(router, roomId ,socket.id, 'broadcaster');
 
       await saveBroadcasterTransport(roomId, socket.id , broadcasterTransport)
 

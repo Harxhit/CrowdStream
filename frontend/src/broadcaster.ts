@@ -10,66 +10,54 @@ class Broadcaster {
   //Creates the room
   async createRoom(): Promise<Room> {
     console.log("[Broadcaster] Room creation started");
-    
-    const roomId = await new Promise<string>((resolve, reject) => {
-      const timeout = setTimeout(() => reject(new Error("Room created timeout")), 5000);
+      
+    const response = await socket.timeout(5000).emitWithAck('createRoom')
 
-      socket.emit("createRoom");
-
-      socket.once("roomCreated", ({ roomId }) => {
-        clearTimeout(timeout);
-        resolve(roomId);
-      });
-    });
-
-    const room = new Room(roomId);
-
-    // Save to frontend memory
-    frontendMemoryRoom.set(roomId, room);
-
-    // Attach to this broadcaster
+    if(!response.success){
+      throw new Error(response.code)
+    }
+    const room = new Room(response.roomId);
+  
+    frontendMemoryRoom.set(response.roomId, room);
+  
     this.room = room;
-
+  
     console.log("[Broadcaster] Room saved to frontend memory:", frontendMemoryRoom);
-
+  
     return room;
   }
 
   async getRouterCapabilities(roomId: string) {
     console.log('[Broadcaster] router capabilites started')
-    return new Promise<{ routerRtpCapabilities: any }>((resolve, reject) => {
-      const timeout = setTimeout(
-        () => reject(new Error("Router capabilities timeout")),
-        5000
-      );  
+    
+    const response = await socket.timeout(5000).emitWithAck('getRouterRtpCapabilities', roomId)
 
-      socket.once("routerRtpCapabilities", (data) => {
-        clearTimeout(timeout);
-        resolve(data);
-      });
+    if(!response.success){
+      throw new Error(response.code); 
+    }
 
-      socket.emit("getRouterRtpCapabilities", { roomId });
+    console.log("[Broadcaster] router capabilities executed");
 
-      console.log('[Broadcaster] router capabilites executed')
-
-    }).then((d) => d.routerRtpCapabilities);
+    return response.rtpCapabilites;
   }
 
 
   async loadDevice(routerRtpCapabilities: any) {
-    if (!this.room) return new Error("Room not created");
-
-    console.log("[Broadcaster] loading mediasoup device");
+    if (!this.room){
+      throw new Error('Room not created')
+    }
+    console.log("[Broadcaster] device loading");
 
     this.room.device = new Device();
     await this.room.device.load({ routerRtpCapabilities });
 
-
     const room = frontendMemoryRoom.get(this.room.id);
-    if (!room) return new Error("Room not found");
+    if (!room){
+      throw new Error('Room not found')
+    }
     room.device = this.room.device;
 
-    console.log("[Broadcaster] device loaded with TURN");
+    console.log("[Broadcaster] device loaded.");
   }
 
 
