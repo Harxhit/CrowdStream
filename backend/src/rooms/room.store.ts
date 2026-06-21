@@ -1,11 +1,9 @@
-import { type Router, WebRtcServer, type WebRtcTransport , type Producer , type Worker} from "mediasoup/node/lib/types";
+import type { Router,  WebRtcTransport ,Producer ,Worker , Consumer} from "mediasoup/node/lib/types";
 import { randomUUID } from "crypto";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
 import { createRouter } from "../mediasoup/router";
 import { initWorker, workerLogs} from "../mediasoup/worker";
-import type { Consumer } from "mediasoup/node/lib/types";
-import { link } from "fs";
 
 type TransportType = "producer" | "consumer";
 
@@ -72,7 +70,7 @@ const createRoom = async (roomId : string) => {
     workerInfo?.associatedRooms.add(roomId)
 
     logger.info("Creation of room successfully executed",{
-      roomId: roomId, 
+      roomId, 
       durationMs: Date.now() - startTime,
       workerId: worker.workerId, 
       workerPid: worker.worker.pid,
@@ -126,7 +124,7 @@ const deleteRoom = (roomId: string) => {
     memoryRoom.delete(roomId)
 
     logger.log('Room delete successfully',{
-      roomId: roomId,
+      roomId,
       durationMs: Date.now() - startTime
     })
     
