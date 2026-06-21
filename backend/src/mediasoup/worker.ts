@@ -97,11 +97,6 @@ const initWorker = async () => {
     worker.on('died', () => {
       handleWorkerDeath(worker, workerId)
     })
-
-    worker.observer.on('close' , () => {
-      handleWorkerClose()
-    })
-
     logger.info('Worker created successfully',{
       duration_ms: Date.now() - startTime, 
       workerPid: worker.pid
