@@ -70,7 +70,8 @@ const handleWorkerDeath = (worker:Worker, workerId: string) => {
     workerLogs.delete(workerId)
 
     logger.log('Worker death handled successfully',{
-      durationMs: Date.now() - startTime
+      durationMs: Date.now() - startTime, 
+      workerId: workerId
     })
 
     return 'Worker died closing room'
@@ -80,10 +81,41 @@ const handleWorkerDeath = (worker:Worker, workerId: string) => {
       message: (error as Error).message, 
       stack: (error as Error).stack
     })
-    throw new error
+    throw error
   }
 }
 
+const handleWorkerClose = (worker:Worker, workerId: string) => {
+  const startTime = Date.now(); 
+  try {
+    const workerInfo = workerLogs.get(workerId)
+    logger.log('Worker closed',{
+      workerId: workerId, 
+      workerPid: worker.pid, 
+      affectedRooms: workerInfo?.associatedRooms, 
+      affectedRouter: workerInfo?.routerIds, 
+      timeStamp: Date.now()
+    })
+    const roomIds = workerInfo?.associatedRooms
+
+    roomIds?.forEach((roomId) => {
+    const room = getRoom(roomId);
+      room.health = "unhealthy"
+    })
+    
+    logger.log('Worker closed',{
+      durationMs: Date.now() - startTime, 
+      workerId: workerId
+    })
+    return 'Worker is closed'
+  } catch (error) {
+    logger.log('Worker close',{
+      message: (error as Error).message, 
+      stack: (error as Error).stack
+    })
+    throw error
+  }
+}
 
 //Creates a mediasoup worker(core process for media)
 const initWorker = async () => {
@@ -139,4 +171,5 @@ const workerHealthCheck = async(worker: Worker, workerId:string) => {
 
 }
 
-export { initWorker, workerLogs, workerHealthCheck};
+
+export { initWorker, workerLogs, workerHealthCheck, handleWorkerClose};

@@ -3,8 +3,9 @@ import { randomUUID } from "crypto";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
 import { createRouter } from "../mediasoup/router";
-import { initWorker } from "../mediasoup/worker";
+import { initWorker, workerLogs} from "../mediasoup/worker";
 import type { Consumer } from "mediasoup/node/lib/types";
+import { link } from "fs";
 
 type TransportType = "producer" | "consumer";
 
@@ -27,7 +28,8 @@ interface Room {
   router: Router;
   broadcasters: Map<string, Broadcaster>;
   viewers: Map<string, Viewer>;
-  worker: Worker
+  worker: Worker; 
+  health: "healthy" | "unhealthy"
 }
 
 //Stores room data
@@ -48,30 +50,34 @@ const createRoom = async (roomId : string) => {
 
     const worker = await initWorker();
     if(!worker){
+      logger.error('Error creating worker')
       throw new apiError(404,'Worker not created'); 
     }
 
     //Creates router
-    const router = await createRouter(roomId, worker);
-
-    //Get rtp capabilities
-    const routerRtpCapabilites = router?.rtpCapabilities;
-    if(!routerRtpCapabilites){
-      logger.error('Cannot fetch router capabilites')
-      throw new apiError(404,'Rtp capabilites error')
-    }
+    const router = await createRouter(roomId, worker.worker, worker.workerId);
 
     //Memory room
     memoryRoom.set(roomId,{
       router,
       broadcasters: new Map(),
       viewers: new Map(),
-      worker
+      worker: worker.worker, 
+      health: 'healthy'
     });
 
     const newRoom = memoryRoom.get(roomId)
 
-    logger.info("Creation of room successfully executed", Date.now() - startTime)
+    const workerInfo = workerLogs.get(worker.workerId); 
+    workerInfo?.associatedRooms.add(roomId)
+
+    logger.info("Creation of room successfully executed",{
+      roomId: roomId, 
+      durationMs: Date.now() - startTime,
+      workerId: worker.workerId, 
+      workerPid: worker.worker.pid,
+      routerId: router.id
+    })
     return newRoom;
 
   } catch (error:any) {
@@ -79,6 +85,8 @@ const createRoom = async (roomId : string) => {
       message: (error as Error).message, 
       stack: (error as Error).stack
     })
+
+    throw new error
 
   }
 };
@@ -109,6 +117,26 @@ const getRoom = (roomId: string) => {
   }
 };
 
+
+const deleteRoom = (roomId: string) => {
+  const startTime = Date.now()
+  try {
+
+    const _room = getRoom(roomId); 
+    memoryRoom.delete(roomId)
+
+    logger.log('Room delete successfully',{
+      roomId: roomId,
+      durationMs: Date.now() - startTime
+    })
+    
+  } catch (error) {
+    logger.error('Delete room error',{
+      message: (error as Error).message, 
+      stack: (error as Error).stack
+    })
+  }
+}
 
 //Saves broadcaster video/streams
 const saveProducer = async (
@@ -284,4 +312,5 @@ export {
   addViewer,
   removeViewer,
   removeBroadcaster,
+  deleteRoom
 };
