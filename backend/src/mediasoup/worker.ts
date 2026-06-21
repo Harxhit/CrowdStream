@@ -1,6 +1,5 @@
 import * as mediasoup from "mediasoup";
-import type { WorkerLogTag, WorkerSettings } from "mediasoup/node/lib/types";
-import type { Worker } from "mediasoup/node/lib/types";
+import type { WorkerLogTag, WorkerSettings, Worker } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
 import {config} from '../index'
@@ -26,7 +25,7 @@ const handleWorkerDeath = (worker:Worker, workerId: string) => {
   try {
     const workerInfo = workerLogs.get(workerId); 
     logger.info('MediaSoup worker died', {
-      workerId: workerId, 
+      workerId, 
       workerPid: worker.pid, 
       affectedRooms: workerInfo?.associatedRooms, 
       affectedRouter: workerInfo?.routerIds, 
@@ -71,7 +70,7 @@ const handleWorkerDeath = (worker:Worker, workerId: string) => {
 
     logger.log('Worker death handled successfully',{
       durationMs: Date.now() - startTime, 
-      workerId: workerId
+      workerId
     })
 
     return 'Worker died closing room'
@@ -90,7 +89,7 @@ const handleWorkerClose = (worker:Worker, workerId: string) => {
   try {
     const workerInfo = workerLogs.get(workerId)
     logger.log('Worker closed',{
-      workerId: workerId, 
+      workerId, 
       workerPid: worker.pid, 
       affectedRooms: workerInfo?.associatedRooms, 
       affectedRouter: workerInfo?.routerIds, 
@@ -105,7 +104,7 @@ const handleWorkerClose = (worker:Worker, workerId: string) => {
     
     logger.log('Worker closed',{
       durationMs: Date.now() - startTime, 
-      workerId: workerId
+      workerId
     })
     return 'Worker is closed'
   } catch (error) {
@@ -161,7 +160,7 @@ const initWorker = async () => {
 const workerHealthCheck = async(worker: Worker, workerId:string) => {
   worker.on('died', (error) => {
     logger.error('Mediasoup worker died',{
-      error: error, 
+      error, 
       workerPid: worker.pid, 
       timeStamp: Date.now()
     })

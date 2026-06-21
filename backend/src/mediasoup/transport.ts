@@ -1,10 +1,11 @@
 import type {
   Router,
+  WebRtcTransport
 } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
 import {config} from '../index'
 import { handleRouterClose } from "./router";
-import type { WebRtcTransport } from "mediasoup/node/lib/types";
+
 
 type TransportRole = "broadcaster" | "viewer";
 

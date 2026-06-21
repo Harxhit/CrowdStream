@@ -51,7 +51,7 @@ const createRouter = async (roomId:string, worker:Worker, workerId:string) => {
     routers.set(router.id, router);
     
     logger.info(`Router created`,{
-      roomId: roomId, 
+      roomId, 
       routerId: router.id, 
       worker: worker.pid, 
       durationMs: Date.now() - startTime
@@ -88,7 +88,7 @@ const getRouter = (routerId: string) => {
 
     logger.info('Fetching of router executed successfully',{
       routerId: router.id, 
-      router: router, 
+      router, 
       durationMs: Date.now() - startTime
     })
 
@@ -128,8 +128,8 @@ const routerStats = (router:Router) => {
 
     const routerStats = {
       id: router.id, 
-      roomId: roomId, 
-      workerId: workerId, 
+      roomId, 
+      workerId, 
       broadCasterCount: roomDetails.broadcasters.size, 
       viewerCount : roomDetails.viewers.size, 
       roomHealth: roomDetails.health
