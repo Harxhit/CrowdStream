@@ -66,20 +66,15 @@ class Broadcaster {
 
     console.log('[Broadcaster] Requesting broadcaster transport')
 
-    const params = await new Promise<any>((resolve, reject) => {
-      const timeOut = setTimeout(() => reject(new Error('Transport timeout')),5000)
+    const response = await socket.timeout(5000).emitWithAck('createBroadcasterTransport', roomId)
 
-      socket.once('broadcasterTransportCreated', (data) => {
-        clearTimeout(timeOut)
-        resolve(data)
-      })
+    if (!response.success) {
+      throw new Error(response.code);
+    }
 
-      socket.emit('createBroadcasterTransport',{roomId})
-    })
+    console.log("[Broadcaster] Transport params received");
 
-    console.log("[Broadcaster] Transport params received", params);
-
-    const {id, iceParameters,iceCandidates,dtlsParameters} = params;
+    const {id, iceParameters,iceCandidates,dtlsParameters} = response;
 
     // const iceServers = [
     //   { urls: 'stun:stun.l.google.com:19302' },
@@ -95,12 +90,12 @@ class Broadcaster {
       iceServers: [
         {
           urls: [
-            "turn:65.0.239.130:3478?transport=udp",
-            "turn:65.0.239.130:3478?transport=tcp",
-            "turns:65.0.239.130:5349?transport=tcp"
+            import.meta.env.VITE_TURN_UDP_URL,
+            import.meta.env.VITE_TURN_TCP_URL,
+            import.meta.env.VITE_TURNS_TCP_URL
           ],
-          username: "myuser",
-          credential: "mypassword"
+          username: import.meta.env.VITE_TURN_USERNAME,
+          credential: import.meta.env.VITE_TURN_CREDENTIAL
         }
       ],
       iceTransportPolicy: "all" 
@@ -123,28 +118,57 @@ class Broadcaster {
     })
 
     //Producer handshake
-    this.room.sendTransport.on("produce", ({ kind, rtpParameters, appData }, callback) => {
-      console.log('[Broadcaster] producer event',kind)
-      socket.emit("produce", {
-        transportId: this.room!.sendTransport!.id,
-        kind,
-        rtpParameters,
-        appData
-      });
+    this.room.sendTransport.on(
+      "produce",
+      async (
+        { kind, rtpParameters, appData },
+        callback,
+        errback
+      ) => {
+        try {
+          const response =
+            await socket.timeout(5000).emitWithAck(
+              "produce",
+              {
+                transportId:
+                  this.room!.sendTransport!.id,
+                kind,
+                rtpParameters,
+                appData
+              }
+            );
 
-      socket.once(`produced:${kind}`, ({ id }) => {
+          if (!response.success) {
+            throw new Error(response.code);
+          }
 
-        this.room?.producer.set(id, {kind, appData})
-        const room = frontendMemoryRoom.get(roomId); 
-        if(!room) return new Error('Room not found')
-        room.producer.set(id, {kind , appData})
+          this.room?.producer.set(
+            response.producerId,
+            { kind, appData }
+          );
 
-        callback({ id });
-      });
-    });
+          const room =
+            frontendMemoryRoom.get(roomId);
+
+          if (room) {
+            room.producer.set(
+              response.producerId,
+              { kind, appData }
+            );
+          }
+
+          callback({
+            id: response.producerId
+          });
+
+        } catch (error) {
+          errback(error as Error);
+        }
+      }
+    );
 
     this.room.sendTransport.on('connectionstatechange' , (state) => {
-      console.log('[Broadcaster] transport state',state)
+      console.log('[Broadcaster] transport state', state)
     })
 
     this.room.sendTransport.on('icegatheringstatechange', (state) => {
@@ -152,28 +176,30 @@ class Broadcaster {
     })
   }
 
-  async connectBroadcastersTransport(transportId:string, dtlsParameters:any){
-    console.log('[Broadcaster] transport connection started')
+  async connectBroadcastersTransport(
+    transportId: string,
+    dtlsParameters: any
+  ) {
+    console.log(
+      "[Broadcaster] transport connection started"
+    );
 
-    return new Promise<void>((resolve,reject) => {
-      const timeOut = setTimeout(() => {
-        reject(new Error('Transport connection error'))
-      },5000)
+    const response =
+      await socket.timeout(5000).emitWithAck(
+        "connectBroadcasterTransport",
+        {
+          transportId,
+          dtlsParameters
+        }
+      );
 
-      socket.once('broadcasterTransportConnected', () => {
-        clearTimeout(timeOut)
-        console.log('[Broadcaster] transport connected')
-        resolve()
-      })
+    if (!response.success) {
+      throw new Error(response.code);
+    }
 
-
-      socket.emit('connectBroadcasterTransport', {
-        transportId, dtlsParameters
-      })
-
-      console.log('[Broadcaster] transport connection executed')
-
-    })
+    console.log(
+      "[Broadcaster] transport connected"
+    );
   }
 
   async getUserMedia(){

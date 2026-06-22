@@ -100,87 +100,123 @@ const registerBroadcasterHandler = async (socket: Socket) => {
   });
 
   //Creates transport for the broadcaster
-  socket.on("createBroadcasterTransport", async ({ roomId }) => {
+  socket.on("createBroadcasterTransport", async (roomId, ack) => {
     try {
-      logger.info('Create broadcaster transport started')
-
-      //Fetches the room
       const room = getRoom(roomId);
 
-      //Fetches the router
-      const router = room?.router;
-      if (!router) {
-        logger.error("Error getting router")
-        throw new apiError(404,'Router not found')
-      }
-      // Creates broadcaster transport
-      const broadcasterTransport =  await createWebRtcTransport(router, roomId ,socket.id, 'broadcaster');
+      const router = room.router;
 
-      await saveBroadcasterTransport(roomId, socket.id , broadcasterTransport)
+      const broadcasterTransport =
+        await createWebRtcTransport(
+          router,
+          roomId,
+          socket.id,
+          "broadcaster"
+        );
 
-      //Emits the broadcaster transport
-      socket.emit("broadcasterTransportCreated", {
+      await saveBroadcasterTransport(
+        roomId,
+        socket.id,
+        broadcasterTransport
+      );
+
+      ack({
+        success: true,
         id: broadcasterTransport?.id,
         iceParameters: broadcasterTransport?.iceParameters,
-        iceCandidates: broadcasterTransport?.iceCandidates, 
+        iceCandidates: broadcasterTransport?.iceCandidates,
         dtlsParameters: broadcasterTransport?.dtlsParameters,
-        routerRtpCapabilities: router.rtpCapabilities,
+        routerRtpCapabilities: router.rtpCapabilities
       });
+
     } catch (error) {
-      logger.error('Create broadcaster transport error',{
-        message : (error as Error).message, 
-        stack : (error as Error).stack
-      })
+      ack({
+        success: false,
+        code: "TRANSPORT_CREATION_FAILED"
+      });
     }
   });
 
   //Creates the connect
   socket.on(
     "connectBroadcasterTransport",
-    async ({ transportId, dtlsParameters }) => {
+    async (
+      { transportId, dtlsParameters },
+      ack
+    ) => {
       try {
-        logger.info('Connect broadcaster transport lister started')
+        logger.info(
+          "Connect broadcaster transport listener started"
+        );
 
         const roomId = socket.data.roomId;
+
         if (!roomId) {
-          logger.error('RoomId not found')
-          throw new apiError(404,'RoomId not found')
+          throw new apiError(
+            404,
+            "RoomId not found"
+          );
         }
+
         const room = getRoom(roomId);
-        const broadcaster = room?.broadcasters.get(socket.id)
+
+        const broadcaster =
+          room.broadcasters.get(socket.id);
 
         if (!broadcaster) {
-          logger.error('Broadcaster does not exist')
-          throw new apiError(404, 'Broadcaster not found')
-        }
-        //Get broadacaster producer transport
-        const broadcasterTransport = broadcaster.transports.get('producer')
-
-        if(!broadcasterTransport){
-          logger.error(`Error finding transport with ${transportId}`)
-          throw new apiError(404, `Error finding transport with ${transportId}`) 
+          throw new apiError(
+            404,
+            "Broadcaster not found"
+          );
         }
 
-        await broadcasterTransport.connect({dtlsParameters});
-        socket.emit('broadcasterTransportConnected')
+        const broadcasterTransport =
+          broadcaster.transports.get(
+            "producer"
+          );
 
-        logger.info('Connect broadcaster transport executed successfully')
+        if (!broadcasterTransport) {
+          throw new apiError(
+            404,
+            `Transport ${transportId} not found`
+          );
+        }
+
+        await broadcasterTransport.connect({
+          dtlsParameters
+        });
+
+        ack({
+          success: true
+        });
+
+        logger.info(
+          "Connect broadcaster transport executed successfully"
+        );
 
       } catch (error) {
-        logger.error('Connect broadcaster transport error',{
-          message : (error as Error).message, 
-          stack : (error as Error).stack
+        logger.error(
+          "Connect broadcaster transport error",
+          {
+            message: (error as Error).message,
+            stack: (error as Error).stack
+          }
+        );
+
+        ack({
+          success: false,
+          code: "TRANSPORT_CONNECT_FAILED"
         });
       }
     }
   );
-
   // Handles broadcaster sending media by creating a producer on the transport and saving it
-  socket.on("produce", async (producerData) => {
-    try {
+  socket.on(
+    "produce",
+    async (producerData, ack) => {
+      try {
       logger.info('Producer listener started', JSON.stringify(producerData))
 
-      //Producer data
       const { _transportId, kind, rtpParameters, appData } = producerData;
 
       //RoomId in the socket data
@@ -199,7 +235,6 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         throw new apiError(404,'Broadcaster not found')
       }
       
-      //Finds broadcaster transport
       const broadcasterTransport = broadcaster.transports.get('producer')
       if (!broadcasterTransport) {
         logger.error('Broadcaster producer transport not found')
@@ -218,22 +253,28 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         throw new apiError(404,'Error creating broadcaster producer');  
       }
 
-      //Setting the producer
       broadcaster.producers.set(producer.id, producer)
-      
-      //Emit
-      socket.emit(`produced:${kind}`, { id: producer.id });
       
       logger.info("Producer listener executed successfully:",{
         producerId : producer.id, 
         producerKind: producer.kind
       });
+      ack({
+        success: true,
+        producerId: producer.id
+      });
+      
       
     } catch (error) {
       logger.error('Error creation in producer',{
         message : (error as Error).stack, 
         stack: (error as Error).stack
       })
+
+      ack({
+        success: false,
+        code: "PRODUCER_CREATION_FAILED"
+      });
     }
   });
 
@@ -247,12 +288,12 @@ const registerBroadcasterHandler = async (socket: Socket) => {
   //   socket.to(viewerId).emit("youAreCoHost", { roomId });
   // });
 
-  socket.on("rejectCoHost", ({ roomId, viewerId }) => {
-    logger.log("info", {
-      message: `Request rejected for the viewerId: ${viewerId} for being co-host`,
-    });
-    socket.to(viewerId).emit("requestRejected", { roomId });
-  });
+  // socket.on("rejectCoHost", ({ roomId, viewerId }) => {
+  //   logger.log("info", {
+  //     message: `Request rejected for the viewerId: ${viewerId} for being co-host`,
+  //   });
+  //   socket.to(viewerId).emit("requestRejected", { roomId });
+  // });
 };
 
 export default registerBroadcasterHandler;
