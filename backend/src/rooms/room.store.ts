@@ -31,7 +31,7 @@ interface Room {
 }
 
 //Stores room data
-const memoryRoom = new Map<string, Room>();
+export const memoryRoom = new Map<string, Room>();
 
 
 //Creates roomId(temporary)

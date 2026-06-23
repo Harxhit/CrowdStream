@@ -3,7 +3,7 @@ import type {
   WebRtcTransport
 } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
-import {config} from '../index'
+import config from "../config/index";
 import { handleRouterClose } from "./router";
 
 

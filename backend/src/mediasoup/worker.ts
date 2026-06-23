@@ -2,7 +2,8 @@ import * as mediasoup from "mediasoup";
 import type { WorkerLogTag, WorkerSettings, Worker } from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
-import {config} from '../index'
+import config from "../config/index";
+
 import { deleteRoom, getRoom } from "../rooms/room.store";
 
 interface WorkerInfo {

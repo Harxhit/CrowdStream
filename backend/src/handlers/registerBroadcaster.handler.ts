@@ -8,15 +8,13 @@ import { addBroadcaster , saveBroadcasterTransport} from "../utils/broadcaster.u
 import type { Socket } from "socket.io";
 import { createWebRtcTransport } from "../mediasoup/transport";
 import apiError from '../utils/apiError'
-import { getRouter } from "../mediasoup/router";
+import { getRouter, roomToRouter } from "../mediasoup/router";
 
 const registerBroadcasterHandler = async (socket: Socket) => {
   // Creates a memory room
-  socket.on("createRoom", async (_, ack) => {
+  socket.on("createRoom", async (ack) => {
     const startTime = Date.now()
     try {
-      logger.info('Room creation started')
-
       const roomId = await createRoomId();
 
       const _room = await createRoom(roomId)
@@ -61,7 +59,10 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         throw new apiError(404,'RoomId not found')
       }
       
-      const router = getRouter(roomId); 
+      const routerId = roomToRouter.get(roomId); 
+      console.log("Router id", routerId)
+      const router = getRouter(routerId!)
+
       if (!router) {
         logger.error('Error in room router')
         ack({
@@ -259,6 +260,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         producerId : producer.id, 
         producerKind: producer.kind
       });
+      
       ack({
         success: true,
         producerId: producer.id

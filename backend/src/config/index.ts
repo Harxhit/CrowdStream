@@ -20,7 +20,7 @@ const checkValid = (value:string): boolean => {
 function loadConfig():Config{
     const port = process.env.PORT; 
     const rtcMinPort  = process.env.RTC_MIN_PORT; 
-    const rtcMaxPort  = process.env.RTX_MAX_PORT
+    const rtcMaxPort  = process.env.RTC_MAX_PORT
     const announcedIp  = process.env.ANNOUCED_IP
     const corsOrigin  = process.env.CORS_ORIGINS
     const publicIp  = process.env.PUBLIC_IP
@@ -47,4 +47,5 @@ function loadConfig():Config{
     }
 }
 
-export default loadConfig; 
+const config  = loadConfig()
+export default config; 

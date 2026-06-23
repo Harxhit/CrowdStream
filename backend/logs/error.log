@@ -1085,3 +1085,105 @@
     at Socket.<anonymous> (/home/harshit/Web-Development/Projects/Croudly/live/backend/src/handlers/registerViewer.handler.ts:22:27)
     at processTicksAndRejections (node:internal/process/task_queues:103:5)
 2026-01-15 20:09:42 error: Room router not found
+2026-06-22 10:46:44 error: Error: spawn /home/harshit/CrowdStream/backend/node_modules/mediasoup/worker/out/Release/mediasoup-worker ENOENT
+    at ChildProcess.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mediasoup/node/lib/Worker.js:157:39)
+    at ChildProcess.emit (node:events:509:20)
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:292:12)
+    at onErrorNT (node:internal/child_process:507:16)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-06-22 10:54:04 error: TypeError: ack is not a function
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:35:7)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-06-22 10:56:40 error: TypeError: ack is not a function
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:36:7)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-06-22 10:58:07 error: Error founding the router
+2026-06-22 10:58:07 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 10:58:07 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 10:58:56 error: Error founding the router
+2026-06-22 10:58:56 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 10:58:56 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:01:43 error: Error founding the router
+2026-06-22 11:01:43 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:63:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:01:43 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:63:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:02:16 error: Error founding the router
+2026-06-22 11:02:16 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:02:16 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:03:36 error: Error founding the router
+2026-06-22 11:03:36 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:03:36 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:04:51 error: Error founding the router
+2026-06-22 11:04:52 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:04:52 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)

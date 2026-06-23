@@ -7,6 +7,7 @@ import { getRoom } from "../rooms/room.store";
 export const routers = new Map<string, Router>();
 export const routerToWorker = new Map<string, string>();
 export const routerToRoom = new Map<string, string>();
+export const roomToRouter = new Map<string, string>()
 
 //Media codecs
 const mediaCodecs: NonNullable<RouterOptions["mediaCodecs"]> = [
@@ -60,7 +61,8 @@ const createRouter = async (roomId:string, worker:Worker, workerId:string) => {
     const workerInfo = workerLogs.get(workerId); 
     workerInfo?.routerIds.add(router.id)
     routerToWorker.set(router.id, workerId);
-    routerToWorker.set(router.id, roomId);
+    routerToRoom.set(router.id, roomId);
+    roomToRouter.set(roomId, router.id)
     
     return router;
     

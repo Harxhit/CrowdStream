@@ -11890,3 +11890,228 @@
 2026-01-16 11:17:01 info: Client connected: grlO8gtviA6aIjzgAAAJ
 2026-01-16 11:25:47 info: User disconnected grlO8gtviA6aIjzgAAAJ beacuse of transport close
 2026-01-16 11:25:48 info: User disconnected qi57L4y7Gv4cl3SsAAAH beacuse of transport close
+2026-06-22 10:46:40 info: Client connected: rm6u-5BiScms9dY6AAAB
+2026-06-22 10:46:44 info: Room creation started
+2026-06-22 10:54:00 info: Client connected: GsOz0ftcP-SuLsPYAAAB
+2026-06-22 10:54:04 info: Room creation started
+2026-06-22 10:54:04 info: Create room started
+2026-06-22 10:54:04 info: Creating worker started
+2026-06-22 10:54:04 info: Worker created successfully
+2026-06-22 10:56:37 info: Client connected: hBBEIlXF3MULP5BuAAAB
+2026-06-22 10:56:40 info: Room creation started
+2026-06-22 10:56:40 info: Create room started
+2026-06-22 10:56:40 info: Creating worker started
+2026-06-22 10:56:40 info: Worker created successfully
+2026-06-22 10:57:48 info: Client connected: R6vSMvM3umWxeXzkAAAB
+2026-06-22 10:57:53 info: Client connected: Fppm9N4WY2KKwyGHAAAB
+2026-06-22 10:58:05 info: Client connected: LQP48Bynx26K-08lAAAB
+2026-06-22 10:58:05 info: User disconnected LQP48Bynx26K-08lAAAB beacuse of transport close
+2026-06-22 10:58:05 info: Client connected: alJ7CaJYvb3X2a5RAAAD
+2026-06-22 10:58:07 info: Room creation started
+2026-06-22 10:58:07 info: Create room started
+2026-06-22 10:58:07 info: Creating worker started
+2026-06-22 10:58:07 info: Worker created successfully
+2026-06-22 10:58:07 info: Creation of router started
+2026-06-22 10:58:07 info: Router created
+2026-06-22 10:58:07 info: Creation of room successfully executed
+2026-06-22 10:58:07 info: Get room started
+2026-06-22 10:58:07 info: Get room executed successfully
+2026-06-22 10:58:07 info: Broadcaster added to the room
+2026-06-22 10:58:07 info: Room created successfully
+2026-06-22 10:58:07 info: Get getRouterRtpCapabilities started
+2026-06-22 10:58:07 info: Fetching of router started
+2026-06-22 10:58:07 error: Error founding the router
+2026-06-22 10:58:07 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 10:58:07 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 10:58:55 info: Client connected: mgqP5W4YSyGHP-IAAAAB
+2026-06-22 10:58:56 info: Room creation started
+2026-06-22 10:58:56 info: Create room started
+2026-06-22 10:58:56 info: Creating worker started
+2026-06-22 10:58:56 info: Worker created successfully
+2026-06-22 10:58:56 info: Creation of router started
+2026-06-22 10:58:56 info: Router created
+2026-06-22 10:58:56 info: Creation of room successfully executed
+2026-06-22 10:58:56 info: Get room started
+2026-06-22 10:58:56 info: Get room executed successfully
+2026-06-22 10:58:56 info: Broadcaster added to the room
+2026-06-22 10:58:56 info: Room created successfully
+2026-06-22 10:58:56 info: Get getRouterRtpCapabilities started
+2026-06-22 10:58:56 info: Fetching of router started
+2026-06-22 10:58:56 error: Error founding the router
+2026-06-22 10:58:56 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 10:58:56 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 10:59:19 info: Client connected: 7YENqkzHxGk8qh2-AAAB
+2026-06-22 11:01:41 info: Client connected: M6kClY9Iy7OsFOPIAAAB
+2026-06-22 11:01:43 info: Create room started
+2026-06-22 11:01:43 info: Creating worker started
+2026-06-22 11:01:43 info: Worker created successfully
+2026-06-22 11:01:43 info: Creation of router started
+2026-06-22 11:01:43 info: Router created
+2026-06-22 11:01:43 info: Creation of room successfully executed
+2026-06-22 11:01:43 info: Get room started
+2026-06-22 11:01:43 info: Get room executed successfully
+2026-06-22 11:01:43 info: Broadcaster added to the room
+2026-06-22 11:01:43 info: Room created successfully
+2026-06-22 11:01:43 info: Get getRouterRtpCapabilities started
+2026-06-22 11:01:43 info: Fetching of router started
+2026-06-22 11:01:43 error: Error founding the router
+2026-06-22 11:01:43 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:63:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:01:43 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:63:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:02:16 info: Client connected: xggw6PEdqXs_n98zAAAB
+2026-06-22 11:02:16 info: Create room started
+2026-06-22 11:02:16 info: Creating worker started
+2026-06-22 11:02:16 info: Worker created successfully
+2026-06-22 11:02:16 info: Creation of router started
+2026-06-22 11:02:16 info: Router created
+2026-06-22 11:02:16 info: Creation of room successfully executed
+2026-06-22 11:02:16 info: Get room started
+2026-06-22 11:02:16 info: Get room executed successfully
+2026-06-22 11:02:16 info: Broadcaster added to the room
+2026-06-22 11:02:16 info: Room created successfully
+2026-06-22 11:02:16 info: Get getRouterRtpCapabilities started
+2026-06-22 11:02:16 info: Fetching of router started
+2026-06-22 11:02:16 error: Error founding the router
+2026-06-22 11:02:16 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:02:16 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:03:34 info: Client connected: pXpAqRiXmMv85-FWAAAB
+2026-06-22 11:03:36 info: Create room started
+2026-06-22 11:03:36 info: Creating worker started
+2026-06-22 11:03:36 info: Worker created successfully
+2026-06-22 11:03:36 info: Creation of router started
+2026-06-22 11:03:36 info: Router created
+2026-06-22 11:03:36 info: Creation of room successfully executed
+2026-06-22 11:03:36 info: Get room started
+2026-06-22 11:03:36 info: Get room executed successfully
+2026-06-22 11:03:36 info: Broadcaster added to the room
+2026-06-22 11:03:36 info: Room created successfully
+2026-06-22 11:03:36 info: Get getRouterRtpCapabilities started
+2026-06-22 11:03:36 info: Fetching of router started
+2026-06-22 11:03:36 error: Error founding the router
+2026-06-22 11:03:36 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:03:36 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:64:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:03:52 info: Client connected: Apuw1jNLeCsHo599AAAB
+2026-06-22 11:04:40 info: Client connected: 6Vrt8r_LjILyzwNkAAAB
+2026-06-22 11:04:51 info: Client connected: b5J1RRoenj6vwyerAAAB
+2026-06-22 11:04:51 info: Create room started
+2026-06-22 11:04:51 info: Creating worker started
+2026-06-22 11:04:51 info: Worker created successfully
+2026-06-22 11:04:51 info: Creation of router started
+2026-06-22 11:04:51 info: Router created
+2026-06-22 11:04:51 info: Creation of room successfully executed
+2026-06-22 11:04:51 info: Get room started
+2026-06-22 11:04:51 info: Get room executed successfully
+2026-06-22 11:04:51 info: Broadcaster added to the room
+2026-06-22 11:04:51 info: Room created successfully
+2026-06-22 11:04:51 info: Get getRouterRtpCapabilities started
+2026-06-22 11:04:51 info: Fetching of router started
+2026-06-22 11:04:51 error: Error founding the router
+2026-06-22 11:04:52 error: Error: Router not found
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:86:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:04:52 error: TypeError: error is not a constructor
+    at getRouter (/home/harshit/CrowdStream/backend/src/mediasoup/router.ts:103:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerBroadcaster.handler.ts:65:31)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-22 11:06:32 info: Client connected: n-C34Txt_wJOX2SlAAAB
+2026-06-22 11:07:15 info: Client connected: P8RyjWRSCy5Tb5ZFAAAB
+2026-06-22 11:07:15 info: Create room started
+2026-06-22 11:07:15 info: Creating worker started
+2026-06-22 11:07:15 info: Worker created successfully
+2026-06-22 11:07:15 info: Creation of router started
+2026-06-22 11:07:15 info: Router created
+2026-06-22 11:07:15 info: Creation of room successfully executed
+2026-06-22 11:07:15 info: Get room started
+2026-06-22 11:07:15 info: Get room executed successfully
+2026-06-22 11:07:15 info: Broadcaster added to the room
+2026-06-22 11:07:15 info: Room created successfully
+2026-06-22 11:07:15 info: Get getRouterRtpCapabilities started
+2026-06-22 11:07:15 info: Fetching of router started
+2026-06-22 11:07:15 info: Fetching of router executed successfully
+2026-06-22 11:07:15 info: Rtp capabilities fetched successfully
+2026-06-22 11:07:15 info: Get room started
+2026-06-22 11:07:15 info: Get room executed successfully
+2026-06-22 11:07:15 info: Transport created : 68f27333-5da3-443b-8343-1f393b45c23f
+2026-06-22 11:07:15 info: Get room started
+2026-06-22 11:07:15 info: Get room executed successfully
+2026-06-22 11:07:23 info: Connect broadcaster transport listener started
+2026-06-22 11:07:23 info: Get room started
+2026-06-22 11:07:23 info: Get room executed successfully
+2026-06-22 11:07:23 info: Connect broadcaster transport executed successfully
+2026-06-22 11:07:23 info: Transport ICE state changed
+2026-06-22 11:07:23 info: Transport DTLS state changed
+2026-06-22 11:07:23 info: Producer listener started
+2026-06-22 11:07:23 info: Get room started
+2026-06-22 11:07:23 info: Get room executed successfully
+2026-06-22 11:07:23 info: Producer listener executed successfully:
+2026-06-22 11:07:23 info: Transport DTLS state changed
+2026-06-22 11:07:24 info: Producer listener started
+2026-06-22 11:07:24 info: Get room started
+2026-06-22 11:07:24 info: Get room executed successfully
+2026-06-22 11:07:24 info: Producer listener executed successfully:
