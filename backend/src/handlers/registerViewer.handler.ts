@@ -1,202 +1,216 @@
-// import type { Socket } from "socket.io";
-// import {  createConsumerTransport, joinAsViewer } from "./viewer.handler";
-// import { getRoom } from "../rooms/room.store";
-// import logger from "../utils/logging";
-// import { connectConsumerTransport, consume } from "./viewer.handler";
-// import {
-//   resumeConsumer,
-//   pauseConsumer,
-// } from "../consumer/consumer.handler";
+import type { Socket } from "socket.io";
+import {  createConsumerTransport, joinAsViewer } from "./viewer.handler";
+import { getRoom } from "../rooms/room.store";
+import logger from "../utils/logging";
+import { connectConsumerTransport, consume } from "./viewer.handler";
+import {
+  resumeConsumer,
+  pauseConsumer,
+} from "../consumer/consumer.handler";
+import { getRouter, routerToRoom } from "../mediasoup/router";
 
-// const registerViewerHanlder = async (socket: Socket) => {
+const registerViewerHanlder = async (socket: Socket) => {
 
-//   // Handles viewer joining a room and emitting router capabilties
-//   socket.on("joinRoom", async ({ roomId },cb) => {
-//     try {
-//       logger.info("Join as viewer listner started")
+  // Handles viewer joining a room and emitting router capabilties
+  socket.on("joinRoom", async (roomId, ack) => {
+    try {
+      logger.info("Join as viewer listner started")
 
-//       //Joim the viewer
-//       await joinAsViewer(roomId, socket.id);
+      await joinAsViewer(roomId, socket.id);
 
-//       //Gets the room details
-//       const room = getRoom(roomId);
+      socket.data.roomId = roomId;
 
-//       //Sets the roomId to socket data
-//       socket.data.roomId = roomId;
+      const routerId = routerToRoom.get(roomId); 
+      if(!routerId){
+        logger.error('Router not found')
+          ack({
+            success:false, 
+            code: 'ROUTER_NOT_FOUND'
+          })
+        throw new Error("Router not found")
+      }
+      const router = getRouter(routerId)
 
-//       //Gets room router
-//       const router = room?.router;
-//       if (!router) {
-//         logger.error('Room router not found')
-//         return
-//       }
-      
-//       //Gets rtp capabilities
-//       const rtpCapabilities = router.rtpCapabilities;
+      //Gets rtp capabilities
+      const rtpCapabilities = router.rtpCapabilities
 
+      ack({
+        success: true, 
+        rtpCapabilities
+      })
 
-      
-//       //Emits rtp capabilities
-//       cb({rtpCapabilities});
+      logger.info('Join viewer listner successfully executed')
+    } catch (error) {
+      logger.error('Join viewer error',{
+        message:  (error as Error).message, 
+        stack  : (error as Error).stack
+      })
 
-//       logger.info('Join viewer listner successfully executed')
-//     } catch (error) {
-//       logger.error('Join viewer error',{
-//         message:  (error as Error).message, 
-//         stack  : (error as Error).stack
-//       })
-//     }
-//   });
+      ack({
+        success: false,
+        code: 'RTP_CAPABILITES_ERROR'
+      })
+    }
+  });
 
-//   //Creates reciever transport for the viewer and emit transport info
-//   socket.on("createViewerTransport", async ({ roomId }) => {
-//     try {
-//       logger.info('Create viewer transport listner started')
+  //Creates reciever transport for the viewer and emit transport info
+  socket.on("createViewerTransport", async (roomId, ack) => {
+    try {
+      logger.info('Create viewer transport listner started')
 
-//       //Get the room
-//       const room = getRoom(roomId);
+      const room = getRoom(roomId);
 
-//       //Find the viewer inside the room
-//       const viewer = room?.viewers.get(socket.id);
-//       if (!viewer) {
-//         logger.error('Viewer not found in the room')
-//         return 
-//       }
+      //Find the viewer inside the room
+      const viewer = room?.viewers.get(socket.id);
+      if (!viewer) {
+        logger.error('Viewer not found')
+        ack({
+            success: false, 
+            code: 'VIEWER_NOT_FOUND'
+        })
+        throw new Error('Viewer not found')
+      }
 
+      const viewerTransport = await createConsumerTransport(roomId , socket.id)
 
-//       const viewerTransport = await createConsumerTransport(roomId , socket.id)
-
-//       console.log('ICE candaidates being sent to veiwer', viewerTransport?.iceCandidates)
-
-//       socket.emit("viewerTransportCreated", {
-//         id: viewerTransport?.id,
-//         iceParameters: viewerTransport?.iceParameters,
-//         dtlsParameters: viewerTransport?.dtlsParameters,
-//         iceCandidates: viewerTransport?.iceCandidates ,
-//       });
+      ack({
+        success: true,
+        id: viewerTransport?.id,
+        iceParameters: viewerTransport?.iceParameters,
+        iceCandidates: viewerTransport?.iceCandidates,
+        dtlsParameters: viewerTransport?.dtlsParameters,
+      });
      
-//       logger.info('Create viewer transport listner successfully executed')
-//     } catch (error) {
-//       logger.error('Viewer transport creation error',{
-//         message: (error as Error).message, 
-//         stack: (error as Error).stack
-//       })
-//     }
-//   });
+      logger.info('Create viewer transport listner successfully executed')
+
+    } catch (error) {
+      logger.error('Viewer transport creation error',{
+        message: (error as Error).message, 
+        stack: (error as Error).stack
+      })
+
+      ack({
+        success: false, 
+        code: "TRANSPORT_CREATION_FAILED"
+      })
+    }
+  });
 
 
-//   // Connects the viewer's transport by setting DTLS parameters for secure media flow
-//   socket.on("connectConsumerTransport", async (payload) => {
-//     try {
-//       logger.info('Connect consumer listner started')
+  // Connects the viewer's transport by setting DTLS parameters for secure media flow
+  socket.on("connectConsumerTransport", async (payload, ack) => {
+    try {
+      logger.info('Connect consumer listner started')
 
-//       const roomId = socket.data.roomId;
+      const roomId = socket.data.roomId;
   
-//       const { dtlsParameters } = payload; 
+      const { dtlsParameters } = payload; 
 
-//       await connectConsumerTransport(roomId, socket.id, dtlsParameters);
+      await connectConsumerTransport(roomId, socket.id, dtlsParameters);
 
-//       socket.emit('consumerTransportConnected')
+      ack({
+        success: true
+      })
 
-//       logger.info('Connect consumer listner executed successfully')
-//     } catch (error) {
-//       logger.error('Connect conusmer transport error',{
-//         message: (error as Error).message, 
-//         stack : (error as Error).stack
-//       })
-//     }
-//   });
+      logger.info('Connect consumer listner executed successfully')
+    } catch (error) {
+      logger.error('Connect conusmer transport error',{
+        message: (error as Error).message, 
+        stack : (error as Error).stack
+      })
+
+      ack({
+        success: false, 
+        code: "TRANSPORT_CONNECTION_FAILED"
+      })
+    }
+  });
 
 
-//   // Handles a viewer requesting to consume a specific stream.
-//   socket.on("consume", async ({ roomId, rtpCapabilities }) => {
-//     try {
-//       logger.info('Consume lister started')
+  // Handles a viewer requesting to consume a specific stream.
+  socket.on("consume", async (roomId, rtpCapabilities, ack) => {
+    try {
+      logger.info('Consume lister started')
 
-//       const consumers = await consume(roomId, socket.id, rtpCapabilities);
-//       const room = getRoom(roomId)
+      const consumers = await consume(roomId, socket.id, rtpCapabilities);
 
-//       console.log('Consumers' , consumers)
-//       console.log('Room' ,room?.viewers)
+      logger.info('Consume lister executed successfully')
+      ack({
+        success: true, 
+        consumers
+      })
       
-//       socket.emit("consumerCreated", consumers);
-      
-//       logger.info('Consume lister executed successfully')
-//     } catch (error) {
-//      logger.error("Consume listner error",{
-//       message: (error as Error).message, 
-//       stack : (error as Error).stack
-//      })
-//     }
-//   });
-//   // Pauses a specific media consumer (e.g., video or audio) for the viewer
-//   socket.on("pauseConsumer", async (roomId, socketId, consumerId) => {
-//     pauseConsumer(roomId, socketId, consumerId);
-//     socket.emit("paused", { message: "Consumer paused for the viewer" });
-//   });
+    } catch (error) {
+     logger.error("Consume listner error",{
+      message: (error as Error).message, 
+      stack : (error as Error).stack
+     })
+     ack({
+        success: false, 
+        code: "CONSUME_ERROR"
+     })
+    }
+  });
 
-//   // Resumes a previously paused media consumer for the viewer
-//   socket.on("resumeConsumer", async ({ roomId }) => {
-//       try {
-//         logger.info('Resume consumer listener started');
+  // Pauses a specific media consumer (e.g., video or audio) for the viewer
+  socket.on("pauseConsumer", async (roomId, socketId, consumerId,ack) => {
+    try {
+        pauseConsumer(roomId, socketId, consumerId);
 
-//         const socketId = socket.id;
-//         const room = getRoom(roomId);
+        ack({
+            success: true
+        })
         
-//         if (!room) {
-//           logger.error('Room not found');
-//           return socket.emit('error', { message: 'Room not found' });
-//         }
+    } catch (error) {
+        logger.error("Pause consumer error",{
+            message: (error as Error).message, 
+            stack: (error as Error).stack
+        })
 
-//         const viewer = room.viewers.get(socketId);
-//         if (!viewer) {
-//           logger.error('Viewer not found');
-//           return socket.emit('error', { message: 'Viewer not found' });
-//         }
+        ack({
+            success: false, 
+            code: 'PAUSE_CONSUMER_ERROR'
+        })
+    }
+  });
 
-//         const resumedConsumers: string[] = [];
-        
-//         for (const [consumerId, consumer] of viewer.consumers.entries()) {
-//           try {
-//             if (consumer.paused) {
-//               await consumer.resume();
-//               resumedConsumers.push(consumerId);
-//               logger.info(`Consumer ${consumerId} resumed`);
-//             }
-//           } catch (err) {
-//             logger.error(`Failed to resume consumer ${consumerId}:`, err);
-//           }
-//         }
+  // Resumes a previously paused consumer for the viewer
+  socket.on("resumeConsumer", async (roomId,consumerId, ack) => {
+      try {
+       resumeConsumer(roomId, socket.id, consumerId)
+       ack({
+        success: true, 
+        consumerId
+       })
+       logger.info("Resume consumer listener executed successfully");
+      }catch (error) {
+        logger.error('Resume consumer error', {
+          message: (error as Error).message, 
+          stack: (error as Error).stack
+        });
 
-//         socket.emit("resumed", {
-//           message: "Consumers resumed",
-//           resumedConsumers
-//         });
+        ack({
+            success: false, 
+            code: "RESUME_CONSUMER_FAILED"
+        })
+      }
+    });
 
-//         logger.info(`Resume consumer listener executed successfully. Resumed: ${resumedConsumers.length}`);
-//       } catch (error) {
-//         logger.error('Resume consumer error', {
-//           message: (error as Error).message, 
-//           stack: (error as Error).stack
-//         });
-//       }
-//     });
-
-//   // Inform broadcasters and other viewers in real-time about viewers joining, leaving, or changing .
-//   socket.on("notifyViewerStateChange", (roomId, { type, viewerId }) => {
-//     const room = getRoom(roomId);
-//     if (!room) {
-//       return socket.emit("error", { message: "Room does not exist" });
-//     }
-//     const payLoad = {
-//       type,
-//       viewerId,
-//       viewerCount: Object.keys(room.viewers).length,
-//     };
-//     socket.to("room").emit("viewerStateChange", payLoad);
-//   });
+  // Inform broadcasters and other viewers in real-time about viewers joining, leaving, or changing .
+  socket.on("notifyViewerStateChange", (roomId, { type, viewerId }) => {
+    const room = getRoom(roomId);
+    if (!room) {
+      return socket.emit("error", { message: "Room does not exist" });
+    }
+    const payLoad = {
+      type,
+      viewerId,
+      viewerCount: Object.keys(room.viewers).length,
+    };
+    socket.to("room").emit("viewerStateChange", payLoad);
+  });
 
  
-// };
+};
 
-// export default registerViewerHanlder;
+export default registerViewerHanlder;

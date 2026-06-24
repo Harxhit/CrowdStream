@@ -16,36 +16,45 @@ const pauseConsumer = async (
   const startTime = Date.now();
 
   try {
-    logger.info("Pause consumer started");
-
     const room = getRoom(roomId)
-
     const viewer = room?.viewers.get(socketId);
-
     if (!viewer) {
-      logger.error("Viewer not found");
-      return;
+      logger.error("Viewer not found",{
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Viewer not found");
     }
 
-    const consumer: Consumer | undefined =
-      viewer.consumers.get(consumerId);
+    const consumer: Consumer | undefined = viewer.consumers.get(consumerId);
 
     if (consumer === undefined) {
-      logger.error("Consumer not found");
-      return;
+      logger.error("Consumer not found",{
+        consumerId: consumerId, 
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Consumer not found");
     }
 
-    await consumer.pause();
+    logger.info("Viewer consumer paused",{
+      consumerId: consumerId, 
+      roomId: roomId, 
+      socketId: socketId, 
+      durationMs: Date.now() - startTime
+    });
 
-    logger.info(
-      "Viewer specific consumer paused successfully",
-      Date.now() - startTime
-    );
+    return await consumer.pause();
+
   } catch (error: unknown) {
     logger.error(
       "Internal server error",
       getErrorDetails(error)
     );
+
+    throw error
   }
 };
 
@@ -57,34 +66,42 @@ const resumeConsumer = async(
 ): Promise<void> => {
   const startTime = Date.now()
   try {
-    logger.info("Resume consumer started");
-
     const room = getRoom(roomId);
-
     const viewer = room?.viewers.get(socketId);
-
     if (!viewer) {
-      logger.error("Viewer not found");
-      return;
+      logger.error("Viewer not found",{
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Viewer not found");
     }
-
     const consumer: Consumer | undefined = viewer.consumers.get(consumerId)
-    if(consumer === undefined){
-      logger.error("Consumer not found");
-      return;
+    if (consumer === undefined) {
+      logger.error("Consumer not found",{
+        consumerId: consumerId, 
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Consumer not found");
     }
+    logger.info("Viewer consumer resumed",{
+      consumerId: consumerId, 
+      roomId: roomId, 
+      socketId: socketId, 
+      durationMs: Date.now() - startTime
+    });
 
-    await consumer.resume()
+    return await consumer.resume()
 
-    logger.info(
-      "Viewer specific consumer resumed successfully",
-      Date.now() - startTime
-    );
   } catch (error: unknown) {
     logger.error(
       "Internal server error",
       getErrorDetails(error)
     );
+
+    throw error
   }
 };
 
@@ -95,39 +112,44 @@ const closeConsumer = (
   consumerId: string
 ): void => {
   const startTime = Date.now();
-
   try {
-    logger.info("Close consumer started");
-
     const room = getRoom(roomId)
-
     const viewer = room?.viewers.get(socketId);
-
     if (!viewer) {
-      logger.error("Viewer not found in room");
-      return;
+      logger.error("Viewer not found",{
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Viewer not found");
     }
-
-    const consumer: Consumer | undefined =
-      viewer.consumers.get(consumerId);
-
+    const consumer: Consumer | undefined = viewer.consumers.get(consumerId);
     if (consumer === undefined) {
-      logger.error("Consumer not found");
-      return;
+      logger.error("Consumer not found",{
+        consumerId: consumerId, 
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Consumer not found");
     }
 
     consumer.close();
     viewer.consumers.delete(consumerId);
 
-    logger.info(
-      "Close consumer successfully executed",
-      Date.now() - startTime
-    );
+    logger.info("Viewer consumer closed and deleted",{
+      consumerId: consumerId, 
+      roomId: roomId, 
+      socketId: socketId, 
+      durationMs: Date.now() - startTime
+    });
   } catch (error: unknown) {
     logger.error(
       "Internal server error",
       getErrorDetails(error)
     );
+
+    throw error
   }
 };
 
@@ -138,21 +160,24 @@ const manageMultiStreamConsumers = (
   producerId: string,
   rtpCapabilities: RtpCapabilities
 ): void => {
+  const startTime = Date.now()
   try {
     const room = getRoom(roomId)
-
     const viewer = room?.viewers.get(socketId);
-
     if (!viewer) {
-      logger.error("Viewer not found");
-      return;
+      logger.error("Viewer not found",{
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Viewer not found");
     }
 
+    //TODO: Need to add a fallback
     const viewerConsumers = viewer.consumers;
-
     if (viewerConsumers.size === 0) {
       logger.warn(
-        "Viewer consumers do not exist, creating one"
+        "Viewer consumers do not exist,Creating"
       );
     }
 
@@ -163,18 +188,19 @@ const manageMultiStreamConsumers = (
     );
 
     if (canConsumeResult !== true) {
-      logger.error(
-        "Router capabilities do not allow consuming this stream"
-      );
-      return;
+      logger.error("Router capabilities do not allow consuming this stream",{
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error('Router capabilities do not allow consuming this stream')
     }
-
-    logger.info("Consumer can be created");
   } catch (error: unknown) {
     logger.error(
       "Internal server error",
       getErrorDetails(error)
     );
+    throw error
   }
 };
 

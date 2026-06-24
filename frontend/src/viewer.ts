@@ -8,24 +8,19 @@ class Viewer{
     private room:Room | null = null;
 
     async joinRoom(roomId:string){
-        console.log('[Viewer] join room started',roomId)
-        const data = await new Promise<any>((resolve,reject) => {
-            socket.emit('joinRoom',{roomId} , (response:any) => {
-                console.log('Response',response)
-                if(response?.error){
-                    reject(new Error(response.error))
-                }else{
-                    resolve(response)
-                }
-            })
-        })
+        console.log('[Viewer] join room started', roomId)
+        const response = await socket.timeout(5000).emitWithAck('joinRoom',roomId)
+        if(!response.success){
+            throw new Error(response.code)
+        }
+
         let room = frontendMemoryRoom.get(roomId)
         if(!room){
             room = new Room(roomId); 
             frontendMemoryRoom.set(roomId, room)
-            }
+        }
         
-        room!.rtpCapabilities = data.rtpCapabilities
+        room!.rtpCapabilities = response.rtpCapabilities
         this.room  = room
     }
     
