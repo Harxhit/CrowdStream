@@ -11,7 +11,7 @@ coturn-kill:
 	@echo "=== Killing COTURN ==="
 	pkill turnserver
 	@echo "=== Verifying ==="
-	pgrep -a turnserver
+	-pgrep -a turnserver
 
 coturn-start: 
 	@echo "===Starting TURN ==="
