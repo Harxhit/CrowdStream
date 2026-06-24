@@ -5,7 +5,7 @@
 
 coturn-log: 
 	@echo "=== COTURN Log ==="
-	turnserver -c infra/coturn/turnserver.conf
+	turnserver -c turnserver.conf
 
 coturn-kill: 
 	@echo "=== Killing COTURN ==="
