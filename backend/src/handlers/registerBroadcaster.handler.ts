@@ -32,7 +32,9 @@ const registerBroadcasterHandler = async (socket: Socket) => {
 
       ack({
         success: true, 
-        roomId
+        data: {
+          roomId
+        }
       })
 
     } catch (error:any) {
@@ -84,7 +86,9 @@ const registerBroadcasterHandler = async (socket: Socket) => {
 
       ack({
         success: true, 
-        rtpCapabilites
+        data: {
+          rtpCapabilites
+        }
       })
 
     } catch (error) {
@@ -123,11 +127,12 @@ const registerBroadcasterHandler = async (socket: Socket) => {
 
       ack({
         success: true,
-        id: broadcasterTransport?.id,
-        iceParameters: broadcasterTransport?.iceParameters,
-        iceCandidates: broadcasterTransport?.iceCandidates,
-        dtlsParameters: broadcasterTransport?.dtlsParameters,
-        routerRtpCapabilities: router.rtpCapabilities
+        data: {
+          id: broadcasterTransport?.id,
+          iceParameters: broadcasterTransport?.iceParameters,
+          iceCandidates: broadcasterTransport?.iceCandidates,
+          dtlsParameters: broadcasterTransport?.dtlsParameters,
+        }
       });
 
     } catch (error) {
@@ -263,7 +268,10 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       
       ack({
         success: true,
-        producerId: producer.id
+        data: {
+          producerId: producer.id,
+          producerKind: producer.kind
+        }
       });
       
       

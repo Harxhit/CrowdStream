@@ -36,7 +36,9 @@ const registerViewerHanlder = async (socket: Socket) => {
 
       ack({
         success: true, 
-        rtpCapabilities
+        data: {
+          rtpCapabilities
+        }
       })
 
       logger.info('Join viewer listner successfully executed')
@@ -75,10 +77,12 @@ const registerViewerHanlder = async (socket: Socket) => {
 
       ack({
         success: true,
-        id: viewerTransport?.id,
-        iceParameters: viewerTransport?.iceParameters,
-        iceCandidates: viewerTransport?.iceCandidates,
-        dtlsParameters: viewerTransport?.dtlsParameters,
+        data: {
+          id: viewerTransport?.id,
+          iceParameters: viewerTransport?.iceParameters,
+          iceCandidates: viewerTransport?.iceCandidates,
+          dtlsParameters: viewerTransport?.dtlsParameters,
+        }
       });
      
       logger.info('Create viewer transport listner successfully executed')
@@ -126,7 +130,6 @@ const registerViewerHanlder = async (socket: Socket) => {
     }
   });
 
-
   // Handles a viewer requesting to consume a specific stream.
   socket.on("consume", async (roomId, rtpCapabilities, ack) => {
     try {
@@ -137,7 +140,9 @@ const registerViewerHanlder = async (socket: Socket) => {
       logger.info('Consume lister executed successfully')
       ack({
         success: true, 
-        consumers
+        data: {
+          consumers
+        }
       })
       
     } catch (error) {
@@ -180,7 +185,9 @@ const registerViewerHanlder = async (socket: Socket) => {
        resumeConsumer(roomId, socket.id, consumerId)
        ack({
         success: true, 
-        consumerId
+        data: {
+          consumerId
+        }
        })
        logger.info("Resume consumer listener executed successfully");
       }catch (error) {

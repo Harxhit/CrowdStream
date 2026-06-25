@@ -301,7 +301,6 @@ class Broadcaster {
     console.log('[Broadcaster] producing audio')
     await sendTransport.produce({track : audioTrack}); 
   }
-
 }
 
 export default Broadcaster;
