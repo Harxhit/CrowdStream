@@ -143,8 +143,9 @@ class Broadcaster {
     }
 
     const broadcasterDevice = broadcaster.device; 
-    if(broadcaster === null){
+    if(!broadcasterDevice){
       throw new Error('Broadcaster device not loaded')
+    }
     }
 
     const response: CreateTransportAck = await socket.timeout(5000).emitWithAck('createBroadcasterTransport', roomId)
