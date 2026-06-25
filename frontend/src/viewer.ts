@@ -2,96 +2,137 @@ import Room from "./room";
 import { socket } from "./socket";
 import { Device } from "mediasoup-client";
 import frontendMemoryRoom from "./store/room.store";
+import type { FrontendViewer } from "./types/room.types";
+import type { AckResponse } from "./utils/ack.util";
+import type { RtpCapabilities, IceParameters, IceCandidate, DtlsParameters, Consumer } from "mediasoup-client/types";
+import { iceServers } from "./utils/iceServer.util";
 
+type JoinRoomAck = AckResponse<{
+    rtpCapabilities: RtpCapabilities
+}>
+
+type CreateTransportAck = AckResponse<{
+  id: string;
+  iceParameters: IceParameters;
+  iceCandidates: IceCandidate[];
+  dtlsParameters: DtlsParameters;
+}>;
+
+
+type ConsumerAck = AckResponse<{
+    consumer: Consumer
+}>
 
 class Viewer{
     private room:Room | null = null;
 
     async joinRoom(roomId:string){
-        console.log('[Viewer] join room started', roomId)
-        const response = await socket.timeout(5000).emitWithAck('joinRoom',roomId)
+        console.info('[Viewer] join room started', roomId)
+
+        const response:JoinRoomAck = await socket.timeout(5000).emitWithAck('joinRoom',roomId)
         if(!response.success){
             throw new Error(response.code)
         }
 
-        let room = frontendMemoryRoom.get(roomId)
+        const room = frontendMemoryRoom.get(roomId); 
         if(!room){
-            room = new Room(roomId); 
-            frontendMemoryRoom.set(roomId, room)
+            throw new Error('Room not found')
         }
-        
-        room!.rtpCapabilities = response.rtpCapabilities
-        this.room  = room
+        this.room = room; 
+        const socketId = socket.id; 
+        if(!socketId){
+            throw new Error('SocketId not found')
+        }
+        const rtpCapabilities = response.data.rtpCapabilities; 
+
+        const viewer: FrontendViewer = {
+            device: null,
+            joinedAt: new Date(),
+            consumers: new Map(),
+            transports: new Map(),
+            role: "viewer",
+            rtpCapabilities: rtpCapabilities,
+        };
+
+        room?.viewers.set(socketId, viewer)
+
+        console.info('[Viewer] joined room',socketId)
     }
     
+    async loadDevice(routerRtpCapabilities: any) {
+    console.log("[Viewer] device loading started");
 
-  async loadDevice(routerRtpCapabilities: any) {
-    if (!this.room) return new Error("Room not created");
+    if (!this.room) throw new Error("Room not created");
+    const roomId = this.room.id; 
+    if(!roomId){
+        throw new Error('RoomId not found')
+    }
+    const room = frontendMemoryRoom.get(roomId)
+    if(!room){
+        throw new Error('Room not found')
+    }
+    const device = new Device();
+    await device.load({ routerRtpCapabilities });
 
-    console.log("[Viewer] loading mediasoup device");
+    const socketId = socket.id; 
+    if(!socketId){
+        throw new Error('SocketId not found')
+    }
 
-    this.room.device = new Device();
-    await this.room.device.load({ routerRtpCapabilities });
-
-
-    const room = frontendMemoryRoom.get(this.room.id);
-    if (!room) return new Error("Room not found");
-    room.device = this.room.device;
-
-    console.log("[Viewer] device loaded with TURN");
-  }
+    const viewer = room.viewers.get(socketId); 
+    if(!viewer){
+        throw new Error('Viewer not found')
+    }
+    viewer.device = device; 
+    console.log("[Viewer] device loaded");
+    }
 
     async createViewerTransport(roomId:string){
-        if(!this.room || !this.room.device) return new Error('Room or device not found')
+        if(!this.room) return new Error('Room not found')
 
-        const params  = await new Promise<any>((resolve , reject) => {    
-            const timeOut = setTimeout(() => {
-                reject(new Error('Transport timeout'))
-            },5000)
+        const response:CreateTransportAck = await socket.timeout(5000).emitWithAck('createViewerTransport',roomId)
+        if(!response.success){
+            throw new Error(response.code)
+        }
+        const room = frontendMemoryRoom.get(roomId); 
+        if(!room){
+            throw new Error('Room not found')
+        }
+        const socketId = socket.id; 
+        if(!socketId){
+            throw new Error('SocketId not found')
+        }
+        const viewer = room.viewers.get(socketId)
+        if(!viewer){
+            throw new Error('Viewer not found')
+        }
+        const viewerDevice = viewer.device;   
+        if(viewerDevice === null){
+            throw new Error("Viewer device not found")
+        }     
+        const {id,iceParameters,iceCandidates,dtlsParameters} = response.data;
 
-            socket.once('viewerTransportCreated' , (data) => {
-                clearTimeout(timeOut); 
-                resolve(data)
-            })
-
-            socket.emit('createViewerTransport', {roomId})
-        })
-
-        console.log('[Viewer] transport recieved', params)
-
-
-        const {id,iceParameters,iceCandidates,dtlsParameters} = params;
-
-        
         //Create browser rec transport 
-        this.room.recTransport = this.room.device.createRecvTransport({
+        const recTransport = viewerDevice.createRecvTransport({
             id,
             iceParameters,
             iceCandidates,
             dtlsParameters,
-            iceServers: [
-                {
-            urls: [
-                import.meta.env.VITE_TURN_UDP_URL,
-                import.meta.env.VITE_TURN_TCP_URL,
-                import.meta.env.VITE_TURNS_TCP_URL,
-            ],
-                username: import.meta.env.VITE_TURN_USERNAME,
-                credential: import.meta.env.VITE_TURN_CREDENTIAL
-                }
-            ],
+            iceServers,
             iceTransportPolicy: "all"
-        })
+        })  
 
-        const room = frontendMemoryRoom.get(roomId); 
-        if(!room) return new Error('Room not found')
-        room!.recTransport = this.room.recTransport
+        if(!recTransport){
+            throw new Error('Error creating recv transport')
+        }
+
+        viewer.transports.set('consumer', recTransport)
 
         //DTLS Handshake
-        this.room.recTransport.on('connect' , ({dtlsParameters},cb) => {
+        recTransport.on('connect' , ({dtlsParameters},cb) => {
             console.log('[Viewer] transport connect event')
 
-            this.connectConsumerTransport(this.room!.recTransport!.id, dtlsParameters)
+            this.connectConsumerTransport(recTransport.id, dtlsParameters)
             .then(() => {
                 console.log('[Viewer] dtls connected')
                 cb()
@@ -102,95 +143,112 @@ class Viewer{
     }
 
     async connectConsumerTransport(transportId: string, dtlsParameters : any){
-    console.log('[Viewer] transport connection started')
+        console.log('[Viewer] transport connection started')
 
-    return new Promise<void>((resolve,reject) => {
-      const timeOut = setTimeout(() => {
-        reject(new Error('Transport connection error'))
-      },5000)
+        const response = await socket.timeout(5000).emitWithAck('connectConsumerTransport', { transportId, dtlsParameters })
+        if(!response.success){
+            throw new Error(response.code)
+        }
 
-      socket.once('consumerTransportConnected', () => {
-        clearTimeout(timeOut)
-        resolve()
-      })
+        console.log('[Viewer] transport connected')
 
-
-      socket.emit('connectConsumerTransport', {
-        transportId, dtlsParameters
-      })
-
-      console.log('[Broadcaster] transport connection executed')
-
-    })
     }
 
     async consumeMedia(roomId: string , rtpCapabilities:any){
-        
-        const data = await new Promise<any>((resolve,reject) => {
-            const timeOut = setTimeout(() => {
-                reject('Consume timeout')
-            }, 5000);
+        console.info('[Viewer] consume media started')
 
-            socket.once('consumerCreated' , (params) => {
-                clearTimeout(timeOut)
-                console.log("Params" ,params)
-                resolve(params)
-            })
+        const room = frontendMemoryRoom.get(roomId); 
+        if(!room){
+            throw new Error('Room not found')
+        }
+        const socketId = socket.id; 
+        if(!socketId){
+            throw new Error('SocketId not found')
+        }
+        const viewer = room.viewers.get(socketId); 
+        if(!viewer){
+            throw new Error('Viewer not found')
+        }
+        const recvTransport = viewer.transports.get('consumer'); 
+        if(!recvTransport){
+            throw new Error('Recv transport not found')
+        }
 
-            socket.emit('consume', {roomId, rtpCapabilities})
-        })
-        
+        const response:ConsumerAck = await socket.timeout(5000).emitWithAck('consume', roomId , rtpCapabilities)
+        if(!response.success){
+            throw new Error(response.code)
+        }
 
+        const data = response.consumers;
+        console.info('Type of data',typeof data)
         if(Array.isArray(data)){
             for(const consumer of Object.values(data)){
 
                 const room = frontendMemoryRoom.get(roomId); 
                 if(!room)throw new Error('Room not found')
 
-                const msConsumer = await room.recTransport?.consume({
+                const msConsumer = await recvTransport.consume({
                     id : consumer.id,
                     producerId: consumer.producerId, 
                     kind: consumer.kind, 
                     rtpParameters: consumer.rtpParameters, 
                 })
                 
-                room?.consumers.set(consumer.id , msConsumer!)
-
+                viewer.consumers.set(consumer.id , msConsumer!)
             }
         }
+
+        console.info('[Viewer] consume media completed')
     }
 
     async resumeConsumer(roomId:string){
+        console.info('[Viewer] resume consumer started')
+
         const room = frontendMemoryRoom.get(roomId); 
+        if(!room){
+            throw new Error('Room not found')
+        }
+        const socketId = socket.id; 
+        if(!socketId){
+            throw new Error('SocketId not found')
+        }
+        const viewer = room.viewers.get(socketId)
+        if(!viewer){
+            throw new Error('Viewer not found')
+        }
 
-        return new Promise<void>((resolve,reject) => {
-            const timeOut = setTimeout(() => {
-                reject(new Error('Resume consumer timeout'))
-            },5000)
-            if(!room) return reject(new Error('Room not found'))
+        if(!room || viewer.consumers.size === 0){
+            throw new Error("Consumer not found")
+        }
 
-            if(room.consumers.size === 0) return reject(new Error('Consumer not found'))
+        for(const consumer of viewer.consumers.values()){
+            const response = await socket.timeout(5000).emitWithAck('resumeConsumer', roomId, consumer.id)
+            if(!response.success){
+                throw new Error(response.code)
+            }
+        }
 
-            socket.once('resumed', () => {
-                clearTimeout(timeOut)
-                resolve()
-            })
-
-            socket.emit('resumeConsumer', {roomId})
-    
-
-        })
+        console.info('[Viewer] resume completed')
 
     }
 
     async renderMedia(roomId:string, viewerVideo:any){
+        console.info('[Viewer] render media')
 
         const room = frontendMemoryRoom.get(roomId); 
         if(!room) throw new Error('Room not found'); 
-        
+        const socketId = socket.id; 
+        if(!socketId){
+            throw new Error('SocketId not found')
+        }
+        const viewer = room.viewers.get(socketId); 
+        if(!viewer){
+            throw new Error('Viewer not found')
+        }
+
         const mediaStream = new MediaStream()
         
-        const consumers = room.consumers; 
+        const consumers = viewer.consumers; 
         consumers.forEach((c) => {
             const track = c.track
             console.log('Consumers track', track)
@@ -202,22 +260,33 @@ class Viewer{
         }else{
             console.error('Video play error')
         }
+        console.info('[Viewer] render media')
     }
 
     async connectionState(roomId:string){
         const room = frontendMemoryRoom.get(roomId); 
-        if(!room){ console.log('Room not found') 
-            throw new Error('Room not found')}
-        
-        room.recTransport?.on('connectionstatechange', (state) => {
+        if(!room) throw new Error('Room not found') 
+        const socketId = socket.id;
+        if(!socketId){
+            throw new Error('SocketId not found')
+        }
+        const viewer = room.viewers.get(socketId); 
+        if(!viewer){
+            throw new Error('Viewer not found')
+        }
+        const recvTransport = viewer.transports.get('consumer')
+        if(!recvTransport){
+            throw new Error('Transport not found')
+        }
+        recvTransport?.on('connectionstatechange', (state) => {
             console.log('[ICE State]', state)
         })
 
-        room.recTransport?.on('icegatheringstatechange', (state) => {
+        recvTransport?.on('icegatheringstatechange', (state) => {
             console.log('[Ice gathering] state', state)
         })
+
     }
-    
 
 }
 

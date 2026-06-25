@@ -1,5 +1,5 @@
-import Room from "../room";
+import type { FrontendRoom } from "../types/room.types";
 
-const frontendMemoryRoom = new Map<string, Room>()
+const frontendMemoryRoom = new Map<string, FrontendRoom>()
 
 export default frontendMemoryRoom
