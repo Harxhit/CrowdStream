@@ -3,7 +3,7 @@ import { createServer } from "node:http";
 import app from "../app";
 import logger from "./logging";
 import registerBroadcasterHandler from "../handlers/registerBroadcaster.handler";
-// import registerViewerHanlder from "../handlers/registerViewer.handler";
+import registerViewerHanlder from "../handlers/registerViewer.handler";
 import config from "../config/index";
 
 const server = createServer(app);
@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
   logger.info(`Client connected: ${socket.id}`);
 
   registerBroadcasterHandler(socket);
-  // registerViewerHanlder(socket);
+  registerViewerHanlder(socket);
 
   socket.on("disconnect", async (reason) => {
     logger.info(`User disconnected ${socket.id} beacuse of ${reason}`)

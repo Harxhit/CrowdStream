@@ -20,7 +20,7 @@ type CreateTransportAck = AckResponse<{
 
 
 type ConsumerAck = AckResponse<{
-    consumer: Consumer
+    consumers: Consumer
 }>
 
 class Viewer{
@@ -179,7 +179,7 @@ class Viewer{
             throw new Error(response.code)
         }
 
-        const data = response.consumers;
+        const data = response.data.consumers;
         console.info('Type of data',typeof data)
         if(Array.isArray(data)){
             for(const consumer of Object.values(data)){
