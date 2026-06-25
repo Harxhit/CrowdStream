@@ -145,7 +145,7 @@ class Viewer{
     async connectConsumerTransport(transportId: string, dtlsParameters : any){
         console.log('[Viewer] transport connection started')
 
-        const response = await socket.timeout(5000).emitWithAck('connectConsumerTransport',transportId,dtlsParameters)
+        const response = await socket.timeout(5000).emitWithAck('connectConsumerTransport', { transportId, dtlsParameters })
         if(!response.success){
             throw new Error(response.code)
         }
