@@ -2,27 +2,69 @@ import { socket } from "./socket";
 import Room from "./room";
 import frontendMemoryRoom from "./store/room.store";
 import { Device } from "mediasoup-client";
+import type { FrontendRoom, ProducerKind } from "./types/room.types";
+import { iceServers } from "./utils/iceServer.util";
+import type { AckResponse } from "./utils/ack.util";
+import type { RtpCapabilities, IceCandidate , IceParameters, DtlsParameters } from "mediasoup-client/types";
 
+
+type CreateRoomAck = AckResponse<{
+  roomId: string
+}>
+
+type RouterCapabilitesAck = AckResponse<{
+  rtpCapabilites: RtpCapabilities 
+}>
+
+type CreateTransportAck = AckResponse<{
+  id: string;
+  iceParameters: IceParameters;
+  iceCandidates: IceCandidate[];
+  dtlsParameters: DtlsParameters;
+}>;
+
+type ProducerAck = AckResponse<{
+  producerId: string; 
+  producerKind: ProducerKind
+}>
 
 class Broadcaster {
-  private room: Room | null = null;
+  private room: FrontendRoom | null = null;
 
   //Creates the room
   async createRoom(): Promise<Room> {
     console.log("[Broadcaster] Room creation started");
       
-    const response = await socket.timeout(5000).emitWithAck('createRoom')
+    const response: CreateRoomAck = await socket.timeout(5000).emitWithAck('createRoom')
 
     if(!response.success){
       throw new Error(response.code)
     }
-    const room = new Room(response.roomId);
-  
-    frontendMemoryRoom.set(response.roomId, room);
-  
+    const roomId = response.data.roomId; 
+    const room: FrontendRoom = {
+      id: roomId, 
+      broadcasters: new Map(), 
+      viewers: new Map()
+    }
+
+    const socketId = socket.id; 
+    if(!socketId){
+      throw new Error('SocketId not found')
+    }
+
+    room.broadcasters.set(socketId, {
+      device: null,
+      transports: new Map(), 
+      producers: new Map(), 
+      joinedAt: new Date(), 
+      role: 'host'
+    })
+
     this.room = room;
-  
-    console.log("[Broadcaster] Room saved to frontend memory:", frontendMemoryRoom);
+
+    frontendMemoryRoom.set(roomId, room)
+
+    console.log("[Broadcaster] Room saved to frontend memory:", room);
   
     return room;
   }
@@ -30,43 +72,82 @@ class Broadcaster {
   async getRouterCapabilities(roomId: string) {
     console.log('[Broadcaster] router capabilites started')
     
-    const response = await socket.timeout(5000).emitWithAck('getRouterRtpCapabilities', roomId)
+    const response:RouterCapabilitesAck = await socket.timeout(5000).emitWithAck('getRouterRtpCapabilities', roomId)
 
     if(!response.success){
       throw new Error(response.code); 
     }
 
+    const socketId  = socket.id; 
+    if(!socketId){
+      throw new Error('SocketId not found')
+    }
+
+    const room = frontendMemoryRoom.get(roomId);
+    
+    const broadcaster = room?.broadcasters.get(socketId); 
+    if(!broadcaster){
+      throw new Error(`Broadcaster not found with socketId: ${socketId}`)
+    }
+
+    broadcaster.rtpCapabilities = response.data.rtpCapabilites
+
     console.log("[Broadcaster] router capabilities executed");
 
-    return response.rtpCapabilites;
+    return response.data.rtpCapabilites;
   }
 
 
   async loadDevice(routerRtpCapabilities: any) {
+    console.log("[Broadcaster] device loading");
     if (!this.room){
       throw new Error('Room not created')
     }
-    console.log("[Broadcaster] device loading");
-
-    this.room.device = new Device();
-    await this.room.device.load({ routerRtpCapabilities });
 
     const room = frontendMemoryRoom.get(this.room.id);
     if (!room){
       throw new Error('Room not found')
     }
-    room.device = this.room.device;
+
+    const socketId = socket.id; 
+    if(!socketId){
+      throw new Error('SocketId not found')
+    }
+    const broadcaster = room.broadcasters.get(socketId)
+    if(!broadcaster){
+      throw new Error('Broadcaster not found')
+    }
+
+    const device = new Device()
+    await device.load({ routerRtpCapabilities });
+    broadcaster.device = device
 
     console.log("[Broadcaster] device loaded.");
   }
 
-
   async createBroadcasterTransport(roomId: string){
-    if(!this.room || !this.room.device) return new Error('Device not ready')
-
     console.log('[Broadcaster] Requesting broadcaster transport')
 
-    const response = await socket.timeout(5000).emitWithAck('createBroadcasterTransport', roomId)
+    const room = frontendMemoryRoom.get(roomId)
+    if(!roomId){
+      throw new Error('Room not found')
+    }
+
+    const socketId = socket.id 
+    if(!socketId){
+      throw new Error('SocketId not found')
+    }
+    const broadcaster = room?.broadcasters.get(socketId)
+    if(!broadcaster){
+      throw new Error('Broadcaster not found')
+    }
+
+    const broadcasterDevice = broadcaster.device; 
+    if(broadcaster === null){
+      throw new Error('Broadcaster device not loaded')
+    }
+
+    const response: CreateTransportAck = await socket.timeout(5000).emitWithAck('createBroadcasterTransport', roomId)
 
     if (!response.success) {
       throw new Error(response.code);
@@ -74,42 +155,25 @@ class Broadcaster {
 
     console.log("[Broadcaster] Transport params received");
 
-    const {id, iceParameters,iceCandidates,dtlsParameters} = response;
-
-    // const iceServers = [
-    //   { urls: 'stun:stun.l.google.com:19302' },
-    // ];
-
+    const {id, iceParameters,iceCandidates,dtlsParameters} = response.data;
 
     //Create browser transport
-    this.room.sendTransport = this.room?.device.createSendTransport({
+    const sendTransport = broadcasterDevice!.createSendTransport({
       id, 
       iceParameters,
       iceCandidates,
       dtlsParameters,
-      iceServers: [
-        {
-          urls: [
-            import.meta.env.VITE_TURN_UDP_URL,
-            import.meta.env.VITE_TURN_TCP_URL,
-            import.meta.env.VITE_TURNS_TCP_URL
-          ],
-          username: import.meta.env.VITE_TURN_USERNAME,
-          credential: import.meta.env.VITE_TURN_CREDENTIAL
-        }
-      ],
+      iceServers,
       iceTransportPolicy: "all" 
     })
-    
-    const room = frontendMemoryRoom.get(roomId)
-    if(!room) return new Error('Room not found')
-    room.sendTransport = this.room.sendTransport; 
+
+    broadcaster.transports.set('producer', sendTransport)
 
     //DTLS Handshake
-    this.room.sendTransport.on('connect', ({dtlsParameters},cb) => {
+    sendTransport.on('connect', ({dtlsParameters},cb) => {
       console.log('[Broadcaster] transport connect event')
 
-      this.connectBroadcastersTransport(this.room!.sendTransport!.id, dtlsParameters)
+      this.connectBroadcastersTransport(sendTransport.id, dtlsParameters)
       .then(() => {
         console.log('[Broadcaster] dtls connected')
         cb()
@@ -118,7 +182,7 @@ class Broadcaster {
     })
 
     //Producer handshake
-    this.room.sendTransport.on(
+    sendTransport.on(
       "produce",
       async (
         { kind, rtpParameters, appData },
@@ -126,12 +190,11 @@ class Broadcaster {
         errback
       ) => {
         try {
-          const response =
+          const response: ProducerAck =
             await socket.timeout(5000).emitWithAck(
               "produce",
               {
-                transportId:
-                  this.room!.sendTransport!.id,
+                transportId: sendTransport.id,
                 kind,
                 rtpParameters,
                 appData
@@ -142,23 +205,15 @@ class Broadcaster {
             throw new Error(response.code);
           }
 
-          this.room?.producer.set(
-            response.producerId,
-            { kind, appData }
-          );
+          const producerId = response.data.producerId; 
 
-          const room =
-            frontendMemoryRoom.get(roomId);
-
-          if (room) {
-            room.producer.set(
-              response.producerId,
-              { kind, appData }
-            );
-          }
+          broadcaster.producers.set(producerId,{
+            kind, 
+            appData
+          })
 
           callback({
-            id: response.producerId
+            id: response.data.producerId
           });
 
         } catch (error) {
@@ -167,11 +222,11 @@ class Broadcaster {
       }
     );
 
-    this.room.sendTransport.on('connectionstatechange' , (state) => {
+    sendTransport.on('connectionstatechange' , (state) => {
       console.log('[Broadcaster] transport state', state)
     })
 
-    this.room.sendTransport.on('icegatheringstatechange', (state) => {
+    sendTransport.on('icegatheringstatechange', (state) => {
       console.log('[Broadcaster state]',state)
     })
   }
@@ -215,7 +270,25 @@ class Broadcaster {
 
 
   async startProducing(){
-    if(!this.room?.sendTransport) return new Error('Transport not ready')
+    const roomId = this.room?.id; 
+    if(!roomId){
+      throw new Error('RoomId not found')
+    }
+    const room = frontendMemoryRoom.get(roomId); 
+    if(!room){
+      throw new Error('Room not found')
+    }
+    const socketId = socket.id; 
+    if(!socketId){
+      throw new Error('SocketId not found')
+    }
+
+    const broadcaster = room.broadcasters.get(socketId)
+    const sendTransport = broadcaster?.transports.get('producer')
+
+    if(!sendTransport){
+      return new Error('Transport not ready')
+    } 
 
     const stream = await this.getUserMedia()
 
@@ -223,13 +296,10 @@ class Broadcaster {
     const audioTrack = stream.getAudioTracks()[0]; 
 
     console.log('[Broadcaster] producing video')
-    await this.room?.sendTransport?.produce({track : videoTrack})
+    await sendTransport.produce({track : videoTrack})
 
     console.log('[Broadcaster] producing audio')
-    await this.room!.sendTransport!.produce({track : audioTrack}); 
-
-    console.log('Frontend room', frontendMemoryRoom.get(this.room.id))
-
+    await sendTransport.produce({track : audioTrack}); 
   }
 
 }

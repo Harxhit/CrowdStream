@@ -44,23 +44,15 @@ class Viewer{
     async createViewerTransport(roomId:string){
         if(!this.room || !this.room.device) return new Error('Room or device not found')
 
-        const params  = await new Promise<any>((resolve , reject) => {    
-            const timeOut = setTimeout(() => {
-                reject(new Error('Transport timeout'))
-            },5000)
+        const response = await socket.timeout(5000).emitWithAck('createViewerTransport',roomId)
+        if(!response.sucess){
+            throw new Error(response.code)
+        }
 
-            socket.once('viewerTransportCreated' , (data) => {
-                clearTimeout(timeOut); 
-                resolve(data)
-            })
-
-            socket.emit('createViewerTransport', {roomId})
-        })
-
-        console.log('[Viewer] transport recieved', params)
+        console.log('[Viewer] transport recieved', response.data)
 
 
-        const {id,iceParameters,iceCandidates,dtlsParameters} = params;
+        const {id,iceParameters,iceCandidates,dtlsParameters} = response.data;
 
         
         //Create browser rec transport 
@@ -102,45 +94,25 @@ class Viewer{
     }
 
     async connectConsumerTransport(transportId: string, dtlsParameters : any){
-    console.log('[Viewer] transport connection started')
+        console.log('[Viewer] transport connection started')
 
-    return new Promise<void>((resolve,reject) => {
-      const timeOut = setTimeout(() => {
-        reject(new Error('Transport connection error'))
-      },5000)
+        const response = await socket.timeout(5000).emitWithAck('connectConsumerTransport',transportId,dtlsParameters)
+        if(!response.success){
+            throw new Error(response.code)
+        }
 
-      socket.once('consumerTransportConnected', () => {
-        clearTimeout(timeOut)
-        resolve()
-      })
+        console.log('[Viewer] transport connected')
 
-
-      socket.emit('connectConsumerTransport', {
-        transportId, dtlsParameters
-      })
-
-      console.log('[Broadcaster] transport connection executed')
-
-    })
     }
 
     async consumeMedia(roomId: string , rtpCapabilities:any){
-        
-        const data = await new Promise<any>((resolve,reject) => {
-            const timeOut = setTimeout(() => {
-                reject('Consume timeout')
-            }, 5000);
 
-            socket.once('consumerCreated' , (params) => {
-                clearTimeout(timeOut)
-                console.log("Params" ,params)
-                resolve(params)
-            })
-
-            socket.emit('consume', {roomId, rtpCapabilities})
-        })
-        
-
+        const response = await socket.timeout(5000).emitWithAck('consume',roomId,rtpCapabilities)
+        if(!response.success){
+            throw new Error(response.code)
+        }
+        const data = response.data; 
+        console.log('Type of data',typeof data)
         if(Array.isArray(data)){
             for(const consumer of Object.values(data)){
 
@@ -163,23 +135,16 @@ class Viewer{
     async resumeConsumer(roomId:string){
         const room = frontendMemoryRoom.get(roomId); 
 
-        return new Promise<void>((resolve,reject) => {
-            const timeOut = setTimeout(() => {
-                reject(new Error('Resume consumer timeout'))
-            },5000)
-            if(!room) return reject(new Error('Room not found'))
+        if(!room || room.consumers.size === 0){
+            throw new Error("Consumer not found")
+        }
 
-            if(room.consumers.size === 0) return reject(new Error('Consumer not found'))
-
-            socket.once('resumed', () => {
-                clearTimeout(timeOut)
-                resolve()
-            })
-
-            socket.emit('resumeConsumer', {roomId})
-    
-
-        })
+        for(const consumer of room.consumers.values()){
+            const response = await socket.timeout(5000).emitWithAck('resumeConsumer', roomId, consumer.id)
+            if(!response.success){
+                throw new Error(response.code)
+            }
+        }
 
     }
 

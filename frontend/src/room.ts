@@ -1,20 +1,14 @@
-import type { Transport , Consumer , Device , RtpCapabilities } from "mediasoup-client/types";
+import type { FrontendBroadcaster, FrontendViewer } from "./types/room.types";
 
+class Room {
+  id: string;
 
-class Room{
+  broadcasters = new Map<string, FrontendBroadcaster>();
+  viewers = new Map<string, FrontendViewer>();
 
-    id:string; 
-    device: Device | null = null;
-    rtpCapabilities: RtpCapabilities | null = null;
-    sendTransport : Transport | null = null
-    viewerTransport: Transport | null = null; 
-    recTransport : Transport | null = null; 
-    producer = new Map<string , {kind: 'audio' | 'video', appData: any}>()
-    consumers = new Map<string, Consumer>()
-
-    constructor(id:string){
-        this.id = id
-    }
+  constructor(id: string) {
+    this.id = id;
+  }
 }
 
-export default Room
+export default Room;
