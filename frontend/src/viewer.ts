@@ -179,7 +179,7 @@ class Viewer{
             throw new Error(response.code)
         }
 
-        const data = response.data; 
+        const data = response.consumers;
         console.info('Type of data',typeof data)
         if(Array.isArray(data)){
             for(const consumer of Object.values(data)){
