@@ -17,4 +17,3 @@ services:
       - /etc/envoy/envoy.yaml
       - --log-level
       - info
-      - debug
