@@ -64,19 +64,17 @@ export default function App() {
       if (!viewerRoomId) return;
 
       log("Viewer joining room...");
-      await viewer.joinRoom(viewerRoomId);
-
-      const room = viewer["room"];
-
+      const caps = await viewer.joinRoom(viewerRoomId);
+      console.log(caps,'Caps')
       log("Loading device...");
-      await viewer.loadDevice(room!.rtpCapabilities);
+      await viewer.loadDevice(caps);
 
       log("Creating recv transport...");
       await viewer.createViewerTransport(viewerRoomId);
 
 
       log('Consume media')
-      await viewer.consumeMedia(viewerRoomId , room?.rtpCapabilities)
+      await viewer.consumeMedia(viewerRoomId , caps)
 
       log("Resume consumer")
       await viewer.resumeConsumer(viewerRoomId); 

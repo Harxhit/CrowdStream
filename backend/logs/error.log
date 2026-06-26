@@ -1187,3 +1187,15 @@
     at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
     at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
     at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-06-25 23:24:49 error: Router not found
+2026-06-25 23:24:49 error: Error: Router not found
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:30:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-06-25 23:28:21 error: Router not found
+2026-06-25 23:28:21 error: Error: Router not found
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:32:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-06-25 23:59:32 error: Consumer not found
+2026-06-26 00:01:09 error: Consumer not found
+2026-06-26 00:14:55 error: Consumer not found
+2026-06-26 00:17:14 error: Consumer not found

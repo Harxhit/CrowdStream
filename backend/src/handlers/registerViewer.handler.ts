@@ -7,7 +7,7 @@ import {
   resumeConsumer,
   pauseConsumer,
 } from "../consumer/consumer.handler";
-import { getRouter, routerToRoom } from "../mediasoup/router";
+import { getRouter, roomToRouter, routerToRoom } from "../mediasoup/router";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
@@ -19,8 +19,15 @@ const registerViewerHanlder = async (socket: Socket) => {
       await joinAsViewer(roomId, socket.id);
 
       socket.data.roomId = roomId;
+      const room = getRoom(roomId); 
+      if(!room){
+        ack({
+          success:false, 
+          code: 'ROOM_NOT_FOUND'
+        })
+      }
 
-      const routerId = routerToRoom.get(roomId); 
+      const routerId = roomToRouter.get(roomId); 
       if(!routerId){
         logger.error('Router not found')
           ack({
@@ -30,14 +37,20 @@ const registerViewerHanlder = async (socket: Socket) => {
         throw new Error("Router not found")
       }
       const router = getRouter(routerId)
+      const broadcasters = Array.from(room.broadcasters.entries()).map(
+        ([socketId, broadcaster]) => ({
+          socketId,
+          role: broadcaster.role,
+        })
+      );
 
       //Gets rtp capabilities
       const rtpCapabilities = router.rtpCapabilities
-
       ack({
         success: true, 
         data: {
-          rtpCapabilities
+          rtpCapabilities, 
+          broadcasters
         }
       })
 

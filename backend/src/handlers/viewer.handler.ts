@@ -18,9 +18,9 @@ const joinAsViewer = async (roomId: string, socketId: string) => {
     })
   
     logger.info('Viewer joined the room',{
-        socketId: socketId, 
-        roomId: roomId, 
-        durationMs: Date.now() - startTime
+      socketId: socketId, 
+      roomId: roomId, 
+      durationMs: Date.now() - startTime
     })
   }catch(error){
     logger.error('Internal server error',{
@@ -193,8 +193,8 @@ const consume = async (
           paused : true
         })
         
-        viewer?.consumers.set(producer.id , consumer)
-
+        viewer?.consumers.set(consumer.id , consumer)  
+        
         consumerParams.push({
           id: consumer.id,
           producerId: producer.id,
@@ -204,9 +204,10 @@ const consume = async (
 
       }
     }
+
     logger.info('Viewer media consume successfully executed',{
-        durationMs: Date.now() - startTime, 
-        roomId: roomId
+      durationMs: Date.now() - startTime, 
+      roomId: roomId
     })
     return consumerParams
   } catch (error) {

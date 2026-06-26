@@ -76,6 +76,8 @@ const resumeConsumer = async(
       });
       throw new Error("Viewer not found");
     }
+    console.log('ConsumerId frontend',consumerId)
+    console.log("Viewer details",viewer)
     const consumer: Consumer | undefined = viewer.consumers.get(consumerId)
     if (consumer === undefined) {
       logger.error("Consumer not found",{

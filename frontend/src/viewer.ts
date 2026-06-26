@@ -2,14 +2,20 @@ import Room from "./room";
 import { socket } from "./socket";
 import { Device } from "mediasoup-client";
 import frontendMemoryRoom from "./store/room.store";
-import type { FrontendViewer } from "./types/room.types";
+import type { FrontendViewer , FrontendRoom} from "./types/room.types";
 import type { AckResponse } from "./utils/ack.util";
 import type { RtpCapabilities, IceParameters, IceCandidate, DtlsParameters, Consumer } from "mediasoup-client/types";
 import { iceServers } from "./utils/iceServer.util";
 
+type BroadcasterInfo = {
+  socketId: string;
+  role: "host" | "co-host";
+};
+
 type JoinRoomAck = AckResponse<{
-    rtpCapabilities: RtpCapabilities
-}>
+  rtpCapabilities: RtpCapabilities;
+  broadcasters: BroadcasterInfo[];
+}>;
 
 type CreateTransportAck = AckResponse<{
   id: string;
@@ -34,11 +40,14 @@ class Viewer{
             throw new Error(response.code)
         }
 
-        const room = frontendMemoryRoom.get(roomId); 
+        const room: FrontendRoom = {
+            id: roomId, 
+            broadcasters: new Map(), 
+            viewers: new Map()
+        }
         if(!room){
             throw new Error('Room not found')
         }
-        this.room = room; 
         const socketId = socket.id; 
         if(!socketId){
             throw new Error('SocketId not found')
@@ -54,9 +63,23 @@ class Viewer{
             rtpCapabilities: rtpCapabilities,
         };
 
-        room?.viewers.set(socketId, viewer)
+        for (const broadcaster of response.data.broadcasters) {
+            room.broadcasters.set(broadcaster.socketId, {
+                device: null,
+                transports: new Map(),
+                producers: new Map(),
+                joinedAt: new Date(),
+                role: broadcaster.role,
+                rtpCapabilities: undefined,
+            });
+        }
 
+        room?.viewers.set(socketId, viewer)
+        
+        frontendMemoryRoom.set(roomId, room);
+        this.room = room
         console.info('[Viewer] joined room',socketId)
+        return response.data.rtpCapabilities
     }
     
     async loadDevice(routerRtpCapabilities: any) {
@@ -64,9 +87,7 @@ class Viewer{
 
     if (!this.room) throw new Error("Room not created");
     const roomId = this.room.id; 
-    if(!roomId){
-        throw new Error('RoomId not found')
-    }
+    console.log('roomId',roomId)
     const room = frontendMemoryRoom.get(roomId)
     if(!room){
         throw new Error('Room not found')
