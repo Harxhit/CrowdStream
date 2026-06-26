@@ -13115,3 +13115,329 @@
 2026-06-26 11:12:15 info: Transport DTLS state changed
 2026-06-26 11:12:41 info: Transport ICE state changed
 2026-06-26 11:12:43 info: Transport ICE state changed
+2026-06-26 18:23:43 info: Client connected: doXSW7J9g7WFKHCzAAAB
+2026-06-26 18:24:25 info: Client connected: SU2_8eMUiyB040_wAAAD
+2026-06-26 18:24:27 info: Create room started
+2026-06-26 18:24:27 info: Creating worker started
+2026-06-26 18:24:27 info: Worker created successfully
+2026-06-26 18:24:27 info: Creation of router started
+2026-06-26 18:24:27 info: Router created
+2026-06-26 18:24:27 info: Creation of room successfully executed
+2026-06-26 18:24:27 info: Get room started
+2026-06-26 18:24:27 info: Get room executed successfully
+2026-06-26 18:24:27 info: Broadcaster added to the room
+2026-06-26 18:24:27 info: Room created successfully
+2026-06-26 18:24:27 info: Get getRouterRtpCapabilities started
+2026-06-26 18:24:27 info: Fetching of router started
+2026-06-26 18:24:27 info: Fetching of router executed successfully
+2026-06-26 18:24:27 info: Rtp capabilities fetched successfully
+2026-06-26 18:24:27 info: Get room started
+2026-06-26 18:24:27 info: Get room executed successfully
+2026-06-26 18:24:27 info: Transport created : c4064d7b-ed0a-4c66-b11e-66ebbce2f6ed
+2026-06-26 18:24:27 info: Get room started
+2026-06-26 18:24:27 info: Get room executed successfully
+2026-06-26 18:24:30 info: Connect broadcaster transport listener started
+2026-06-26 18:24:30 info: Get room started
+2026-06-26 18:24:30 info: Get room executed successfully
+2026-06-26 18:24:30 info: Connect broadcaster transport executed successfully
+2026-06-26 18:24:30 info: Transport ICE state changed
+2026-06-26 18:24:30 info: Transport DTLS state changed
+2026-06-26 18:24:30 info: Producer listener started
+2026-06-26 18:24:30 info: Get room started
+2026-06-26 18:24:30 info: Get room executed successfully
+2026-06-26 18:24:30 info: Transport DTLS state changed
+2026-06-26 18:24:30 info: Producer listener executed successfully:
+2026-06-26 18:24:30 info: Producer listener started
+2026-06-26 18:24:30 info: Get room started
+2026-06-26 18:24:30 info: Get room executed successfully
+2026-06-26 18:24:30 info: Producer listener executed successfully:
+2026-06-26 18:24:37 info: Join as viewer listner started
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Viewer joined the room
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Fetching of router started
+2026-06-26 18:24:37 info: Fetching of router executed successfully
+2026-06-26 18:24:37 info: Join viewer listner successfully executed
+2026-06-26 18:24:37 info: Create viewer transport listner started
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Transport created : 797c5e18-763b-48e9-b0cc-723fe5a4f31f
+2026-06-26 18:24:37 info: Viewer transport successfully created
+2026-06-26 18:24:37 info: Create viewer transport listner successfully executed
+2026-06-26 18:24:37 info: Consume lister started
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Viewer media consume successfully executed
+2026-06-26 18:24:37 info: Consume lister executed successfully
+2026-06-26 18:24:37 info: Connect consumer listner started
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Consumer transport connected successfully
+2026-06-26 18:24:37 info: Connect consumer listner executed successfully
+2026-06-26 18:24:37 info: Transport ICE state changed
+2026-06-26 18:24:37 info: Transport DTLS state changed
+2026-06-26 18:24:37 info: Transport DTLS state changed
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Viewer consumer resumed
+2026-06-26 18:24:37 info: Resume consumer listener executed successfully
+2026-06-26 18:24:37 info: Get room started
+2026-06-26 18:24:37 info: Get room executed successfully
+2026-06-26 18:24:37 info: Viewer consumer resumed
+2026-06-26 18:24:37 info: Resume consumer listener executed successfully
+2026-06-26 18:25:24 info: Transport DTLS state changed
+2026-06-26 18:25:24 info: User disconnected SU2_8eMUiyB040_wAAAD beacuse of transport close
+2026-06-26 18:25:25 info: User disconnected doXSW7J9g7WFKHCzAAAB beacuse of transport close
+2026-06-26 18:25:25 info: Transport DTLS state changed
+2026-06-26 18:40:10 info: Client connected: xOzeDYGUmKpJtR5nAAAB
+2026-06-26 18:40:15 info: Client connected: fHMwdHzjkghWO9oGAAAD
+2026-06-26 18:40:17 info: Create room started
+2026-06-26 18:40:17 info: Creating worker started
+2026-06-26 18:40:17 info: Worker created successfully
+2026-06-26 18:40:17 info: Creation of router started
+2026-06-26 18:40:17 info: Router created
+2026-06-26 18:40:17 info: Creation of room successfully executed
+2026-06-26 18:40:17 info: Get room started
+2026-06-26 18:40:17 info: Get room executed successfully
+2026-06-26 18:40:17 info: Broadcaster added to the room
+2026-06-26 18:40:17 info: Room created successfully
+2026-06-26 18:40:17 info: Get getRouterRtpCapabilities started
+2026-06-26 18:40:17 info: Fetching of router started
+2026-06-26 18:40:17 info: Fetching of router executed successfully
+2026-06-26 18:40:17 info: Rtp capabilities fetched successfully
+2026-06-26 18:40:17 info: Get room started
+2026-06-26 18:40:17 info: Get room executed successfully
+2026-06-26 18:40:17 info: Transport created : 8cb9f03c-dddb-4803-9795-665373b5d3b5
+2026-06-26 18:40:17 info: Get room started
+2026-06-26 18:40:17 info: Get room executed successfully
+2026-06-26 18:40:20 info: Connect broadcaster transport listener started
+2026-06-26 18:40:20 info: Get room started
+2026-06-26 18:40:20 info: Get room executed successfully
+2026-06-26 18:40:20 info: Connect broadcaster transport executed successfully
+2026-06-26 18:40:20 info: Transport ICE state changed
+2026-06-26 18:40:20 info: Transport DTLS state changed
+2026-06-26 18:40:20 info: Producer listener started
+2026-06-26 18:40:20 info: Get room started
+2026-06-26 18:40:20 info: Get room executed successfully
+2026-06-26 18:40:20 info: Producer listener executed successfully:
+2026-06-26 18:40:20 info: Transport DTLS state changed
+2026-06-26 18:40:20 info: Producer listener started
+2026-06-26 18:40:20 info: Get room started
+2026-06-26 18:40:20 info: Get room executed successfully
+2026-06-26 18:40:20 info: Producer listener executed successfully:
+2026-06-26 18:40:24 info: Join as viewer listner started
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Viewer joined the room
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Fetching of router started
+2026-06-26 18:40:24 info: Fetching of router executed successfully
+2026-06-26 18:40:24 info: Join viewer listner successfully executed
+2026-06-26 18:40:24 info: Create viewer transport listner started
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Transport created : 5589149e-78bc-4766-8121-286af2816846
+2026-06-26 18:40:24 info: Viewer transport successfully created
+2026-06-26 18:40:24 info: Create viewer transport listner successfully executed
+2026-06-26 18:40:24 info: Consume lister started
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Viewer media consume successfully executed
+2026-06-26 18:40:24 info: Consume lister executed successfully
+2026-06-26 18:40:24 info: Connect consumer listner started
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Consumer transport connected successfully
+2026-06-26 18:40:24 info: Connect consumer listner executed successfully
+2026-06-26 18:40:24 info: Transport ICE state changed
+2026-06-26 18:40:24 info: Transport DTLS state changed
+2026-06-26 18:40:24 info: Transport DTLS state changed
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Viewer consumer resumed
+2026-06-26 18:40:24 info: Resume consumer listener executed successfully
+2026-06-26 18:40:24 info: Get room started
+2026-06-26 18:40:24 info: Get room executed successfully
+2026-06-26 18:40:24 info: Viewer consumer resumed
+2026-06-26 18:40:24 info: Resume consumer listener executed successfully
+2026-06-26 18:41:14 info: Transport DTLS state changed
+2026-06-26 18:41:14 info: Transport DTLS state changed
+2026-06-26 18:41:14 info: User disconnected fHMwdHzjkghWO9oGAAAD beacuse of transport close
+2026-06-26 18:41:14 info: User disconnected xOzeDYGUmKpJtR5nAAAB beacuse of transport close
+2026-06-26 22:27:02 info: Client connected: oCS0Xi5dFpsmQdJKAAAB
+2026-06-26 22:27:09 info: Client connected: MtQkKzVJB0G9NQggAAAD
+2026-06-26 22:27:11 info: Create room started
+2026-06-26 22:27:11 info: Creating worker started
+2026-06-26 22:27:11 info: Worker created successfully
+2026-06-26 22:27:11 info: Creation of router started
+2026-06-26 22:27:11 info: Router created
+2026-06-26 22:27:11 info: Creation of room successfully executed
+2026-06-26 22:27:11 info: Get room started
+2026-06-26 22:27:11 info: Get room executed successfully
+2026-06-26 22:27:11 info: Broadcaster added to the room
+2026-06-26 22:27:11 info: Room created successfully
+2026-06-26 22:27:11 info: Get getRouterRtpCapabilities started
+2026-06-26 22:27:11 info: Fetching of router started
+2026-06-26 22:27:11 info: Fetching of router executed successfully
+2026-06-26 22:27:11 info: Rtp capabilities fetched successfully
+2026-06-26 22:27:11 info: Get room started
+2026-06-26 22:27:11 info: Get room executed successfully
+2026-06-26 22:27:11 info: Transport created : 9126e49c-c80a-4966-900a-fa988af8e908
+2026-06-26 22:27:11 info: Get room started
+2026-06-26 22:27:11 info: Get room executed successfully
+2026-06-26 22:27:14 info: Connect broadcaster transport listener started
+2026-06-26 22:27:14 info: Get room started
+2026-06-26 22:27:14 info: Get room executed successfully
+2026-06-26 22:27:14 info: Connect broadcaster transport executed successfully
+2026-06-26 22:27:14 info: Transport ICE state changed
+2026-06-26 22:27:14 info: Transport DTLS state changed
+2026-06-26 22:27:14 info: Producer listener started
+2026-06-26 22:27:14 info: Get room started
+2026-06-26 22:27:14 info: Get room executed successfully
+2026-06-26 22:27:14 info: Transport DTLS state changed
+2026-06-26 22:27:14 info: Producer listener executed successfully:
+2026-06-26 22:27:14 info: Producer listener started
+2026-06-26 22:27:14 info: Get room started
+2026-06-26 22:27:14 info: Get room executed successfully
+2026-06-26 22:27:14 info: Producer listener executed successfully:
+2026-06-26 22:27:20 info: Join as viewer listner started
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Viewer joined the room
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Fetching of router started
+2026-06-26 22:27:20 info: Fetching of router executed successfully
+2026-06-26 22:27:20 info: Join viewer listner successfully executed
+2026-06-26 22:27:20 info: Create viewer transport listner started
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Transport created : 734ab722-2251-41fb-a029-ac17cf0cc159
+2026-06-26 22:27:20 info: Viewer transport successfully created
+2026-06-26 22:27:20 info: Create viewer transport listner successfully executed
+2026-06-26 22:27:20 info: Consume lister started
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Viewer media consume successfully executed
+2026-06-26 22:27:20 info: Consume lister executed successfully
+2026-06-26 22:27:20 info: Connect consumer listner started
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Consumer transport connected successfully
+2026-06-26 22:27:20 info: Connect consumer listner executed successfully
+2026-06-26 22:27:20 info: Transport ICE state changed
+2026-06-26 22:27:20 info: Transport DTLS state changed
+2026-06-26 22:27:20 info: Transport DTLS state changed
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Viewer consumer resumed
+2026-06-26 22:27:20 info: Resume consumer listener executed successfully
+2026-06-26 22:27:20 info: Get room started
+2026-06-26 22:27:20 info: Get room executed successfully
+2026-06-26 22:27:20 info: Viewer consumer resumed
+2026-06-26 22:27:20 info: Resume consumer listener executed successfully
+2026-06-26 22:37:24 info: Transport DTLS state changed
+2026-06-26 22:37:24 info: User disconnected MtQkKzVJB0G9NQggAAAD beacuse of transport close
+2026-06-26 22:37:25 info: User disconnected oCS0Xi5dFpsmQdJKAAAB beacuse of transport close
+2026-06-26 22:37:25 info: Transport DTLS state changed
+2026-06-26 22:37:32 info: Client connected: kIU_l7Tx2SJ6uAaSAAAF
+2026-06-26 22:37:38 info: Client connected: yUMcHVDjMck3A9CsAAAH
+2026-06-26 22:37:41 info: Create room started
+2026-06-26 22:37:41 info: Creating worker started
+2026-06-26 22:37:41 info: Worker created successfully
+2026-06-26 22:37:41 info: Creation of router started
+2026-06-26 22:37:41 info: Router created
+2026-06-26 22:37:41 info: Creation of room successfully executed
+2026-06-26 22:37:41 info: Get room started
+2026-06-26 22:37:41 info: Get room executed successfully
+2026-06-26 22:37:41 info: Broadcaster added to the room
+2026-06-26 22:37:41 info: Room created successfully
+2026-06-26 22:37:41 info: Get getRouterRtpCapabilities started
+2026-06-26 22:37:41 info: Fetching of router started
+2026-06-26 22:37:41 info: Fetching of router executed successfully
+2026-06-26 22:37:41 info: Rtp capabilities fetched successfully
+2026-06-26 22:37:41 info: Get room started
+2026-06-26 22:37:41 info: Get room executed successfully
+2026-06-26 22:37:41 info: Transport created : 88fe7065-6297-46ce-b0fa-6c20b6a54d04
+2026-06-26 22:37:41 info: Get room started
+2026-06-26 22:37:41 info: Get room executed successfully
+2026-06-26 22:37:43 info: Connect broadcaster transport listener started
+2026-06-26 22:37:43 info: Get room started
+2026-06-26 22:37:43 info: Get room executed successfully
+2026-06-26 22:37:43 info: Connect broadcaster transport executed successfully
+2026-06-26 22:37:43 info: Transport ICE state changed
+2026-06-26 22:37:43 info: Transport DTLS state changed
+2026-06-26 22:37:43 info: Producer listener started
+2026-06-26 22:37:43 info: Get room started
+2026-06-26 22:37:43 info: Get room executed successfully
+2026-06-26 22:37:43 info: Transport DTLS state changed
+2026-06-26 22:37:43 info: Producer listener executed successfully:
+2026-06-26 22:37:43 info: Producer listener started
+2026-06-26 22:37:43 info: Get room started
+2026-06-26 22:37:43 info: Get room executed successfully
+2026-06-26 22:37:43 info: Producer listener executed successfully:
+2026-06-26 22:37:47 info: Join as viewer listner started
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Viewer joined the room
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Fetching of router started
+2026-06-26 22:37:47 info: Fetching of router executed successfully
+2026-06-26 22:37:47 info: Join viewer listner successfully executed
+2026-06-26 22:37:47 info: Create viewer transport listner started
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Transport created : aab19354-baef-45e4-9c14-d9979ec5f9cd
+2026-06-26 22:37:47 info: Viewer transport successfully created
+2026-06-26 22:37:47 info: Create viewer transport listner successfully executed
+2026-06-26 22:37:47 info: Consume lister started
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Viewer media consume successfully executed
+2026-06-26 22:37:47 info: Consume lister executed successfully
+2026-06-26 22:37:47 info: Connect consumer listner started
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Consumer transport connected successfully
+2026-06-26 22:37:47 info: Connect consumer listner executed successfully
+2026-06-26 22:37:47 info: Transport ICE state changed
+2026-06-26 22:37:47 info: Transport DTLS state changed
+2026-06-26 22:37:47 info: Transport DTLS state changed
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Viewer consumer resumed
+2026-06-26 22:37:47 info: Resume consumer listener executed successfully
+2026-06-26 22:37:47 info: Get room started
+2026-06-26 22:37:47 info: Get room executed successfully
+2026-06-26 22:37:47 info: Viewer consumer resumed
+2026-06-26 22:37:47 info: Resume consumer listener executed successfully
+2026-06-26 22:37:50 info: Transport ICE state changed
+2026-06-26 22:37:50 info: Transport ICE state changed
