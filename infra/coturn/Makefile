@@ -2,7 +2,6 @@
 .PHONY: coturn-kill
 .PHONY: coturn-start
 
-
 coturn-log: 
 	@echo "=== COTURN Log ==="
 	turnserver -c turnserver.conf
