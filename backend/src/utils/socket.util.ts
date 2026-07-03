@@ -9,7 +9,7 @@ import config from "../config/index";
 const server = createServer(app);
 const io = new Server (server, {
   cors: {
-    origin: config.corsOrigin,
+    origin: config.corsOrigin?.split(","),
     methods: ["GET", "POST"],
   },
 });
