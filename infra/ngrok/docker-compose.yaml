@@ -1,0 +1,9 @@
+services:
+  ngrok:
+    image: ngrok/ngrok:3.39.8-alpine
+    network_mode: host
+    environment:
+      NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
+    volumes:
+      - ./ngrok.yaml:/etc/ngrok.yaml:ro
+    command: start --all --config /etc/ngrok.yaml

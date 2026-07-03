@@ -1,0 +1,7 @@
+services:
+  nginx: 
+    container_name: ngix
+    network_mode: host
+    ports:
+      - 8080:80
+    image: crowdstream-ngnix-v5:latest

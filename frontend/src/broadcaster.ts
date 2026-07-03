@@ -222,12 +222,17 @@ class Broadcaster {
       }
     );
 
+
     sendTransport.on('connectionstatechange' , (state) => {
       console.log('[Broadcaster] transport state', state)
     })
-
+    
+    // sendTransport.on("connect" , () => {
+    //   console.log('[Broadcaster] transport connected')
+    // })
+    
     sendTransport.on('icegatheringstatechange', (state) => {
-      console.log('[Broadcaster state]',state)
+      console.log('[Broadcaster ice gathering state]', state)
     })
   }
 
@@ -260,12 +265,17 @@ class Broadcaster {
   async getUserMedia(){
     console.log('[Broadcaster] getting camera & mic')
 
-    const stream = await navigator.mediaDevices.getUserMedia({
-      video : true, 
-      audio : true
-    })
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video : true, 
+        audio : true
+      })
+      
+      return stream; 
+    } catch (error) {
+      console.error('Error getting media', error)
+    }
 
-    return stream; 
   }
 
 
@@ -291,6 +301,11 @@ class Broadcaster {
     } 
 
     const stream = await this.getUserMedia()
+    console.log('Stream audio', stream?.getAudioTracks())
+
+    if(!stream){
+      throw new Error('Media not found')
+    }
 
     const videoTrack = stream.getVideoTracks()[0]; 
     const audioTrack = stream.getAudioTracks()[0]; 
