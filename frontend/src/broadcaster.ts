@@ -274,6 +274,7 @@ class Broadcaster {
       return stream; 
     } catch (error) {
       console.error('Error getting media', error)
+      throw error
     }
 
   }

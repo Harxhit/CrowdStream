@@ -9,7 +9,11 @@ interface Config{
     rtcMaxPort: number; 
     announcedIp: string;
     publicIp: string; 
-    corsOrigin: string
+    corsOrigin: string;
+    mongoUrl: string; 
+    jwtSecret:string;
+    accessTokenExpiry: string; 
+    databaseName: string; 
 
 }
 
@@ -24,8 +28,12 @@ function loadConfig():Config{
     const announcedIp  = process.env.ANNOUCED_IP
     const corsOrigin  = process.env.CORS_ORIGINS
     const publicIp  = process.env.PUBLIC_IP
+    const mongoUrl = process.env.MONGO_DB_URL
+    const jwtSecret = process.env.JWT_SECRET
+    const accessTokenExpiry = process.env.ACCESS_TOKEN_EXPIRY; 
+    const databaseName = process.env.DATABASE_NAME
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
@@ -43,7 +51,11 @@ function loadConfig():Config{
         rtcMaxPort: Number(rtcMaxPort), 
         announcedIp, 
         corsOrigin, 
-        publicIp
+        publicIp,
+        mongoUrl, 
+        jwtSecret, 
+        accessTokenExpiry,
+        databaseName
     }
 }
 
