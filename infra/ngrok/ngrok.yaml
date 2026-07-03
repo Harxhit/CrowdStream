@@ -1,6 +1,6 @@
 version: 3
 
 tunnels:
-  ngnix:
+  nginx:
     proto: http
     addr: 80
