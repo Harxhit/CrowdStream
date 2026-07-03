@@ -12,8 +12,8 @@ app.get("/__ping", (_req :Request, res : Response) => {
 });
 
 app.get("/health", (_req: Request, resp: Response) => {
-  console.log('Backend health check')
-})  
+  resp.send("HEALTH OK");
+})
 
 
 server.listen(config.port,config.publicIp, () => {
