@@ -18,10 +18,10 @@ export default function authenticate(
     const payload = jwt.verify(
       token,
       process.env.JWT_SECRET!
-    ) as { id: string };
+    ) as { sub: string };
 
     request.user = {
-      id: payload.id,
+      id: payload.sub,
     };
 
     next();
