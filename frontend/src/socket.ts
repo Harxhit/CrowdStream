@@ -1,17 +1,35 @@
-import {io} from 'socket.io-client'
+import { io, Socket } from "socket.io-client";
 
-const socket = io(import.meta.env.VITE_SIGNALING_URL)
+let socket: Socket | null = null;
 
-socket.on('connect', () => {
-    console.log('Client connected', socket.id)
-})
+export function connectSocket() {
+    if (socket?.connected) return socket;
 
-socket.on("disconnect", (reason) => {
-    console.log('Socket disconncted',reason)
-})
+    socket = io(window.location.origin);
 
-socket.on('connect_error',(error) => {
-    console.log('Error', error.message)
-})
+    socket.on("connect", () => {
+        console.log("Client connected", socket?.id);
+    });
 
-export {socket}
+    socket.on("disconnect", (reason) => {
+        console.log("Socket disconnected", reason);
+    });
+
+    socket.on("connect_error", (error) => {
+        console.log("Error", error.message);
+    });
+
+    return socket;
+}
+
+export function disconnectSocket() {
+    socket?.disconnect();
+    socket = null;
+}
+
+export function getSocket() {
+    if(!socket){
+        throw new Error('Socket not connected')
+    }
+    return socket;
+}

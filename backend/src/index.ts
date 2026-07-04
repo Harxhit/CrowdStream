@@ -17,14 +17,20 @@ app.use(cookie());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
 axios.defaults.httpsAgent = new https.Agent({
   keepAlive: true,
   maxSockets: 100,
   keepAliveMsecs: 30000,
 });
 
-app.use('/api/v1', authRouter)
-app.use('/api/v1/auth',userRouter);
+app.use((req, _res, next) => {
+  console.log(req.method, req.originalUrl);
+  next();
+});
+
+app.use('/backend/api/v1', authRouter)
+app.use('/backend/api/v1/auth',userRouter);
 
 app.get("/__ping", (_req :Request, res : Response) => {
   res.send("PING OK");

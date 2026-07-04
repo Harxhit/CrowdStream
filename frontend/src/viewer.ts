@@ -1,11 +1,14 @@
 import Room from "./room";
-import { socket } from "./socket";
+import { getSocket } from "./socket";
 import { Device } from "mediasoup-client";
 import frontendMemoryRoom from "./store/room.store";
 import type { FrontendViewer , FrontendRoom} from "./types/room.types";
 import type { AckResponse } from "./utils/ack.util";
 import type { RtpCapabilities, IceParameters, IceCandidate, DtlsParameters, Consumer } from "mediasoup-client/types";
 import { iceServers } from "./utils/iceServer.util";
+import { Socket } from "socket.io-client";
+
+let socket: Socket; 
 
 type BroadcasterInfo = {
   socketId: string;
@@ -33,6 +36,7 @@ class Viewer{
     private room:Room | null = null;
 
     async joinRoom(roomId:string){
+        socket = getSocket()
         console.info('[Viewer] join room started', roomId)
 
         const response:JoinRoomAck = await socket.timeout(5000).emitWithAck('joinRoom',roomId)
