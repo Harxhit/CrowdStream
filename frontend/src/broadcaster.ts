@@ -3,7 +3,7 @@ import Room from "./room";
 import frontendMemoryRoom from "./store/room.store";
 import { Device } from "mediasoup-client";
 import type { FrontendRoom, ProducerKind } from "./types/room.types";
-import { iceServers } from "./utils/iceServer.util";
+import { getIceServers } from "./utils/iceServer.util";
 import type { AckResponse } from "./utils/ack.util";
 import type { RtpCapabilities, IceCandidate , IceParameters, DtlsParameters } from "mediasoup-client/types";
 import type { Socket } from "socket.io-client";
@@ -128,6 +128,8 @@ class Broadcaster {
     console.log("[Broadcaster] device loaded.");
   }
 
+
+
   async createBroadcasterTransport(roomId: string){
     console.log('[Broadcaster] Requesting broadcaster transport')
 
@@ -149,7 +151,7 @@ class Broadcaster {
     if(!broadcasterDevice){
       throw new Error('Broadcaster device not loaded')
     }
-
+    const iceServers = await getIceServers(); 
     const response: CreateTransportAck = await socket.timeout(5000).emitWithAck('createBroadcasterTransport', roomId)
 
     if (!response.success) {

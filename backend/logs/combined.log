@@ -14817,3 +14817,111 @@
 2026-07-04 17:41:19 info: Get room executed successfully
 2026-07-04 17:41:19 info: Producer listener executed successfully:
 2026-07-04 17:41:52 info: User disconnected BeHQB5UNCTZeAY1dAAAB beacuse of transport close
+2026-07-04 18:32:21 info: Database connected successfully
+2026-07-04 18:32:32 info: SignIn started
+2026-07-04 18:32:32 info: SignIn completed
+2026-07-04 18:32:32 info: Client connected: 7gjGLDw913NTXi2oAAAB
+2026-07-04 18:32:37 info: Create room started
+2026-07-04 18:32:37 info: Creating worker started
+2026-07-04 18:32:37 info: Worker created successfully
+2026-07-04 18:32:37 info: Creation of router started
+2026-07-04 18:32:37 info: Router created
+2026-07-04 18:32:37 info: Creation of room successfully executed
+2026-07-04 18:32:37 info: Get room started
+2026-07-04 18:32:37 info: Get room executed successfully
+2026-07-04 18:32:37 info: Broadcaster added to the room
+2026-07-04 18:32:37 info: Room created successfully
+2026-07-04 18:32:37 info: Get getRouterRtpCapabilities started
+2026-07-04 18:32:37 info: Fetching of router started
+2026-07-04 18:32:37 info: Fetching of router executed successfully
+2026-07-04 18:32:37 info: Rtp capabilities fetched successfully
+2026-07-04 18:32:37 info: Get room started
+2026-07-04 18:32:37 info: Get room executed successfully
+2026-07-04 18:32:37 info: Transport created : df0aa570-22c3-43be-a30a-4f60046be904
+2026-07-04 18:32:37 info: Get room started
+2026-07-04 18:32:37 info: Get room executed successfully
+2026-07-04 18:32:39 info: Connect broadcaster transport listener started
+2026-07-04 18:32:39 info: Get room started
+2026-07-04 18:32:39 info: Get room executed successfully
+2026-07-04 18:32:39 info: Connect broadcaster transport executed successfully
+2026-07-04 18:32:39 info: Transport ICE state changed
+2026-07-04 18:32:39 info: Transport DTLS state changed
+2026-07-04 18:32:39 info: Producer listener started
+2026-07-04 18:32:39 info: Get room started
+2026-07-04 18:32:39 info: Get room executed successfully
+2026-07-04 18:32:39 info: Producer listener executed successfully:
+2026-07-04 18:32:39 info: Transport DTLS state changed
+2026-07-04 18:32:39 info: Producer listener started
+2026-07-04 18:32:39 info: Get room started
+2026-07-04 18:32:39 info: Get room executed successfully
+2026-07-04 18:32:39 info: Producer listener executed successfully:
+2026-07-04 18:37:20 info: User disconnected 7gjGLDw913NTXi2oAAAB beacuse of transport close
+2026-07-04 18:37:20 info: Transport DTLS state changed
+2026-07-04 18:37:48 info: Transport ICE state changed
+2026-07-04 18:38:19 info: SignIn started
+2026-07-04 18:38:19 info: SignIn completed
+2026-07-04 18:38:19 info: Client connected: CzlQqtiO7QtlN1v8AAAD
+2026-07-04 18:38:22 info: Create room started
+2026-07-04 18:38:22 info: Creating worker started
+2026-07-04 18:38:22 info: Worker created successfully
+2026-07-04 18:38:22 info: Creation of router started
+2026-07-04 18:38:22 info: Router created
+2026-07-04 18:38:22 info: Creation of room successfully executed
+2026-07-04 18:38:22 info: Get room started
+2026-07-04 18:38:22 info: Get room executed successfully
+2026-07-04 18:38:22 info: Broadcaster added to the room
+2026-07-04 18:38:22 info: Room created successfully
+2026-07-04 18:38:22 info: Get getRouterRtpCapabilities started
+2026-07-04 18:38:22 info: Fetching of router started
+2026-07-04 18:38:22 info: Fetching of router executed successfully
+2026-07-04 18:38:22 info: Rtp capabilities fetched successfully
+2026-07-04 18:38:22 info: Get room started
+2026-07-04 18:38:22 info: Get room executed successfully
+2026-07-04 18:38:22 info: Transport created : 08d27a59-0df4-42bc-a6fd-f380573259b3
+2026-07-04 18:38:22 info: Get room started
+2026-07-04 18:38:22 info: Get room executed successfully
+2026-07-04 18:38:24 info: Create room started
+2026-07-04 18:38:24 info: Creating worker started
+2026-07-04 18:38:24 info: Worker created successfully
+2026-07-04 18:38:24 info: Creation of router started
+2026-07-04 18:38:24 info: Router created
+2026-07-04 18:38:24 info: Creation of room successfully executed
+2026-07-04 18:38:24 info: Get room started
+2026-07-04 18:38:24 info: Get room executed successfully
+2026-07-04 18:38:24 info: Broadcaster added to the room
+2026-07-04 18:38:24 info: Room created successfully
+2026-07-04 18:38:24 info: Get getRouterRtpCapabilities started
+2026-07-04 18:38:24 info: Fetching of router started
+2026-07-04 18:38:24 info: Fetching of router executed successfully
+2026-07-04 18:38:24 info: Rtp capabilities fetched successfully
+2026-07-04 18:38:24 info: Get room started
+2026-07-04 18:38:24 info: Get room executed successfully
+2026-07-04 18:38:24 info: Transport created : d3405319-3311-40d8-af7c-0d1ff42a6e9b
+2026-07-04 18:38:24 info: Get room started
+2026-07-04 18:38:24 info: Get room executed successfully
+2026-07-04 18:38:25 info: Connect broadcaster transport listener started
+2026-07-04 18:38:25 info: Get room started
+2026-07-04 18:38:25 info: Get room executed successfully
+2026-07-04 18:38:25 info: Connect broadcaster transport executed successfully
+2026-07-04 18:38:25 info: Transport ICE state changed
+2026-07-04 18:38:25 info: Transport DTLS state changed
+2026-07-04 18:38:25 info: Producer listener started
+2026-07-04 18:38:25 info: Get room started
+2026-07-04 18:38:25 info: Get room executed successfully
+2026-07-04 18:38:25 info: Producer listener executed successfully:
+2026-07-04 18:38:25 info: Transport DTLS state changed
+2026-07-04 18:38:25 info: Producer listener started
+2026-07-04 18:38:25 info: Get room started
+2026-07-04 18:38:25 info: Get room executed successfully
+2026-07-04 18:38:25 info: Producer listener executed successfully:
+2026-07-04 18:38:25 info: Producer listener started
+2026-07-04 18:38:25 info: Get room started
+2026-07-04 18:38:25 info: Get room executed successfully
+2026-07-04 18:38:25 info: Producer listener executed successfully:
+2026-07-04 18:38:25 info: Producer listener started
+2026-07-04 18:38:25 info: Get room started
+2026-07-04 18:38:25 info: Get room executed successfully
+2026-07-04 18:38:25 info: Producer listener executed successfully:
+2026-07-04 18:39:24 info: User disconnected CzlQqtiO7QtlN1v8AAAD beacuse of transport close
+2026-07-04 18:39:24 info: Transport DTLS state changed
+2026-07-04 18:39:53 info: Transport ICE state changed

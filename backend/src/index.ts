@@ -10,6 +10,7 @@ import { userRouter } from "./routes/user.route";
 import {authRouter} from "./routes/auth.route"
 import express from 'express'
 import connectToDataBase from "./database";
+import { turnRouter } from "./routes/turn.route";
 
 app.use(cors());
 
@@ -31,6 +32,7 @@ app.use((req, _res, next) => {
 
 app.use('/backend/api/v1', authRouter)
 app.use('/backend/api/v1/auth',userRouter);
+app.use('/backend/api/v1/turn',turnRouter);
 
 app.get("/__ping", (_req :Request, res : Response) => {
   res.send("PING OK");
