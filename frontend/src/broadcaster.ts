@@ -274,12 +274,13 @@ class Broadcaster {
       return stream; 
     } catch (error) {
       console.error('Error getting media', error)
+      throw error
     }
 
   }
 
 
-  async startProducing(){
+  async startProducing(stream:any){
     const roomId = this.room?.id; 
     if(!roomId){
       throw new Error('RoomId not found')
@@ -300,7 +301,6 @@ class Broadcaster {
       return new Error('Transport not ready')
     } 
 
-    const stream = await this.getUserMedia()
     console.log('Stream audio', stream?.getAudioTracks())
 
     if(!stream){
