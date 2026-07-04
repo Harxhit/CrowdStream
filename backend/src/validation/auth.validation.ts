@@ -32,9 +32,11 @@ export const signUpSchema = Joi.object({
 export const signInSchema = Joi.object({
   email: Joi.string()
     .trim()
-    .email()
-    .required(),
-
+    .pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
+    .required()
+    .messages({
+      "string.pattern.base": "Invalid email address.",
+    }),
   password: Joi.string()
     .min(8)
     .max(128)
