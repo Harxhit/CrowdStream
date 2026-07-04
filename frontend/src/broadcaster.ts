@@ -1,4 +1,4 @@
-import { socket } from "./socket";
+import { getSocket } from "./socket";
 import Room from "./room";
 import frontendMemoryRoom from "./store/room.store";
 import { Device } from "mediasoup-client";
@@ -6,7 +6,9 @@ import type { FrontendRoom, ProducerKind } from "./types/room.types";
 import { iceServers } from "./utils/iceServer.util";
 import type { AckResponse } from "./utils/ack.util";
 import type { RtpCapabilities, IceCandidate , IceParameters, DtlsParameters } from "mediasoup-client/types";
+import type { Socket } from "socket.io-client";
 
+let socket: Socket;
 
 type CreateRoomAck = AckResponse<{
   roomId: string
@@ -34,6 +36,7 @@ class Broadcaster {
   //Creates the room
   async createRoom(): Promise<Room> {
     console.log("[Broadcaster] Room creation started");
+    socket = getSocket()
       
     const response: CreateRoomAck = await socket.timeout(5000).emitWithAck('createRoom')
 

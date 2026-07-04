@@ -48,7 +48,7 @@ const userSchema = new Schema(
     versionKey: false,
   }
 );
-userSchema.index({email: 1}, {unique: true})
+userSchema.index({username: 1}, {unique: true})
 
 export type User = InferSchemaType<typeof userSchema>;
 

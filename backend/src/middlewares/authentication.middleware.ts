@@ -11,7 +11,7 @@ function authenticate(
 ) {
   try {
     const token = request.cookies.accessToken;
-
+    console.log('Token')
     if (!token) {
       throw new Error("Unauthorized");
     }
@@ -34,7 +34,7 @@ function authenticate(
 function socketAuth(socket:Socket, next: (err?: Error) => void){
   try {
     const request = socket.request as Request; 
-    const token = request?.cookies?.accessToken; 
+    const token = request.cookies?.accessToken; 
     console.log('Token from cookie:', token ? 'Received' : 'Missing');
 
     const payload = verifyAccessToken(token); 

@@ -14631,3 +14631,189 @@
 2026-07-02 23:07:31 info: Get room executed successfully
 2026-07-02 23:07:31 info: Producer listener executed successfully:
 2026-07-02 23:10:19 info: User disconnected 61sFIQy3ehftZuPmAAAB beacuse of transport close
+2026-07-04 13:27:44 error: MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+    at new ConnectionString (/home/harshit/CrowdStream/backend/node_modules/mongodb-connection-string-url/src/index.ts:133:13)
+    at parseOptions (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/connection_string.ts:255:15)
+    at new MongoClient (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:443:32)
+    at NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:343:14)
+    at NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1075:34)
+    at Mongoose.connect (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/mongoose.js:450:15)
+    at connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:15:39)
+    at Object.<anonymous> (/home/harshit/CrowdStream/backend/src/index.ts:37:18)
+    at Module._compile (node:internal/modules/cjs/loader:1873:14)
+    at Module.m._compile (/home/harshit/CrowdStream/backend/node_modules/ts-node/src/index.ts:1618:23)
+2026-07-04 13:29:40 error: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1169:11)
+    at NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1100:11)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:15:24)
+2026-07-04 13:33:45 info: Database connected successfully
+2026-07-04 13:33:59 info: Database connected successfully
+2026-07-04 13:36:39 info: Database connected successfully
+2026-07-04 13:37:55 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 13:37:55 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 13:44:53 info: Database connected successfully
+2026-07-04 14:07:27 info: Database connected successfully
+2026-07-04 14:10:13 info: Database connected successfully
+2026-07-04 14:11:11 info: Database connected successfully
+2026-07-04 14:11:16 info: SignUp started
+2026-07-04 14:11:16 error: Validation error "password" length must be at least 8 characters long
+2026-07-04 14:11:25 info: SignUp started
+2026-07-04 14:11:26 info: SignUp completed
+2026-07-04 14:19:17 info: Database connected successfully
+2026-07-04 14:19:36 info: SignIn started
+2026-07-04 14:19:36 info: SignIn completed
+2026-07-04 14:21:54 info: Database connected successfully
+2026-07-04 14:21:54 info: Database connected successfully
+2026-07-04 14:23:14 info: Database connected successfully
+2026-07-04 14:24:22 info: Database connected successfully
+2026-07-04 14:25:45 info: SignIn started
+2026-07-04 14:25:45 info: SignIn completed
+2026-07-04 14:32:04 info: Database connected successfully
+2026-07-04 14:34:41 info: Database connected successfully
+2026-07-04 14:37:20 info: SignIn started
+2026-07-04 14:37:20 info: SignIn completed
+2026-07-04 14:37:20 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:37:20 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:40:47 info: Database connected successfully
+2026-07-04 14:41:21 info: Database connected successfully
+2026-07-04 14:41:34 info: SignIn started
+2026-07-04 14:41:34 info: SignIn completed
+2026-07-04 14:41:34 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:46:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:41:34 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:46:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:43:12 info: Database connected successfully
+2026-07-04 14:43:43 info: Database connected successfully
+2026-07-04 14:43:49 info: Database connected successfully
+2026-07-04 14:44:15 info: Database connected successfully
+2026-07-04 14:44:53 info: Database connected successfully
+2026-07-04 14:45:13 info: SignIn started
+2026-07-04 14:45:13 info: SignIn completed
+2026-07-04 14:45:13 info: Client connected: M_huQ4aWW0BcwpGkAAAB
+2026-07-04 14:45:51 info: User disconnected M_huQ4aWW0BcwpGkAAAB beacuse of transport close
+2026-07-04 17:23:57 info: Database connected successfully
+2026-07-04 17:24:23 info: SignIn started
+2026-07-04 17:24:23 error: User does not exist
+2026-07-04 17:24:32 info: SignIn started
+2026-07-04 17:24:33 info: SignIn completed
+2026-07-04 17:24:33 info: Client connected: UfLVG4Von7I-sDzaAAAB
+2026-07-04 17:25:37 info: SignIn started
+2026-07-04 17:25:38 info: SignIn completed
+2026-07-04 17:25:59 info: User disconnected UfLVG4Von7I-sDzaAAAB beacuse of transport close
+2026-07-04 17:26:13 info: SignIn started
+2026-07-04 17:26:13 info: SignIn completed
+2026-07-04 17:26:13 info: Client connected: zr-1NN8zs1UZXoGBAAAD
+2026-07-04 17:27:15 info: User disconnected zr-1NN8zs1UZXoGBAAAD beacuse of transport close
+2026-07-04 17:27:23 info: SignIn started
+2026-07-04 17:27:23 info: SignIn completed
+2026-07-04 17:27:23 info: Client connected: yCtNmbE2wm7rRU8_AAAF
+2026-07-04 17:28:09 info: User disconnected yCtNmbE2wm7rRU8_AAAF beacuse of transport close
+2026-07-04 17:31:07 info: Database connected successfully
+2026-07-04 17:31:30 info: Database connected successfully
+2026-07-04 17:32:19 info: Database connected successfully
+2026-07-04 17:32:31 info: SignIn started
+2026-07-04 17:32:31 info: SignIn completed
+2026-07-04 17:32:31 info: Client connected: iTj2Nj_65VBkPdqlAAAB
+2026-07-04 17:33:44 info: Database connected successfully
+2026-07-04 17:33:51 info: Database connected successfully
+2026-07-04 17:33:54 info: Client connected: YLb7rAJTTzujIpwpAAAB
+2026-07-04 17:34:02 info: SignIn started
+2026-07-04 17:34:02 info: SignIn completed
+2026-07-04 17:34:56 info: Database connected successfully
+2026-07-04 17:34:58 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:40:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 17:34:58 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:40:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 17:35:06 info: SignIn started
+2026-07-04 17:35:06 info: SignIn completed
+2026-07-04 17:35:06 info: Client connected: SnJrtrsnQhanPTN6AAAD
+2026-07-04 17:37:37 info: Database connected successfully
+2026-07-04 17:37:41 info: Client connected: p18kDGOhNsywl04pAAAB
+2026-07-04 17:37:53 info: Database connected successfully
+2026-07-04 17:37:58 info: Client connected: Z7WAGc1ZnBO8es99AAAB
+2026-07-04 17:38:03 info: User disconnected Z7WAGc1ZnBO8es99AAAB beacuse of transport close
+2026-07-04 17:38:49 info: Database connected successfully
+2026-07-04 17:40:38 info: Database connected successfully
+2026-07-04 17:40:56 info: SignIn started
+2026-07-04 17:40:56 info: SignIn completed
+2026-07-04 17:40:56 info: Client connected: BeHQB5UNCTZeAY1dAAAB
+2026-07-04 17:41:17 info: Create room started
+2026-07-04 17:41:17 info: Creating worker started
+2026-07-04 17:41:17 info: Worker created successfully
+2026-07-04 17:41:17 info: Creation of router started
+2026-07-04 17:41:17 info: Router created
+2026-07-04 17:41:17 info: Creation of room successfully executed
+2026-07-04 17:41:17 info: Get room started
+2026-07-04 17:41:17 info: Get room executed successfully
+2026-07-04 17:41:17 info: Broadcaster added to the room
+2026-07-04 17:41:17 info: Room created successfully
+2026-07-04 17:41:17 info: Get getRouterRtpCapabilities started
+2026-07-04 17:41:17 info: Fetching of router started
+2026-07-04 17:41:17 info: Fetching of router executed successfully
+2026-07-04 17:41:17 info: Rtp capabilities fetched successfully
+2026-07-04 17:41:17 info: Get room started
+2026-07-04 17:41:17 info: Get room executed successfully
+2026-07-04 17:41:17 info: Transport created : 8aab940f-cc1b-4c59-94f4-b69664e9f594
+2026-07-04 17:41:17 info: Get room started
+2026-07-04 17:41:17 info: Get room executed successfully
+2026-07-04 17:41:19 info: Connect broadcaster transport listener started
+2026-07-04 17:41:19 info: Get room started
+2026-07-04 17:41:19 info: Get room executed successfully
+2026-07-04 17:41:19 info: Connect broadcaster transport executed successfully
+2026-07-04 17:41:19 info: Producer listener started
+2026-07-04 17:41:19 info: Get room started
+2026-07-04 17:41:19 info: Get room executed successfully
+2026-07-04 17:41:19 info: Producer listener executed successfully:
+2026-07-04 17:41:19 info: Producer listener started
+2026-07-04 17:41:19 info: Get room started
+2026-07-04 17:41:19 info: Get room executed successfully
+2026-07-04 17:41:19 info: Producer listener executed successfully:
+2026-07-04 17:41:52 info: User disconnected BeHQB5UNCTZeAY1dAAAB beacuse of transport close

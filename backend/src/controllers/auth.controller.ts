@@ -1,6 +1,8 @@
+console.log('Loadeded')
 import User from '../models/user.model'
 import logger from '../utils/logging'
 import {Request, Response} from 'express'
+
 
 export const me = async (request: Request, response: Response) => {
     try {

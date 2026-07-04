@@ -1199,3 +1199,80 @@
 2026-06-26 00:01:09 error: Consumer not found
 2026-06-26 00:14:55 error: Consumer not found
 2026-06-26 00:17:14 error: Consumer not found
+2026-07-04 13:27:44 error: MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
+    at new ConnectionString (/home/harshit/CrowdStream/backend/node_modules/mongodb-connection-string-url/src/index.ts:133:13)
+    at parseOptions (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/connection_string.ts:255:15)
+    at new MongoClient (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:443:32)
+    at NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:343:14)
+    at NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1075:34)
+    at Mongoose.connect (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/mongoose.js:450:15)
+    at connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:15:39)
+    at Object.<anonymous> (/home/harshit/CrowdStream/backend/src/index.ts:37:18)
+    at Module._compile (node:internal/modules/cjs/loader:1873:14)
+    at Module.m._compile (/home/harshit/CrowdStream/backend/node_modules/ts-node/src/index.ts:1618:23)
+2026-07-04 13:29:40 error: MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1169:11)
+    at NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1100:11)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:15:24)
+2026-07-04 13:37:55 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 13:37:55 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:11:16 error: Validation error "password" length must be at least 8 characters long
+2026-07-04 14:37:20 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:37:20 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:44:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:41:34 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:46:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 14:41:34 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:46:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 17:24:23 error: User does not exist
+2026-07-04 17:34:58 error: JsonWebTokenError: jwt must be provided
+    at Object.module.exports [as verify] (/home/harshit/CrowdStream/backend/node_modules/jsonwebtoken/verify.js:60:17)
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:10:16)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:40:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-04 17:34:58 error: Error: Unauthorized
+    at verifyAccessToken (/home/harshit/CrowdStream/backend/src/utils/verifyJwt.ts:19:11)
+    at Array.socketAuth (/home/harshit/CrowdStream/backend/src/middlewares/authentication.middleware.ts:40:38)
+    at run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:133:19)
+    at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
+    at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)

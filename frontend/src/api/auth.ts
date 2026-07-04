@@ -24,7 +24,6 @@ export const signIn = async (data: SignInRequest) => {
 };
 
 export async function getCurrentUser() {
-  const response = await api.get("/auth/me");
-
+  const response = await api.get("/me");
   return response.data;
 }

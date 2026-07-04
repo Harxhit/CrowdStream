@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { signIn } from "../api/auth";
+import { connectSocket } from "../socket";
 
 export default function SignInPage() {
   const navigate = useNavigate();
@@ -25,6 +26,8 @@ export default function SignInPage() {
         email,
         password,
       });
+
+      connectSocket()
 
       navigate("/dashboard");
     } catch (err: any) {
