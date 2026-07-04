@@ -5,6 +5,7 @@ import logger from "./logging";
 import registerBroadcasterHandler from "../handlers/registerBroadcaster.handler";
 import registerViewerHanlder from "../handlers/registerViewer.handler";
 import config from "../config/index";
+import { socketAuth } from "../middlewares/authentication.middleware";
 
 const server = createServer(app);
 const io = new Server (server, {
@@ -13,7 +14,7 @@ const io = new Server (server, {
     methods: ["GET", "POST"],
   },
 });
-
+io.use(socketAuth);
 
 io.on("connection", (socket) => {
   logger.info(`Client connected: ${socket.id}`);
