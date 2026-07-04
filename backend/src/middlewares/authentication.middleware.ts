@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import jwt from "jsonwebtoken";
-
-import ApiError from "../utils/apiError";
+import { verifyAccessToken } from "../utils/verifyJwt";
 
 export default function authenticate(
   request: Request,
@@ -12,20 +10,17 @@ export default function authenticate(
     const token = request.cookies.accessToken;
 
     if (!token) {
-      throw new ApiError(401, "Unauthorized");
+      throw new Error("Unauthorized");
     }
 
-    const payload = jwt.verify(
-      token,
-      process.env.JWT_SECRET!
-    ) as { sub: string };
+    const payload = verifyAccessToken(token);
 
     request.user = {
       id: payload.sub,
     };
 
     next();
-  } catch (error) {
+  } catch {
     return response.status(401).json({
       success: false,
       message: "Unauthorized",
