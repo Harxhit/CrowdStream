@@ -3,7 +3,7 @@ import Room from "./room";
 import frontendMemoryRoom from "./store/room.store";
 import { Device } from "mediasoup-client";
 import type { FrontendRoom, ProducerKind } from "./types/room.types";
-import { iceServers } from "./utils/iceServer.util";
+import { getIceServers } from "./utils/iceServer.util";
 import type { AckResponse } from "./utils/ack.util";
 import type { RtpCapabilities, IceCandidate , IceParameters, DtlsParameters } from "mediasoup-client/types";
 import type { Socket } from "socket.io-client";
@@ -159,6 +159,7 @@ class Broadcaster {
     console.log("[Broadcaster] Transport params received");
 
     const {id, iceParameters,iceCandidates,dtlsParameters} = response.data;
+    const iceServers = await getIceServers(); 
 
     //Create browser transport
     const sendTransport = broadcasterDevice!.createSendTransport({

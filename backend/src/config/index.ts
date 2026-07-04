@@ -14,6 +14,7 @@ interface Config{
     jwtSecret:string;
     accessTokenExpiry: string; 
     databaseName: string; 
+    turnSecret: string;
 
 }
 
@@ -32,8 +33,9 @@ function loadConfig():Config{
     const jwtSecret = process.env.JWT_SECRET
     const accessTokenExpiry = process.env.ACCESS_TOKEN_EXPIRY; 
     const databaseName = process.env.DATABASE_NAME
+    const turnSecret = process.env.TURN_SECRET; 
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
@@ -55,7 +57,8 @@ function loadConfig():Config{
         mongoUrl, 
         jwtSecret, 
         accessTokenExpiry,
-        databaseName
+        databaseName, 
+        turnSecret
     }
 }
 

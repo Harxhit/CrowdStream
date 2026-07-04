@@ -5,7 +5,7 @@ import frontendMemoryRoom from "./store/room.store";
 import type { FrontendViewer , FrontendRoom} from "./types/room.types";
 import type { AckResponse } from "./utils/ack.util";
 import type { RtpCapabilities, IceParameters, IceCandidate, DtlsParameters, Consumer } from "mediasoup-client/types";
-import { iceServers } from "./utils/iceServer.util";
+import { getIceServers } from "./utils/iceServer.util";
 import { Socket } from "socket.io-client";
 
 let socket: Socket; 
@@ -136,7 +136,7 @@ class Viewer{
             throw new Error("Viewer device not found")
         }     
         const {id,iceParameters,iceCandidates,dtlsParameters} = response.data;
-
+        const iceServers = await getIceServers()
         //Create browser rec transport 
         const recTransport = viewerDevice.createRecvTransport({
             id,
