@@ -14,7 +14,7 @@ export const me = async (request: Request, response: Response) => {
             logger.error('User not found')
                 
             return response.status(404).json({
-                success: true,
+                success: false,
                 message: "User not found"
             });
         }
