@@ -24,7 +24,9 @@ const signUp = async (request: Request, response: Response) => {
         message: error.details[0].message
       })
       return response.status(403).json({
-        success: false
+        success: false, 
+        message: error.details[0].message, 
+        path: error.details[0].path
       })
     }
 
@@ -112,7 +114,8 @@ const signIn = async(request: Request, response: Response) => {
           })
           return response.status(403).json({
             success: false, 
-            message: error.details[0].path
+            message: error.details[0].message,
+            path: error.details[0].path
           })
         }
 

@@ -24,11 +24,9 @@ export const me = async (request: Request, response: Response) => {
             user,
         });
     } catch (error) {
-        response.status(500).json({
+        return response.status(500).json({
             success: false, 
             message: 'Internal server error'
         })
-
-        throw error
     }
 };

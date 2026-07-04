@@ -23,7 +23,7 @@ axios.defaults.httpsAgent = new https.Agent({
   keepAliveMsecs: 30000,
 });
 
-app.use('/api/v1/me', authRouter)
+app.use('/api/v1', authRouter)
 app.use('/api/v1/auth',userRouter);
 
 app.get("/__ping", (_req :Request, res : Response) => {
