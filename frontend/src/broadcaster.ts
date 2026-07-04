@@ -128,6 +128,8 @@ class Broadcaster {
     console.log("[Broadcaster] device loaded.");
   }
 
+
+
   async createBroadcasterTransport(roomId: string){
     console.log('[Broadcaster] Requesting broadcaster transport')
 
@@ -149,7 +151,7 @@ class Broadcaster {
     if(!broadcasterDevice){
       throw new Error('Broadcaster device not loaded')
     }
-
+    const iceServers = await getIceServers(); 
     const response: CreateTransportAck = await socket.timeout(5000).emitWithAck('createBroadcasterTransport', roomId)
 
     if (!response.success) {
@@ -159,7 +161,6 @@ class Broadcaster {
     console.log("[Broadcaster] Transport params received");
 
     const {id, iceParameters,iceCandidates,dtlsParameters} = response.data;
-    const iceServers = await getIceServers(); 
 
     //Create browser transport
     const sendTransport = broadcasterDevice!.createSendTransport({

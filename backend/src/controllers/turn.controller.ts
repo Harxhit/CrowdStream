@@ -15,7 +15,7 @@ export const getTurnCreds = async(request:Request, response: Response) => {
                 message: 'User is not authenticated'
             })
         }
-        const ttl = 10;   
+        const ttl = config.turnTtl;   
         const expiry = Math.floor(Date.now() / 1000) + ttl;
         const username = `${expiry}:${userId}`;
 

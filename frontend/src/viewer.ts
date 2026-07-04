@@ -115,6 +115,7 @@ class Viewer{
     async createViewerTransport(roomId:string){
         if(!this.room) return new Error('Room not found')
 
+        const iceServers = await getIceServers()
         const response:CreateTransportAck = await socket.timeout(5000).emitWithAck('createViewerTransport',roomId)
         if(!response.success){
             throw new Error(response.code)
@@ -136,7 +137,6 @@ class Viewer{
             throw new Error("Viewer device not found")
         }     
         const {id,iceParameters,iceCandidates,dtlsParameters} = response.data;
-        const iceServers = await getIceServers()
         //Create browser rec transport 
         const recTransport = viewerDevice.createRecvTransport({
             id,

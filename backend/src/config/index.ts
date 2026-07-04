@@ -15,6 +15,7 @@ interface Config{
     accessTokenExpiry: string; 
     databaseName: string; 
     turnSecret: string;
+    turnTtl: number
 
 }
 
@@ -34,13 +35,14 @@ function loadConfig():Config{
     const accessTokenExpiry = process.env.ACCESS_TOKEN_EXPIRY; 
     const databaseName = process.env.DATABASE_NAME
     const turnSecret = process.env.TURN_SECRET; 
+    const turnTtl = process.env.TURN_TTL
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
 
-    const numericEnv = [port, rtcMinPort,rtcMaxPort]
+    const numericEnv = [port, rtcMinPort,rtcMaxPort, turnTtl]
 
     if(numericEnv.some(checkValid)){
         logger.error("Invalid numeric env")
@@ -58,7 +60,8 @@ function loadConfig():Config{
         jwtSecret, 
         accessTokenExpiry,
         databaseName, 
-        turnSecret
+        turnSecret, 
+        turnTtl: Number(turnTtl)
     }
 }
 
