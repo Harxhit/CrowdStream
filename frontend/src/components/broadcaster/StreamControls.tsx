@@ -17,6 +17,44 @@ export default function StreamControls({
   onStart,
   onStop,
 }: StreamControlsProps) {
+  function handleCameraToggle() {
+    /**
+     * TODO:
+     * Implement camera toggle.
+     *
+     * Responsibilities:
+     * - Enable/disable the local camera.
+     * - Pause/resume the MediaSoup video producer.
+     * - Update the camera button state.
+     * - Notify the backend if required.
+     */
+  }
+
+  function handleMicrophoneToggle() {
+    /**
+     * TODO:
+     * Implement microphone toggle.
+     *
+     * Responsibilities:
+     * - Mute/unmute the microphone.
+     * - Pause/resume the MediaSoup audio producer.
+     * - Update the microphone button state.
+     */
+  }
+
+  function handleScreenShare() {
+    /**
+     * TODO:
+     * Implement screen sharing.
+     *
+     * Responsibilities:
+     * - Request display media using getDisplayMedia().
+     * - Replace the current video producer track.
+     * - Restore the camera track when screen sharing ends.
+     * - Update the UI state.
+     */
+  }
+
   return (
     <section className="rounded-2xl border border-neutral-800 bg-neutral-900 shadow-lg">
       <div className="border-b border-neutral-800 px-6 py-4">
@@ -56,6 +94,7 @@ export default function StreamControls({
 
         <div className="grid grid-cols-3 gap-4">
           <button
+            onClick={handleCameraToggle}
             className="flex flex-col items-center justify-center gap-2 rounded-xl border border-neutral-800 bg-neutral-950 p-5 transition hover:border-blue-500"
           >
             <Camera size={22} />
@@ -63,6 +102,7 @@ export default function StreamControls({
           </button>
 
           <button
+            onClick={handleMicrophoneToggle}
             className="flex flex-col items-center justify-center gap-2 rounded-xl border border-neutral-800 bg-neutral-950 p-5 transition hover:border-blue-500"
           >
             <Mic size={22} />
@@ -70,6 +110,7 @@ export default function StreamControls({
           </button>
 
           <button
+            onClick={handleScreenShare}
             className="flex flex-col items-center justify-center gap-2 rounded-xl border border-neutral-800 bg-neutral-950 p-5 transition hover:border-blue-500"
           >
             <Monitor size={22} />

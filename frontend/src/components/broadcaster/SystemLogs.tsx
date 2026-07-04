@@ -1,5 +1,10 @@
+interface Log {
+  message: string;
+  timestamp: Date;
+}
+
 interface SystemLogsProps {
-  logs: string[];
+  logs: Log[];
 }
 
 export default function SystemLogs({
@@ -34,7 +39,8 @@ export default function SystemLogs({
           logs.map((log, index) => (
             <LogEntry
               key={index}
-              message={log}
+              message={log.message}
+              timestamp={log.timestamp}
             />
           ))
         )}
@@ -45,17 +51,17 @@ export default function SystemLogs({
 
 interface LogEntryProps {
   message: string;
+  timestamp: Date;
 }
 
 function LogEntry({
   message,
+  timestamp,
 }: LogEntryProps) {
-  const time = new Date().toLocaleTimeString();
-
   return (
     <div className="mb-2 flex gap-3">
       <span className="text-neutral-500">
-        {time}
+        {timestamp.toLocaleTimeString()}
       </span>
 
       <span className="text-green-400">$</span>

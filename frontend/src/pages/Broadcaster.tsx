@@ -9,6 +9,11 @@ import StreamStats from "../components/broadcaster/StreamStats";
 import SystemLogs from "../components/broadcaster/SystemLogs";
 import LiveChat from "../components/broadcaster/LiveChat";
 
+interface Log {
+  message: string;
+  timestamp: Date;
+}
+
 const broadcaster = new Broadcaster();
 
 export default function BroadcasterPage() {
@@ -16,7 +21,7 @@ export default function BroadcasterPage() {
 
   const [roomId, setRoomId] = useState<string | null>(null);
 
-  const [logs, setLogs] = useState<string[]>([]);
+  const [logs, setLogs] = useState<Log[]>([]);
 
   const [isLive, setIsLive] = useState(false);
 
@@ -25,7 +30,13 @@ export default function BroadcasterPage() {
   const log = (message: string) => {
     console.log(message);
 
-    setLogs((prev) => [...prev, message]);
+    setLogs((prev) => [
+      ...prev,
+      {
+        message,
+        timestamp: new Date(),
+      },
+    ]);
   };
 
   async function startBroadcast() {
@@ -58,7 +69,7 @@ export default function BroadcasterPage() {
 
       log("Producing media...");
 
-      await broadcaster.startProducing();
+      await broadcaster.startProducing(stream);
 
       setIsLive(true);
 
@@ -69,13 +80,49 @@ export default function BroadcasterPage() {
   }
 
   async function stopBroadcast() {
-    /**
-     * We'll implement this later.
-     */
-
     log("Stopping broadcast...");
 
+    /**
+     * TODO:
+     * Implement broadcaster.stopBroadcast()
+     *
+     * Backend responsibilities:
+     * - Emit a `stopBroadcast` event to the server.
+     * - Close all MediaSoup producers.
+     * - Close the send transport.
+     * - Stop producing audio and video.
+     * - Remove the broadcaster from the frontend room store.
+     * - Release all allocated resources.
+     * - Stop listening to socket events.
+     * - Close/delete the room if this is the last broadcaster.
+     */
+
+    if (videoRef.current?.srcObject) {
+      const stream = videoRef.current.srcObject as MediaStream;
+
+      stream.getTracks().forEach((track) => {
+        track.stop();
+      });
+
+      videoRef.current.srcObject = null;
+    }
+
+    /**
+     * TODO:
+     * Reset broadcaster-specific state.
+     *
+     * Examples:
+     * - Reset viewer count.
+     * - Clear chat messages.
+     * - Reset stream statistics.
+     * - Clear connection state.
+     * - Reset any cached MediaSoup state.
+     */
+
+    setRoomId(null);
     setIsLive(false);
+
+    log("Broadcast stopped.");
   }
 
   return (

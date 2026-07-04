@@ -9,11 +9,13 @@ import {
 interface StreamStatsProps {
   isLive: boolean;
   viewers: number;
+  duration?: string;
 }
 
 export default function StreamStats({
   isLive,
   viewers,
+  duration = "00:00",
 }: StreamStatsProps) {
   return (
     <section className="rounded-2xl border border-neutral-800 bg-neutral-900 shadow-lg">
@@ -28,7 +30,6 @@ export default function StreamStats({
       </div>
 
       <div className="space-y-4 p-6">
-
         <Stat
           icon={<Users className="h-5 w-5" />}
           label="Viewers"
@@ -49,7 +50,7 @@ export default function StreamStats({
         <Stat
           icon={<Timer className="h-5 w-5" />}
           label="Duration"
-          value="00:00"
+          value={duration}
         />
 
         <Stat
@@ -69,6 +70,19 @@ export default function StreamStats({
           }
         />
 
+        {/*
+          TODO:
+          Calculate the stream duration dynamically.
+
+          Suggested implementation:
+          - Record the broadcast start time when streaming begins.
+          - Update the duration every second.
+          - Format the elapsed time as HH:MM:SS (or MM:SS).
+
+          Example:
+          const startTime = Date.now();
+          const duration = formatDuration(Date.now() - startTime);
+        */}
       </div>
     </section>
   );

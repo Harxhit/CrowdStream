@@ -1,5 +1,6 @@
 import { Copy, Check, Radio } from "lucide-react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 interface RoomCardProps {
   roomId: string | null;
@@ -9,15 +10,28 @@ export default function RoomCard({
   roomId,
 }: RoomCardProps) {
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState("");
 
   async function copyRoomId() {
     if (!roomId) return;
 
-    await navigator.clipboard.writeText(roomId);
+    try {
+      await navigator.clipboard.writeText(roomId);
+      toast.success('RoomId copied')
 
-    setCopied(true);
+      setCopied(true);
+      setCopyError("");
 
-    setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    } catch (error) {
+      console.error("Failed to copy Room ID:", error);
+
+      setCopyError("Failed to copy Room ID.");
+      setCopied(false);
+      toast.error("Failed to copy roomId")
+    }
   }
 
   return (
@@ -57,6 +71,12 @@ export default function RoomCard({
               )}
             </button>
           </div>
+
+          {copyError && (
+            <p className="mt-2 text-sm text-red-400">
+              {copyError}
+            </p>
+          )}
         </div>
 
         <div className="rounded-xl bg-neutral-950 p-4">
@@ -73,7 +93,6 @@ export default function RoomCard({
               }`}
             >
               <Radio className="h-4 w-4" />
-
               {roomId ? "LIVE" : "OFFLINE"}
             </span>
           </div>
@@ -81,8 +100,8 @@ export default function RoomCard({
 
         <div className="rounded-xl border border-neutral-800 bg-neutral-950 p-4">
           <p className="text-sm leading-7 text-neutral-400">
-            Once the stream starts, viewers can join using the Room ID
-            shown above.
+            Once the stream starts, viewers can join using the Room ID shown
+            above.
           </p>
         </div>
       </div>

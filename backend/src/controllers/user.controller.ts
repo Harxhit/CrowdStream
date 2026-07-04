@@ -120,7 +120,7 @@ const signIn = async(request: Request, response: Response) => {
         }
 
         const {email , password} = value; 
-        const user = await User.findOne({email})
+        const user = await User.findOne({email}).select("+passwordHash")
         if(!user){
           logger.error('User does not exist'); 
           return response.status(403).json({

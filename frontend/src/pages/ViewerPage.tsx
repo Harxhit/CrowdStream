@@ -1,32 +1,49 @@
 import { useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import Viewer from "../viewer";
 
+import SystemLogs from "../components/broadcaster/SystemLogs";
 import ViewerVideo from "../components/viewer/ViewerVideo";
 import StreamInfo from "../components/viewer/StreamInfo";
 import ViewerControls from "../components/viewer/ViewerControls";
 import LiveChat from "../components/broadcaster/LiveChat";
 
+interface Log {
+  message: string;
+  timestamp: Date;
+}
+
 const viewer = new Viewer();
 
 export default function ViewerPage() {
+  const [searchParams] = useSearchParams();
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const [roomId, setRoomId] = useState("");
+  const [roomId, setRoomId] = useState(
+    () => searchParams.get("roomId") ?? ""
+  );
 
   const [connected, setConnected] = useState(false);
 
   const [viewerCount] = useState(0);
 
-  const [_logs, setLogs] = useState<string[]>([]);
-
-  function log(message: string) {
+  const [logs, setLogs] = useState<Log[]>([]);
+  const log = (message: string) => {
     console.log(message);
 
-    setLogs((prev) => [...prev, message]);
-  }
-
-  async function joinRoom(e: React.FormEvent) {
+    setLogs((prev) => [
+      ...prev,
+      {
+        message,
+        timestamp: new Date(),
+      },
+    ]);
+  };
+  async function joinRoom(
+    e: React.FormEvent<HTMLFormElement>
+  ) {
     e.preventDefault();
 
     if (!roomId.trim()) return;
@@ -68,9 +85,39 @@ export default function ViewerPage() {
     }
   }
 
-  function leaveRoom() {
+  async function leaveRoom() {
     /**
-     * We'll implement cleanup later.
+     * TODO:
+     * Implement viewer.leaveRoom()
+     *
+     * Responsibilities:
+     * - Emit `leaveRoom` to the backend.
+     * - Close all MediaSoup consumers.
+     * - Close the receive transport.
+     * - Remove the viewer from the frontend room store.
+     * - Release any allocated resources.
+     * - Stop listening to socket events.
+     */
+
+    if (videoRef.current?.srcObject) {
+      const stream = videoRef.current.srcObject as MediaStream;
+
+      stream.getTracks().forEach((track) => {
+        track.stop();
+      });
+
+      videoRef.current.srcObject = null;
+    }
+
+    /**
+     * TODO:
+     * Reset any viewer-specific state.
+     *
+     * Examples:
+     * - Clear chat messages.
+     * - Reset viewer count.
+     * - Reset stream statistics.
+     * - Clear connection state.
      */
 
     setConnected(false);
@@ -81,9 +128,7 @@ export default function ViewerPage() {
   return (
     <main className="min-h-screen bg-neutral-950 text-white">
       <div className="mx-auto max-w-7xl p-8">
-
         <header className="mb-8 flex items-center justify-between">
-
           <div>
             <h1 className="text-4xl font-bold">
               Crowd<span className="text-blue-500">Stream</span>
@@ -99,15 +144,12 @@ export default function ViewerPage() {
               ● LIVE
             </span>
           )}
-
         </header>
 
         <div className="grid gap-6 lg:grid-cols-3">
-
-          {/* LEFT */}
+          {/* Left */}
 
           <div className="space-y-6 lg:col-span-2">
-
             <ViewerVideo
               videoRef={videoRef}
               connected={connected}
@@ -120,13 +162,14 @@ export default function ViewerPage() {
               onJoin={joinRoom}
               onLeave={leaveRoom}
             />
-
+            <SystemLogs
+              logs={logs}
+            />
           </div>
 
-          {/* RIGHT */}
+          {/* Right */}
 
           <div className="space-y-6">
-
             <StreamInfo
               roomId={roomId}
               viewers={viewerCount}
@@ -134,11 +177,8 @@ export default function ViewerPage() {
             />
 
             <LiveChat />
-
           </div>
-
         </div>
-
       </div>
     </main>
   );
