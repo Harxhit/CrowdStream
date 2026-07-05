@@ -3,16 +3,8 @@ import type { WorkerLogTag, WorkerSettings, Worker } from "mediasoup/node/lib/ty
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
 import config from "../config/index";
-
+import { workerPool } from "../stores/maps";
 import { deleteRoom, getRoom } from "../rooms/room.store";
-
-interface WorkerInfo {
-  worker: Worker;
-  routerIds: Set<string>;
-  associatedRooms: Set<string>;
-}
-
-const workerLogs = new Map<string, WorkerInfo>()
 
 const mediaSoupConfig: WorkerSettings = {
   logLevel: "warn",
@@ -21,10 +13,10 @@ const mediaSoupConfig: WorkerSettings = {
   rtcMaxPort: config.rtcMaxPort,
 };
 
-const handleWorkerDeath = (worker:Worker, workerId: string) => {
+const handleWorkerDeath = async(worker:Worker, workerId: string) => {
   const startTime = Date.now()
   try {
-    const workerInfo = workerLogs.get(workerId); 
+    const workerInfo = workerPool.get(workerId); 
     logger.info('MediaSoup worker died', {
       workerId, 
       workerPid: worker.pid, 
@@ -67,14 +59,14 @@ const handleWorkerDeath = (worker:Worker, workerId: string) => {
       routers.delete(id)
     })
 
-    workerLogs.delete(workerId)
+    workerPool.delete(workerId)
 
     logger.log('Worker death handled successfully',{
       durationMs: Date.now() - startTime, 
       workerId
     })
-
-    return 'Worker died closing room'
+    await initWorker()
+    logger.info('Worker died new worker created')
     
   } catch (error:any) {
     logger.error({
@@ -85,10 +77,10 @@ const handleWorkerDeath = (worker:Worker, workerId: string) => {
   }
 }
 
-const handleWorkerClose = (worker:Worker, workerId: string) => {
+const handleWorkerClose = async(worker:Worker, workerId: string) => {
   const startTime = Date.now(); 
   try {
-    const workerInfo = workerLogs.get(workerId)
+    const workerInfo = workerPool.get(workerId)
     logger.log('Worker closed',{
       workerId, 
       workerPid: worker.pid, 
@@ -107,7 +99,7 @@ const handleWorkerClose = (worker:Worker, workerId: string) => {
       durationMs: Date.now() - startTime, 
       workerId
     })
-    return 'Worker is closed'
+    logger.info('Worker closed')
   } catch (error) {
     logger.log('Worker close',{
       message: (error as Error).message, 
@@ -129,22 +121,18 @@ const initWorker = async () => {
     worker.on('died', () => {
       handleWorkerDeath(worker, workerId)
     })
+
     logger.info('Worker created successfully',{
       duration_ms: Date.now() - startTime, 
       workerPid: worker.pid
     })
-
-    workerLogs.set(workerId, {
+    workerPool.set(workerId, {
       worker,
+      pid: worker.pid,
+      health: "healthy",
       routerIds: new Set(), 
       associatedRooms: new Set()
     })
-
-    return{ 
-      worker, 
-      workerId
-    }
-
   }catch (error:any) {
   logger.error('Creating worker error', {
     message: (error as Error).message, 
@@ -158,18 +146,38 @@ const initWorker = async () => {
  }
 };
 
-const workerHealthCheck = async(worker: Worker, workerId:string) => {
-  worker.on('died', (error) => {
-    logger.error('Mediasoup worker died',{
-      error, 
-      workerPid: worker.pid, 
-      timeStamp: Date.now()
-    })
-    console.error('Mediasoup worker died')
-    handleWorkerDeath(worker, workerId)
-  })
+const workerHealthCheck = () => {
+  const expectedWorkers = config.mediasoupWorkers;
+  const actualWorkers = workerPool.size;
 
-}
+  logger.info("Worker pool health check", {
+      expectedWorkers,
+      actualWorkers,
+  });
 
+  if (actualWorkers !== expectedWorkers) {
+    logger.warn("Worker pool size mismatch", {
+      expectedWorkers,
+      actualWorkers,
+    });
+  }
 
-export { initWorker, workerLogs, workerHealthCheck, handleWorkerClose};
+  for (const [workerId, workerInfo] of workerPool) {
+    logger.info("Worker status", {
+      workerId,
+      pid: workerInfo.pid,
+      health: workerInfo.health,
+      roomCount: workerInfo.associatedRooms.size,
+      routerCount: workerInfo.routerIds.size,
+    });
+
+    if (workerInfo.health !== "healthy") {
+      logger.warn("Worker marked unhealthy", {
+        workerId,
+        pid: workerInfo.pid,
+      });
+    }
+  }
+};
+
+export { initWorker,workerHealthCheck, handleWorkerClose};

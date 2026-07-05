@@ -5,17 +5,9 @@ import type {
 import logger from "../utils/logging";
 import config from "../config/index";
 import { handleRouterClose } from "./router";
+import { TransportRole } from "../types/mediasoup";
+import { transportRegistry } from "../stores/maps";
 
-
-type TransportRole = "broadcaster" | "viewer";
-
-interface TransportInfo {
-  roomId: string;
-  socketId: string;
-  role: TransportRole
-}
-
-export const transportRegistry = new Map<string, TransportInfo>();
 
 //Creates webRtc transport
 const createWebRtcTransport = async (

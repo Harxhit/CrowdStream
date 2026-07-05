@@ -11,6 +11,7 @@ import {authRouter} from "./routes/auth.route"
 import express from 'express'
 import connectToDataBase from "./database";
 import { turnRouter } from "./routes/turn.route";
+import { workerPoolCreation } from "./utils/workerPool.util";
 
 app.use(cors());
 
@@ -47,6 +48,7 @@ connectToDataBase()
     server.listen(config.port, config.publicIp, () => {
       console.info(`Server is running at http://localhost:${config.port}`);
     });
+    workerPoolCreation()
   })
   .catch((error) => {
     console.info('MongoDB connection error', error);

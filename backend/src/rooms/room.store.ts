@@ -1,38 +1,9 @@
-import type { Router,  WebRtcTransport ,Producer ,Worker , Consumer} from "mediasoup/node/lib/types";
 import { randomUUID } from "crypto";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
 import { createRouter } from "../mediasoup/router";
-import { initWorker, workerLogs} from "../mediasoup/worker";
-
-type TransportType = "producer" | "consumer";
-
-export interface Broadcaster {
-  transports: Map<string, WebRtcTransport>;
-  producers: Map<string,Producer>;
-  joinedAt: number;
-  role: "host" | "co-host";
-}
-
-export interface Viewer {
-  transport?: Map<TransportType, WebRtcTransport>;
-  rtpCapabilities?: any;
-  consumers: Map<string, Consumer>;
-  joinedAt: number;
-  role: "viewer" | "co-host";
-}
-
-interface Room {
-  router: Router;
-  broadcasters: Map<string, Broadcaster>;
-  viewers: Map<string, Viewer>;
-  worker: Worker; 
-  health: "healthy" | "unhealthy"
-}
-
-//Stores room data
-export const memoryRoom = new Map<string, Room>();
-
+import { memoryRoom, workerPool } from "../stores/maps";
+import { assignWorker } from "../utils/workerPool.util";
 
 //Creates roomId(temporary)
 const createRoomId = async () => {
@@ -46,35 +17,36 @@ const createRoom = async (roomId : string) => {
   try {
     logger.info('Create room started')
 
-    const worker = await initWorker();
-    if(!worker){
+    const {selectedWorkerId , selectedWorker} = assignWorker()
+
+    if(!selectedWorker){
       logger.error('Error creating worker')
       throw new apiError(404,'Worker not created'); 
     }
 
     //Creates router
-    const router = await createRouter(roomId, worker.worker, worker.workerId);
+    const router = await createRouter(roomId, selectedWorker, selectedWorkerId);
 
     //Memory room
     memoryRoom.set(roomId,{
       router,
       broadcasters: new Map(),
       viewers: new Map(),
-      worker: worker.worker, 
+      worker: selectedWorker, 
       health: 'healthy'
     });
 
     const newRoom = memoryRoom.get(roomId)
 
-    const workerInfo = workerLogs.get(worker.workerId); 
+    const workerInfo = workerPool.get(selectedWorkerId); 
     workerInfo?.associatedRooms.add(roomId)
 
     logger.info("Creation of room successfully executed",{
       roomId, 
       durationMs: Date.now() - startTime,
-      workerId: worker.workerId, 
-      workerPid: worker.worker.pid,
-      routerId: router.id
+      workerId: selectedWorkerId, 
+      workerPid: workerInfo?.pid,
+      routerId: router.id, 
     })
     return newRoom;
 
@@ -226,7 +198,7 @@ const removeViewer = async (roomId: string, socketId: string) => {
 
     if (!room) {
       logger.error('Room not found')
-      throw new Error
+      throw Error('Room not found')
     }
     if(room.viewers.has(socketId)){
       const viewer = room.viewers.get(socketId)
