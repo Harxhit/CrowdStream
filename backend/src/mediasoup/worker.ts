@@ -65,8 +65,16 @@ const handleWorkerDeath = async(worker:Worker, workerId: string) => {
       durationMs: Date.now() - startTime, 
       workerId
     })
-    await initWorker()
-    logger.info('Worker died new worker created')
+    try {
+      await initWorker()
+      logger.info('Worker died new worker created')
+    } catch (error) {
+      logger.error('Worker replacement failed', {
+        workerId,
+        message: (error as Error).message,
+        stack: (error as Error).stack
+      })
+    }
     
   } catch (error:any) {
     logger.error({
