@@ -1,13 +1,8 @@
 import type { Router , RouterOptions , Worker} from "mediasoup/node/lib/types";
 import logger from "../utils/logging";
-import { workerLogs } from "./worker";
 import { handleWorkerClose } from "./worker";
 import { getRoom } from "../rooms/room.store";
-
-export const routers = new Map<string, Router>();
-export const routerToWorker = new Map<string, string>();
-export const routerToRoom = new Map<string, string>();
-export const roomToRouter = new Map<string, string>()
+import { routers, routerToWorker, routerToRoom, roomToRouter, workerPool } from "../stores/maps";
 
 //Media codecs
 const mediaCodecs: NonNullable<RouterOptions["mediaCodecs"]> = [
@@ -58,7 +53,7 @@ const createRouter = async (roomId:string, worker:Worker, workerId:string) => {
       durationMs: Date.now() - startTime
     });
 
-    const workerInfo = workerLogs.get(workerId); 
+    const workerInfo = workerPool.get(workerId); 
     workerInfo?.routerIds.add(router.id)
     routerToWorker.set(router.id, workerId);
     routerToRoom.set(router.id, roomId);
@@ -111,7 +106,7 @@ const routerHealthCheck = (router: Router) => {
   router.on('workerclose', () => {
     console.log('Worker closed'); 
     const workerId = routerToWorker.get(router.id); 
-    const workerInfo = workerLogs.get(workerId!); 
+    const workerInfo = workerPool.get(workerId!); 
     const worker  = workerInfo?.worker; 
     handleWorkerClose(worker!, workerId!)
   })
