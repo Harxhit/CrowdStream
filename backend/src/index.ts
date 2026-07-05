@@ -44,11 +44,11 @@ app.get("/health", (_req: Request, res: Response) => {
 })
 
 connectToDataBase()
-  .then(() => {
+  .then(async() => {
     server.listen(config.port, config.publicIp, () => {
       console.info(`Server is running at http://localhost:${config.port}`);
     });
-    workerPoolCreation()
+    await workerPoolCreation()
   })
   .catch((error) => {
     console.info('MongoDB connection error', error);

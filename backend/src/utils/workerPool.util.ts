@@ -59,6 +59,7 @@ export const assignWorker = (): {
     selectedWorkerId: string; 
     selectedWorker: Worker
 } => {
+    workerLoad()
     const startTime = Date.now()
     try {
         let selectedWorkerId: string | null = null;
