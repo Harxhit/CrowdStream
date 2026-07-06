@@ -3,7 +3,7 @@ import type { WorkerLogTag, WorkerSettings, Worker } from "mediasoup/node/lib/ty
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
 import config from "../config/index";
-import { workerPool } from "../stores/maps";
+import { workerLoadMap, workerPool } from "../stores/maps";
 import { deleteRoom, getRoom } from "../rooms/room.store";
 
 const mediaSoupConfig: WorkerSettings = {
@@ -60,6 +60,7 @@ const handleWorkerDeath = async(worker:Worker, workerId: string) => {
     })
 
     workerPool.delete(workerId)
+    workerLoadMap.delete(workerId)
 
     logger.log('Worker death handled successfully',{
       durationMs: Date.now() - startTime, 
