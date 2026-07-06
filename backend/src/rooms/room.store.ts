@@ -17,7 +17,7 @@ const createRoom = async (roomId : string) => {
   try {
     logger.info('Create room started')
 
-    const {selectedWorkerId , selectedWorker} = assignWorker()
+    const {selectedWorkerId , selectedWorker} = await assignWorker()
 
     if(!selectedWorker){
       logger.error('Error creating worker')

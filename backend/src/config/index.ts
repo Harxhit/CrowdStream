@@ -17,6 +17,8 @@ interface Config{
     turnSecret: string;
     turnTtl: number; 
     mediasoupWorkers: number; 
+    MEDIASOUP_MAX_WORKERS: number; 
+    WORKER_THRESHOLD: number;
 
 }
 
@@ -38,13 +40,15 @@ function loadConfig():Config{
     const turnSecret = process.env.TURN_SECRET; 
     const turnTtl = process.env.TURN_TTL; 
     const mediaSoupWorker = process.env.MEDIASOUP_WORKER; 
+    const mediaSoupMaxWorker = process.env.MEDIASOUP_MAX_WORKERS; 
+    const workerThreshold = process.env.WORKER_THRESHOLD; 
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
 
-    const numericEnv = [port, rtcMinPort,rtcMaxPort, turnTtl, mediaSoupWorker]
+    const numericEnv = [port, rtcMinPort,rtcMaxPort, turnTtl, mediaSoupWorker, workerThreshold, mediaSoupMaxWorker]
 
     if(numericEnv.some(checkValid)){
         logger.error("Invalid numeric env")
@@ -64,7 +68,9 @@ function loadConfig():Config{
         databaseName, 
         turnSecret, 
         turnTtl: Number(turnTtl), 
-        mediasoupWorkers: Number(mediaSoupWorker)
+        mediasoupWorkers: Number(mediaSoupWorker), 
+        MEDIASOUP_MAX_WORKERS: Number(mediaSoupMaxWorker), 
+        WORKER_THRESHOLD: Number(workerThreshold)
     }
 }
 
