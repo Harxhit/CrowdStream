@@ -94,7 +94,7 @@ export const scaleWorkerPool = async() => {
     await workerMutex.runExclusive(async () => {
         if(!canCreateWorker()){
             logger.error('Maximum worker count reached')
-            throw new Error('Maximum worker count reached'); 
+return;
     
         }
         logger.info("Creating overflow worker");
