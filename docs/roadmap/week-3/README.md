@@ -8,15 +8,14 @@ consumers) and "stateful signaling" (can't load-balance without Redis adapter +
 sticky sessions) as blockers. Today `worker.ts` spawns one worker per room.
 
 ## Days
-- [Day 1 — MediaSoup worker pool (1 per vCPU)](day-1/)
-- [Day 2 — Router placement on least-loaded worker](day-2/)
-- [Day 3 — Redis + Socket.IO Redis adapter](day-3/)
-- [Day 4 — Sticky sessions & multi-pod signaling](day-4/)
-- [Day 5 — Load test & weekly review](day-5/)
+- [x] Day 1 — MediaSoup worker pool (1 per vCPU)
+- [x] Day 2 — Router placement on least-loaded worker
+- [x] Day 3 — Redis + Socket.IO Redis adapter
+- [ ] Day 4 — Sticky sessions & multi-pod signaling
+- [ ] Day 5 — Load test & weekly review
 
-## Week goal
-Media is spread across a worker pool sized to the CPU; signaling runs on ≥2 pods
-that share events via a Redis adapter with sticky sessions.
+## Notes:
+- The current setup is intended for local development. When deploying to the cloud, I'll use `redis-cli` on the deployment host (or the platform's initialization workflow) instead of executing it inside a Redis container.
 
 ## Reference
 - `docs/ARCHITECTURE.md` §2 (scaling strategy), §6 (per-worker math), §8, §16
