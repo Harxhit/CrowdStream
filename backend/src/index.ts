@@ -12,12 +12,24 @@ import express from 'express'
 import connectToDataBase from "./database";
 import { turnRouter } from "./routes/turn.route";
 import { workerPoolCreation } from "./utils/workerPool.util";
+import {redis} from "./utils/redis.util"
+
 
 app.use(cors());
 
 app.use(cookie()); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+redis.on("ready" ,async() => {
+  await redis.ping()
+  
+  const masters = redis.nodes("master");
+  const replicas = redis.nodes("slave");
+
+  console.info(`Masters: ${masters.length}`);
+  console.info(`Replicas: ${replicas.length}`);
+})
 
 
 axios.defaults.httpsAgent = new https.Agent({
