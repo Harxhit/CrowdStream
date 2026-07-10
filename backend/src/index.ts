@@ -22,13 +22,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 redis.on("ready" ,async() => {
-  await redis.ping()
-  
-  const masters = redis.nodes("master");
-  const replicas = redis.nodes("slave");
+  try {
+    await redis.ping()
+    
+    const masters = redis.nodes("master");
+    const replicas = redis.nodes("slave");
 
-  console.info(`Masters: ${masters.length}`);
-  console.info(`Replicas: ${replicas.length}`);
+    console.info(`Masters: ${masters.length}`);
+    console.info(`Replicas: ${replicas.length}`);
+  } catch (error) {
+    console.error("Redis ready handler failed:", error);
+  }
 })
 
 
