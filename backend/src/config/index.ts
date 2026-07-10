@@ -19,7 +19,6 @@ interface Config{
     mediasoupWorkers: number; 
     MEDIASOUP_MAX_WORKERS: number; 
     WORKER_THRESHOLD: number;
-    redisUrl: string; 
     redisHost: string
     redisPort1: number
     redisPort2: number
@@ -47,13 +46,12 @@ function loadConfig():Config{
     const mediaSoupWorker = process.env.MEDIASOUP_WORKER; 
     const mediaSoupMaxWorker = process.env.MEDIASOUP_MAX_WORKERS; 
     const workerThreshold = process.env.WORKER_THRESHOLD; 
-    const redisUrl = process.env.REDIS_URL; 
     const redisHost = process.env.REDIS_HOST
     const redisPort1 = process.env.REDIS_PORT1
     const redisPort2 = process.env.REDIS_PORT2
     const redisPort3 = process.env.REDIS_PORT3
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisUrl || !redisHost || !redisPort1 || !redisPort2 || !redisPort3){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisHost || !redisPort1 || !redisPort2 || !redisPort3){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
@@ -81,7 +79,6 @@ function loadConfig():Config{
         mediasoupWorkers: Number(mediaSoupWorker), 
         MEDIASOUP_MAX_WORKERS: Number(mediaSoupMaxWorker), 
         WORKER_THRESHOLD: Number(workerThreshold),
-        redisUrl, 
         redisHost,
         redisPort1: Number(redisPort1),
         redisPort2: Number(redisPort2),

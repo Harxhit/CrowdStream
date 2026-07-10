@@ -1,6 +1,7 @@
 .PHONY: start
 .PHONY: start-infra
 .PHONY: start-networking
+.PHONY: start-redis
 
 start:
 	@echo "=== Starting CrowdStream ==="
@@ -19,7 +20,12 @@ start-infra:
 	@wait
 
 start-networking:
-		@echo "=== Starting CrowdStream Infra ==="
+	@echo "=== Starting CrowdStream Infra ==="
 	@(cd infra/ngrok && docker compose up) &
 	@(cd infra/nginx && docker compose up) &
 	@wait
+
+start-redis:
+	@echo "=== Starting Redis Infra ==="
+	cd infra/redis && make redis-cluster-up
+	

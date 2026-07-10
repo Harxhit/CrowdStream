@@ -15,6 +15,11 @@ const subClient = redis.duplicate();
 subClient.on('ready', () => {
   console.log('Subscriber ready')
 })
+
+subClient.on("error" , (error) => {
+  console.error('Redis subscriber error',error)
+})
+
 const server = createServer(app);
 const io = new Server (server, {
   adapter: createShardedAdapter(redis, subClient),
