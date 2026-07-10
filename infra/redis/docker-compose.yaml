@@ -1,0 +1,55 @@
+services:
+  redis-1: 
+    container_name: redis-1
+    network_mode: host
+    image: crowdstream-redis:v2
+    volumes:
+      - ./redis-1/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ./redis-1/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+  redis-2: 
+    container_name: redis-2
+    network_mode: host
+    image: crowdstream-redis:v2
+    volumes:
+    - ./redis-2/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    - ./redis-2/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+  redis-3: 
+    container_name: redis-3
+    network_mode: host
+    image: crowdstream-redis:v2
+    volumes:
+      - ./redis-3/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ./redis-3/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+  redis-4: 
+    container_name: redis-4
+    network_mode: host
+    image: crowdstream-redis:v2
+    volumes:
+      - ./redis-4/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ./redis-4/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+  redis-5: 
+    container_name: redis-5
+    network_mode: host
+    image: crowdstream-redis:v2
+    volumes:
+      - ./redis-5/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ./redis-5/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+  redis-6: 
+    container_name: redis-6
+    network_mode: host
+    image: crowdstream-redis:v2
+    volumes:
+      - ./redis-6/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ./redis-6/data:/data
+    command: redis-server /usr/local/etc/redis/redis.conf
+    restart: unless-stopped

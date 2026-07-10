@@ -7,10 +7,22 @@ import registerViewerHanlder from "../handlers/registerViewer.handler";
 import config from "../config/index";
 import { socketAuth } from "../middlewares/authentication.middleware";
 import cookie from 'cookie-parser'
+import { createShardedAdapter } from "@socket.io/redis-adapter";
+import { redis } from "./redis.util";
 
+const subClient = redis.duplicate(); 
+
+subClient.on('ready', () => {
+  console.log('Subscriber ready')
+})
+
+subClient.on("error" , (error) => {
+  console.error('Redis subscriber error',error)
+})
 
 const server = createServer(app);
 const io = new Server (server, {
+  adapter: createShardedAdapter(redis, subClient),
   cors: {
     origin: config.corsOrigin?.split(",").map(o => o.trim()),
     methods: ["GET", "POST"],

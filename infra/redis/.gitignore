@@ -1,0 +1,12 @@
+# Redis runtime data
+**/data/
+
+# Persistence files
+*.rdb
+*.aof
+
+# Cluster metadata
+nodes.conf
+
+# Temporary files
+*.pid

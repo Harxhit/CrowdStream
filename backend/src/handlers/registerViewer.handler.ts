@@ -7,7 +7,8 @@ import {
   resumeConsumer,
   pauseConsumer,
 } from "../consumer/consumer.handler";
-import { getRouter, roomToRouter, routerToRoom } from "../mediasoup/router";
+import { getRouter} from "../mediasoup/router";
+import { routerToRoom, roomToRouter } from "../stores/maps";
 
 const registerViewerHanlder = async (socket: Socket) => {
 

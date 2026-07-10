@@ -8,7 +8,8 @@ import { addBroadcaster , saveBroadcasterTransport} from "../utils/broadcaster.u
 import type { Socket } from "socket.io";
 import { createWebRtcTransport } from "../mediasoup/transport";
 import apiError from '../utils/apiError'
-import { getRouter, roomToRouter } from "../mediasoup/router";
+import {roomToRouter } from "../stores/maps";
+import { getRouter } from "../mediasoup/router";
 
 const registerBroadcasterHandler = async (socket: Socket) => {
   // Creates a memory room
