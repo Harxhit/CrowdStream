@@ -38,7 +38,7 @@ const connectToDataBase = async (): Promise<void> => {
           dbName: config.databaseName,
         });
     
-        console.info(
+        logger.info(
           `Database connected successfully to ${connection.connection.host}`
         );
         return; 
@@ -46,11 +46,11 @@ const connectToDataBase = async (): Promise<void> => {
         attempt++; 
         const backOff = Math.min(INITIAL_DELAY_MS * 2 ** (attempt - 1), 30000);
         
-        console.warn(
+        logger.warn(
           `MongoDB connection failed (${attempt}/${MAX_RETRIES === Infinity ? "∞" : MAX_RETRIES}). Retrying in ${backOff}ms`
         );
         if(attempt >= MAX_RETRIES){
-          console.error('Max retries exceeded')
+          logger.error('Max retries exceeded')
           throw error
         }
         await delay(backOff)
