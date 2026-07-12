@@ -7,7 +7,6 @@ import ApiError from "../utils/apiError";
 
 const signUp = async (request: Request, response: Response) => {
   const startTime = Date.now();
-  console.log("SIGNUP HANDLER ENTERED");
   try {
     logger.info("SignUp started", {
       ip: request.ip,
