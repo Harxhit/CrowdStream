@@ -13,7 +13,9 @@ import connectToDataBase from "./database";
 import { turnRouter } from "./routes/turn.route";
 import { workerPoolCreation } from "./utils/workerPool.util";
 import {redis} from "./utils/redis.util"
-
+import { dbRouter } from "./routes/db.routes";
+import { verifyModelRegistration } from "./utils/modelsRegistration.util";
+import './models'
 
 app.use(cors());
 
@@ -51,12 +53,13 @@ app.use('/api/v1', authRouter)
 app.use('/api/v1/auth',userRouter);
 app.use('/api/v1/turn',turnRouter);
 
-app.get("/__ping", (_req :Request, res : Response) => {
+app.get("/__ping", (_req: Request, res : Response) => {
   res.send("PING OK");
 });
 
 app.get("/health", (_req: Request, res: Response) => {
   res.send("HEALTH OK");
+  app.use('/db/__ping', dbRouter)
 })
 
 connectToDataBase()
@@ -64,6 +67,7 @@ connectToDataBase()
     server.listen(config.port, config.publicIp, () => {
       console.info(`Server is running at http://localhost:${config.port}`);
     });
+    verifyModelRegistration()
     await workerPoolCreation()
   })
   .catch((error) => {

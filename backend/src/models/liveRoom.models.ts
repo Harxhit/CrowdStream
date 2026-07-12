@@ -1,35 +1,53 @@
-import mongoose , {Schema} from "mongoose";
+import { Schema, model, Types } from "mongoose";
 
-const liveRoomSchema = new Schema({
-  experienceRoomId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "ExperienceRoom",
-    required: true,
+export const LIVE_ROOM_STATUS = Object.freeze({
+  LIVE: "live",
+  ENDED: "ended",
+} as const);
+
+const liveRoomSchema = new Schema(
+  {
+    experienceRoomId: {
+      type: Types.ObjectId,
+      ref: "ExperienceRoom",
+      required: true,
+      index: true,
+    },
+
+    hostUserId: {
+      type: Types.ObjectId,
+      ref: "User",
+      required: true,
+      index: true,
+    },
+
+    status: {
+      type: String,
+      enum: Object.values(LIVE_ROOM_STATUS),
+      default: LIVE_ROOM_STATUS.LIVE,
+      index: true,
+    },
+
+    startedAt: {
+      type: Date,
+      default: Date.now,
+    },
+
+    endedAt: {
+      type: Date,
+      default: null,
+    },
   },
-
-  hostUserId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
-
-  status: {
-    type: String,
-    enum: ["live", "ended"],
-    default: "live",
-  },
-
-  startedAt: {
-    type: Date,
-    default: Date.now,
-  },
-
-  endedAt: Date,
-}, { timestamps: true });
-
-const LiveRoom = mongoose.model(
-  "LiveRoom",
-  liveRoomSchema
+  {
+    timestamps: true,
+    versionKey: false,
+    collection: "live_rooms",
+  }
 );
 
-export default LiveRoom
+liveRoomSchema.index({ experienceRoomId: 1, status: 1 });
+liveRoomSchema.index({ hostUserId: 1, status: 1 });
+
+const LiveRoom = model("LiveRoom", liveRoomSchema);
+
+export default LiveRoom;

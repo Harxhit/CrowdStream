@@ -1,13 +1,54 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const ProducerSchema = new mongoose.Schema({
-  roomId: { type: String, required: true },
-  broadcasterId: { type: String, required: true },
-  producerId: { type: String, required: true },
-  kind: { type: String },
-  rtpParameters: { type: Object },
-  createdAt: { type: Date, default: Date.now },
-  closedAt: { type: Date },
-});
+const producerSchema = new Schema(
+  {
+    roomId: {
+      type: String,
+      required: true,
+      index: true,
+    },
 
-export const Producer = mongoose.model("Producer", ProducerSchema);
+    broadcasterId: {
+      type: String,
+      required: true,
+      index: true,
+    },
+
+    producerId: {
+      type: String,
+      required: true,
+      unique: true,
+      index: true,
+    },
+
+    kind: {
+      type: String,
+      enum: ["audio", "video"],
+      required: true,
+    },
+
+    rtpParameters: {
+      type: Schema.Types.Mixed,
+      required: true,
+    },
+
+    closedAt: {
+      type: Date,
+      default: null,
+    },
+  },
+  {
+    timestamps: { createdAt: true, updatedAt: false },
+    versionKey: false,
+    collection: "producers",
+  }
+);
+
+producerSchema.index({ roomId: 1 });
+producerSchema.index({ broadcasterId: 1 });
+producerSchema.index({ roomId: 1, broadcasterId: 1 });
+producerSchema.index({ roomId: 1, kind: 1 });
+
+const Producer = model("Producer", producerSchema);
+
+export default Producer;
