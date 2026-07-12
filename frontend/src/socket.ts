@@ -19,6 +19,10 @@ export function connectSocket() {
         console.log("Error", error.message);
     });
 
+    socket.on("debug:instance", (data) => {
+        console.log('Instance Id',data.instanceId)
+    })
+
     return socket;
 }
 

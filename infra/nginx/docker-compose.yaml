@@ -4,4 +4,4 @@ services:
     network_mode: host
     ports:
       - 8080:80
-    image: crowdstream-ngnix-v5:latest
+    image: crowdstream-ngnix-v6:latest

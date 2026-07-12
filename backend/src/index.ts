@@ -47,9 +47,9 @@ app.use((req, _res, next) => {
   next();
 });
 
-app.use('/backend/api/v1', authRouter)
-app.use('/backend/api/v1/auth',userRouter);
-app.use('/backend/api/v1/turn',turnRouter);
+app.use('/api/v1', authRouter)
+app.use('/api/v1/auth',userRouter);
+app.use('/api/v1/turn',turnRouter);
 
 app.get("/__ping", (_req :Request, res : Response) => {
   res.send("PING OK");
