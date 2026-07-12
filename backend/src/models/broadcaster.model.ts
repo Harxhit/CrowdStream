@@ -1,5 +1,10 @@
 import { Schema, model } from "mongoose";
 
+export const BROADCASTER_ROLE = Object.freeze({
+  HOST: "host",
+  CO_HOST: "co_host",
+} as const);
+
 const broadcasterSchema = new Schema(
   {
     roomId: {
@@ -11,6 +16,29 @@ const broadcasterSchema = new Schema(
     broadcasterId: {
       type: String,
       required: true,
+      index: true,
+    },
+
+    socketId: {
+      type: String,
+      required: true,
+      index: true,
+    },
+
+    ipHash: {
+      type: String,
+      required: true,
+    },
+
+    userAgentHash: {
+      type: String,
+      required: true,
+    },
+
+    role: {
+      type: String,
+      enum: Object.values(BROADCASTER_ROLE),
+      default: BROADCASTER_ROLE.HOST,
       index: true,
     },
 
@@ -44,6 +72,7 @@ const broadcasterSchema = new Schema(
 broadcasterSchema.index({ roomId: 1 });
 broadcasterSchema.index({ broadcasterId: 1 });
 broadcasterSchema.index({ roomId: 1, broadcasterId: 1 });
+broadcasterSchema.index({ roomId: 1, role: 1 });
 
 const Broadcaster = model("Broadcaster", broadcasterSchema);
 

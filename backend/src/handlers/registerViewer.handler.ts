@@ -1,4 +1,4 @@
-import type { Socket } from "socket.io";
+import { Socket } from "socket.io";
 import {  createConsumerTransport, joinAsViewer } from "./viewer.handler";
 import { getRoom } from "../rooms/room.store";
 import logger from "../utils/logging";
@@ -9,6 +9,9 @@ import {
 } from "../consumer/consumer.handler";
 import { getRouter} from "../mediasoup/router";
 import { routerToRoom, roomToRouter } from "../stores/maps";
+import Viewer from "../models/viewer.model";
+import LiveRoom from "../models/liveRoom.models";
+import { ipHash, userAgentHash } from "../utils/hash.util";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
@@ -16,7 +19,7 @@ const registerViewerHanlder = async (socket: Socket) => {
   socket.on("joinRoom", async (roomId, ack) => {
     try {
       logger.info("Join as viewer listner started")
-
+      const viewerId = socket.data.user?.id
       await joinAsViewer(roomId, socket.id);
 
       socket.data.roomId = roomId;
@@ -55,6 +58,30 @@ const registerViewerHanlder = async (socket: Socket) => {
         }
       })
 
+      const hashedIp = ipHash(socket)
+      const userAgentHashed = userAgentHash(socket)
+
+      void Viewer.create({
+        roomId: roomId, 
+        viewerId: viewerId, 
+        socketId: socket.id, 
+        ipHash: hashedIp, 
+        userAgentHash: userAgentHashed
+      }).catch((error:any) => {
+        logger.error("Failed to persist live room", error);
+      })
+
+      void LiveRoom.updateOne(
+        { experienceRoomId: roomId },
+        {
+          $inc: {
+            peakViewers: 1,
+          },
+        }
+      ).catch((error) => {
+        logger.error('Increasing peak viewer count failed', error);
+      });
+
       logger.info('Join viewer listner successfully executed')
     } catch (error) {
       logger.error('Join viewer error',{
@@ -73,7 +100,7 @@ const registerViewerHanlder = async (socket: Socket) => {
   socket.on("createViewerTransport", async (roomId, ack) => {
     try {
       logger.info('Create viewer transport listner started')
-
+      const viewerId = socket.data.user?.id
       const room = getRoom(roomId);
 
       //Find the viewer inside the room
@@ -81,8 +108,8 @@ const registerViewerHanlder = async (socket: Socket) => {
       if (!viewer) {
         logger.error('Viewer not found')
         ack({
-            success: false, 
-            code: 'VIEWER_NOT_FOUND'
+          success: false, 
+          code: 'VIEWER_NOT_FOUND'
         })
         throw new Error('Viewer not found')
       }
@@ -97,6 +124,24 @@ const registerViewerHanlder = async (socket: Socket) => {
           iceCandidates: viewerTransport?.iceCandidates,
           dtlsParameters: viewerTransport?.dtlsParameters,
         }
+      });
+
+      void Viewer.findOneAndUpdate(
+        {
+          roomId, 
+          viewerId:viewerId
+        },
+        {
+          $push: {
+            transportId: viewerTransport?.id
+          }
+        }, 
+        {new: true}
+      ).catch((error) => {
+        logger.error("Failed to update viewer transport", {
+          viewerId,
+          error: error,
+        });
       });
      
       logger.info('Create viewer transport listner successfully executed')
@@ -148,8 +193,20 @@ const registerViewerHanlder = async (socket: Socket) => {
   socket.on("consume", async (roomId, rtpCapabilities, ack) => {
     try {
       logger.info('Consume lister started')
-
+      const viewerId = socket.data.user?.id; 
       const consumers = await consume(roomId, socket.id, rtpCapabilities);
+      void Viewer.updateOne(
+        viewerId,
+        {
+          $push: {
+            consumerIds: {
+              $each: consumers.map((consumer) => consumer.id),
+            },
+          },
+        }
+      ).catch((error) => {
+        logger.error("Failed to update consumer IDs", error);
+      });
 
       logger.info('Consume lister executed successfully')
       ack({

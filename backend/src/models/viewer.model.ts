@@ -4,37 +4,39 @@ import {
   type Document,
   type Model,
 } from "mongoose";
+import mongoose from "mongoose";
 
 interface ViewerAttrs {
   roomId: string;
   viewerId: string;
-  transportId?: string;
-}
-
-interface ConsumerInfo {
-  consumerId: string;
-  producerId: string;
-  kind: "audio" | "video";
+  socketId: string;
+  ipHash: string;
+  userAgentHash: string;
 }
 
 interface ViewerDoc extends Document {
   roomId: string;
   viewerId: string;
-  transportId?: string;
-  consumers: ConsumerInfo[];
-  createdAt: Date;
-  closedAt?: Date | null;
+  socketId: string;
+  ipHash: string;
+  userAgentHash: string;
+  transportIds: string[];
+  consumerIds: string[];
+  joinedAt: Date;
+  leftAt?: Date | null;
+  watchDurationSec?: number;
 }
 
 interface ViewerModel extends Model<ViewerDoc> {
   build(attrs: ViewerAttrs): ViewerDoc;
 }
 
-const viewerSchema = new Schema<ViewerDoc>(
+const viewerSchema = new mongoose.Schema<ViewerDoc>(
   {
     roomId: {
       type: String,
       required: true,
+      index: true,
     },
 
     viewerId: {
@@ -43,45 +45,56 @@ const viewerSchema = new Schema<ViewerDoc>(
       index: true,
     },
 
-    transportId: {
+    socketId: {
       type: String,
+      required: true,
       index: true,
     },
 
-    consumers: {
-      type: [
-        {
-          consumerId: {
-            type: String,
-            required: true,
-          },
-          producerId: {
-            type: String,
-            required: true,
-          },
-          kind: {
-            type: String,
-            enum: ["audio", "video"],
-            required: true,
-          },
-        },
-      ],
+    ipHash: {
+      type: String,
+      required: true,
+    },
+
+    userAgentHash: {
+      type: String,
+      required: true,
+    },
+
+    transportIds: {
+      type: [String],
       default: [],
     },
 
-    closedAt: {
+    consumerIds: {
+      type: [String],
+      default: [],
+    },
+
+    joinedAt: {
+      type: Date,
+      default: Date.now,
+    },
+
+    leftAt: {
       type: Date,
       default: null,
+    },
+
+    watchDurationSec: {
+      type: Number,
+      default: 0,
+      min: 0,
     },
   },
   {
     timestamps: true,
     versionKey: false,
-    collection: "viewers",
   }
 );
 
 viewerSchema.index({ roomId: 1, viewerId: 1 });
+viewerSchema.index({ roomId: 1, joinedAt: -1 });
 
 viewerSchema.statics.build = function (attrs: ViewerAttrs) {
   return new this(attrs);
