@@ -1,12 +1,50 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const broadcasterScehma = new mongoose.Schema({
-  roomId: { type: String, required: true },
-  broadcasterId: { type: String },
-  transportIds: [{ type: String }],
-  producerIds: [{ type: String }],
-  joinedAt: { type: Date, default: Date.now() },
-  leftAt: { type: Date, default: Date.now() },
-});
+const broadcasterSchema = new Schema(
+  {
+    roomId: {
+      type: String,
+      required: true,
+      index: true,
+    },
 
-export const Broadcaster = mongoose.model("Broadcaster", broadcasterScehma);
+    broadcasterId: {
+      type: String,
+      required: true,
+      index: true,
+    },
+
+    transportIds: {
+      type: [String],
+      default: [],
+    },
+
+    producerIds: {
+      type: [String],
+      default: [],
+    },
+
+    joinedAt: {
+      type: Date,
+      default: Date.now,
+    },
+
+    leftAt: {
+      type: Date,
+      default: null,
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+    collection: "broadcasters",
+  }
+);
+
+broadcasterSchema.index({ roomId: 1 });
+broadcasterSchema.index({ broadcasterId: 1 });
+broadcasterSchema.index({ roomId: 1, broadcasterId: 1 });
+
+const Broadcaster = model("Broadcaster", broadcasterSchema);
+
+export default Broadcaster;
