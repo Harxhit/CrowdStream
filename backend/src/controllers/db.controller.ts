@@ -13,7 +13,7 @@ export const dbReadinessCheck = async(request: Request, response:Response) => {
         //Driver connection state
         if(mongoose.connection.readyState !== 1){
             logger.error('Database connection is not open');
-            return response.status(403).json({
+            return response.status(503).json({
                 success: false, 
                 message: 'Database connection is not opened'
             })

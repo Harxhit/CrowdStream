@@ -35,7 +35,6 @@ const viewerSchema = new Schema<ViewerDoc>(
     roomId: {
       type: String,
       required: true,
-      index: true,
     },
 
     viewerId: {

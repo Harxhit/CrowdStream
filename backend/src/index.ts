@@ -52,6 +52,7 @@ app.use((req, _res, next) => {
 app.use('/api/v1', authRouter)
 app.use('/api/v1/auth',userRouter);
 app.use('/api/v1/turn',turnRouter);
+app.use('/db', dbRouter)
 
 app.get("/__ping", (_req: Request, res : Response) => {
   res.send("PING OK");
@@ -59,7 +60,6 @@ app.get("/__ping", (_req: Request, res : Response) => {
 
 app.get("/health", (_req: Request, res: Response) => {
   res.send("HEALTH OK");
-  app.use('/db/__ping', dbRouter)
 })
 
 connectToDataBase()

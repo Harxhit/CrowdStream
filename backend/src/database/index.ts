@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import apiError from "../utils/apiError";
 import config from "../config";
+import logger from "../utils/logging";
 
 const delay = (ms: number)  => {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -19,15 +20,15 @@ const connectToDataBase = async (): Promise<void> => {
   }
 
   mongoose.connection.on("connected", () => {
-    console.info("MongoDB connected");
+    logger.info("MongoDB connected");
   });
 
   mongoose.connection.on("disconnected", () => {
-    console.warn("MongoDB disconnected");
+    logger.warn("MongoDB disconnected");
   });
 
   mongoose.connection.on("error", (error) => {
-    console.error("MongoDB connection error:", error);
+    logger.error("MongoDB connection error:", error);
   });
 
   let attempt = 0; 

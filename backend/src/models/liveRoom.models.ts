@@ -11,7 +11,6 @@ const liveRoomSchema = new Schema(
       type: Types.ObjectId,
       ref: "ExperienceRoom",
       required: true,
-      index: true,
     },
 
     hostUserId: {
@@ -41,7 +40,6 @@ const liveRoomSchema = new Schema(
   {
     timestamps: true,
     versionKey: false,
-    collection: "live_rooms",
   }
 );
 

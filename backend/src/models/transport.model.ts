@@ -10,7 +10,6 @@ const transportSchema = new Schema(
     roomId: {
       type: String,
       required: true,
-      index: true,
     },
 
     userId: {
