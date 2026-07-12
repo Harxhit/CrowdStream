@@ -82,7 +82,6 @@ const viewerSchema = new Schema<ViewerDoc>(
   }
 );
 
-viewerSchema.index({ roomId: 1 });
 viewerSchema.index({ roomId: 1, viewerId: 1 });
 
 viewerSchema.statics.build = function (attrs: ViewerAttrs) {
