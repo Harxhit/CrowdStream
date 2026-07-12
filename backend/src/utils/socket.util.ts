@@ -33,7 +33,11 @@ io.engine.use(cookie())
 io.use(socketAuth);
 
 io.on("connection", (socket) => {
-  logger.info(`Client connected: ${socket.id}`);
+  logger.info(`[${config.instanceId}] Client connected: ${socket.id}`);
+
+  socket.emit('debug:instance' , {
+    instanceId: config.instanceId
+  })
 
   registerBroadcasterHandler(socket);
   registerViewerHanlder(socket);

@@ -12,6 +12,7 @@ const checkPassWordCorrect = (
   password: string,
   hashedPassword: string
 ): Promise<boolean> => {
+    console.log('hashedPassword',hashPassword)
   return bcrypt.compare(password, hashedPassword);
 };
 

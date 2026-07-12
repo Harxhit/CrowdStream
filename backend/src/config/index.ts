@@ -4,6 +4,7 @@ import logger from '../utils/logging';
 dotenv.config(); 
 
 interface Config{
+    nodeEnviorment: string; 
     port: number; 
     rtcMinPort: number; 
     rtcMaxPort: number; 
@@ -22,7 +23,8 @@ interface Config{
     redisHost: string
     redisPort1: number
     redisPort2: number
-    redisPort3: number
+    redisPort3: number; 
+    instanceId: string; 
 
 }
 
@@ -31,6 +33,7 @@ const checkValid = (value:string): boolean => {
 }
 
 function loadConfig():Config{
+    const nodeEnviorment = process.env.NODE_ENV
     const port = process.env.PORT; 
     const rtcMinPort  = process.env.RTC_MIN_PORT; 
     const rtcMaxPort  = process.env.RTC_MAX_PORT
@@ -50,8 +53,9 @@ function loadConfig():Config{
     const redisPort1 = process.env.REDIS_PORT1
     const redisPort2 = process.env.REDIS_PORT2
     const redisPort3 = process.env.REDIS_PORT3
+    const instanceId = process.env.INSTANCE_ID; 
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisHost || !redisPort1 || !redisPort2 || !redisPort3){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisHost || !redisPort1 || !redisPort2 || !redisPort3 || !instanceId || !nodeEnviorment){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
@@ -82,7 +86,9 @@ function loadConfig():Config{
         redisHost,
         redisPort1: Number(redisPort1),
         redisPort2: Number(redisPort2),
-        redisPort3: Number(redisPort3)
+        redisPort3: Number(redisPort3), 
+        instanceId, 
+        nodeEnviorment
     }
 }
 
