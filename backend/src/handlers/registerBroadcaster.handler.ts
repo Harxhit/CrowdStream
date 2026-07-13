@@ -10,12 +10,17 @@ import { createWebRtcTransport } from "../mediasoup/transport";
 import apiError from '../utils/apiError'
 import {roomToRouter } from "../stores/maps";
 import { getRouter } from "../mediasoup/router";
+import LiveRoom from "../models/liveRoom.models";
+import config from "../config";
+import Broadcaster from "../models/broadcaster.model";
+import { ipHash, userAgentHash } from "../utils/hash.util";
 
 const registerBroadcasterHandler = async (socket: Socket) => {
   // Creates a memory room
   socket.on("createRoom", async (ack) => {
     const startTime = Date.now()
     try {
+      const hostUserId = socket.data.user?.id;
       const roomId = await createRoomId();
 
       const _room = await createRoom(roomId)
@@ -37,6 +42,29 @@ const registerBroadcasterHandler = async (socket: Socket) => {
           roomId
         }
       })
+
+    void LiveRoom.create({
+      experienceRoomId: roomId,
+      hostUserId: hostUserId,
+      status: "live",
+      startedAt: new Date(),
+      sfuNodeId: config.instanceId,
+    }).catch((error) => {
+      logger.error("Failed to persist live room", error);
+    });
+
+    const hashedIp = ipHash(socket); 
+    const userAgentHashed = userAgentHash(socket)
+
+    void Broadcaster.create({
+      roomId: roomId, 
+      broadcasterId: hostUserId, 
+      ipHash: hashedIp, 
+      userAgentHash: userAgentHashed
+    }).catch((error) => {
+      logger.error("Failed to persist broadcaster", error);
+    });
+
 
     } catch (error:any) {
       logger.error('Live room creation error', {
@@ -109,7 +137,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
   socket.on("createBroadcasterTransport", async (roomId, ack) => {
     try {
       const room = getRoom(roomId);
-
+      const hostUserId = socket.data.user?.id; 
       const router = room.router;
 
       const broadcasterTransport =
@@ -135,6 +163,20 @@ const registerBroadcasterHandler = async (socket: Socket) => {
           dtlsParameters: broadcasterTransport?.dtlsParameters,
         }
       });
+
+    void Broadcaster.findOneAndUpdate(
+      {
+        broadcasterId: hostUserId,
+        roomId,
+      },
+      {
+        $push: {
+          transportIds: broadcasterTransport?.id,
+        },
+      }
+    ).catch((error) => {
+      logger.error("Failed to update broadcaster transport", error);
+    });
 
     } catch (error) {
       ack({
@@ -234,7 +276,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       }
   
       const room = getRoom(roomId);
-  
+      const hostUserId = socket.data.user?.id; 
       const broadcaster = room?.broadcasters.get(socket.id);
   
       if (!broadcaster) {
@@ -261,6 +303,20 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       }
 
       broadcaster.producers.set(producer.id, producer)
+
+      void Broadcaster.findOneAndUpdate(
+        {
+          roomId,
+          broadcasterId: hostUserId,
+        },
+        {
+          $push: {
+            producerIds: producer.id,
+          },
+        }
+      ).catch((error) => {
+        logger.error("Failed to update broadcaster producer", error);
+      });
       
       logger.info("Producer listener executed successfully:",{
         producerId : producer.id, 

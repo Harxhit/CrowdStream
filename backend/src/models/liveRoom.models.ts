@@ -8,7 +8,7 @@ export const LIVE_ROOM_STATUS = Object.freeze({
 const liveRoomSchema = new Schema(
   {
     experienceRoomId: {
-      type: Types.ObjectId,
+      type: String,
       ref: "ExperienceRoom",
       required: true,
     },
@@ -22,9 +22,20 @@ const liveRoomSchema = new Schema(
 
     status: {
       type: String,
-      enum: Object.values(LIVE_ROOM_STATUS),
-      default: LIVE_ROOM_STATUS.LIVE,
+      enum: ["live", "ended"],
+      default: "live",
+    },
+
+    sfuNodeId: {
+      type: String,
+      required: true,
       index: true,
+    },
+
+    totalViewersJoined: {
+      type: Number,
+      default: 0,
+      min: 0,
     },
 
     startedAt: {

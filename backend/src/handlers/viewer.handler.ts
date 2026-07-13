@@ -201,7 +201,6 @@ const consume = async (
           kind: consumer.kind,
           rtpParameters: consumer.rtpParameters,
         });
-
       }
     }
 
