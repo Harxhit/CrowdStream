@@ -32,7 +32,7 @@ const liveRoomSchema = new Schema(
       index: true,
     },
 
-    peakViewers: {
+    totalViewersJoined: {
       type: Number,
       default: 0,
       min: 0,

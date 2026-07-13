@@ -75,7 +75,7 @@ const registerViewerHanlder = async (socket: Socket) => {
         { experienceRoomId: roomId },
         {
           $inc: {
-            peakViewers: 1,
+            totalViewersJoined: 1,
           },
         }
       ).catch((error) => {
@@ -231,22 +231,22 @@ const registerViewerHanlder = async (socket: Socket) => {
   // Pauses a specific media consumer (e.g., video or audio) for the viewer
   socket.on("pauseConsumer", async (roomId, socketId, consumerId,ack) => {
     try {
-        pauseConsumer(roomId, socketId, consumerId);
+      pauseConsumer(roomId, socketId, consumerId);
 
-        ack({
-            success: true
-        })
+      ack({
+        success: true
+      })
         
-    } catch (error) {
-        logger.error("Pause consumer error",{
-            message: (error as Error).message, 
-            stack: (error as Error).stack
-        })
+    }catch (error) {
+      logger.error("Pause consumer error",{
+        message: (error as Error).message, 
+        stack: (error as Error).stack
+      })
 
-        ack({
-            success: false, 
-            code: 'PAUSE_CONSUMER_ERROR'
-        })
+      ack({
+        success: false, 
+        code: 'PAUSE_CONSUMER_ERROR'
+      })
     }
   });
 
