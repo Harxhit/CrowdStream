@@ -52,3 +52,13 @@ export interface WorkerLoad {
   broadcasters: number;
   totalUsers: number;
 }
+
+export interface RedisRoom {
+  roomId: string;
+  nodeId?: string;
+  workerPid?: string;
+  workerId?: string;
+  routerId?: string;
+  broadcasterId?: string;
+  status: "creating" | "live" | "ended";
+}
