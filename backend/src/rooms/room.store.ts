@@ -4,6 +4,10 @@ import apiError from '../utils/apiError'
 import { createRouter } from "../mediasoup/router";
 import { memoryRoom, workerPool } from "../stores/maps";
 import { assignWorker } from "../utils/workerPool.util";
+import { createRedisRoomKey, redis } from "../utils/redis.util";
+import config from "../config";
+import { RedisRoom } from "../types/mediasoup";
+import { removeRedisRoom } from "../utils/roomCordinator";
 
 //Creates roomId(temporary)
 const createRoomId = async () => {
@@ -12,7 +16,7 @@ const createRoomId = async () => {
 };
 
 //Creates a room with a mediasoup router. 
-const createRoom = async (roomId : string) => {
+const createRoom = async (roomId : string, hostUserId:string) => {
   const startTime = Date.now()
   try {
     logger.info('Create room started')
@@ -40,6 +44,26 @@ const createRoom = async (roomId : string) => {
 
     const workerInfo = workerPool.get(selectedWorkerId); 
     workerInfo?.associatedRooms.add(roomId)
+
+    try {
+      const redisRoomKey = createRedisRoomKey(roomId)
+      await redis.hset(redisRoomKey,{
+        roomId: roomId, 
+        nodeId: config.instanceId, 
+        workerPid: selectedWorker.pid.toString(), 
+        workerId: selectedWorkerId, 
+        broadcasterId: hostUserId,
+        status: 'live'
+      })
+
+      await redis.expire(redisRoomKey, 60 * 60)
+    } catch (error) {
+      logger.error('Failed to create redis room',{
+        error: (error as Error).message, 
+        stack: (error as Error).stack
+      })
+      throw error
+    }
 
     logger.info("Creation of room successfully executed",{
       roomId, 
@@ -87,13 +111,15 @@ const getRoom = (roomId: string) => {
   }
 };
 
-
 const deleteRoom = (roomId: string) => {
   const startTime = Date.now()
   try {
 
     const _room = getRoom(roomId); 
     memoryRoom.delete(roomId)
+
+    const roomKey = `room:${roomId}`; 
+    removeRedisRoom(roomKey)
 
     logger.log('Room delete successfully',{
       roomId,

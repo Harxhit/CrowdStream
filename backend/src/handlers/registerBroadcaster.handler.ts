@@ -14,6 +14,8 @@ import LiveRoom from "../models/liveRoom.models";
 import config from "../config";
 import Broadcaster from "../models/broadcaster.model";
 import { ipHash, userAgentHash } from "../utils/hash.util";
+import { getRedisRoom } from "../utils/roomCordinator";
+import ApiError from "../utils/apiError";
 
 const registerBroadcasterHandler = async (socket: Socket) => {
   // Creates a memory room
@@ -23,10 +25,9 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       const hostUserId = socket.data.user?.id;
       const roomId = await createRoomId();
 
-      const _room = await createRoom(roomId)
-
+      const _room = await createRoom(roomId, hostUserId)
       socket.data.roomId = roomId;  //Stores roomId into socket data
- 
+    
       await addBroadcaster(roomId, socket.id);
 
       logger.info("Room created successfully",{
@@ -80,7 +81,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
   });
 
   //Sends router capabilites
-  socket.on("getRouterRtpCapabilities", (roomId, ack) => {
+  socket.on("getRouterRtpCapabilities", async(roomId, ack) => {
     const startTime = Date.now(); 
     try {
       logger.info("Get getRouterRtpCapabilities started")
@@ -89,9 +90,16 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         logger.error('RoomID not found')
         throw new apiError(404,'RoomId not found')
       }
-      
+      const roomKey = `room:${roomId}`; 
+
+      const redisRoom = await getRedisRoom(roomKey)
+      //TODO: Implementation for different pod connections
+      if(redisRoom.nodeId !== config.instanceId){
+        logger.error('Different pod')
+        throw new ApiError(409,"Room belongs to another node")
+      }
+
       const routerId = roomToRouter.get(roomId); 
-      console.log("Router id", routerId)
       const router = getRouter(routerId!)
 
       if (!router) {
@@ -139,6 +147,15 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       const room = getRoom(roomId);
       const hostUserId = socket.data.user?.id; 
       const router = room.router;
+
+      const roomKey = `room:${roomId}`; 
+      const redisRoom = await getRedisRoom(roomKey)
+      //TODO: Implementation for different pod connections
+      if(redisRoom.nodeId !== config.instanceId){
+        logger.error('Different pod')
+        throw new ApiError(409,"Room belongs to another node")
+      }
+      
 
       const broadcasterTransport =
         await createWebRtcTransport(
@@ -219,6 +236,14 @@ const registerBroadcasterHandler = async (socket: Socket) => {
           );
         }
 
+        const roomKey = `room:${roomId}`; 
+        const redisRoom = await getRedisRoom(roomKey)
+        //TODO: Implementation for different pod connections
+        if(redisRoom.nodeId !== config.instanceId){
+          logger.error('Different pod')
+          throw new ApiError(409,"Room belongs to another node")
+        }
+      
         const broadcasterTransport =
           broadcaster.transports.get(
             "producer"
@@ -274,7 +299,17 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         logger.error("Room Id not found")
         throw new apiError(404,'RoomId not found')
       }
-  
+
+      const roomKey = `room:${roomId}`; 
+      const redisRoom = await getRedisRoom(roomKey)
+      //TODO: Implementation for different pod connections
+      if(redisRoom.nodeId !== config.instanceId){
+        logger.error('Different pod')
+        throw new ApiError(409,"Room belongs to another node")
+      }
+      
+
+      
       const room = getRoom(roomId);
       const hostUserId = socket.data.user?.id; 
       const broadcaster = room?.broadcasters.get(socket.id);

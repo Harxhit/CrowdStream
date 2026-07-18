@@ -3,6 +3,7 @@ import logger from "../utils/logging";
 import { handleWorkerClose } from "./worker";
 import { getRoom } from "../rooms/room.store";
 import { routers, routerToWorker, routerToRoom, roomToRouter, workerPool } from "../stores/maps";
+import { redis } from "../utils/redis.util";
 
 //Media codecs
 const mediaCodecs: NonNullable<RouterOptions["mediaCodecs"]> = [
@@ -45,6 +46,19 @@ const createRouter = async (roomId:string, worker:Worker, workerId:string) => {
     }
 
     routers.set(router.id, router);
+
+    try {
+      const roomKey = `room:${roomId}`
+      await redis.hset(roomKey,{
+        routerId: router.id
+      })
+    } catch (error) {
+      logger.error('Setting router failed',{
+        error: (error as Error).message, 
+        stack: (error as Error).stack
+      })
+      throw error
+    }
     
     logger.info(`Router created`,{
       roomId, 

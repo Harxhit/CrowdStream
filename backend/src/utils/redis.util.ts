@@ -38,3 +38,8 @@ redis.on("close", () => {
 redis.on("reconnecting", () => {
   console.info("Redis Cluster reconnecting...");
 });
+
+export const createRedisRoomKey = (roomId:string):string => {
+  const roomKey = `room:${roomId}`
+  return roomKey; 
+}
