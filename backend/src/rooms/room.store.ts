@@ -2,12 +2,12 @@ import { randomUUID } from "crypto";
 import logger from "../utils/logging";
 import apiError from '../utils/apiError'
 import { createRouter } from "../mediasoup/router";
-import { memoryRoom, workerPool } from "../stores/maps";
-import { assignWorker } from "../utils/workerPool.util";
+import { memoryRoom, workerLoadMap, workerPool } from "../stores/maps";
+import { assignWorker, workerLoad } from "../utils/workerPool.util";
 import { createRedisRoomKey, redis } from "../utils/redis.util";
 import config from "../config";
-import { RedisRoom } from "../types/mediasoup";
 import { removeRedisRoom } from "../utils/roomCordinator";
+import { removeViewerConsumer, removeViewerTransport } from "../handlers/viewer.handler";
 
 //Creates roomId(temporary)
 const createRoomId = async () => {
@@ -114,11 +114,31 @@ const getRoom = (roomId: string) => {
 const deleteRoom = (roomId: string) => {
   const startTime = Date.now()
   try {
-
-    const _room = getRoom(roomId); 
-    memoryRoom.delete(roomId)
-
+    const room = getRoom(roomId); 
     const roomKey = `room:${roomId}`; 
+    
+    const roomViewerSize = room.viewers.size; 
+    const roomBroadcasterSize = room.broadcasters.size
+    const worker = [...workerLoadMap.values()].find((w) => w.workerPid === room.worker.pid); 
+    const workerPoolCleanup = [...workerPool.values()].find((w) => w.pid === room?.worker.pid); 
+
+    if(worker){
+      worker.roomCount--;
+      worker.broadcasters -= roomBroadcasterSize;
+      worker.totalUsers -= roomViewerSize + roomBroadcasterSize;
+      worker.viewers -= roomViewerSize;
+    }else{
+      logger.warn('Worker not found',room.worker.pid)
+    }
+    
+    if(workerPoolCleanup){
+      workerPoolCleanup.associatedRooms.delete(roomId)
+      workerPoolCleanup.routerIds.delete(roomId)
+    }else{
+      logger.warn('Failed to remove associated rooms and routers')
+    }
+
+    memoryRoom.delete(roomId)
     removeRedisRoom(roomKey)
 
     logger.log('Room delete successfully',{
@@ -198,6 +218,7 @@ const addViewer = async (roomId: string, socketId: string) => {
     }
 
     room.viewers.set(socketId,{
+      socketId: socketId,
       consumers : new Map(), 
       transport : new Map(), 
       joinedAt : Date.now(), 
@@ -215,7 +236,7 @@ const addViewer = async (roomId: string, socketId: string) => {
 };
 
 //Clean up one viewer
-const removeViewer = async (roomId: string, socketId: string) => {
+const removeViewer = (roomId: string, socketId: string) => {
   const startTime = Date.now()
   try {
     logger.info('Remove viewer started')
@@ -226,32 +247,26 @@ const removeViewer = async (roomId: string, socketId: string) => {
       logger.error('Room not found')
       throw Error('Room not found')
     }
-    if(room.viewers.has(socketId)){
-      const viewer = room.viewers.get(socketId)
-      
-      try{
-        //Close its transport 
-        const viewerConsumerTransport = viewer?.transport?.get('consumer')
-        viewerConsumerTransport?.close()
-      }catch{}
 
-      //Close consumers
-      viewer?.consumers.forEach((consumer) => {
-        try {
-          consumer.close()
-        } catch{}
-      })
-      room.viewers.delete(socketId)
-
-    }else{
-      logger.error('Viewer not found in the memory room')
-      throw new Error
+    const viewer = room.viewers.get(socketId);
+    if(!viewer){
+      logger.warn('Viewer not found'); 
+      throw Error('Viewer not found')
     }
+    const worker = [...workerLoadMap.values()].find((w) => w.workerPid === room.worker.pid); 
+    if(worker){
+      worker.viewers--; 
+      worker.totalUsers--; 
+    }else{
+      logger.warn('Worker not found',room.worker.pid)
+    }
+    room.viewers.delete(socketId)
+    logger.info("Viewer removed from room",{
+      durationMs: Date.now() - startTime
+    })
 
-    logger.info('Viewer successfully removed', Date.now() - startTime)
-    return;
-  } catch (error:any) {
-    logger.error('Internak server error', {
+  } catch (error) {
+    logger.error('Viewer remove error', {
       message : (error as Error).message, 
       stack : (error as Error).stack
     })
@@ -259,41 +274,30 @@ const removeViewer = async (roomId: string, socketId: string) => {
 };
 
 //Clean up everything
-const removeBroadcaster = async (roomId: string, socketId: string) => {
-  const starTime = Date.now()
+const removeBroadcaster = (roomId: string, socketId: string) => {
+  const startTime = Date.now()
   try {
     const room = memoryRoom.get(roomId)
     if (!room) {
       logger.error('Room not found')
-      return;
+      throw new Error('Room not found')
     }
-
     const broadcaster = room.broadcasters.get(socketId)
 
     if (!broadcaster) {
       logger.error('Broadcaster not found')
-      return;
+      throw new Error('Brodcaster not found')
     }
-
-    //Close broadcaster transport
-    broadcaster.producers.forEach((producer) =>
-    {
-      try {
-        producer.close()
-      } catch{}
+    for(const viewer of room.viewers.values()){
+      removeViewerTransport(roomId, viewer.socketId)
+      removeViewerConsumer(roomId, viewer.socketId)
+    }
+    deleteRoom(roomId)
+    logger.info('Remove broadcaster success',{
+      duration_ms: Date.now() - startTime
     })
-
-    //Close consumer 
-    broadcaster.transports.forEach((transport) => {
-      try {
-        transport.close()
-      } catch {}
-    })
-
-    logger.info('Removing broadcaster successfully executed', Date.now() - starTime)
-    return;
-  } catch (error : any) {
-    logger.error('Internal server error', {
+  } catch (error) {
+    logger.error('Brodcaster remove error', {
       message : (error as Error).message, 
       stack : (error as Error).stack
     })

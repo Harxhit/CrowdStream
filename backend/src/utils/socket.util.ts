@@ -9,6 +9,7 @@ import { socketAuth } from "../middlewares/authentication.middleware";
 import cookie from 'cookie-parser'
 import { createShardedAdapter } from "@socket.io/redis-adapter";
 import { redis } from "./redis.util";
+import { handleDisconnect } from "./disconnect.util";
 
 const subClient = redis.duplicate(); 
 
@@ -44,7 +45,7 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", async (reason) => {
     logger.info(`User disconnected ${socket.id} beacuse of ${reason}`)
-
+    handleDisconnect(socket)
   });
 });
   

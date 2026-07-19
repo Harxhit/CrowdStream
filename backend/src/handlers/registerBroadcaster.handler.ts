@@ -59,6 +59,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
 
     void Broadcaster.create({
       roomId: roomId, 
+      socketId: socket.id, 
       broadcasterId: hostUserId, 
       ipHash: hashedIp, 
       userAgentHash: userAgentHashed
