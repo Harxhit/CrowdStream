@@ -5,6 +5,7 @@ export type TransportRole = "broadcaster" | "viewer";
 type Health = "healthy" | "unhealthy"
 
 export interface Broadcaster {
+  socketId: string; 
   transports: Map<string, WebRtcTransport>;
   producers: Map<string,Producer>;
   joinedAt: number;
@@ -12,6 +13,7 @@ export interface Broadcaster {
 }
 
 export interface Viewer {
+  socketId: string; 
   transport?: Map<TransportType, WebRtcTransport>;
   rtpCapabilities?: any;
   consumers: Map<string, Consumer>;
