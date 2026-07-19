@@ -121,11 +121,10 @@ const deleteRoom = (roomId: string) => {
     const worker = [...workerLoadMap.values()].find((w) => w.workerPid === room.worker.pid); 
     
     if(worker){
-      worker.roomCount--; 
-      worker.broadcasters - roomBroadcasterSize; 
-      worker.totalUsers - roomViewerSize + roomBroadcasterSize; 
-      worker.viewers - roomViewerSize
-      worker.roomCount-- //Need to make changes here when configuring piperouter
+      worker.roomCount--;
+      worker.broadcasters -= roomBroadcasterSize;
+      worker.totalUsers -= roomViewerSize + roomBroadcasterSize;
+      worker.viewers -= roomViewerSize;
     }else{
       logger.warn('Worker not found',room.worker.pid)
     }
