@@ -1,11 +1,12 @@
 import { Socket } from "socket.io";
 import logger from "./logging";
-import { getRoom, removeBroadcaster, removeViewer } from "../rooms/room.store";
+import { removeBroadcaster, removeViewer } from "../rooms/room.store";
 import { removeBroadcasterProducer, removeBroadcasterTransport } from "./broadcaster.util";
 import { removeViewerConsumer, removeViewerTransport } from "../handlers/viewer.handler";
 import Broadcaster from "../models/broadcaster.model";
 import Viewer from "../models/viewer.model";
 import LiveRoom from "../models/liveRoom.models";
+import { memoryRoom } from "../stores/maps";
 
 export const handleDisconnect = async(socket: Socket) => {
     const startTime = Date.now()
@@ -16,50 +17,46 @@ export const handleDisconnect = async(socket: Socket) => {
       if(!roomId){
         logger.error('RoomId not found')
         const [broadcaster, viewer] = await Promise.all([
-            Broadcaster.findOne({
-                where: {
-                socketId: socket.id,
-                },
-            }),
-            Viewer.findOne({
-                where: {
-                socketId: socket.id,
-                },
-            }),
+            Broadcaster.findOne({socketId: socket.id}),
+            Viewer.findOne({socketId: socket.id}),
         ]);
         if(broadcaster){
             roomId = broadcaster?.roomId; 
             removeBroadcasterTransport(roomId, socket.id)
             removeBroadcasterProducer(roomId, socket.id)
             removeBroadcaster(roomId, socket.id)
-            await dbCleanUp(roomId, socket.id)
+            await dbCleanUp(socket.id)
         }else if(viewer){
             roomId = viewer?.roomId
-            removeViewerTransport(roomId, socket.id)
+            removeViewerTransport(roomId,socket.id)
             removeViewerConsumer(roomId,socket.id); 
             removeViewer(roomId,socket.id)
-            await dbCleanUp(roomId, socket.id)
+            await dbCleanUp(socket.id)
         }else if(!broadcaster || !viewer){
             logger.warn('IDK')
         }
       }
 
-      const room = getRoom(roomId)
+      const room = memoryRoom.get(roomId); 
+      if(!room){
+        await dbCleanUp(socket.id)
+        return; 
+      }
 
-      const isBroadcaster = room.broadcasters.has(socket.id)
-      const isViewer = room.viewers.has(socket.id)
+      const isBroadcaster = room?.broadcasters.has(socket.id)
+      const isViewer = room?.viewers.has(socket.id)
 
       if(isBroadcaster){
         removeBroadcasterTransport(roomId, socket.id)
         removeBroadcasterProducer(roomId, socket.id)
         removeBroadcaster(roomId, socket.id)
-        dbCleanUp(roomId, socket.id)
+        dbCleanUp(socket.id)
 
       }else if(isViewer){
         removeViewerTransport(roomId, socket.id)
         removeViewerConsumer(roomId,socket.id); 
         removeViewer(roomId,socket.id)
-        dbCleanUp(roomId, socket.id)
+        dbCleanUp(socket.id)
       }else if(!isBroadcaster || !isViewer){
         logger.error('Idk')
       }
@@ -77,25 +74,15 @@ export const handleDisconnect = async(socket: Socket) => {
     }
 }
 
-const dbCleanUp = async(roomId:string, socketId:string) => {
+const dbCleanUp = async(socketId:string) => {
     try {
         const [broadcaster, viewer] = await Promise.all([
-            Broadcaster.findOne({
-                where: {
-                socketId: socketId,
-                },
-            }),
-            Viewer.findOne({
-                where: {
-                socketId: socketId,
-                },
-            }),
+            Broadcaster.findOne({socketId: socketId}),
+            Viewer.findOne({socketId: socketId}),
         ]);
 
         if(broadcaster){
-            await Broadcaster.deleteOne({
-                broadcasterId: broadcaster.id
-            })
+            await Broadcaster.findByIdAndDelete(broadcaster.id)
             await LiveRoom.deleteOne({
                 experienceRoomId: broadcaster.roomId
             })

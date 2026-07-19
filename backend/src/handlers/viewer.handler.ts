@@ -4,6 +4,7 @@ import {
   createWebRtcTransport,
 } from "../mediasoup/transport";
 import canConsume from "../utils/canConsumer.util";
+import { transportRegistry } from "../stores/maps";
 
 //Join room as viewer
 const joinAsViewer = async (roomId: string, socketId: string) => {
@@ -219,7 +220,7 @@ const consume = async (
   }
 };
 
-const removeViewerTransport = async(roomId:string, socketId:string) => {
+const removeViewerTransport = (roomId:string, socketId:string) => {
   const room = getRoom(roomId); 
   
   const viewer = room.viewers.get(socketId); 
@@ -228,11 +229,14 @@ const removeViewerTransport = async(roomId:string, socketId:string) => {
     throw new Error('Viewer not found')
   }
 
-  viewer.transport?.forEach((t) => t.close())
+  viewer.transport?.forEach((t) => {
+    transportRegistry.delete(t.id); 
+    t.close()
+  })
   viewer.transport?.clear()
 }
 
-const removeViewerConsumer = async(roomId:string, socketId:string) => {
+const removeViewerConsumer = (roomId:string, socketId:string) => {
   const room = getRoom(roomId); 
   
   const viewer = room.viewers.get(socketId); 

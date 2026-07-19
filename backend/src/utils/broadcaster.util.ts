@@ -1,6 +1,7 @@
 import logger from "./logging";
 import { getRoom } from "../rooms/room.store";
 import apiError from './apiError'
+import { transportRegistry } from "../stores/maps";
 
 //Registers the broadcaster(user who streams) into the room
 const addBroadcaster = async (roomId: string, socketId: string) => {
@@ -52,7 +53,7 @@ const saveBroadcasterTransport = async (
   }
 };
 
-const removeBroadcasterTransport = async(roomId:string, socketId:string) => {
+const removeBroadcasterTransport = (roomId:string, socketId:string) => {
   const room = getRoom(roomId); 
   
   const broadcaster = room.broadcasters.get(socketId); 
@@ -61,12 +62,15 @@ const removeBroadcasterTransport = async(roomId:string, socketId:string) => {
     throw new Error('broadcaster not found')
   }
 
-  broadcaster.transports?.forEach((t) => t.close())
+  broadcaster.transports?.forEach((t) => {
+    transportRegistry.delete(t.id); 
+    t.close()
+  })
   broadcaster.transports?.clear()
 }
 
 
-const removeBroadcasterProducer = async(roomId:string, socketId:string) => {
+const removeBroadcasterProducer = (roomId:string, socketId:string) => {
   const room = getRoom(roomId); 
   
   const broadcaster = room.broadcasters.get(socketId); 

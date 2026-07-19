@@ -7,6 +7,7 @@ import { assignWorker, workerLoad } from "../utils/workerPool.util";
 import { createRedisRoomKey, redis } from "../utils/redis.util";
 import config from "../config";
 import { removeRedisRoom } from "../utils/roomCordinator";
+import { removeViewerConsumer, removeViewerTransport } from "../handlers/viewer.handler";
 
 //Creates roomId(temporary)
 const createRoomId = async () => {
@@ -119,7 +120,8 @@ const deleteRoom = (roomId: string) => {
     const roomViewerSize = room.viewers.size; 
     const roomBroadcasterSize = room.broadcasters.size
     const worker = [...workerLoadMap.values()].find((w) => w.workerPid === room.worker.pid); 
-    
+    const workerPoolCleanup = [...workerPool.values()].find((w) => w.pid === room?.worker.pid); 
+
     if(worker){
       worker.roomCount--;
       worker.broadcasters -= roomBroadcasterSize;
@@ -129,6 +131,13 @@ const deleteRoom = (roomId: string) => {
       logger.warn('Worker not found',room.worker.pid)
     }
     
+    if(workerPoolCleanup){
+      workerPoolCleanup.associatedRooms.delete(roomId)
+      workerPoolCleanup.routerIds.delete(roomId)
+    }else{
+      logger.warn('Failed to remove associated rooms and routers')
+    }
+
     memoryRoom.delete(roomId)
     removeRedisRoom(roomKey)
 
@@ -227,7 +236,7 @@ const addViewer = async (roomId: string, socketId: string) => {
 };
 
 //Clean up one viewer
-const removeViewer = async (roomId: string, socketId: string) => {
+const removeViewer = (roomId: string, socketId: string) => {
   const startTime = Date.now()
   try {
     logger.info('Remove viewer started')
@@ -240,6 +249,10 @@ const removeViewer = async (roomId: string, socketId: string) => {
     }
 
     const viewer = room.viewers.get(socketId);
+    if(!viewer){
+      logger.warn('Viewer not found'); 
+      throw Error('Viewer not found')
+    }
     const worker = [...workerLoadMap.values()].find((w) => w.workerPid === room.worker.pid); 
     if(worker){
       worker.viewers--; 
@@ -261,7 +274,7 @@ const removeViewer = async (roomId: string, socketId: string) => {
 };
 
 //Clean up everything
-const removeBroadcaster = async (roomId: string, socketId: string) => {
+const removeBroadcaster = (roomId: string, socketId: string) => {
   const startTime = Date.now()
   try {
     const room = memoryRoom.get(roomId)
@@ -274,6 +287,10 @@ const removeBroadcaster = async (roomId: string, socketId: string) => {
     if (!broadcaster) {
       logger.error('Broadcaster not found')
       throw new Error('Brodcaster not found')
+    }
+    for(const viewer of room.viewers.values()){
+      removeViewerTransport(roomId, viewer.socketId)
+      removeViewerConsumer(roomId, viewer.socketId)
     }
     deleteRoom(roomId)
     logger.info('Remove broadcaster success',{
