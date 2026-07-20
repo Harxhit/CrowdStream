@@ -1,6 +1,6 @@
 import { Send } from "lucide-react";
 import { useEffect, useState } from "react";
-import { getSocket } from "../../socket"; // adjust import
+import { getSocket } from "../../socket";
 
 type Message = {
   roomId: string;
@@ -13,10 +13,20 @@ type Props = {
   roomId: string | null;
 };
 
+const REACTIONS = [
+  "👍",
+  "❤️",
+  "😂",
+  "🎉",
+  "👏",
+  "🔥",
+  "😮",
+];
+
 export default function LiveChat({ roomId }: Props) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState("");
-  const socket = getSocket()
+  const socket = getSocket();
 
   useEffect(() => {
     setMessages([]);
@@ -38,15 +48,28 @@ export default function LiveChat({ roomId }: Props) {
 
   function sendMessage(e: React.FormEvent) {
     e.preventDefault();
-    
+
     if (!text.trim()) return;
-    if(!roomId) return
-    
+    if (!roomId) return;
+
     socket.emit("chat:message", {
       roomId,
       message: text.trim(),
     });
+
     setText("");
+  }
+
+  function sendReaction(emoji: string) {
+    if (!roomId) {
+      console.warn("LiveChat: Cannot send reaction, roomId is empty/null");
+      return;
+    }
+    console.log("LiveChat: Sending reaction", emoji, "to room:", roomId, "via socket:", socket.id);
+    socket.emit("chat:reactions", {
+      roomId,
+      emoji,
+    });
   }
 
   return (
@@ -74,7 +97,7 @@ export default function LiveChat({ roomId }: Props) {
                 {msg.senderId}
               </p>
 
-              <p className="mt-1 text-sm text-neutral-300">
+              <p className="mt-1 text-sm text-neutral-300 break-words">
                 {msg.message}
               </p>
             </div>
@@ -82,24 +105,39 @@ export default function LiveChat({ roomId }: Props) {
         )}
       </div>
 
-      <form
-        onSubmit={sendMessage}
-        className="flex gap-3 border-t border-neutral-800 p-4"
-      >
-        <input
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Send a message..."
-          className="flex-1 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 outline-none transition focus:border-blue-500"
-        />
+      <div className="border-t border-neutral-800">
+        <div className="flex flex-wrap gap-2 px-4 py-3">
+          {REACTIONS.map((emoji) => (
+            <button
+              key={emoji}
+              type="button"
+              onClick={() => sendReaction(emoji)}
+              className="rounded-lg bg-neutral-800 px-3 py-2 text-2xl transition-all duration-200 hover:scale-110 hover:bg-neutral-700 active:scale-95"
+            >
+              {emoji}
+            </button>
+          ))}
+        </div>
 
-        <button
-          type="submit"
-          className="rounded-lg bg-blue-600 p-3 transition hover:bg-blue-700"
+        <form
+          onSubmit={sendMessage}
+          className="flex gap-3 border-t border-neutral-800 p-4"
         >
-          <Send size={18} />
-        </button>
-      </form>
+          <input
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Send a message..."
+            className="flex-1 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 outline-none transition focus:border-blue-500"
+          />
+
+          <button
+            type="submit"
+            className="rounded-lg bg-blue-600 p-3 transition hover:bg-blue-700"
+          >
+            <Send size={18} />
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

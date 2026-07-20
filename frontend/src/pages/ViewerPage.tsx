@@ -8,6 +8,8 @@ import ViewerVideo from "../components/viewer/ViewerVideo";
 import StreamInfo from "../components/viewer/StreamInfo";
 import ViewerControls from "../components/viewer/ViewerControls";
 import LiveChat from "../components/broadcaster/LiveChat";
+import ReactionOverlay from "../components/reactions/ReactionOverlay";
+
 
 interface Log {
   message: string;
@@ -154,6 +156,7 @@ export default function ViewerPage() {
               videoRef={videoRef}
               connected={connected}
             />
+            <ReactionOverlay roomId={roomId} />
 
             <ViewerControls
               connected={connected}
