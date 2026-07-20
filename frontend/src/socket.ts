@@ -3,7 +3,12 @@ import { io, Socket } from "socket.io-client";
 let socket: Socket | null = null;
 
 export function connectSocket() {
-    if (socket?.connected) return socket;
+    if (socket){
+        if(!socket.connected){
+            socket.connect()
+        }
+        return socket
+    }
 
     socket = io(window.location.origin);
 

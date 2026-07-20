@@ -1276,3 +1276,173 @@
     at Namespace.run (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:144:9)
     at Namespace._add (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/namespace.js:221:14)
     at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-07-20 12:56:17 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 12:56:17 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:50:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 12:57:38 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 12:57:38 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:50:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 12:58:57 error: RoomId not found
+2026-07-20 12:59:22 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 12:59:22 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:51:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 13:00:28 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 13:00:28 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:52:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 13:01:46 error: RoomId not found
+2026-07-20 13:02:06 error: Validation error "roomId" length must be less than or equal to 30 characters long
+2026-07-20 13:02:06 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:52:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 13:07:50 error: Validation error "message" length must be less than or equal to 10 characters long
+2026-07-20 13:07:50 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:52:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 17:33:42 error: RoomId not found
+2026-07-20 17:36:41 error: Database connection is not open
+2026-07-20 17:36:43 error: Database connection is not open
+2026-07-20 17:36:45 error: Database connection is not open
+2026-07-20 17:36:47 error: Database connection is not open
+2026-07-20 17:40:37 error: Room not found
+2026-07-20 17:40:37 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:98:13)
+    at authenticateUser (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:44:42)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 17:40:37 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at authenticateUser (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:44:42)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 17:40:44 error: RoomId not found
+2026-07-20 17:59:52 error: RoomId not found
+2026-07-20 18:08:04 error: MongoNetworkError: read ECONNRESET
+    at Connection.onSocketError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection.ts:308:18)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-07-20 18:08:06 error: Database connection is not open
+2026-07-20 18:08:08 error: Database connection is not open
+2026-07-20 18:08:10 error: Database connection is not open
+2026-07-20 18:08:12 error: Database connection is not open
+2026-07-20 18:08:14 error: Database connection is not open
+2026-07-20 18:08:16 error: Database connection is not open
+2026-07-20 18:08:18 error: Database connection is not open
+2026-07-20 18:08:20 error: Database connection is not open
+2026-07-20 18:08:22 error: Database connection is not open
+2026-07-20 18:08:24 error: Database connection is not open
+2026-07-20 18:08:26 error: Database connection is not open
+2026-07-20 18:08:28 error: Database connection is not open
+2026-07-20 18:11:41 error: Validation error "password" length must be at least 8 characters long
+2026-07-20 18:11:54 error: RoomId not found
+2026-07-20 18:16:18 error: PoolClearedOnNetworkError: Connection to ac-v00shv2-shard-00-02.eplgdfn.mongodb.net:27017 interrupted due to server monitor timeout
+    at ConnectionPool.interruptInUseConnections (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:487:28)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:473:35
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:16:20 error: Database connection is not open
+2026-07-20 18:16:22 error: Database connection is not open
+2026-07-20 18:16:24 error: Database connection is not open
+2026-07-20 18:16:26 error: Database connection is not open
+2026-07-20 18:16:28 error: Database connection is not open
+2026-07-20 18:16:38 error: Password validation failed
+2026-07-20 18:16:49 error: Room not found
+2026-07-20 18:16:49 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:98:13)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:16:49 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:16:49 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:04 error: Validation error "roomId" must be a valid GUID
+2026-07-20 18:17:04 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:35:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:42:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:15 error: Room not found
+2026-07-20 18:17:15 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:98:13)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:15 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:15 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:24 error: Validation error "roomId" must be a valid GUID
+2026-07-20 18:17:24 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:35:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:42:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)

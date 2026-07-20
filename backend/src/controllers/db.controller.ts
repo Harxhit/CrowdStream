@@ -5,10 +5,10 @@ import mongoose from "mongoose";
 export const dbReadinessCheck = async(request: Request, response:Response) => {
     const startTime = Date.now()
     try {
-        logger.info('MongoDB readiness check', {
-            ip: request.ip, 
-            userAgent: request.get("User-Agent")
-        })
+        // logger.info('MongoDB readiness check', {
+        //     ip: request.ip, 
+        //     userAgent: request.get("User-Agent")
+        // })
 
         //Driver connection state
         if(mongoose.connection.readyState !== 1){
@@ -21,9 +21,9 @@ export const dbReadinessCheck = async(request: Request, response:Response) => {
 
         await mongoose.connection.db?.admin().ping()
 
-        logger.info('Database UP',{
-            durationMs: Date.now() - startTime
-        })
+        // logger.info('Database UP',{
+        //     durationMs: Date.now() - startTime
+        // })
 
         return response.status(200).json({
             success: true, 

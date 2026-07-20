@@ -1,46 +1,58 @@
 import { Send } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getSocket } from "../../socket"; // adjust import
 
 type Message = {
-  id: number;
-  user: string;
+  roomId: string;
+  senderId: string;
   message: string;
+  timestamp: number;
 };
 
-export default function LiveChat() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 1,
-      user: "System",
-      message: "Live chat is ready.",
-    },
-  ]);
+type Props = {
+  roomId: string | null;
+};
 
+export default function LiveChat({ roomId }: Props) {
+  const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState("");
+  const socket = getSocket()
+
+  useEffect(() => {
+    setMessages([]);
+  }, [roomId]);
+
+  useEffect(() => {
+    const handleMessage = (message: Message) => {
+      if (message.roomId !== roomId) return;
+
+      setMessages((prev) => [...prev, message]);
+    };
+
+    socket.on("chat:message", handleMessage);
+
+    return () => {
+      socket.off("chat:message", handleMessage);
+    };
+  }, [socket, roomId]);
 
   function sendMessage(e: React.FormEvent) {
     e.preventDefault();
-
+    
     if (!text.trim()) return;
-
-    setMessages((prev) => [
-      ...prev,
-      {
-        id: Date.now(),
-        user: "You",
-        message: text,
-      },
-    ]);
-
+    if(!roomId) return
+    
+    socket.emit("chat:message", {
+      roomId,
+      message: text.trim(),
+    });
     setText("");
   }
 
   return (
     <section className="flex h-[500px] flex-col rounded-2xl border border-neutral-800 bg-neutral-900 shadow-lg">
       <div className="border-b border-neutral-800 px-6 py-4">
-        <h2 className="text-lg font-semibold">
-          Live Chat
-        </h2>
+        <h2 className="text-lg font-semibold">Live Chat</h2>
 
         <p className="mt-1 text-sm text-neutral-400">
           Messages from viewers
@@ -53,17 +65,17 @@ export default function LiveChat() {
             No messages yet.
           </p>
         ) : (
-          messages.map((message) => (
+          messages.map((msg) => (
             <div
-              key={message.id}
+              key={`${msg.senderId}-${msg.timestamp}`}
               className="rounded-xl bg-neutral-950 p-3"
             >
               <p className="text-sm font-semibold text-blue-400">
-                {message.user}
+                {msg.senderId}
               </p>
 
               <p className="mt-1 text-sm text-neutral-300">
-                {message.message}
+                {msg.message}
               </p>
             </div>
           ))

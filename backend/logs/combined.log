@@ -15407,3 +15407,3308 @@
 2026-07-13 00:32:15 info: Worker created successfully
 2026-07-13 00:32:15 info: Worker created successfully
 2026-07-13 00:32:15 info: Worker pool initialized
+2026-07-20 12:53:44 info: MongoDB connected
+2026-07-20 12:53:44 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 12:53:44 info: Creating worker started
+2026-07-20 12:53:44 info: Creating worker started
+2026-07-20 12:53:44 info: Creating worker started
+2026-07-20 12:53:44 info: Worker created successfully
+2026-07-20 12:53:44 info: Worker created successfully
+2026-07-20 12:53:44 info: Worker created successfully
+2026-07-20 12:53:44 info: Worker pool initialized
+2026-07-20 12:55:44 info: MongoDB readiness check
+2026-07-20 12:55:44 info: Database UP
+2026-07-20 12:55:46 info: MongoDB readiness check
+2026-07-20 12:55:46 info: Database UP
+2026-07-20 12:55:48 info: MongoDB readiness check
+2026-07-20 12:55:48 info: Database UP
+2026-07-20 12:55:50 info: MongoDB readiness check
+2026-07-20 12:55:50 info: Database UP
+2026-07-20 12:55:52 info: MongoDB readiness check
+2026-07-20 12:55:52 info: SignIn started
+2026-07-20 12:55:52 info: Database UP
+2026-07-20 12:55:52 info: SignIn completed
+2026-07-20 12:55:52 info: [node-1] Client connected: 4VJsxcDj2TI1XzKNAAAB
+2026-07-20 12:55:54 info: MongoDB readiness check
+2026-07-20 12:55:54 info: Database UP
+2026-07-20 12:55:56 info: MongoDB readiness check
+2026-07-20 12:55:56 info: Database UP
+2026-07-20 12:55:58 info: MongoDB readiness check
+2026-07-20 12:55:59 info: Database UP
+2026-07-20 12:56:01 info: MongoDB readiness check
+2026-07-20 12:56:01 info: Database UP
+2026-07-20 12:56:03 info: MongoDB readiness check
+2026-07-20 12:56:03 info: Database UP
+2026-07-20 12:56:04 info: Create room started
+2026-07-20 12:56:04 info: Woker loads loaded successfully
+2026-07-20 12:56:04 info: Woker assigned succesfully
+2026-07-20 12:56:04 info: Creation of router started
+2026-07-20 12:56:04 info: Router created
+2026-07-20 12:56:04 info: Creation of room successfully executed
+2026-07-20 12:56:04 info: Get room started
+2026-07-20 12:56:04 info: Get room executed successfully
+2026-07-20 12:56:04 info: Broadcaster added to the room
+2026-07-20 12:56:04 info: Room created successfully
+2026-07-20 12:56:05 info: MongoDB readiness check
+2026-07-20 12:56:05 info: Database UP
+2026-07-20 12:56:07 info: MongoDB readiness check
+2026-07-20 12:56:07 info: Database UP
+2026-07-20 12:56:09 info: MongoDB readiness check
+2026-07-20 12:56:09 info: Database UP
+2026-07-20 12:56:11 info: MongoDB readiness check
+2026-07-20 12:56:12 info: Database UP
+2026-07-20 12:56:14 info: MongoDB readiness check
+2026-07-20 12:56:14 info: Database UP
+2026-07-20 12:56:16 info: MongoDB readiness check
+2026-07-20 12:56:16 info: Database UP
+2026-07-20 12:56:17 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 12:56:17 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:50:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 12:56:18 info: MongoDB readiness check
+2026-07-20 12:56:18 info: Database UP
+2026-07-20 12:56:20 info: MongoDB readiness check
+2026-07-20 12:56:20 info: Database UP
+2026-07-20 12:56:22 info: MongoDB readiness check
+2026-07-20 12:56:22 info: Database UP
+2026-07-20 12:56:24 info: MongoDB readiness check
+2026-07-20 12:56:24 info: Database UP
+2026-07-20 12:56:26 info: MongoDB readiness check
+2026-07-20 12:56:26 info: Database UP
+2026-07-20 12:56:28 info: MongoDB readiness check
+2026-07-20 12:56:29 info: Database UP
+2026-07-20 12:56:31 info: MongoDB readiness check
+2026-07-20 12:56:31 info: Database UP
+2026-07-20 12:56:33 info: MongoDB readiness check
+2026-07-20 12:56:33 info: Database UP
+2026-07-20 12:56:35 info: MongoDB readiness check
+2026-07-20 12:56:35 info: Database UP
+2026-07-20 12:56:37 info: MongoDB readiness check
+2026-07-20 12:56:37 info: Database UP
+2026-07-20 12:56:39 info: MongoDB readiness check
+2026-07-20 12:56:39 info: Database UP
+2026-07-20 12:56:41 info: MongoDB readiness check
+2026-07-20 12:56:41 info: Database UP
+2026-07-20 12:56:43 info: MongoDB readiness check
+2026-07-20 12:56:43 info: Database UP
+2026-07-20 12:56:45 info: MongoDB readiness check
+2026-07-20 12:56:45 info: Database UP
+2026-07-20 12:56:47 info: MongoDB readiness check
+2026-07-20 12:56:47 info: Database UP
+2026-07-20 12:56:49 info: MongoDB readiness check
+2026-07-20 12:56:49 info: Database UP
+2026-07-20 12:56:51 info: MongoDB readiness check
+2026-07-20 12:56:52 info: Database UP
+2026-07-20 12:56:54 info: MongoDB readiness check
+2026-07-20 12:56:54 info: Database UP
+2026-07-20 12:56:56 info: MongoDB readiness check
+2026-07-20 12:56:56 info: Database UP
+2026-07-20 12:56:58 info: MongoDB readiness check
+2026-07-20 12:56:58 info: Database UP
+2026-07-20 12:57:00 info: MongoDB readiness check
+2026-07-20 12:57:00 info: Database UP
+2026-07-20 12:57:02 info: MongoDB readiness check
+2026-07-20 12:57:02 info: Database UP
+2026-07-20 12:57:04 info: MongoDB readiness check
+2026-07-20 12:57:04 info: Database UP
+2026-07-20 12:57:06 info: MongoDB readiness check
+2026-07-20 12:57:07 info: Database UP
+2026-07-20 12:57:09 info: MongoDB readiness check
+2026-07-20 12:57:09 info: Database UP
+2026-07-20 12:57:11 info: MongoDB readiness check
+2026-07-20 12:57:11 info: Database UP
+2026-07-20 12:57:13 info: MongoDB readiness check
+2026-07-20 12:57:13 info: Database UP
+2026-07-20 12:57:15 info: MongoDB readiness check
+2026-07-20 12:57:15 info: Database UP
+2026-07-20 12:57:17 info: MongoDB readiness check
+2026-07-20 12:57:19 info: Database UP
+2026-07-20 12:57:21 info: MongoDB readiness check
+2026-07-20 12:57:21 info: Database UP
+2026-07-20 12:57:23 info: MongoDB readiness check
+2026-07-20 12:57:23 info: Database UP
+2026-07-20 12:57:25 info: MongoDB readiness check
+2026-07-20 12:57:29 info: MongoDB readiness check
+2026-07-20 12:57:32 info: Database UP
+2026-07-20 12:57:32 info: Database UP
+2026-07-20 12:57:33 info: MongoDB readiness check
+2026-07-20 12:57:37 info: MongoDB readiness check
+2026-07-20 12:57:38 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 12:57:38 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:50:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 12:57:41 info: MongoDB readiness check
+2026-07-20 12:57:44 info: Database UP
+2026-07-20 12:57:44 info: Database UP
+2026-07-20 12:57:44 info: Database UP
+2026-07-20 12:57:45 info: MongoDB readiness check
+2026-07-20 12:57:45 info: Database UP
+2026-07-20 12:57:47 info: MongoDB readiness check
+2026-07-20 12:57:47 info: Database UP
+2026-07-20 12:57:49 info: MongoDB readiness check
+2026-07-20 12:57:50 info: Database UP
+2026-07-20 12:57:52 info: MongoDB readiness check
+2026-07-20 12:57:52 info: Database UP
+2026-07-20 12:57:54 info: MongoDB readiness check
+2026-07-20 12:57:54 info: Database UP
+2026-07-20 12:57:56 info: MongoDB readiness check
+2026-07-20 12:57:56 info: Database UP
+2026-07-20 12:57:58 info: MongoDB readiness check
+2026-07-20 12:57:58 info: Database UP
+2026-07-20 12:58:00 info: MongoDB readiness check
+2026-07-20 12:58:00 info: Database UP
+2026-07-20 12:58:02 info: MongoDB readiness check
+2026-07-20 12:58:02 info: Database UP
+2026-07-20 12:58:04 info: MongoDB readiness check
+2026-07-20 12:58:04 info: Database UP
+2026-07-20 12:58:06 info: MongoDB readiness check
+2026-07-20 12:58:07 info: Database UP
+2026-07-20 12:58:09 info: MongoDB readiness check
+2026-07-20 12:58:09 info: Database UP
+2026-07-20 12:58:11 info: MongoDB readiness check
+2026-07-20 12:58:11 info: Database UP
+2026-07-20 12:58:13 info: MongoDB readiness check
+2026-07-20 12:58:13 info: Database UP
+2026-07-20 12:58:22 info: MongoDB connected
+2026-07-20 12:58:22 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 12:58:22 info: Creating worker started
+2026-07-20 12:58:22 info: Creating worker started
+2026-07-20 12:58:22 info: Creating worker started
+2026-07-20 12:58:22 info: Worker created successfully
+2026-07-20 12:58:22 info: Worker created successfully
+2026-07-20 12:58:22 info: Worker created successfully
+2026-07-20 12:58:22 info: Worker pool initialized
+2026-07-20 12:58:23 info: MongoDB readiness check
+2026-07-20 12:58:23 info: Database UP
+2026-07-20 12:58:25 info: MongoDB readiness check
+2026-07-20 12:58:25 info: Database UP
+2026-07-20 12:58:27 info: [node-1] Client connected: fTWgKf5oL_HfNjRlAAAB
+2026-07-20 12:58:27 info: MongoDB readiness check
+2026-07-20 12:58:27 info: Database UP
+2026-07-20 12:58:36 info: MongoDB connected
+2026-07-20 12:58:36 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 12:58:36 info: Creating worker started
+2026-07-20 12:58:36 info: Creating worker started
+2026-07-20 12:58:36 info: Creating worker started
+2026-07-20 12:58:36 info: Worker created successfully
+2026-07-20 12:58:36 info: Worker created successfully
+2026-07-20 12:58:36 info: Worker created successfully
+2026-07-20 12:58:36 info: Worker pool initialized
+2026-07-20 12:58:37 info: MongoDB readiness check
+2026-07-20 12:58:37 info: Database UP
+2026-07-20 12:58:39 info: MongoDB readiness check
+2026-07-20 12:58:39 info: Database UP
+2026-07-20 12:58:41 info: [node-1] Client connected: TJn4QRQdsBkI5n9MAAAB
+2026-07-20 12:58:41 info: MongoDB readiness check
+2026-07-20 12:58:42 info: Database UP
+2026-07-20 12:58:44 info: MongoDB readiness check
+2026-07-20 12:58:44 info: Database UP
+2026-07-20 12:58:46 info: MongoDB readiness check
+2026-07-20 12:58:46 info: Database UP
+2026-07-20 12:58:48 info: MongoDB readiness check
+2026-07-20 12:58:48 info: Database UP
+2026-07-20 12:58:50 info: MongoDB readiness check
+2026-07-20 12:58:50 info: Database UP
+2026-07-20 12:58:52 info: MongoDB readiness check
+2026-07-20 12:58:52 info: Database UP
+2026-07-20 12:58:54 info: MongoDB readiness check
+2026-07-20 12:58:54 info: Database UP
+2026-07-20 12:58:56 info: MongoDB readiness check
+2026-07-20 12:58:57 info: Database UP
+2026-07-20 12:58:57 info: User disconnected TJn4QRQdsBkI5n9MAAAB beacuse of transport close
+2026-07-20 12:58:57 info: Handle disconnect started
+2026-07-20 12:58:57 error: RoomId not found
+2026-07-20 12:58:57 warn: IDK
+2026-07-20 12:58:59 info: MongoDB readiness check
+2026-07-20 12:58:59 info: Database UP
+2026-07-20 12:59:01 info: MongoDB readiness check
+2026-07-20 12:59:01 info: Database UP
+2026-07-20 12:59:03 info: MongoDB readiness check
+2026-07-20 12:59:03 info: Database UP
+2026-07-20 12:59:05 info: MongoDB readiness check
+2026-07-20 12:59:05 info: Database UP
+2026-07-20 12:59:07 info: MongoDB readiness check
+2026-07-20 12:59:07 info: Database UP
+2026-07-20 12:59:09 info: MongoDB readiness check
+2026-07-20 12:59:09 info: SignIn started
+2026-07-20 12:59:09 info: Database UP
+2026-07-20 12:59:09 info: SignIn completed
+2026-07-20 12:59:09 info: [node-1] Client connected: nV7rKLPOBkUaObxFAAAD
+2026-07-20 12:59:11 info: MongoDB readiness check
+2026-07-20 12:59:11 info: Database UP
+2026-07-20 12:59:13 info: Create room started
+2026-07-20 12:59:13 info: Woker loads loaded successfully
+2026-07-20 12:59:13 info: Woker assigned succesfully
+2026-07-20 12:59:13 info: Creation of router started
+2026-07-20 12:59:13 info: Router created
+2026-07-20 12:59:13 info: Creation of room successfully executed
+2026-07-20 12:59:13 info: Get room started
+2026-07-20 12:59:13 info: Get room executed successfully
+2026-07-20 12:59:13 info: Broadcaster added to the room
+2026-07-20 12:59:13 info: Room created successfully
+2026-07-20 12:59:13 info: MongoDB readiness check
+2026-07-20 12:59:13 info: Database UP
+2026-07-20 12:59:15 info: MongoDB readiness check
+2026-07-20 12:59:15 info: Database UP
+2026-07-20 12:59:18 info: MongoDB readiness check
+2026-07-20 12:59:18 info: Database UP
+2026-07-20 12:59:20 info: MongoDB readiness check
+2026-07-20 12:59:20 info: Database UP
+2026-07-20 12:59:22 info: MongoDB readiness check
+2026-07-20 12:59:22 info: Database UP
+2026-07-20 12:59:22 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 12:59:22 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:51:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 12:59:24 info: MongoDB readiness check
+2026-07-20 12:59:24 info: Database UP
+2026-07-20 12:59:26 info: MongoDB readiness check
+2026-07-20 12:59:26 info: Database UP
+2026-07-20 12:59:28 info: MongoDB readiness check
+2026-07-20 12:59:29 info: Database UP
+2026-07-20 12:59:31 info: MongoDB readiness check
+2026-07-20 12:59:31 info: Database UP
+2026-07-20 12:59:33 info: MongoDB readiness check
+2026-07-20 12:59:33 info: Database UP
+2026-07-20 12:59:35 info: MongoDB readiness check
+2026-07-20 12:59:35 info: Database UP
+2026-07-20 12:59:37 info: MongoDB readiness check
+2026-07-20 12:59:37 info: Database UP
+2026-07-20 12:59:39 info: MongoDB readiness check
+2026-07-20 12:59:39 info: Database UP
+2026-07-20 12:59:41 info: MongoDB readiness check
+2026-07-20 12:59:41 info: Database UP
+2026-07-20 12:59:43 info: MongoDB readiness check
+2026-07-20 12:59:43 info: Database UP
+2026-07-20 12:59:45 info: MongoDB readiness check
+2026-07-20 12:59:45 info: Database UP
+2026-07-20 12:59:47 info: MongoDB readiness check
+2026-07-20 12:59:47 info: Database UP
+2026-07-20 12:59:49 info: MongoDB readiness check
+2026-07-20 12:59:50 info: Database UP
+2026-07-20 12:59:52 info: MongoDB readiness check
+2026-07-20 12:59:52 info: Database UP
+2026-07-20 12:59:54 info: MongoDB readiness check
+2026-07-20 12:59:54 info: Database UP
+2026-07-20 12:59:56 info: MongoDB readiness check
+2026-07-20 12:59:56 info: Database UP
+2026-07-20 13:00:03 info: MongoDB connected
+2026-07-20 13:00:03 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:00:03 info: Creating worker started
+2026-07-20 13:00:03 info: Creating worker started
+2026-07-20 13:00:03 info: Creating worker started
+2026-07-20 13:00:03 info: Worker created successfully
+2026-07-20 13:00:03 info: Worker created successfully
+2026-07-20 13:00:03 info: Worker created successfully
+2026-07-20 13:00:03 info: Worker pool initialized
+2026-07-20 13:00:04 info: MongoDB readiness check
+2026-07-20 13:00:04 info: Database UP
+2026-07-20 13:00:06 info: MongoDB readiness check
+2026-07-20 13:00:06 info: Database UP
+2026-07-20 13:00:08 info: MongoDB readiness check
+2026-07-20 13:00:08 info: Database UP
+2026-07-20 13:00:10 info: MongoDB readiness check
+2026-07-20 13:00:11 info: Database UP
+2026-07-20 13:00:13 info: MongoDB readiness check
+2026-07-20 13:00:13 info: Database UP
+2026-07-20 13:00:14 info: SignIn started
+2026-07-20 13:00:14 info: SignIn completed
+2026-07-20 13:00:14 info: [node-1] Client connected: WeJV0UZ9nTHpoJcQAAAB
+2026-07-20 13:00:15 info: MongoDB readiness check
+2026-07-20 13:00:15 info: Database UP
+2026-07-20 13:00:17 info: MongoDB readiness check
+2026-07-20 13:00:17 info: Database UP
+2026-07-20 13:00:17 info: Create room started
+2026-07-20 13:00:17 info: Woker loads loaded successfully
+2026-07-20 13:00:17 info: Woker assigned succesfully
+2026-07-20 13:00:17 info: Creation of router started
+2026-07-20 13:00:17 info: Router created
+2026-07-20 13:00:17 info: Creation of room successfully executed
+2026-07-20 13:00:17 info: Get room started
+2026-07-20 13:00:17 info: Get room executed successfully
+2026-07-20 13:00:17 info: Broadcaster added to the room
+2026-07-20 13:00:17 info: Room created successfully
+2026-07-20 13:00:19 info: MongoDB readiness check
+2026-07-20 13:00:19 info: Database UP
+2026-07-20 13:00:21 info: MongoDB readiness check
+2026-07-20 13:00:21 info: Database UP
+2026-07-20 13:00:23 info: MongoDB readiness check
+2026-07-20 13:00:23 info: Database UP
+2026-07-20 13:00:25 info: MongoDB readiness check
+2026-07-20 13:00:25 info: Database UP
+2026-07-20 13:00:27 info: MongoDB readiness check
+2026-07-20 13:00:28 info: Database UP
+2026-07-20 13:00:28 error: Validation error "roomId" must only contain alpha-numeric characters
+2026-07-20 13:00:28 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:52:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 13:00:30 info: MongoDB readiness check
+2026-07-20 13:00:30 info: Database UP
+2026-07-20 13:00:32 info: MongoDB readiness check
+2026-07-20 13:00:32 info: Database UP
+2026-07-20 13:00:34 info: MongoDB readiness check
+2026-07-20 13:00:34 info: Database UP
+2026-07-20 13:00:36 info: MongoDB readiness check
+2026-07-20 13:00:36 info: Database UP
+2026-07-20 13:00:38 info: MongoDB readiness check
+2026-07-20 13:00:38 info: Database UP
+2026-07-20 13:00:40 info: MongoDB readiness check
+2026-07-20 13:00:40 info: Database UP
+2026-07-20 13:00:42 info: MongoDB readiness check
+2026-07-20 13:00:43 info: Database UP
+2026-07-20 13:00:45 info: MongoDB readiness check
+2026-07-20 13:00:45 info: Database UP
+2026-07-20 13:00:47 info: MongoDB readiness check
+2026-07-20 13:00:47 info: Database UP
+2026-07-20 13:00:49 info: MongoDB readiness check
+2026-07-20 13:00:49 info: Database UP
+2026-07-20 13:00:51 info: MongoDB readiness check
+2026-07-20 13:00:51 info: Database UP
+2026-07-20 13:00:53 info: MongoDB readiness check
+2026-07-20 13:00:53 info: Database UP
+2026-07-20 13:00:55 info: MongoDB readiness check
+2026-07-20 13:00:55 info: Database UP
+2026-07-20 13:00:57 info: MongoDB readiness check
+2026-07-20 13:00:58 info: Database UP
+2026-07-20 13:01:00 info: MongoDB readiness check
+2026-07-20 13:01:00 info: Database UP
+2026-07-20 13:01:02 info: MongoDB readiness check
+2026-07-20 13:01:02 info: Database UP
+2026-07-20 13:01:04 info: MongoDB readiness check
+2026-07-20 13:01:04 info: Database UP
+2026-07-20 13:01:06 info: MongoDB readiness check
+2026-07-20 13:01:06 info: Database UP
+2026-07-20 13:01:08 info: MongoDB readiness check
+2026-07-20 13:01:08 info: Database UP
+2026-07-20 13:01:10 info: MongoDB readiness check
+2026-07-20 13:01:10 info: Database UP
+2026-07-20 13:01:12 info: MongoDB readiness check
+2026-07-20 13:01:12 info: Database UP
+2026-07-20 13:01:14 info: MongoDB readiness check
+2026-07-20 13:01:14 info: Database UP
+2026-07-20 13:01:16 info: MongoDB readiness check
+2026-07-20 13:01:17 info: Database UP
+2026-07-20 13:01:19 info: MongoDB readiness check
+2026-07-20 13:01:19 info: Database UP
+2026-07-20 13:01:21 info: MongoDB readiness check
+2026-07-20 13:01:22 info: Database UP
+2026-07-20 13:01:24 info: MongoDB readiness check
+2026-07-20 13:01:24 info: Database UP
+2026-07-20 13:01:26 info: MongoDB readiness check
+2026-07-20 13:01:27 info: Database UP
+2026-07-20 13:01:39 info: MongoDB connected
+2026-07-20 13:01:39 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:01:39 info: Creating worker started
+2026-07-20 13:01:39 info: Creating worker started
+2026-07-20 13:01:39 info: Creating worker started
+2026-07-20 13:01:39 info: Worker created successfully
+2026-07-20 13:01:39 info: Worker created successfully
+2026-07-20 13:01:39 info: Worker created successfully
+2026-07-20 13:01:39 info: Worker pool initialized
+2026-07-20 13:01:41 info: MongoDB readiness check
+2026-07-20 13:01:41 info: Database UP
+2026-07-20 13:01:43 info: MongoDB readiness check
+2026-07-20 13:01:43 info: Database UP
+2026-07-20 13:01:45 info: MongoDB readiness check
+2026-07-20 13:01:45 info: Database UP
+2026-07-20 13:01:46 info: [node-1] Client connected: -I1RprdtdLIxeaG8AAAB
+2026-07-20 13:01:46 info: User disconnected -I1RprdtdLIxeaG8AAAB beacuse of transport close
+2026-07-20 13:01:46 info: Handle disconnect started
+2026-07-20 13:01:46 error: RoomId not found
+2026-07-20 13:01:47 warn: IDK
+2026-07-20 13:01:47 info: MongoDB readiness check
+2026-07-20 13:01:47 info: Database UP
+2026-07-20 13:01:49 info: MongoDB readiness check
+2026-07-20 13:01:49 info: Database UP
+2026-07-20 13:01:51 info: MongoDB readiness check
+2026-07-20 13:01:52 info: Database UP
+2026-07-20 13:01:54 info: MongoDB readiness check
+2026-07-20 13:01:54 info: Database UP
+2026-07-20 13:01:56 info: MongoDB readiness check
+2026-07-20 13:01:56 info: Database UP
+2026-07-20 13:01:58 info: MongoDB readiness check
+2026-07-20 13:01:58 info: Database UP
+2026-07-20 13:01:59 info: SignIn started
+2026-07-20 13:02:00 info: SignIn completed
+2026-07-20 13:02:00 info: [node-1] Client connected: _xgmtVjAqwiDFFteAAAD
+2026-07-20 13:02:00 info: MongoDB readiness check
+2026-07-20 13:02:00 info: Database UP
+2026-07-20 13:02:02 info: MongoDB readiness check
+2026-07-20 13:02:03 info: Database UP
+2026-07-20 13:02:03 info: Create room started
+2026-07-20 13:02:03 info: Woker loads loaded successfully
+2026-07-20 13:02:03 info: Woker assigned succesfully
+2026-07-20 13:02:03 info: Creation of router started
+2026-07-20 13:02:03 info: Router created
+2026-07-20 13:02:03 info: Creation of room successfully executed
+2026-07-20 13:02:03 info: Get room started
+2026-07-20 13:02:03 info: Get room executed successfully
+2026-07-20 13:02:03 info: Broadcaster added to the room
+2026-07-20 13:02:03 info: Room created successfully
+2026-07-20 13:02:05 info: MongoDB readiness check
+2026-07-20 13:02:05 info: Database UP
+2026-07-20 13:02:06 error: Validation error "roomId" length must be less than or equal to 30 characters long
+2026-07-20 13:02:06 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:52:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 13:02:07 info: MongoDB readiness check
+2026-07-20 13:02:07 info: Database UP
+2026-07-20 13:02:09 info: MongoDB readiness check
+2026-07-20 13:02:09 info: Database UP
+2026-07-20 13:02:11 info: MongoDB readiness check
+2026-07-20 13:02:11 info: Database UP
+2026-07-20 13:02:13 info: MongoDB readiness check
+2026-07-20 13:02:14 info: Database UP
+2026-07-20 13:02:16 info: MongoDB readiness check
+2026-07-20 13:02:16 info: Database UP
+2026-07-20 13:02:18 info: MongoDB readiness check
+2026-07-20 13:02:18 info: Database UP
+2026-07-20 13:02:20 info: MongoDB readiness check
+2026-07-20 13:02:20 info: Database UP
+2026-07-20 13:02:22 info: MongoDB readiness check
+2026-07-20 13:02:22 info: Database UP
+2026-07-20 13:02:24 info: MongoDB readiness check
+2026-07-20 13:02:25 info: Database UP
+2026-07-20 13:02:27 info: MongoDB readiness check
+2026-07-20 13:02:27 info: Database UP
+2026-07-20 13:02:29 info: MongoDB readiness check
+2026-07-20 13:02:29 info: Database UP
+2026-07-20 13:02:31 info: MongoDB readiness check
+2026-07-20 13:02:31 info: Database UP
+2026-07-20 13:02:33 info: MongoDB readiness check
+2026-07-20 13:02:33 info: Database UP
+2026-07-20 13:02:35 info: MongoDB readiness check
+2026-07-20 13:02:35 info: Database UP
+2026-07-20 13:02:37 info: MongoDB readiness check
+2026-07-20 13:02:37 info: Database UP
+2026-07-20 13:02:39 info: MongoDB readiness check
+2026-07-20 13:02:39 info: Database UP
+2026-07-20 13:02:41 info: MongoDB readiness check
+2026-07-20 13:02:42 info: Database UP
+2026-07-20 13:02:44 info: MongoDB readiness check
+2026-07-20 13:02:44 info: Database UP
+2026-07-20 13:02:46 info: MongoDB readiness check
+2026-07-20 13:02:46 info: Database UP
+2026-07-20 13:02:48 info: MongoDB readiness check
+2026-07-20 13:02:48 info: Database UP
+2026-07-20 13:02:50 info: MongoDB readiness check
+2026-07-20 13:02:50 info: Database UP
+2026-07-20 13:02:52 info: MongoDB readiness check
+2026-07-20 13:02:52 info: Database UP
+2026-07-20 13:02:54 info: MongoDB readiness check
+2026-07-20 13:02:54 info: Database UP
+2026-07-20 13:02:56 info: MongoDB readiness check
+2026-07-20 13:02:56 info: Database UP
+2026-07-20 13:02:58 info: MongoDB readiness check
+2026-07-20 13:02:58 info: Database UP
+2026-07-20 13:03:00 info: MongoDB readiness check
+2026-07-20 13:03:00 info: Database UP
+2026-07-20 13:03:15 info: MongoDB connected
+2026-07-20 13:03:15 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:03:15 info: Creating worker started
+2026-07-20 13:03:15 info: Creating worker started
+2026-07-20 13:03:15 info: Creating worker started
+2026-07-20 13:03:15 info: Worker created successfully
+2026-07-20 13:03:15 info: Worker created successfully
+2026-07-20 13:03:15 info: Worker created successfully
+2026-07-20 13:03:15 info: Worker pool initialized
+2026-07-20 13:03:17 info: MongoDB readiness check
+2026-07-20 13:03:17 info: Database UP
+2026-07-20 13:03:19 info: MongoDB readiness check
+2026-07-20 13:03:19 info: Database UP
+2026-07-20 13:03:21 info: MongoDB readiness check
+2026-07-20 13:03:21 info: Database UP
+2026-07-20 13:03:23 info: MongoDB readiness check
+2026-07-20 13:03:23 info: Database UP
+2026-07-20 13:03:25 info: MongoDB readiness check
+2026-07-20 13:03:25 info: Database UP
+2026-07-20 13:03:27 info: MongoDB readiness check
+2026-07-20 13:03:27 info: Database UP
+2026-07-20 13:03:29 info: MongoDB readiness check
+2026-07-20 13:03:29 info: Database UP
+2026-07-20 13:03:30 info: SignIn started
+2026-07-20 13:03:31 info: SignIn completed
+2026-07-20 13:03:31 info: [node-1] Client connected: _rnB8AhQQ_7AQKWkAAAB
+2026-07-20 13:03:31 info: MongoDB readiness check
+2026-07-20 13:03:32 info: Database UP
+2026-07-20 13:03:33 info: Create room started
+2026-07-20 13:03:33 info: Woker loads loaded successfully
+2026-07-20 13:03:33 info: Woker assigned succesfully
+2026-07-20 13:03:33 info: Creation of router started
+2026-07-20 13:03:33 info: Router created
+2026-07-20 13:03:33 info: Creation of room successfully executed
+2026-07-20 13:03:33 info: Get room started
+2026-07-20 13:03:33 info: Get room executed successfully
+2026-07-20 13:03:33 info: Broadcaster added to the room
+2026-07-20 13:03:33 info: Room created successfully
+2026-07-20 13:03:34 info: MongoDB readiness check
+2026-07-20 13:03:34 info: Database UP
+2026-07-20 13:03:35 info: Get room started
+2026-07-20 13:03:35 info: Get room executed successfully
+2026-07-20 13:03:36 info: MongoDB readiness check
+2026-07-20 13:03:36 info: Database UP
+2026-07-20 13:03:38 info: MongoDB readiness check
+2026-07-20 13:03:38 info: Database UP
+2026-07-20 13:03:40 info: MongoDB readiness check
+2026-07-20 13:03:40 info: Database UP
+2026-07-20 13:03:42 info: MongoDB readiness check
+2026-07-20 13:03:42 info: Database UP
+2026-07-20 13:03:44 info: MongoDB readiness check
+2026-07-20 13:03:44 info: Database UP
+2026-07-20 13:03:46 info: MongoDB readiness check
+2026-07-20 13:03:47 info: Database UP
+2026-07-20 13:03:49 info: MongoDB readiness check
+2026-07-20 13:03:49 info: Database UP
+2026-07-20 13:03:51 info: MongoDB readiness check
+2026-07-20 13:03:51 info: Database UP
+2026-07-20 13:03:53 info: MongoDB readiness check
+2026-07-20 13:03:53 info: Database UP
+2026-07-20 13:03:55 info: MongoDB readiness check
+2026-07-20 13:03:55 info: Database UP
+2026-07-20 13:03:57 info: MongoDB readiness check
+2026-07-20 13:03:58 info: Database UP
+2026-07-20 13:04:00 info: MongoDB readiness check
+2026-07-20 13:04:00 info: Database UP
+2026-07-20 13:04:02 info: MongoDB readiness check
+2026-07-20 13:04:02 info: Database UP
+2026-07-20 13:04:04 info: MongoDB readiness check
+2026-07-20 13:04:04 info: Database UP
+2026-07-20 13:04:06 info: MongoDB readiness check
+2026-07-20 13:04:06 info: Database UP
+2026-07-20 13:04:08 info: MongoDB readiness check
+2026-07-20 13:04:08 info: Database UP
+2026-07-20 13:04:10 info: MongoDB readiness check
+2026-07-20 13:04:11 info: Database UP
+2026-07-20 13:04:13 info: MongoDB readiness check
+2026-07-20 13:04:13 info: Database UP
+2026-07-20 13:04:15 info: MongoDB readiness check
+2026-07-20 13:04:15 info: Database UP
+2026-07-20 13:04:17 info: MongoDB readiness check
+2026-07-20 13:04:18 info: Database UP
+2026-07-20 13:04:20 info: MongoDB readiness check
+2026-07-20 13:04:20 info: Database UP
+2026-07-20 13:04:22 info: MongoDB readiness check
+2026-07-20 13:04:22 info: Database UP
+2026-07-20 13:04:24 info: MongoDB readiness check
+2026-07-20 13:04:24 info: Database UP
+2026-07-20 13:04:26 info: MongoDB readiness check
+2026-07-20 13:04:26 info: Database UP
+2026-07-20 13:04:28 info: MongoDB readiness check
+2026-07-20 13:04:28 info: Database UP
+2026-07-20 13:04:30 info: MongoDB readiness check
+2026-07-20 13:04:30 info: Database UP
+2026-07-20 13:04:32 info: MongoDB readiness check
+2026-07-20 13:04:33 info: Database UP
+2026-07-20 13:04:35 info: MongoDB readiness check
+2026-07-20 13:04:35 info: Database UP
+2026-07-20 13:04:37 info: MongoDB readiness check
+2026-07-20 13:04:37 info: Database UP
+2026-07-20 13:04:39 info: MongoDB readiness check
+2026-07-20 13:04:39 info: Database UP
+2026-07-20 13:04:41 info: MongoDB readiness check
+2026-07-20 13:04:41 info: Database UP
+2026-07-20 13:04:43 info: MongoDB readiness check
+2026-07-20 13:04:44 info: Database UP
+2026-07-20 13:04:46 info: MongoDB readiness check
+2026-07-20 13:04:46 info: Database UP
+2026-07-20 13:04:48 info: MongoDB readiness check
+2026-07-20 13:04:48 info: Database UP
+2026-07-20 13:04:50 info: MongoDB readiness check
+2026-07-20 13:04:50 info: Database UP
+2026-07-20 13:04:52 info: MongoDB readiness check
+2026-07-20 13:04:52 info: Database UP
+2026-07-20 13:04:54 info: MongoDB readiness check
+2026-07-20 13:04:54 info: Database UP
+2026-07-20 13:04:56 info: MongoDB readiness check
+2026-07-20 13:04:56 info: Database UP
+2026-07-20 13:04:58 info: MongoDB readiness check
+2026-07-20 13:04:58 info: Database UP
+2026-07-20 13:05:00 info: MongoDB readiness check
+2026-07-20 13:05:00 info: Database UP
+2026-07-20 13:05:02 info: MongoDB readiness check
+2026-07-20 13:05:03 info: Database UP
+2026-07-20 13:05:05 info: MongoDB readiness check
+2026-07-20 13:05:05 info: Database UP
+2026-07-20 13:05:07 info: MongoDB readiness check
+2026-07-20 13:05:08 info: Database UP
+2026-07-20 13:05:10 info: MongoDB readiness check
+2026-07-20 13:05:10 info: Database UP
+2026-07-20 13:05:12 info: MongoDB readiness check
+2026-07-20 13:05:12 info: Database UP
+2026-07-20 13:05:14 info: MongoDB readiness check
+2026-07-20 13:05:14 info: Database UP
+2026-07-20 13:05:16 info: MongoDB readiness check
+2026-07-20 13:05:16 info: Database UP
+2026-07-20 13:05:18 info: MongoDB readiness check
+2026-07-20 13:05:18 info: Database UP
+2026-07-20 13:05:20 info: MongoDB readiness check
+2026-07-20 13:05:20 info: Database UP
+2026-07-20 13:05:22 info: MongoDB readiness check
+2026-07-20 13:05:23 info: Database UP
+2026-07-20 13:05:25 info: MongoDB readiness check
+2026-07-20 13:05:25 info: Database UP
+2026-07-20 13:05:27 info: MongoDB readiness check
+2026-07-20 13:05:27 info: Database UP
+2026-07-20 13:05:29 info: MongoDB readiness check
+2026-07-20 13:05:29 info: Database UP
+2026-07-20 13:05:31 info: MongoDB readiness check
+2026-07-20 13:05:31 info: Database UP
+2026-07-20 13:05:33 info: MongoDB readiness check
+2026-07-20 13:05:33 info: Database UP
+2026-07-20 13:05:34 info: Get room started
+2026-07-20 13:05:34 info: Get room executed successfully
+2026-07-20 13:05:35 info: MongoDB readiness check
+2026-07-20 13:05:36 info: Database UP
+2026-07-20 13:05:38 info: MongoDB readiness check
+2026-07-20 13:05:38 info: Database UP
+2026-07-20 13:05:40 info: MongoDB readiness check
+2026-07-20 13:05:40 info: Database UP
+2026-07-20 13:05:42 info: MongoDB readiness check
+2026-07-20 13:05:42 info: Database UP
+2026-07-20 13:05:44 info: MongoDB readiness check
+2026-07-20 13:05:44 info: Database UP
+2026-07-20 13:05:45 info: Get room started
+2026-07-20 13:05:45 info: Get room executed successfully
+2026-07-20 13:05:46 info: MongoDB readiness check
+2026-07-20 13:05:46 info: Database UP
+2026-07-20 13:05:48 info: MongoDB readiness check
+2026-07-20 13:05:49 info: Database UP
+2026-07-20 13:05:51 info: MongoDB readiness check
+2026-07-20 13:05:51 info: Database UP
+2026-07-20 13:05:53 info: MongoDB readiness check
+2026-07-20 13:05:53 info: Database UP
+2026-07-20 13:05:55 info: MongoDB readiness check
+2026-07-20 13:05:55 info: Database UP
+2026-07-20 13:05:57 info: MongoDB readiness check
+2026-07-20 13:05:57 info: Database UP
+2026-07-20 13:05:59 info: MongoDB readiness check
+2026-07-20 13:05:59 info: Database UP
+2026-07-20 13:06:01 info: MongoDB readiness check
+2026-07-20 13:06:01 info: Database UP
+2026-07-20 13:06:03 info: MongoDB readiness check
+2026-07-20 13:06:04 info: Database UP
+2026-07-20 13:06:06 info: MongoDB readiness check
+2026-07-20 13:06:06 info: Database UP
+2026-07-20 13:06:06 info: Get room started
+2026-07-20 13:06:06 info: Get room executed successfully
+2026-07-20 13:06:08 info: MongoDB readiness check
+2026-07-20 13:06:08 info: Database UP
+2026-07-20 13:06:10 info: MongoDB readiness check
+2026-07-20 13:06:10 info: Database UP
+2026-07-20 13:06:11 info: User disconnected _rnB8AhQQ_7AQKWkAAAB beacuse of transport close
+2026-07-20 13:06:11 info: Handle disconnect started
+2026-07-20 13:06:11 info: Get room started
+2026-07-20 13:06:11 info: Get room executed successfully
+2026-07-20 13:06:11 info: Get room started
+2026-07-20 13:06:11 info: Get room executed successfully
+2026-07-20 13:06:11 info: Get room started
+2026-07-20 13:06:11 info: Get room executed successfully
+2026-07-20 13:06:11 info: Remove broadcaster success
+2026-07-20 13:06:11 info: Handle disconnect succesfully
+2026-07-20 13:06:11 info: room:4d8ef303-15f5-4fd5-9bb2-7e289fb9b1d3 room deleted successfully
+2026-07-20 13:06:12 info: MongoDB readiness check
+2026-07-20 13:06:13 info: Database UP
+2026-07-20 13:06:15 info: MongoDB readiness check
+2026-07-20 13:06:15 info: Database UP
+2026-07-20 13:06:17 info: MongoDB readiness check
+2026-07-20 13:06:17 info: Database UP
+2026-07-20 13:06:19 info: MongoDB readiness check
+2026-07-20 13:06:19 info: Database UP
+2026-07-20 13:06:21 info: MongoDB readiness check
+2026-07-20 13:06:21 info: Database UP
+2026-07-20 13:06:23 info: MongoDB readiness check
+2026-07-20 13:06:23 info: Database UP
+2026-07-20 13:06:25 info: MongoDB readiness check
+2026-07-20 13:06:25 info: Database UP
+2026-07-20 13:06:27 info: MongoDB readiness check
+2026-07-20 13:06:28 info: Database UP
+2026-07-20 13:06:30 info: MongoDB readiness check
+2026-07-20 13:06:30 info: Database UP
+2026-07-20 13:06:32 info: MongoDB readiness check
+2026-07-20 13:06:32 info: Database UP
+2026-07-20 13:06:34 info: MongoDB readiness check
+2026-07-20 13:06:34 info: Database UP
+2026-07-20 13:06:36 info: MongoDB readiness check
+2026-07-20 13:06:36 info: Database UP
+2026-07-20 13:06:37 info: SignIn started
+2026-07-20 13:06:37 info: SignIn completed
+2026-07-20 13:06:37 info: [node-1] Client connected: 4TgYqckeDvZXIxvbAAAD
+2026-07-20 13:06:38 info: MongoDB readiness check
+2026-07-20 13:06:38 info: Database UP
+2026-07-20 13:06:40 info: MongoDB readiness check
+2026-07-20 13:06:40 info: Database UP
+2026-07-20 13:06:41 info: Create room started
+2026-07-20 13:06:41 info: Woker loads loaded successfully
+2026-07-20 13:06:41 info: Woker assigned succesfully
+2026-07-20 13:06:41 info: Creation of router started
+2026-07-20 13:06:41 info: Router created
+2026-07-20 13:06:41 info: Creation of room successfully executed
+2026-07-20 13:06:41 info: Get room started
+2026-07-20 13:06:41 info: Get room executed successfully
+2026-07-20 13:06:41 info: Broadcaster added to the room
+2026-07-20 13:06:41 info: Room created successfully
+2026-07-20 13:06:42 info: MongoDB readiness check
+2026-07-20 13:06:43 info: Database UP
+2026-07-20 13:06:45 info: MongoDB readiness check
+2026-07-20 13:06:45 info: Database UP
+2026-07-20 13:06:47 info: MongoDB readiness check
+2026-07-20 13:06:47 info: Database UP
+2026-07-20 13:06:48 info: Get room started
+2026-07-20 13:06:48 info: Get room executed successfully
+2026-07-20 13:06:49 info: MongoDB readiness check
+2026-07-20 13:06:49 info: Database UP
+2026-07-20 13:06:51 info: MongoDB readiness check
+2026-07-20 13:06:51 info: Database UP
+2026-07-20 13:06:51 info: Get room started
+2026-07-20 13:06:51 info: Get room executed successfully
+2026-07-20 13:06:53 info: MongoDB readiness check
+2026-07-20 13:06:53 info: Database UP
+2026-07-20 13:06:55 info: MongoDB readiness check
+2026-07-20 13:06:55 info: Database UP
+2026-07-20 13:06:57 info: MongoDB readiness check
+2026-07-20 13:06:57 info: Database UP
+2026-07-20 13:06:59 info: MongoDB readiness check
+2026-07-20 13:07:00 info: Database UP
+2026-07-20 13:07:02 info: MongoDB readiness check
+2026-07-20 13:07:02 info: Database UP
+2026-07-20 13:07:04 info: MongoDB readiness check
+2026-07-20 13:07:04 info: Database UP
+2026-07-20 13:07:06 info: MongoDB readiness check
+2026-07-20 13:07:06 info: Database UP
+2026-07-20 13:07:08 info: MongoDB readiness check
+2026-07-20 13:07:08 info: Database UP
+2026-07-20 13:07:10 info: MongoDB readiness check
+2026-07-20 13:07:11 info: Database UP
+2026-07-20 13:07:13 info: MongoDB readiness check
+2026-07-20 13:07:13 info: Database UP
+2026-07-20 13:07:15 info: MongoDB readiness check
+2026-07-20 13:07:15 info: Database UP
+2026-07-20 13:07:17 info: MongoDB readiness check
+2026-07-20 13:07:17 info: Database UP
+2026-07-20 13:07:19 info: MongoDB readiness check
+2026-07-20 13:07:20 info: Database UP
+2026-07-20 13:07:22 info: MongoDB readiness check
+2026-07-20 13:07:22 info: Database UP
+2026-07-20 13:07:23 info: Get room started
+2026-07-20 13:07:23 info: Get room executed successfully
+2026-07-20 13:07:24 info: MongoDB readiness check
+2026-07-20 13:07:24 info: Database UP
+2026-07-20 13:07:26 info: MongoDB readiness check
+2026-07-20 13:07:26 info: Database UP
+2026-07-20 13:07:28 info: MongoDB readiness check
+2026-07-20 13:07:28 info: Database UP
+2026-07-20 13:07:30 info: MongoDB readiness check
+2026-07-20 13:07:30 info: Database UP
+2026-07-20 13:07:31 info: Get room started
+2026-07-20 13:07:31 info: Get room executed successfully
+2026-07-20 13:07:32 info: MongoDB readiness check
+2026-07-20 13:07:33 info: Database UP
+2026-07-20 13:07:35 info: MongoDB readiness check
+2026-07-20 13:07:35 info: Database UP
+2026-07-20 13:07:37 info: MongoDB readiness check
+2026-07-20 13:07:39 info: Database UP
+2026-07-20 13:07:41 info: MongoDB readiness check
+2026-07-20 13:07:41 info: Database UP
+2026-07-20 13:07:43 info: MongoDB readiness check
+2026-07-20 13:07:43 info: Database UP
+2026-07-20 13:07:45 info: MongoDB readiness check
+2026-07-20 13:07:45 info: Database UP
+2026-07-20 13:07:47 info: MongoDB readiness check
+2026-07-20 13:07:48 info: Database UP
+2026-07-20 13:07:50 info: MongoDB readiness check
+2026-07-20 13:07:50 info: Database UP
+2026-07-20 13:07:50 error: Validation error "message" length must be less than or equal to 10 characters long
+2026-07-20 13:07:50 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:36:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:52:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 13:07:52 info: MongoDB readiness check
+2026-07-20 13:07:52 info: Database UP
+2026-07-20 13:07:54 info: MongoDB readiness check
+2026-07-20 13:07:54 info: Database UP
+2026-07-20 13:07:56 info: MongoDB readiness check
+2026-07-20 13:07:56 info: Database UP
+2026-07-20 13:07:58 info: MongoDB readiness check
+2026-07-20 13:07:58 info: Database UP
+2026-07-20 13:08:00 info: MongoDB readiness check
+2026-07-20 13:08:00 info: Database UP
+2026-07-20 13:08:03 info: MongoDB readiness check
+2026-07-20 13:08:03 info: Database UP
+2026-07-20 13:08:05 info: MongoDB readiness check
+2026-07-20 13:08:05 info: Database UP
+2026-07-20 13:08:07 info: MongoDB readiness check
+2026-07-20 13:08:07 info: Database UP
+2026-07-20 13:08:09 info: MongoDB readiness check
+2026-07-20 13:08:10 info: Database UP
+2026-07-20 13:08:12 info: MongoDB readiness check
+2026-07-20 13:08:12 info: Database UP
+2026-07-20 13:08:14 info: MongoDB readiness check
+2026-07-20 13:08:14 info: Database UP
+2026-07-20 13:08:16 info: MongoDB readiness check
+2026-07-20 13:08:16 info: Database UP
+2026-07-20 13:08:18 info: MongoDB readiness check
+2026-07-20 13:08:19 info: Database UP
+2026-07-20 13:08:21 info: MongoDB readiness check
+2026-07-20 13:08:21 info: Database UP
+2026-07-20 13:08:23 info: MongoDB readiness check
+2026-07-20 13:08:23 info: Database UP
+2026-07-20 13:08:25 info: MongoDB readiness check
+2026-07-20 13:08:25 info: Database UP
+2026-07-20 13:08:27 info: MongoDB readiness check
+2026-07-20 13:08:27 info: Database UP
+2026-07-20 13:08:29 info: MongoDB readiness check
+2026-07-20 13:08:29 info: Database UP
+2026-07-20 13:08:31 info: MongoDB readiness check
+2026-07-20 13:08:31 info: Database UP
+2026-07-20 13:08:33 info: MongoDB readiness check
+2026-07-20 13:08:33 info: Database UP
+2026-07-20 13:08:35 info: MongoDB readiness check
+2026-07-20 13:08:36 info: Database UP
+2026-07-20 13:08:38 info: MongoDB readiness check
+2026-07-20 13:08:38 info: Database UP
+2026-07-20 13:08:40 info: MongoDB readiness check
+2026-07-20 13:08:40 info: Database UP
+2026-07-20 13:08:42 info: MongoDB readiness check
+2026-07-20 13:08:42 info: Database UP
+2026-07-20 13:08:44 info: MongoDB readiness check
+2026-07-20 13:08:44 info: Database UP
+2026-07-20 13:08:46 info: MongoDB readiness check
+2026-07-20 13:08:46 info: Database UP
+2026-07-20 13:08:48 info: MongoDB readiness check
+2026-07-20 13:08:48 info: Database UP
+2026-07-20 13:08:50 info: MongoDB readiness check
+2026-07-20 13:08:50 info: Database UP
+2026-07-20 13:08:52 info: MongoDB readiness check
+2026-07-20 13:08:52 info: Database UP
+2026-07-20 13:08:54 info: MongoDB readiness check
+2026-07-20 13:08:55 info: Database UP
+2026-07-20 13:08:57 info: MongoDB readiness check
+2026-07-20 13:08:57 info: Database UP
+2026-07-20 13:08:59 info: MongoDB readiness check
+2026-07-20 13:08:59 info: Database UP
+2026-07-20 13:09:01 info: MongoDB readiness check
+2026-07-20 13:09:01 info: Database UP
+2026-07-20 13:09:03 info: MongoDB readiness check
+2026-07-20 13:09:03 info: Database UP
+2026-07-20 13:09:05 info: MongoDB readiness check
+2026-07-20 13:09:05 info: Database UP
+2026-07-20 13:09:07 info: MongoDB readiness check
+2026-07-20 13:09:07 info: Database UP
+2026-07-20 13:09:09 info: MongoDB readiness check
+2026-07-20 13:09:09 info: Database UP
+2026-07-20 13:09:11 info: MongoDB readiness check
+2026-07-20 13:09:12 info: Database UP
+2026-07-20 13:09:14 info: MongoDB readiness check
+2026-07-20 13:09:14 info: Database UP
+2026-07-20 13:09:16 info: MongoDB readiness check
+2026-07-20 13:09:16 info: Database UP
+2026-07-20 13:09:18 info: MongoDB readiness check
+2026-07-20 13:09:18 info: Database UP
+2026-07-20 13:09:20 info: MongoDB readiness check
+2026-07-20 13:09:20 info: Database UP
+2026-07-20 13:09:22 info: MongoDB readiness check
+2026-07-20 13:09:22 info: Database UP
+2026-07-20 13:09:35 info: MongoDB connected
+2026-07-20 13:09:35 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:09:35 info: Creating worker started
+2026-07-20 13:09:35 info: Creating worker started
+2026-07-20 13:09:35 info: Creating worker started
+2026-07-20 13:09:35 info: Worker created successfully
+2026-07-20 13:09:35 info: Worker created successfully
+2026-07-20 13:09:35 info: Worker created successfully
+2026-07-20 13:09:35 info: Worker pool initialized
+2026-07-20 13:09:36 info: MongoDB readiness check
+2026-07-20 13:09:37 info: Database UP
+2026-07-20 13:09:39 info: MongoDB readiness check
+2026-07-20 13:09:39 info: Database UP
+2026-07-20 13:09:41 info: MongoDB readiness check
+2026-07-20 13:09:41 info: Database UP
+2026-07-20 13:09:43 info: MongoDB readiness check
+2026-07-20 13:09:43 info: Database UP
+2026-07-20 13:09:45 info: MongoDB readiness check
+2026-07-20 13:09:46 info: Database UP
+2026-07-20 13:09:48 info: MongoDB readiness check
+2026-07-20 13:09:48 info: Database UP
+2026-07-20 13:09:48 info: SignIn started
+2026-07-20 13:09:49 info: SignIn completed
+2026-07-20 13:09:49 info: [node-1] Client connected: FHkJPfXFMPG5TwY4AAAB
+2026-07-20 13:09:50 info: MongoDB readiness check
+2026-07-20 13:09:50 info: Database UP
+2026-07-20 13:09:52 info: MongoDB readiness check
+2026-07-20 13:09:52 info: Database UP
+2026-07-20 13:09:52 info: Create room started
+2026-07-20 13:09:52 info: Woker loads loaded successfully
+2026-07-20 13:09:52 info: Woker assigned succesfully
+2026-07-20 13:09:52 info: Creation of router started
+2026-07-20 13:09:52 info: Router created
+2026-07-20 13:09:52 info: Creation of room successfully executed
+2026-07-20 13:09:52 info: Get room started
+2026-07-20 13:09:52 info: Get room executed successfully
+2026-07-20 13:09:52 info: Broadcaster added to the room
+2026-07-20 13:09:52 info: Room created successfully
+2026-07-20 13:09:54 info: MongoDB readiness check
+2026-07-20 13:09:54 info: Database UP
+2026-07-20 13:09:56 info: MongoDB readiness check
+2026-07-20 13:09:56 info: Database UP
+2026-07-20 13:09:58 info: MongoDB readiness check
+2026-07-20 13:09:58 info: Database UP
+2026-07-20 13:10:00 info: MongoDB readiness check
+2026-07-20 13:10:01 info: Database UP
+2026-07-20 13:10:03 info: MongoDB readiness check
+2026-07-20 13:10:03 info: Database UP
+2026-07-20 13:10:05 info: Get room started
+2026-07-20 13:10:05 info: Get room executed successfully
+2026-07-20 13:10:05 info: MongoDB readiness check
+2026-07-20 13:10:05 info: Database UP
+2026-07-20 13:10:07 info: MongoDB readiness check
+2026-07-20 13:10:07 info: Database UP
+2026-07-20 13:10:09 info: MongoDB readiness check
+2026-07-20 13:10:09 info: Database UP
+2026-07-20 13:10:11 info: MongoDB readiness check
+2026-07-20 13:10:12 info: Database UP
+2026-07-20 13:10:14 info: MongoDB readiness check
+2026-07-20 13:10:14 info: Database UP
+2026-07-20 13:10:16 info: MongoDB readiness check
+2026-07-20 13:10:16 info: Database UP
+2026-07-20 13:10:18 info: MongoDB readiness check
+2026-07-20 13:10:18 info: Database UP
+2026-07-20 13:10:20 info: MongoDB readiness check
+2026-07-20 13:10:20 info: Database UP
+2026-07-20 13:10:22 info: MongoDB readiness check
+2026-07-20 13:10:22 info: Database UP
+2026-07-20 13:10:24 info: MongoDB readiness check
+2026-07-20 13:10:24 info: Database UP
+2026-07-20 13:10:26 info: MongoDB readiness check
+2026-07-20 13:10:27 info: Database UP
+2026-07-20 13:10:29 info: MongoDB readiness check
+2026-07-20 13:10:29 info: Database UP
+2026-07-20 13:10:31 info: MongoDB readiness check
+2026-07-20 13:10:31 info: Database UP
+2026-07-20 13:10:33 info: MongoDB readiness check
+2026-07-20 13:10:33 info: Database UP
+2026-07-20 13:10:35 info: MongoDB readiness check
+2026-07-20 13:10:35 info: Database UP
+2026-07-20 13:10:37 info: MongoDB readiness check
+2026-07-20 13:10:37 info: Database UP
+2026-07-20 13:10:39 info: MongoDB readiness check
+2026-07-20 13:10:40 info: Database UP
+2026-07-20 13:10:42 info: MongoDB readiness check
+2026-07-20 13:10:42 info: Database UP
+2026-07-20 13:10:44 info: MongoDB readiness check
+2026-07-20 13:10:44 info: Database UP
+2026-07-20 13:10:46 info: MongoDB readiness check
+2026-07-20 13:10:46 info: Database UP
+2026-07-20 13:10:48 info: MongoDB readiness check
+2026-07-20 13:10:48 info: Database UP
+2026-07-20 13:10:50 info: MongoDB readiness check
+2026-07-20 13:10:50 info: Database UP
+2026-07-20 13:10:52 info: MongoDB readiness check
+2026-07-20 13:10:52 info: Database UP
+2026-07-20 13:10:54 info: MongoDB readiness check
+2026-07-20 13:10:54 info: Database UP
+2026-07-20 13:10:56 info: MongoDB readiness check
+2026-07-20 13:10:57 info: Database UP
+2026-07-20 13:10:59 info: MongoDB readiness check
+2026-07-20 13:10:59 info: Database UP
+2026-07-20 13:11:01 info: MongoDB readiness check
+2026-07-20 13:11:01 info: Database UP
+2026-07-20 13:11:03 info: MongoDB readiness check
+2026-07-20 13:11:03 info: Database UP
+2026-07-20 13:11:05 info: MongoDB readiness check
+2026-07-20 13:11:05 info: Database UP
+2026-07-20 13:11:07 info: MongoDB readiness check
+2026-07-20 13:11:07 info: Database UP
+2026-07-20 13:11:09 info: MongoDB readiness check
+2026-07-20 13:11:09 info: Database UP
+2026-07-20 13:11:11 info: MongoDB readiness check
+2026-07-20 13:11:11 info: Database UP
+2026-07-20 13:11:13 info: MongoDB readiness check
+2026-07-20 13:11:14 info: Database UP
+2026-07-20 13:11:16 info: MongoDB readiness check
+2026-07-20 13:11:16 info: Database UP
+2026-07-20 13:11:18 info: MongoDB readiness check
+2026-07-20 13:11:19 info: Database UP
+2026-07-20 13:11:21 info: MongoDB readiness check
+2026-07-20 13:11:22 info: Database UP
+2026-07-20 13:11:24 info: MongoDB readiness check
+2026-07-20 13:11:24 info: Database UP
+2026-07-20 13:11:26 info: MongoDB readiness check
+2026-07-20 13:11:26 info: Database UP
+2026-07-20 13:11:28 info: MongoDB readiness check
+2026-07-20 13:11:28 info: Database UP
+2026-07-20 13:11:30 info: MongoDB readiness check
+2026-07-20 13:11:30 info: Database UP
+2026-07-20 13:11:32 info: MongoDB readiness check
+2026-07-20 13:11:32 info: Database UP
+2026-07-20 13:11:34 info: MongoDB readiness check
+2026-07-20 13:11:34 info: Database UP
+2026-07-20 13:11:36 info: MongoDB readiness check
+2026-07-20 13:11:37 info: Database UP
+2026-07-20 13:11:39 info: MongoDB readiness check
+2026-07-20 13:11:39 info: Database UP
+2026-07-20 13:11:41 info: MongoDB readiness check
+2026-07-20 13:11:41 info: Database UP
+2026-07-20 13:11:43 info: MongoDB readiness check
+2026-07-20 13:11:43 info: Database UP
+2026-07-20 13:11:45 info: MongoDB readiness check
+2026-07-20 13:11:45 info: Database UP
+2026-07-20 13:11:47 info: MongoDB readiness check
+2026-07-20 13:11:47 info: Database UP
+2026-07-20 13:11:49 info: MongoDB readiness check
+2026-07-20 13:11:50 info: Database UP
+2026-07-20 13:11:52 info: MongoDB readiness check
+2026-07-20 13:11:52 info: Database UP
+2026-07-20 13:11:54 info: MongoDB readiness check
+2026-07-20 13:11:54 info: Database UP
+2026-07-20 13:11:56 info: MongoDB readiness check
+2026-07-20 13:11:56 info: Database UP
+2026-07-20 13:11:58 info: MongoDB readiness check
+2026-07-20 13:11:58 info: Database UP
+2026-07-20 13:12:00 info: MongoDB readiness check
+2026-07-20 13:12:00 info: Database UP
+2026-07-20 13:12:02 info: MongoDB readiness check
+2026-07-20 13:12:02 info: Database UP
+2026-07-20 13:12:04 info: MongoDB readiness check
+2026-07-20 13:12:04 info: Database UP
+2026-07-20 13:12:06 info: MongoDB readiness check
+2026-07-20 13:12:06 info: Database UP
+2026-07-20 13:12:08 info: MongoDB readiness check
+2026-07-20 13:12:09 info: Database UP
+2026-07-20 13:12:11 info: MongoDB readiness check
+2026-07-20 13:12:11 info: Database UP
+2026-07-20 13:12:13 info: MongoDB readiness check
+2026-07-20 13:12:13 info: Database UP
+2026-07-20 13:12:15 info: MongoDB readiness check
+2026-07-20 13:12:15 info: Database UP
+2026-07-20 13:12:17 info: MongoDB readiness check
+2026-07-20 13:12:17 info: Database UP
+2026-07-20 13:12:19 info: MongoDB readiness check
+2026-07-20 13:12:19 info: Database UP
+2026-07-20 13:12:21 info: MongoDB readiness check
+2026-07-20 13:12:21 info: Database UP
+2026-07-20 13:12:23 info: MongoDB readiness check
+2026-07-20 13:12:23 info: Database UP
+2026-07-20 13:12:25 info: MongoDB readiness check
+2026-07-20 13:12:26 info: Database UP
+2026-07-20 13:12:28 info: MongoDB readiness check
+2026-07-20 13:12:28 info: Database UP
+2026-07-20 13:12:30 info: MongoDB readiness check
+2026-07-20 13:12:30 info: Database UP
+2026-07-20 13:12:32 info: MongoDB readiness check
+2026-07-20 13:12:32 info: Database UP
+2026-07-20 13:12:34 info: MongoDB readiness check
+2026-07-20 13:12:34 info: Database UP
+2026-07-20 13:12:36 info: MongoDB readiness check
+2026-07-20 13:12:36 info: Database UP
+2026-07-20 13:12:38 info: MongoDB readiness check
+2026-07-20 13:12:38 info: Database UP
+2026-07-20 13:12:40 info: MongoDB readiness check
+2026-07-20 13:12:40 info: Database UP
+2026-07-20 13:12:42 info: MongoDB readiness check
+2026-07-20 13:12:43 info: Database UP
+2026-07-20 13:12:45 info: MongoDB readiness check
+2026-07-20 13:12:45 info: Database UP
+2026-07-20 13:12:47 info: MongoDB readiness check
+2026-07-20 13:12:47 info: Database UP
+2026-07-20 13:12:49 info: MongoDB readiness check
+2026-07-20 13:12:49 info: Database UP
+2026-07-20 13:12:51 info: MongoDB readiness check
+2026-07-20 13:12:51 info: Database UP
+2026-07-20 13:12:53 info: MongoDB readiness check
+2026-07-20 13:12:54 info: Database UP
+2026-07-20 13:12:56 info: MongoDB readiness check
+2026-07-20 13:12:56 info: Database UP
+2026-07-20 13:12:58 info: MongoDB readiness check
+2026-07-20 13:12:58 info: Database UP
+2026-07-20 13:13:00 info: MongoDB readiness check
+2026-07-20 13:13:00 info: Database UP
+2026-07-20 13:13:02 info: MongoDB readiness check
+2026-07-20 13:13:02 info: Database UP
+2026-07-20 13:13:04 info: MongoDB readiness check
+2026-07-20 13:13:04 info: Database UP
+2026-07-20 13:13:06 info: MongoDB readiness check
+2026-07-20 13:13:06 info: Database UP
+2026-07-20 13:13:08 info: MongoDB readiness check
+2026-07-20 13:13:09 info: Database UP
+2026-07-20 13:13:11 info: MongoDB readiness check
+2026-07-20 13:13:11 info: Database UP
+2026-07-20 13:13:13 info: MongoDB readiness check
+2026-07-20 13:13:13 info: Database UP
+2026-07-20 13:13:15 info: MongoDB readiness check
+2026-07-20 13:13:15 info: Database UP
+2026-07-20 13:13:17 info: MongoDB readiness check
+2026-07-20 13:13:17 info: Database UP
+2026-07-20 13:13:19 info: MongoDB readiness check
+2026-07-20 13:13:19 info: Database UP
+2026-07-20 13:13:21 info: MongoDB readiness check
+2026-07-20 13:13:21 info: Database UP
+2026-07-20 13:13:23 info: MongoDB readiness check
+2026-07-20 13:13:24 info: Database UP
+2026-07-20 13:13:26 info: MongoDB readiness check
+2026-07-20 13:13:26 info: Database UP
+2026-07-20 13:13:28 info: MongoDB readiness check
+2026-07-20 13:13:28 info: Database UP
+2026-07-20 13:13:30 info: MongoDB readiness check
+2026-07-20 13:13:30 info: Database UP
+2026-07-20 13:13:32 info: MongoDB readiness check
+2026-07-20 13:13:32 info: Database UP
+2026-07-20 13:13:34 info: MongoDB readiness check
+2026-07-20 13:13:34 info: Database UP
+2026-07-20 13:13:36 info: MongoDB readiness check
+2026-07-20 13:13:37 info: Database UP
+2026-07-20 13:13:39 info: MongoDB readiness check
+2026-07-20 13:13:39 info: Database UP
+2026-07-20 13:13:41 info: MongoDB readiness check
+2026-07-20 13:13:41 info: Database UP
+2026-07-20 13:13:43 info: MongoDB readiness check
+2026-07-20 13:13:43 info: Database UP
+2026-07-20 13:13:45 info: MongoDB readiness check
+2026-07-20 13:13:45 info: Database UP
+2026-07-20 13:13:47 info: MongoDB readiness check
+2026-07-20 13:13:47 info: Database UP
+2026-07-20 13:13:49 info: MongoDB readiness check
+2026-07-20 13:13:49 info: Database UP
+2026-07-20 13:13:51 info: MongoDB readiness check
+2026-07-20 13:13:52 info: Database UP
+2026-07-20 13:13:54 info: MongoDB readiness check
+2026-07-20 13:13:54 info: Database UP
+2026-07-20 13:13:56 info: MongoDB readiness check
+2026-07-20 13:13:56 info: Database UP
+2026-07-20 13:13:58 info: MongoDB readiness check
+2026-07-20 13:14:02 info: MongoDB readiness check
+2026-07-20 13:14:06 info: MongoDB readiness check
+2026-07-20 13:14:07 info: Database UP
+2026-07-20 13:14:09 info: Database UP
+2026-07-20 13:14:09 info: MongoDB readiness check
+2026-07-20 13:14:09 info: Database UP
+2026-07-20 13:14:11 info: MongoDB readiness check
+2026-07-20 13:14:11 info: Database UP
+2026-07-20 13:14:13 info: Database UP
+2026-07-20 13:14:13 info: MongoDB readiness check
+2026-07-20 13:14:13 info: Database UP
+2026-07-20 13:14:15 info: MongoDB readiness check
+2026-07-20 13:14:16 info: Database UP
+2026-07-20 13:14:18 info: MongoDB readiness check
+2026-07-20 13:14:18 info: Database UP
+2026-07-20 13:14:20 info: MongoDB readiness check
+2026-07-20 13:14:20 info: Database UP
+2026-07-20 13:14:22 info: MongoDB readiness check
+2026-07-20 13:14:22 info: Database UP
+2026-07-20 13:14:24 info: MongoDB readiness check
+2026-07-20 13:14:25 info: Database UP
+2026-07-20 13:14:27 info: MongoDB readiness check
+2026-07-20 13:14:27 info: Database UP
+2026-07-20 13:14:29 info: MongoDB readiness check
+2026-07-20 13:14:29 info: Database UP
+2026-07-20 13:14:31 info: MongoDB readiness check
+2026-07-20 13:14:31 info: Database UP
+2026-07-20 13:14:33 info: MongoDB readiness check
+2026-07-20 13:14:34 info: Database UP
+2026-07-20 13:14:36 info: MongoDB readiness check
+2026-07-20 13:14:36 info: Database UP
+2026-07-20 13:14:38 info: MongoDB readiness check
+2026-07-20 13:14:38 info: Database UP
+2026-07-20 13:14:40 info: MongoDB readiness check
+2026-07-20 13:14:40 info: Database UP
+2026-07-20 13:14:42 info: MongoDB readiness check
+2026-07-20 13:14:42 info: Database UP
+2026-07-20 13:14:44 info: MongoDB readiness check
+2026-07-20 13:14:44 info: Database UP
+2026-07-20 13:14:46 info: MongoDB readiness check
+2026-07-20 13:14:46 info: Database UP
+2026-07-20 13:14:48 info: MongoDB readiness check
+2026-07-20 13:14:49 info: Database UP
+2026-07-20 13:14:51 info: MongoDB readiness check
+2026-07-20 13:14:51 info: Database UP
+2026-07-20 13:14:53 info: MongoDB readiness check
+2026-07-20 13:14:53 info: Database UP
+2026-07-20 13:14:55 info: MongoDB readiness check
+2026-07-20 13:14:55 info: Database UP
+2026-07-20 13:14:57 info: MongoDB readiness check
+2026-07-20 13:14:57 info: Database UP
+2026-07-20 13:14:59 info: MongoDB readiness check
+2026-07-20 13:15:00 info: Database UP
+2026-07-20 13:15:02 info: MongoDB readiness check
+2026-07-20 13:15:02 info: Database UP
+2026-07-20 13:15:04 info: MongoDB readiness check
+2026-07-20 13:15:04 info: Database UP
+2026-07-20 13:15:06 info: MongoDB readiness check
+2026-07-20 13:15:06 info: Database UP
+2026-07-20 13:15:08 info: MongoDB readiness check
+2026-07-20 13:15:08 info: Database UP
+2026-07-20 13:15:10 info: MongoDB readiness check
+2026-07-20 13:15:10 info: Database UP
+2026-07-20 13:15:12 info: MongoDB readiness check
+2026-07-20 13:15:12 info: Database UP
+2026-07-20 13:15:14 info: MongoDB readiness check
+2026-07-20 13:15:14 info: Database UP
+2026-07-20 13:15:16 info: MongoDB readiness check
+2026-07-20 13:15:17 info: Database UP
+2026-07-20 13:15:19 info: MongoDB readiness check
+2026-07-20 13:15:19 info: Database UP
+2026-07-20 13:15:21 info: MongoDB readiness check
+2026-07-20 13:15:21 info: Database UP
+2026-07-20 13:15:23 info: MongoDB readiness check
+2026-07-20 13:15:23 info: Database UP
+2026-07-20 13:15:25 info: MongoDB readiness check
+2026-07-20 13:15:25 info: Database UP
+2026-07-20 13:15:27 info: MongoDB readiness check
+2026-07-20 13:15:27 info: Database UP
+2026-07-20 13:15:29 info: MongoDB readiness check
+2026-07-20 13:15:29 info: Database UP
+2026-07-20 13:15:31 info: MongoDB readiness check
+2026-07-20 13:15:32 info: Database UP
+2026-07-20 13:15:34 info: MongoDB readiness check
+2026-07-20 13:15:34 info: Database UP
+2026-07-20 13:15:36 info: MongoDB readiness check
+2026-07-20 13:15:36 info: Database UP
+2026-07-20 13:15:38 info: MongoDB readiness check
+2026-07-20 13:15:38 info: Database UP
+2026-07-20 13:15:40 info: MongoDB readiness check
+2026-07-20 13:15:40 info: Database UP
+2026-07-20 13:15:42 info: MongoDB readiness check
+2026-07-20 13:15:42 info: Database UP
+2026-07-20 13:15:44 info: MongoDB readiness check
+2026-07-20 13:15:45 info: Database UP
+2026-07-20 13:15:47 info: MongoDB readiness check
+2026-07-20 13:15:47 info: Database UP
+2026-07-20 13:15:49 info: MongoDB readiness check
+2026-07-20 13:15:49 info: Database UP
+2026-07-20 13:15:51 info: MongoDB readiness check
+2026-07-20 13:15:51 info: Database UP
+2026-07-20 13:15:53 info: MongoDB readiness check
+2026-07-20 13:15:54 info: Database UP
+2026-07-20 13:15:56 info: MongoDB readiness check
+2026-07-20 13:15:56 info: Database UP
+2026-07-20 13:15:58 info: MongoDB readiness check
+2026-07-20 13:15:58 info: Database UP
+2026-07-20 13:16:00 info: MongoDB readiness check
+2026-07-20 13:16:00 info: Database UP
+2026-07-20 13:16:02 info: MongoDB readiness check
+2026-07-20 13:16:02 info: Database UP
+2026-07-20 13:16:04 info: MongoDB readiness check
+2026-07-20 13:16:04 info: Database UP
+2026-07-20 13:16:06 info: MongoDB readiness check
+2026-07-20 13:16:07 info: Database UP
+2026-07-20 13:16:09 info: MongoDB readiness check
+2026-07-20 13:16:09 info: Database UP
+2026-07-20 13:16:11 info: MongoDB readiness check
+2026-07-20 13:16:11 info: Database UP
+2026-07-20 13:16:13 info: MongoDB readiness check
+2026-07-20 13:16:13 info: Database UP
+2026-07-20 13:16:15 info: MongoDB readiness check
+2026-07-20 13:16:15 info: Database UP
+2026-07-20 13:16:17 info: MongoDB readiness check
+2026-07-20 13:16:17 info: Database UP
+2026-07-20 13:16:19 info: MongoDB readiness check
+2026-07-20 13:16:19 info: Database UP
+2026-07-20 13:16:21 info: MongoDB readiness check
+2026-07-20 13:16:22 info: Database UP
+2026-07-20 13:16:24 info: MongoDB readiness check
+2026-07-20 13:16:24 info: Database UP
+2026-07-20 13:16:26 info: MongoDB readiness check
+2026-07-20 13:16:26 info: Database UP
+2026-07-20 13:16:28 info: MongoDB readiness check
+2026-07-20 13:16:28 info: Database UP
+2026-07-20 13:16:30 info: MongoDB readiness check
+2026-07-20 13:16:30 info: Database UP
+2026-07-20 13:16:32 info: MongoDB readiness check
+2026-07-20 13:16:32 info: Database UP
+2026-07-20 13:16:35 info: MongoDB readiness check
+2026-07-20 13:16:35 info: Database UP
+2026-07-20 13:16:37 info: MongoDB readiness check
+2026-07-20 13:16:37 info: Database UP
+2026-07-20 13:16:39 info: MongoDB readiness check
+2026-07-20 13:16:39 info: Database UP
+2026-07-20 13:16:41 info: MongoDB readiness check
+2026-07-20 13:16:41 info: Database UP
+2026-07-20 13:16:43 info: MongoDB readiness check
+2026-07-20 13:16:43 info: Database UP
+2026-07-20 13:16:45 info: MongoDB readiness check
+2026-07-20 13:16:46 info: Database UP
+2026-07-20 13:16:48 info: MongoDB readiness check
+2026-07-20 13:16:48 info: Database UP
+2026-07-20 13:16:50 info: MongoDB readiness check
+2026-07-20 13:16:50 info: Database UP
+2026-07-20 13:16:52 info: MongoDB readiness check
+2026-07-20 13:16:52 info: Database UP
+2026-07-20 13:16:53 info: User disconnected FHkJPfXFMPG5TwY4AAAB beacuse of transport close
+2026-07-20 13:16:53 info: Handle disconnect started
+2026-07-20 13:16:53 info: Get room started
+2026-07-20 13:16:53 info: Get room executed successfully
+2026-07-20 13:16:53 info: Get room started
+2026-07-20 13:16:53 info: Get room executed successfully
+2026-07-20 13:16:53 info: Get room started
+2026-07-20 13:16:53 info: Get room executed successfully
+2026-07-20 13:16:53 info: Remove broadcaster success
+2026-07-20 13:16:53 info: Handle disconnect succesfully
+2026-07-20 13:16:53 info: room:7d5dda2e-1fac-4761-85ff-26bc8880f469 room deleted successfully
+2026-07-20 13:16:54 info: MongoDB readiness check
+2026-07-20 13:16:54 info: Database UP
+2026-07-20 13:16:56 info: MongoDB readiness check
+2026-07-20 13:16:56 info: Database UP
+2026-07-20 13:16:58 info: MongoDB readiness check
+2026-07-20 13:16:59 info: Database UP
+2026-07-20 13:17:01 info: MongoDB readiness check
+2026-07-20 13:17:01 info: Database UP
+2026-07-20 13:17:03 info: MongoDB readiness check
+2026-07-20 13:17:03 info: Database UP
+2026-07-20 13:17:05 info: MongoDB readiness check
+2026-07-20 13:17:05 info: Database UP
+2026-07-20 13:17:07 info: MongoDB readiness check
+2026-07-20 13:17:07 info: Database UP
+2026-07-20 13:17:09 info: MongoDB readiness check
+2026-07-20 13:17:09 info: Database UP
+2026-07-20 13:17:11 info: MongoDB readiness check
+2026-07-20 13:17:11 info: Database UP
+2026-07-20 13:17:13 info: MongoDB readiness check
+2026-07-20 13:17:14 info: Database UP
+2026-07-20 13:17:16 info: MongoDB readiness check
+2026-07-20 13:17:16 info: Database UP
+2026-07-20 13:17:18 info: MongoDB readiness check
+2026-07-20 13:17:18 info: Database UP
+2026-07-20 13:17:20 info: MongoDB readiness check
+2026-07-20 13:17:20 info: Database UP
+2026-07-20 13:17:22 info: MongoDB readiness check
+2026-07-20 13:17:23 info: Database UP
+2026-07-20 13:17:25 info: MongoDB readiness check
+2026-07-20 13:17:25 info: Database UP
+2026-07-20 13:17:27 info: MongoDB readiness check
+2026-07-20 13:17:27 info: Database UP
+2026-07-20 13:17:29 info: MongoDB readiness check
+2026-07-20 13:17:30 info: Database UP
+2026-07-20 13:17:32 info: MongoDB readiness check
+2026-07-20 13:17:32 info: Database UP
+2026-07-20 13:17:34 info: MongoDB readiness check
+2026-07-20 13:17:34 info: Database UP
+2026-07-20 13:17:36 info: MongoDB readiness check
+2026-07-20 13:17:36 info: Database UP
+2026-07-20 13:17:38 info: MongoDB readiness check
+2026-07-20 13:17:38 info: Database UP
+2026-07-20 13:17:40 info: MongoDB readiness check
+2026-07-20 13:18:41 info: MongoDB connected
+2026-07-20 13:18:41 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:18:41 info: Creating worker started
+2026-07-20 13:18:41 info: Creating worker started
+2026-07-20 13:18:41 info: Creating worker started
+2026-07-20 13:18:41 info: Worker created successfully
+2026-07-20 13:18:41 info: Worker created successfully
+2026-07-20 13:18:41 info: Worker created successfully
+2026-07-20 13:18:41 info: Worker pool initialized
+2026-07-20 13:18:42 info: MongoDB readiness check
+2026-07-20 13:18:43 info: Database UP
+2026-07-20 13:18:45 info: MongoDB readiness check
+2026-07-20 13:18:45 info: Database UP
+2026-07-20 13:18:47 info: MongoDB readiness check
+2026-07-20 13:18:47 info: Database UP
+2026-07-20 13:18:49 info: MongoDB readiness check
+2026-07-20 13:18:49 info: Database UP
+2026-07-20 13:18:51 info: MongoDB readiness check
+2026-07-20 13:18:51 info: Database UP
+2026-07-20 13:18:53 info: MongoDB readiness check
+2026-07-20 13:18:53 info: Database UP
+2026-07-20 13:18:55 info: MongoDB readiness check
+2026-07-20 13:18:55 info: Database UP
+2026-07-20 13:18:57 info: MongoDB readiness check
+2026-07-20 13:18:58 info: Database UP
+2026-07-20 13:19:00 info: MongoDB readiness check
+2026-07-20 13:19:00 info: Database UP
+2026-07-20 13:19:02 info: MongoDB readiness check
+2026-07-20 13:19:02 info: Database UP
+2026-07-20 13:19:04 info: MongoDB readiness check
+2026-07-20 13:19:04 info: Database UP
+2026-07-20 13:19:06 info: MongoDB readiness check
+2026-07-20 13:19:06 info: Database UP
+2026-07-20 13:19:08 info: MongoDB readiness check
+2026-07-20 13:19:08 info: Database UP
+2026-07-20 13:19:10 info: MongoDB readiness check
+2026-07-20 13:19:10 info: Database UP
+2026-07-20 13:19:12 info: MongoDB readiness check
+2026-07-20 13:19:13 info: Database UP
+2026-07-20 13:19:15 info: MongoDB readiness check
+2026-07-20 13:19:15 info: Database UP
+2026-07-20 13:19:17 info: MongoDB readiness check
+2026-07-20 13:19:17 info: Database UP
+2026-07-20 13:19:19 info: MongoDB readiness check
+2026-07-20 13:19:19 info: Database UP
+2026-07-20 13:19:21 info: MongoDB readiness check
+2026-07-20 13:19:21 info: Database UP
+2026-07-20 13:19:23 info: MongoDB readiness check
+2026-07-20 13:19:23 info: Database UP
+2026-07-20 13:19:25 info: MongoDB readiness check
+2026-07-20 13:19:26 info: Database UP
+2026-07-20 13:19:28 info: MongoDB readiness check
+2026-07-20 13:19:28 info: Database UP
+2026-07-20 13:19:30 info: MongoDB readiness check
+2026-07-20 13:19:30 info: Database UP
+2026-07-20 13:19:32 info: MongoDB readiness check
+2026-07-20 13:19:32 info: Database UP
+2026-07-20 13:19:34 info: MongoDB readiness check
+2026-07-20 13:19:34 info: Database UP
+2026-07-20 13:19:36 info: MongoDB readiness check
+2026-07-20 13:19:36 info: Database UP
+2026-07-20 13:19:38 info: MongoDB readiness check
+2026-07-20 13:19:39 info: Database UP
+2026-07-20 13:19:41 info: MongoDB readiness check
+2026-07-20 13:19:41 info: Database UP
+2026-07-20 13:19:58 info: MongoDB connected
+2026-07-20 13:19:58 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:19:58 info: Creating worker started
+2026-07-20 13:19:58 info: Creating worker started
+2026-07-20 13:19:58 info: Creating worker started
+2026-07-20 13:19:58 info: Worker created successfully
+2026-07-20 13:19:58 info: Worker created successfully
+2026-07-20 13:19:58 info: Worker created successfully
+2026-07-20 13:19:58 info: Worker pool initialized
+2026-07-20 13:19:59 info: MongoDB readiness check
+2026-07-20 13:19:59 info: Database UP
+2026-07-20 13:20:01 info: MongoDB readiness check
+2026-07-20 13:20:01 info: Database UP
+2026-07-20 13:20:03 info: MongoDB readiness check
+2026-07-20 13:20:03 info: Database UP
+2026-07-20 13:20:05 info: MongoDB readiness check
+2026-07-20 13:20:05 info: Database UP
+2026-07-20 13:20:07 info: MongoDB readiness check
+2026-07-20 13:20:08 info: Database UP
+2026-07-20 13:20:10 info: MongoDB readiness check
+2026-07-20 13:20:10 info: Database UP
+2026-07-20 13:20:12 info: MongoDB readiness check
+2026-07-20 13:20:12 info: Database UP
+2026-07-20 13:20:19 info: MongoDB connected
+2026-07-20 13:20:19 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:20:19 info: Creating worker started
+2026-07-20 13:20:19 info: Creating worker started
+2026-07-20 13:20:19 info: Creating worker started
+2026-07-20 13:20:19 info: Worker created successfully
+2026-07-20 13:20:19 info: Worker created successfully
+2026-07-20 13:20:19 info: Worker created successfully
+2026-07-20 13:20:19 info: Worker pool initialized
+2026-07-20 13:20:20 info: MongoDB readiness check
+2026-07-20 13:20:20 info: Database UP
+2026-07-20 13:20:22 info: MongoDB readiness check
+2026-07-20 13:20:22 info: Database UP
+2026-07-20 13:20:24 info: MongoDB readiness check
+2026-07-20 13:20:24 info: Database UP
+2026-07-20 13:20:26 info: MongoDB readiness check
+2026-07-20 13:20:26 info: Database UP
+2026-07-20 13:20:28 info: MongoDB readiness check
+2026-07-20 13:20:28 info: Database UP
+2026-07-20 13:20:30 info: MongoDB readiness check
+2026-07-20 13:20:30 info: Database UP
+2026-07-20 13:20:33 info: MongoDB readiness check
+2026-07-20 13:20:33 info: Database UP
+2026-07-20 13:20:35 info: MongoDB readiness check
+2026-07-20 13:20:35 info: Database UP
+2026-07-20 13:20:37 info: MongoDB readiness check
+2026-07-20 13:20:37 info: Database UP
+2026-07-20 13:20:39 info: MongoDB readiness check
+2026-07-20 13:20:39 info: Database UP
+2026-07-20 13:20:41 info: MongoDB readiness check
+2026-07-20 13:20:41 info: Database UP
+2026-07-20 13:20:43 info: MongoDB readiness check
+2026-07-20 13:20:43 info: Database UP
+2026-07-20 13:20:45 info: MongoDB readiness check
+2026-07-20 13:20:46 info: Database UP
+2026-07-20 13:20:48 info: MongoDB readiness check
+2026-07-20 13:20:48 info: Database UP
+2026-07-20 13:20:50 info: MongoDB readiness check
+2026-07-20 13:20:50 info: Database UP
+2026-07-20 13:20:52 info: MongoDB readiness check
+2026-07-20 13:20:52 info: Database UP
+2026-07-20 13:20:54 info: MongoDB readiness check
+2026-07-20 13:20:54 info: Database UP
+2026-07-20 13:20:56 info: MongoDB readiness check
+2026-07-20 13:20:56 info: Database UP
+2026-07-20 13:20:58 info: MongoDB readiness check
+2026-07-20 13:20:58 info: Database UP
+2026-07-20 13:21:00 info: MongoDB readiness check
+2026-07-20 13:21:00 info: Database UP
+2026-07-20 13:21:02 info: MongoDB readiness check
+2026-07-20 13:21:02 info: Database UP
+2026-07-20 13:26:58 info: MongoDB connected
+2026-07-20 13:26:58 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:26:58 info: Creating worker started
+2026-07-20 13:26:58 info: Creating worker started
+2026-07-20 13:26:58 info: Creating worker started
+2026-07-20 13:26:58 info: Worker created successfully
+2026-07-20 13:26:58 info: Worker created successfully
+2026-07-20 13:26:58 info: Worker created successfully
+2026-07-20 13:26:58 info: Worker pool initialized
+2026-07-20 13:26:59 info: MongoDB readiness check
+2026-07-20 13:26:59 info: Database UP
+2026-07-20 13:27:01 info: MongoDB readiness check
+2026-07-20 13:27:02 info: Database UP
+2026-07-20 13:27:04 info: MongoDB readiness check
+2026-07-20 13:27:04 info: Database UP
+2026-07-20 13:27:06 info: MongoDB readiness check
+2026-07-20 13:27:06 info: Database UP
+2026-07-20 13:27:08 info: MongoDB readiness check
+2026-07-20 13:27:08 info: Database UP
+2026-07-20 13:27:10 info: MongoDB readiness check
+2026-07-20 13:27:10 info: Database UP
+2026-07-20 13:27:12 info: MongoDB readiness check
+2026-07-20 13:27:12 info: Database UP
+2026-07-20 13:27:14 info: MongoDB readiness check
+2026-07-20 13:27:14 info: Database UP
+2026-07-20 13:27:16 info: MongoDB readiness check
+2026-07-20 13:27:16 info: Database UP
+2026-07-20 13:27:18 info: MongoDB readiness check
+2026-07-20 13:27:18 info: Database UP
+2026-07-20 13:27:20 info: MongoDB readiness check
+2026-07-20 13:27:21 info: Database UP
+2026-07-20 13:27:23 info: MongoDB readiness check
+2026-07-20 13:27:23 info: Database UP
+2026-07-20 13:27:25 info: MongoDB readiness check
+2026-07-20 13:27:25 info: Database UP
+2026-07-20 13:27:27 info: MongoDB readiness check
+2026-07-20 13:27:27 info: Database UP
+2026-07-20 13:27:29 info: MongoDB readiness check
+2026-07-20 13:27:29 info: Database UP
+2026-07-20 13:30:19 info: MongoDB connected
+2026-07-20 13:30:19 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:30:19 info: Creating worker started
+2026-07-20 13:30:19 info: Creating worker started
+2026-07-20 13:30:19 info: Creating worker started
+2026-07-20 13:30:19 info: Worker created successfully
+2026-07-20 13:30:19 info: Worker created successfully
+2026-07-20 13:30:19 info: Worker created successfully
+2026-07-20 13:30:19 info: Worker pool initialized
+2026-07-20 13:30:19 info: MongoDB readiness check
+2026-07-20 13:30:20 info: Database UP
+2026-07-20 13:30:22 info: MongoDB readiness check
+2026-07-20 13:30:23 info: Database UP
+2026-07-20 13:30:25 info: MongoDB readiness check
+2026-07-20 13:30:25 info: Database UP
+2026-07-20 13:30:27 info: MongoDB readiness check
+2026-07-20 13:30:27 info: Database UP
+2026-07-20 13:30:29 info: MongoDB readiness check
+2026-07-20 13:30:29 info: Database UP
+2026-07-20 13:30:31 info: MongoDB readiness check
+2026-07-20 13:30:31 info: Database UP
+2026-07-20 13:30:33 info: MongoDB readiness check
+2026-07-20 13:30:33 info: Database UP
+2026-07-20 13:30:35 info: MongoDB readiness check
+2026-07-20 13:30:35 info: Database UP
+2026-07-20 13:30:37 info: MongoDB readiness check
+2026-07-20 13:30:37 info: Database UP
+2026-07-20 13:30:39 info: MongoDB readiness check
+2026-07-20 13:30:40 info: Database UP
+2026-07-20 13:30:42 info: MongoDB readiness check
+2026-07-20 13:30:42 info: Database UP
+2026-07-20 13:30:44 info: MongoDB readiness check
+2026-07-20 13:30:44 info: Database UP
+2026-07-20 13:30:46 info: MongoDB readiness check
+2026-07-20 13:30:46 info: Database UP
+2026-07-20 13:30:48 info: MongoDB readiness check
+2026-07-20 13:30:48 info: Database UP
+2026-07-20 13:30:50 info: MongoDB readiness check
+2026-07-20 13:30:50 info: Database UP
+2026-07-20 13:30:52 info: MongoDB readiness check
+2026-07-20 13:30:52 info: Database UP
+2026-07-20 13:30:54 info: MongoDB readiness check
+2026-07-20 13:30:55 info: Database UP
+2026-07-20 13:30:57 info: MongoDB readiness check
+2026-07-20 13:30:57 info: Database UP
+2026-07-20 13:30:59 info: MongoDB readiness check
+2026-07-20 13:30:59 info: Database UP
+2026-07-20 13:31:01 info: MongoDB readiness check
+2026-07-20 13:31:01 info: Database UP
+2026-07-20 13:31:03 info: MongoDB readiness check
+2026-07-20 13:31:03 info: Database UP
+2026-07-20 13:31:05 info: MongoDB readiness check
+2026-07-20 13:31:05 info: Database UP
+2026-07-20 13:31:07 info: MongoDB readiness check
+2026-07-20 13:31:07 info: Database UP
+2026-07-20 13:31:09 info: MongoDB readiness check
+2026-07-20 13:31:09 info: Database UP
+2026-07-20 13:31:11 info: MongoDB readiness check
+2026-07-20 13:31:12 info: Database UP
+2026-07-20 13:31:14 info: MongoDB readiness check
+2026-07-20 13:31:14 info: Database UP
+2026-07-20 13:31:16 info: MongoDB readiness check
+2026-07-20 13:31:16 info: Database UP
+2026-07-20 13:31:18 info: MongoDB readiness check
+2026-07-20 13:31:18 info: Database UP
+2026-07-20 13:31:20 info: MongoDB readiness check
+2026-07-20 13:31:20 info: Database UP
+2026-07-20 13:31:22 info: MongoDB readiness check
+2026-07-20 13:31:22 info: Database UP
+2026-07-20 13:32:00 info: MongoDB connected
+2026-07-20 13:32:00 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 13:32:00 info: Creating worker started
+2026-07-20 13:32:00 info: Creating worker started
+2026-07-20 13:32:00 info: Creating worker started
+2026-07-20 13:32:00 info: Worker created successfully
+2026-07-20 13:32:00 info: Worker created successfully
+2026-07-20 13:32:00 info: Worker created successfully
+2026-07-20 13:32:00 info: Worker pool initialized
+2026-07-20 13:32:02 info: MongoDB readiness check
+2026-07-20 13:32:02 info: Database UP
+2026-07-20 13:32:04 info: MongoDB readiness check
+2026-07-20 13:32:05 info: Database UP
+2026-07-20 13:32:07 info: MongoDB readiness check
+2026-07-20 13:32:07 info: Database UP
+2026-07-20 13:32:09 info: MongoDB readiness check
+2026-07-20 13:32:09 info: Database UP
+2026-07-20 13:32:11 info: MongoDB readiness check
+2026-07-20 13:32:11 info: Database UP
+2026-07-20 13:32:13 info: MongoDB readiness check
+2026-07-20 13:32:13 info: Database UP
+2026-07-20 13:32:15 info: MongoDB readiness check
+2026-07-20 13:32:15 info: Database UP
+2026-07-20 13:32:17 info: MongoDB readiness check
+2026-07-20 13:32:17 info: Database UP
+2026-07-20 13:32:19 info: MongoDB readiness check
+2026-07-20 13:32:19 info: Database UP
+2026-07-20 13:32:21 info: MongoDB readiness check
+2026-07-20 13:32:21 info: Database UP
+2026-07-20 13:32:23 info: MongoDB readiness check
+2026-07-20 13:32:24 info: Database UP
+2026-07-20 13:32:26 info: MongoDB readiness check
+2026-07-20 13:32:26 info: Database UP
+2026-07-20 13:32:28 info: MongoDB readiness check
+2026-07-20 13:32:28 info: Database UP
+2026-07-20 13:32:30 info: MongoDB readiness check
+2026-07-20 13:32:30 info: Database UP
+2026-07-20 13:32:32 info: MongoDB readiness check
+2026-07-20 13:32:32 info: Database UP
+2026-07-20 13:32:34 info: MongoDB readiness check
+2026-07-20 13:32:34 info: Database UP
+2026-07-20 13:32:36 info: MongoDB readiness check
+2026-07-20 13:32:37 info: Database UP
+2026-07-20 13:32:39 info: MongoDB readiness check
+2026-07-20 13:32:39 info: Database UP
+2026-07-20 13:32:41 info: MongoDB readiness check
+2026-07-20 13:32:41 info: Database UP
+2026-07-20 13:32:43 info: MongoDB readiness check
+2026-07-20 13:32:43 info: Database UP
+2026-07-20 13:32:45 info: MongoDB readiness check
+2026-07-20 13:32:45 info: Database UP
+2026-07-20 13:32:47 info: MongoDB readiness check
+2026-07-20 13:32:47 info: Database UP
+2026-07-20 13:32:49 info: MongoDB readiness check
+2026-07-20 13:32:50 info: Database UP
+2026-07-20 13:32:52 info: MongoDB readiness check
+2026-07-20 13:32:52 info: Database UP
+2026-07-20 13:32:54 info: MongoDB readiness check
+2026-07-20 13:32:54 info: Database UP
+2026-07-20 13:32:56 info: MongoDB readiness check
+2026-07-20 13:32:56 info: Database UP
+2026-07-20 13:32:58 info: MongoDB readiness check
+2026-07-20 13:32:58 info: Database UP
+2026-07-20 13:33:00 info: MongoDB readiness check
+2026-07-20 13:33:00 info: Database UP
+2026-07-20 13:33:02 info: MongoDB readiness check
+2026-07-20 13:33:02 info: Database UP
+2026-07-20 13:33:04 info: MongoDB readiness check
+2026-07-20 13:33:04 info: Database UP
+2026-07-20 14:04:35 info: MongoDB connected
+2026-07-20 14:05:13 info: MongoDB connected
+2026-07-20 14:06:10 info: MongoDB connected
+2026-07-20 14:06:10 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 14:06:10 info: Creating worker started
+2026-07-20 14:06:10 info: Creating worker started
+2026-07-20 14:06:10 info: Creating worker started
+2026-07-20 14:06:10 info: Worker created successfully
+2026-07-20 14:06:10 info: Worker created successfully
+2026-07-20 14:06:10 info: Worker created successfully
+2026-07-20 14:06:10 info: Worker pool initialized
+2026-07-20 14:06:10 info: MongoDB readiness check
+2026-07-20 14:06:11 info: Database UP
+2026-07-20 14:06:13 info: MongoDB readiness check
+2026-07-20 14:06:13 info: Database UP
+2026-07-20 14:06:15 info: MongoDB readiness check
+2026-07-20 14:06:15 info: Database UP
+2026-07-20 14:06:17 info: MongoDB readiness check
+2026-07-20 14:06:17 info: Database UP
+2026-07-20 14:06:19 info: MongoDB readiness check
+2026-07-20 14:06:19 info: Database UP
+2026-07-20 14:06:21 info: MongoDB readiness check
+2026-07-20 14:06:21 info: Database UP
+2026-07-20 14:06:23 info: MongoDB readiness check
+2026-07-20 14:06:23 info: Database UP
+2026-07-20 14:06:25 info: MongoDB readiness check
+2026-07-20 14:06:26 info: Database UP
+2026-07-20 14:06:28 info: MongoDB readiness check
+2026-07-20 14:06:28 info: Database UP
+2026-07-20 14:06:30 info: MongoDB readiness check
+2026-07-20 14:06:30 info: Database UP
+2026-07-20 14:06:32 info: MongoDB readiness check
+2026-07-20 14:06:32 info: Database UP
+2026-07-20 14:06:34 info: MongoDB readiness check
+2026-07-20 14:06:34 info: Database UP
+2026-07-20 14:06:36 info: MongoDB readiness check
+2026-07-20 14:06:36 info: Database UP
+2026-07-20 14:06:38 info: MongoDB readiness check
+2026-07-20 14:06:39 info: Database UP
+2026-07-20 14:06:41 info: MongoDB readiness check
+2026-07-20 14:06:41 info: Database UP
+2026-07-20 14:06:43 info: MongoDB readiness check
+2026-07-20 14:06:43 info: Database UP
+2026-07-20 14:06:45 info: MongoDB readiness check
+2026-07-20 14:06:45 info: Database UP
+2026-07-20 14:06:47 info: MongoDB readiness check
+2026-07-20 14:06:47 info: Database UP
+2026-07-20 14:06:49 info: MongoDB readiness check
+2026-07-20 14:06:49 info: Database UP
+2026-07-20 14:06:51 info: MongoDB readiness check
+2026-07-20 14:06:51 info: Database UP
+2026-07-20 14:06:53 info: MongoDB readiness check
+2026-07-20 14:06:53 info: Database UP
+2026-07-20 14:06:55 info: MongoDB readiness check
+2026-07-20 14:06:56 info: Database UP
+2026-07-20 14:06:58 info: MongoDB readiness check
+2026-07-20 14:06:58 info: Database UP
+2026-07-20 14:07:00 info: MongoDB readiness check
+2026-07-20 14:07:00 info: Database UP
+2026-07-20 14:07:02 info: MongoDB readiness check
+2026-07-20 14:07:02 info: Database UP
+2026-07-20 14:07:04 info: MongoDB readiness check
+2026-07-20 14:07:04 info: Database UP
+2026-07-20 14:07:06 info: MongoDB readiness check
+2026-07-20 14:07:06 info: Database UP
+2026-07-20 14:07:08 info: MongoDB readiness check
+2026-07-20 14:07:08 info: Database UP
+2026-07-20 14:07:10 info: MongoDB readiness check
+2026-07-20 14:07:11 info: Database UP
+2026-07-20 14:07:13 info: MongoDB readiness check
+2026-07-20 14:07:13 info: Database UP
+2026-07-20 14:07:15 info: MongoDB readiness check
+2026-07-20 14:07:15 info: Database UP
+2026-07-20 14:07:17 info: MongoDB readiness check
+2026-07-20 14:07:17 info: Database UP
+2026-07-20 14:07:19 info: MongoDB readiness check
+2026-07-20 14:07:19 info: Database UP
+2026-07-20 14:07:21 info: MongoDB readiness check
+2026-07-20 14:07:21 info: Database UP
+2026-07-20 14:07:23 info: MongoDB readiness check
+2026-07-20 14:07:23 info: Database UP
+2026-07-20 14:07:25 info: MongoDB readiness check
+2026-07-20 14:07:25 info: Database UP
+2026-07-20 14:07:27 info: MongoDB readiness check
+2026-07-20 14:07:27 info: Database UP
+2026-07-20 14:07:29 info: MongoDB readiness check
+2026-07-20 14:07:30 info: Database UP
+2026-07-20 14:07:32 info: MongoDB readiness check
+2026-07-20 14:07:32 info: Database UP
+2026-07-20 14:07:34 info: MongoDB readiness check
+2026-07-20 14:07:34 info: Database UP
+2026-07-20 14:07:36 info: MongoDB readiness check
+2026-07-20 14:07:36 info: Database UP
+2026-07-20 14:07:38 info: MongoDB readiness check
+2026-07-20 14:07:38 info: Database UP
+2026-07-20 14:07:40 info: MongoDB readiness check
+2026-07-20 14:07:40 info: Database UP
+2026-07-20 14:07:42 info: MongoDB readiness check
+2026-07-20 14:07:42 info: Database UP
+2026-07-20 14:07:44 info: MongoDB readiness check
+2026-07-20 14:07:44 info: Database UP
+2026-07-20 14:07:46 info: MongoDB readiness check
+2026-07-20 14:07:47 info: Database UP
+2026-07-20 14:07:49 info: MongoDB readiness check
+2026-07-20 14:07:49 info: Database UP
+2026-07-20 14:07:51 info: MongoDB readiness check
+2026-07-20 14:07:51 info: Database UP
+2026-07-20 14:07:53 info: MongoDB readiness check
+2026-07-20 14:07:53 info: Database UP
+2026-07-20 14:07:55 info: MongoDB readiness check
+2026-07-20 14:07:55 info: Database UP
+2026-07-20 14:07:57 info: MongoDB readiness check
+2026-07-20 14:07:57 info: Database UP
+2026-07-20 14:07:59 info: MongoDB readiness check
+2026-07-20 14:07:59 info: Database UP
+2026-07-20 14:08:01 info: MongoDB readiness check
+2026-07-20 14:08:02 info: Database UP
+2026-07-20 14:08:04 info: MongoDB readiness check
+2026-07-20 14:08:04 info: Database UP
+2026-07-20 14:08:06 info: MongoDB readiness check
+2026-07-20 14:08:06 info: Database UP
+2026-07-20 14:08:08 info: MongoDB readiness check
+2026-07-20 14:08:08 info: Database UP
+2026-07-20 14:08:10 info: MongoDB readiness check
+2026-07-20 14:08:10 info: Database UP
+2026-07-20 14:08:12 info: MongoDB readiness check
+2026-07-20 14:08:12 info: Database UP
+2026-07-20 14:08:14 info: MongoDB readiness check
+2026-07-20 14:08:14 info: Database UP
+2026-07-20 14:08:16 info: MongoDB readiness check
+2026-07-20 14:08:16 info: Database UP
+2026-07-20 14:08:18 info: MongoDB readiness check
+2026-07-20 14:08:19 info: Database UP
+2026-07-20 14:08:21 info: MongoDB readiness check
+2026-07-20 14:08:21 info: Database UP
+2026-07-20 14:08:23 info: MongoDB readiness check
+2026-07-20 14:08:23 info: Database UP
+2026-07-20 14:08:25 info: MongoDB readiness check
+2026-07-20 14:08:25 info: Database UP
+2026-07-20 14:08:27 info: MongoDB readiness check
+2026-07-20 14:08:27 info: Database UP
+2026-07-20 14:08:29 info: MongoDB readiness check
+2026-07-20 14:08:29 info: Database UP
+2026-07-20 14:08:31 info: MongoDB readiness check
+2026-07-20 14:08:31 info: Database UP
+2026-07-20 14:08:33 info: MongoDB readiness check
+2026-07-20 14:08:34 info: Database UP
+2026-07-20 14:08:36 info: MongoDB readiness check
+2026-07-20 14:08:36 info: Database UP
+2026-07-20 14:08:38 info: MongoDB readiness check
+2026-07-20 14:08:38 info: Database UP
+2026-07-20 14:08:40 info: MongoDB readiness check
+2026-07-20 14:08:40 info: Database UP
+2026-07-20 14:08:42 info: MongoDB readiness check
+2026-07-20 14:08:42 info: Database UP
+2026-07-20 14:08:44 info: MongoDB readiness check
+2026-07-20 14:08:44 info: Database UP
+2026-07-20 14:08:46 info: MongoDB readiness check
+2026-07-20 14:08:47 info: Database UP
+2026-07-20 14:08:49 info: MongoDB readiness check
+2026-07-20 14:08:49 info: Database UP
+2026-07-20 14:08:51 info: MongoDB readiness check
+2026-07-20 14:08:51 info: Database UP
+2026-07-20 14:08:53 info: MongoDB readiness check
+2026-07-20 14:08:53 info: Database UP
+2026-07-20 14:08:55 info: MongoDB readiness check
+2026-07-20 14:08:55 info: Database UP
+2026-07-20 14:08:57 info: MongoDB readiness check
+2026-07-20 14:08:57 info: Database UP
+2026-07-20 14:08:59 info: MongoDB readiness check
+2026-07-20 14:08:59 info: Database UP
+2026-07-20 14:09:01 info: MongoDB readiness check
+2026-07-20 14:09:01 info: Database UP
+2026-07-20 14:09:03 info: MongoDB readiness check
+2026-07-20 14:09:04 info: Database UP
+2026-07-20 14:09:06 info: MongoDB readiness check
+2026-07-20 14:09:06 info: Database UP
+2026-07-20 14:09:08 info: MongoDB readiness check
+2026-07-20 14:09:08 info: Database UP
+2026-07-20 14:09:10 info: MongoDB readiness check
+2026-07-20 14:09:10 info: Database UP
+2026-07-20 14:09:12 info: MongoDB readiness check
+2026-07-20 14:09:12 info: Database UP
+2026-07-20 14:09:14 info: MongoDB readiness check
+2026-07-20 14:09:14 info: Database UP
+2026-07-20 14:09:16 info: MongoDB readiness check
+2026-07-20 14:09:16 info: Database UP
+2026-07-20 14:09:18 info: MongoDB readiness check
+2026-07-20 14:09:18 info: Database UP
+2026-07-20 14:09:20 info: MongoDB readiness check
+2026-07-20 14:09:20 info: Database UP
+2026-07-20 14:09:22 info: MongoDB readiness check
+2026-07-20 14:09:22 info: Database UP
+2026-07-20 14:09:24 info: MongoDB readiness check
+2026-07-20 14:09:25 info: Database UP
+2026-07-20 14:09:27 info: MongoDB readiness check
+2026-07-20 14:09:27 info: Database UP
+2026-07-20 14:09:29 info: MongoDB readiness check
+2026-07-20 14:09:29 info: Database UP
+2026-07-20 14:09:31 info: MongoDB readiness check
+2026-07-20 14:09:31 info: Database UP
+2026-07-20 14:09:33 info: MongoDB readiness check
+2026-07-20 14:09:33 info: Database UP
+2026-07-20 14:09:35 info: MongoDB readiness check
+2026-07-20 14:09:35 info: Database UP
+2026-07-20 14:09:37 info: MongoDB readiness check
+2026-07-20 14:09:37 info: Database UP
+2026-07-20 14:09:39 info: MongoDB readiness check
+2026-07-20 14:09:39 info: Database UP
+2026-07-20 14:09:42 info: MongoDB readiness check
+2026-07-20 14:09:42 info: Database UP
+2026-07-20 14:09:44 info: MongoDB readiness check
+2026-07-20 14:09:44 info: Database UP
+2026-07-20 14:09:46 info: MongoDB readiness check
+2026-07-20 14:09:46 info: Database UP
+2026-07-20 14:09:48 info: MongoDB readiness check
+2026-07-20 14:09:48 info: Database UP
+2026-07-20 14:09:50 info: MongoDB readiness check
+2026-07-20 14:09:50 info: Database UP
+2026-07-20 14:09:52 info: MongoDB readiness check
+2026-07-20 14:09:53 info: Database UP
+2026-07-20 14:09:55 info: MongoDB readiness check
+2026-07-20 14:09:55 info: Database UP
+2026-07-20 14:09:57 info: MongoDB readiness check
+2026-07-20 14:09:57 info: Database UP
+2026-07-20 14:09:59 info: MongoDB readiness check
+2026-07-20 14:09:59 info: Database UP
+2026-07-20 14:10:01 info: MongoDB readiness check
+2026-07-20 14:10:01 info: Database UP
+2026-07-20 14:10:03 info: MongoDB readiness check
+2026-07-20 14:10:03 info: Database UP
+2026-07-20 14:10:05 info: MongoDB readiness check
+2026-07-20 14:10:05 info: Database UP
+2026-07-20 14:10:08 info: MongoDB readiness check
+2026-07-20 14:10:08 info: Database UP
+2026-07-20 14:10:10 info: MongoDB readiness check
+2026-07-20 14:10:10 info: Database UP
+2026-07-20 14:10:12 info: MongoDB readiness check
+2026-07-20 14:10:12 info: Database UP
+2026-07-20 14:10:14 info: MongoDB readiness check
+2026-07-20 14:10:14 info: Database UP
+2026-07-20 14:10:16 info: MongoDB readiness check
+2026-07-20 14:10:16 info: Database UP
+2026-07-20 14:10:18 info: MongoDB readiness check
+2026-07-20 14:10:18 info: Database UP
+2026-07-20 14:10:20 info: MongoDB readiness check
+2026-07-20 14:10:20 info: Database UP
+2026-07-20 14:10:22 info: MongoDB readiness check
+2026-07-20 14:10:22 info: Database UP
+2026-07-20 14:10:24 info: MongoDB readiness check
+2026-07-20 14:10:24 info: Database UP
+2026-07-20 14:10:26 info: MongoDB readiness check
+2026-07-20 14:10:26 info: Database UP
+2026-07-20 14:10:28 info: MongoDB readiness check
+2026-07-20 14:10:29 info: Database UP
+2026-07-20 14:10:31 info: MongoDB readiness check
+2026-07-20 14:10:31 info: Database UP
+2026-07-20 14:10:33 info: MongoDB readiness check
+2026-07-20 14:10:33 info: Database UP
+2026-07-20 14:10:35 info: MongoDB readiness check
+2026-07-20 14:10:35 info: Database UP
+2026-07-20 14:10:36 info: MongoDB readiness check
+2026-07-20 14:10:36 info: MongoDB readiness check
+2026-07-20 14:10:37 info: Database UP
+2026-07-20 14:10:37 info: Database UP
+2026-07-20 17:26:53 info: MongoDB connected
+2026-07-20 17:26:53 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:26:53 info: Creating worker started
+2026-07-20 17:26:53 info: Creating worker started
+2026-07-20 17:26:53 info: Creating worker started
+2026-07-20 17:26:53 info: Worker created successfully
+2026-07-20 17:26:53 info: Worker created successfully
+2026-07-20 17:26:53 info: Worker created successfully
+2026-07-20 17:26:53 info: Worker pool initialized
+2026-07-20 17:27:04 info: MongoDB readiness check
+2026-07-20 17:27:04 info: Database UP
+2026-07-20 17:27:06 info: MongoDB readiness check
+2026-07-20 17:27:06 info: Database UP
+2026-07-20 17:27:08 info: MongoDB readiness check
+2026-07-20 17:27:08 info: Database UP
+2026-07-20 17:27:10 info: MongoDB readiness check
+2026-07-20 17:27:10 info: Database UP
+2026-07-20 17:27:12 info: MongoDB readiness check
+2026-07-20 17:27:12 info: Database UP
+2026-07-20 17:27:14 info: MongoDB readiness check
+2026-07-20 17:27:15 info: Database UP
+2026-07-20 17:27:17 info: MongoDB readiness check
+2026-07-20 17:27:17 info: Database UP
+2026-07-20 17:27:19 info: MongoDB readiness check
+2026-07-20 17:27:19 info: Database UP
+2026-07-20 17:27:21 info: MongoDB readiness check
+2026-07-20 17:27:22 info: Database UP
+2026-07-20 17:27:24 info: MongoDB readiness check
+2026-07-20 17:27:24 info: Database UP
+2026-07-20 17:27:26 info: MongoDB readiness check
+2026-07-20 17:27:26 info: Database UP
+2026-07-20 17:27:28 info: MongoDB readiness check
+2026-07-20 17:27:28 info: Database UP
+2026-07-20 17:27:30 info: MongoDB readiness check
+2026-07-20 17:27:30 info: Database UP
+2026-07-20 17:27:32 info: MongoDB readiness check
+2026-07-20 17:27:32 info: Database UP
+2026-07-20 17:27:32 info: SignIn started
+2026-07-20 17:27:32 info: SignIn completed
+2026-07-20 17:27:32 info: [node-1] Client connected: 5UxwT8llfEFrP5NwAAAB
+2026-07-20 17:27:34 info: MongoDB readiness check
+2026-07-20 17:27:34 info: Database UP
+2026-07-20 17:27:35 info: Create room started
+2026-07-20 17:27:35 info: Woker loads loaded successfully
+2026-07-20 17:27:35 info: Woker assigned succesfully
+2026-07-20 17:27:35 info: Creation of router started
+2026-07-20 17:27:35 info: Router created
+2026-07-20 17:27:35 info: Creation of room successfully executed
+2026-07-20 17:27:35 info: Get room started
+2026-07-20 17:27:35 info: Get room executed successfully
+2026-07-20 17:27:35 info: Broadcaster added to the room
+2026-07-20 17:27:35 info: Room created successfully
+2026-07-20 17:27:36 info: MongoDB readiness check
+2026-07-20 17:27:36 info: Database UP
+2026-07-20 17:27:38 info: MongoDB readiness check
+2026-07-20 17:27:38 info: Database UP
+2026-07-20 17:27:40 info: MongoDB readiness check
+2026-07-20 17:27:40 info: Database UP
+2026-07-20 17:27:42 info: Get room started
+2026-07-20 17:27:42 info: Get room executed successfully
+2026-07-20 17:27:42 info: MongoDB readiness check
+2026-07-20 17:27:43 info: Database UP
+2026-07-20 17:27:45 info: MongoDB readiness check
+2026-07-20 17:27:45 info: Database UP
+2026-07-20 17:27:47 info: MongoDB readiness check
+2026-07-20 17:27:47 info: Database UP
+2026-07-20 17:27:49 info: MongoDB readiness check
+2026-07-20 17:27:49 info: Database UP
+2026-07-20 17:27:51 info: MongoDB readiness check
+2026-07-20 17:27:51 info: Database UP
+2026-07-20 17:27:53 info: MongoDB readiness check
+2026-07-20 17:27:54 info: Database UP
+2026-07-20 17:27:56 info: MongoDB readiness check
+2026-07-20 17:27:56 info: Database UP
+2026-07-20 17:27:58 info: MongoDB readiness check
+2026-07-20 17:27:58 info: Database UP
+2026-07-20 17:28:00 info: MongoDB readiness check
+2026-07-20 17:28:00 info: Database UP
+2026-07-20 17:28:01 info: User disconnected 5UxwT8llfEFrP5NwAAAB beacuse of transport close
+2026-07-20 17:28:01 info: Handle disconnect started
+2026-07-20 17:28:01 info: Get room started
+2026-07-20 17:28:01 info: Get room executed successfully
+2026-07-20 17:28:01 info: Get room started
+2026-07-20 17:28:01 info: Get room executed successfully
+2026-07-20 17:28:01 info: Get room started
+2026-07-20 17:28:01 info: Get room executed successfully
+2026-07-20 17:28:01 info: Remove broadcaster success
+2026-07-20 17:28:01 info: Handle disconnect succesfully
+2026-07-20 17:28:01 info: room:0541ddb4-fe7f-439d-9aa0-e8588c3de238 room deleted successfully
+2026-07-20 17:28:02 info: MongoDB readiness check
+2026-07-20 17:28:02 info: Database UP
+2026-07-20 17:28:04 info: MongoDB readiness check
+2026-07-20 17:28:04 info: Database UP
+2026-07-20 17:28:06 info: MongoDB readiness check
+2026-07-20 17:28:06 info: Database UP
+2026-07-20 17:28:09 info: MongoDB readiness check
+2026-07-20 17:28:09 info: Database UP
+2026-07-20 17:28:11 info: MongoDB readiness check
+2026-07-20 17:28:11 info: Database UP
+2026-07-20 17:28:13 info: MongoDB readiness check
+2026-07-20 17:28:13 info: Database UP
+2026-07-20 17:28:15 info: MongoDB readiness check
+2026-07-20 17:28:15 info: Database UP
+2026-07-20 17:28:17 info: MongoDB readiness check
+2026-07-20 17:28:17 info: Database UP
+2026-07-20 17:28:19 info: MongoDB readiness check
+2026-07-20 17:28:20 info: Database UP
+2026-07-20 17:28:22 info: MongoDB readiness check
+2026-07-20 17:28:22 info: Database UP
+2026-07-20 17:28:24 info: SignIn started
+2026-07-20 17:28:24 info: MongoDB readiness check
+2026-07-20 17:28:24 info: Database UP
+2026-07-20 17:28:24 info: SignIn completed
+2026-07-20 17:28:24 info: [node-1] Client connected: Y5nv28gjC-qaZndOAAAD
+2026-07-20 17:28:26 info: MongoDB readiness check
+2026-07-20 17:28:26 info: Database UP
+2026-07-20 17:28:28 info: MongoDB readiness check
+2026-07-20 17:28:28 info: Database UP
+2026-07-20 17:28:30 info: Create room started
+2026-07-20 17:28:30 info: Woker loads loaded successfully
+2026-07-20 17:28:30 info: Woker assigned succesfully
+2026-07-20 17:28:30 info: Creation of router started
+2026-07-20 17:28:30 info: Router created
+2026-07-20 17:28:30 info: Creation of room successfully executed
+2026-07-20 17:28:30 info: Get room started
+2026-07-20 17:28:30 info: Get room executed successfully
+2026-07-20 17:28:30 info: Broadcaster added to the room
+2026-07-20 17:28:30 info: Room created successfully
+2026-07-20 17:28:30 info: MongoDB readiness check
+2026-07-20 17:28:31 info: Database UP
+2026-07-20 17:28:33 info: MongoDB readiness check
+2026-07-20 17:28:33 info: Database UP
+2026-07-20 17:28:35 info: MongoDB readiness check
+2026-07-20 17:28:35 info: Database UP
+2026-07-20 17:28:37 info: MongoDB readiness check
+2026-07-20 17:28:37 info: Database UP
+2026-07-20 17:28:39 info: MongoDB readiness check
+2026-07-20 17:28:39 info: Database UP
+2026-07-20 17:28:41 info: MongoDB readiness check
+2026-07-20 17:28:41 info: Database UP
+2026-07-20 17:28:43 info: MongoDB readiness check
+2026-07-20 17:28:44 info: Database UP
+2026-07-20 17:28:46 info: MongoDB readiness check
+2026-07-20 17:28:46 info: Database UP
+2026-07-20 17:28:48 info: MongoDB readiness check
+2026-07-20 17:28:48 info: Database UP
+2026-07-20 17:28:50 info: MongoDB readiness check
+2026-07-20 17:28:50 info: Get room started
+2026-07-20 17:28:50 info: Get room executed successfully
+2026-07-20 17:28:50 info: Database UP
+2026-07-20 17:28:52 info: MongoDB readiness check
+2026-07-20 17:28:52 info: Database UP
+2026-07-20 17:28:54 info: MongoDB readiness check
+2026-07-20 17:28:54 info: Database UP
+2026-07-20 17:28:56 info: MongoDB readiness check
+2026-07-20 17:28:57 info: Database UP
+2026-07-20 17:28:59 info: MongoDB readiness check
+2026-07-20 17:28:59 info: Database UP
+2026-07-20 17:29:01 info: MongoDB readiness check
+2026-07-20 17:29:01 info: Database UP
+2026-07-20 17:29:03 info: MongoDB readiness check
+2026-07-20 17:29:03 info: Database UP
+2026-07-20 17:29:05 info: MongoDB readiness check
+2026-07-20 17:29:05 info: Database UP
+2026-07-20 17:29:07 info: MongoDB readiness check
+2026-07-20 17:29:07 info: Database UP
+2026-07-20 17:29:09 info: MongoDB readiness check
+2026-07-20 17:29:09 info: Database UP
+2026-07-20 17:29:11 info: MongoDB readiness check
+2026-07-20 17:29:11 info: Database UP
+2026-07-20 17:29:13 info: MongoDB readiness check
+2026-07-20 17:29:13 info: Database UP
+2026-07-20 17:29:15 info: MongoDB readiness check
+2026-07-20 17:29:15 info: Database UP
+2026-07-20 17:29:17 info: MongoDB readiness check
+2026-07-20 17:29:17 info: Database UP
+2026-07-20 17:29:19 info: MongoDB readiness check
+2026-07-20 17:29:19 info: Database UP
+2026-07-20 17:29:21 info: MongoDB readiness check
+2026-07-20 17:29:22 info: Database UP
+2026-07-20 17:29:24 info: MongoDB readiness check
+2026-07-20 17:29:24 info: Database UP
+2026-07-20 17:29:26 info: MongoDB readiness check
+2026-07-20 17:29:26 info: Database UP
+2026-07-20 17:29:28 info: MongoDB readiness check
+2026-07-20 17:29:28 info: Database UP
+2026-07-20 17:29:30 info: MongoDB readiness check
+2026-07-20 17:29:30 info: Database UP
+2026-07-20 17:29:32 info: MongoDB readiness check
+2026-07-20 17:29:32 info: Database UP
+2026-07-20 17:29:34 info: MongoDB readiness check
+2026-07-20 17:29:35 info: Database UP
+2026-07-20 17:29:37 info: MongoDB readiness check
+2026-07-20 17:29:37 info: Database UP
+2026-07-20 17:29:39 info: MongoDB readiness check
+2026-07-20 17:29:39 info: Database UP
+2026-07-20 17:29:41 info: MongoDB readiness check
+2026-07-20 17:29:41 info: Database UP
+2026-07-20 17:29:43 info: MongoDB readiness check
+2026-07-20 17:29:43 info: Database UP
+2026-07-20 17:29:45 info: MongoDB readiness check
+2026-07-20 17:29:45 info: Database UP
+2026-07-20 17:29:47 info: MongoDB readiness check
+2026-07-20 17:29:47 info: Database UP
+2026-07-20 17:29:49 info: MongoDB readiness check
+2026-07-20 17:29:49 info: Database UP
+2026-07-20 17:29:51 info: MongoDB readiness check
+2026-07-20 17:29:52 info: Database UP
+2026-07-20 17:29:54 info: MongoDB readiness check
+2026-07-20 17:29:54 info: Database UP
+2026-07-20 17:29:56 info: MongoDB readiness check
+2026-07-20 17:29:56 info: Database UP
+2026-07-20 17:29:58 info: MongoDB readiness check
+2026-07-20 17:29:58 info: Database UP
+2026-07-20 17:30:00 info: MongoDB readiness check
+2026-07-20 17:30:00 info: Database UP
+2026-07-20 17:30:02 info: MongoDB readiness check
+2026-07-20 17:30:02 info: Database UP
+2026-07-20 17:30:04 info: MongoDB readiness check
+2026-07-20 17:30:04 info: Database UP
+2026-07-20 17:30:06 info: MongoDB readiness check
+2026-07-20 17:30:07 info: Database UP
+2026-07-20 17:30:09 info: MongoDB readiness check
+2026-07-20 17:30:09 info: Database UP
+2026-07-20 17:30:11 info: MongoDB readiness check
+2026-07-20 17:30:11 info: Database UP
+2026-07-20 17:30:13 info: MongoDB readiness check
+2026-07-20 17:30:13 info: Database UP
+2026-07-20 17:30:15 info: MongoDB readiness check
+2026-07-20 17:30:15 info: Database UP
+2026-07-20 17:30:17 info: MongoDB readiness check
+2026-07-20 17:30:17 info: Database UP
+2026-07-20 17:30:19 info: MongoDB readiness check
+2026-07-20 17:30:19 info: Database UP
+2026-07-20 17:30:21 info: MongoDB readiness check
+2026-07-20 17:30:22 info: Database UP
+2026-07-20 17:30:24 info: MongoDB readiness check
+2026-07-20 17:30:24 info: Database UP
+2026-07-20 17:30:26 info: MongoDB readiness check
+2026-07-20 17:30:26 info: Database UP
+2026-07-20 17:30:28 info: Get room started
+2026-07-20 17:30:28 info: Get room executed successfully
+2026-07-20 17:30:28 info: MongoDB readiness check
+2026-07-20 17:30:28 info: Database UP
+2026-07-20 17:30:30 info: MongoDB readiness check
+2026-07-20 17:30:31 info: Database UP
+2026-07-20 17:30:33 info: MongoDB readiness check
+2026-07-20 17:30:33 info: Database UP
+2026-07-20 17:30:35 info: MongoDB readiness check
+2026-07-20 17:30:35 info: Database UP
+2026-07-20 17:30:37 info: MongoDB readiness check
+2026-07-20 17:30:37 info: Database UP
+2026-07-20 17:30:39 info: MongoDB readiness check
+2026-07-20 17:30:39 info: Database UP
+2026-07-20 17:30:41 info: MongoDB readiness check
+2026-07-20 17:30:41 info: Database UP
+2026-07-20 17:30:43 info: MongoDB readiness check
+2026-07-20 17:30:44 info: Database UP
+2026-07-20 17:30:46 info: MongoDB readiness check
+2026-07-20 17:30:46 info: Database UP
+2026-07-20 17:30:48 info: MongoDB readiness check
+2026-07-20 17:30:48 info: Database UP
+2026-07-20 17:30:50 info: MongoDB readiness check
+2026-07-20 17:30:50 info: Database UP
+2026-07-20 17:30:52 info: MongoDB readiness check
+2026-07-20 17:30:52 info: Database UP
+2026-07-20 17:30:54 info: MongoDB readiness check
+2026-07-20 17:30:54 info: Database UP
+2026-07-20 17:30:56 info: MongoDB readiness check
+2026-07-20 17:30:57 info: Database UP
+2026-07-20 17:30:59 info: MongoDB readiness check
+2026-07-20 17:30:59 info: Database UP
+2026-07-20 17:31:01 info: MongoDB readiness check
+2026-07-20 17:31:01 info: Database UP
+2026-07-20 17:31:03 info: MongoDB readiness check
+2026-07-20 17:31:03 info: Database UP
+2026-07-20 17:31:05 info: MongoDB readiness check
+2026-07-20 17:31:05 info: Database UP
+2026-07-20 17:31:07 info: MongoDB readiness check
+2026-07-20 17:31:07 info: Database UP
+2026-07-20 17:31:09 info: MongoDB readiness check
+2026-07-20 17:31:10 info: Database UP
+2026-07-20 17:31:12 info: MongoDB readiness check
+2026-07-20 17:31:12 info: Database UP
+2026-07-20 17:31:14 info: MongoDB readiness check
+2026-07-20 17:31:14 info: Database UP
+2026-07-20 17:31:16 info: MongoDB readiness check
+2026-07-20 17:31:16 info: Database UP
+2026-07-20 17:31:18 info: MongoDB readiness check
+2026-07-20 17:31:18 info: Database UP
+2026-07-20 17:31:20 info: MongoDB readiness check
+2026-07-20 17:31:20 info: Database UP
+2026-07-20 17:31:22 info: MongoDB readiness check
+2026-07-20 17:31:23 info: Database UP
+2026-07-20 17:31:25 info: MongoDB readiness check
+2026-07-20 17:31:25 info: Database UP
+2026-07-20 17:31:27 info: MongoDB readiness check
+2026-07-20 17:31:27 info: Database UP
+2026-07-20 17:31:29 info: MongoDB readiness check
+2026-07-20 17:31:29 info: Database UP
+2026-07-20 17:31:31 info: MongoDB readiness check
+2026-07-20 17:31:31 info: Database UP
+2026-07-20 17:31:33 info: MongoDB readiness check
+2026-07-20 17:31:34 info: Database UP
+2026-07-20 17:31:36 info: MongoDB readiness check
+2026-07-20 17:31:36 info: Database UP
+2026-07-20 17:31:38 info: MongoDB readiness check
+2026-07-20 17:31:38 info: Database UP
+2026-07-20 17:31:40 info: MongoDB readiness check
+2026-07-20 17:31:40 info: Database UP
+2026-07-20 17:31:42 info: MongoDB readiness check
+2026-07-20 17:31:42 info: Database UP
+2026-07-20 17:31:44 info: MongoDB readiness check
+2026-07-20 17:31:45 info: Database UP
+2026-07-20 17:31:46 info: Get room started
+2026-07-20 17:31:46 info: Get room executed successfully
+2026-07-20 17:31:47 info: MongoDB readiness check
+2026-07-20 17:31:47 info: Database UP
+2026-07-20 17:31:49 info: MongoDB readiness check
+2026-07-20 17:31:49 info: Database UP
+2026-07-20 17:31:51 info: MongoDB readiness check
+2026-07-20 17:31:51 info: Database UP
+2026-07-20 17:31:53 info: MongoDB readiness check
+2026-07-20 17:31:53 info: Database UP
+2026-07-20 17:31:55 info: MongoDB readiness check
+2026-07-20 17:31:55 info: Database UP
+2026-07-20 17:31:57 info: MongoDB readiness check
+2026-07-20 17:31:57 info: Database UP
+2026-07-20 17:31:59 info: MongoDB readiness check
+2026-07-20 17:32:00 info: Database UP
+2026-07-20 17:32:02 info: MongoDB readiness check
+2026-07-20 17:32:02 info: Database UP
+2026-07-20 17:32:04 info: MongoDB readiness check
+2026-07-20 17:32:04 info: Database UP
+2026-07-20 17:32:06 info: MongoDB readiness check
+2026-07-20 17:32:06 info: Database UP
+2026-07-20 17:32:08 info: MongoDB readiness check
+2026-07-20 17:32:08 info: Database UP
+2026-07-20 17:32:10 info: MongoDB readiness check
+2026-07-20 17:32:10 info: Database UP
+2026-07-20 17:32:12 info: MongoDB readiness check
+2026-07-20 17:32:13 info: Database UP
+2026-07-20 17:32:15 info: MongoDB readiness check
+2026-07-20 17:32:15 info: Database UP
+2026-07-20 17:32:17 info: MongoDB readiness check
+2026-07-20 17:32:17 info: Database UP
+2026-07-20 17:32:19 info: MongoDB readiness check
+2026-07-20 17:32:19 info: Database UP
+2026-07-20 17:32:21 info: MongoDB readiness check
+2026-07-20 17:32:21 info: Database UP
+2026-07-20 17:32:23 info: MongoDB readiness check
+2026-07-20 17:32:23 info: Database UP
+2026-07-20 17:32:25 info: MongoDB readiness check
+2026-07-20 17:32:25 info: Database UP
+2026-07-20 17:32:27 info: MongoDB readiness check
+2026-07-20 17:32:27 info: Database UP
+2026-07-20 17:32:29 info: MongoDB readiness check
+2026-07-20 17:32:30 info: Database UP
+2026-07-20 17:32:32 info: MongoDB readiness check
+2026-07-20 17:32:32 info: Database UP
+2026-07-20 17:32:34 info: MongoDB readiness check
+2026-07-20 17:32:34 info: Database UP
+2026-07-20 17:32:36 info: MongoDB readiness check
+2026-07-20 17:32:37 info: Database UP
+2026-07-20 17:32:39 info: MongoDB readiness check
+2026-07-20 17:32:39 info: Database UP
+2026-07-20 17:32:41 info: MongoDB readiness check
+2026-07-20 17:32:41 info: Database UP
+2026-07-20 17:32:43 info: MongoDB readiness check
+2026-07-20 17:32:43 info: Database UP
+2026-07-20 17:32:45 info: MongoDB readiness check
+2026-07-20 17:32:45 info: Database UP
+2026-07-20 17:32:47 info: MongoDB readiness check
+2026-07-20 17:32:47 info: Database UP
+2026-07-20 17:32:49 info: MongoDB readiness check
+2026-07-20 17:32:49 info: Database UP
+2026-07-20 17:32:51 info: MongoDB readiness check
+2026-07-20 17:32:51 info: Database UP
+2026-07-20 17:32:53 info: MongoDB readiness check
+2026-07-20 17:32:53 info: Database UP
+2026-07-20 17:32:55 info: MongoDB readiness check
+2026-07-20 17:32:55 info: Database UP
+2026-07-20 17:33:07 info: MongoDB connected
+2026-07-20 17:33:07 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:33:07 info: Creating worker started
+2026-07-20 17:33:07 info: Creating worker started
+2026-07-20 17:33:07 info: Creating worker started
+2026-07-20 17:33:08 info: Worker created successfully
+2026-07-20 17:33:08 info: Worker created successfully
+2026-07-20 17:33:08 info: Worker created successfully
+2026-07-20 17:33:08 info: Worker pool initialized
+2026-07-20 17:33:10 info: MongoDB readiness check
+2026-07-20 17:33:10 info: Database UP
+2026-07-20 17:33:12 info: MongoDB readiness check
+2026-07-20 17:33:12 info: Database UP
+2026-07-20 17:33:14 info: [node-1] Client connected: K8hvfUHkES4JlOX0AAAB
+2026-07-20 17:33:14 info: MongoDB readiness check
+2026-07-20 17:33:14 info: Database UP
+2026-07-20 17:33:16 info: MongoDB readiness check
+2026-07-20 17:33:16 info: Database UP
+2026-07-20 17:33:18 info: MongoDB readiness check
+2026-07-20 17:33:18 info: Database UP
+2026-07-20 17:33:20 info: MongoDB readiness check
+2026-07-20 17:33:20 info: Database UP
+2026-07-20 17:33:27 info: MongoDB connected
+2026-07-20 17:33:27 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:33:27 info: Creating worker started
+2026-07-20 17:33:27 info: Creating worker started
+2026-07-20 17:33:27 info: Creating worker started
+2026-07-20 17:33:27 info: Worker created successfully
+2026-07-20 17:33:27 info: Worker created successfully
+2026-07-20 17:33:27 info: Worker created successfully
+2026-07-20 17:33:27 info: Worker pool initialized
+2026-07-20 17:33:28 info: MongoDB readiness check
+2026-07-20 17:33:28 info: Database UP
+2026-07-20 17:33:30 info: MongoDB readiness check
+2026-07-20 17:33:30 info: Database UP
+2026-07-20 17:33:32 info: [node-1] Client connected: HDK-d-gyXNxEmJGgAAAB
+2026-07-20 17:33:32 info: MongoDB readiness check
+2026-07-20 17:33:32 info: Database UP
+2026-07-20 17:33:34 info: MongoDB readiness check
+2026-07-20 17:33:35 info: Database UP
+2026-07-20 17:33:37 info: MongoDB readiness check
+2026-07-20 17:33:37 info: Database UP
+2026-07-20 17:33:39 info: MongoDB readiness check
+2026-07-20 17:33:39 info: Database UP
+2026-07-20 17:33:41 info: MongoDB readiness check
+2026-07-20 17:33:41 info: Database UP
+2026-07-20 17:33:42 info: User disconnected HDK-d-gyXNxEmJGgAAAB beacuse of transport close
+2026-07-20 17:33:42 info: Handle disconnect started
+2026-07-20 17:33:42 error: RoomId not found
+2026-07-20 17:33:42 warn: IDK
+2026-07-20 17:33:43 info: MongoDB readiness check
+2026-07-20 17:33:43 info: Database UP
+2026-07-20 17:33:45 info: MongoDB readiness check
+2026-07-20 17:33:45 info: Database UP
+2026-07-20 17:33:47 info: MongoDB readiness check
+2026-07-20 17:33:48 info: Database UP
+2026-07-20 17:33:50 info: MongoDB readiness check
+2026-07-20 17:33:50 info: Database UP
+2026-07-20 17:33:52 info: MongoDB readiness check
+2026-07-20 17:33:52 info: Database UP
+2026-07-20 17:33:52 info: SignIn started
+2026-07-20 17:33:52 info: SignIn completed
+2026-07-20 17:33:52 info: [node-1] Client connected: IjhS1SOAVTCK4EbHAAAD
+2026-07-20 17:33:54 info: MongoDB readiness check
+2026-07-20 17:33:54 info: Database UP
+2026-07-20 17:33:55 info: Create room started
+2026-07-20 17:33:55 info: Woker loads loaded successfully
+2026-07-20 17:33:55 info: Woker assigned succesfully
+2026-07-20 17:33:55 info: Creation of router started
+2026-07-20 17:33:55 info: Router created
+2026-07-20 17:33:55 info: Creation of room successfully executed
+2026-07-20 17:33:55 info: Get room started
+2026-07-20 17:33:55 info: Get room executed successfully
+2026-07-20 17:33:55 info: Broadcaster added to the room
+2026-07-20 17:33:55 info: Room created successfully
+2026-07-20 17:33:56 info: MongoDB readiness check
+2026-07-20 17:33:56 info: Database UP
+2026-07-20 17:33:58 info: MongoDB readiness check
+2026-07-20 17:33:58 info: Database UP
+2026-07-20 17:34:00 info: MongoDB readiness check
+2026-07-20 17:34:01 info: Database UP
+2026-07-20 17:34:03 info: MongoDB readiness check
+2026-07-20 17:34:03 info: Database UP
+2026-07-20 17:34:05 info: MongoDB readiness check
+2026-07-20 17:34:05 info: Database UP
+2026-07-20 17:34:07 info: MongoDB readiness check
+2026-07-20 17:34:07 info: Database UP
+2026-07-20 17:34:07 info: Get room started
+2026-07-20 17:34:07 info: Get room executed successfully
+2026-07-20 17:34:09 info: MongoDB readiness check
+2026-07-20 17:34:09 info: Database UP
+2026-07-20 17:34:11 info: MongoDB readiness check
+2026-07-20 17:34:11 info: Database UP
+2026-07-20 17:34:13 info: MongoDB readiness check
+2026-07-20 17:34:14 info: Database UP
+2026-07-20 17:34:16 info: MongoDB readiness check
+2026-07-20 17:34:16 info: Database UP
+2026-07-20 17:34:18 info: MongoDB readiness check
+2026-07-20 17:34:18 info: Database UP
+2026-07-20 17:34:20 info: MongoDB readiness check
+2026-07-20 17:34:20 info: Database UP
+2026-07-20 17:34:22 info: MongoDB readiness check
+2026-07-20 17:34:22 info: Database UP
+2026-07-20 17:34:24 info: MongoDB readiness check
+2026-07-20 17:34:25 info: Database UP
+2026-07-20 17:34:27 info: MongoDB readiness check
+2026-07-20 17:34:27 info: Database UP
+2026-07-20 17:34:29 info: MongoDB readiness check
+2026-07-20 17:34:29 info: Database UP
+2026-07-20 17:34:31 info: MongoDB readiness check
+2026-07-20 17:34:31 info: Database UP
+2026-07-20 17:34:33 info: MongoDB readiness check
+2026-07-20 17:34:33 info: Database UP
+2026-07-20 17:34:35 info: MongoDB readiness check
+2026-07-20 17:34:35 info: Database UP
+2026-07-20 17:34:37 info: MongoDB readiness check
+2026-07-20 17:34:37 info: Database UP
+2026-07-20 17:34:39 info: MongoDB readiness check
+2026-07-20 17:34:40 info: Database UP
+2026-07-20 17:34:42 info: MongoDB readiness check
+2026-07-20 17:34:42 info: Database UP
+2026-07-20 17:34:44 info: MongoDB readiness check
+2026-07-20 17:34:44 info: Database UP
+2026-07-20 17:34:46 info: MongoDB readiness check
+2026-07-20 17:34:46 info: Database UP
+2026-07-20 17:34:48 info: MongoDB readiness check
+2026-07-20 17:34:48 info: Database UP
+2026-07-20 17:34:50 info: MongoDB readiness check
+2026-07-20 17:34:50 info: Database UP
+2026-07-20 17:34:52 info: MongoDB readiness check
+2026-07-20 17:34:52 info: Database UP
+2026-07-20 17:34:54 info: MongoDB readiness check
+2026-07-20 17:34:55 info: Database UP
+2026-07-20 17:34:57 info: MongoDB readiness check
+2026-07-20 17:34:57 info: Database UP
+2026-07-20 17:34:59 info: MongoDB readiness check
+2026-07-20 17:34:59 info: Database UP
+2026-07-20 17:35:01 info: MongoDB readiness check
+2026-07-20 17:35:01 info: Database UP
+2026-07-20 17:35:03 info: MongoDB readiness check
+2026-07-20 17:35:03 info: Database UP
+2026-07-20 17:35:05 info: MongoDB readiness check
+2026-07-20 17:35:05 info: Database UP
+2026-07-20 17:35:07 info: MongoDB readiness check
+2026-07-20 17:35:08 info: Database UP
+2026-07-20 17:35:10 info: MongoDB readiness check
+2026-07-20 17:35:10 info: Database UP
+2026-07-20 17:35:12 info: MongoDB readiness check
+2026-07-20 17:35:12 info: Database UP
+2026-07-20 17:35:14 info: MongoDB readiness check
+2026-07-20 17:35:14 info: Database UP
+2026-07-20 17:35:16 info: MongoDB readiness check
+2026-07-20 17:35:16 info: Database UP
+2026-07-20 17:35:18 info: MongoDB readiness check
+2026-07-20 17:35:18 info: Database UP
+2026-07-20 17:35:20 info: MongoDB readiness check
+2026-07-20 17:35:21 info: Database UP
+2026-07-20 17:35:23 info: MongoDB readiness check
+2026-07-20 17:35:23 info: Database UP
+2026-07-20 17:35:25 info: MongoDB readiness check
+2026-07-20 17:35:25 info: Database UP
+2026-07-20 17:35:27 info: MongoDB readiness check
+2026-07-20 17:35:27 info: Database UP
+2026-07-20 17:35:29 info: MongoDB readiness check
+2026-07-20 17:35:29 info: Database UP
+2026-07-20 17:35:31 info: MongoDB readiness check
+2026-07-20 17:35:31 info: Database UP
+2026-07-20 17:35:33 info: MongoDB readiness check
+2026-07-20 17:35:33 info: Database UP
+2026-07-20 17:35:35 info: MongoDB readiness check
+2026-07-20 17:35:36 info: Database UP
+2026-07-20 17:35:38 info: MongoDB readiness check
+2026-07-20 17:35:38 info: Database UP
+2026-07-20 17:35:40 info: MongoDB readiness check
+2026-07-20 17:35:40 info: Database UP
+2026-07-20 17:35:42 info: MongoDB readiness check
+2026-07-20 17:35:42 info: Database UP
+2026-07-20 17:35:44 info: MongoDB readiness check
+2026-07-20 17:35:44 info: Database UP
+2026-07-20 17:35:46 info: MongoDB readiness check
+2026-07-20 17:35:46 info: Database UP
+2026-07-20 17:35:48 info: MongoDB readiness check
+2026-07-20 17:35:49 info: Database UP
+2026-07-20 17:35:51 info: MongoDB readiness check
+2026-07-20 17:35:51 info: Database UP
+2026-07-20 17:35:53 info: MongoDB readiness check
+2026-07-20 17:35:53 info: Database UP
+2026-07-20 17:35:55 info: MongoDB readiness check
+2026-07-20 17:35:55 info: Database UP
+2026-07-20 17:35:57 info: MongoDB readiness check
+2026-07-20 17:35:57 info: Database UP
+2026-07-20 17:35:59 info: MongoDB readiness check
+2026-07-20 17:35:59 info: Database UP
+2026-07-20 17:36:01 info: MongoDB readiness check
+2026-07-20 17:36:02 info: Database UP
+2026-07-20 17:36:04 info: MongoDB readiness check
+2026-07-20 17:36:04 info: Database UP
+2026-07-20 17:36:06 info: MongoDB readiness check
+2026-07-20 17:36:06 info: Database UP
+2026-07-20 17:36:08 info: MongoDB readiness check
+2026-07-20 17:36:08 info: Database UP
+2026-07-20 17:36:10 info: MongoDB readiness check
+2026-07-20 17:36:10 info: Database UP
+2026-07-20 17:36:12 info: MongoDB readiness check
+2026-07-20 17:36:12 info: Database UP
+2026-07-20 17:36:14 info: MongoDB readiness check
+2026-07-20 17:36:15 info: Database UP
+2026-07-20 17:36:17 info: MongoDB readiness check
+2026-07-20 17:36:17 info: Database UP
+2026-07-20 17:36:19 info: MongoDB readiness check
+2026-07-20 17:36:19 info: Database UP
+2026-07-20 17:36:21 info: MongoDB readiness check
+2026-07-20 17:36:25 info: MongoDB readiness check
+2026-07-20 17:36:29 info: MongoDB readiness check
+2026-07-20 17:36:33 info: MongoDB readiness check
+2026-07-20 17:36:37 info: MongoDB readiness check
+2026-07-20 17:36:41 info: MongoDB readiness check
+2026-07-20 17:36:41 error: Database connection is not open
+2026-07-20 17:36:43 info: MongoDB readiness check
+2026-07-20 17:36:43 error: Database connection is not open
+2026-07-20 17:36:45 info: MongoDB readiness check
+2026-07-20 17:36:45 error: Database connection is not open
+2026-07-20 17:36:47 info: MongoDB readiness check
+2026-07-20 17:36:47 error: Database connection is not open
+2026-07-20 17:37:00 info: MongoDB connected
+2026-07-20 17:37:00 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:37:00 info: Creating worker started
+2026-07-20 17:37:00 info: Creating worker started
+2026-07-20 17:37:00 info: Creating worker started
+2026-07-20 17:37:00 info: Worker created successfully
+2026-07-20 17:37:00 info: Worker created successfully
+2026-07-20 17:37:00 info: Worker created successfully
+2026-07-20 17:37:00 info: Worker pool initialized
+2026-07-20 17:37:01 info: MongoDB readiness check
+2026-07-20 17:37:01 info: Database UP
+2026-07-20 17:37:03 info: MongoDB readiness check
+2026-07-20 17:37:03 info: Database UP
+2026-07-20 17:37:05 info: MongoDB readiness check
+2026-07-20 17:37:05 info: Database UP
+2026-07-20 17:37:07 info: MongoDB readiness check
+2026-07-20 17:37:07 info: Database UP
+2026-07-20 17:37:09 info: MongoDB readiness check
+2026-07-20 17:37:10 info: Database UP
+2026-07-20 17:37:12 info: MongoDB readiness check
+2026-07-20 17:37:12 info: Database UP
+2026-07-20 17:37:14 info: MongoDB readiness check
+2026-07-20 17:37:14 info: SignIn started
+2026-07-20 17:37:14 info: Database UP
+2026-07-20 17:37:14 info: SignIn completed
+2026-07-20 17:37:14 info: [node-1] Client connected: mWtc6GvEFOu6Po7DAAAB
+2026-07-20 17:37:16 info: MongoDB readiness check
+2026-07-20 17:37:16 info: Database UP
+2026-07-20 17:37:17 info: Create room started
+2026-07-20 17:37:17 info: Woker loads loaded successfully
+2026-07-20 17:37:17 info: Woker assigned succesfully
+2026-07-20 17:37:17 info: Creation of router started
+2026-07-20 17:37:17 info: Router created
+2026-07-20 17:37:17 info: Creation of room successfully executed
+2026-07-20 17:37:17 info: Get room started
+2026-07-20 17:37:17 info: Get room executed successfully
+2026-07-20 17:37:17 info: Broadcaster added to the room
+2026-07-20 17:37:17 info: Room created successfully
+2026-07-20 17:37:18 info: MongoDB readiness check
+2026-07-20 17:37:18 info: Database UP
+2026-07-20 17:37:20 info: MongoDB readiness check
+2026-07-20 17:37:20 info: Database UP
+2026-07-20 17:37:21 info: Get room started
+2026-07-20 17:37:21 info: Get room executed successfully
+2026-07-20 17:37:22 info: MongoDB readiness check
+2026-07-20 17:37:23 info: Database UP
+2026-07-20 17:37:25 info: MongoDB readiness check
+2026-07-20 17:37:25 info: Database UP
+2026-07-20 17:37:27 info: MongoDB readiness check
+2026-07-20 17:37:27 info: Database UP
+2026-07-20 17:37:29 info: MongoDB readiness check
+2026-07-20 17:37:29 info: Database UP
+2026-07-20 17:37:31 info: MongoDB readiness check
+2026-07-20 17:37:31 info: Database UP
+2026-07-20 17:37:33 info: MongoDB readiness check
+2026-07-20 17:37:34 info: Database UP
+2026-07-20 17:37:36 info: MongoDB readiness check
+2026-07-20 17:37:36 info: Database UP
+2026-07-20 17:37:38 info: MongoDB readiness check
+2026-07-20 17:37:38 info: Database UP
+2026-07-20 17:37:40 info: MongoDB readiness check
+2026-07-20 17:37:40 info: Database UP
+2026-07-20 17:37:42 info: MongoDB readiness check
+2026-07-20 17:37:43 info: Database UP
+2026-07-20 17:37:45 info: MongoDB readiness check
+2026-07-20 17:37:45 info: Database UP
+2026-07-20 17:37:47 info: MongoDB readiness check
+2026-07-20 17:37:47 info: Database UP
+2026-07-20 17:37:49 info: MongoDB readiness check
+2026-07-20 17:37:49 info: Database UP
+2026-07-20 17:37:51 info: MongoDB readiness check
+2026-07-20 17:37:51 info: Database UP
+2026-07-20 17:37:53 info: MongoDB readiness check
+2026-07-20 17:37:54 info: Database UP
+2026-07-20 17:37:56 info: MongoDB readiness check
+2026-07-20 17:37:56 info: Database UP
+2026-07-20 17:37:58 info: MongoDB readiness check
+2026-07-20 17:37:58 info: Database UP
+2026-07-20 17:38:00 info: MongoDB readiness check
+2026-07-20 17:38:00 info: Database UP
+2026-07-20 17:38:02 info: MongoDB readiness check
+2026-07-20 17:38:03 info: Database UP
+2026-07-20 17:38:05 info: MongoDB readiness check
+2026-07-20 17:38:05 info: Database UP
+2026-07-20 17:38:07 info: MongoDB readiness check
+2026-07-20 17:38:07 info: Database UP
+2026-07-20 17:38:09 info: MongoDB readiness check
+2026-07-20 17:38:09 info: Database UP
+2026-07-20 17:38:11 info: MongoDB readiness check
+2026-07-20 17:38:12 info: Database UP
+2026-07-20 17:38:14 info: MongoDB readiness check
+2026-07-20 17:38:14 info: Database UP
+2026-07-20 17:38:16 info: MongoDB readiness check
+2026-07-20 17:38:16 info: Database UP
+2026-07-20 17:38:18 info: MongoDB readiness check
+2026-07-20 17:38:18 info: Database UP
+2026-07-20 17:38:27 info: MongoDB connected
+2026-07-20 17:38:27 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:38:27 info: Creating worker started
+2026-07-20 17:38:27 info: Creating worker started
+2026-07-20 17:38:27 info: Creating worker started
+2026-07-20 17:38:27 info: Worker created successfully
+2026-07-20 17:38:27 info: Worker created successfully
+2026-07-20 17:38:27 info: Worker created successfully
+2026-07-20 17:38:27 info: Worker pool initialized
+2026-07-20 17:38:34 info: MongoDB connected
+2026-07-20 17:38:34 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:38:34 info: Creating worker started
+2026-07-20 17:38:34 info: Creating worker started
+2026-07-20 17:38:34 info: Creating worker started
+2026-07-20 17:38:34 info: Worker created successfully
+2026-07-20 17:38:34 info: Worker created successfully
+2026-07-20 17:38:34 info: Worker created successfully
+2026-07-20 17:38:34 info: Worker pool initialized
+2026-07-20 17:38:36 info: MongoDB readiness check
+2026-07-20 17:38:36 info: Database UP
+2026-07-20 17:38:38 info: MongoDB readiness check
+2026-07-20 17:38:38 info: Database UP
+2026-07-20 17:38:40 info: [node-1] Client connected: FUtNECfJk-L9eSKXAAAB
+2026-07-20 17:38:40 info: MongoDB readiness check
+2026-07-20 17:38:41 info: Database UP
+2026-07-20 17:38:43 info: MongoDB readiness check
+2026-07-20 17:38:43 info: Database UP
+2026-07-20 17:38:45 info: MongoDB readiness check
+2026-07-20 17:38:45 info: Database UP
+2026-07-20 17:38:47 info: MongoDB readiness check
+2026-07-20 17:38:47 info: Database UP
+2026-07-20 17:38:55 info: MongoDB connected
+2026-07-20 17:38:55 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:38:55 info: Creating worker started
+2026-07-20 17:38:55 info: Creating worker started
+2026-07-20 17:38:55 info: Creating worker started
+2026-07-20 17:38:55 info: Worker created successfully
+2026-07-20 17:38:55 info: Worker created successfully
+2026-07-20 17:38:55 info: Worker created successfully
+2026-07-20 17:38:55 info: Worker pool initialized
+2026-07-20 17:38:55 info: MongoDB readiness check
+2026-07-20 17:38:55 info: Database UP
+2026-07-20 17:38:57 info: MongoDB readiness check
+2026-07-20 17:38:58 info: Database UP
+2026-07-20 17:39:00 info: MongoDB readiness check
+2026-07-20 17:39:00 info: Database UP
+2026-07-20 17:39:02 info: MongoDB readiness check
+2026-07-20 17:39:02 info: Database UP
+2026-07-20 17:39:03 info: SignIn started
+2026-07-20 17:39:03 info: SignIn completed
+2026-07-20 17:39:03 info: [node-1] Client connected: Iru-FhO7EOvaNzQMAAAB
+2026-07-20 17:39:04 info: MongoDB readiness check
+2026-07-20 17:39:04 info: Database UP
+2026-07-20 17:39:06 info: Create room started
+2026-07-20 17:39:06 info: Woker loads loaded successfully
+2026-07-20 17:39:06 info: Woker assigned succesfully
+2026-07-20 17:39:06 info: Creation of router started
+2026-07-20 17:39:06 info: Router created
+2026-07-20 17:39:06 info: Creation of room successfully executed
+2026-07-20 17:39:06 info: Get room started
+2026-07-20 17:39:06 info: Get room executed successfully
+2026-07-20 17:39:06 info: Broadcaster added to the room
+2026-07-20 17:39:06 info: Room created successfully
+2026-07-20 17:39:06 info: MongoDB readiness check
+2026-07-20 17:39:06 info: Database UP
+2026-07-20 17:39:08 info: MongoDB readiness check
+2026-07-20 17:39:08 info: Get room started
+2026-07-20 17:39:08 info: Get room executed successfully
+2026-07-20 17:39:09 info: Database UP
+2026-07-20 17:39:11 info: MongoDB readiness check
+2026-07-20 17:39:11 info: Database UP
+2026-07-20 17:39:13 info: MongoDB readiness check
+2026-07-20 17:39:13 info: Database UP
+2026-07-20 17:39:15 info: MongoDB readiness check
+2026-07-20 17:39:15 info: Database UP
+2026-07-20 17:39:17 info: MongoDB readiness check
+2026-07-20 17:39:17 info: Database UP
+2026-07-20 17:39:19 info: MongoDB readiness check
+2026-07-20 17:39:19 info: Database UP
+2026-07-20 17:39:21 info: MongoDB readiness check
+2026-07-20 17:39:21 info: Database UP
+2026-07-20 17:39:23 info: MongoDB readiness check
+2026-07-20 17:39:24 info: Database UP
+2026-07-20 17:39:26 info: MongoDB readiness check
+2026-07-20 17:39:26 info: Database UP
+2026-07-20 17:39:28 info: MongoDB readiness check
+2026-07-20 17:39:28 info: Database UP
+2026-07-20 17:39:30 info: MongoDB readiness check
+2026-07-20 17:39:30 info: Database UP
+2026-07-20 17:39:32 info: MongoDB readiness check
+2026-07-20 17:39:33 info: Database UP
+2026-07-20 17:39:35 info: MongoDB readiness check
+2026-07-20 17:39:35 info: Database UP
+2026-07-20 17:39:37 info: MongoDB readiness check
+2026-07-20 17:39:37 info: Database UP
+2026-07-20 17:39:39 info: MongoDB readiness check
+2026-07-20 17:39:39 info: Database UP
+2026-07-20 17:39:41 info: MongoDB readiness check
+2026-07-20 17:39:41 info: Database UP
+2026-07-20 17:39:43 info: MongoDB readiness check
+2026-07-20 17:39:44 info: Database UP
+2026-07-20 17:39:46 info: MongoDB readiness check
+2026-07-20 17:39:46 info: Database UP
+2026-07-20 17:39:48 info: MongoDB readiness check
+2026-07-20 17:39:48 info: Database UP
+2026-07-20 17:39:50 info: MongoDB readiness check
+2026-07-20 17:39:50 info: Database UP
+2026-07-20 17:39:52 info: MongoDB readiness check
+2026-07-20 17:39:52 info: Database UP
+2026-07-20 17:39:54 info: MongoDB readiness check
+2026-07-20 17:39:55 info: Database UP
+2026-07-20 17:39:57 info: MongoDB readiness check
+2026-07-20 17:39:57 info: Database UP
+2026-07-20 17:39:59 info: MongoDB readiness check
+2026-07-20 17:39:59 info: Database UP
+2026-07-20 17:40:13 info: MongoDB connected
+2026-07-20 17:40:13 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:40:13 info: Creating worker started
+2026-07-20 17:40:13 info: Creating worker started
+2026-07-20 17:40:13 info: Creating worker started
+2026-07-20 17:40:13 info: Worker created successfully
+2026-07-20 17:40:13 info: Worker created successfully
+2026-07-20 17:40:13 info: Worker created successfully
+2026-07-20 17:40:13 info: Worker pool initialized
+2026-07-20 17:40:13 info: MongoDB readiness check
+2026-07-20 17:40:14 info: Database UP
+2026-07-20 17:40:16 info: MongoDB readiness check
+2026-07-20 17:40:16 info: Database UP
+2026-07-20 17:40:16 info: [node-1] Client connected: 9oQ2QSYUyqbFPi3sAAAB
+2026-07-20 17:40:18 info: MongoDB readiness check
+2026-07-20 17:40:18 info: Database UP
+2026-07-20 17:40:20 info: MongoDB readiness check
+2026-07-20 17:40:20 info: Database UP
+2026-07-20 17:40:22 info: MongoDB readiness check
+2026-07-20 17:40:22 info: Database UP
+2026-07-20 17:40:24 info: MongoDB readiness check
+2026-07-20 17:40:25 info: Database UP
+2026-07-20 17:40:27 info: MongoDB readiness check
+2026-07-20 17:40:27 info: Database UP
+2026-07-20 17:40:29 info: MongoDB readiness check
+2026-07-20 17:40:29 info: Database UP
+2026-07-20 17:40:31 info: MongoDB readiness check
+2026-07-20 17:40:31 info: Database UP
+2026-07-20 17:40:33 info: MongoDB readiness check
+2026-07-20 17:40:33 info: Database UP
+2026-07-20 17:40:35 info: MongoDB readiness check
+2026-07-20 17:40:36 info: Database UP
+2026-07-20 17:40:37 info: Get room started
+2026-07-20 17:40:37 error: Room not found
+2026-07-20 17:40:37 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:98:13)
+    at authenticateUser (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:44:42)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 17:40:37 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at authenticateUser (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:18:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:44:42)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 17:40:38 info: MongoDB readiness check
+2026-07-20 17:40:38 info: Database UP
+2026-07-20 17:40:40 info: MongoDB readiness check
+2026-07-20 17:40:40 info: Database UP
+2026-07-20 17:40:42 info: MongoDB readiness check
+2026-07-20 17:40:42 info: Database UP
+2026-07-20 17:40:44 info: User disconnected 9oQ2QSYUyqbFPi3sAAAB beacuse of transport close
+2026-07-20 17:40:44 info: Handle disconnect started
+2026-07-20 17:40:44 error: RoomId not found
+2026-07-20 17:40:44 warn: IDK
+2026-07-20 17:40:44 info: MongoDB readiness check
+2026-07-20 17:40:44 info: Database UP
+2026-07-20 17:40:46 info: MongoDB readiness check
+2026-07-20 17:40:47 info: Database UP
+2026-07-20 17:40:49 info: MongoDB readiness check
+2026-07-20 17:40:49 info: Database UP
+2026-07-20 17:40:51 info: MongoDB readiness check
+2026-07-20 17:40:51 info: Database UP
+2026-07-20 17:40:53 info: MongoDB readiness check
+2026-07-20 17:40:53 info: Database UP
+2026-07-20 17:40:55 info: MongoDB readiness check
+2026-07-20 17:40:55 info: Database UP
+2026-07-20 17:40:57 info: MongoDB readiness check
+2026-07-20 17:40:58 info: Database UP
+2026-07-20 17:41:00 info: MongoDB readiness check
+2026-07-20 17:41:00 info: Database UP
+2026-07-20 17:41:02 info: MongoDB readiness check
+2026-07-20 17:41:02 info: Database UP
+2026-07-20 17:41:04 info: MongoDB readiness check
+2026-07-20 17:41:04 info: Database UP
+2026-07-20 17:41:06 info: MongoDB readiness check
+2026-07-20 17:41:07 info: Database UP
+2026-07-20 17:41:09 info: MongoDB readiness check
+2026-07-20 17:41:09 info: Database UP
+2026-07-20 17:41:11 info: MongoDB readiness check
+2026-07-20 17:41:11 info: Database UP
+2026-07-20 17:41:13 info: MongoDB readiness check
+2026-07-20 17:41:13 info: Database UP
+2026-07-20 17:41:15 info: MongoDB readiness check
+2026-07-20 17:41:15 info: Database UP
+2026-07-20 17:41:17 info: MongoDB readiness check
+2026-07-20 17:41:17 info: Database UP
+2026-07-20 17:41:19 info: MongoDB readiness check
+2026-07-20 17:41:20 info: Database UP
+2026-07-20 17:41:22 info: MongoDB readiness check
+2026-07-20 17:41:22 info: Database UP
+2026-07-20 17:41:24 info: MongoDB readiness check
+2026-07-20 17:41:24 info: Database UP
+2026-07-20 17:41:46 info: MongoDB connected
+2026-07-20 17:41:46 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:41:46 info: Creating worker started
+2026-07-20 17:41:46 info: Creating worker started
+2026-07-20 17:41:46 info: Creating worker started
+2026-07-20 17:41:46 info: Worker created successfully
+2026-07-20 17:41:46 info: Worker created successfully
+2026-07-20 17:41:46 info: Worker created successfully
+2026-07-20 17:41:46 info: Worker pool initialized
+2026-07-20 17:42:10 info: MongoDB connected
+2026-07-20 17:42:10 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:42:10 info: Creating worker started
+2026-07-20 17:42:10 info: Creating worker started
+2026-07-20 17:42:10 info: Creating worker started
+2026-07-20 17:42:10 info: Worker created successfully
+2026-07-20 17:42:10 info: Worker created successfully
+2026-07-20 17:42:10 info: Worker created successfully
+2026-07-20 17:42:10 info: Worker pool initialized
+2026-07-20 17:42:12 info: MongoDB readiness check
+2026-07-20 17:42:12 info: Database UP
+2026-07-20 17:42:14 info: MongoDB readiness check
+2026-07-20 17:42:14 info: Database UP
+2026-07-20 17:42:16 info: SignIn started
+2026-07-20 17:42:16 info: SignIn completed
+2026-07-20 17:42:16 info: [node-1] Client connected: PN9aEv00DGttPFeOAAAB
+2026-07-20 17:42:16 info: MongoDB readiness check
+2026-07-20 17:42:16 info: Database UP
+2026-07-20 17:42:18 info: MongoDB readiness check
+2026-07-20 17:42:19 info: Database UP
+2026-07-20 17:42:21 info: MongoDB readiness check
+2026-07-20 17:42:21 info: Create room started
+2026-07-20 17:42:21 info: Woker loads loaded successfully
+2026-07-20 17:42:21 info: Woker assigned succesfully
+2026-07-20 17:42:21 info: Creation of router started
+2026-07-20 17:42:21 info: Router created
+2026-07-20 17:42:21 info: Creation of room successfully executed
+2026-07-20 17:42:21 info: Get room started
+2026-07-20 17:42:21 info: Get room executed successfully
+2026-07-20 17:42:21 info: Broadcaster added to the room
+2026-07-20 17:42:21 info: Room created successfully
+2026-07-20 17:42:21 info: Database UP
+2026-07-20 17:42:23 info: MongoDB readiness check
+2026-07-20 17:42:23 info: Database UP
+2026-07-20 17:42:25 info: MongoDB readiness check
+2026-07-20 17:42:25 info: Database UP
+2026-07-20 17:42:25 info: Get room started
+2026-07-20 17:42:25 info: Get room executed successfully
+2026-07-20 17:42:27 info: MongoDB readiness check
+2026-07-20 17:42:27 info: Database UP
+2026-07-20 17:42:29 info: MongoDB readiness check
+2026-07-20 17:42:29 info: Database UP
+2026-07-20 17:42:31 info: MongoDB readiness check
+2026-07-20 17:42:32 info: Database UP
+2026-07-20 17:42:34 info: MongoDB readiness check
+2026-07-20 17:42:34 info: Database UP
+2026-07-20 17:42:36 info: MongoDB readiness check
+2026-07-20 17:42:36 info: Database UP
+2026-07-20 17:42:38 info: MongoDB readiness check
+2026-07-20 17:42:38 info: Database UP
+2026-07-20 17:42:40 info: MongoDB readiness check
+2026-07-20 17:42:41 info: Database UP
+2026-07-20 17:42:43 info: MongoDB readiness check
+2026-07-20 17:42:43 info: Database UP
+2026-07-20 17:42:45 info: MongoDB readiness check
+2026-07-20 17:42:45 info: Database UP
+2026-07-20 17:42:47 info: MongoDB readiness check
+2026-07-20 17:42:47 info: Database UP
+2026-07-20 17:42:49 info: MongoDB readiness check
+2026-07-20 17:42:49 info: Database UP
+2026-07-20 17:42:51 info: MongoDB readiness check
+2026-07-20 17:42:51 info: Database UP
+2026-07-20 17:42:53 info: MongoDB readiness check
+2026-07-20 17:42:54 info: Database UP
+2026-07-20 17:42:56 info: MongoDB readiness check
+2026-07-20 17:42:56 info: Database UP
+2026-07-20 17:42:58 info: MongoDB readiness check
+2026-07-20 17:42:58 info: Database UP
+2026-07-20 17:43:00 info: MongoDB readiness check
+2026-07-20 17:43:00 info: Database UP
+2026-07-20 17:43:02 info: MongoDB readiness check
+2026-07-20 17:43:03 info: Database UP
+2026-07-20 17:43:05 info: MongoDB readiness check
+2026-07-20 17:43:05 info: Database UP
+2026-07-20 17:43:07 info: MongoDB readiness check
+2026-07-20 17:43:07 info: Database UP
+2026-07-20 17:43:09 info: MongoDB readiness check
+2026-07-20 17:43:09 info: Database UP
+2026-07-20 17:43:11 info: MongoDB readiness check
+2026-07-20 17:43:12 info: Database UP
+2026-07-20 17:43:14 info: MongoDB readiness check
+2026-07-20 17:43:14 info: Database UP
+2026-07-20 17:43:16 info: MongoDB readiness check
+2026-07-20 17:43:16 info: Database UP
+2026-07-20 17:43:18 info: MongoDB readiness check
+2026-07-20 17:43:19 info: Database UP
+2026-07-20 17:43:28 info: MongoDB connected
+2026-07-20 17:43:28 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:43:28 info: Creating worker started
+2026-07-20 17:43:28 info: Creating worker started
+2026-07-20 17:43:28 info: Creating worker started
+2026-07-20 17:43:28 info: Worker created successfully
+2026-07-20 17:43:28 info: Worker created successfully
+2026-07-20 17:43:28 info: Worker created successfully
+2026-07-20 17:43:28 info: Worker pool initialized
+2026-07-20 17:43:33 info: [node-1] Client connected: 5Zej3pyhFr0QkhwOAAAB
+2026-07-20 17:44:47 info: MongoDB connected
+2026-07-20 17:44:47 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:44:47 info: Creating worker started
+2026-07-20 17:44:47 info: Creating worker started
+2026-07-20 17:44:47 info: Creating worker started
+2026-07-20 17:44:47 info: Worker created successfully
+2026-07-20 17:44:47 info: Worker created successfully
+2026-07-20 17:44:47 info: Worker created successfully
+2026-07-20 17:44:47 info: Worker pool initialized
+2026-07-20 17:44:55 info: MongoDB connected
+2026-07-20 17:44:55 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:44:55 info: Creating worker started
+2026-07-20 17:44:55 info: Creating worker started
+2026-07-20 17:44:55 info: Creating worker started
+2026-07-20 17:44:55 info: Worker created successfully
+2026-07-20 17:44:55 info: Worker created successfully
+2026-07-20 17:44:55 info: Worker created successfully
+2026-07-20 17:44:55 info: Worker pool initialized
+2026-07-20 17:45:05 info: SignIn started
+2026-07-20 17:45:05 info: SignIn completed
+2026-07-20 17:45:05 info: [node-1] Client connected: HLukINiMYgqe7eZfAAAB
+2026-07-20 17:45:07 info: Create room started
+2026-07-20 17:45:07 info: Woker loads loaded successfully
+2026-07-20 17:45:07 info: Woker assigned succesfully
+2026-07-20 17:45:07 info: Creation of router started
+2026-07-20 17:45:07 info: Router created
+2026-07-20 17:45:07 info: Creation of room successfully executed
+2026-07-20 17:45:07 info: Get room started
+2026-07-20 17:45:07 info: Get room executed successfully
+2026-07-20 17:45:07 info: Broadcaster added to the room
+2026-07-20 17:45:07 info: Room created successfully
+2026-07-20 17:45:11 info: Get room started
+2026-07-20 17:45:11 info: Get room executed successfully
+2026-07-20 17:45:35 info: MongoDB connected
+2026-07-20 17:45:35 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:45:35 info: Creating worker started
+2026-07-20 17:45:35 info: Creating worker started
+2026-07-20 17:45:35 info: Creating worker started
+2026-07-20 17:45:35 info: Worker created successfully
+2026-07-20 17:45:35 info: Worker created successfully
+2026-07-20 17:45:35 info: Worker created successfully
+2026-07-20 17:45:35 info: Worker pool initialized
+2026-07-20 17:45:47 info: SignIn started
+2026-07-20 17:45:47 info: SignIn completed
+2026-07-20 17:45:48 info: [node-1] Client connected: eJtT4hyN0IdKJ4vaAAAB
+2026-07-20 17:45:54 info: Create room started
+2026-07-20 17:45:54 info: Woker loads loaded successfully
+2026-07-20 17:45:54 info: Woker assigned succesfully
+2026-07-20 17:45:54 info: Creation of router started
+2026-07-20 17:45:54 info: Router created
+2026-07-20 17:45:54 info: Creation of room successfully executed
+2026-07-20 17:45:54 info: Get room started
+2026-07-20 17:45:54 info: Get room executed successfully
+2026-07-20 17:45:54 info: Broadcaster added to the room
+2026-07-20 17:45:54 info: Room created successfully
+2026-07-20 17:45:58 info: Get room started
+2026-07-20 17:45:58 info: Get room executed successfully
+2026-07-20 17:48:44 info: Get room started
+2026-07-20 17:48:44 info: Get room executed successfully
+2026-07-20 17:50:27 info: Get room started
+2026-07-20 17:50:27 info: Get room executed successfully
+2026-07-20 17:50:33 info: Get room started
+2026-07-20 17:50:33 info: Get room executed successfully
+2026-07-20 17:59:47 info: MongoDB connected
+2026-07-20 17:59:47 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 17:59:47 info: Creating worker started
+2026-07-20 17:59:47 info: Creating worker started
+2026-07-20 17:59:47 info: Creating worker started
+2026-07-20 17:59:47 info: Worker created successfully
+2026-07-20 17:59:47 info: Worker created successfully
+2026-07-20 17:59:47 info: Worker created successfully
+2026-07-20 17:59:47 info: Worker pool initialized
+2026-07-20 17:59:51 info: [node-1] Client connected: 91QHQZLwA-NwI06cAAAB
+2026-07-20 17:59:52 info: User disconnected 91QHQZLwA-NwI06cAAAB beacuse of transport close
+2026-07-20 17:59:52 info: Handle disconnect started
+2026-07-20 17:59:52 error: RoomId not found
+2026-07-20 17:59:53 warn: IDK
+2026-07-20 18:00:44 info: SignIn started
+2026-07-20 18:00:44 info: SignIn completed
+2026-07-20 18:00:44 info: [node-1] Client connected: UgEA0sgxsmQXkp5sAAAD
+2026-07-20 18:00:46 info: Create room started
+2026-07-20 18:00:46 info: Woker loads loaded successfully
+2026-07-20 18:00:46 info: Woker assigned succesfully
+2026-07-20 18:00:47 info: Creation of router started
+2026-07-20 18:00:47 info: Router created
+2026-07-20 18:00:47 info: Creation of room successfully executed
+2026-07-20 18:00:47 info: Get room started
+2026-07-20 18:00:47 info: Get room executed successfully
+2026-07-20 18:00:47 info: Broadcaster added to the room
+2026-07-20 18:00:47 info: Room created successfully
+2026-07-20 18:00:52 info: Get room started
+2026-07-20 18:00:52 info: Get room executed successfully
+2026-07-20 18:02:28 info: User disconnected UgEA0sgxsmQXkp5sAAAD beacuse of transport close
+2026-07-20 18:02:28 info: Handle disconnect started
+2026-07-20 18:02:28 info: Get room started
+2026-07-20 18:02:28 info: Get room executed successfully
+2026-07-20 18:02:28 info: Get room started
+2026-07-20 18:02:28 info: Get room executed successfully
+2026-07-20 18:02:28 info: Get room started
+2026-07-20 18:02:28 info: Get room executed successfully
+2026-07-20 18:02:28 info: Remove broadcaster success
+2026-07-20 18:02:28 info: Handle disconnect succesfully
+2026-07-20 18:02:28 info: room:bb07e72d-4f61-4899-a3be-0555554d8d4e room deleted successfully
+2026-07-20 18:03:38 info: MongoDB connected
+2026-07-20 18:03:39 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 18:03:39 info: Creating worker started
+2026-07-20 18:03:39 info: Creating worker started
+2026-07-20 18:03:39 info: Creating worker started
+2026-07-20 18:03:39 info: Worker created successfully
+2026-07-20 18:03:39 info: Worker created successfully
+2026-07-20 18:03:39 info: Worker created successfully
+2026-07-20 18:03:39 info: Worker pool initialized
+2026-07-20 18:05:16 info: MongoDB connected
+2026-07-20 18:05:16 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 18:05:16 info: Creating worker started
+2026-07-20 18:05:16 info: Creating worker started
+2026-07-20 18:05:16 info: Creating worker started
+2026-07-20 18:05:16 info: Worker created successfully
+2026-07-20 18:05:16 info: Worker created successfully
+2026-07-20 18:05:16 info: Worker created successfully
+2026-07-20 18:05:16 info: Worker pool initialized
+2026-07-20 18:05:31 info: SignIn started
+2026-07-20 18:05:31 info: SignIn completed
+2026-07-20 18:05:31 info: [node-1] Client connected: INciQ4tO-xXNcEexAAAB
+2026-07-20 18:05:47 info: Create room started
+2026-07-20 18:05:47 info: Woker loads loaded successfully
+2026-07-20 18:05:47 info: Woker assigned succesfully
+2026-07-20 18:05:47 info: Creation of router started
+2026-07-20 18:05:47 info: Router created
+2026-07-20 18:05:47 info: Creation of room successfully executed
+2026-07-20 18:05:47 info: Get room started
+2026-07-20 18:05:47 info: Get room executed successfully
+2026-07-20 18:05:47 info: Broadcaster added to the room
+2026-07-20 18:05:47 info: Room created successfully
+2026-07-20 18:05:51 info: Get room started
+2026-07-20 18:05:51 info: Get room executed successfully
+2026-07-20 18:06:54 info: Get room started
+2026-07-20 18:06:54 info: Get room executed successfully
+2026-07-20 18:08:04 warn: MongoDB disconnected
+2026-07-20 18:08:04 error: MongoNetworkError: read ECONNRESET
+    at Connection.onSocketError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection.ts:308:18)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-07-20 18:08:06 error: Database connection is not open
+2026-07-20 18:08:08 error: Database connection is not open
+2026-07-20 18:08:10 error: Database connection is not open
+2026-07-20 18:08:12 error: Database connection is not open
+2026-07-20 18:08:14 error: Database connection is not open
+2026-07-20 18:08:16 error: Database connection is not open
+2026-07-20 18:08:18 error: Database connection is not open
+2026-07-20 18:08:20 error: Database connection is not open
+2026-07-20 18:08:22 error: Database connection is not open
+2026-07-20 18:08:24 error: Database connection is not open
+2026-07-20 18:08:26 error: Database connection is not open
+2026-07-20 18:08:28 error: Database connection is not open
+2026-07-20 18:08:30 info: MongoDB connected
+2026-07-20 18:10:38 info: MongoDB connected
+2026-07-20 18:10:38 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-20 18:10:38 info: Creating worker started
+2026-07-20 18:10:38 info: Creating worker started
+2026-07-20 18:10:38 info: Creating worker started
+2026-07-20 18:10:38 info: Worker created successfully
+2026-07-20 18:10:38 info: Worker created successfully
+2026-07-20 18:10:38 info: Worker created successfully
+2026-07-20 18:10:38 info: Worker pool initialized
+2026-07-20 18:11:41 info: SignUp started
+2026-07-20 18:11:41 error: Validation error "password" length must be at least 8 characters long
+2026-07-20 18:11:45 info: SignUp started
+2026-07-20 18:11:46 info: SignUp completed
+2026-07-20 18:11:46 info: [node-1] Client connected: 9V8fbx-2YvWIgYKHAAAB
+2026-07-20 18:11:54 info: User disconnected 9V8fbx-2YvWIgYKHAAAB beacuse of transport close
+2026-07-20 18:11:54 info: Handle disconnect started
+2026-07-20 18:11:54 error: RoomId not found
+2026-07-20 18:11:54 warn: IDK
+2026-07-20 18:12:09 info: SignIn started
+2026-07-20 18:12:09 info: SignIn completed
+2026-07-20 18:12:09 info: [node-1] Client connected: GQoMb4gOFbWUgQn-AAAD
+2026-07-20 18:12:13 info: Create room started
+2026-07-20 18:12:13 info: Woker loads loaded successfully
+2026-07-20 18:12:13 info: Woker assigned succesfully
+2026-07-20 18:12:13 info: Creation of router started
+2026-07-20 18:12:13 info: Router created
+2026-07-20 18:12:13 info: Creation of room successfully executed
+2026-07-20 18:12:13 info: Get room started
+2026-07-20 18:12:13 info: Get room executed successfully
+2026-07-20 18:12:13 info: Broadcaster added to the room
+2026-07-20 18:12:13 info: Room created successfully
+2026-07-20 18:13:55 info: SignUp started
+2026-07-20 18:13:55 info: SignUp completed
+2026-07-20 18:13:55 info: [node-1] Client connected: z_2NQy5eIYaj227bAAAF
+2026-07-20 18:14:04 info: Join as viewer listner started
+2026-07-20 18:14:04 info: Get room started
+2026-07-20 18:14:04 info: Get room executed successfully
+2026-07-20 18:14:04 info: Viewer joined the room
+2026-07-20 18:14:04 info: Get room started
+2026-07-20 18:14:04 info: Get room executed successfully
+2026-07-20 18:14:04 info: Fetching of router started
+2026-07-20 18:14:04 info: Fetching of router executed successfully
+2026-07-20 18:14:04 info: Join viewer listner successfully executed
+2026-07-20 18:14:11 info: Get room started
+2026-07-20 18:14:11 info: Get room executed successfully
+2026-07-20 18:14:19 info: Get room started
+2026-07-20 18:14:19 info: Get room executed successfully
+2026-07-20 18:14:26 info: Get room started
+2026-07-20 18:14:26 info: Get room executed successfully
+2026-07-20 18:14:33 info: User disconnected z_2NQy5eIYaj227bAAAF beacuse of transport close
+2026-07-20 18:14:33 info: Handle disconnect started
+2026-07-20 18:14:33 info: Get room started
+2026-07-20 18:14:33 info: Get room executed successfully
+2026-07-20 18:14:33 info: Get room started
+2026-07-20 18:14:33 info: Get room executed successfully
+2026-07-20 18:14:33 info: Remove viewer started
+2026-07-20 18:14:33 info: Viewer removed from room
+2026-07-20 18:14:33 info: Handle disconnect succesfully
+2026-07-20 18:16:18 warn: MongoDB disconnected
+2026-07-20 18:16:18 error: PoolClearedOnNetworkError: Connection to ac-v00shv2-shard-00-02.eplgdfn.mongodb.net:27017 interrupted due to server monitor timeout
+    at ConnectionPool.interruptInUseConnections (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:487:28)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:473:35
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:16:20 error: Database connection is not open
+2026-07-20 18:16:22 error: Database connection is not open
+2026-07-20 18:16:24 error: Database connection is not open
+2026-07-20 18:16:26 error: Database connection is not open
+2026-07-20 18:16:28 error: Database connection is not open
+2026-07-20 18:16:29 info: MongoDB connected
+2026-07-20 18:16:38 info: SignIn started
+2026-07-20 18:16:38 error: Password validation failed
+2026-07-20 18:16:42 info: SignIn started
+2026-07-20 18:16:42 info: SignIn completed
+2026-07-20 18:16:43 info: [node-1] Client connected: uiiu2aJk3Fk5fGWnAAAH
+2026-07-20 18:16:49 info: Join as viewer listner started
+2026-07-20 18:16:49 info: Get room started
+2026-07-20 18:16:49 error: Room not found
+2026-07-20 18:16:49 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:98:13)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:16:49 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:16:49 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:04 error: Validation error "roomId" must be a valid GUID
+2026-07-20 18:17:04 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:35:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:42:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:15 info: Join as viewer listner started
+2026-07-20 18:17:15 info: Get room started
+2026-07-20 18:17:15 error: Room not found
+2026-07-20 18:17:15 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:98:13)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:15 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:15 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:110:11)
+    at joinAsViewer (/home/harshit/CrowdStream/backend/src/handlers/viewer.handler.ts:13:25)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:23:25)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 18:17:24 error: Validation error "roomId" must be a valid GUID
+2026-07-20 18:17:24 error: Error: Validation error
+    at validateMessage (/home/harshit/CrowdStream/backend/src/utils/chat.util.ts:35:15)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:42:40)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
