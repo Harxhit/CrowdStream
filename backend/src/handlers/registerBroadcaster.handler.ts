@@ -16,6 +16,8 @@ import Broadcaster from "../models/broadcaster.model";
 import { ipHash, userAgentHash } from "../utils/hash.util";
 import { getRedisRoom } from "../utils/roomCordinator";
 import ApiError from "../utils/apiError";
+import { subscribeToRoomChat } from "../utils/redis.util";
+
 
 const registerBroadcasterHandler = async (socket: Socket) => {
   // Creates a memory room
@@ -26,8 +28,11 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       const roomId = await createRoomId();
 
       const _room = await createRoom(roomId, hostUserId)
+      socket.join(`room:${roomId}`)
       socket.data.roomId = roomId;  //Stores roomId into socket data
-    
+      
+      await subscribeToRoomChat(roomId)
+      
       await addBroadcaster(roomId, socket.id);
 
       logger.info("Room created successfully",{

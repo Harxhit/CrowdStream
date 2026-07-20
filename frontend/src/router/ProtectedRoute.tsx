@@ -1,9 +1,20 @@
 import { Navigate, Outlet } from "react-router-dom";
-
+import { useEffect } from "react";
+import { connectSocket, disconnectSocket } from "../socket";
 import useAuth from "../hooks/useAuth";
 
 export default function ProtectedRoute() {
   const { loading, authenticated } = useAuth();
+
+  useEffect(() => {
+    if (!authenticated) return;
+
+    connectSocket();
+
+    return () => {
+      disconnectSocket();
+    };
+  }, [authenticated]);
 
   if (loading) {
     return (

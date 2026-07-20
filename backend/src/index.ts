@@ -67,7 +67,7 @@ connectToDataBase()
     server.listen(config.port, config.publicIp, () => {
       console.info(`Server is running at http://localhost:${config.port}`);
     });
-    verifyModelRegistration()
+    // verifyModelRegistration()
     await workerPoolCreation()
   })
   .catch((error) => {

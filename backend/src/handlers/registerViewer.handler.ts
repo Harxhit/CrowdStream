@@ -21,8 +21,9 @@ const registerViewerHanlder = async (socket: Socket) => {
       logger.info("Join as viewer listner started")
       const viewerId = socket.data.user?.id
       await joinAsViewer(roomId, socket.id);
-
+      socket.join(`room:${roomId}`)
       socket.data.roomId = roomId;
+      
       const room = getRoom(roomId); 
       if(!room){
         ack({

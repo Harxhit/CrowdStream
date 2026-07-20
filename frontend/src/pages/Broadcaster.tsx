@@ -47,29 +47,29 @@ export default function BroadcasterPage() {
 
       setRoomId(room.id);
 
-      log("Fetching RTP capabilities...");
+      // log("Fetching RTP capabilities...");
 
-      const caps = await broadcaster.getRouterCapabilities(room.id);
+      // const caps = await broadcaster.getRouterCapabilities(room.id);
 
-      log("Loading MediaSoup device...");
+      // log("Loading MediaSoup device...");
 
-      await broadcaster.loadDevice(caps);
+      // await broadcaster.loadDevice(caps);
 
-      log("Creating send transport...");
+      // log("Creating send transport...");
 
-      await broadcaster.createBroadcasterTransport(room.id);
+      // await broadcaster.createBroadcasterTransport(room.id);
 
-      log("Accessing camera...");
+      // log("Accessing camera...");
 
-      const stream = await broadcaster.getUserMedia();
+      // const stream = await broadcaster.getUserMedia();
 
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-      }
+      // if (videoRef.current) {
+      //   videoRef.current.srcObject = stream;
+      // }
 
-      log("Producing media...");
+      // log("Producing media...");
 
-      await broadcaster.startProducing(stream);
+      // await broadcaster.startProducing(stream);
 
       setIsLive(true);
 
@@ -183,7 +183,7 @@ export default function BroadcasterPage() {
               viewers={viewerCount}
             />
 
-            <LiveChat />
+            <LiveChat roomId={roomId}/>
 
           </div>
 

@@ -8,18 +8,9 @@ import config from "../config/index";
 import { socketAuth } from "../middlewares/authentication.middleware";
 import cookie from 'cookie-parser'
 import { createShardedAdapter } from "@socket.io/redis-adapter";
-import { redis } from "./redis.util";
+import { initializeChatSubscriber, redis , subClient} from "./redis.util";
 import { handleDisconnect } from "./disconnect.util";
-
-const subClient = redis.duplicate(); 
-
-subClient.on('ready', () => {
-  console.log('Subscriber ready')
-})
-
-subClient.on("error" , (error) => {
-  console.error('Redis subscriber error',error)
-})
+import { validateMessage, authenticateUser, moderateMessage, ChatMessage, publishMessage } from "./chat.util";
 
 const server = createServer(app);
 const io = new Server (server, {
@@ -29,6 +20,7 @@ const io = new Server (server, {
     methods: ["GET", "POST"],
   },
 });
+initializeChatSubscriber(io)
  
 io.engine.use(cookie())
 io.use(socketAuth);
@@ -42,6 +34,37 @@ io.on("connection", (socket) => {
 
   registerBroadcasterHandler(socket);
   registerViewerHanlder(socket);
+
+  socket.on('chat:message', (payload) => {
+    try {
+      const validated = validateMessage(payload);
+
+      const authorized = authenticateUser(validated.roomId, socket.id);
+      if (!authorized) {
+        logger.error("User is not authorized");
+        return;
+      }
+      const allowed = moderateMessage(validated.message); 
+      if(!allowed){
+        logger.error('Moderation not passed')
+        return 
+      }
+
+      const message: ChatMessage = {
+        roomId: validated.roomId, 
+        senderId: socket.id, 
+        message: validated.message, 
+        timestamp: Date.now()
+      }
+
+      publishMessage(message)
+    } catch (error) {
+      logger.error('Chat message error',{
+        error: (error as Error).message, 
+        stack: (error as Error).stack, 
+      })
+    }
+  })
 
   socket.on("disconnect", async (reason) => {
     logger.info(`User disconnected ${socket.id} beacuse of ${reason}`)

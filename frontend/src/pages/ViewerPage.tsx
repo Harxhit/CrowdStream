@@ -53,29 +53,29 @@ export default function ViewerPage() {
 
       const caps = await viewer.joinRoom(roomId);
 
-      log("Loading MediaSoup device...");
+      // log("Loading MediaSoup device...");
 
-      await viewer.loadDevice(caps);
+      // await viewer.loadDevice(caps);
 
-      log("Creating receive transport...");
+      // log("Creating receive transport...");
 
-      await viewer.createViewerTransport(roomId);
+      // await viewer.createViewerTransport(roomId);
 
-      log("Consuming media...");
+      // log("Consuming media...");
 
-      await viewer.consumeMedia(roomId, caps);
+      // await viewer.consumeMedia(roomId, caps);
 
-      log("Resuming consumers...");
+      // log("Resuming consumers...");
 
-      await viewer.resumeConsumer(roomId);
+      // await viewer.resumeConsumer(roomId);
 
-      log("Rendering media...");
+      // log("Rendering media...");
 
-      await viewer.renderMedia(roomId, videoRef);
+      // await viewer.renderMedia(roomId, videoRef);
 
-      log("Listening for ICE state...");
+      // log("Listening for ICE state...");
 
-      await viewer.connectionState(roomId);
+      // await viewer.connectionState(roomId);
 
       setConnected(true);
 
@@ -176,7 +176,7 @@ export default function ViewerPage() {
               connected={connected}
             />
 
-            <LiveChat />
+            <LiveChat roomId={roomId}/>
           </div>
         </div>
       </div>
