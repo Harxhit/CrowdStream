@@ -24,7 +24,7 @@ export const handleDisconnect = async(socket: Socket) => {
             roomId = broadcaster?.roomId; 
             removeBroadcasterTransport(roomId, socket.id)
             removeBroadcasterProducer(roomId, socket.id)
-            removeBroadcaster(roomId, socket.id)
+            await removeBroadcaster(roomId, socket.id)
             await dbCleanUp(socket.id)
         }else if(viewer){
             roomId = viewer?.roomId
@@ -49,7 +49,7 @@ export const handleDisconnect = async(socket: Socket) => {
       if(isBroadcaster){
         removeBroadcasterTransport(roomId, socket.id)
         removeBroadcasterProducer(roomId, socket.id)
-        removeBroadcaster(roomId, socket.id)
+        await removeBroadcaster(roomId, socket.id)
         dbCleanUp(socket.id)
 
       }else if(isViewer){

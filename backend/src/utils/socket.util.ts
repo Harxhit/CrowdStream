@@ -35,7 +35,7 @@ io.on("connection", (socket) => {
   registerBroadcasterHandler(socket);
   registerViewerHanlder(socket);
 
-  socket.on('chat:message', (payload) => {
+  socket.on('chat:message', async(payload) => {
     try {
       const validated = validateMessage(payload);
 
@@ -57,7 +57,7 @@ io.on("connection", (socket) => {
         timestamp: Date.now()
       }
 
-      publishMessage(message)
+      await publishMessage(message)
     } catch (error) {
       logger.error('Chat message error',{
         error: (error as Error).message, 

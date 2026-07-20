@@ -21,6 +21,7 @@ const registerViewerHanlder = async (socket: Socket) => {
       logger.info("Join as viewer listner started")
       const viewerId = socket.data.user?.id
       await joinAsViewer(roomId, socket.id);
+      // TODO: Move socket.join() after all room/router setup succeeds to avoid partially joined state on failure.
       socket.join(`room:${roomId}`)
       socket.data.roomId = roomId;
       
@@ -160,7 +161,6 @@ const registerViewerHanlder = async (socket: Socket) => {
     }
   });
 
-
   // Connects the viewer's transport by setting DTLS parameters for secure media flow
   socket.on("connectConsumerTransport", async (payload, ack) => {
     try {
@@ -278,17 +278,13 @@ const registerViewerHanlder = async (socket: Socket) => {
   // Inform broadcasters and other viewers in real-time about viewers joining, leaving, or changing .
   socket.on("notifyViewerStateChange", (roomId, { type, viewerId }) => {
     const room = getRoom(roomId);
-    if (!room) {
-      return socket.emit("error", { message: "Room does not exist" });
-    }
     const payLoad = {
       type,
       viewerId,
       viewerCount: Object.keys(room.viewers).length,
     };
-    socket.to("room").emit("viewerStateChange", payLoad);
+    socket.to(`room:${roomId}`).emit("viewerStateChange", payLoad);
   });
-
  
 };
 

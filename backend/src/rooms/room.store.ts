@@ -8,6 +8,7 @@ import { createRedisRoomKey, redis } from "../utils/redis.util";
 import config from "../config";
 import { removeRedisRoom } from "../utils/roomCordinator";
 import { removeViewerConsumer, removeViewerTransport } from "../handlers/viewer.handler";
+import { chatSubscriber } from "../utils/redis.util";
 
 //Creates roomId(temporary)
 const createRoomId = async () => {
@@ -111,7 +112,7 @@ const getRoom = (roomId: string) => {
   }
 };
 
-const deleteRoom = (roomId: string) => {
+const deleteRoom = async(roomId: string) => {
   const startTime = Date.now()
   try {
     const room = getRoom(roomId); 
@@ -137,7 +138,7 @@ const deleteRoom = (roomId: string) => {
     }else{
       logger.warn('Failed to remove associated rooms and routers')
     }
-
+    await chatSubscriber.sunsubscribe(`room:${roomId}:chat`);
     memoryRoom.delete(roomId)
     removeRedisRoom(roomKey)
 
@@ -274,7 +275,7 @@ const removeViewer = (roomId: string, socketId: string) => {
 };
 
 //Clean up everything
-const removeBroadcaster = (roomId: string, socketId: string) => {
+const removeBroadcaster = async(roomId: string, socketId: string) => {
   const startTime = Date.now()
   try {
     const room = memoryRoom.get(roomId)
@@ -292,7 +293,7 @@ const removeBroadcaster = (roomId: string, socketId: string) => {
       removeViewerTransport(roomId, viewer.socketId)
       removeViewerConsumer(roomId, viewer.socketId)
     }
-    deleteRoom(roomId)
+    await deleteRoom(roomId)
     logger.info('Remove broadcaster success',{
       duration_ms: Date.now() - startTime
     })

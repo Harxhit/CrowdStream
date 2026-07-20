@@ -19,11 +19,14 @@ export default function LiveChat({ roomId }: Props) {
   const socket = getSocket()
 
   useEffect(() => {
-    const handleMessage = (message: Message) => {
+    setMessages([]);
+  }, [roomId]);
 
-      setMessages((prev) => {
-        return [...prev, message];
-      });
+  useEffect(() => {
+    const handleMessage = (message: Message) => {
+      if (message.roomId !== roomId) return;
+
+      setMessages((prev) => [...prev, message]);
     };
 
     socket.on("chat:message", handleMessage);
@@ -31,7 +34,7 @@ export default function LiveChat({ roomId }: Props) {
     return () => {
       socket.off("chat:message", handleMessage);
     };
-  }, []);
+  }, [socket, roomId]);
 
   function sendMessage(e: React.FormEvent) {
     e.preventDefault();
