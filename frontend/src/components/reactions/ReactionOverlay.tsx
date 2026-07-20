@@ -1,19 +1,17 @@
-// Google Meet style screen-wide emoji particle burst overlay
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { getSocket } from "../../socket";
 
-type Reaction = {
+type ReactionBatch = {
   roomId: string;
-  senderId: string;
-  emoji: string;
-  timestamp?: number;
-  timeStamp?: number;
+  counts: Record<string, number>;
 };
 
-type FloatingReaction = Reaction & {
+type FloatingReaction = {
   id: string;
+  roomId: string;
+  emoji: string;
   left: number;
   duration: number;
   rotation: number;
@@ -31,7 +29,9 @@ export default function ReactionOverlay({ roomId }: Props) {
 
   useEffect(() => {
     if (!roomId) {
-      console.log("ReactionOverlay: No roomId provided, skipping listener registration");
+      console.log(
+        "ReactionOverlay: No roomId provided, skipping listener registration"
+      );
       return;
     }
 
@@ -43,44 +43,68 @@ export default function ReactionOverlay({ roomId }: Props) {
       return;
     }
 
-    console.log("ReactionOverlay: Subscribing to chat:reactions for room:", roomId);
+    console.log(
+      "ReactionOverlay: Subscribing to chat:reactions for room:",
+      roomId
+    );
 
-    const handleReaction = (reaction: Reaction) => {
-      console.log("ReactionOverlay: Received reaction event:", reaction, "Current room:", roomId);
-      if (reaction.roomId !== roomId) {
-        console.warn("ReactionOverlay: Room mismatch. Expected:", roomId, "Got:", reaction.roomId);
+    const handleReaction = (batch: ReactionBatch) => {
+      console.log(
+        "ReactionOverlay: Received reaction batch:",
+        batch,
+        "Current room:",
+        roomId
+      );
+
+      if (batch.roomId !== roomId) {
+        console.warn(
+          "ReactionOverlay: Room mismatch. Expected:",
+          roomId,
+          "Got:",
+          batch.roomId
+        );
         return;
       }
 
-      // Safe unique ID generator
-      const uniqueId = Math.random().toString(36).substring(2, 9) + Date.now().toString(36);
+      const floating: FloatingReaction[] = [];
 
-      const floating: FloatingReaction = {
-        ...reaction,
-        id: uniqueId,
+      Object.entries(batch.counts).forEach(([emoji, count]) => {
+        for (let i = 0; i < count; i++) {
+          floating.push({
+            id:
+              Math.random().toString(36).substring(2, 9) +
+              Date.now().toString(36) +
+              i,
+            roomId: batch.roomId,
+            emoji,
 
-        // Spawn near the bottom-left corner (similar to Google Meet)
-        left: 4 + Math.random() * 8, // 4% to 12% from the left edge
+            // Spawn near the bottom-left corner
+            left: 4 + Math.random() * 8,
 
-        // Reasonable and elegant size (between 32px and 48px)
-        size: 32 + Math.random() * 16,
+            // Emoji size
+            size: 32 + Math.random() * 16,
 
-        // Duration of float up (2s to 2.8s)
-        duration: 2000 + Math.random() * 800,
+            // Float duration
+            duration: 2000 + Math.random() * 800,
 
-        // Natural movement variables
-        rotation: Math.random() * 30 - 15, // -15deg to 15deg
-        drift: Math.random() * 40 - 20,    // drift left/right slightly
-        wobble: Math.random() * 30 - 15,   // side-to-side sway
-      };
+            // Motion randomness
+            rotation: Math.random() * 30 - 15,
+            drift: Math.random() * 40 - 20,
+            wobble: Math.random() * 30 - 15,
+          });
+        }
+      });
 
-      setReactions((prev) => [...prev, floating]);
+      setReactions((prev) => [...prev, ...floating]);
     };
 
     socket.on("chat:reactions", handleReaction);
 
     return () => {
-      console.log("ReactionOverlay: Unsubscribing from chat:reactions for room:", roomId);
+      console.log(
+        "ReactionOverlay: Unsubscribing from chat:reactions for room:",
+        roomId
+      );
       socket.off("chat:reactions", handleReaction);
     };
   }, [roomId]);
@@ -141,12 +165,9 @@ export default function ReactionOverlay({ roomId }: Props) {
               position: "absolute",
               left: `${reaction.left}%`,
               bottom: 80,
-
               fontSize: `${reaction.size}px`,
-
               userSelect: "none",
               willChange: "transform",
-
               filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))",
             }}
           >

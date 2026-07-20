@@ -2,7 +2,7 @@ import {Cluster, Redis} from "ioredis";
 import config from "../config";
 import { ChatMessage } from "./chat.util";
 import { Server } from "socket.io";
-import { Reaction } from "./emoji.util";
+import { increaseCount, Reaction } from "./emoji.util";
 import logger from "./logging";
 
 const startUpNodes = [
@@ -77,7 +77,7 @@ export function initializeSubscribers(io: Server) {
   
         case channel.endsWith(":reactions"): {
           const reaction: Reaction = JSON.parse(payload);
-          io.to(`room:${reaction.roomId}`).emit("chat:reactions", reaction);
+          increaseCount(io, reaction.roomId, reaction.emoji)
           break;
         }
   

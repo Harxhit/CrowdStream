@@ -19646,3 +19646,136 @@
 2026-07-20 23:41:30 error: RoomId not found
 2026-07-20 23:41:30 warn: IDK
 2026-07-20 23:41:30 info: [node-1] Client connected: 6MC8lUvytvQY7i3LAAAj
+2026-07-21 00:28:13 info: Redis subscribers initialized
+2026-07-21 00:28:15 info: MongoDB connected
+2026-07-21 00:28:15 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-21 00:28:15 info: Creating worker started
+2026-07-21 00:28:15 info: Creating worker started
+2026-07-21 00:28:15 info: Creating worker started
+2026-07-21 00:28:15 info: Worker created successfully
+2026-07-21 00:28:15 info: Worker created successfully
+2026-07-21 00:28:15 info: Worker created successfully
+2026-07-21 00:28:15 info: Worker pool initialized
+2026-07-21 00:28:25 info: SignIn started
+2026-07-21 00:28:26 info: SignIn completed
+2026-07-21 00:28:26 info: [node-1] Client connected: V4-E-TjOgnMRxTCrAAAB
+2026-07-21 00:28:29 info: Create room started
+2026-07-21 00:28:29 info: Woker loads loaded successfully
+2026-07-21 00:28:29 info: Woker assigned succesfully
+2026-07-21 00:28:29 info: Creation of router started
+2026-07-21 00:28:29 info: Router created
+2026-07-21 00:28:29 info: Creation of room successfully executed
+2026-07-21 00:28:29 info: Get room started
+2026-07-21 00:28:29 info: Get room executed successfully
+2026-07-21 00:28:29 info: Broadcaster added to the room
+2026-07-21 00:28:29 info: Room created successfully
+2026-07-21 00:28:31 info: Get room started
+2026-07-21 00:28:31 info: Get room executed successfully
+2026-07-21 00:28:33 info: Get room started
+2026-07-21 00:28:33 info: Get room executed successfully
+2026-07-21 00:28:33 info: Get room started
+2026-07-21 00:28:33 info: Get room executed successfully
+2026-07-21 00:28:33 info: Get room started
+2026-07-21 00:28:33 info: Get room executed successfully
+2026-07-21 00:28:33 info: Get room started
+2026-07-21 00:28:33 info: Get room executed successfully
+2026-07-21 00:28:33 info: Get room started
+2026-07-21 00:28:33 info: Get room executed successfully
+2026-07-21 00:28:33 info: Get room started
+2026-07-21 00:28:33 info: Get room executed successfully
+2026-07-21 00:28:33 info: Get room started
+2026-07-21 00:28:33 info: Get room executed successfully
+2026-07-21 00:29:35 info: Redis subscribers initialized
+2026-07-21 00:29:37 info: MongoDB connected
+2026-07-21 00:29:37 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-21 00:29:37 info: Creating worker started
+2026-07-21 00:29:37 info: Creating worker started
+2026-07-21 00:29:37 info: Creating worker started
+2026-07-21 00:29:37 info: Worker created successfully
+2026-07-21 00:29:37 info: Worker created successfully
+2026-07-21 00:29:37 info: Worker created successfully
+2026-07-21 00:29:37 info: Worker pool initialized
+2026-07-21 00:29:43 info: [node-1] Client connected: oMqHx64nrlhhn_y8AAAB
+2026-07-21 00:29:49 info: Redis subscribers initialized
+2026-07-21 00:29:54 info: Redis subscribers initialized
+2026-07-21 00:29:57 info: MongoDB connected
+2026-07-21 00:29:57 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-21 00:29:57 info: Creating worker started
+2026-07-21 00:29:57 info: Creating worker started
+2026-07-21 00:29:57 info: Creating worker started
+2026-07-21 00:29:57 info: Worker created successfully
+2026-07-21 00:29:57 info: Worker created successfully
+2026-07-21 00:29:57 info: Worker created successfully
+2026-07-21 00:29:57 info: Worker pool initialized
+2026-07-21 00:30:03 info: SignIn started
+2026-07-21 00:30:03 info: SignIn completed
+2026-07-21 00:30:03 info: [node-1] Client connected: iKdLmd5GW2eugs6ZAAAB
+2026-07-21 00:30:06 info: Create room started
+2026-07-21 00:30:06 info: Woker loads loaded successfully
+2026-07-21 00:30:06 info: Woker assigned succesfully
+2026-07-21 00:30:06 info: Creation of router started
+2026-07-21 00:30:06 info: Router created
+2026-07-21 00:30:06 info: Creation of room successfully executed
+2026-07-21 00:30:06 info: Get room started
+2026-07-21 00:30:06 info: Get room executed successfully
+2026-07-21 00:30:06 info: Broadcaster added to the room
+2026-07-21 00:30:06 info: Room created successfully
+2026-07-21 00:30:08 info: Get room started
+2026-07-21 00:30:08 info: Get room executed successfully
+2026-07-21 00:30:08 info: Get room started
+2026-07-21 00:30:08 info: Get room executed successfully
+2026-07-21 00:30:08 info: Get room started
+2026-07-21 00:30:08 info: Get room executed successfully
+2026-07-21 00:30:08 info: Get room started
+2026-07-21 00:30:08 info: Get room executed successfully
+2026-07-21 00:30:08 info: Get room started
+2026-07-21 00:30:08 info: Get room executed successfully
+2026-07-21 00:30:09 info: Get room started
+2026-07-21 00:30:09 info: Get room executed successfully
+2026-07-21 00:30:09 info: Get room started
+2026-07-21 00:30:09 info: Get room executed successfully
+2026-07-21 00:30:09 info: Get room started
+2026-07-21 00:30:09 info: Get room executed successfully
+2026-07-21 00:30:09 info: Get room started
+2026-07-21 00:30:09 info: Get room executed successfully
+2026-07-21 00:30:09 info: Get room started
+2026-07-21 00:30:09 info: Get room executed successfully
+2026-07-21 00:30:09 info: Get room started
+2026-07-21 00:30:09 info: Get room executed successfully
+2026-07-21 00:30:20 info: Get room started
+2026-07-21 00:30:20 info: Get room executed successfully
+2026-07-21 00:30:20 info: Get room started
+2026-07-21 00:30:20 info: Get room executed successfully
+2026-07-21 00:30:21 info: Get room started
+2026-07-21 00:30:21 info: Get room executed successfully
+2026-07-21 00:30:21 info: Get room started
+2026-07-21 00:30:21 info: Get room executed successfully
+2026-07-21 00:30:22 info: Get room started
+2026-07-21 00:30:22 info: Get room executed successfully
+2026-07-21 00:30:22 info: Get room started
+2026-07-21 00:30:22 info: Get room executed successfully
+2026-07-21 00:30:22 info: Get room started
+2026-07-21 00:30:22 info: Get room executed successfully
+2026-07-21 00:30:23 info: Get room started
+2026-07-21 00:30:23 info: Get room executed successfully
+2026-07-21 00:30:24 info: Get room started
+2026-07-21 00:30:24 info: Get room executed successfully
+2026-07-21 00:30:24 info: Get room started
+2026-07-21 00:30:24 info: Get room executed successfully
+2026-07-21 00:30:25 info: Get room started
+2026-07-21 00:30:25 info: Get room executed successfully
+2026-07-21 00:30:25 info: Get room started
+2026-07-21 00:30:25 info: Get room executed successfully
+2026-07-21 00:30:26 info: Get room started
+2026-07-21 00:30:26 info: Get room executed successfully
+2026-07-21 00:31:24 info: Redis subscribers initialized
+2026-07-21 00:31:25 info: MongoDB connected
+2026-07-21 00:31:25 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-07-21 00:31:25 info: Creating worker started
+2026-07-21 00:31:25 info: Creating worker started
+2026-07-21 00:31:25 info: Creating worker started
+2026-07-21 00:31:25 info: Worker created successfully
+2026-07-21 00:31:25 info: Worker created successfully
+2026-07-21 00:31:25 info: Worker created successfully
+2026-07-21 00:31:25 info: Worker pool initialized
+2026-07-21 00:31:31 info: [node-1] Client connected: s6t71RtI1_3zAPA6AAAB
