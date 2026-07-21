@@ -91,7 +91,7 @@ io.on("connection", (socket) => {
         erorr: (error as Error).message,
         stack: (error as Error).stack
       })
-      throw error
+      return;
     }
   })
 
