@@ -1446,3 +1446,17 @@
     at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
     at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
     at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-07-20 22:46:52 error: RoomId not found
+2026-07-20 22:49:22 error: RoomId not found
+2026-07-20 23:39:39 error: User already exists
+2026-07-20 23:41:11 error: RoomId not found
+2026-07-20 23:41:12 error: RoomId not found
+2026-07-20 23:41:13 error: RoomId not found
+2026-07-20 23:41:13 error: RoomId not found
+2026-07-20 23:41:13 error: RoomId not found
+2026-07-20 23:41:17 error: RoomId not found
+2026-07-20 23:41:18 error: RoomId not found
+2026-07-20 23:41:19 error: RoomId not found
+2026-07-20 23:41:20 error: RoomId not found
+2026-07-20 23:41:26 error: RoomId not found
+2026-07-20 23:41:30 error: RoomId not found

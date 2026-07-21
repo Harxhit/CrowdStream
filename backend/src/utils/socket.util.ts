@@ -8,9 +8,10 @@ import config from "../config/index";
 import { socketAuth } from "../middlewares/authentication.middleware";
 import cookie from 'cookie-parser'
 import { createShardedAdapter } from "@socket.io/redis-adapter";
-import { initializeChatSubscriber, redis , subClient} from "./redis.util";
+import { redis , subClient, initializeSubscribers} from "./redis.util";
 import { handleDisconnect } from "./disconnect.util";
 import { validateMessage, authenticateUser, moderateMessage, ChatMessage, publishMessage } from "./chat.util";
+import { publishReaction, Reaction, validateReactions } from "./emoji.util";
 
 const server = createServer(app);
 const io = new Server (server, {
@@ -20,8 +21,7 @@ const io = new Server (server, {
     methods: ["GET", "POST"],
   },
 });
-initializeChatSubscriber(io)
- 
+initializeSubscribers(io) 
 io.engine.use(cookie())
 io.use(socketAuth);
 
@@ -63,6 +63,35 @@ io.on("connection", (socket) => {
         error: (error as Error).message, 
         stack: (error as Error).stack, 
       })
+    }
+  })
+
+  socket.on('chat:reactions', async(payload) => {
+    try {
+      const validated = validateReactions(payload); 
+
+      const authorised = authenticateUser(validated.roomId, socket.id)
+
+      if(!authorised){
+        logger.error("User is not authorized");
+        return;
+      }
+
+      const reaction:Reaction = {
+        roomId: validated.roomId, 
+        emoji: validated.emoji, 
+        senderId: socket.id, 
+        timeStamp: Date.now()
+      }
+
+      await publishReaction(reaction)
+
+    } catch (error) {
+      logger.error('Chat reactions error',{
+        erorr: (error as Error).message,
+        stack: (error as Error).stack
+      })
+      return;
     }
   })
 

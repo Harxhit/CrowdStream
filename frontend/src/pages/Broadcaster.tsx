@@ -8,6 +8,7 @@ import StreamControls from "../components/broadcaster/StreamControls";
 import StreamStats from "../components/broadcaster/StreamStats";
 import SystemLogs from "../components/broadcaster/SystemLogs";
 import LiveChat from "../components/broadcaster/LiveChat";
+import ReactionOverlay from "../components/reactions/ReactionOverlay";
 
 interface Log {
   message: string;
@@ -157,6 +158,7 @@ export default function BroadcasterPage() {
               videoRef={videoRef}
               isLive={isLive}
             />
+            <ReactionOverlay roomId={roomId} />
 
             <StreamControls
               isLive={isLive}

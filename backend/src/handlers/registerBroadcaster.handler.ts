@@ -16,7 +16,7 @@ import Broadcaster from "../models/broadcaster.model";
 import { ipHash, userAgentHash } from "../utils/hash.util";
 import { getRedisRoom } from "../utils/roomCordinator";
 import ApiError from "../utils/apiError";
-import { subscribeToRoomChat } from "../utils/redis.util";
+import { subscribeToRoomChat, subscribeToRoomReactions } from "../utils/redis.util";
 
 
 const registerBroadcasterHandler = async (socket: Socket) => {
@@ -32,6 +32,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
       socket.data.roomId = roomId;  //Stores roomId into socket data
       
       await subscribeToRoomChat(roomId)
+      await subscribeToRoomReactions(roomId)
       
       await addBroadcaster(roomId, socket.id);
 

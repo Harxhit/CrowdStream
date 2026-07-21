@@ -37,9 +37,11 @@ export default function ProtectedRoute() {
   }
 
   if (!socketReady) {
-    <div className="flex min-h-screen items-center justify-center bg-neutral-950 text-white">
-      Checking authentication...
-    </div>
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-neutral-950 text-white">
+        Checking authentication...
+      </div>
+    );
   }
 
   return <Outlet />;
