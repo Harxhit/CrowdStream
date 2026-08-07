@@ -263,6 +263,7 @@ const removeViewer = async(roomId: string, socketId: string) => {
     }else{
       logger.warn('Worker not found',room.worker.pid)
     }
+    room.viewers.delete(socketId)
     await removeViewerFromRedisRoom(roomId, socketId)
     const count = await viewerCountInRedisRoom(roomId); 
     if(count === undefined){
@@ -274,7 +275,6 @@ const removeViewer = async(roomId: string, socketId: string) => {
     }
 
     await publishPresence(presence)
-    room.viewers.delete(socketId)
     logger.info("Viewer removed from room",{
       durationMs: Date.now() - startTime
     })
