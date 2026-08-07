@@ -25,6 +25,7 @@ export default function StreamStats({
   const [viewers , setViewers] = useState(0)
 
   useEffect(() => {
+    setViewers(0);
     if (!roomId) return;
 
     const handlePresence = (count: number) => {
