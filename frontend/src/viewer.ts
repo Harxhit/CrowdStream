@@ -39,7 +39,7 @@ class Viewer{
         socket = getSocket()
         console.info('[Viewer] join room started', roomId)
 
-        const response:JoinRoomAck = await socket.timeout(5000).emitWithAck('joinRoom',roomId)
+        const response:JoinRoomAck = await socket.timeout(5000).emitWithAck('joinRoom', roomId)
         if(!response.success){
             throw new Error(response.code)
         }

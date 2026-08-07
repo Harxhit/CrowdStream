@@ -5,18 +5,41 @@ import {
   Hash,
   User,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { getSocket } from "../../socket";
+
 
 interface StreamInfoProps {
   roomId: string;
-  viewers: number;
   connected: boolean;
 }
 
 export default function StreamInfo({
+
   roomId,
-  viewers,
   connected,
 }: StreamInfoProps) {
+
+  const socket = getSocket(); 
+  const [viewers , setViewers] = useState(0)
+
+
+  useEffect(() => {
+    const handlePresence = (count: number) => {
+      setViewers(count);
+    };
+
+    socket.on("room:presence", handlePresence);
+
+    if (connected && roomId) {
+      socket.emit("room:presence", roomId);
+    }
+
+    return () => {
+      socket.off("room:presence", handlePresence);
+    };
+  }, [socket, roomId, connected]);
+
   return (
     <section className="rounded-2xl border border-neutral-800 bg-neutral-900 shadow-lg">
       <div className="border-b border-neutral-800 px-6 py-4">
