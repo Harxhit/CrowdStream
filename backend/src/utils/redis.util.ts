@@ -121,6 +121,7 @@ export function initializeSubscribers(io: Server) {
       }
     })
 
+    expiredSubsriber.psubscribe('__keyevent@*__:expired');
     expiredSubsriber.on('pmessage', async(_payload,channel, key) => {
       console.log("Redis message:", channel, key);
 
