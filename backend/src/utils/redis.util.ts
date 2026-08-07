@@ -123,23 +123,29 @@ export function initializeSubscribers(io: Server) {
 
     expiredSubsriber.psubscribe('__keyevent@*__:expired');
     expiredSubsriber.on('pmessage', async(_payload,channel, key) => {
-      console.log("Redis message:", channel, key);
+      try {
+        console.log("Redis message:", channel, key);
 
-      const [, roomId, , socketId] = key.split(':')
+        const [, roomId, , socketId] = key.split(':')
 
-      removeViewerFromRedisRoom(roomId, socketId)
-      const count = await viewerCountInRedisRoom(roomId)
+        await removeViewerFromRedisRoom(roomId, socketId)
+        const count = await viewerCountInRedisRoom(roomId)
 
-      if(count === undefined){
-        throw new Error('Count is undefiend')
+        if(count === undefined){
+          throw new Error('Count is undefiend')
+        }
+
+        const presence:Presence = {
+          roomId: roomId, 
+          count: count
+        }
+        await publishPresence(presence)
+      } catch (error) {
+        logger.error('Expired presence cleanup failed', {
+          error: (error as Error).message,
+          stack: (error as Error).stack
+        })
       }
-
-      const presence:Presence = {
-        roomId: roomId, 
-        count: count
-      }
-      publishPresence(presence)
-
     })
     logger.info("Redis subscribers initialized");
     
