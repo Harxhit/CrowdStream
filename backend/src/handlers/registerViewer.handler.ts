@@ -21,11 +21,7 @@ const registerViewerHanlder = async (socket: Socket) => {
     try {
       logger.info("Join as viewer listner started")
       const viewerId = socket.data.user?.id
-      await joinAsViewer(roomId, socket.id);
-      // TODO: Move socket.join() after all room/router setup succeeds to avoid partially joined state on failure.
-      socket.join(`room:${roomId}`)
-      socket.data.roomId = roomId;
-      
+
       const room = getRoom(roomId); 
       if(!room){
         ack({
@@ -33,14 +29,14 @@ const registerViewerHanlder = async (socket: Socket) => {
           code: 'ROOM_NOT_FOUND'
         })
       }
-
+      
       const routerId = roomToRouter.get(roomId); 
       if(!routerId){
         logger.error('Router not found')
-          ack({
-            success:false, 
-            code: 'ROUTER_NOT_FOUND'
-          })
+        ack({
+          success:false, 
+          code: 'ROUTER_NOT_FOUND'
+        })
         throw new Error("Router not found")
       }
       const router = getRouter(routerId)
@@ -50,7 +46,11 @@ const registerViewerHanlder = async (socket: Socket) => {
           role: broadcaster.role,
         })
       );
+      socket.join(`room:${roomId}`)
+      socket.data.roomId = roomId;
 
+      await joinAsViewer(roomId, socket.id);
+      
       //Gets rtp capabilities
       const rtpCapabilities = router.rtpCapabilities
       ack({
@@ -60,6 +60,7 @@ const registerViewerHanlder = async (socket: Socket) => {
           broadcasters
         }
       })
+      
 
       const hashedIp = ipHash(socket)
       const userAgentHashed = userAgentHash(socket)
@@ -112,6 +113,7 @@ const registerViewerHanlder = async (socket: Socket) => {
     const isViewer = room.viewers.has(socketId)
     if(!isViewer){
       logger.error('Fake heartbeat')
+      throw new Error('Viewer not is a room member')
     }
 
     heartBeat(roomId, socketId)

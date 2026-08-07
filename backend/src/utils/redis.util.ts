@@ -74,7 +74,6 @@ chatSubscriber.on("error" , (error) => {
   console.error('Chat subscriber error',error)
 })
 
-
 export const expiredSubsriber = redis.duplicate(); 
 expiredSubsriber.on('ready', async() => {
   console.log('Expired subscriber is ready')

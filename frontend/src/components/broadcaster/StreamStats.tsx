@@ -32,6 +32,8 @@ export default function StreamStats({
       setViewers(count);
     };
 
+    setViewers(0)
+
     socket.on("room:presence", handlePresence);
 
     socket.emit("room:presence", roomId);

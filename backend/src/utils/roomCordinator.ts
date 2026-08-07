@@ -44,6 +44,7 @@ export const addViewerInRedisRoom = async(roomId:string , socketId:string) => {
             error: (error as Error).message,
             stack: (error as Error).stack
         })
+        throw error
     }
 }
 
@@ -55,6 +56,7 @@ export const removeViewerFromRedisRoom = async(roomId: string , socketId:string)
             error: (error as Error).message,
             stack: (error as Error).stack
         })
+        throw error
     }
 }
 
@@ -70,7 +72,15 @@ export const viewerCountInRedisRoom = async(roomId:string) => {
 }
 
 export const heartBeat = async(roomId: string , socketId:string) => {
-    await redis.set(`room:${roomId}:presence:${socketId}`, 'true', 'EX' , 60);
+    try {
+        await redis.set(`room:${roomId}:presence:${socketId}`, 'true', 'EX' , 60);
+    } catch (error) {
+        logger.error('Heart beat failure',{
+            error: (error as Error).message, 
+            stack: (error as Error).stack
+        })
+        throw error
+    }
 }
 
 export const publishPresence = async(payload:Presence) => {

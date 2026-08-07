@@ -4,7 +4,7 @@ import apiError from '../utils/apiError'
 import { createRouter } from "../mediasoup/router";
 import { memoryRoom, workerLoadMap, workerPool } from "../stores/maps";
 import { assignWorker, workerLoad } from "../utils/workerPool.util";
-import { createRedisRoomKey, redis } from "../utils/redis.util";
+import { createRedisRoomKey, presenceSubscriber, redis } from "../utils/redis.util";
 import config from "../config";
 import { publishPresence, removeRedisRoom, removeViewerFromRedisRoom, viewerCountInRedisRoom } from "../utils/roomCordinator";
 import { removeViewerConsumer, removeViewerTransport } from "../handlers/viewer.handler";
@@ -141,6 +141,9 @@ const deleteRoom = async(roomId: string) => {
       logger.warn('Failed to remove associated rooms and routers')
     }
     await chatSubscriber.sunsubscribe(`room:${roomId}:chat`);
+    await chatSubscriber.sunsubscribe(`room:${roomId}:reactions`);
+    await presenceSubscriber.sunsubscribe(`room:${roomId}:presence`)
+    
     memoryRoom.delete(roomId)
     removeRedisRoom(roomKey)
 
