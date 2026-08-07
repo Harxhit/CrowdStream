@@ -235,14 +235,6 @@ flowchart TB
 
 ---
 
-## ✅ Status
-
-All planned build phases are complete. Broadcaster and viewer connect end to end through the full signaling → SFU → NAT-traversal pipeline, including cross-pod room joins via the Redis-backed signaling layer. The setup has been validated **locally** on a fully self-hosted topology (ngrok, Nginx, HAProxy, Envoy, Coturn), with every component designed to be swapped for its cloud equivalent using the same configuration — no architectural changes required to move environments.
-
-**Next steps:** wire MongoDB into the runtime handler flow for state persistence across restarts, and move from one mediasoup Worker per room to a pooled Worker model for better CPU utilization at scale.
-
----
-
 ## 📞 Contact
 
 Built by **Harshit Singh Parihar**.
