@@ -12,6 +12,7 @@ import { routerToRoom, roomToRouter } from "../stores/maps";
 import Viewer from "../models/viewer.model";
 import LiveRoom from "../models/liveRoom.models";
 import { ipHash, userAgentHash } from "../utils/hash.util";
+import { heartBeat } from "../utils/roomCordinator";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
@@ -97,6 +98,24 @@ const registerViewerHanlder = async (socket: Socket) => {
       })
     }
   });
+
+  socket.on(`viewer:heartBeat`, () => {
+    const roomId = socket.data.roomId; 
+    const socketId = socket.id; 
+
+    if(!roomId || !socketId){
+      logger.error('Room not found')
+    }
+
+    const room = getRoom(roomId); 
+    
+    const isViewer = room.viewers.has(socketId)
+    if(!isViewer){
+      logger.error('Fake heartbeat')
+    }
+
+    heartBeat(roomId, socketId)
+  })
 
   //Creates reciever transport for the viewer and emit transport info
   socket.on("createViewerTransport", async (roomId, ack) => {

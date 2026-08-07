@@ -3,6 +3,7 @@ import { getRoom } from "../rooms/room.store";
 import type { Socket } from "socket.io";
 import logger from "../utils/logging";
 import { getErrorDetails } from "../utils/error.util";
+import { Presence, publishPresence, removeViewerFromRedisRoom, viewerCountInRedisRoom } from "../utils/roomCordinator";
 
 // Clean up broadcaster
 const cleanUpBroadcaster = (
@@ -48,10 +49,10 @@ const cleanUpBroadcaster = (
 };
 
 // Clean up viewer
-const cleanupViewer = (
+const cleanupViewer = async(
   roomId: string,
   socketId: string
-): void => {
+) => {
   try {
     const room = getRoom(roomId);
     const viewer = room?.viewers.get(socketId);
@@ -72,6 +73,16 @@ const cleanupViewer = (
       consumer.close();
     });
 
+    await removeViewerFromRedisRoom(roomId, socketId)
+    const count = await viewerCountInRedisRoom(roomId); 
+    if(count === undefined){
+      throw new Error('Viewer count not found')
+    }
+    const presence: Presence = {
+      roomId: roomId, 
+      count: count
+    }
+    publishPresence(presence)
     room?.viewers.delete(socketId);
 
     logger.info("Cleanup", {
@@ -90,9 +101,9 @@ const cleanupViewer = (
 };
 
 // Handle disconnect
-const handleDisconnect =(
+const handleDisconnect = async(
   socket: Socket
-): void => {
+) => {
   try {
     const socketId = socket.id;
 
@@ -114,7 +125,7 @@ const handleDisconnect =(
     }
 
     if (room.viewers.has(socketId)) {
-      cleanupViewer(roomId, socketId);
+      await cleanupViewer(roomId, socketId);
 
       logger.info("Viewer", {
         message: "Viewer cleanup completed",

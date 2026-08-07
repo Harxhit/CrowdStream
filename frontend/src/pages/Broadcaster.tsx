@@ -26,7 +26,6 @@ export default function BroadcasterPage() {
 
   const [isLive, setIsLive] = useState(false);
 
-  const [viewerCount] = useState(0);
 
   const log = (message: string) => {
     console.log(message);
@@ -182,7 +181,7 @@ export default function BroadcasterPage() {
 
             <StreamStats
               isLive={isLive}
-              viewers={viewerCount}
+              roomId={roomId}
             />
 
             <LiveChat roomId={roomId}/>

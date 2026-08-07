@@ -42,3 +42,18 @@ export function getSocket() {
     }
     return socket;
 }
+
+export function startHeartBeat(){
+    if(!socket){
+        throw new Error('Socket not connected')
+    }
+    const intervalId = setInterval(() => {
+        socket?.emit(`viewer:heartBeat`)
+    },20000)
+    return intervalId
+}
+
+export function clearHeartBeat(intervalId:number){
+    clearInterval(intervalId)
+}
+

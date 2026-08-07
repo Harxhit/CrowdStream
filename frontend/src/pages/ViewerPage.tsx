@@ -9,6 +9,7 @@ import StreamInfo from "../components/viewer/StreamInfo";
 import ViewerControls from "../components/viewer/ViewerControls";
 import LiveChat from "../components/broadcaster/LiveChat";
 import ReactionOverlay from "../components/reactions/ReactionOverlay";
+import { startHeartBeat } from "../socket";
 
 
 interface Log {
@@ -29,7 +30,6 @@ export default function ViewerPage() {
 
   const [connected, setConnected] = useState(false);
 
-  const [viewerCount] = useState(0);
 
   const [logs, setLogs] = useState<Log[]>([]);
   const log = (message: string) => {
@@ -81,6 +81,8 @@ export default function ViewerPage() {
 
       setConnected(true);
 
+      startHeartBeat()
+
       log("Successfully connected.");
     } catch (err: any) {
       log(`ERROR: ${err.message}`);
@@ -99,6 +101,7 @@ export default function ViewerPage() {
      * - Remove the viewer from the frontend room store.
      * - Release any allocated resources.
      * - Stop listening to socket events.
+     * - Add stop heartbeat
      */
 
     if (videoRef.current?.srcObject) {
@@ -175,7 +178,6 @@ export default function ViewerPage() {
           <div className="space-y-6">
             <StreamInfo
               roomId={roomId}
-              viewers={viewerCount}
               connected={connected}
             />
 

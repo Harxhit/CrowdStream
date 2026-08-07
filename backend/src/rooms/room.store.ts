@@ -6,9 +6,11 @@ import { memoryRoom, workerLoadMap, workerPool } from "../stores/maps";
 import { assignWorker, workerLoad } from "../utils/workerPool.util";
 import { createRedisRoomKey, redis } from "../utils/redis.util";
 import config from "../config";
-import { removeRedisRoom } from "../utils/roomCordinator";
+import { publishPresence, removeRedisRoom, removeViewerFromRedisRoom, viewerCountInRedisRoom } from "../utils/roomCordinator";
 import { removeViewerConsumer, removeViewerTransport } from "../handlers/viewer.handler";
 import { chatSubscriber } from "../utils/redis.util";
+import { Presence } from "../utils/roomCordinator";
+
 
 //Creates roomId(temporary)
 const createRoomId = async () => {
@@ -237,7 +239,7 @@ const addViewer = async (roomId: string, socketId: string) => {
 };
 
 //Clean up one viewer
-const removeViewer = (roomId: string, socketId: string) => {
+const removeViewer = async(roomId: string, socketId: string) => {
   const startTime = Date.now()
   try {
     logger.info('Remove viewer started')
@@ -261,6 +263,17 @@ const removeViewer = (roomId: string, socketId: string) => {
     }else{
       logger.warn('Worker not found',room.worker.pid)
     }
+    await removeViewerFromRedisRoom(roomId, socketId)
+    const count = await viewerCountInRedisRoom(roomId); 
+    if(count === undefined){
+      throw new Error('Count is undefined')
+    }
+    const presence: Presence = {
+      roomId: roomId, 
+      count: count
+    }
+
+    await publishPresence(presence)
     room.viewers.delete(socketId)
     logger.info("Viewer removed from room",{
       durationMs: Date.now() - startTime

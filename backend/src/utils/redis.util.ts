@@ -1,9 +1,11 @@
 import {Cluster, Redis} from "ioredis";
 import config from "../config";
-import { ChatMessage } from "./chat.util";
+import { ChatMessage, publishMessage } from "./chat.util";
 import { Server } from "socket.io";
 import { increaseCount, Reaction } from "./emoji.util";
 import logger from "./logging";
+import { error } from "winston";
+import { Presence, publishPresence, removeViewerFromRedisRoom, viewerCountInRedisRoom } from "./roomCordinator";
 
 const startUpNodes = [
     {
@@ -53,6 +55,15 @@ subClient.on("error" , (error) => {
   console.error('Redis subscriber error',error)
 })
 
+export const presenceSubscriber  = redis.duplicate(); 
+presenceSubscriber.on('ready', async() => {
+  console.log('Presence subscriber is ready')
+})
+
+presenceSubscriber.on('error', async() => {
+  console.error('Presence subscriber error',error)
+})
+
 //Used by chat pub/sub 
 export const chatSubscriber = redis.duplicate(); 
 chatSubscriber.on('ready', async() => {
@@ -63,6 +74,15 @@ chatSubscriber.on("error" , (error) => {
   console.error('Chat subscriber error',error)
 })
 
+
+export const expiredSubsriber = redis.duplicate(); 
+expiredSubsriber.on('ready', async() => {
+  console.log('Expired subscriber is ready')
+})
+
+expiredSubsriber.on("error" , (error) => {
+  console.error('Expired subscriber error',error)
+})
 
 export function initializeSubscribers(io: Server) {
   try {
@@ -80,11 +100,46 @@ export function initializeSubscribers(io: Server) {
           increaseCount(io, reaction.roomId, reaction.emoji)
           break;
         }
-  
+
+        
         default:
           logger.warn(`Unknown Redis channel: ${channel}`);
-      }
+        }
     });
+
+    presenceSubscriber.on('smessage',(channel , payload) => {
+      console.log("Redis message:", channel, payload);
+
+      switch(true){
+          case channel.endsWith(':presence'):{
+            const {roomId, count} = JSON.parse(payload)
+            io.to(`room:${roomId}`).emit('room:presence',count)
+            break
+          }
+
+          default: logger.warn(`Unknown Redis channel: ${channel}`)
+      }
+    })
+
+    expiredSubsriber.on('pmessage', async(_payload,channel, key) => {
+      console.log("Redis message:", channel, key);
+
+      const [, roomId, , socketId] = key.split(':')
+
+      removeViewerFromRedisRoom(roomId, socketId)
+      const count = await viewerCountInRedisRoom(roomId)
+
+      if(count === undefined){
+        throw new Error('Count is undefiend')
+      }
+
+      const presence:Presence = {
+        roomId: roomId, 
+        count: count
+      }
+      publishPresence(presence)
+
+    })
     logger.info("Redis subscribers initialized");
     
   } catch (error) {
@@ -94,6 +149,10 @@ export function initializeSubscribers(io: Server) {
     })
   }
 
+}
+
+export async function subscribeToRoomPresence(roomId:string){
+  await presenceSubscriber.ssubscribe(`room:${roomId}:presence`)
 }
 
 export async function subscribeToRoomChat(roomId: string) {

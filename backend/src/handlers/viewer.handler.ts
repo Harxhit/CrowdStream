@@ -5,6 +5,7 @@ import {
 } from "../mediasoup/transport";
 import canConsume from "../utils/canConsumer.util";
 import { transportRegistry } from "../stores/maps";
+import { addViewerInRedisRoom, heartBeat, Presence, publishPresence, viewerCountInRedisRoom } from "../utils/roomCordinator";
 
 //Join room as viewer
 const joinAsViewer = async (roomId: string, socketId: string) => {
@@ -18,6 +19,19 @@ const joinAsViewer = async (roomId: string, socketId: string) => {
       joinedAt : Date.now(), 
       role : 'viewer'
     })
+
+    await addViewerInRedisRoom(roomId,socketId)
+    await heartBeat(roomId , socketId)
+
+    const count = await viewerCountInRedisRoom(roomId)
+    if(count === undefined){
+      throw new Error('Viewer count not found')
+    }
+    const presence:Presence = {
+      roomId: roomId, 
+      count: count
+    }
+    await publishPresence(presence)
   
     logger.info('Viewer joined the room',{
       socketId: socketId, 

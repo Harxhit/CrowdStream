@@ -19779,3 +19779,275 @@
 2026-07-21 00:31:25 info: Worker created successfully
 2026-07-21 00:31:25 info: Worker pool initialized
 2026-07-21 00:31:31 info: [node-1] Client connected: s6t71RtI1_3zAPA6AAAB
+2026-08-07 13:41:17 info: Redis subscribers initialized
+2026-08-07 13:41:25 info: MongoDB connected
+2026-08-07 13:41:25 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:41:25 info: Creating worker started
+2026-08-07 13:41:25 info: Creating worker started
+2026-08-07 13:41:25 info: Creating worker started
+2026-08-07 13:41:25 info: Worker created successfully
+2026-08-07 13:41:25 info: Worker created successfully
+2026-08-07 13:41:25 info: Worker created successfully
+2026-08-07 13:41:25 info: Worker pool initialized
+2026-08-07 13:41:57 info: SignIn started
+2026-08-07 13:41:57 info: SignIn completed
+2026-08-07 13:41:57 info: [node-1] Client connected: CqrFfXBs_RmxbW5_AAAB
+2026-08-07 13:42:05 info: Create room started
+2026-08-07 13:42:05 info: Woker loads loaded successfully
+2026-08-07 13:42:05 info: Woker assigned succesfully
+2026-08-07 13:42:05 info: Creation of router started
+2026-08-07 13:42:05 info: Router created
+2026-08-07 13:42:05 info: Creation of room successfully executed
+2026-08-07 13:42:05 info: Get room started
+2026-08-07 13:42:05 info: Get room executed successfully
+2026-08-07 13:42:05 info: Broadcaster added to the room
+2026-08-07 13:42:05 info: Room created successfully
+2026-08-07 13:42:44 info: SignIn started
+2026-08-07 13:42:44 error: Password validation failed
+2026-08-07 13:43:03 info: SignUp started
+2026-08-07 13:43:03 info: SignUp completed
+2026-08-07 13:43:03 info: [node-1] Client connected: DHcIqQOZHJXJ8IaPAAAD
+2026-08-07 13:43:19 info: Join as viewer listner started
+2026-08-07 13:43:19 info: Get room started
+2026-08-07 13:43:19 info: Get room executed successfully
+2026-08-07 13:43:19 info: Viewer joined the room
+2026-08-07 13:43:19 info: Get room started
+2026-08-07 13:43:19 info: Get room executed successfully
+2026-08-07 13:43:19 info: Fetching of router started
+2026-08-07 13:43:19 info: Fetching of router executed successfully
+2026-08-07 13:43:19 info: Join viewer listner successfully executed
+2026-08-07 13:43:39 info: Get room started
+2026-08-07 13:43:39 info: Get room executed successfully
+2026-08-07 13:43:59 info: Get room started
+2026-08-07 13:43:59 info: Get room executed successfully
+2026-08-07 13:43:59 info: Join as viewer listner started
+2026-08-07 13:43:59 info: Get room started
+2026-08-07 13:43:59 info: Get room executed successfully
+2026-08-07 13:43:59 info: Viewer joined the room
+2026-08-07 13:43:59 info: Get room started
+2026-08-07 13:43:59 info: Get room executed successfully
+2026-08-07 13:43:59 info: Fetching of router started
+2026-08-07 13:43:59 info: Fetching of router executed successfully
+2026-08-07 13:43:59 info: Join viewer listner successfully executed
+2026-08-07 13:44:05 info: User disconnected DHcIqQOZHJXJ8IaPAAAD beacuse of transport close
+2026-08-07 13:44:05 info: Handle disconnect started
+2026-08-07 13:44:05 info: Get room started
+2026-08-07 13:44:05 info: Get room executed successfully
+2026-08-07 13:44:05 info: Get room started
+2026-08-07 13:44:05 info: Get room executed successfully
+2026-08-07 13:44:05 info: Remove viewer started
+2026-08-07 13:44:05 info: Viewer removed from room
+2026-08-07 13:44:05 info: Handle disconnect succesfully
+2026-08-07 13:44:55 info: User disconnected CqrFfXBs_RmxbW5_AAAB beacuse of transport close
+2026-08-07 13:44:55 info: Handle disconnect started
+2026-08-07 13:44:55 info: Get room started
+2026-08-07 13:44:55 info: Get room executed successfully
+2026-08-07 13:44:55 info: Get room started
+2026-08-07 13:44:55 info: Get room executed successfully
+2026-08-07 13:44:55 info: Get room started
+2026-08-07 13:44:55 info: Get room executed successfully
+2026-08-07 13:44:55 info: Remove broadcaster success
+2026-08-07 13:44:55 info: Handle disconnect succesfully
+2026-08-07 13:44:55 info: room:fd582e7a-e969-4ab7-b663-b525f8aa80ca room deleted successfully
+2026-08-07 13:44:55 info: [node-1] Client connected: s_fgoN9H_nQFVH9bAAAF
+2026-08-07 13:47:34 info: Redis subscribers initialized
+2026-08-07 13:47:36 info: MongoDB connected
+2026-08-07 13:47:36 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:47:36 info: Creating worker started
+2026-08-07 13:47:36 info: Creating worker started
+2026-08-07 13:47:36 info: Creating worker started
+2026-08-07 13:47:36 info: Worker created successfully
+2026-08-07 13:47:36 info: Worker created successfully
+2026-08-07 13:47:36 info: Worker created successfully
+2026-08-07 13:47:36 info: Worker pool initialized
+2026-08-07 13:47:45 info: [node-1] Client connected: sIs4yi20EGC6IeJIAAAB
+2026-08-07 13:48:55 info: Redis subscribers initialized
+2026-08-07 13:49:09 info: Redis subscribers initialized
+2026-08-07 13:49:17 info: MongoDB connected
+2026-08-07 13:49:17 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:49:17 info: Creating worker started
+2026-08-07 13:49:17 info: Creating worker started
+2026-08-07 13:49:17 info: Creating worker started
+2026-08-07 13:49:17 info: Worker created successfully
+2026-08-07 13:49:17 info: Worker created successfully
+2026-08-07 13:49:17 info: Worker created successfully
+2026-08-07 13:49:17 info: Worker pool initialized
+2026-08-07 13:49:28 info: SignIn started
+2026-08-07 13:49:28 info: SignIn completed
+2026-08-07 13:49:28 info: [node-1] Client connected: AQxH2Ir8TlZmdsGUAAAB
+2026-08-07 13:49:33 info: Create room started
+2026-08-07 13:49:33 info: Woker loads loaded successfully
+2026-08-07 13:49:33 info: Woker assigned succesfully
+2026-08-07 13:49:33 info: Creation of router started
+2026-08-07 13:49:34 info: Router created
+2026-08-07 13:49:34 info: Creation of room successfully executed
+2026-08-07 13:49:34 info: Get room started
+2026-08-07 13:49:34 info: Get room executed successfully
+2026-08-07 13:49:34 info: Broadcaster added to the room
+2026-08-07 13:49:34 info: Room created successfully
+2026-08-07 13:49:53 info: SignUp started
+2026-08-07 13:49:53 info: SignUp completed
+2026-08-07 13:49:53 info: [node-1] Client connected: fCz9Bv57Z5r6cucEAAAD
+2026-08-07 13:49:58 info: Join as viewer listner started
+2026-08-07 13:49:58 info: Get room started
+2026-08-07 13:49:58 info: Get room executed successfully
+2026-08-07 13:49:58 info: Viewer joined the room
+2026-08-07 13:49:58 info: Get room started
+2026-08-07 13:49:58 info: Get room executed successfully
+2026-08-07 13:49:58 info: Fetching of router started
+2026-08-07 13:49:58 info: Fetching of router executed successfully
+2026-08-07 13:49:58 info: Join viewer listner successfully executed
+2026-08-07 13:50:18 info: Get room started
+2026-08-07 13:50:18 info: Get room executed successfully
+2026-08-07 13:50:38 info: Get room started
+2026-08-07 13:50:38 info: Get room executed successfully
+2026-08-07 13:51:00 info: Redis subscribers initialized
+2026-08-07 13:51:02 info: MongoDB connected
+2026-08-07 13:51:02 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:51:02 info: Creating worker started
+2026-08-07 13:51:02 info: Creating worker started
+2026-08-07 13:51:02 info: Creating worker started
+2026-08-07 13:51:02 info: Worker created successfully
+2026-08-07 13:51:02 info: Worker created successfully
+2026-08-07 13:51:02 info: Worker created successfully
+2026-08-07 13:51:02 info: Worker pool initialized
+2026-08-07 13:51:05 info: [node-1] Client connected: cTUsNDIEN3uyjURXAAAB
+2026-08-07 13:51:09 info: [node-1] Client connected: hKwt7b10WK7Om_3qAAAD
+2026-08-07 13:51:09 error: Room not found
+2026-08-07 13:53:11 info: Redis subscribers initialized
+2026-08-07 13:53:13 info: MongoDB connected
+2026-08-07 13:53:13 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:53:13 info: Creating worker started
+2026-08-07 13:53:13 info: Creating worker started
+2026-08-07 13:53:13 info: Creating worker started
+2026-08-07 13:53:13 info: Worker created successfully
+2026-08-07 13:53:13 info: Worker created successfully
+2026-08-07 13:53:13 info: Worker created successfully
+2026-08-07 13:53:13 info: Worker pool initialized
+2026-08-07 13:53:19 info: [node-1] Client connected: KEpgEx477A9T6Mq-AAAB
+2026-08-07 13:53:19 info: Create room started
+2026-08-07 13:53:19 info: Woker loads loaded successfully
+2026-08-07 13:53:19 info: Woker assigned succesfully
+2026-08-07 13:53:19 info: Creation of router started
+2026-08-07 13:53:19 info: [node-1] Client connected: jGz_losKIWF7-PWzAAAD
+2026-08-07 13:53:19 info: Router created
+2026-08-07 13:53:19 error: Room not found
+2026-08-07 13:53:34 info: Redis subscribers initialized
+2026-08-07 13:53:36 info: MongoDB connected
+2026-08-07 13:53:36 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:53:36 info: Creating worker started
+2026-08-07 13:53:36 info: Creating worker started
+2026-08-07 13:53:36 info: Creating worker started
+2026-08-07 13:53:36 info: Worker created successfully
+2026-08-07 13:53:36 info: Worker created successfully
+2026-08-07 13:53:36 info: Worker created successfully
+2026-08-07 13:53:36 info: Worker pool initialized
+2026-08-07 13:53:40 info: [node-1] Client connected: 8H-4Gwp_QOkXqlsaAAAB
+2026-08-07 13:53:41 error: Room not found
+2026-08-07 13:54:07 info: Redis subscribers initialized
+2026-08-07 13:54:09 info: MongoDB connected
+2026-08-07 13:54:09 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:54:09 info: Creating worker started
+2026-08-07 13:54:09 info: Creating worker started
+2026-08-07 13:54:09 info: Creating worker started
+2026-08-07 13:54:09 info: Worker created successfully
+2026-08-07 13:54:09 info: Worker created successfully
+2026-08-07 13:54:09 info: Worker created successfully
+2026-08-07 13:54:09 info: Worker pool initialized
+2026-08-07 13:54:13 info: [node-1] Client connected: 2jz2VJvr3D0rQbEpAAAB
+2026-08-07 13:54:13 error: Room not found
+2026-08-07 13:55:36 info: Redis subscribers initialized
+2026-08-07 13:55:43 info: MongoDB connected
+2026-08-07 13:55:43 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-07 13:55:43 info: Creating worker started
+2026-08-07 13:55:43 info: Creating worker started
+2026-08-07 13:55:43 info: Creating worker started
+2026-08-07 13:55:43 info: Worker created successfully
+2026-08-07 13:55:43 info: Worker created successfully
+2026-08-07 13:55:43 info: Worker created successfully
+2026-08-07 13:55:43 info: Worker pool initialized
+2026-08-07 13:55:48 info: SignIn started
+2026-08-07 13:55:48 info: SignIn completed
+2026-08-07 13:55:48 info: [node-1] Client connected: xOw31HGRCatI4hCJAAAB
+2026-08-07 13:55:52 info: Create room started
+2026-08-07 13:55:52 info: Woker loads loaded successfully
+2026-08-07 13:55:52 info: Woker assigned succesfully
+2026-08-07 13:55:52 info: Creation of router started
+2026-08-07 13:55:52 info: Router created
+2026-08-07 13:55:52 info: Creation of room successfully executed
+2026-08-07 13:55:52 info: Get room started
+2026-08-07 13:55:52 info: Get room executed successfully
+2026-08-07 13:55:52 info: Broadcaster added to the room
+2026-08-07 13:55:52 info: Room created successfully
+2026-08-07 13:56:13 info: SignUp started
+2026-08-07 13:56:13 error: Validation error "username" must only contain alpha-numeric characters
+2026-08-07 13:56:21 info: SignUp started
+2026-08-07 13:56:21 info: SignUp completed
+2026-08-07 13:56:21 info: [node-1] Client connected: hG1giOsjFgu9nVGPAAAD
+2026-08-07 13:56:30 info: Join as viewer listner started
+2026-08-07 13:56:30 info: Get room started
+2026-08-07 13:56:30 info: Get room executed successfully
+2026-08-07 13:56:30 info: Viewer joined the room
+2026-08-07 13:56:30 info: Get room started
+2026-08-07 13:56:30 info: Get room executed successfully
+2026-08-07 13:56:30 info: Fetching of router started
+2026-08-07 13:56:30 info: Fetching of router executed successfully
+2026-08-07 13:56:30 info: Join viewer listner successfully executed
+2026-08-07 13:56:40 info: User disconnected hG1giOsjFgu9nVGPAAAD beacuse of transport close
+2026-08-07 13:56:40 info: Handle disconnect started
+2026-08-07 13:56:40 info: Get room started
+2026-08-07 13:56:40 info: Get room executed successfully
+2026-08-07 13:56:40 info: Get room started
+2026-08-07 13:56:40 info: Get room executed successfully
+2026-08-07 13:56:40 info: Remove viewer started
+2026-08-07 13:56:40 info: Handle disconnect succesfully
+2026-08-07 13:56:40 info: Viewer removed from room
+2026-08-07 13:58:05 info: Get room started
+2026-08-07 13:58:05 info: Get room executed successfully
+2026-08-07 13:58:06 info: Get room started
+2026-08-07 13:58:06 info: Get room executed successfully
+2026-08-07 13:58:06 info: Get room started
+2026-08-07 13:58:06 info: Get room executed successfully
+2026-08-07 13:58:06 info: Get room started
+2026-08-07 13:58:06 info: Get room executed successfully
+2026-08-07 13:58:06 info: Get room started
+2026-08-07 13:58:06 info: Get room executed successfully
+2026-08-07 13:58:07 info: Get room started
+2026-08-07 13:58:07 info: Get room executed successfully
+2026-08-07 13:58:07 info: Get room started
+2026-08-07 13:58:07 info: Get room executed successfully
+2026-08-07 13:58:07 info: Get room started
+2026-08-07 13:58:07 info: Get room executed successfully
+2026-08-07 13:58:07 info: Get room started
+2026-08-07 13:58:07 info: Get room executed successfully
+2026-08-07 13:58:07 info: Get room started
+2026-08-07 13:58:07 info: Get room executed successfully
+2026-08-07 13:58:07 info: Get room started
+2026-08-07 13:58:07 info: Get room executed successfully
+2026-08-07 13:58:08 info: Get room started
+2026-08-07 13:58:08 info: Get room executed successfully
+2026-08-07 13:58:08 info: Get room started
+2026-08-07 13:58:08 info: Get room executed successfully
+2026-08-07 13:58:08 info: Get room started
+2026-08-07 13:58:08 info: Get room executed successfully
+2026-08-07 13:58:09 info: Get room started
+2026-08-07 13:58:09 info: Get room executed successfully
+2026-08-07 13:58:09 info: Get room started
+2026-08-07 13:58:09 info: Get room executed successfully
+2026-08-07 13:58:09 info: Get room started
+2026-08-07 13:58:09 info: Get room executed successfully
+2026-08-07 13:58:09 info: Get room started
+2026-08-07 13:58:09 info: Get room executed successfully
+2026-08-07 13:58:10 info: Get room started
+2026-08-07 13:58:10 info: Get room executed successfully
+2026-08-07 13:58:13 info: User disconnected xOw31HGRCatI4hCJAAAB beacuse of transport close
+2026-08-07 13:58:13 info: Handle disconnect started
+2026-08-07 13:58:13 info: Get room started
+2026-08-07 13:58:13 info: Get room executed successfully
+2026-08-07 13:58:13 info: Get room started
+2026-08-07 13:58:13 info: Get room executed successfully
+2026-08-07 13:58:13 info: Get room started
+2026-08-07 13:58:13 info: Get room executed successfully
+2026-08-07 13:58:13 info: Remove broadcaster success
+2026-08-07 13:58:13 info: Handle disconnect succesfully
+2026-08-07 13:58:13 info: room:717cd25e-4b0d-4074-9235-184a4e2c7c87 room deleted successfully
