@@ -85,7 +85,12 @@ export default function ViewerPage() {
 
       log("Successfully connected.");
     } catch (err: any) {
-      log(`ERROR: ${err.message}`);
+       if (err.code === 'RATE_LIMITED') {
+        const seconds = Math.ceil((err.retryAt ?? 0) / 1000);
+        log(`ERROR: You're joining too fast. Try again in ${seconds}s.`);
+      } else {
+        log(`ERROR: ${err.message}`);
+      }
     }
   }
 

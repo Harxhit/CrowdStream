@@ -13,93 +13,105 @@ import Viewer from "../models/viewer.model";
 import LiveRoom from "../models/liveRoom.models";
 import { ipHash, userAgentHash } from "../utils/hash.util";
 import { heartBeat } from "../utils/roomCordinator";
+import { rateLimiter } from "../utils/rateLimitingBucket";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
   // Handles viewer joining a room and emitting router capabilties
   socket.on("joinRoom", async (roomId, ack) => {
-    try {
-      logger.info("Join as viewer listner started")
-      const viewerId = socket.data.user?.id
+      try {
+        logger.info("Join as viewer listner started")
+        const viewerId = socket.data.user?.id
 
-      const room = getRoom(roomId); 
-      if(!room){
+        const hashedIp = ipHash(socket)
+
+        const userRateLimit = await rateLimiter(viewerId, 'user', 'join', roomId)
+        if (!userRateLimit.allowed) {
+          logger.warn('Join rate limit exceeded (user)', { viewerId, roomId, retryAt: userRateLimit.retryAt })
+          ack({ success: false, code: 'RATE_LIMITED', retryAt: userRateLimit.retryAt })
+          return
+        }
+
+        const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'join', roomId)
+        if (!ipRateLimit.allowed) {
+          logger.warn('Join rate limit exceeded (ip)', { hashedIp, roomId, retryAt: ipRateLimit.retryAt })
+          ack({ success: false, code: 'RATE_LIMITED', retryAt: ipRateLimit.retryAt })
+          return
+        }
+
+        const room = getRoom(roomId); 
+        if(!room){
+          ack({
+            success:false, 
+            code: 'ROOM_NOT_FOUND'
+          })
+          return
+        }
+        const routerId = roomToRouter.get(roomId); 
+        if(!routerId){
+          logger.error('Router not found')
+          ack({
+            success:false, 
+            code: 'ROUTER_NOT_FOUND'
+          })
+          return
+        }
+        const router = getRouter(routerId)
+        const broadcasters = Array.from(room.broadcasters.entries()).map(
+          ([socketId, broadcaster]) => ({
+            socketId,
+            role: broadcaster.role,
+          })
+        );
+        socket.join(`room:${roomId}`)
+        socket.data.roomId = roomId;
+
+        await joinAsViewer(roomId, socket.id);
+        const rtpCapabilities = router.rtpCapabilities
         ack({
-          success:false, 
-          code: 'ROOM_NOT_FOUND'
+          success: true, 
+          data: {
+            rtpCapabilities, 
+            broadcasters
+          }
+        })
+
+        const userAgentHashed = userAgentHash(socket)
+
+        void Viewer.create({
+          roomId: roomId, 
+          viewerId: viewerId, 
+          socketId: socket.id, 
+          ipHash: hashedIp, 
+          userAgentHash: userAgentHashed
+        }).catch((error:any) => {
+          logger.error("Failed to persist live room", error);
+        })
+
+        void LiveRoom.updateOne(
+          { experienceRoomId: roomId },
+          {
+            $inc: {
+              totalViewersJoined: 1,
+            },
+          }
+        ).catch((error) => {
+          logger.error('Increasing peak viewer count failed', error);
+        });
+
+        logger.info('Join viewer listner successfully executed')
+      } catch (error) {
+        logger.error('Join viewer error',{
+          message:  (error as Error).message, 
+          stack  : (error as Error).stack
+        })
+
+        ack({
+          success: false,
+          code: 'RTP_CAPABILITES_ERROR'
         })
       }
-      
-      const routerId = roomToRouter.get(roomId); 
-      if(!routerId){
-        logger.error('Router not found')
-        ack({
-          success:false, 
-          code: 'ROUTER_NOT_FOUND'
-        })
-        throw new Error("Router not found")
-      }
-      const router = getRouter(routerId)
-      const broadcasters = Array.from(room.broadcasters.entries()).map(
-        ([socketId, broadcaster]) => ({
-          socketId,
-          role: broadcaster.role,
-        })
-      );
-      socket.join(`room:${roomId}`)
-      socket.data.roomId = roomId;
-
-      await joinAsViewer(roomId, socket.id);
-      
-      //Gets rtp capabilities
-      const rtpCapabilities = router.rtpCapabilities
-      ack({
-        success: true, 
-        data: {
-          rtpCapabilities, 
-          broadcasters
-        }
-      })
-      
-
-      const hashedIp = ipHash(socket)
-      const userAgentHashed = userAgentHash(socket)
-
-      void Viewer.create({
-        roomId: roomId, 
-        viewerId: viewerId, 
-        socketId: socket.id, 
-        ipHash: hashedIp, 
-        userAgentHash: userAgentHashed
-      }).catch((error:any) => {
-        logger.error("Failed to persist live room", error);
-      })
-
-      void LiveRoom.updateOne(
-        { experienceRoomId: roomId },
-        {
-          $inc: {
-            totalViewersJoined: 1,
-          },
-        }
-      ).catch((error) => {
-        logger.error('Increasing peak viewer count failed', error);
-      });
-
-      logger.info('Join viewer listner successfully executed')
-    } catch (error) {
-      logger.error('Join viewer error',{
-        message:  (error as Error).message, 
-        stack  : (error as Error).stack
-      })
-
-      ack({
-        success: false,
-        code: 'RTP_CAPABILITES_ERROR'
-      })
-    }
-  });
-
+    });
   socket.on(`viewer:heartBeat`, () => {
     const roomId = socket.data.roomId; 
     const socketId = socket.id; 
