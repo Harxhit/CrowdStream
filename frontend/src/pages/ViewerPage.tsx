@@ -1,16 +1,15 @@
 import { useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { X } from "lucide-react";
 
 import Viewer from "../viewer";
 
 import SystemLogs from "../components/broadcaster/SystemLogs";
 import ViewerVideo from "../components/viewer/ViewerVideo";
 import StreamInfo from "../components/viewer/StreamInfo";
-import ViewerControls from "../components/viewer/ViewerControls";
 import LiveChat from "../components/broadcaster/LiveChat";
 import ReactionOverlay from "../components/reactions/ReactionOverlay";
 import { startHeartBeat } from "../socket";
-
 
 interface Log {
   message: string;
@@ -30,8 +29,19 @@ export default function ViewerPage() {
 
   const [connected, setConnected] = useState(false);
 
-
   const [logs, setLogs] = useState<Log[]>([]);
+
+  // Same collapsible pattern as the broadcaster page — its own section
+  // under the video, capped height so a growing log list can't squeeze
+  // the video preview down.
+  const [logsOpen, setLogsOpen] = useState(false);
+
+  // Same panel pattern as the broadcaster page — closed by default,
+  // takes a real column in the flex layout when open so the video
+  // reflows around it instead of being covered.
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panel, setPanel] = useState<"info" | "chat">("chat");
+
   const log = (message: string) => {
     console.log(message);
 
@@ -43,9 +53,8 @@ export default function ViewerPage() {
       },
     ]);
   };
-  async function joinRoom(
-    e: React.FormEvent<HTMLFormElement>
-  ) {
+
+  async function joinRoom(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!roomId.trim()) return;
@@ -81,11 +90,11 @@ export default function ViewerPage() {
 
       setConnected(true);
 
-      startHeartBeat()
+      startHeartBeat();
 
       log("Successfully connected.");
     } catch (err: any) {
-       if (err.code === 'RATE_LIMITED') {
+      if (err.code === "RATE_LIMITED") {
         const seconds = Math.ceil((err.retryAt ?? 0) / 1000);
         log(`ERROR: You're joining too fast. Try again in ${seconds}s.`);
       } else {
@@ -135,60 +144,119 @@ export default function ViewerPage() {
     log("Disconnected.");
   }
 
+  function openPanel(tab: "info" | "chat") {
+    if (panelOpen && panel === tab) {
+      setPanelOpen(false);
+      return;
+    }
+    setPanel(tab);
+    setPanelOpen(true);
+  }
+
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
-      <div className="mx-auto max-w-7xl p-8">
-        <header className="mb-8 flex items-center justify-between">
-          <div>
-            <h1 className="text-4xl font-bold">
-              Crowd<span className="text-blue-500">Stream</span>
-            </h1>
+    <main className="flex h-screen flex-col overflow-hidden bg-[#0a0f0c] text-white">
+      {/* HEADER */}
+      <header className="flex shrink-0 items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-baseline gap-3">
+          <h1 className="text-lg font-semibold tracking-tight sm:text-xl">
+            Crowd<span className="text-[#3fcf9e]">Stream</span>
+          </h1>
+          <span className="hidden text-sm text-white/35 sm:inline">viewer</span>
+        </div>
 
-            <p className="mt-2 text-neutral-400">
-              Viewer Dashboard
-            </p>
-          </div>
+        <div className="flex items-center gap-2 text-sm">
+          <span
+            className={`h-2 w-2 rounded-full ${
+              connected ? "bg-[#ff5c5c] animate-pulse" : "bg-white/20"
+            }`}
+          />
+          <span className="text-white/60">{connected ? "Watching" : "Not connected"}</span>
+        </div>
+      </header>
 
-          {connected && (
-            <span className="rounded-full bg-red-600 px-4 py-2 text-sm font-semibold">
-              ● LIVE
-            </span>
-          )}
-        </header>
+      {/* BODY — flex row. Video is flex-1 so it genuinely resizes when the
+          panel opens, instead of the panel floating on top of it. */}
+      <div className="flex min-h-0 flex-1 gap-4 px-4 pb-4 sm:gap-5 sm:px-6 sm:pb-6 lg:gap-6 lg:px-8 lg:pb-8">
+        {/* LEFT: video + logs — shrinks smoothly as the panel width comes in */}
+        <div className="flex min-w-0 flex-1 flex-col gap-3 transition-all duration-300">
+          <ViewerVideo
+            videoRef={videoRef}
+            connected={connected}
+            roomId={roomId}
+            setRoomId={setRoomId}
+            onJoin={joinRoom}
+            onLeave={leaveRoom}
+            panelOpen={panelOpen}
+            panel={panel}
+            onOpenPanel={openPanel}
+          />
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {/* Left */}
+          <ReactionOverlay roomId={roomId} />
 
-          <div className="space-y-6 lg:col-span-2">
-            <ViewerVideo
-              videoRef={videoRef}
-              connected={connected}
-            />
-            <ReactionOverlay roomId={roomId} />
-
-            <ViewerControls
-              connected={connected}
-              roomId={roomId}
-              setRoomId={setRoomId}
-              onJoin={joinRoom}
-              onLeave={leaveRoom}
-            />
-            <SystemLogs
-              logs={logs}
-            />
-          </div>
-
-          {/* Right */}
-
-          <div className="space-y-6">
-            <StreamInfo
-              roomId={roomId}
-              connected={connected}
-            />
-
-            <LiveChat roomId={roomId}/>
+          {/*
+            SYSTEM LOGS — capped height with its own scroll so a growing log
+            list can't squeeze the video preview down toward zero height.
+          */}
+          <div className="shrink-0 rounded-xl bg-white/[0.03]">
+            <button
+              onClick={() => setLogsOpen((v) => !v)}
+              className="flex w-full items-center justify-between px-4 py-2.5 text-xs font-medium uppercase tracking-wide text-white/40"
+            >
+              System logs
+              <span className="text-white/25">{logsOpen ? "hide" : "show"}</span>
+            </button>
+            {logsOpen && (
+              <div className="max-h-48 overflow-y-auto border-t border-white/5">
+                <SystemLogs logs={logs} />
+              </div>
+            )}
           </div>
         </div>
+
+        {/* RIGHT: panel — only takes space in the layout when open, so video
+            reflows around it instead of being covered. */}
+        {panelOpen && (
+          <div className="flex w-full max-w-[360px] shrink-0 flex-col rounded-2xl bg-[#0f1512] ring-1 ring-white/10">
+            <div className="flex items-center justify-between border-b border-white/5 p-2">
+              <div className="flex flex-1 gap-1">
+                {(["info", "chat"] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setPanel(tab)}
+                    className={`flex-1 rounded-lg py-2 text-xs font-medium capitalize transition ${
+                      panel === tab
+                        ? "bg-[#3fcf9e]/15 text-[#3fcf9e]"
+                        : "text-white/40 hover:text-white/70"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={() => setPanelOpen(false)}
+                className="ml-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-white/40 hover:bg-white/5 hover:text-white/80"
+                aria-label="Close panel"
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            <div className="min-h-0 flex-1 overflow-y-auto">
+              {panel === "info" && (
+                <div className="p-4">
+                  <StreamInfo roomId={roomId} connected={connected} />
+                </div>
+              )}
+
+              {panel === "chat" && (
+                <div className="flex h-full flex-col">
+                  <LiveChat roomId={roomId} />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );

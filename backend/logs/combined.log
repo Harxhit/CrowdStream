@@ -20285,3 +20285,1348 @@
 2026-08-09 00:05:16 info: room:dd63fe5c-bd71-4fc9-953c-b3bb9871d4a4 room deleted successfully
 2026-08-09 00:05:16 info: User disconnected cj0ml6DlmD9Q2vMDAAAD beacuse of transport close
 2026-08-09 00:05:16 info: Handle disconnect started
+2026-08-12 17:16:28 info: Redis subscribers initialized
+2026-08-12 17:16:36 info: MongoDB connected
+2026-08-12 17:16:36 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-12 17:16:36 info: Creating worker started
+2026-08-12 17:16:36 info: Creating worker started
+2026-08-12 17:16:36 info: Creating worker started
+2026-08-12 17:16:36 info: Worker created successfully
+2026-08-12 17:16:36 info: Worker created successfully
+2026-08-12 17:16:36 info: Worker created successfully
+2026-08-12 17:16:36 info: Worker pool initialized
+2026-08-12 17:16:42 info: SignIn started
+2026-08-12 17:16:42 info: SignIn completed
+2026-08-12 17:16:42 info: [node-1] Client connected: ERwXqvxdBoEtwoPVAAAB
+2026-08-12 17:16:46 info: Create room started
+2026-08-12 17:16:46 info: Woker loads loaded successfully
+2026-08-12 17:16:46 info: Woker assigned succesfully
+2026-08-12 17:16:46 info: Creation of router started
+2026-08-12 17:16:46 info: Router created
+2026-08-12 17:16:46 info: Creation of room successfully executed
+2026-08-12 17:16:46 info: Get room started
+2026-08-12 17:16:46 info: Get room executed successfully
+2026-08-12 17:16:46 info: Broadcaster added to the room
+2026-08-12 17:16:46 info: Room created successfully
+2026-08-12 17:20:06 info: Create room started
+2026-08-12 17:20:06 info: Get room started
+2026-08-12 17:20:06 info: Get room executed successfully
+2026-08-12 17:20:06 info: Woker loads loaded successfully
+2026-08-12 17:20:06 info: Woker assigned succesfully
+2026-08-12 17:20:06 info: Creation of router started
+2026-08-12 17:20:06 info: Router created
+2026-08-12 17:20:06 info: Creation of room successfully executed
+2026-08-12 17:20:06 info: Get room started
+2026-08-12 17:20:06 info: Get room executed successfully
+2026-08-12 17:20:06 info: Broadcaster added to the room
+2026-08-12 17:20:06 info: Room created successfully
+2026-08-12 17:21:31 info: Create room started
+2026-08-12 17:21:31 info: Get room started
+2026-08-12 17:21:31 info: Get room executed successfully
+2026-08-12 17:21:31 info: Get room started
+2026-08-12 17:21:31 info: Get room executed successfully
+2026-08-12 17:21:31 info: Woker loads loaded successfully
+2026-08-12 17:21:31 info: Woker assigned succesfully
+2026-08-12 17:21:31 info: Creation of router started
+2026-08-12 17:21:31 info: Router created
+2026-08-12 17:21:31 info: Creation of room successfully executed
+2026-08-12 17:21:31 info: Get room started
+2026-08-12 17:21:31 info: Get room executed successfully
+2026-08-12 17:21:31 info: Broadcaster added to the room
+2026-08-12 17:21:31 info: Room created successfully
+2026-08-12 17:21:57 info: Create room started
+2026-08-12 17:21:57 info: Get room started
+2026-08-12 17:21:57 info: Get room executed successfully
+2026-08-12 17:21:57 info: Get room started
+2026-08-12 17:21:57 info: Get room executed successfully
+2026-08-12 17:21:57 info: Get room started
+2026-08-12 17:21:57 info: Get room executed successfully
+2026-08-12 17:21:57 info: Woker loads loaded successfully
+2026-08-12 17:21:57 info: Woker assigned succesfully
+2026-08-12 17:21:57 info: Creation of router started
+2026-08-12 17:21:57 info: Router created
+2026-08-12 17:21:57 info: Creation of room successfully executed
+2026-08-12 17:21:57 info: Get room started
+2026-08-12 17:21:57 info: Get room executed successfully
+2026-08-12 17:21:57 info: Broadcaster added to the room
+2026-08-12 17:21:57 info: Room created successfully
+2026-08-12 17:21:57 info: Get room started
+2026-08-12 17:21:57 info: Get room executed successfully
+2026-08-12 17:21:57 info: Rate limiting
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Get room started
+2026-08-12 17:21:58 info: Get room executed successfully
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Get room started
+2026-08-12 17:21:58 info: Get room executed successfully
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Get room started
+2026-08-12 17:21:58 info: Get room executed successfully
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Get room started
+2026-08-12 17:21:58 info: Get room executed successfully
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Get room started
+2026-08-12 17:21:58 info: Get room executed successfully
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:58 info: Rate limiting
+2026-08-12 17:21:59 info: Get room started
+2026-08-12 17:21:59 info: Get room executed successfully
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Get room started
+2026-08-12 17:21:59 info: Get room executed successfully
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Get room started
+2026-08-12 17:21:59 info: Get room executed successfully
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Get room started
+2026-08-12 17:21:59 info: Get room executed successfully
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Get room started
+2026-08-12 17:21:59 info: Get room executed successfully
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:21:59 info: Rate limiting
+2026-08-12 17:22:02 info: Get room started
+2026-08-12 17:22:02 info: Get room executed successfully
+2026-08-12 17:22:02 info: Rate limiting
+2026-08-12 17:22:02 info: Rate limiting
+2026-08-12 17:22:36 info: Create room started
+2026-08-12 17:22:36 info: Get room started
+2026-08-12 17:22:36 info: Get room executed successfully
+2026-08-12 17:22:36 info: Get room started
+2026-08-12 17:22:36 info: Get room executed successfully
+2026-08-12 17:22:36 info: Get room started
+2026-08-12 17:22:36 info: Get room executed successfully
+2026-08-12 17:22:36 info: Get room started
+2026-08-12 17:22:36 info: Get room executed successfully
+2026-08-12 17:22:36 info: Woker loads loaded successfully
+2026-08-12 17:22:36 info: Woker assigned succesfully
+2026-08-12 17:22:36 info: Creation of router started
+2026-08-12 17:22:36 info: Router created
+2026-08-12 17:22:36 info: Creation of room successfully executed
+2026-08-12 17:22:36 info: Get room started
+2026-08-12 17:22:36 info: Get room executed successfully
+2026-08-12 17:22:36 info: Broadcaster added to the room
+2026-08-12 17:22:36 info: Room created successfully
+2026-08-12 17:22:43 info: Create room started
+2026-08-12 17:22:43 info: Get room started
+2026-08-12 17:22:43 info: Get room executed successfully
+2026-08-12 17:22:43 info: Get room started
+2026-08-12 17:22:43 info: Get room executed successfully
+2026-08-12 17:22:43 info: Get room started
+2026-08-12 17:22:43 info: Get room executed successfully
+2026-08-12 17:22:43 info: Get room started
+2026-08-12 17:22:43 info: Get room executed successfully
+2026-08-12 17:22:43 info: Get room started
+2026-08-12 17:22:43 info: Get room executed successfully
+2026-08-12 17:22:43 info: Woker loads loaded successfully
+2026-08-12 17:22:43 info: Woker assigned succesfully
+2026-08-12 17:22:43 info: Creation of router started
+2026-08-12 17:22:43 info: Router created
+2026-08-12 17:22:43 info: Creation of room successfully executed
+2026-08-12 17:22:43 info: Get room started
+2026-08-12 17:22:43 info: Get room executed successfully
+2026-08-12 17:22:43 info: Broadcaster added to the room
+2026-08-12 17:22:43 info: Room created successfully
+2026-08-12 17:23:22 info: Create room started
+2026-08-12 17:23:22 info: Get room started
+2026-08-12 17:23:22 info: Get room executed successfully
+2026-08-12 17:23:22 info: Get room started
+2026-08-12 17:23:22 info: Get room executed successfully
+2026-08-12 17:23:22 info: Get room started
+2026-08-12 17:23:22 info: Get room executed successfully
+2026-08-12 17:23:22 info: Get room started
+2026-08-12 17:23:22 info: Get room executed successfully
+2026-08-12 17:23:22 info: Get room started
+2026-08-12 17:23:22 info: Get room executed successfully
+2026-08-12 17:23:22 info: Get room started
+2026-08-12 17:23:22 info: Get room executed successfully
+2026-08-12 17:23:22 info: Woker loads loaded successfully
+2026-08-12 17:23:22 info: Woker assigned succesfully
+2026-08-12 17:23:22 info: Creation of router started
+2026-08-12 17:23:22 info: Router created
+2026-08-12 17:23:22 info: Creation of room successfully executed
+2026-08-12 17:23:22 info: Get room started
+2026-08-12 17:23:22 info: Get room executed successfully
+2026-08-12 17:23:22 info: Broadcaster added to the room
+2026-08-12 17:23:22 info: Room created successfully
+2026-08-12 17:23:23 info: Create room started
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Woker loads loaded successfully
+2026-08-12 17:23:23 info: Woker assigned succesfully
+2026-08-12 17:23:23 info: Creation of router started
+2026-08-12 17:23:23 info: Router created
+2026-08-12 17:23:23 info: Creation of room successfully executed
+2026-08-12 17:23:23 info: Get room started
+2026-08-12 17:23:23 info: Get room executed successfully
+2026-08-12 17:23:23 info: Broadcaster added to the room
+2026-08-12 17:23:23 info: Room created successfully
+2026-08-12 17:23:24 info: Create room started
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Woker loads loaded successfully
+2026-08-12 17:23:24 info: Woker assigned succesfully
+2026-08-12 17:23:24 info: Creation of router started
+2026-08-12 17:23:24 info: Router created
+2026-08-12 17:23:24 info: Creation of room successfully executed
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Broadcaster added to the room
+2026-08-12 17:23:24 info: Room created successfully
+2026-08-12 17:23:24 info: Create room started
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Woker loads loaded successfully
+2026-08-12 17:23:24 info: Woker assigned succesfully
+2026-08-12 17:23:24 info: Creation of router started
+2026-08-12 17:23:24 info: Router created
+2026-08-12 17:23:24 info: Creation of room successfully executed
+2026-08-12 17:23:24 info: Get room started
+2026-08-12 17:23:24 info: Get room executed successfully
+2026-08-12 17:23:24 info: Broadcaster added to the room
+2026-08-12 17:23:24 info: Room created successfully
+2026-08-12 17:23:25 info: Create room started
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Woker loads loaded successfully
+2026-08-12 17:23:25 info: Woker assigned succesfully
+2026-08-12 17:23:25 info: Creation of router started
+2026-08-12 17:23:25 info: Router created
+2026-08-12 17:23:25 info: Creation of room successfully executed
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Broadcaster added to the room
+2026-08-12 17:23:25 info: Room created successfully
+2026-08-12 17:23:25 info: Create room started
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Woker loads loaded successfully
+2026-08-12 17:23:25 info: Woker assigned succesfully
+2026-08-12 17:23:25 info: Creation of router started
+2026-08-12 17:23:25 info: Router created
+2026-08-12 17:23:25 info: Creation of room successfully executed
+2026-08-12 17:23:25 info: Get room started
+2026-08-12 17:23:25 info: Get room executed successfully
+2026-08-12 17:23:25 info: Broadcaster added to the room
+2026-08-12 17:23:25 info: Room created successfully
+2026-08-12 17:23:55 info: Create room started
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Woker loads loaded successfully
+2026-08-12 17:23:55 info: Woker assigned succesfully
+2026-08-12 17:23:55 info: Creation of router started
+2026-08-12 17:23:55 info: Router created
+2026-08-12 17:23:55 info: Creation of room successfully executed
+2026-08-12 17:23:55 info: Get room started
+2026-08-12 17:23:55 info: Get room executed successfully
+2026-08-12 17:23:55 info: Broadcaster added to the room
+2026-08-12 17:23:55 info: Room created successfully
+2026-08-12 17:23:58 info: Get room started
+2026-08-12 17:23:58 info: Get room executed successfully
+2026-08-12 17:23:58 info: Rate limiting
+2026-08-12 17:23:58 info: Rate limiting
+2026-08-12 17:23:59 info: Get room started
+2026-08-12 17:23:59 info: Get room executed successfully
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Get room started
+2026-08-12 17:23:59 info: Get room executed successfully
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Get room started
+2026-08-12 17:23:59 info: Get room executed successfully
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Get room started
+2026-08-12 17:23:59 info: Get room executed successfully
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Get room started
+2026-08-12 17:23:59 info: Get room executed successfully
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:23:59 info: Rate limiting
+2026-08-12 17:24:00 info: Get room started
+2026-08-12 17:24:00 info: Get room executed successfully
+2026-08-12 17:24:00 info: Rate limiting
+2026-08-12 17:24:00 info: Rate limiting
+2026-08-12 17:24:00 info: Get room started
+2026-08-12 17:24:00 info: Get room executed successfully
+2026-08-12 17:24:00 info: Rate limiting
+2026-08-12 17:24:00 info: Rate limiting
+2026-08-12 17:24:01 info: Get room started
+2026-08-12 17:24:01 info: Get room executed successfully
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:01 info: Get room started
+2026-08-12 17:24:01 info: Get room executed successfully
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:01 info: Get room started
+2026-08-12 17:24:01 info: Get room executed successfully
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:01 info: Get room started
+2026-08-12 17:24:01 info: Get room executed successfully
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:01 info: Rate limiting
+2026-08-12 17:24:02 info: Get room started
+2026-08-12 17:24:02 info: Get room executed successfully
+2026-08-12 17:24:02 info: Rate limiting
+2026-08-12 17:24:02 info: Rate limiting
+2026-08-12 17:24:02 info: Get room started
+2026-08-12 17:24:02 info: Get room executed successfully
+2026-08-12 17:24:02 info: Rate limiting
+2026-08-12 17:24:02 info: Rate limiting
+2026-08-12 17:24:04 info: Get room started
+2026-08-12 17:24:04 info: Get room executed successfully
+2026-08-12 17:24:04 info: Rate limiting
+2026-08-12 17:24:04 info: Rate limiting
+2026-08-12 17:26:48 info: Create room started
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Woker loads loaded successfully
+2026-08-12 17:26:48 info: Woker assigned succesfully
+2026-08-12 17:26:48 info: Creation of router started
+2026-08-12 17:26:48 info: Router created
+2026-08-12 17:26:48 info: Creation of room successfully executed
+2026-08-12 17:26:48 info: Get room started
+2026-08-12 17:26:48 info: Get room executed successfully
+2026-08-12 17:26:48 info: Broadcaster added to the room
+2026-08-12 17:26:48 info: Room created successfully
+2026-08-12 17:27:27 info: Create room started
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Woker loads loaded successfully
+2026-08-12 17:27:27 info: Woker assigned succesfully
+2026-08-12 17:27:27 info: Creation of router started
+2026-08-12 17:27:27 info: Router created
+2026-08-12 17:27:27 info: Creation of room successfully executed
+2026-08-12 17:27:27 info: Get room started
+2026-08-12 17:27:27 info: Get room executed successfully
+2026-08-12 17:27:27 info: Broadcaster added to the room
+2026-08-12 17:27:27 info: Room created successfully
+2026-08-12 17:29:07 info: Create room started
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Woker loads loaded successfully
+2026-08-12 17:29:07 info: Woker assigned succesfully
+2026-08-12 17:29:07 info: Creation of router started
+2026-08-12 17:29:07 info: Router created
+2026-08-12 17:29:07 info: Creation of room successfully executed
+2026-08-12 17:29:07 info: Get room started
+2026-08-12 17:29:07 info: Get room executed successfully
+2026-08-12 17:29:07 info: Broadcaster added to the room
+2026-08-12 17:29:07 info: Room created successfully
+2026-08-12 17:30:31 info: Create room started
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Woker loads loaded successfully
+2026-08-12 17:30:31 info: Woker assigned succesfully
+2026-08-12 17:30:31 info: Creation of router started
+2026-08-12 17:30:31 info: Router created
+2026-08-12 17:30:31 info: Creation of room successfully executed
+2026-08-12 17:30:31 info: Get room started
+2026-08-12 17:30:31 info: Get room executed successfully
+2026-08-12 17:30:31 info: Broadcaster added to the room
+2026-08-12 17:30:31 info: Room created successfully
+2026-08-12 17:32:19 info: Create room started
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Woker loads loaded successfully
+2026-08-12 17:32:19 info: Woker assigned succesfully
+2026-08-12 17:32:19 info: Creation of router started
+2026-08-12 17:32:19 info: Router created
+2026-08-12 17:32:19 info: Creation of room successfully executed
+2026-08-12 17:32:19 info: Get room started
+2026-08-12 17:32:19 info: Get room executed successfully
+2026-08-12 17:32:19 info: Broadcaster added to the room
+2026-08-12 17:32:19 info: Room created successfully
+2026-08-12 17:34:59 info: Create room started
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Woker loads loaded successfully
+2026-08-12 17:34:59 info: Woker assigned succesfully
+2026-08-12 17:34:59 info: Creation of router started
+2026-08-12 17:34:59 info: Router created
+2026-08-12 17:34:59 info: Creation of room successfully executed
+2026-08-12 17:34:59 info: Get room started
+2026-08-12 17:34:59 info: Get room executed successfully
+2026-08-12 17:34:59 info: Broadcaster added to the room
+2026-08-12 17:34:59 info: Room created successfully
+2026-08-12 17:35:05 info: Get room started
+2026-08-12 17:35:05 info: Get room executed successfully
+2026-08-12 17:35:05 info: Rate limiting
+2026-08-12 17:35:05 info: Rate limiting
+2026-08-12 17:35:06 info: Get room started
+2026-08-12 17:35:06 info: Get room executed successfully
+2026-08-12 17:35:06 info: Rate limiting
+2026-08-12 17:35:06 info: Rate limiting
+2026-08-12 17:35:06 info: Get room started
+2026-08-12 17:35:06 info: Get room executed successfully
+2026-08-12 17:35:06 info: Rate limiting
+2026-08-12 17:35:06 info: Rate limiting
+2026-08-12 17:35:07 info: Get room started
+2026-08-12 17:35:07 info: Get room executed successfully
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Get room started
+2026-08-12 17:35:07 info: Get room executed successfully
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Get room started
+2026-08-12 17:35:07 info: Get room executed successfully
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Get room started
+2026-08-12 17:35:07 info: Get room executed successfully
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Get room started
+2026-08-12 17:35:07 info: Get room executed successfully
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Get room started
+2026-08-12 17:35:07 info: Get room executed successfully
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Get room started
+2026-08-12 17:35:07 info: Get room executed successfully
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:07 info: Rate limiting
+2026-08-12 17:35:08 info: Get room started
+2026-08-12 17:35:08 info: Get room executed successfully
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Get room started
+2026-08-12 17:35:08 info: Get room executed successfully
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Get room started
+2026-08-12 17:35:08 info: Get room executed successfully
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Get room started
+2026-08-12 17:35:08 info: Get room executed successfully
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Get room started
+2026-08-12 17:35:08 info: Get room executed successfully
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Get room started
+2026-08-12 17:35:08 info: Get room executed successfully
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:08 info: Rate limiting
+2026-08-12 17:35:09 info: Get room started
+2026-08-12 17:35:09 info: Get room executed successfully
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Get room started
+2026-08-12 17:35:09 info: Get room executed successfully
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Get room started
+2026-08-12 17:35:09 info: Get room executed successfully
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Get room started
+2026-08-12 17:35:09 info: Get room executed successfully
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Get room started
+2026-08-12 17:35:09 info: Get room executed successfully
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Get room started
+2026-08-12 17:35:09 info: Get room executed successfully
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:09 info: Rate limiting
+2026-08-12 17:35:10 info: Get room started
+2026-08-12 17:35:10 info: Get room executed successfully
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Get room started
+2026-08-12 17:35:10 info: Get room executed successfully
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Get room started
+2026-08-12 17:35:10 info: Get room executed successfully
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Get room started
+2026-08-12 17:35:10 info: Get room executed successfully
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Get room started
+2026-08-12 17:35:10 info: Get room executed successfully
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:10 info: Rate limiting
+2026-08-12 17:35:11 info: Get room started
+2026-08-12 17:35:11 info: Get room executed successfully
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Get room started
+2026-08-12 17:35:11 info: Get room executed successfully
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Get room started
+2026-08-12 17:35:11 info: Get room executed successfully
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Get room started
+2026-08-12 17:35:11 info: Get room executed successfully
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Get room started
+2026-08-12 17:35:11 info: Get room executed successfully
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:11 info: Rate limiting
+2026-08-12 17:35:12 info: Get room started
+2026-08-12 17:35:12 info: Get room executed successfully
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Get room started
+2026-08-12 17:35:12 info: Get room executed successfully
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Get room started
+2026-08-12 17:35:12 info: Get room executed successfully
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Get room started
+2026-08-12 17:35:12 info: Get room executed successfully
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Get room started
+2026-08-12 17:35:12 info: Get room executed successfully
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:12 info: Rate limiting
+2026-08-12 17:35:13 info: Get room started
+2026-08-12 17:35:13 info: Get room executed successfully
+2026-08-12 17:35:13 info: Rate limiting
+2026-08-12 17:35:13 info: Rate limiting
+2026-08-12 17:35:13 info: Get room started
+2026-08-12 17:35:13 info: Get room executed successfully
+2026-08-12 17:35:13 info: Rate limiting
+2026-08-12 17:35:13 info: Rate limiting
+2026-08-12 17:35:13 info: Get room started
+2026-08-12 17:35:13 info: Get room executed successfully
+2026-08-12 17:35:13 info: Rate limiting
+2026-08-12 17:35:13 info: Rate limiting
+2026-08-12 17:35:14 info: Get room started
+2026-08-12 17:35:14 info: Get room executed successfully
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:14 info: Get room started
+2026-08-12 17:35:14 info: Get room executed successfully
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:14 info: Get room started
+2026-08-12 17:35:14 info: Get room executed successfully
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:14 info: Get room started
+2026-08-12 17:35:14 info: Get room executed successfully
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:14 info: Rate limiting
+2026-08-12 17:35:52 info: Create room started
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Woker loads loaded successfully
+2026-08-12 17:35:52 info: Woker assigned succesfully
+2026-08-12 17:35:52 info: Creation of router started
+2026-08-12 17:35:52 info: Router created
+2026-08-12 17:35:52 info: Creation of room successfully executed
+2026-08-12 17:35:52 info: Get room started
+2026-08-12 17:35:52 info: Get room executed successfully
+2026-08-12 17:35:52 info: Broadcaster added to the room
+2026-08-12 17:35:52 info: Room created successfully
+2026-08-12 17:35:58 info: Get room started
+2026-08-12 17:35:58 info: Get room executed successfully
+2026-08-12 17:35:58 info: Rate limiting
+2026-08-12 17:35:58 info: Rate limiting
+2026-08-12 17:36:35 info: Create room started
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Woker loads loaded successfully
+2026-08-12 17:36:35 info: Woker assigned succesfully
+2026-08-12 17:36:35 info: Creation of router started
+2026-08-12 17:36:35 info: Router created
+2026-08-12 17:36:35 info: Creation of room successfully executed
+2026-08-12 17:36:35 info: Get room started
+2026-08-12 17:36:35 info: Get room executed successfully
+2026-08-12 17:36:35 info: Broadcaster added to the room
+2026-08-12 17:36:35 info: Room created successfully
+2026-08-12 17:40:27 info: Create room started
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Woker loads loaded successfully
+2026-08-12 17:40:27 info: Woker assigned succesfully
+2026-08-12 17:40:27 info: Creation of router started
+2026-08-12 17:40:27 info: Router created
+2026-08-12 17:40:27 info: Creation of room successfully executed
+2026-08-12 17:40:27 info: Get room started
+2026-08-12 17:40:27 info: Get room executed successfully
+2026-08-12 17:40:27 info: Broadcaster added to the room
+2026-08-12 17:40:27 info: Room created successfully
+2026-08-12 17:40:55 info: SignUp started
+2026-08-12 17:40:56 info: SignUp completed
+2026-08-12 17:40:56 info: [node-1] Client connected: KVetIEz32U6gYYNzAAAD
+2026-08-12 17:42:01 info: Join as viewer listner started
+2026-08-12 17:42:01 info: Rate limiting
+2026-08-12 17:42:01 info: Rate limiting
+2026-08-12 17:42:01 info: Get room started
+2026-08-12 17:42:01 info: Get room executed successfully
+2026-08-12 17:42:01 info: Fetching of router started
+2026-08-12 17:42:01 info: Fetching of router executed successfully
+2026-08-12 17:42:01 info: Get room started
+2026-08-12 17:42:01 info: Get room executed successfully
+2026-08-12 17:42:01 info: Viewer joined the room
+2026-08-12 17:42:01 info: Join viewer listner successfully executed
+2026-08-12 17:42:03 info: Join as viewer listner started
+2026-08-12 17:42:03 info: Rate limiting
+2026-08-12 17:42:03 info: Rate limiting
+2026-08-12 17:42:03 info: Get room started
+2026-08-12 17:42:03 info: Get room executed successfully
+2026-08-12 17:42:03 info: Fetching of router started
+2026-08-12 17:42:03 info: Fetching of router executed successfully
+2026-08-12 17:42:03 info: Get room started
+2026-08-12 17:42:03 info: Get room executed successfully
+2026-08-12 17:42:03 info: Viewer joined the room
+2026-08-12 17:42:03 info: Join viewer listner successfully executed
+2026-08-12 17:42:21 info: Get room started
+2026-08-12 17:42:21 info: Get room executed successfully
+2026-08-12 17:42:23 info: Get room started
+2026-08-12 17:42:23 info: Get room executed successfully
+2026-08-12 17:42:29 info: Join as viewer listner started
+2026-08-12 17:42:29 info: Rate limiting
+2026-08-12 17:42:29 info: Rate limiting
+2026-08-12 17:42:29 info: Get room started
+2026-08-12 17:42:29 info: Get room executed successfully
+2026-08-12 17:42:29 info: Fetching of router started
+2026-08-12 17:42:29 info: Fetching of router executed successfully
+2026-08-12 17:42:29 info: Get room started
+2026-08-12 17:42:29 info: Get room executed successfully
+2026-08-12 17:42:29 info: Viewer joined the room
+2026-08-12 17:42:29 info: Join viewer listner successfully executed
+2026-08-12 17:42:40 info: Join as viewer listner started
+2026-08-12 17:42:40 info: Rate limiting
+2026-08-12 17:42:40 info: Rate limiting
+2026-08-12 17:42:40 info: Get room started
+2026-08-12 17:42:40 info: Get room executed successfully
+2026-08-12 17:42:40 info: Fetching of router started
+2026-08-12 17:42:40 info: Fetching of router executed successfully
+2026-08-12 17:42:40 info: Get room started
+2026-08-12 17:42:40 info: Get room executed successfully
+2026-08-12 17:42:40 info: Viewer joined the room
+2026-08-12 17:42:40 info: Join viewer listner successfully executed
+2026-08-12 17:42:41 info: Get room started
+2026-08-12 17:42:41 info: Get room executed successfully
+2026-08-12 17:42:41 info: Join as viewer listner started
+2026-08-12 17:42:41 info: Rate limiting
+2026-08-12 17:42:41 info: Rate limiting
+2026-08-12 17:42:41 info: Get room started
+2026-08-12 17:42:41 info: Get room executed successfully
+2026-08-12 17:42:41 info: Fetching of router started
+2026-08-12 17:42:41 info: Fetching of router executed successfully
+2026-08-12 17:42:41 info: Get room started
+2026-08-12 17:42:41 info: Get room executed successfully
+2026-08-12 17:42:41 info: Viewer joined the room
+2026-08-12 17:42:41 info: Join viewer listner successfully executed
+2026-08-12 17:42:43 info: Join as viewer listner started
+2026-08-12 17:42:43 info: Rate limiting
+2026-08-12 17:42:43 info: Rate limiting
+2026-08-12 17:42:43 info: Get room started
+2026-08-12 17:42:43 info: Get room executed successfully
+2026-08-12 17:42:43 info: Fetching of router started
+2026-08-12 17:42:43 info: Fetching of router executed successfully
+2026-08-12 17:42:43 info: Get room started
+2026-08-12 17:42:43 info: Get room executed successfully
+2026-08-12 17:42:43 info: Viewer joined the room
+2026-08-12 17:42:43 info: Join viewer listner successfully executed
+2026-08-12 17:42:43 info: Get room started
+2026-08-12 17:42:43 info: Get room executed successfully
+2026-08-12 17:42:49 info: Get room started
+2026-08-12 17:42:49 info: Get room executed successfully
+2026-08-12 17:43:00 info: Get room started
+2026-08-12 17:43:00 info: Get room executed successfully
+2026-08-12 17:43:01 info: Get room started
+2026-08-12 17:43:01 info: Get room executed successfully
+2026-08-12 17:43:01 info: Get room started
+2026-08-12 17:43:01 info: Get room executed successfully
+2026-08-12 17:43:03 info: Get room started
+2026-08-12 17:43:03 info: Get room executed successfully
+2026-08-12 17:43:03 info: Get room started
+2026-08-12 17:43:03 info: Get room executed successfully
+2026-08-12 17:43:05 info: Join as viewer listner started
+2026-08-12 17:43:05 info: Rate limiting
+2026-08-12 17:43:05 info: Rate limiting
+2026-08-12 17:43:05 info: Get room started
+2026-08-12 17:43:05 info: Get room executed successfully
+2026-08-12 17:43:05 info: Fetching of router started
+2026-08-12 17:43:05 info: Fetching of router executed successfully
+2026-08-12 17:43:05 info: Get room started
+2026-08-12 17:43:05 info: Get room executed successfully
+2026-08-12 17:43:05 info: Viewer joined the room
+2026-08-12 17:43:05 info: Join viewer listner successfully executed
+2026-08-12 17:43:07 info: Join as viewer listner started
+2026-08-12 17:43:07 info: Rate limiting
+2026-08-12 17:43:07 info: Rate limiting
+2026-08-12 17:43:07 info: Get room started
+2026-08-12 17:43:07 info: Get room executed successfully
+2026-08-12 17:43:07 info: Fetching of router started
+2026-08-12 17:43:07 info: Fetching of router executed successfully
+2026-08-12 17:43:07 info: Get room started
+2026-08-12 17:43:07 info: Get room executed successfully
+2026-08-12 17:43:07 info: Viewer joined the room
+2026-08-12 17:43:07 info: Join viewer listner successfully executed
+2026-08-12 17:43:09 info: Get room started
+2026-08-12 17:43:09 info: Get room executed successfully
+2026-08-12 17:43:20 info: Get room started
+2026-08-12 17:43:20 info: Get room executed successfully
+2026-08-12 17:43:21 info: Get room started
+2026-08-12 17:43:21 info: Get room executed successfully
+2026-08-12 17:43:21 info: Get room started
+2026-08-12 17:43:21 info: Get room executed successfully
+2026-08-12 17:43:23 info: Get room started
+2026-08-12 17:43:23 info: Get room executed successfully
+2026-08-12 17:43:24 info: Get room started
+2026-08-12 17:43:24 info: Get room executed successfully
+2026-08-12 17:43:25 info: Get room started
+2026-08-12 17:43:25 info: Get room executed successfully
+2026-08-12 17:43:27 info: Get room started
+2026-08-12 17:43:27 info: Get room executed successfully
+2026-08-12 17:43:29 info: Get room started
+2026-08-12 17:43:29 info: Get room executed successfully
+2026-08-12 17:43:40 info: Get room started
+2026-08-12 17:43:40 info: Get room executed successfully
+2026-08-12 17:43:41 info: Get room started
+2026-08-12 17:43:41 info: Get room executed successfully
+2026-08-12 17:43:41 info: Get room started
+2026-08-12 17:43:41 info: Get room executed successfully
+2026-08-12 17:43:43 info: Get room started
+2026-08-12 17:43:43 info: Get room executed successfully
+2026-08-12 17:43:44 info: Get room started
+2026-08-12 17:43:44 info: Get room executed successfully
+2026-08-12 17:43:45 info: Get room started
+2026-08-12 17:43:45 info: Get room executed successfully
+2026-08-12 17:43:47 info: Get room started
+2026-08-12 17:43:47 info: Get room executed successfully
+2026-08-12 17:43:49 info: Get room started
+2026-08-12 17:43:49 info: Get room executed successfully
+2026-08-12 17:43:57 info: User disconnected KVetIEz32U6gYYNzAAAD beacuse of transport close
+2026-08-12 17:43:57 info: Handle disconnect started
+2026-08-12 17:43:57 info: Get room started
+2026-08-12 17:43:57 info: Get room executed successfully
+2026-08-12 17:43:57 info: Get room started
+2026-08-12 17:43:57 info: Get room executed successfully
+2026-08-12 17:43:57 info: Remove viewer started
+2026-08-12 17:43:57 info: Handle disconnect succesfully
+2026-08-12 17:43:57 info: Viewer removed from room
+2026-08-12 17:47:18 info: User disconnected ERwXqvxdBoEtwoPVAAAB beacuse of client namespace disconnect
+2026-08-12 17:47:18 info: Handle disconnect started
+2026-08-12 17:47:18 info: Get room started
+2026-08-12 17:47:18 info: Get room executed successfully
+2026-08-12 17:47:18 info: Get room started
+2026-08-12 17:47:18 info: Get room executed successfully
+2026-08-12 17:47:18 info: Get room started
+2026-08-12 17:47:18 info: Get room executed successfully
+2026-08-12 17:47:18 info: Remove broadcaster success
+2026-08-12 17:47:18 info: Handle disconnect succesfully
+2026-08-12 17:47:18 info: room:610eef57-84d6-4b66-a6bf-cf18c07df367 room deleted successfully
+2026-08-12 17:47:19 info: [node-1] Client connected: flARHfBnUWbtirHZAAAF
+2026-08-12 17:47:20 info: User disconnected flARHfBnUWbtirHZAAAF beacuse of client namespace disconnect
+2026-08-12 17:47:20 info: Handle disconnect started
+2026-08-12 17:47:20 error: RoomId not found
+2026-08-12 17:47:20 warn: IDK
+2026-08-12 17:47:22 info: [node-1] Client connected: nPcu2LimUwhgFz65AAAH
+2026-08-12 17:47:24 info: User disconnected nPcu2LimUwhgFz65AAAH beacuse of transport close
+2026-08-12 17:47:24 info: Handle disconnect started
+2026-08-12 17:47:24 error: RoomId not found
+2026-08-12 17:47:24 warn: IDK
+2026-08-12 17:47:44 info: [node-1] Client connected: utBZO5Hyb9D_RSnHAAAJ
+2026-08-12 17:47:52 info: User disconnected utBZO5Hyb9D_RSnHAAAJ beacuse of transport close
+2026-08-12 17:47:52 info: Handle disconnect started
+2026-08-12 17:47:52 error: RoomId not found
+2026-08-12 17:47:52 warn: IDK
+2026-08-12 17:47:55 info: SignIn started
+2026-08-12 17:47:56 info: SignIn completed
+2026-08-12 17:47:56 info: [node-1] Client connected: ThaHSye4vs9K8ZHxAAAL
+2026-08-12 17:48:43 info: User disconnected ThaHSye4vs9K8ZHxAAAL beacuse of transport close
+2026-08-12 17:48:43 info: Handle disconnect started
+2026-08-12 17:48:43 error: RoomId not found
+2026-08-12 17:48:43 warn: IDK
+2026-08-12 17:48:43 info: [node-1] Client connected: FLBnA_rLf1eksaB0AAAN
+2026-08-12 17:48:45 info: User disconnected FLBnA_rLf1eksaB0AAAN beacuse of client namespace disconnect
+2026-08-12 17:48:45 info: Handle disconnect started
+2026-08-12 17:48:45 error: RoomId not found
+2026-08-12 17:48:45 warn: IDK
+2026-08-12 17:48:47 info: SignIn started
+2026-08-12 17:48:48 info: SignIn completed
+2026-08-12 17:48:48 info: [node-1] Client connected: 7qBQRlcC3w_pgx4wAAAP
+2026-08-12 17:48:58 info: User disconnected 7qBQRlcC3w_pgx4wAAAP beacuse of transport close
+2026-08-12 17:48:58 info: Handle disconnect started
+2026-08-12 17:48:58 error: RoomId not found
+2026-08-12 17:48:58 warn: IDK
+2026-08-12 17:49:01 info: SignIn started
+2026-08-12 17:49:01 info: SignIn completed
+2026-08-12 17:49:01 info: [node-1] Client connected: CWxI2CUm7Q1GSQmJAAAR
+2026-08-12 17:49:24 info: User disconnected CWxI2CUm7Q1GSQmJAAAR beacuse of client namespace disconnect
+2026-08-12 17:49:24 info: Handle disconnect started
+2026-08-12 17:49:24 error: RoomId not found
+2026-08-12 17:49:24 warn: IDK
+2026-08-12 17:50:33 info: SignIn started
+2026-08-12 17:50:33 info: SignIn completed
+2026-08-12 17:50:33 info: [node-1] Client connected: FOg1-yixh-8jZraKAAAT
+2026-08-12 17:50:56 warn: MongoDB disconnected
+2026-08-12 17:50:56 error: MongoNetworkError: read ECONNRESET
+    at Connection.onSocketError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection.ts:308:18)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-08-12 17:50:58 error: Database connection is not open
+2026-08-12 17:51:00 error: Database connection is not open
+2026-08-12 17:51:00 info: User disconnected FOg1-yixh-8jZraKAAAT beacuse of transport close
+2026-08-12 17:51:00 info: Handle disconnect started
+2026-08-12 17:51:00 error: RoomId not found
+2026-08-12 17:51:02 error: Database connection is not open
+2026-08-12 17:51:04 error: Database connection is not open
+2026-08-12 17:51:06 error: Database connection is not open
+2026-08-12 17:51:08 info: MongoDB connected
+2026-08-12 17:51:17 warn: MongoDB disconnected
+2026-08-12 17:51:17 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "read ECONNRESET"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Server.handleError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:410:9)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:677:21
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-12 17:51:17 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "read ECONNRESET"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Server.handleError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:410:9)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:677:21
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-12 17:51:17 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "read ECONNRESET"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Server.handleError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:410:9)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:677:21
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-12 17:51:19 error: Database connection is not open
+2026-08-12 17:51:21 error: Database connection is not open
+2026-08-12 17:51:23 error: Database connection is not open
+2026-08-12 17:51:25 error: Database connection is not open
+2026-08-12 17:51:27 error: Database connection is not open
+2026-08-12 17:51:29 error: Database connection is not open
+2026-08-12 17:51:31 error: Database connection is not open
+2026-08-12 17:51:33 error: Database connection is not open
+2026-08-12 17:51:35 error: Database connection is not open
+2026-08-12 17:51:40 info: MongoDB connected
+2026-08-12 17:52:03 error: Database connection is not open
+2026-08-12 17:52:05 error: Database connection is not open
+2026-08-12 17:52:07 error: Database connection is not open
+2026-08-12 17:52:09 error: Database connection is not open
+2026-08-12 17:52:10 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 30456ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-12 17:52:11 error: Database connection is not open
+2026-08-12 17:52:13 error: Database connection is not open
+2026-08-12 17:52:15 error: Database connection is not open
+2026-08-12 17:52:17 error: Database connection is not open
+2026-08-12 17:52:19 error: Database connection is not open
+2026-08-12 17:52:20 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "connection <monitor> to 159.41.206.112:27017 timed out"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Monitor.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:185:65)
+    at Monitor.emit (node:events:509:20)
+    at onHeartbeatFailed (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/monitor.ts:291:13)
+2026-08-12 17:52:21 error: Database connection is not open
+2026-08-12 17:52:23 error: Database connection is not open
+2026-08-12 17:52:25 error: Database connection is not open
+2026-08-12 17:52:27 error: Database connection is not open
+2026-08-12 17:52:29 error: Database connection is not open
+2026-08-12 17:52:30 error: MongoNetworkError: getaddrinfo EAI_AGAIN ac-v00shv2-shard-00-01.eplgdfn.mongodb.net
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:395:16)
+    at Object.onceWrapper (node:events:631:12)
+    at TLSSocket.emit (node:events:509:20)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-08-12 17:52:30 error: MongoNetworkError: getaddrinfo EAI_AGAIN ac-v00shv2-shard-00-01.eplgdfn.mongodb.net
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:395:16)
+    at Object.onceWrapper (node:events:631:12)
+    at TLSSocket.emit (node:events:509:20)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-08-12 17:52:31 error: Database connection is not open
+2026-08-12 17:52:33 error: Database connection is not open
+2026-08-12 17:52:35 error: Database connection is not open
+2026-08-12 17:52:37 error: Database connection is not open
+2026-08-12 17:52:39 error: Database connection is not open
+2026-08-12 17:52:41 error: Database connection is not open
+2026-08-12 17:52:43 error: Database connection is not open
+2026-08-12 17:52:45 error: Database connection is not open
+2026-08-12 17:52:47 error: Database connection is not open
+2026-08-12 17:52:49 error: Database connection is not open
+2026-08-12 17:52:51 error: Database connection is not open
+2026-08-12 17:52:53 error: Database connection is not open
+2026-08-12 17:52:55 error: Database connection is not open
+2026-08-12 17:52:57 error: Database connection is not open
+2026-08-12 17:52:59 error: Database connection is not open
+2026-08-12 17:53:01 error: Database connection is not open
+2026-08-12 17:53:03 error: Database connection is not open
+2026-08-12 17:53:05 error: Database connection is not open
+2026-08-12 17:53:07 error: Database connection is not open
+2026-08-12 17:53:09 error: Database connection is not open
+2026-08-12 17:53:11 error: Database connection is not open
+2026-08-12 17:53:13 error: Database connection is not open
+2026-08-12 17:53:15 error: Database connection is not open
+2026-08-12 17:53:17 error: Database connection is not open
+2026-08-12 17:53:19 error: Database connection is not open
+2026-08-12 17:53:21 error: Database connection is not open
+2026-08-12 17:53:23 error: Database connection is not open
+2026-08-12 17:53:25 error: Database connection is not open
+2026-08-12 17:53:27 error: Database connection is not open
+2026-08-12 17:53:29 error: Database connection is not open
+2026-08-12 17:53:31 error: Database connection is not open
+2026-08-12 17:53:33 error: Database connection is not open
+2026-08-12 17:53:35 error: Database connection is not open
+2026-08-12 17:53:37 error: Database connection is not open
+2026-08-12 17:53:39 error: Database connection is not open
+2026-08-12 17:53:41 error: Database connection is not open
+2026-08-12 17:53:43 error: Database connection is not open
+2026-08-12 17:53:45 error: Database connection is not open
+2026-08-12 17:53:47 error: Database connection is not open
+2026-08-12 17:53:49 error: Database connection is not open
+2026-08-12 17:53:51 error: Database connection is not open
+2026-08-12 17:53:53 error: Database connection is not open
+2026-08-12 17:53:55 error: Database connection is not open
+2026-08-12 17:53:57 error: Database connection is not open
+2026-08-12 17:53:59 error: Database connection is not open
+2026-08-12 17:54:06 warn: MongoDB disconnected
+2026-08-12 17:54:10 info: MongoDB connected

@@ -1,28 +1,15 @@
-import {
-  Users,
-  Radio,
-  Wifi,
-  Hash,
-  User,
-} from "lucide-react";
+import { Users, Radio, Wifi, Hash, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getSocket } from "../../socket";
-
 
 interface StreamInfoProps {
   roomId: string;
   connected: boolean;
 }
 
-export default function StreamInfo({
-
-  roomId,
-  connected,
-}: StreamInfoProps) {
-
-  const socket = getSocket(); 
-  const [viewers , setViewers] = useState(0)
-
+export default function StreamInfo({ roomId, connected }: StreamInfoProps) {
+  const socket = getSocket();
+  const [viewers, setViewers] = useState(0);
 
   useEffect(() => {
     const handlePresence = (count: number) => {
@@ -41,68 +28,31 @@ export default function StreamInfo({
   }, [socket, roomId, connected]);
 
   return (
-    <section className="rounded-2xl border border-neutral-800 bg-neutral-900 shadow-lg">
-      <div className="border-b border-neutral-800 px-6 py-4">
-        <h2 className="text-lg font-semibold">
-          Stream Information
-        </h2>
+    <div className="space-y-2">
+      <InfoRow
+        icon={<Hash size={16} />}
+        label="Room ID"
+        value={roomId.length > 0 ? roomId : "Not connected"}
+      />
 
-        <p className="mt-1 text-sm text-neutral-400">
-          Current stream details
-        </p>
-      </div>
+      <InfoRow icon={<User size={16} />} label="Host" value="Unknown" />
 
-      <div className="space-y-4 p-6">
+      <InfoRow icon={<Users size={16} />} label="Viewers" value={viewers.toString()} />
 
-        <InfoRow
-          icon={<Hash className="h-5 w-5" />}
-          label="Room ID"
-          value={
-            roomId.length > 0
-              ? roomId
-              : "Not Connected"
-          }
-        />
+      <InfoRow
+        icon={<Radio size={16} />}
+        label="Status"
+        value={connected ? "LIVE" : "OFFLINE"}
+        valueColor={connected ? "text-[#ff5c5c]" : "text-white/40"}
+      />
 
-        <InfoRow
-          icon={<User className="h-5 w-5" />}
-          label="Host"
-          value="Unknown"
-        />
-
-        <InfoRow
-          icon={<Users className="h-5 w-5" />}
-          label="Viewers"
-          value={viewers.toString()}
-        />
-
-        <InfoRow
-          icon={<Radio className="h-5 w-5" />}
-          label="Status"
-          value={connected ? "LIVE" : "OFFLINE"}
-          valueColor={
-            connected
-              ? "text-red-400"
-              : "text-neutral-400"
-          }
-        />
-
-        <InfoRow
-          icon={<Wifi className="h-5 w-5" />}
-          label="Connection"
-          value={
-            connected
-              ? "Connected"
-              : "Waiting"
-          }
-          valueColor={
-            connected
-              ? "text-green-400"
-              : "text-neutral-400"
-          }
-        />
-      </div>
-    </section>
+      <InfoRow
+        icon={<Wifi size={16} />}
+        label="Connection"
+        value={connected ? "Connected" : "Waiting"}
+        valueColor={connected ? "text-[#3fcf9e]" : "text-white/40"}
+      />
+    </div>
   );
 }
 
@@ -113,27 +63,15 @@ interface InfoRowProps {
   valueColor?: string;
 }
 
-function InfoRow({
-  icon,
-  label,
-  value,
-  valueColor = "text-white",
-}: InfoRowProps) {
+function InfoRow({ icon, label, value, valueColor = "text-white/85" }: InfoRowProps) {
   return (
-    <div className="flex items-center justify-between rounded-xl bg-neutral-950 px-4 py-3">
-      <div className="flex items-center gap-3">
-        <div className="text-blue-400">
-          {icon}
-        </div>
-
-        <span className="text-neutral-300">
-          {label}
-        </span>
+    <div className="flex items-center justify-between rounded-xl bg-white/[0.03] px-3.5 py-2.5">
+      <div className="flex items-center gap-2.5">
+        <div className="text-[#3fcf9e]">{icon}</div>
+        <span className="text-sm text-white/50">{label}</span>
       </div>
 
-      <span
-        className={`max-w-[170px] truncate text-right font-semibold ${valueColor}`}
-      >
+      <span className={`max-w-[150px] truncate text-right text-sm font-medium ${valueColor}`}>
         {value}
       </span>
     </div>

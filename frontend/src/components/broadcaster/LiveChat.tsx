@@ -117,53 +117,43 @@ export default function LiveChat({ roomId }: Props) {
   }
 
   return (
-    <section className="flex h-[500px] flex-col rounded-2xl border border-neutral-800 bg-neutral-900 shadow-lg">
-      <div className="border-b border-neutral-800 px-6 py-4">
-        <h2 className="text-lg font-semibold">Live Chat</h2>
-
-        <p className="mt-1 text-sm text-neutral-400">
-          Messages from viewers
-        </p>
-      </div>
-
-      <div className="flex-1 space-y-4 overflow-y-auto p-5">
+    // No outer card here — this renders inside the unified sidebar panel's
+    // "chat" tab, which already supplies the rounded-2xl/ring/bg wrapper.
+    // Keeping this section un-boxed avoids nesting a card inside a card.
+    <section className="flex h-[420px] flex-col lg:h-full">
+      <div className="flex-1 space-y-3 overflow-y-auto p-4">
         {messages.length === 0 ? (
-          <p className="text-center text-sm text-neutral-500">
+          <p className="pt-8 text-center text-sm text-white/30">
             No messages yet.
           </p>
         ) : (
           messages.map((msg) => (
-            <div
-              key={`${msg.senderId}-${msg.timestamp}`}
-              className="rounded-xl bg-neutral-950 p-3"
-            >
-              <p className="text-sm font-semibold text-blue-400">
-                {msg.senderId}
-              </p>
-
-              <p className="mt-1 text-sm text-neutral-300 break-words">
+            <div key={`${msg.senderId}-${msg.timestamp}`} className="text-sm">
+              <span className="font-medium text-[#3fcf9e]">{msg.senderId}</span>
+              <span className="text-white/70">
+                {" "}
                 {msg.message}
-              </p>
+              </span>
             </div>
           ))
         )}
       </div>
 
-      <div className="border-t border-neutral-800">
+      <div className="border-t border-white/5">
         {isReactionRateLimited && (
-          <p className="px-4 pt-2 text-xs text-amber-400">
+          <p className="px-4 pt-2 text-xs text-amber-400/90">
             Reactions on cooldown
           </p>
         )}
 
-        <div className="flex flex-wrap gap-2 px-4 py-3">
+        <div className="flex flex-wrap gap-1.5 px-4 py-3">
           {REACTIONS.map((emoji) => (
             <button
               key={emoji}
               type="button"
               onClick={() => sendReaction(emoji)}
               disabled={isReactionRateLimited}
-              className="rounded-lg bg-neutral-800 px-3 py-2 text-2xl transition-all duration-200 hover:scale-110 hover:bg-neutral-700 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:scale-100"
+              className="rounded-lg px-2 py-1.5 text-lg transition-all duration-150 hover:scale-110 hover:bg-white/5 active:scale-95 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:scale-100"
             >
               {emoji}
             </button>
@@ -171,33 +161,30 @@ export default function LiveChat({ roomId }: Props) {
         </div>
 
         {isChatRateLimited && (
-          <p className="px-4 text-xs text-amber-400">
+          <p className="px-4 pb-1 text-xs text-amber-400/90">
             You're sending messages too fast
           </p>
         )}
 
         {moderationNotice && (
-          <p className="px-4 text-xs text-red-400">{moderationNotice}</p>
+          <p className="px-4 pb-1 text-xs text-[#ff8a8a]">{moderationNotice}</p>
         )}
 
-        <form
-          onSubmit={sendMessage}
-          className="flex gap-3 border-t border-neutral-800 p-4"
-        >
+        <form onSubmit={sendMessage} className="flex gap-2 p-3 pt-0">
           <input
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder={isChatRateLimited ? "Slow down..." : "Send a message..."}
             disabled={isChatRateLimited}
-            className="flex-1 rounded-lg border border-neutral-700 bg-neutral-950 px-4 py-3 outline-none transition focus:border-blue-500 disabled:opacity-50"
+            className="flex-1 rounded-lg bg-white/5 px-3 py-2.5 text-sm text-white outline-none ring-1 ring-transparent transition placeholder:text-white/30 focus:ring-[#3fcf9e]/50 disabled:opacity-50"
           />
 
           <button
             type="submit"
             disabled={isChatRateLimited}
-            className="rounded-lg bg-blue-600 p-3 transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#3fcf9e] text-[#04241a] transition hover:bg-[#5fdcb2] disabled:cursor-not-allowed disabled:opacity-40"
           >
-            <Send size={18} />
+            <Send size={16} />
           </button>
         </form>
       </div>

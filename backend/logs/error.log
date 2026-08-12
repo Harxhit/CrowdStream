@@ -1471,3 +1471,155 @@
 2026-08-09 00:03:32 error: User already exists
 2026-08-09 00:03:41 error: User already exists
 2026-08-09 00:03:51 error: User already exists
+2026-08-12 17:47:20 error: RoomId not found
+2026-08-12 17:47:24 error: RoomId not found
+2026-08-12 17:47:52 error: RoomId not found
+2026-08-12 17:48:43 error: RoomId not found
+2026-08-12 17:48:45 error: RoomId not found
+2026-08-12 17:48:58 error: RoomId not found
+2026-08-12 17:49:24 error: RoomId not found
+2026-08-12 17:50:56 error: MongoNetworkError: read ECONNRESET
+    at Connection.onSocketError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection.ts:308:18)
+    at TLSSocket.emit (node:events:521:24)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-08-12 17:50:58 error: Database connection is not open
+2026-08-12 17:51:00 error: Database connection is not open
+2026-08-12 17:51:00 error: RoomId not found
+2026-08-12 17:51:02 error: Database connection is not open
+2026-08-12 17:51:04 error: Database connection is not open
+2026-08-12 17:51:06 error: Database connection is not open
+2026-08-12 17:51:17 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "read ECONNRESET"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Server.handleError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:410:9)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:677:21
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-12 17:51:17 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "read ECONNRESET"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Server.handleError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:410:9)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:677:21
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-12 17:51:17 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "read ECONNRESET"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Server.handleError (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:410:9)
+    at /home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:677:21
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-12 17:51:19 error: Database connection is not open
+2026-08-12 17:51:21 error: Database connection is not open
+2026-08-12 17:51:23 error: Database connection is not open
+2026-08-12 17:51:25 error: Database connection is not open
+2026-08-12 17:51:27 error: Database connection is not open
+2026-08-12 17:51:29 error: Database connection is not open
+2026-08-12 17:51:31 error: Database connection is not open
+2026-08-12 17:51:33 error: Database connection is not open
+2026-08-12 17:51:35 error: Database connection is not open
+2026-08-12 17:52:03 error: Database connection is not open
+2026-08-12 17:52:05 error: Database connection is not open
+2026-08-12 17:52:07 error: Database connection is not open
+2026-08-12 17:52:09 error: Database connection is not open
+2026-08-12 17:52:10 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 30456ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-12 17:52:11 error: Database connection is not open
+2026-08-12 17:52:13 error: Database connection is not open
+2026-08-12 17:52:15 error: Database connection is not open
+2026-08-12 17:52:17 error: Database connection is not open
+2026-08-12 17:52:19 error: Database connection is not open
+2026-08-12 17:52:20 error: MongoPoolClearedError: Connection pool for ac-v00shv2-shard-00-01.eplgdfn.mongodb.net:27017 was cleared because another operation failed with: "connection <monitor> to 159.41.206.112:27017 timed out"
+    at ConnectionPool.processWaitQueue (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:753:65)
+    at ConnectionPool.clear (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connection_pool.ts:476:10)
+    at updateServers (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:875:21)
+    at Topology.serverUpdateHandler (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:733:5)
+    at Server.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:851:66)
+    at Server.emit (node:events:509:20)
+    at markServerUnknown (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:530:10)
+    at Monitor.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/server.ts:185:65)
+    at Monitor.emit (node:events:509:20)
+    at onHeartbeatFailed (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/monitor.ts:291:13)
+2026-08-12 17:52:21 error: Database connection is not open
+2026-08-12 17:52:23 error: Database connection is not open
+2026-08-12 17:52:25 error: Database connection is not open
+2026-08-12 17:52:27 error: Database connection is not open
+2026-08-12 17:52:29 error: Database connection is not open
+2026-08-12 17:52:30 error: MongoNetworkError: getaddrinfo EAI_AGAIN ac-v00shv2-shard-00-01.eplgdfn.mongodb.net
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:395:16)
+    at Object.onceWrapper (node:events:631:12)
+    at TLSSocket.emit (node:events:509:20)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-08-12 17:52:30 error: MongoNetworkError: getaddrinfo EAI_AGAIN ac-v00shv2-shard-00-01.eplgdfn.mongodb.net
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:395:16)
+    at Object.onceWrapper (node:events:631:12)
+    at TLSSocket.emit (node:events:509:20)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+2026-08-12 17:52:31 error: Database connection is not open
+2026-08-12 17:52:33 error: Database connection is not open
+2026-08-12 17:52:35 error: Database connection is not open
+2026-08-12 17:52:37 error: Database connection is not open
+2026-08-12 17:52:39 error: Database connection is not open
+2026-08-12 17:52:41 error: Database connection is not open
+2026-08-12 17:52:43 error: Database connection is not open
+2026-08-12 17:52:45 error: Database connection is not open
+2026-08-12 17:52:47 error: Database connection is not open
+2026-08-12 17:52:49 error: Database connection is not open
+2026-08-12 17:52:51 error: Database connection is not open
+2026-08-12 17:52:53 error: Database connection is not open
+2026-08-12 17:52:55 error: Database connection is not open
+2026-08-12 17:52:57 error: Database connection is not open
+2026-08-12 17:52:59 error: Database connection is not open
+2026-08-12 17:53:01 error: Database connection is not open
+2026-08-12 17:53:03 error: Database connection is not open
+2026-08-12 17:53:05 error: Database connection is not open
+2026-08-12 17:53:07 error: Database connection is not open
+2026-08-12 17:53:09 error: Database connection is not open
+2026-08-12 17:53:11 error: Database connection is not open
+2026-08-12 17:53:13 error: Database connection is not open
+2026-08-12 17:53:15 error: Database connection is not open
+2026-08-12 17:53:17 error: Database connection is not open
+2026-08-12 17:53:19 error: Database connection is not open
+2026-08-12 17:53:21 error: Database connection is not open
+2026-08-12 17:53:23 error: Database connection is not open
+2026-08-12 17:53:25 error: Database connection is not open
+2026-08-12 17:53:27 error: Database connection is not open
+2026-08-12 17:53:29 error: Database connection is not open
+2026-08-12 17:53:31 error: Database connection is not open
+2026-08-12 17:53:33 error: Database connection is not open
+2026-08-12 17:53:35 error: Database connection is not open
+2026-08-12 17:53:37 error: Database connection is not open
+2026-08-12 17:53:39 error: Database connection is not open
+2026-08-12 17:53:41 error: Database connection is not open
+2026-08-12 17:53:43 error: Database connection is not open
+2026-08-12 17:53:45 error: Database connection is not open
+2026-08-12 17:53:47 error: Database connection is not open
+2026-08-12 17:53:49 error: Database connection is not open
+2026-08-12 17:53:51 error: Database connection is not open
+2026-08-12 17:53:53 error: Database connection is not open
+2026-08-12 17:53:55 error: Database connection is not open
+2026-08-12 17:53:57 error: Database connection is not open
+2026-08-12 17:53:59 error: Database connection is not open
