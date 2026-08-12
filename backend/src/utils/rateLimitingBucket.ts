@@ -45,7 +45,7 @@ export const rateLimiter = async (
 
     if (allowed === 0) {
       logger.warn(`${action} rate limit exceeded`, { identifier, idType, retryAt });
-      return { allowed: false, retryAt };
+      return { allowed: false, retryAt, action };
     }
 
     return { allowed: true, remaining };
@@ -54,6 +54,6 @@ export const rateLimiter = async (
       error: (error as Error).message,
       stack: (error as Error).stack,
     });
-    return { allowed: true, remaining: 0 };
+    return { allowed: true, remaining: 0 , action};
   }
 };

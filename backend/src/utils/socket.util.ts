@@ -102,7 +102,7 @@ io.on("connection", (socket) => {
       }
 
       const userId = socket.data.user?.id
-      const rateLimitResult = await rateLimiter(userId,'user', 'chat', validated.roomId)
+      const rateLimitResult = await rateLimiter(userId, 'user', 'reactions', validated.roomId)
       if (!rateLimitResult.allowed) {
         logger.warn('Chat reactions limit exceeded', { userId, roomId: validated.roomId, retryAt: rateLimitResult.retryAt })
         socket.emit('chat:rateLimited', { retryAt: rateLimitResult.retryAt })
@@ -110,7 +110,7 @@ io.on("connection", (socket) => {
       }
 
       const hashedIp =  ipHash(socket)
-      const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'chat', validated.roomId)
+      const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'reactions', validated.roomId)
       if (!ipRateLimit.allowed) {
         logger.warn('Chat reactions limit exceeded', { userId, roomId: validated.roomId, retryAt: rateLimitResult.retryAt })
         socket.emit('chat:rateLimited', { retryAt: ipRateLimit.retryAt })

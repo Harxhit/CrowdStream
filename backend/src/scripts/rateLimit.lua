@@ -5,6 +5,7 @@
 -- ARGV[4] = initialTokens (capacity - 1, matches your existing seed values)
 -- ARGV[5] = refillInterval in ms (10000)
 -- ARGV[6] = tokenCost (1)
+-- ARGV[7] = action
 
 local key = KEYS[1]
 local userId = ARGV[1]
@@ -13,6 +14,8 @@ local capacity = tonumber(ARGV[3])
 local initialTokens = tonumber(ARGV[4])
 local refillInterval = tonumber(ARGV[5])
 local tokenCost = tonumber(ARGV[6])
+local action = ARGV[7]
+local ttl = math.ceil((capacity * refillInterval + 10000) / 1000)
 
 -- use Redis server time so all replicas/clients agree, instead of client Date.now()
 local time = redis.call('TIME')
@@ -27,7 +30,8 @@ if exists == 0 then
         'tokens', initialTokens,
         'last_refill', nowMs
     )
-    return { 1, initialTokens, 0 }
+    redis.call('EXPIRE',key, ttl)
+    return { 1, initialTokens, 0, action }
 end
 
 local data = redis.call('HMGET', key, 'tokens', 'last_refill')
@@ -41,12 +45,13 @@ local newTokens = math.min(capacity, tokens + refilled)
 
 if newTokens < tokenCost then
     local retryAt = refillInterval - (elapsed % refillInterval)
-    return { 0, 0 , retryAt }
+    return { 0, 0 , retryAt , action}
 end
 
 newTokens = newTokens - tokenCost
 local newLastRefill = lastRefill + (refilled * refillInterval)
 
 redis.call('HSET', key, 'tokens', newTokens, 'last_refill', newLastRefill)
+redis.call('EXPIRE',key, ttl)
 
-return { 1, newTokens , 0}
+return { 1, newTokens , 0, action}

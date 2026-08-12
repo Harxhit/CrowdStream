@@ -28,7 +28,11 @@ const URL_REGEX = /(https?:\/\/|www\.)\S+/i;
 
 const containsProfanity = (message: string): boolean => {
   const normalized = message.toLowerCase();
-  return PROFANITY_LIST.some(word => normalized.includes(word));
+
+  return PROFANITY_LIST.some(word => {
+    const regex = new RegExp(`\\b${word}\\b`, "i");
+    return regex.test(normalized);
+  });
 };
 
 const isRepeatedCharSpam = (message: string): boolean => {
