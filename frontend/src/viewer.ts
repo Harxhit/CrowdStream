@@ -41,7 +41,10 @@ class Viewer{
 
         const response:JoinRoomAck = await socket.timeout(5000).emitWithAck('joinRoom', roomId)
         if(!response.success){
-            throw new Error(response.code)
+            const err = new Error(response.code) as Error & { code?: string; retryAt?: number };
+            err.code = response.code;
+            err.retryAt = (response as any).retryAt;
+            throw err;
         }
 
         const room: FrontendRoom = {

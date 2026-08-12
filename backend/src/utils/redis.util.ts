@@ -6,6 +6,8 @@ import { increaseCount, Reaction } from "./emoji.util";
 import logger from "./logging";
 import { error } from "winston";
 import { Presence, publishPresence, removeViewerFromRedisRoom, viewerCountInRedisRoom } from "./roomCordinator";
+import fs from "fs";
+import path from "path";
 
 const startUpNodes = [
     {
@@ -24,6 +26,15 @@ const startUpNodes = [
 
 export const redis = new Cluster(startUpNodes, {shardedSubscribers: true}); 
 
+const rateLimiterScript = fs.readFileSync(
+  path.join(__dirname, "../scripts/rateLimit.lua"), 
+  "utf-8"
+);
+
+redis.defineCommand("rateLimitCheck", {
+  numberOfKeys: 1,
+  lua: rateLimiterScript,
+});
 
 redis.on("connect", () => {
   console.info("Connected to Redis Cluster");

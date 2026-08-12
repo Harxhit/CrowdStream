@@ -1466,3 +1466,8 @@
 2026-08-07 13:53:41 error: Room not found
 2026-08-07 13:54:13 error: Room not found
 2026-08-07 13:56:13 error: Validation error "username" must only contain alpha-numeric characters
+2026-08-09 00:03:25 error: Validation error "username" must only contain alpha-numeric characters
+2026-08-09 00:03:29 error: User already exists
+2026-08-09 00:03:32 error: User already exists
+2026-08-09 00:03:41 error: User already exists
+2026-08-09 00:03:51 error: User already exists

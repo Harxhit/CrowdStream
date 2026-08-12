@@ -20051,3 +20051,237 @@
 2026-08-07 13:58:13 info: Remove broadcaster success
 2026-08-07 13:58:13 info: Handle disconnect succesfully
 2026-08-07 13:58:13 info: room:717cd25e-4b0d-4074-9235-184a4e2c7c87 room deleted successfully
+2026-08-09 00:02:41 info: Redis subscribers initialized
+2026-08-09 00:02:43 info: MongoDB connected
+2026-08-09 00:02:43 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-09 00:02:43 info: Creating worker started
+2026-08-09 00:02:43 info: Creating worker started
+2026-08-09 00:02:43 info: Creating worker started
+2026-08-09 00:02:43 info: Worker created successfully
+2026-08-09 00:02:43 info: Worker created successfully
+2026-08-09 00:02:43 info: Worker created successfully
+2026-08-09 00:02:43 info: Worker pool initialized
+2026-08-09 00:03:01 info: SignIn started
+2026-08-09 00:03:01 info: SignIn completed
+2026-08-09 00:03:01 info: [node-1] Client connected: ZRL09wBouirZMUBmAAAB
+2026-08-09 00:03:05 info: Create room started
+2026-08-09 00:03:05 info: Woker loads loaded successfully
+2026-08-09 00:03:05 info: Woker assigned succesfully
+2026-08-09 00:03:05 info: Creation of router started
+2026-08-09 00:03:05 info: Router created
+2026-08-09 00:03:05 info: Creation of room successfully executed
+2026-08-09 00:03:05 info: Get room started
+2026-08-09 00:03:05 info: Get room executed successfully
+2026-08-09 00:03:05 info: Broadcaster added to the room
+2026-08-09 00:03:05 info: Room created successfully
+2026-08-09 00:03:25 info: SignUp started
+2026-08-09 00:03:25 error: Validation error "username" must only contain alpha-numeric characters
+2026-08-09 00:03:29 info: SignUp started
+2026-08-09 00:03:29 error: User already exists
+2026-08-09 00:03:32 info: SignUp started
+2026-08-09 00:03:32 error: User already exists
+2026-08-09 00:03:41 info: SignUp started
+2026-08-09 00:03:41 error: User already exists
+2026-08-09 00:03:51 info: SignUp started
+2026-08-09 00:03:51 error: User already exists
+2026-08-09 00:03:55 info: SignUp started
+2026-08-09 00:03:55 info: SignUp completed
+2026-08-09 00:03:55 info: [node-1] Client connected: cj0ml6DlmD9Q2vMDAAAD
+2026-08-09 00:04:00 info: Join as viewer listner started
+2026-08-09 00:04:00 info: Rate limiting
+2026-08-09 00:04:00 info: Rate limiting
+2026-08-09 00:04:00 info: Get room started
+2026-08-09 00:04:00 info: Get room executed successfully
+2026-08-09 00:04:00 info: Fetching of router started
+2026-08-09 00:04:00 info: Fetching of router executed successfully
+2026-08-09 00:04:00 info: Get room started
+2026-08-09 00:04:00 info: Get room executed successfully
+2026-08-09 00:04:00 info: Viewer joined the room
+2026-08-09 00:04:00 info: Join viewer listner successfully executed
+2026-08-09 00:04:03 info: Get room started
+2026-08-09 00:04:03 info: Get room executed successfully
+2026-08-09 00:04:03 info: Rate limiting
+2026-08-09 00:04:03 info: Rate limiting
+2026-08-09 00:04:05 info: Get room started
+2026-08-09 00:04:05 info: Get room executed successfully
+2026-08-09 00:04:05 info: Rate limiting
+2026-08-09 00:04:05 info: Rate limiting
+2026-08-09 00:04:05 warn: Moderation blocked message
+2026-08-09 00:04:09 info: Get room started
+2026-08-09 00:04:09 info: Get room executed successfully
+2026-08-09 00:04:09 info: Rate limiting
+2026-08-09 00:04:09 info: Rate limiting
+2026-08-09 00:04:11 info: Get room started
+2026-08-09 00:04:11 info: Get room executed successfully
+2026-08-09 00:04:11 info: Rate limiting
+2026-08-09 00:04:11 info: Rate limiting
+2026-08-09 00:04:12 info: Get room started
+2026-08-09 00:04:12 info: Get room executed successfully
+2026-08-09 00:04:12 info: Rate limiting
+2026-08-09 00:04:12 info: Rate limiting
+2026-08-09 00:04:13 info: Get room started
+2026-08-09 00:04:13 info: Get room executed successfully
+2026-08-09 00:04:13 info: Rate limiting
+2026-08-09 00:04:13 info: Rate limiting
+2026-08-09 00:04:15 info: Get room started
+2026-08-09 00:04:15 info: Get room executed successfully
+2026-08-09 00:04:15 info: Rate limiting
+2026-08-09 00:04:15 info: Rate limiting
+2026-08-09 00:04:16 info: Get room started
+2026-08-09 00:04:16 info: Get room executed successfully
+2026-08-09 00:04:16 info: Rate limiting
+2026-08-09 00:04:16 info: Rate limiting
+2026-08-09 00:04:17 info: Get room started
+2026-08-09 00:04:17 info: Get room executed successfully
+2026-08-09 00:04:17 info: Rate limiting
+2026-08-09 00:04:17 info: Rate limiting
+2026-08-09 00:04:20 info: Get room started
+2026-08-09 00:04:20 info: Get room executed successfully
+2026-08-09 00:04:20 info: Get room started
+2026-08-09 00:04:20 info: Get room executed successfully
+2026-08-09 00:04:20 info: Rate limiting
+2026-08-09 00:04:20 info: Rate limiting
+2026-08-09 00:04:21 info: Get room started
+2026-08-09 00:04:21 info: Get room executed successfully
+2026-08-09 00:04:21 info: Rate limiting
+2026-08-09 00:04:21 info: Rate limiting
+2026-08-09 00:04:25 info: Get room started
+2026-08-09 00:04:25 info: Get room executed successfully
+2026-08-09 00:04:25 info: Rate limiting
+2026-08-09 00:04:25 info: Rate limiting
+2026-08-09 00:04:27 info: Get room started
+2026-08-09 00:04:27 info: Get room executed successfully
+2026-08-09 00:04:27 info: Rate limiting
+2026-08-09 00:04:27 info: Rate limiting
+2026-08-09 00:04:40 info: Get room started
+2026-08-09 00:04:40 info: Get room executed successfully
+2026-08-09 00:04:46 info: Get room started
+2026-08-09 00:04:46 info: Get room executed successfully
+2026-08-09 00:04:46 info: Rate limiting
+2026-08-09 00:04:46 info: Rate limiting
+2026-08-09 00:04:46 info: Get room started
+2026-08-09 00:04:46 info: Get room executed successfully
+2026-08-09 00:04:46 info: Rate limiting
+2026-08-09 00:04:46 info: Rate limiting
+2026-08-09 00:04:47 info: Get room started
+2026-08-09 00:04:47 info: Get room executed successfully
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Get room started
+2026-08-09 00:04:47 info: Get room executed successfully
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Get room started
+2026-08-09 00:04:47 info: Get room executed successfully
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Get room started
+2026-08-09 00:04:47 info: Get room executed successfully
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Get room started
+2026-08-09 00:04:47 info: Get room executed successfully
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Get room started
+2026-08-09 00:04:47 info: Get room executed successfully
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:47 info: Rate limiting
+2026-08-09 00:04:48 info: Get room started
+2026-08-09 00:04:48 info: Get room executed successfully
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Get room started
+2026-08-09 00:04:48 info: Get room executed successfully
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Get room started
+2026-08-09 00:04:48 info: Get room executed successfully
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Get room started
+2026-08-09 00:04:48 info: Get room executed successfully
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Get room started
+2026-08-09 00:04:48 info: Get room executed successfully
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Get room started
+2026-08-09 00:04:48 info: Get room executed successfully
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Get room started
+2026-08-09 00:04:48 info: Get room executed successfully
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:48 info: Rate limiting
+2026-08-09 00:04:49 info: Get room started
+2026-08-09 00:04:49 info: Get room executed successfully
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Get room started
+2026-08-09 00:04:49 info: Get room executed successfully
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Get room started
+2026-08-09 00:04:49 info: Get room executed successfully
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Get room started
+2026-08-09 00:04:49 info: Get room executed successfully
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Get room started
+2026-08-09 00:04:49 info: Get room executed successfully
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Get room started
+2026-08-09 00:04:49 info: Get room executed successfully
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:49 info: Rate limiting
+2026-08-09 00:04:50 info: Get room started
+2026-08-09 00:04:50 info: Get room executed successfully
+2026-08-09 00:04:50 info: Rate limiting
+2026-08-09 00:04:50 info: Rate limiting
+2026-08-09 00:04:50 info: Get room started
+2026-08-09 00:04:50 info: Get room executed successfully
+2026-08-09 00:04:50 info: Rate limiting
+2026-08-09 00:04:50 warn: chat rate limit exceeded
+2026-08-09 00:04:50 warn: Chat reactions limit exceeded
+2026-08-09 00:04:51 info: Get room started
+2026-08-09 00:04:51 info: Get room executed successfully
+2026-08-09 00:04:51 info: Rate limiting
+2026-08-09 00:04:51 info: Rate limiting
+2026-08-09 00:04:52 info: Get room started
+2026-08-09 00:04:52 info: Get room executed successfully
+2026-08-09 00:04:52 info: Rate limiting
+2026-08-09 00:04:52 warn: chat rate limit exceeded
+2026-08-09 00:04:52 warn: Chat reactions limit exceeded
+2026-08-09 00:04:53 info: Get room started
+2026-08-09 00:04:53 info: Get room executed successfully
+2026-08-09 00:04:53 info: Rate limiting
+2026-08-09 00:04:53 info: Rate limiting
+2026-08-09 00:04:54 info: Get room started
+2026-08-09 00:04:54 info: Get room executed successfully
+2026-08-09 00:04:54 info: Rate limiting
+2026-08-09 00:04:54 warn: chat rate limit exceeded
+2026-08-09 00:04:54 warn: Chat reactions limit exceeded
+2026-08-09 00:05:01 info: Get room started
+2026-08-09 00:05:01 info: Get room executed successfully
+2026-08-09 00:05:16 info: User disconnected ZRL09wBouirZMUBmAAAB beacuse of transport close
+2026-08-09 00:05:16 info: Handle disconnect started
+2026-08-09 00:05:16 info: Get room started
+2026-08-09 00:05:16 info: Get room executed successfully
+2026-08-09 00:05:16 info: Get room started
+2026-08-09 00:05:16 info: Get room executed successfully
+2026-08-09 00:05:16 info: Get room started
+2026-08-09 00:05:16 info: Get room executed successfully
+2026-08-09 00:05:16 info: Get room started
+2026-08-09 00:05:16 info: Get room executed successfully
+2026-08-09 00:05:16 info: Get room started
+2026-08-09 00:05:16 info: Get room executed successfully
+2026-08-09 00:05:16 info: Remove broadcaster success
+2026-08-09 00:05:16 info: Handle disconnect succesfully
+2026-08-09 00:05:16 info: room:dd63fe5c-bd71-4fc9-953c-b3bb9871d4a4 room deleted successfully
+2026-08-09 00:05:16 info: User disconnected cj0ml6DlmD9Q2vMDAAAD beacuse of transport close
+2026-08-09 00:05:16 info: Handle disconnect started

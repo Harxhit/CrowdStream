@@ -12,6 +12,8 @@ import { redis , subClient, initializeSubscribers} from "./redis.util";
 import { handleDisconnect } from "./disconnect.util";
 import { validateMessage, authenticateUser, moderateMessage, ChatMessage, publishMessage } from "./chat.util";
 import { publishReaction, Reaction, validateReactions } from "./emoji.util";
+import { rateLimiter } from "./rateLimitingBucket";
+import { ipHash } from "./hash.util";
 
 const server = createServer(app);
 const io = new Server (server, {
@@ -50,6 +52,28 @@ io.on("connection", (socket) => {
         return 
       }
 
+      const userId = socket.data.user?.id
+      const rateLimitResult = await rateLimiter(userId, 'user', 'chat', validated.roomId)
+      if (!rateLimitResult.allowed) {
+        logger.warn('Chat rate limit exceeded', { userId, roomId: validated.roomId, retryAt: rateLimitResult.retryAt })
+        socket.emit('chat:rateLimited', { retryAt: rateLimitResult.retryAt })
+        return
+      }
+      const hashedIp = ipHash(socket)
+      const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'chat', validated.roomId)
+      if (!ipRateLimit.allowed) {
+        logger.warn('Chat rate limit exceeded', { userId, roomId: validated.roomId, retryAt: rateLimitResult.retryAt })
+        socket.emit('chat:rateLimited', { retryAt: ipRateLimit.retryAt })
+        return
+      }
+
+      const moderation = moderateMessage(validated.message); 
+      if(!moderation.allowed){
+        logger.warn('Moderation blocked message', { userId, roomId: validated.roomId, reason: moderation.reason })
+        socket.emit('chat:moderated', { reason: moderation.reason })
+        return 
+      }
+
       const message: ChatMessage = {
         roomId: validated.roomId, 
         senderId: socket.id, 
@@ -75,6 +99,22 @@ io.on("connection", (socket) => {
       if(!authorised){
         logger.error("User is not authorized");
         return;
+      }
+
+      const userId = socket.data.user?.id
+      const rateLimitResult = await rateLimiter(userId, 'user', 'reactions', validated.roomId)
+      if (!rateLimitResult.allowed) {
+        logger.warn('Chat reactions limit exceeded', { userId, roomId: validated.roomId, retryAt: rateLimitResult.retryAt })
+        socket.emit('chat:rateLimited', { retryAt: rateLimitResult.retryAt })
+        return
+      }
+
+      const hashedIp =  ipHash(socket)
+      const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'reactions', validated.roomId)
+      if (!ipRateLimit.allowed) {
+        logger.warn('Chat reactions limit exceeded', { userId, roomId: validated.roomId, retryAt: rateLimitResult.retryAt })
+        socket.emit('chat:rateLimited', { retryAt: ipRateLimit.retryAt })
+        return
       }
 
       const reaction:Reaction = {
