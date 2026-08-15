@@ -18,6 +18,8 @@ both a performance and a major cost lever (§14/§15).
 - [ ] Verify segments are cached at the edge (cache headers correct)
 - [ ] Add signed URLs/cookies if recordings are private (optional for MVP)
 
+> Skipping this as product does not require this currently. 
+
 ## Acceptance criteria
 - [ ] A recorded stream plays back via the CloudFront HLS URL in the browser
 - [ ] S3 is not publicly accessible (only via CloudFront)
