@@ -1,28 +1,61 @@
-# Week 6 · Day 3 — S3 Uploader & recordings Collection
+# Week 6 · Day 3 --- Recording Download
 
-> Roadmap: [index](../../README.md) · [Week 6](../README.md)
-> Refs: `docs/ARCHITECTURE.md` §4e, §7 (recordings), §9 (steps 3–4)
+> Roadmap: [index](../../README.md) · [Week 6](../README.md) Refs:
+> `docs/ARCHITECTURE.md` §9
 
 ## Goal
-Stream HLS segments to S3 as they're written, finalize the playlist, and track
-status in a `recordings` doc.
 
-## Why this matters
-§9: upload segments to S3 as written (don't wait for stream end); write the playlist
-last; on finish mark the recording `ready`. §7 defines the `recordings` schema.
+Finish the recording as an MP4 when the user stops recording and allow
+the browser to download the completed recording directly to the user's
+device.
+
+The current product does not require persistent cloud storage, HLS/VOD
+delivery, or a recordings database. Those can be introduced later if the
+product requires persistent recording storage or VOD playback.
+
+## Flow
+
+```text
+User clicks Stop
+      ↓
+FFmpeg finishes MP4
+      ↓
+Backend exposes completed MP4
+      ↓
+Browser downloads MP4
+      ↓
+Recording is saved on user's device
+```
 
 ## Tasks
-- [ ] Create the `recordings` model per §7 (`streamId`, `status`, `s3Key`, `hlsPlaylistUrl`, `mp4Url`, `thumbnailUrls`, `durationSec`, `sizeBytes`)
-- [ ] On recording start: insert `recordings` doc with `status: "recording"`
-- [ ] Uploader watches scratch and streams `.ts` segments + thumbnails to S3 as written
-- [ ] Upload the `.m3u8` playlist and MP4 last; then upload-and-delete scratch to bound disk
-- [ ] On finish: set `status: "ready"`, fill URLs, `durationSec`, `sizeBytes`, `readyAt`
-- [ ] On failure: set `status: "failed"` with error context
+
+* [ ] Stop FFmpeg gracefully when the user stops recording
+* [ ] Wait for FFmpeg to finish writing the MP4
+* [ ] Expose the completed MP4 from the backend
+* [ ] Trigger the browser download from the viewer
+* [ ] Clean up recording consumers, transports, UDP ports, and
+  temporary files
+* [ ] Handle recording/download failures and log errors
 
 ## Acceptance criteria
-- [ ] Segments appear in S3 during (not only after) the stream
-- [ ] Playlist + MP4 + thumbnails land in S3; scratch is cleaned up
-- [ ] `recordings` doc transitions recording → ready (or failed) correctly
 
-## Notes
-> Use S3 versioning + lifecycle to Glacier for cost (ties to §13 DR / §14 cost).
+* [ ] Stopping a recording produces a complete, playable MP4
+* [ ] The backend can expose the completed MP4
+* [ ] The viewer browser downloads the MP4 successfully
+* [ ] Recording resources are cleaned up after recording finishes
+* [ ] Failures are logged and do not leave recording resources behind
+
+## Deferred
+
+The following are intentionally deferred because they are not required
+by the current product flow:
+
+* S3/cloud storage
+* HLS / LL-HLS
+* `.m3u8` and `.ts` segment uploading
+* `recordings` collection for persistent cloud recordings
+* VOD playback infrastructure
+* S3 versioning and Glacier lifecycle policies
+
+These can be added later if persistent cloud storage or VOD playback
+becomes a product requirement.
