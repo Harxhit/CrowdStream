@@ -144,7 +144,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", async (reason) => {
     logger.info(`User disconnected ${socket.id} beacuse of ${reason}`)
     handleDisconnect(socket)
-    //TODO: For ffmpeg stop recording session
+    await stopFfmpegRecording(socket.id)
   });
 
   socket.on('start-recording',async(payload) => {
@@ -168,11 +168,11 @@ io.on("connection", (socket) => {
       
       const {audioConsumer, videoConsumer} = await consumePlainTransportMedia(roomId, socketId, audioPort, videoPort)
 
-      const ffmpeg = startFfmpegRecording(roomId); 
+      const ffmpeg = startFfmpegRecording(roomId, socketId); 
 
-      activeRecordings.set(roomId, {
+      activeRecordings.set(socketId, {
         ffmpeg: ffmpeg, 
-        socketId: socketId, 
+        roomId: roomId, 
         audioTransportId: audioTransport.id, 
         videoTransportId: videoTransport.id, 
         audioConsumerId: audioConsumer?.id, 
@@ -209,14 +209,14 @@ io.on("connection", (socket) => {
         throw new Error('Viewer not exist in room'); 
       }
       
-      const recordingsDetails = activeRecordings.get(roomId); 
+      const recordingsDetails = activeRecordings.get(socketId); 
 
       if (!recordingsDetails) {
         logger.warn(`No active recording to stop for room ${roomId}`);
         return; 
       }
 
-      await stopFfmpegRecording(roomId)
+      await stopFfmpegRecording(socketId)
 
       for(const transports of viewer.transport!.values()){
         if(transports.id === recordingsDetails?.audioTransportId || transports.id === recordingsDetails?.videoTransportId){
@@ -230,7 +230,7 @@ io.on("connection", (socket) => {
         }
       }
 
-      activeRecordings.delete(roomId)
+      activeRecordings.delete(socketId)
       releasePorts(recordingsDetails!.audioPort, recordingsDetails!.videoPort)
 
     } catch (error) {

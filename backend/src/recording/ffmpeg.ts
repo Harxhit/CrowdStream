@@ -4,7 +4,7 @@ import { activeRecordings } from "../stores/maps";
 import logger from "../utils/logging";
 
 
-export const startFfmpegRecording = (roomId: string) => {
+export const startFfmpegRecording = (roomId: string, socketId: string) => {
   const sdpPath = `src/recording/${roomId}.sdp`
   
   const ffmpeg = spawn(ffmpegPath!, [
@@ -33,22 +33,26 @@ export const startFfmpegRecording = (roomId: string) => {
   
   ffmpeg.on("close", (code) => {
     console.log(`FFmpeg exited with code ${code}`);
-    activeRecordings.delete(roomId)
+    activeRecordings.delete(socketId)
   });
 
   return ffmpeg; 
 }
 
 
-export const stopFfmpegRecording = async(roomId: string) => {
-  const ffmpeg = activeRecordings.get(roomId); 
+export const stopFfmpegRecording = async(socketId:string) => {
+  const ffmpeg = activeRecordings.get(socketId); 
   if (!ffmpeg?.ffmpeg) {
-    logger.warn(`No active recording for room ${roomId}`);
+    logger.warn(`No active recording for room ${socketId}`);
+    return; 
   }
 
-  ffmpeg?.ffmpeg.once("exit", () => {
-    activeRecordings.delete(roomId);
-  });
+  await new Promise<void>((resolve) => {
+    ffmpeg.ffmpeg.once("close", () => {
+      activeRecordings.delete(socketId);
+      resolve();
+    });
 
-  ffmpeg?.ffmpeg.kill("SIGINT");
+    ffmpeg.ffmpeg.kill("SIGINT");
+  });
 }
