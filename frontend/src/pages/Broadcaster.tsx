@@ -4,7 +4,6 @@ import {
   Camera,
   Mic,
   MicOff,
-  Circle,
   Play,
   Square,
   Monitor,
@@ -36,7 +35,6 @@ export default function BroadcasterPage() {
 
   const [camOn, setCamOn] = useState(true);
   const [micOn, setMicOn] = useState(true);
-  const [recording, setRecording] = useState(false);
 
   // Panel is closed by default. When open it takes a real column in the
   // flex layout below, so the video shrinks to make room — it does not
@@ -61,29 +59,29 @@ export default function BroadcasterPage() {
 
       setRoomId(room.id);
 
-      // log("Fetching RTP capabilities...");
+      log("Fetching RTP capabilities...");
 
-      // const caps = await broadcaster.getRouterCapabilities(room.id);
+      const caps = await broadcaster.getRouterCapabilities(room.id);
 
-      // log("Loading MediaSoup device...");
+      log("Loading MediaSoup device...");
 
-      // await broadcaster.loadDevice(caps);
+      await broadcaster.loadDevice(caps);
 
-      // log("Creating send transport...");
+      log("Creating send transport...");
 
-      // await broadcaster.createBroadcasterTransport(room.id);
+      await broadcaster.createBroadcasterTransport(room.id);
 
-      // log("Accessing camera...");
+      log("Accessing camera...");
 
-      // const stream = await broadcaster.getUserMedia();
+      const stream = await broadcaster.getUserMedia();
 
-      // if (videoRef.current) {
-      //   videoRef.current.srcObject = stream;
-      // }
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+      }
 
-      // log("Producing media...");
+      log("Producing media...");
 
-      // await broadcaster.startProducing(stream);
+      await broadcaster.startProducing(stream);
 
       setIsLive(true);
 
@@ -135,7 +133,6 @@ export default function BroadcasterPage() {
 
     setRoomId(null);
     setIsLive(false);
-    setRecording(false);
 
     log("Broadcast stopped.");
   }
@@ -150,10 +147,6 @@ export default function BroadcasterPage() {
     setMicOn((v) => !v);
   }
 
-  function toggleRecord() {
-    // TODO: start/stop FFmpeg pipeline — direct track vs PlainTransport off the router.
-    setRecording((v) => !v);
-  }
 
   function handleScreenShare() {
     // TODO: getDisplayMedia() → replace video producer track → restore camera on end.
@@ -277,23 +270,6 @@ export default function BroadcasterPage() {
                     <Square size={15} /> End
                   </button>
                 )}
-
-                <div
-                  className="group relative flex h-9 w-9 items-center justify-center"
-                  title="Record"
-                >
-                  <button
-                    onClick={toggleRecord}
-                    disabled={!isLive}
-                    className={`flex h-9 w-9 items-center justify-center rounded-xl transition disabled:opacity-30 ${
-                      recording ? "bg-[#ff5c5c] text-white" : "text-white/70 hover:bg-white/10"
-                    }`}
-                    aria-label="Record"
-                  >
-                    <Circle size={15} fill={recording ? "currentColor" : "none"} />
-                  </button>
-                  <Tooltip text={recording ? "Stop recording" : "Record"} />
-                </div>
 
                 <div className="group relative flex h-9 w-9 items-center justify-center">
                   <button

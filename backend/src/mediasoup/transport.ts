@@ -5,8 +5,9 @@ import type {
 import logger from "../utils/logging";
 import config from "../config/index";
 import { handleRouterClose } from "./router";
-import { TransportRole } from "../types/mediasoup";
 import { transportRegistry } from "../stores/maps";
+import { getRoom } from "../rooms/room.store";
+import { TransportType } from "../types/mediasoup";
 
 
 //Creates webRtc transport
@@ -14,7 +15,7 @@ const createWebRtcTransport = async (
   router: Router,
   roomId: string, 
   socketId: string, 
-  role: TransportRole
+  role: TransportType
 ) => {
   const starTime = Date.now()
   try {
@@ -105,6 +106,71 @@ const createWebRtcTransport = async (
   }
 };
 
+const createPlainTransport = async(  
+  roomId: string, 
+  socketId: string,
+  role: TransportType
+) => {
+  const startTime = Date.now()
+  try {
+    const room = getRoom(roomId); 
+
+    const viewer = room.viewers.get(socketId)
+
+    if(!viewer){
+      logger.error("Viewer not found",{
+        roomId: roomId, 
+        socketId: socketId,
+        durationMs: Date.now() - startTime
+      });
+      throw new Error("Viewer not found");
+    }
+
+    const router = room.router; 
+    if(!router){
+      logger.error('Router not found for the room',{
+        roomId: roomId, 
+        routerId: room.router.id, 
+        socketId: socketId, 
+        durationMs: Date.now() - startTime
+      })
+     throw new Error('Router not found')
+    }
+
+    const plainTransport = await router.createPlainTransport({
+      listenInfo : {protocol: "udp", ip: config.recordingIp}, 
+      rtcpMux: true, 
+      comedia: false
+    });
+  
+    if(!plainTransport){
+      logger.error('Plain transport creation failed')
+      throw new Error('Plain transport creation failed'); 
+    }
+  
+    transportRegistry.set(plainTransport.id, {
+      roomId, 
+      role, 
+      socketId
+    })
+
+    viewer.transport?.set(role, plainTransport!)
+
+    plainTransport.on('routerclose', () => {
+      handleRouterClose(router)
+    })
+
+    return plainTransport; 
+
+  } catch (error) {
+    logger.error('Plain transport creation error',{
+      error: (error as Error).message, 
+      stack: (error as Error).stack
+    })
+
+    throw error
+  }
+}
 
 const transportHealthCheck = async (
   transport: WebRtcTransport
@@ -135,4 +201,4 @@ const transportHealthCheck = async (
   }
 };
 
-export {createWebRtcTransport, transportHealthCheck}
+export {createWebRtcTransport, transportHealthCheck, createPlainTransport}
