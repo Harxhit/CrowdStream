@@ -111,7 +111,9 @@ const registerViewerHanlder = async (socket: Socket) => {
           code: 'RTP_CAPABILITES_ERROR'
         })
       }
-    });
+  });
+  
+  
   socket.on(`viewer:heartBeat`, () => {
     const roomId = socket.data.roomId; 
     const socketId = socket.id; 
@@ -228,13 +230,13 @@ const registerViewerHanlder = async (socket: Socket) => {
     try {
       logger.info('Consume lister started')
       const viewerId = socket.data.user?.id; 
-      const consumers = await consume(roomId, socket.id, rtpCapabilities);
+      const consumers = await consume(roomId, socket.id, rtpCapabilities, 'consumer');
       void Viewer.updateOne(
         viewerId,
         {
           $push: {
             consumerIds: {
-              $each: consumers.map((consumer) => consumer.id),
+              $each: consumers.consumerParams.map((consumer) => consumer.id),
             },
           },
         }
@@ -246,7 +248,7 @@ const registerViewerHanlder = async (socket: Socket) => {
       ack({
         success: true, 
         data: {
-          consumers
+          consumers: consumers.consumerParams
         }
       })
       

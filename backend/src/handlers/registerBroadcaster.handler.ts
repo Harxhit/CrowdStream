@@ -170,7 +170,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
           router,
           roomId,
           socket.id,
-          "broadcaster"
+          "producer"
         );
 
       await saveBroadcasterTransport(

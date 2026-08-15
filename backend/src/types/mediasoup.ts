@@ -1,8 +1,8 @@
-import type { Router,  WebRtcTransport ,Producer ,Worker , Consumer} from "mediasoup/node/lib/types";
+import type { Router,  WebRtcTransport ,Producer ,Worker , Consumer, PlainTransport} from "mediasoup/node/lib/types";
 
-export type TransportType = "producer" | "consumer";
-export type TransportRole = "broadcaster" | "viewer";
-type Health = "healthy" | "unhealthy"
+export type TransportType = "producer" | "consumer" | "recording-audio" | "recording-video";
+export type Health = "healthy" | "unhealthy"
+import { ChildProcess } from "node:child_process";
 
 export interface Broadcaster {
   socketId: string; 
@@ -14,7 +14,7 @@ export interface Broadcaster {
 
 export interface Viewer {
   socketId: string; 
-  transport?: Map<TransportType, WebRtcTransport>;
+  transport?: Map<TransportType, WebRtcTransport | PlainTransport>;
   rtpCapabilities?: any;
   consumers: Map<string, Consumer>;
   joinedAt: number;
@@ -40,7 +40,7 @@ export interface WorkerInfo{
 export interface TransportInfo {
   roomId: string;
   socketId: string;
-  role: TransportRole
+  role: TransportType
 }
 
 export interface WorkerLoad {
@@ -63,4 +63,15 @@ export interface RedisRoom {
   routerId?: string;
   broadcasterId?: string;
   status: "creating" | "live" | "ended";
+}
+
+export interface RecordingSession {
+  ffmpeg: ChildProcess;
+  socketId: string;
+  audioTransportId:string; 
+  videoTransportId: string; 
+  audioConsumerId?: string;
+  videoConsumerId?: string;
+  audioPort: number; 
+  videoPort: number
 }

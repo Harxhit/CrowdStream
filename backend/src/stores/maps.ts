@@ -1,4 +1,5 @@
-import { Room, TransportInfo , WorkerInfo, WorkerLoad} from "../types/mediasoup";
+import { ChildProcess } from "node:child_process";
+import { RecordingSession, Room, TransportInfo , WorkerInfo, WorkerLoad} from "../types/mediasoup";
 import type { Router } from "mediasoup/node/lib/types";
 
 /**
@@ -37,3 +38,5 @@ export const transportRegistry = new Map<string, TransportInfo>();
 export const workerPool = new Map<string, WorkerInfo>()
 
 export const workerLoadMap  = new Map<string, WorkerLoad>()
+
+export const activeRecordings = new Map<string, RecordingSession>()

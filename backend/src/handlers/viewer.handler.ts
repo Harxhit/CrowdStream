@@ -6,6 +6,18 @@ import {
 import canConsume from "../utils/canConsumer.util";
 import { transportRegistry } from "../stores/maps";
 import { addViewerInRedisRoom, heartBeat, Presence, publishPresence, viewerCountInRedisRoom } from "../utils/roomCordinator";
+import { TransportType } from "../types/mediasoup";
+import { generateAudioRecordingSdp, generateVideoRecordingSdp } from "../recording/sdp";
+import type { Consumer } from "mediasoup/node/lib/types";
+import config from "../config";
+
+
+type ConsumeResult = {
+  consumerParams: any[];
+  consumer?: Consumer;
+  audioParameter?: string;
+  videoParameters?: string;
+};
 
 //Join room as viewer
 const joinAsViewer = async (roomId: string, socketId: string) => {
@@ -47,7 +59,7 @@ const joinAsViewer = async (roomId: string, socketId: string) => {
   }
 };
 
-//Creates a webRtcTransport for the viwer,which will be used to receive audio/video from the broadcaster(to become a consumer)
+//Creates a webRtcTransport for the viwer, which will be used to receive audio/video from the broadcaster(to become a consumer)
 const createConsumerTransport = async (roomId: string, socketId: string ) => {
   const startTime  = Date.now()
   try {
@@ -75,20 +87,8 @@ const createConsumerTransport = async (roomId: string, socketId: string ) => {
      throw new Error('Router not found')
     }
 
-    const worker = room.worker
-    if(!worker){
-      logger.info('Worker not found', {
-        roomId: roomId, 
-        routerId: room.router.id, 
-        socketId: socketId, 
-        workerPid: room.worker.pid,
-        durationMs: Date.now() - startTime
-      })
-      throw new Error('Worker not found')
-    }
-
     //Creates transport for the viewer 
-    const transport = await createWebRtcTransport(router, roomId, socketId, 'viewer')
+    const transport = await createWebRtcTransport(router, roomId, socketId, 'consumer')
   
     viewer.transport?.set('consumer',transport!)
 
@@ -168,8 +168,10 @@ const connectConsumerTransport = async (
 const consume = async (
   roomId: string,
   socketId: string,
-  rtpCapabilities: any
-) => {
+  rtpCapabilities: any,
+  role: TransportType, 
+  port?: number
+): Promise<ConsumeResult> => {
   const startTime = Date.now()
   try {
     const room = getRoom(roomId);
@@ -183,7 +185,7 @@ const consume = async (
       });
       throw new Error("Viewer not found");
     }
-    const transport = viewer.transport?.get('consumer');
+    const transport = viewer.transport?.get(role);
     if (!transport) {
       logger.error('Viewer transport not found',{
         roomId: roomId, 
@@ -195,28 +197,80 @@ const consume = async (
   
     const consumerParams:any[] = []
 
-    for(const broadcaster of room.broadcasters.values()){
-      for(const producer of broadcaster.producers.values()){
-
-        if(!canConsume(roomId, producer.id , rtpCapabilities)){
-          logger.warn('Cannot consume this media')
-          continue; 
+    if(role === 'consumer'){
+      for(const broadcaster of room.broadcasters.values()){
+        for(const producer of broadcaster.producers.values()){
+  
+          if(!canConsume(roomId, producer.id , rtpCapabilities)){
+            logger.warn('Cannot consume this media')
+            continue; 
+          }
+  
+          const consumer = await transport?.consume({
+            producerId : producer.id, 
+            rtpCapabilities, 
+            paused : true
+          })
+          
+          viewer?.consumers.set(consumer.id , consumer)  
+          
+          consumerParams.push({
+            id: consumer.id,
+            producerId: producer.id,
+            kind: consumer.kind,
+            rtpParameters: consumer.rtpParameters,
+          });
         }
+      }
+    }else if(role === 'recording-audio'){
+      for(const broadcaster of room.broadcasters.values()){
+        for(const producer of broadcaster.producers.values()){
+          if(producer.kind === 'audio'){
+            const consumer = await transport?.consume({
+              producerId : producer.id, 
+              rtpCapabilities, 
+              paused : true
+            })
 
-        const consumer = await transport?.consume({
-          producerId : producer.id, 
-          rtpCapabilities, 
-          paused : true
-        })
-        
-        viewer?.consumers.set(consumer.id , consumer)  
-        
-        consumerParams.push({
-          id: consumer.id,
-          producerId: producer.id,
-          kind: consumer.kind,
-          rtpParameters: consumer.rtpParameters,
-        });
+            viewer?.consumers.set(consumer.id , consumer)  
+            
+            const audioParameter = generateAudioRecordingSdp(consumer.rtpParameters, port!)
+            
+            consumerParams.push({
+              id: consumer.id,
+              producerId: producer.id,
+              kind: consumer.kind,
+              rtpParameters: consumer.rtpParameters,
+            });
+
+            return {consumerParams, consumer, audioParameter}
+          }
+        }
+      }
+    }else if(role === 'recording-video'){
+      for(const broadcaster of room.broadcasters.values()){
+        for(const producer of broadcaster.producers.values()){
+          if(producer.kind === 'video'){
+            const consumer = await transport?.consume({
+              producerId : producer.id, 
+              rtpCapabilities, 
+              paused : true
+            })
+
+            viewer?.consumers.set(consumer.id , consumer)  
+
+            const videoParameters = generateVideoRecordingSdp(consumer.rtpParameters, port!)
+          
+            consumerParams.push({
+              id: consumer.id,
+              producerId: producer.id,
+              kind: consumer.kind,
+              rtpParameters: consumer.rtpParameters,
+            });
+
+            return {consumerParams, consumer, videoParameters}
+          }
+        }
       }
     }
 
@@ -224,7 +278,8 @@ const consume = async (
       durationMs: Date.now() - startTime, 
       roomId: roomId
     })
-    return consumerParams
+
+    return {consumerParams}; 
   } catch (error) {
     logger.error('Internal server error',{
       message : (error as Error).message, 
@@ -268,5 +323,5 @@ export {
   connectConsumerTransport,
   consume,
   removeViewerConsumer, 
-  removeViewerTransport
+  removeViewerTransport, 
 };

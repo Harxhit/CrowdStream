@@ -25,7 +25,9 @@ interface Config{
     redisPort2: number
     redisPort3: number; 
     instanceId: string; 
-
+    videoPort: number;
+    audioPort: number;
+    recordingIp: string
 }
 
 const checkValid = (value:string): boolean => {
@@ -54,13 +56,16 @@ function loadConfig():Config{
     const redisPort2 = process.env.REDIS_PORT2
     const redisPort3 = process.env.REDIS_PORT3
     const instanceId = process.env.INSTANCE_ID; 
+    const videoPort = process.env.VIDEO_PORT
+    const audioPort = process.env.AUDIO_PORT
+    const recordingIp = process.env.RECORDING_IP; 
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisHost || !redisPort1 || !redisPort2 || !redisPort3 || !instanceId || !nodeEnviorment){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisHost || !redisPort1 || !redisPort2 || !redisPort3 || !instanceId || !nodeEnviorment || !audioPort || !videoPort || !recordingIp){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
 
-    const numericEnv = [port, rtcMinPort,rtcMaxPort, turnTtl, mediaSoupWorker, workerThreshold, mediaSoupMaxWorker, redisPort1, redisPort2, redisPort3]
+    const numericEnv = [port, rtcMinPort,rtcMaxPort, turnTtl, mediaSoupWorker, workerThreshold, mediaSoupMaxWorker, redisPort1, redisPort2, redisPort3, audioPort, videoPort]
 
     if(numericEnv.some(checkValid)){
         logger.error("Invalid numeric env")
@@ -88,7 +93,10 @@ function loadConfig():Config{
         redisPort2: Number(redisPort2),
         redisPort3: Number(redisPort3), 
         instanceId, 
-        nodeEnviorment
+        nodeEnviorment, 
+        audioPort: Number(audioPort), 
+        videoPort: Number(videoPort), 
+        recordingIp: recordingIp
     }
 }
 
