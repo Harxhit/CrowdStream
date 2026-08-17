@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { X, Circle } from "lucide-react";
+import api from "../api/axios";
 
 import Viewer from "../viewer";
 
@@ -37,6 +38,7 @@ export default function ViewerPage() {
 
   const [panelOpen, setPanelOpen] = useState(false);
   const [panel, setPanel] = useState<"info" | "chat">("chat");
+  const [recordingId, setRecordingId] = useState<string | null>(null);
 
   const log = (message: string) => {
     console.log(message);
@@ -134,15 +136,84 @@ export default function ViewerPage() {
     if (!connected || !roomId) return;
 
     if (recording) {
-      socket.emit("stop-recording", roomId);
-      setRecording(false);
-      log("Stopping recording...");
+      socket.emit("stop-recording", roomId, async () => {
+        setRecording(false);
+        log("Recording stopped.");
+
+        await downloadRecording();
+      });
     } else {
       socket.emit("start-recording", roomId);
       setRecording(true);
       log("Starting recording...");
     }
   }
+
+  useEffect(() => {
+    const handleRecordingStarted = ({
+      recordingId,
+    }: {
+      recordingId: string;
+    }) => {
+      console.log('RecordingId', recordingId)
+      setRecordingId(recordingId);
+      log(`Recording started: ${recordingId}`);
+    };
+
+    socket.on("recording-started", handleRecordingStarted);
+
+    return () => {
+      socket.off("recording-started", handleRecordingStarted);
+    };
+  }, [socket]);
+
+async function downloadRecording() {
+  if (!recordingId || !roomId || !socket.id) {
+    log("ERROR: Recording details missing.");
+    return;
+  }
+
+  try {
+    log("Downloading recording...");
+
+    const response = await api.post(
+      "/recording/download",
+      {
+        recordingId,
+        socketId: socket.id,
+        roomId,
+      },
+      {
+        responseType: "blob",
+      }
+    );
+
+    const blob = response.data;
+
+    const url = window.URL.createObjectURL(blob);
+
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `crowdstream-${recordingId}.mp4`;
+
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+
+    window.URL.revokeObjectURL(url);
+
+    log("Recording downloaded.");
+    setRecordingId(null);
+  } catch (error) {
+    log(
+      `ERROR: ${
+        error instanceof Error
+          ? error.message
+          : "Failed to download recording"
+      }`
+    );
+  }
+}
 
   function openPanel(tab: "info" | "chat") {
     if (panelOpen && panel === tab) {

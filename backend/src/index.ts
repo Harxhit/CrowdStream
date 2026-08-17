@@ -6,16 +6,16 @@ import config from "./config";
 import cookie from 'cookie-parser'; 
 import axios from "axios";
 import https from "node:https"
-import { userRouter } from "./routes/user.route";
-import {authRouter} from "./routes/auth.route"
 import express from 'express'
 import connectToDataBase from "./database";
-import { turnRouter } from "./routes/turn.route";
 import { workerPoolCreation } from "./utils/workerPool.util";
 import {redis} from "./utils/redis.util"
-import { dbRouter } from "./routes/db.routes";
-import { verifyModelRegistration } from "./utils/modelsRegistration.util";
 import './models'
+import { userRouter } from "./routes/user.route";
+import { turnRouter } from "./routes/turn.route";
+import {authRouter} from "./routes/auth.route"
+import { dbRouter } from "./routes/db.routes";
+import { recordingRouter } from "./routes/recording.routes";
 
 app.use(cors());
 
@@ -53,6 +53,7 @@ app.use('/api/v1', authRouter)
 app.use('/api/v1/auth',userRouter);
 app.use('/api/v1/turn',turnRouter);
 app.use('/db', dbRouter)
+app.use('/api/v1/recording', recordingRouter)
 
 app.get("/__ping", (_req: Request, res : Response) => {
   res.send("PING OK");

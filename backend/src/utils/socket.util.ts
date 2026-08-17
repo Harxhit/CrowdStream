@@ -17,7 +17,6 @@ import { ipHash } from "./hash.util";
 import { getRoom } from "../rooms/room.store";
 import { consumePlainTransportMedia, createAudioAndVideoPlainTranport } from "../recording/recording";
 import { startFfmpegRecording, stopFfmpegRecording } from "../recording/ffmpeg";
-import { createConsumerTransport } from "../handlers/viewer.handler";
 import { activeRecordings } from "../stores/maps";
 import { releasePorts } from "../recording/portAllocator";
 
@@ -170,19 +169,26 @@ io.on("connection", (socket) => {
 
       const ffmpeg = startFfmpegRecording(roomId, socketId); 
 
+      const recordingId = crypto.randomUUID(); 
+
       activeRecordings.set(socketId, {
-        ffmpeg: ffmpeg, 
+        ffmpeg: ffmpeg.ffmpeg, 
         roomId: roomId, 
+        socketId: socketId, 
+        recordingId: recordingId, 
         audioTransportId: audioTransport.id, 
         videoTransportId: videoTransport.id, 
         audioConsumerId: audioConsumer?.id, 
         videoConsumerId: videoConsumer?.id, 
         audioPort: audioPort, 
-        videoPort: videoPort
+        videoPort: videoPort, 
+        recordingPath: ffmpeg.recordingPath, 
       })
-  
+
       audioConsumer?.resume(); 
       videoConsumer?.resume(); 
+
+      socket.emit('recording-started', {recordingId})
       
     } catch (error) {
       logger.error('Recording failure',{
@@ -192,9 +198,8 @@ io.on("connection", (socket) => {
     }
   })
 
-  socket.on('stop-recording', async(payload) => {
+  socket.on('stop-recording', async(roomId , ack) => {
     try {
-      const roomId = payload; 
       if(!roomId){
         throw new Error('Room Id not found')
       }
@@ -230,9 +235,8 @@ io.on("connection", (socket) => {
         }
       }
 
-      activeRecordings.delete(socketId)
-      releasePorts(recordingsDetails!.audioPort, recordingsDetails!.videoPort)
-
+      ack()
+      
     } catch (error) {
       logger.error('Recording failure',{
         error: (error as Error).message, 

@@ -6,7 +6,7 @@ import logger from "../utils/logging";
 
 export const startFfmpegRecording = (roomId: string, socketId: string) => {
   const sdpPath = `src/recording/${roomId}.sdp`
-  
+  const recordingPath = `recording${roomId}${Date.now()}.mp4`
   const ffmpeg = spawn(ffmpegPath!, [
     "-protocol_whitelist",
     "file,udp,rtp",
@@ -20,7 +20,7 @@ export const startFfmpegRecording = (roomId: string, socketId: string) => {
     "23",
     "-c:a",
     "copy",
-    `recording${roomId}${Date.now()}.mp4`
+    recordingPath
   ])
 
   ffmpeg.stderr.on("data", (data) => {
@@ -33,10 +33,9 @@ export const startFfmpegRecording = (roomId: string, socketId: string) => {
   
   ffmpeg.on("close", (code) => {
     console.log(`FFmpeg exited with code ${code}`);
-    activeRecordings.delete(socketId)
   });
 
-  return ffmpeg; 
+  return {ffmpeg , recordingPath}; 
 }
 
 
@@ -48,11 +47,7 @@ export const stopFfmpegRecording = async(socketId:string) => {
   }
 
   await new Promise<void>((resolve) => {
-    ffmpeg.ffmpeg.once("close", () => {
-      activeRecordings.delete(socketId);
-      resolve();
-    });
-
+    ffmpeg.ffmpeg.once("close", () => resolve());
     ffmpeg.ffmpeg.kill("SIGINT");
   });
 }
