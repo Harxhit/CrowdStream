@@ -95,6 +95,7 @@ const getRoom = (roomId: string) => {
     logger.info('Get room started')
 
     const room = memoryRoom.get(roomId);
+    console.log('Memory room',memoryRoom)
 
     if (!room) {
       logger.error('Room not found')
