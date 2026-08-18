@@ -9,7 +9,6 @@ import { addViewerInRedisRoom, heartBeat, Presence, publishPresence, viewerCount
 import { TransportType } from "../types/mediasoup";
 import { generateAudioRecordingSdp, generateVideoRecordingSdp } from "../recording/sdp";
 import type { Consumer } from "mediasoup/node/lib/types";
-import config from "../config";
 
 
 type ConsumeResult = {

@@ -25,19 +25,19 @@ const registerViewerHanlder = async (socket: Socket) => {
 
         const hashedIp = ipHash(socket)
 
-        const userRateLimit = await rateLimiter(viewerId, 'user', 'join', roomId)
-        if (!userRateLimit.allowed) {
-          logger.warn('Join rate limit exceeded (user)', { viewerId, roomId, retryAt: userRateLimit.retryAt })
-          ack({ success: false, code: 'RATE_LIMITED', retryAt: userRateLimit.retryAt })
-          return
-        }
+        // const userRateLimit = await rateLimiter(viewerId, 'user', 'join', roomId)
+        // if (!userRateLimit.allowed) {
+        //   logger.warn('Join rate limit exceeded (user)', { viewerId, roomId, retryAt: userRateLimit.retryAt })
+        //   ack({ success: false, code: 'RATE_LIMITED', retryAt: userRateLimit.retryAt })
+        //   return
+        // }
 
-        const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'join', roomId)
-        if (!ipRateLimit.allowed) {
-          logger.warn('Join rate limit exceeded (ip)', { hashedIp, roomId, retryAt: ipRateLimit.retryAt })
-          ack({ success: false, code: 'RATE_LIMITED', retryAt: ipRateLimit.retryAt })
-          return
-        }
+        // const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'join', roomId)
+        // if (!ipRateLimit.allowed) {
+        //   logger.warn('Join rate limit exceeded (ip)', { hashedIp, roomId, retryAt: ipRateLimit.retryAt })
+        //   ack({ success: false, code: 'RATE_LIMITED', retryAt: ipRateLimit.retryAt })
+        //   return
+        // }
 
         const room = getRoom(roomId); 
         if(!room){
