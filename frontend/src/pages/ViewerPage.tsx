@@ -203,7 +203,7 @@ async function downloadRecording() {
     window.URL.revokeObjectURL(url);
 
     log("Recording downloaded.");
-    setRecordingId(null);
+    setRecordingId((currentId) => currentId === recordingId ? null : currentId);
   } catch (error) {
     log(
       `ERROR: ${
