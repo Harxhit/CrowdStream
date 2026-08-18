@@ -67,11 +67,14 @@ export interface RedisRoom {
 
 export interface RecordingSession {
   ffmpeg: ChildProcess;
+  recordingId: string; 
+  socketId: string; 
   roomId: string;
   audioTransportId:string; 
   videoTransportId: string; 
   audioConsumerId?: string;
   videoConsumerId?: string;
   audioPort: number; 
-  videoPort: number
+  videoPort: number; 
+  recordingPath: string; 
 }

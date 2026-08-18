@@ -25289,3 +25289,2187 @@
 2026-08-15 17:25:18 info: User disconnected 9E613NcPfAojsPLlAAAD beacuse of transport close
 2026-08-15 17:25:18 info: Handle disconnect started
 2026-08-15 17:25:19 info: [node-1] Client connected: 0jT08UnW4x1C4z3lAAAH
+2026-08-17 21:34:52 info: Redis subscribers initialized
+2026-08-17 21:35:05 info: MongoDB connected
+2026-08-17 21:35:05 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 21:35:05 info: Creating worker started
+2026-08-17 21:35:05 info: Creating worker started
+2026-08-17 21:35:05 info: Creating worker started
+2026-08-17 21:35:05 info: Worker created successfully
+2026-08-17 21:35:05 info: Worker created successfully
+2026-08-17 21:35:05 info: Worker created successfully
+2026-08-17 21:35:05 info: Worker pool initialized
+2026-08-17 21:35:11 info: SignIn started
+2026-08-17 21:35:11 info: SignIn completed
+2026-08-17 21:35:11 info: [node-1] Client connected: nmaDPtA_Dp-eteevAAAB
+2026-08-17 21:35:18 info: SignIn started
+2026-08-17 21:35:18 info: SignIn completed
+2026-08-17 21:35:18 info: [node-1] Client connected: oWyTWbDMu-UWazjwAAAD
+2026-08-17 21:35:20 info: Create room started
+2026-08-17 21:35:20 info: Woker loads loaded successfully
+2026-08-17 21:35:20 info: Woker assigned succesfully
+2026-08-17 21:35:20 info: Creation of router started
+2026-08-17 21:35:20 info: Router created
+2026-08-17 21:35:20 info: Creation of room successfully executed
+2026-08-17 21:35:20 info: Get room started
+2026-08-17 21:35:20 info: Get room executed successfully
+2026-08-17 21:35:20 info: Broadcaster added to the room
+2026-08-17 21:35:20 info: Room created successfully
+2026-08-17 21:35:20 info: Get getRouterRtpCapabilities started
+2026-08-17 21:35:20 info: Fetching of router started
+2026-08-17 21:35:20 info: Fetching of router executed successfully
+2026-08-17 21:35:20 info: Rtp capabilities fetched successfully
+2026-08-17 21:36:45 info: User disconnected nmaDPtA_Dp-eteevAAAB beacuse of transport close
+2026-08-17 21:36:45 info: Handle disconnect started
+2026-08-17 21:36:45 info: Get room started
+2026-08-17 21:36:45 info: Get room executed successfully
+2026-08-17 21:36:45 info: Get room started
+2026-08-17 21:36:45 info: Get room executed successfully
+2026-08-17 21:36:45 info: Get room started
+2026-08-17 21:36:45 info: Get room executed successfully
+2026-08-17 21:36:45 warn: No active recording for room nmaDPtA_Dp-eteevAAAB
+2026-08-17 21:36:45 info: User disconnected oWyTWbDMu-UWazjwAAAD beacuse of transport close
+2026-08-17 21:36:45 info: Handle disconnect started
+2026-08-17 21:36:45 error: RoomId not found
+2026-08-17 21:36:45 warn: No active recording for room oWyTWbDMu-UWazjwAAAD
+2026-08-17 21:36:45 info: Remove broadcaster success
+2026-08-17 21:36:45 info: Handle disconnect succesfully
+2026-08-17 21:36:45 info: room:8e8f2530-ed57-46b1-b444-c6df726e6d3a room deleted successfully
+2026-08-17 21:36:45 warn: IDK
+2026-08-17 21:36:45 info: [node-1] Client connected: g-E9KLDeQUjeWBvMAAAF
+2026-08-17 21:36:45 info: [node-1] Client connected: cSmHmWns0MnHM-D7AAAH
+2026-08-17 21:36:56 info: Create room started
+2026-08-17 21:36:56 info: Woker loads loaded successfully
+2026-08-17 21:36:56 info: Woker assigned succesfully
+2026-08-17 21:36:56 info: Creation of router started
+2026-08-17 21:36:56 info: Router created
+2026-08-17 21:36:56 info: Creation of room successfully executed
+2026-08-17 21:36:56 info: Get room started
+2026-08-17 21:36:56 info: Get room executed successfully
+2026-08-17 21:36:56 info: Broadcaster added to the room
+2026-08-17 21:36:56 info: Room created successfully
+2026-08-17 21:36:56 info: Get getRouterRtpCapabilities started
+2026-08-17 21:36:56 info: Fetching of router started
+2026-08-17 21:36:56 info: Fetching of router executed successfully
+2026-08-17 21:36:56 info: Rtp capabilities fetched successfully
+2026-08-17 21:37:13 info: Redis subscribers initialized
+2026-08-17 21:37:44 warn: MongoDB disconnected
+2026-08-17 21:37:44 warn: MongoDB connection failed (1/∞). Retrying in 1000ms
+2026-08-17 21:37:44 error: MongoServerSelectionError: Server selection timed out after 30000 ms
+    at Topology.selectServer (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:635:30)
+    at async Topology._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:467:22)
+    at async Topology.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:404:7)
+    at async topologyConnect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:695:9)
+    at async MongoClient._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:707:7)
+    at async MongoClient.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:619:7)
+    at async NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:351:3)
+    at async NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1098:5)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:37:28)
+2026-08-17 21:38:01 info: Redis subscribers initialized
+2026-08-17 21:38:32 warn: MongoDB disconnected
+2026-08-17 21:38:32 warn: MongoDB connection failed (1/∞). Retrying in 1000ms
+2026-08-17 21:38:32 error: MongoServerSelectionError: Server selection timed out after 30000 ms
+    at Topology.selectServer (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:635:30)
+    at async Topology._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:467:22)
+    at async Topology.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:404:7)
+    at async topologyConnect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:695:9)
+    at async MongoClient._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:707:7)
+    at async MongoClient.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:619:7)
+    at async NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:351:3)
+    at async NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1098:5)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:37:28)
+2026-08-17 21:38:40 info: MongoDB connected
+2026-08-17 21:38:40 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 21:38:40 info: Creating worker started
+2026-08-17 21:38:40 info: Creating worker started
+2026-08-17 21:38:40 info: Creating worker started
+2026-08-17 21:38:40 info: Worker created successfully
+2026-08-17 21:38:40 info: Worker created successfully
+2026-08-17 21:38:40 info: Worker created successfully
+2026-08-17 21:38:40 info: Worker pool initialized
+2026-08-17 21:38:55 info: [node-1] Client connected: mqIqj8F332F1eTHOAAAB
+2026-08-17 21:39:40 info: User disconnected mqIqj8F332F1eTHOAAAB beacuse of ping timeout
+2026-08-17 21:39:40 info: Handle disconnect started
+2026-08-17 21:39:40 error: RoomId not found
+2026-08-17 21:39:40 warn: No active recording for room mqIqj8F332F1eTHOAAAB
+2026-08-17 21:39:40 warn: IDK
+2026-08-17 21:39:54 info: [node-1] Client connected: 8LpCoj5KU_G-uEzpAAAD
+2026-08-17 21:40:39 info: User disconnected 8LpCoj5KU_G-uEzpAAAD beacuse of ping timeout
+2026-08-17 21:40:39 info: Handle disconnect started
+2026-08-17 21:40:39 error: RoomId not found
+2026-08-17 21:40:39 warn: No active recording for room 8LpCoj5KU_G-uEzpAAAD
+2026-08-17 21:40:39 warn: IDK
+2026-08-17 21:42:06 info: SignIn started
+2026-08-17 21:42:06 info: SignIn completed
+2026-08-17 21:42:06 info: [node-1] Client connected: 2eQEmxLv-rgkum_DAAAF
+2026-08-17 21:42:12 info: SignIn started
+2026-08-17 21:42:13 info: SignIn completed
+2026-08-17 21:42:13 info: [node-1] Client connected: lrt8gFURK8SJb5T2AAAH
+2026-08-17 21:42:15 info: Create room started
+2026-08-17 21:42:15 info: Woker loads loaded successfully
+2026-08-17 21:42:15 info: Woker assigned succesfully
+2026-08-17 21:42:15 info: Creation of router started
+2026-08-17 21:42:15 info: Router created
+2026-08-17 21:42:15 info: Creation of room successfully executed
+2026-08-17 21:42:15 info: Get room started
+2026-08-17 21:42:15 info: Get room executed successfully
+2026-08-17 21:42:15 info: Broadcaster added to the room
+2026-08-17 21:42:15 info: Room created successfully
+2026-08-17 21:42:15 info: Get getRouterRtpCapabilities started
+2026-08-17 21:42:15 info: Fetching of router started
+2026-08-17 21:42:15 info: Fetching of router executed successfully
+2026-08-17 21:42:15 info: Rtp capabilities fetched successfully
+2026-08-17 21:42:46 info: User disconnected 2eQEmxLv-rgkum_DAAAF beacuse of transport close
+2026-08-17 21:42:46 info: Handle disconnect started
+2026-08-17 21:42:46 info: Get room started
+2026-08-17 21:42:46 info: Get room executed successfully
+2026-08-17 21:42:46 info: Get room started
+2026-08-17 21:42:46 info: Get room executed successfully
+2026-08-17 21:42:46 info: Get room started
+2026-08-17 21:42:46 info: Get room executed successfully
+2026-08-17 21:42:46 warn: No active recording for room 2eQEmxLv-rgkum_DAAAF
+2026-08-17 21:42:46 info: Remove broadcaster success
+2026-08-17 21:42:46 info: Handle disconnect succesfully
+2026-08-17 21:42:46 info: room:4fd9048f-5723-46b2-852a-4add918d6d63 room deleted successfully
+2026-08-17 21:42:47 info: [node-1] Client connected: bfqF9s-NvWE_zN0fAAAJ
+2026-08-17 21:42:49 info: Create room started
+2026-08-17 21:42:49 info: Woker loads loaded successfully
+2026-08-17 21:42:49 info: Woker assigned succesfully
+2026-08-17 21:42:49 info: Creation of router started
+2026-08-17 21:42:49 info: Router created
+2026-08-17 21:42:49 info: Creation of room successfully executed
+2026-08-17 21:42:49 info: Get room started
+2026-08-17 21:42:49 info: Get room executed successfully
+2026-08-17 21:42:49 info: Broadcaster added to the room
+2026-08-17 21:42:49 info: Room created successfully
+2026-08-17 21:42:49 info: Get getRouterRtpCapabilities started
+2026-08-17 21:42:49 info: Fetching of router started
+2026-08-17 21:42:49 info: Fetching of router executed successfully
+2026-08-17 21:42:49 info: Rtp capabilities fetched successfully
+2026-08-17 21:46:53 info: User disconnected lrt8gFURK8SJb5T2AAAH beacuse of transport close
+2026-08-17 21:46:53 info: Handle disconnect started
+2026-08-17 21:46:53 error: RoomId not found
+2026-08-17 21:46:53 warn: No active recording for room lrt8gFURK8SJb5T2AAAH
+2026-08-17 21:46:53 warn: IDK
+2026-08-17 21:46:54 info: User disconnected bfqF9s-NvWE_zN0fAAAJ beacuse of transport close
+2026-08-17 21:46:54 info: Handle disconnect started
+2026-08-17 21:46:54 info: Get room started
+2026-08-17 21:46:54 info: Get room executed successfully
+2026-08-17 21:46:54 info: Get room started
+2026-08-17 21:46:54 info: Get room executed successfully
+2026-08-17 21:46:54 info: Get room started
+2026-08-17 21:46:54 info: Get room executed successfully
+2026-08-17 21:46:54 warn: No active recording for room bfqF9s-NvWE_zN0fAAAJ
+2026-08-17 21:46:54 info: Remove broadcaster success
+2026-08-17 21:46:54 info: Handle disconnect succesfully
+2026-08-17 21:46:54 info: room:6f63c34b-ac94-43f0-b6a5-564405e5f148 room deleted successfully
+2026-08-17 21:47:46 info: Redis subscribers initialized
+2026-08-17 21:47:55 info: Redis subscribers initialized
+2026-08-17 21:48:25 warn: MongoDB disconnected
+2026-08-17 21:48:25 warn: MongoDB connection failed (1/∞). Retrying in 1000ms
+2026-08-17 21:48:25 error: MongoServerSelectionError: Server selection timed out after 30000 ms
+    at Topology.selectServer (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:635:30)
+    at async Topology._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:467:22)
+    at async Topology.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:404:7)
+    at async topologyConnect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:695:9)
+    at async MongoClient._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:707:7)
+    at async MongoClient.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:619:7)
+    at async NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:351:3)
+    at async NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1098:5)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:37:28)
+2026-08-17 21:48:59 warn: MongoDB disconnected
+2026-08-17 21:48:59 warn: MongoDB connection failed (2/∞). Retrying in 2000ms
+2026-08-17 21:48:59 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 32150ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-17 21:49:14 info: Redis subscribers initialized
+2026-08-17 21:49:22 info: Redis subscribers initialized
+2026-08-17 21:49:37 info: Redis subscribers initialized
+2026-08-17 21:49:39 info: MongoDB connected
+2026-08-17 21:49:39 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 21:49:39 info: Creating worker started
+2026-08-17 21:49:39 info: Creating worker started
+2026-08-17 21:49:39 info: Creating worker started
+2026-08-17 21:49:39 info: Worker created successfully
+2026-08-17 21:49:39 info: Worker created successfully
+2026-08-17 21:49:39 info: Worker created successfully
+2026-08-17 21:49:39 info: Worker pool initialized
+2026-08-17 21:49:59 info: SignIn started
+2026-08-17 21:49:59 info: SignIn completed
+2026-08-17 21:49:59 info: [node-1] Client connected: pYaexw0NnKer-QiCAAAB
+2026-08-17 21:49:59 info: User disconnected pYaexw0NnKer-QiCAAAB beacuse of forced server close
+2026-08-17 21:49:59 info: Handle disconnect started
+2026-08-17 21:49:59 error: RoomId not found
+2026-08-17 21:49:59 warn: No active recording for room pYaexw0NnKer-QiCAAAB
+2026-08-17 21:50:00 warn: IDK
+2026-08-17 21:50:03 info: SignIn started
+2026-08-17 21:50:03 info: SignIn completed
+2026-08-17 21:50:03 info: [node-1] Client connected: jNW7BnwwZ6w1bDxGAAAD
+2026-08-17 21:50:08 info: Create room started
+2026-08-17 21:50:08 info: Woker loads loaded successfully
+2026-08-17 21:50:08 info: Woker assigned succesfully
+2026-08-17 21:50:08 info: Creation of router started
+2026-08-17 21:50:08 info: Router created
+2026-08-17 21:50:08 info: Creation of room successfully executed
+2026-08-17 21:50:08 info: Get room started
+2026-08-17 21:50:08 info: Get room executed successfully
+2026-08-17 21:50:08 info: Broadcaster added to the room
+2026-08-17 21:50:08 info: Room created successfully
+2026-08-17 21:50:08 info: Get getRouterRtpCapabilities started
+2026-08-17 21:50:08 info: Fetching of router started
+2026-08-17 21:50:08 info: Fetching of router executed successfully
+2026-08-17 21:50:08 info: Rtp capabilities fetched successfully
+2026-08-17 21:50:08 info: Get room started
+2026-08-17 21:50:08 info: Get room executed successfully
+2026-08-17 21:50:08 info: Transport created : 8aa43be5-fb3a-45be-a027-0e10bdaa9179
+2026-08-17 21:50:08 info: Get room started
+2026-08-17 21:50:08 info: Get room executed successfully
+2026-08-17 21:50:11 info: Connect broadcaster transport listener started
+2026-08-17 21:50:11 info: Get room started
+2026-08-17 21:50:11 info: Get room executed successfully
+2026-08-17 21:50:11 info: Connect broadcaster transport executed successfully
+2026-08-17 21:50:11 info: Transport ICE state changed
+2026-08-17 21:50:11 info: Transport DTLS state changed
+2026-08-17 21:50:11 info: Producer listener started
+2026-08-17 21:50:11 info: Get room started
+2026-08-17 21:50:11 info: Get room executed successfully
+2026-08-17 21:50:11 info: Transport DTLS state changed
+2026-08-17 21:50:11 info: Producer listener executed successfully:
+2026-08-17 21:50:11 info: Producer listener started
+2026-08-17 21:50:11 info: Get room started
+2026-08-17 21:50:11 info: Get room executed successfully
+2026-08-17 21:50:11 info: Producer listener executed successfully:
+2026-08-17 21:50:20 info: [node-1] Client connected: Ehkdmh4q7BFnoph-AAAF
+2026-08-17 21:50:34 info: SignIn started
+2026-08-17 21:50:34 info: SignIn completed
+2026-08-17 21:50:35 info: [node-1] Client connected: f2dvG30rKBcTUisbAAAH
+2026-08-17 21:51:05 info: User disconnected Ehkdmh4q7BFnoph-AAAF beacuse of ping timeout
+2026-08-17 21:51:05 info: Handle disconnect started
+2026-08-17 21:51:05 error: RoomId not found
+2026-08-17 21:51:05 warn: No active recording for room Ehkdmh4q7BFnoph-AAAF
+2026-08-17 21:51:05 warn: IDK
+2026-08-17 21:51:06 info: SignIn started
+2026-08-17 21:51:06 info: SignIn completed
+2026-08-17 21:51:19 info: User disconnected f2dvG30rKBcTUisbAAAH beacuse of ping timeout
+2026-08-17 21:51:19 info: Handle disconnect started
+2026-08-17 21:51:19 error: RoomId not found
+2026-08-17 21:51:19 warn: No active recording for room f2dvG30rKBcTUisbAAAH
+2026-08-17 21:51:20 warn: IDK
+2026-08-17 21:51:24 info: [node-1] Client connected: S9jEOXqWDXeMX33FAAAJ
+2026-08-17 21:51:39 info: Join as viewer listner started
+2026-08-17 21:51:39 info: Rate limiting
+2026-08-17 21:51:39 info: Rate limiting
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Fetching of router started
+2026-08-17 21:51:39 info: Fetching of router executed successfully
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Viewer joined the room
+2026-08-17 21:51:39 info: Join viewer listner successfully executed
+2026-08-17 21:51:39 info: Create viewer transport listner started
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Transport created : b2308044-39d5-4bcc-b45c-0a0dbff04a13
+2026-08-17 21:51:39 info: Viewer transport successfully created
+2026-08-17 21:51:39 info: Create viewer transport listner successfully executed
+2026-08-17 21:51:39 info: Consume lister started
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Viewer media consume successfully executed
+2026-08-17 21:51:39 info: Consume lister executed successfully
+2026-08-17 21:51:39 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 21:51:39 info: Connect consumer listner started
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Consumer transport connected successfully
+2026-08-17 21:51:39 info: Connect consumer listner executed successfully
+2026-08-17 21:51:39 info: Transport ICE state changed
+2026-08-17 21:51:39 info: Transport DTLS state changed
+2026-08-17 21:51:39 info: Transport DTLS state changed
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Viewer consumer resumed
+2026-08-17 21:51:39 info: Resume consumer listener executed successfully
+2026-08-17 21:51:39 info: Get room started
+2026-08-17 21:51:39 info: Get room executed successfully
+2026-08-17 21:51:39 info: Viewer consumer resumed
+2026-08-17 21:51:39 info: Resume consumer listener executed successfully
+2026-08-17 21:51:44 info: Get room started
+2026-08-17 21:51:44 info: Get room executed successfully
+2026-08-17 21:51:44 info: Get room started
+2026-08-17 21:51:44 info: Get room executed successfully
+2026-08-17 21:51:44 info: Get room started
+2026-08-17 21:51:44 info: Get room executed successfully
+2026-08-17 21:51:44 info: Get room started
+2026-08-17 21:51:44 info: Get room executed successfully
+2026-08-17 21:51:44 info: Get room started
+2026-08-17 21:51:44 info: Get room executed successfully
+2026-08-17 21:51:44 info: Get room started
+2026-08-17 21:51:44 info: Get room executed successfully
+2026-08-17 21:51:59 info: Get room started
+2026-08-17 21:51:59 info: Get room executed successfully
+2026-08-17 21:51:59 info: Get room started
+2026-08-17 21:51:59 info: Get room executed successfully
+2026-08-17 21:52:19 info: Get room started
+2026-08-17 21:52:19 info: Get room executed successfully
+2026-08-17 21:52:39 info: Get room started
+2026-08-17 21:52:39 info: Get room executed successfully
+2026-08-17 21:52:59 info: Get room started
+2026-08-17 21:52:59 info: Get room executed successfully
+2026-08-17 21:53:19 info: Get room started
+2026-08-17 21:53:19 info: Get room executed successfully
+2026-08-17 21:53:39 info: Get room started
+2026-08-17 21:53:39 info: Get room executed successfully
+2026-08-17 21:53:59 info: Get room started
+2026-08-17 21:53:59 info: Get room executed successfully
+2026-08-17 21:54:19 info: Get room started
+2026-08-17 21:54:19 info: Get room executed successfully
+2026-08-17 21:54:39 info: Get room started
+2026-08-17 21:54:39 info: Get room executed successfully
+2026-08-17 21:55:01 info: Redis subscribers initialized
+2026-08-17 21:55:28 info: Redis subscribers initialized
+2026-08-17 21:55:59 warn: MongoDB disconnected
+2026-08-17 21:55:59 warn: MongoDB connection failed (1/∞). Retrying in 1000ms
+2026-08-17 21:55:59 error: MongoServerSelectionError: Server selection timed out after 30000 ms
+    at Topology.selectServer (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:635:30)
+    at async Topology._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:467:22)
+    at async Topology.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:404:7)
+    at async topologyConnect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:695:9)
+    at async MongoClient._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:707:7)
+    at async MongoClient.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:619:7)
+    at async NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:351:3)
+    at async NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1098:5)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:37:28)
+2026-08-17 21:56:37 warn: MongoDB disconnected
+2026-08-17 21:56:37 warn: MongoDB connection failed (2/∞). Retrying in 2000ms
+2026-08-17 21:56:37 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 30083ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-17 21:57:10 warn: MongoDB disconnected
+2026-08-17 21:57:10 warn: MongoDB connection failed (3/∞). Retrying in 4000ms
+2026-08-17 21:57:10 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 30363ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-17 21:57:46 warn: MongoDB disconnected
+2026-08-17 21:57:46 warn: MongoDB connection failed (4/∞). Retrying in 8000ms
+2026-08-17 21:57:46 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 32190ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-17 21:58:01 info: MongoDB connected
+2026-08-17 21:58:01 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 21:58:01 info: Creating worker started
+2026-08-17 21:58:01 info: Creating worker started
+2026-08-17 21:58:01 info: Creating worker started
+2026-08-17 21:58:01 info: Worker created successfully
+2026-08-17 21:58:01 info: Worker created successfully
+2026-08-17 21:58:01 info: Worker created successfully
+2026-08-17 21:58:01 info: Worker pool initialized
+2026-08-17 21:58:06 info: [node-1] Client connected: E2pGtefRtBRI4KltAAAB
+2026-08-17 21:58:11 info: [node-1] Client connected: CbQNRhWZy-R3O_WkAAAD
+2026-08-17 21:59:05 info: Redis subscribers initialized
+2026-08-17 21:59:13 info: MongoDB connected
+2026-08-17 21:59:13 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 21:59:13 info: Creating worker started
+2026-08-17 21:59:13 info: Creating worker started
+2026-08-17 21:59:13 info: Creating worker started
+2026-08-17 21:59:13 info: Worker created successfully
+2026-08-17 21:59:13 info: Worker created successfully
+2026-08-17 21:59:13 info: Worker created successfully
+2026-08-17 21:59:13 info: Worker pool initialized
+2026-08-17 22:01:52 info: Redis subscribers initialized
+2026-08-17 22:02:25 warn: MongoDB disconnected
+2026-08-17 22:02:25 warn: MongoDB connection failed (1/∞). Retrying in 1000ms
+2026-08-17 22:02:25 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 31608ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-17 22:02:56 warn: MongoDB disconnected
+2026-08-17 22:02:56 warn: MongoDB connection failed (2/∞). Retrying in 2000ms
+2026-08-17 22:02:56 error: MongoServerSelectionError: Server selection timed out after 30000 ms
+    at Topology.selectServer (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:635:30)
+    at async Topology._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:467:22)
+    at async Topology.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:404:7)
+    at async topologyConnect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:695:9)
+    at async MongoClient._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:707:7)
+    at async MongoClient.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:619:7)
+    at async NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:351:3)
+    at async NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1098:5)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:37:28)
+2026-08-17 22:03:33 warn: MongoDB disconnected
+2026-08-17 22:03:33 warn: MongoDB connection failed (3/∞). Retrying in 4000ms
+2026-08-17 22:03:33 error: MongoNetworkTimeoutError: Socket 'secureConnect' timed out after 32100ms (connectTimeoutMS: 30000)
+    at TLSSocket.<anonymous> (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/cmap/connect.ts:399:11)
+    at Object.onceWrapper (node:events:630:28)
+    at TLSSocket.emit (node:events:509:20)
+    at TLSSocket.Socket._onTimeout (node:net:610:8)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7)
+2026-08-17 22:03:39 info: MongoDB connected
+2026-08-17 22:03:39 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:03:39 info: Creating worker started
+2026-08-17 22:03:39 info: Creating worker started
+2026-08-17 22:03:39 info: Creating worker started
+2026-08-17 22:03:39 info: Worker created successfully
+2026-08-17 22:03:39 info: Worker created successfully
+2026-08-17 22:03:39 info: Worker created successfully
+2026-08-17 22:03:39 info: Worker pool initialized
+2026-08-17 22:03:57 info: Redis subscribers initialized
+2026-08-17 22:04:28 warn: MongoDB disconnected
+2026-08-17 22:04:28 warn: MongoDB connection failed (1/∞). Retrying in 1000ms
+2026-08-17 22:04:28 error: MongoServerSelectionError: Server selection timed out after 30000 ms
+    at Topology.selectServer (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:635:30)
+    at async Topology._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:467:22)
+    at async Topology.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:404:7)
+    at async topologyConnect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:695:9)
+    at async MongoClient._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:707:7)
+    at async MongoClient.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:619:7)
+    at async NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:351:3)
+    at async NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1098:5)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:37:28)
+2026-08-17 22:04:35 info: Redis subscribers initialized
+2026-08-17 22:05:06 warn: MongoDB disconnected
+2026-08-17 22:05:06 warn: MongoDB connection failed (1/∞). Retrying in 1000ms
+2026-08-17 22:05:06 error: MongoServerSelectionError: Server selection timed out after 30000 ms
+    at Topology.selectServer (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:635:30)
+    at async Topology._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:467:22)
+    at async Topology.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/sdam/topology.ts:404:7)
+    at async topologyConnect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:695:9)
+    at async MongoClient._connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:707:7)
+    at async MongoClient.connect (/home/harshit/CrowdStream/backend/node_modules/mongodb/src/mongo_client.ts:619:7)
+    at async NativeConnection.createClient (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:351:3)
+    at async NativeConnection.openUri (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/connection.js:1098:5)
+    at async connectToDataBase (/home/harshit/CrowdStream/backend/src/database/index.ts:37:28)
+2026-08-17 22:05:27 info: Redis subscribers initialized
+2026-08-17 22:05:28 info: MongoDB connected
+2026-08-17 22:05:28 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:05:28 info: Creating worker started
+2026-08-17 22:05:28 info: Creating worker started
+2026-08-17 22:05:28 info: Creating worker started
+2026-08-17 22:05:28 info: Worker created successfully
+2026-08-17 22:05:28 info: Worker created successfully
+2026-08-17 22:05:28 info: Worker created successfully
+2026-08-17 22:05:28 info: Worker pool initialized
+2026-08-17 22:07:43 info: SignIn started
+2026-08-17 22:07:44 info: SignIn completed
+2026-08-17 22:07:52 info: SignIn started
+2026-08-17 22:07:53 info: SignIn completed
+2026-08-17 22:09:17 info: SignIn started
+2026-08-17 22:09:17 info: SignIn completed
+2026-08-17 22:09:27 info: SignIn started
+2026-08-17 22:09:27 info: SignIn completed
+2026-08-17 22:09:27 info: [node-1] Client connected: svBmZOMZSBKa9Z7TAAAB
+2026-08-17 22:09:32 info: Create room started
+2026-08-17 22:09:32 info: Woker loads loaded successfully
+2026-08-17 22:09:32 info: Woker assigned succesfully
+2026-08-17 22:09:32 info: Creation of router started
+2026-08-17 22:09:32 info: Router created
+2026-08-17 22:09:32 info: Creation of room successfully executed
+2026-08-17 22:09:32 info: Get room started
+2026-08-17 22:09:32 info: Get room executed successfully
+2026-08-17 22:09:32 info: Broadcaster added to the room
+2026-08-17 22:09:32 info: Room created successfully
+2026-08-17 22:09:32 info: Get getRouterRtpCapabilities started
+2026-08-17 22:09:32 info: Fetching of router started
+2026-08-17 22:09:32 info: Fetching of router executed successfully
+2026-08-17 22:09:32 info: Rtp capabilities fetched successfully
+2026-08-17 22:09:32 info: Get room started
+2026-08-17 22:09:32 info: Get room executed successfully
+2026-08-17 22:09:32 info: Transport created : ed83fb3c-611b-4e65-a231-4361ae463d77
+2026-08-17 22:09:32 info: Get room started
+2026-08-17 22:09:32 info: Get room executed successfully
+2026-08-17 22:09:35 info: Connect broadcaster transport listener started
+2026-08-17 22:09:35 info: Get room started
+2026-08-17 22:09:35 info: Get room executed successfully
+2026-08-17 22:09:35 info: Connect broadcaster transport executed successfully
+2026-08-17 22:09:35 info: Transport ICE state changed
+2026-08-17 22:09:35 info: Transport DTLS state changed
+2026-08-17 22:09:35 info: Producer listener started
+2026-08-17 22:09:35 info: Transport DTLS state changed
+2026-08-17 22:09:35 info: Get room started
+2026-08-17 22:09:35 info: Get room executed successfully
+2026-08-17 22:09:35 info: Producer listener executed successfully:
+2026-08-17 22:09:35 info: Producer listener started
+2026-08-17 22:09:35 info: Get room started
+2026-08-17 22:09:35 info: Get room executed successfully
+2026-08-17 22:09:35 info: Producer listener executed successfully:
+2026-08-17 22:09:38 info: [node-1] Client connected: zpcO50-s-jDl_cLpAAAD
+2026-08-17 22:09:48 info: SignIn started
+2026-08-17 22:09:49 info: SignIn completed
+2026-08-17 22:09:49 info: [node-1] Client connected: 1SKJHeJmwSwImO_CAAAF
+2026-08-17 22:09:55 info: Join as viewer listner started
+2026-08-17 22:09:55 info: Rate limiting
+2026-08-17 22:09:55 info: Rate limiting
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Fetching of router started
+2026-08-17 22:09:55 info: Fetching of router executed successfully
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Viewer joined the room
+2026-08-17 22:09:55 info: Join viewer listner successfully executed
+2026-08-17 22:09:55 info: Create viewer transport listner started
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Transport created : b0ce713f-06d4-4e7c-935b-95db3ead17ae
+2026-08-17 22:09:55 info: Viewer transport successfully created
+2026-08-17 22:09:55 info: Create viewer transport listner successfully executed
+2026-08-17 22:09:55 info: Consume lister started
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Viewer media consume successfully executed
+2026-08-17 22:09:55 info: Consume lister executed successfully
+2026-08-17 22:09:55 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 22:09:55 info: Connect consumer listner started
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Consumer transport connected successfully
+2026-08-17 22:09:55 info: Connect consumer listner executed successfully
+2026-08-17 22:09:55 info: Transport ICE state changed
+2026-08-17 22:09:55 info: Transport DTLS state changed
+2026-08-17 22:09:55 info: Transport DTLS state changed
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Viewer consumer resumed
+2026-08-17 22:09:55 info: Resume consumer listener executed successfully
+2026-08-17 22:09:55 info: Get room started
+2026-08-17 22:09:55 info: Get room executed successfully
+2026-08-17 22:09:55 info: Viewer consumer resumed
+2026-08-17 22:09:55 info: Resume consumer listener executed successfully
+2026-08-17 22:09:59 info: Get room started
+2026-08-17 22:09:59 info: Get room executed successfully
+2026-08-17 22:09:59 info: Get room started
+2026-08-17 22:09:59 info: Get room executed successfully
+2026-08-17 22:09:59 info: Get room started
+2026-08-17 22:09:59 info: Get room executed successfully
+2026-08-17 22:09:59 info: Get room started
+2026-08-17 22:09:59 info: Get room executed successfully
+2026-08-17 22:09:59 info: Get room started
+2026-08-17 22:09:59 info: Get room executed successfully
+2026-08-17 22:09:59 info: Get room started
+2026-08-17 22:09:59 info: Get room executed successfully
+2026-08-17 22:10:09 info: Get room started
+2026-08-17 22:10:09 info: Get room executed successfully
+2026-08-17 22:10:15 info: Get room started
+2026-08-17 22:10:15 info: Get room executed successfully
+2026-08-17 22:10:23 info: User disconnected zpcO50-s-jDl_cLpAAAD beacuse of ping timeout
+2026-08-17 22:10:23 info: Handle disconnect started
+2026-08-17 22:10:23 error: RoomId not found
+2026-08-17 22:10:23 warn: No active recording for room zpcO50-s-jDl_cLpAAAD
+2026-08-17 22:10:24 warn: IDK
+2026-08-17 22:10:35 info: Get room started
+2026-08-17 22:10:35 info: Get room executed successfully
+2026-08-17 22:10:55 info: Get room started
+2026-08-17 22:10:55 info: Get room executed successfully
+2026-08-17 22:11:15 info: Get room started
+2026-08-17 22:11:15 info: Get room executed successfully
+2026-08-17 22:11:35 info: Get room started
+2026-08-17 22:11:35 info: Get room executed successfully
+2026-08-17 22:11:55 info: Get room started
+2026-08-17 22:11:55 info: Get room executed successfully
+2026-08-17 22:12:15 info: Get room started
+2026-08-17 22:12:15 info: Get room executed successfully
+2026-08-17 22:12:35 info: Get room started
+2026-08-17 22:12:35 info: Get room executed successfully
+2026-08-17 22:12:55 info: Get room started
+2026-08-17 22:12:55 info: Get room executed successfully
+2026-08-17 22:13:15 info: Get room started
+2026-08-17 22:13:15 info: Get room executed successfully
+2026-08-17 22:13:22 info: Join as viewer listner started
+2026-08-17 22:13:22 info: Rate limiting
+2026-08-17 22:13:22 info: Rate limiting
+2026-08-17 22:13:22 info: Get room started
+2026-08-17 22:13:22 info: Get room executed successfully
+2026-08-17 22:13:22 info: Fetching of router started
+2026-08-17 22:13:22 info: Fetching of router executed successfully
+2026-08-17 22:13:22 info: Get room started
+2026-08-17 22:13:22 info: Get room executed successfully
+2026-08-17 22:13:22 info: Viewer joined the room
+2026-08-17 22:13:22 info: Join viewer listner successfully executed
+2026-08-17 22:13:35 info: Get room started
+2026-08-17 22:13:35 info: Get room executed successfully
+2026-08-17 22:13:55 info: Get room started
+2026-08-17 22:13:55 info: Get room executed successfully
+2026-08-17 22:14:00 info: User disconnected 1SKJHeJmwSwImO_CAAAF beacuse of transport close
+2026-08-17 22:14:00 info: Handle disconnect started
+2026-08-17 22:14:00 info: Get room started
+2026-08-17 22:14:00 info: Get room executed successfully
+2026-08-17 22:14:00 info: Get room started
+2026-08-17 22:14:00 info: Get room executed successfully
+2026-08-17 22:14:00 info: Remove viewer started
+2026-08-17 22:14:00 info: Handle disconnect succesfully
+2026-08-17 22:14:00 warn: No active recording for room 1SKJHeJmwSwImO_CAAAF
+2026-08-17 22:14:00 info: Viewer removed from room
+2026-08-17 22:14:00 info: Transport DTLS state changed
+2026-08-17 22:14:00 info: [node-1] Client connected: RFFDfDuKPd2vdkGTAAAH
+2026-08-17 22:14:28 info: Transport ICE state changed
+2026-08-17 22:14:29 info: SignIn started
+2026-08-17 22:14:30 info: SignIn completed
+2026-08-17 22:14:30 info: [node-1] Client connected: xNhk-Lk3ufJOFYfqAAAJ
+2026-08-17 22:14:31 info: [node-1] Client connected: v7KopRQT309YkY6CAAAL
+2026-08-17 22:14:45 info: User disconnected RFFDfDuKPd2vdkGTAAAH beacuse of ping timeout
+2026-08-17 22:14:45 info: Handle disconnect started
+2026-08-17 22:14:45 error: RoomId not found
+2026-08-17 22:14:45 warn: No active recording for room RFFDfDuKPd2vdkGTAAAH
+2026-08-17 22:14:45 warn: IDK
+2026-08-17 22:15:14 info: User disconnected v7KopRQT309YkY6CAAAL beacuse of transport error
+2026-08-17 22:15:14 info: Handle disconnect started
+2026-08-17 22:15:14 error: RoomId not found
+2026-08-17 22:15:14 warn: No active recording for room v7KopRQT309YkY6CAAAL
+2026-08-17 22:15:14 warn: IDK
+2026-08-17 22:15:15 info: User disconnected xNhk-Lk3ufJOFYfqAAAJ beacuse of ping timeout
+2026-08-17 22:15:15 info: Handle disconnect started
+2026-08-17 22:15:15 error: RoomId not found
+2026-08-17 22:15:15 warn: No active recording for room xNhk-Lk3ufJOFYfqAAAJ
+2026-08-17 22:15:15 warn: IDK
+2026-08-17 22:15:15 info: [node-1] Client connected: 6Z8xEoNuFoEDw24dAAAN
+2026-08-17 22:15:29 info: Join as viewer listner started
+2026-08-17 22:15:29 info: Rate limiting
+2026-08-17 22:15:29 info: Rate limiting
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Fetching of router started
+2026-08-17 22:15:29 info: Fetching of router executed successfully
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Viewer joined the room
+2026-08-17 22:15:29 info: Join viewer listner successfully executed
+2026-08-17 22:15:29 info: Create viewer transport listner started
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Transport created : 5d8e0ed7-51be-4f89-9506-c9516c8f8bf6
+2026-08-17 22:15:29 info: Viewer transport successfully created
+2026-08-17 22:15:29 info: Create viewer transport listner successfully executed
+2026-08-17 22:15:29 info: Consume lister started
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Viewer media consume successfully executed
+2026-08-17 22:15:29 info: Consume lister executed successfully
+2026-08-17 22:15:29 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 22:15:29 info: Connect consumer listner started
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Consumer transport connected successfully
+2026-08-17 22:15:29 info: Connect consumer listner executed successfully
+2026-08-17 22:15:29 info: Transport ICE state changed
+2026-08-17 22:15:29 info: Transport DTLS state changed
+2026-08-17 22:15:29 info: Transport DTLS state changed
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Viewer consumer resumed
+2026-08-17 22:15:29 info: Resume consumer listener executed successfully
+2026-08-17 22:15:29 info: Get room started
+2026-08-17 22:15:29 info: Get room executed successfully
+2026-08-17 22:15:29 info: Viewer consumer resumed
+2026-08-17 22:15:29 info: Resume consumer listener executed successfully
+2026-08-17 22:15:32 info: Get room started
+2026-08-17 22:15:32 info: Get room executed successfully
+2026-08-17 22:15:32 info: Get room started
+2026-08-17 22:15:32 info: Get room executed successfully
+2026-08-17 22:15:32 info: Get room started
+2026-08-17 22:15:32 info: Get room executed successfully
+2026-08-17 22:15:32 info: Get room started
+2026-08-17 22:15:32 info: Get room executed successfully
+2026-08-17 22:15:32 info: Get room started
+2026-08-17 22:15:32 info: Get room executed successfully
+2026-08-17 22:15:32 info: Get room started
+2026-08-17 22:15:32 info: Get room executed successfully
+2026-08-17 22:15:37 info: User disconnected svBmZOMZSBKa9Z7TAAAB beacuse of ping timeout
+2026-08-17 22:15:37 info: Handle disconnect started
+2026-08-17 22:15:37 info: Get room started
+2026-08-17 22:15:37 info: Get room executed successfully
+2026-08-17 22:15:37 info: Get room started
+2026-08-17 22:15:37 info: Get room executed successfully
+2026-08-17 22:15:37 info: Get room started
+2026-08-17 22:15:37 info: Get room executed successfully
+2026-08-17 22:15:37 info: Get room started
+2026-08-17 22:15:37 info: Get room executed successfully
+2026-08-17 22:15:37 info: Get room started
+2026-08-17 22:15:37 info: Get room executed successfully
+2026-08-17 22:15:37 warn: No active recording for room svBmZOMZSBKa9Z7TAAAB
+2026-08-17 22:15:37 info: Remove broadcaster success
+2026-08-17 22:15:37 info: Handle disconnect succesfully
+2026-08-17 22:15:37 info: room:a40b2fe3-7f0e-40ca-9544-d1a3c2265cf1 room deleted successfully
+2026-08-17 22:15:40 info: [node-1] Client connected: MdunuJTNEw1DmCBAAAAP
+2026-08-17 22:15:40 info: Get room started
+2026-08-17 22:15:40 error: Room not found
+2026-08-17 22:15:40 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:101:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:207:27)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-08-17 22:15:40 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:113:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/utils/socket.util.ts:207:27)
+    at Socket.emit (node:events:509:20)
+    at Socket.emitUntyped (/home/harshit/CrowdStream/backend/node_modules/socket.io/dist/typed-events.js:69:22)
+    at /home/harshit/CrowdStream/backend/node_modules/socket.io/dist/socket.js:697:39
+    at processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-08-17 22:15:49 info: Get room started
+2026-08-17 22:45:45 info: Redis subscribers initialized
+2026-08-17 22:45:47 info: MongoDB connected
+2026-08-17 22:45:47 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:45:47 info: Creating worker started
+2026-08-17 22:45:47 info: Creating worker started
+2026-08-17 22:45:47 info: Creating worker started
+2026-08-17 22:45:47 info: Worker created successfully
+2026-08-17 22:45:47 info: Worker created successfully
+2026-08-17 22:45:47 info: Worker created successfully
+2026-08-17 22:45:47 info: Worker pool initialized
+2026-08-17 22:46:00 info: SignIn started
+2026-08-17 22:46:00 info: SignIn completed
+2026-08-17 22:46:00 info: [node-1] Client connected: xW2L6H6TSqd3dS48AAAB
+2026-08-17 22:46:08 info: SignIn started
+2026-08-17 22:46:08 info: SignIn completed
+2026-08-17 22:46:08 info: [node-1] Client connected: eldEpO0bSHq2TY7wAAAD
+2026-08-17 22:46:12 info: Create room started
+2026-08-17 22:46:12 info: Woker loads loaded successfully
+2026-08-17 22:46:12 info: Woker assigned succesfully
+2026-08-17 22:46:12 info: Creation of router started
+2026-08-17 22:46:12 info: Router created
+2026-08-17 22:46:12 info: Creation of room successfully executed
+2026-08-17 22:46:12 info: Get room started
+2026-08-17 22:46:12 info: Get room executed successfully
+2026-08-17 22:46:12 info: Broadcaster added to the room
+2026-08-17 22:46:12 info: Room created successfully
+2026-08-17 22:46:12 info: Get getRouterRtpCapabilities started
+2026-08-17 22:46:12 info: Fetching of router started
+2026-08-17 22:46:12 info: Fetching of router executed successfully
+2026-08-17 22:46:12 info: Rtp capabilities fetched successfully
+2026-08-17 22:46:12 info: Get room started
+2026-08-17 22:46:12 info: Get room executed successfully
+2026-08-17 22:46:12 info: Transport created : 19ddb9ce-dab0-4b72-a70a-fd324393a7fd
+2026-08-17 22:46:12 info: Get room started
+2026-08-17 22:46:12 info: Get room executed successfully
+2026-08-17 22:46:14 info: Connect broadcaster transport listener started
+2026-08-17 22:46:14 info: Get room started
+2026-08-17 22:46:14 info: Get room executed successfully
+2026-08-17 22:46:14 info: Connect broadcaster transport executed successfully
+2026-08-17 22:46:14 info: Transport ICE state changed
+2026-08-17 22:46:14 info: Transport DTLS state changed
+2026-08-17 22:46:14 info: Producer listener started
+2026-08-17 22:46:14 info: Get room started
+2026-08-17 22:46:14 info: Get room executed successfully
+2026-08-17 22:46:14 info: Transport DTLS state changed
+2026-08-17 22:46:15 info: Producer listener executed successfully:
+2026-08-17 22:46:15 info: Producer listener started
+2026-08-17 22:46:15 info: Get room started
+2026-08-17 22:46:15 info: Get room executed successfully
+2026-08-17 22:46:15 info: Producer listener executed successfully:
+2026-08-17 22:46:29 info: Join as viewer listner started
+2026-08-17 22:46:29 info: Rate limiting
+2026-08-17 22:46:29 info: Rate limiting
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Fetching of router started
+2026-08-17 22:46:29 info: Fetching of router executed successfully
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Viewer joined the room
+2026-08-17 22:46:29 info: Join viewer listner successfully executed
+2026-08-17 22:46:29 info: Create viewer transport listner started
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Transport created : c53e06f2-8e48-481b-99ad-e466d4eda29f
+2026-08-17 22:46:29 info: Viewer transport successfully created
+2026-08-17 22:46:29 info: Create viewer transport listner successfully executed
+2026-08-17 22:46:29 info: Consume lister started
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Viewer media consume successfully executed
+2026-08-17 22:46:29 info: Consume lister executed successfully
+2026-08-17 22:46:29 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 22:46:29 info: Connect consumer listner started
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Consumer transport connected successfully
+2026-08-17 22:46:29 info: Connect consumer listner executed successfully
+2026-08-17 22:46:29 info: Transport ICE state changed
+2026-08-17 22:46:29 info: Transport DTLS state changed
+2026-08-17 22:46:29 info: Transport DTLS state changed
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Viewer consumer resumed
+2026-08-17 22:46:29 info: Resume consumer listener executed successfully
+2026-08-17 22:46:29 info: Get room started
+2026-08-17 22:46:29 info: Get room executed successfully
+2026-08-17 22:46:29 info: Viewer consumer resumed
+2026-08-17 22:46:29 info: Resume consumer listener executed successfully
+2026-08-17 22:46:32 info: Get room started
+2026-08-17 22:46:32 info: Get room executed successfully
+2026-08-17 22:46:32 info: Get room started
+2026-08-17 22:46:32 info: Get room executed successfully
+2026-08-17 22:46:32 info: Get room started
+2026-08-17 22:46:32 info: Get room executed successfully
+2026-08-17 22:46:32 info: Get room started
+2026-08-17 22:46:32 info: Get room executed successfully
+2026-08-17 22:46:32 info: Get room started
+2026-08-17 22:46:32 info: Get room executed successfully
+2026-08-17 22:46:32 info: Get room started
+2026-08-17 22:46:32 info: Get room executed successfully
+2026-08-17 22:46:46 info: Get room started
+2026-08-17 22:46:46 info: Get room executed successfully
+2026-08-17 22:46:49 info: Get room started
+2026-08-17 22:46:49 info: Get room executed successfully
+2026-08-17 22:47:09 info: Get room started
+2026-08-17 22:47:09 info: Get room executed successfully
+2026-08-17 22:47:28 info: User disconnected xW2L6H6TSqd3dS48AAAB beacuse of transport close
+2026-08-17 22:47:28 info: Handle disconnect started
+2026-08-17 22:47:28 info: Get room started
+2026-08-17 22:47:28 info: Get room executed successfully
+2026-08-17 22:47:28 info: Get room started
+2026-08-17 22:47:28 info: Get room executed successfully
+2026-08-17 22:47:28 info: Get room started
+2026-08-17 22:47:28 info: Get room executed successfully
+2026-08-17 22:47:28 info: Get room started
+2026-08-17 22:47:28 info: Get room executed successfully
+2026-08-17 22:47:28 info: Get room started
+2026-08-17 22:47:28 info: Get room executed successfully
+2026-08-17 22:47:28 warn: No active recording for room xW2L6H6TSqd3dS48AAAB
+2026-08-17 22:47:28 info: Remove broadcaster success
+2026-08-17 22:47:28 info: Handle disconnect succesfully
+2026-08-17 22:47:28 info: room:3122ccaf-e348-4b84-b92f-ee1459901f1d room deleted successfully
+2026-08-17 22:47:28 info: [node-1] Client connected: pI-2PfK-XAOxK7SbAAAF
+2026-08-17 22:47:29 info: Get room started
+2026-08-17 22:48:24 info: Redis subscribers initialized
+2026-08-17 22:48:26 info: MongoDB connected
+2026-08-17 22:48:26 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:48:26 info: Creating worker started
+2026-08-17 22:48:26 info: Creating worker started
+2026-08-17 22:48:26 info: Creating worker started
+2026-08-17 22:48:26 info: Worker created successfully
+2026-08-17 22:48:26 info: Worker created successfully
+2026-08-17 22:48:26 info: Worker created successfully
+2026-08-17 22:48:26 info: Worker pool initialized
+2026-08-17 22:48:30 info: [node-1] Client connected: qWrh2nwNk64rzbB3AAAB
+2026-08-17 22:48:30 error: Room not found
+2026-08-17 22:49:58 info: Redis subscribers initialized
+2026-08-17 22:50:05 info: MongoDB connected
+2026-08-17 22:50:05 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:50:05 info: Creating worker started
+2026-08-17 22:50:05 info: Creating worker started
+2026-08-17 22:50:05 info: Creating worker started
+2026-08-17 22:50:05 info: Worker created successfully
+2026-08-17 22:50:05 info: Worker created successfully
+2026-08-17 22:50:05 info: Worker created successfully
+2026-08-17 22:50:05 info: Worker pool initialized
+2026-08-17 22:53:15 info: Redis subscribers initialized
+2026-08-17 22:53:16 info: MongoDB connected
+2026-08-17 22:53:16 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:53:16 info: Creating worker started
+2026-08-17 22:53:16 info: Creating worker started
+2026-08-17 22:53:16 info: Creating worker started
+2026-08-17 22:53:16 info: Worker created successfully
+2026-08-17 22:53:16 info: Worker created successfully
+2026-08-17 22:53:16 info: Worker created successfully
+2026-08-17 22:53:16 info: Worker pool initialized
+2026-08-17 22:53:22 info: Redis subscribers initialized
+2026-08-17 22:53:23 info: MongoDB connected
+2026-08-17 22:53:23 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:53:23 info: Creating worker started
+2026-08-17 22:53:23 info: Creating worker started
+2026-08-17 22:53:23 info: Creating worker started
+2026-08-17 22:53:23 info: Worker created successfully
+2026-08-17 22:53:23 info: Worker created successfully
+2026-08-17 22:53:23 info: Worker created successfully
+2026-08-17 22:53:23 info: Worker pool initialized
+2026-08-17 22:54:09 info: Redis subscribers initialized
+2026-08-17 22:54:11 info: MongoDB connected
+2026-08-17 22:54:11 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:54:11 info: Creating worker started
+2026-08-17 22:54:11 info: Creating worker started
+2026-08-17 22:54:11 info: Creating worker started
+2026-08-17 22:54:11 info: Worker created successfully
+2026-08-17 22:54:11 info: Worker created successfully
+2026-08-17 22:54:11 info: Worker created successfully
+2026-08-17 22:54:11 info: Worker pool initialized
+2026-08-17 22:54:20 info: SignIn started
+2026-08-17 22:54:20 info: SignIn completed
+2026-08-17 22:54:21 info: [node-1] Client connected: z2b8NJ-Xj94XbJi0AAAB
+2026-08-17 22:54:24 info: SignIn started
+2026-08-17 22:54:24 info: SignIn completed
+2026-08-17 22:54:24 info: [node-1] Client connected: lu8QaT-BylA1sDnVAAAD
+2026-08-17 22:54:27 info: Create room started
+2026-08-17 22:54:27 info: Woker loads loaded successfully
+2026-08-17 22:54:27 info: Woker assigned succesfully
+2026-08-17 22:54:27 info: Creation of router started
+2026-08-17 22:54:27 info: Router created
+2026-08-17 22:54:27 info: Creation of room successfully executed
+2026-08-17 22:54:27 info: Get room started
+2026-08-17 22:54:27 info: Get room executed successfully
+2026-08-17 22:54:27 info: Broadcaster added to the room
+2026-08-17 22:54:27 info: Room created successfully
+2026-08-17 22:54:27 info: Get getRouterRtpCapabilities started
+2026-08-17 22:54:27 info: Fetching of router started
+2026-08-17 22:54:27 info: Fetching of router executed successfully
+2026-08-17 22:54:27 info: Rtp capabilities fetched successfully
+2026-08-17 22:54:27 info: Get room started
+2026-08-17 22:54:27 info: Get room executed successfully
+2026-08-17 22:54:27 info: Transport created : 6d8fd7d4-6501-4d15-8a97-672d9724af3f
+2026-08-17 22:54:27 info: Get room started
+2026-08-17 22:54:27 info: Get room executed successfully
+2026-08-17 22:54:27 info: Connect broadcaster transport listener started
+2026-08-17 22:54:27 info: Get room started
+2026-08-17 22:54:27 info: Get room executed successfully
+2026-08-17 22:54:27 info: Connect broadcaster transport executed successfully
+2026-08-17 22:54:27 info: Transport ICE state changed
+2026-08-17 22:54:27 info: Transport DTLS state changed
+2026-08-17 22:54:27 info: Producer listener started
+2026-08-17 22:54:27 info: Get room started
+2026-08-17 22:54:27 info: Get room executed successfully
+2026-08-17 22:54:27 info: Transport DTLS state changed
+2026-08-17 22:54:27 info: Producer listener executed successfully:
+2026-08-17 22:54:27 info: Producer listener started
+2026-08-17 22:54:27 info: Get room started
+2026-08-17 22:54:27 info: Get room executed successfully
+2026-08-17 22:54:27 info: Producer listener executed successfully:
+2026-08-17 22:54:35 info: Join as viewer listner started
+2026-08-17 22:54:35 info: Rate limiting
+2026-08-17 22:54:35 info: Rate limiting
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Fetching of router started
+2026-08-17 22:54:35 info: Fetching of router executed successfully
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Viewer joined the room
+2026-08-17 22:54:35 info: Join viewer listner successfully executed
+2026-08-17 22:54:35 info: Create viewer transport listner started
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Transport created : 7a24242e-6dec-4f2f-bdfd-8945c0ed6e1e
+2026-08-17 22:54:35 info: Viewer transport successfully created
+2026-08-17 22:54:35 info: Create viewer transport listner successfully executed
+2026-08-17 22:54:35 info: Consume lister started
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Viewer media consume successfully executed
+2026-08-17 22:54:35 info: Consume lister executed successfully
+2026-08-17 22:54:35 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 22:54:35 info: Connect consumer listner started
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Consumer transport connected successfully
+2026-08-17 22:54:35 info: Connect consumer listner executed successfully
+2026-08-17 22:54:35 info: Transport ICE state changed
+2026-08-17 22:54:35 info: Transport DTLS state changed
+2026-08-17 22:54:35 info: Transport DTLS state changed
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Viewer consumer resumed
+2026-08-17 22:54:35 info: Resume consumer listener executed successfully
+2026-08-17 22:54:35 info: Get room started
+2026-08-17 22:54:35 info: Get room executed successfully
+2026-08-17 22:54:35 info: Viewer consumer resumed
+2026-08-17 22:54:35 info: Resume consumer listener executed successfully
+2026-08-17 22:54:39 info: Get room started
+2026-08-17 22:54:39 info: Get room executed successfully
+2026-08-17 22:54:39 info: Get room started
+2026-08-17 22:54:39 info: Get room executed successfully
+2026-08-17 22:54:39 info: Get room started
+2026-08-17 22:54:39 info: Get room executed successfully
+2026-08-17 22:54:39 info: Get room started
+2026-08-17 22:54:39 info: Get room executed successfully
+2026-08-17 22:54:39 info: Get room started
+2026-08-17 22:54:39 info: Get room executed successfully
+2026-08-17 22:54:39 info: Get room started
+2026-08-17 22:54:39 info: Get room executed successfully
+2026-08-17 22:54:45 info: Get room started
+2026-08-17 22:54:45 info: Get room executed successfully
+2026-08-17 22:54:55 info: Get room started
+2026-08-17 22:54:55 info: Get room executed successfully
+2026-08-17 22:55:15 info: Get room started
+2026-08-17 22:55:15 info: Get room executed successfully
+2026-08-17 22:55:33 info: Get room started
+2026-08-17 22:55:33 info: Get room executed successfully
+2026-08-17 22:55:33 info: Get room started
+2026-08-17 22:55:33 info: Get room executed successfully
+2026-08-17 22:55:33 info: Get room started
+2026-08-17 22:55:33 info: Get room executed successfully
+2026-08-17 22:55:33 info: Get room started
+2026-08-17 22:55:33 info: Get room executed successfully
+2026-08-17 22:55:33 info: Get room started
+2026-08-17 22:55:33 info: Get room executed successfully
+2026-08-17 22:55:33 info: Get room started
+2026-08-17 22:55:33 info: Get room executed successfully
+2026-08-17 22:55:35 info: Get room started
+2026-08-17 22:55:35 info: Get room executed successfully
+2026-08-17 22:55:37 info: Get room started
+2026-08-17 22:55:37 info: Get room executed successfully
+2026-08-17 22:55:55 info: Get room started
+2026-08-17 22:55:55 info: Get room executed successfully
+2026-08-17 22:56:15 info: Get room started
+2026-08-17 22:56:15 info: Get room executed successfully
+2026-08-17 22:56:35 info: Get room started
+2026-08-17 22:56:35 info: Get room executed successfully
+2026-08-17 22:56:55 info: Get room started
+2026-08-17 22:56:55 info: Get room executed successfully
+2026-08-17 22:57:21 info: Redis subscribers initialized
+2026-08-17 22:57:23 info: MongoDB connected
+2026-08-17 22:57:23 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:57:23 info: Creating worker started
+2026-08-17 22:57:23 info: Creating worker started
+2026-08-17 22:57:23 info: Creating worker started
+2026-08-17 22:57:23 info: Worker created successfully
+2026-08-17 22:57:23 info: Worker created successfully
+2026-08-17 22:57:23 info: Worker created successfully
+2026-08-17 22:57:23 info: Worker pool initialized
+2026-08-17 22:57:27 info: [node-1] Client connected: p53aZeG2UXrldZ8wAAAB
+2026-08-17 22:57:28 info: [node-1] Client connected: WhEM9GloCXEdlNn1AAAD
+2026-08-17 22:57:28 error: Room not found
+2026-08-17 22:57:38 info: Redis subscribers initialized
+2026-08-17 22:57:40 info: MongoDB connected
+2026-08-17 22:57:40 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:57:40 info: Creating worker started
+2026-08-17 22:57:40 info: Creating worker started
+2026-08-17 22:57:40 info: Creating worker started
+2026-08-17 22:57:40 info: Worker created successfully
+2026-08-17 22:57:40 info: Worker created successfully
+2026-08-17 22:57:40 info: Worker created successfully
+2026-08-17 22:57:40 info: Worker pool initialized
+2026-08-17 22:57:47 info: [node-1] Client connected: ja7dwRfpJVownOdnAAAB
+2026-08-17 22:57:47 info: Create room started
+2026-08-17 22:57:47 info: Woker loads loaded successfully
+2026-08-17 22:57:47 info: Woker assigned succesfully
+2026-08-17 22:57:47 info: Creation of router started
+2026-08-17 22:57:47 info: Router created
+2026-08-17 22:57:47 info: Creation of room successfully executed
+2026-08-17 22:57:47 info: Get room started
+2026-08-17 22:57:47 info: Get room executed successfully
+2026-08-17 22:57:47 info: Broadcaster added to the room
+2026-08-17 22:57:47 info: Room created successfully
+2026-08-17 22:57:47 info: Get getRouterRtpCapabilities started
+2026-08-17 22:57:47 info: Fetching of router started
+2026-08-17 22:57:47 info: Fetching of router executed successfully
+2026-08-17 22:57:47 info: Rtp capabilities fetched successfully
+2026-08-17 22:57:47 info: Get room started
+2026-08-17 22:57:47 info: Get room executed successfully
+2026-08-17 22:57:47 info: Transport created : 56be063b-93f9-4ecf-92d6-5aefc1628f4c
+2026-08-17 22:57:47 info: Get room started
+2026-08-17 22:57:47 info: Get room executed successfully
+2026-08-17 22:57:47 info: Connect broadcaster transport listener started
+2026-08-17 22:57:47 info: Get room started
+2026-08-17 22:57:47 info: Get room executed successfully
+2026-08-17 22:57:47 info: Connect broadcaster transport executed successfully
+2026-08-17 22:57:47 info: Transport ICE state changed
+2026-08-17 22:57:47 info: Transport DTLS state changed
+2026-08-17 22:57:47 info: Producer listener started
+2026-08-17 22:57:47 info: Get room started
+2026-08-17 22:57:47 info: Get room executed successfully
+2026-08-17 22:57:47 info: Producer listener executed successfully:
+2026-08-17 22:57:47 info: Transport DTLS state changed
+2026-08-17 22:57:47 info: Producer listener started
+2026-08-17 22:57:47 info: Get room started
+2026-08-17 22:57:47 info: Get room executed successfully
+2026-08-17 22:57:47 info: Producer listener executed successfully:
+2026-08-17 22:57:49 info: [node-1] Client connected: V7BjsZYxZtmK5iWSAAAD
+2026-08-17 22:57:49 error: Room not found
+2026-08-17 22:58:02 info: Redis subscribers initialized
+2026-08-17 22:58:04 info: MongoDB connected
+2026-08-17 22:58:04 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:58:04 info: Creating worker started
+2026-08-17 22:58:04 info: Creating worker started
+2026-08-17 22:58:04 info: Creating worker started
+2026-08-17 22:58:04 info: Worker created successfully
+2026-08-17 22:58:04 info: Worker created successfully
+2026-08-17 22:58:04 info: Worker created successfully
+2026-08-17 22:58:04 info: Worker pool initialized
+2026-08-17 22:58:10 info: SignIn started
+2026-08-17 22:58:10 info: SignIn completed
+2026-08-17 22:58:10 info: [node-1] Client connected: 7oE8Y_Rg_4Ut8x1RAAAB
+2026-08-17 22:58:13 info: SignIn started
+2026-08-17 22:58:13 info: SignIn completed
+2026-08-17 22:58:13 info: [node-1] Client connected: Z5BR7np4UOJYsUkEAAAD
+2026-08-17 22:58:16 info: Create room started
+2026-08-17 22:58:16 info: Woker loads loaded successfully
+2026-08-17 22:58:16 info: Woker assigned succesfully
+2026-08-17 22:58:16 info: Creation of router started
+2026-08-17 22:58:16 info: Router created
+2026-08-17 22:58:16 info: Creation of room successfully executed
+2026-08-17 22:58:16 info: Get room started
+2026-08-17 22:58:16 info: Get room executed successfully
+2026-08-17 22:58:16 info: Broadcaster added to the room
+2026-08-17 22:58:16 info: Room created successfully
+2026-08-17 22:58:16 info: Get getRouterRtpCapabilities started
+2026-08-17 22:58:16 info: Fetching of router started
+2026-08-17 22:58:16 info: Fetching of router executed successfully
+2026-08-17 22:58:16 info: Rtp capabilities fetched successfully
+2026-08-17 22:58:16 info: Get room started
+2026-08-17 22:58:16 info: Get room executed successfully
+2026-08-17 22:58:16 info: Transport created : 82cd4df2-9b63-4773-bbdb-48d5f13c6554
+2026-08-17 22:58:16 info: Get room started
+2026-08-17 22:58:16 info: Get room executed successfully
+2026-08-17 22:58:17 info: Connect broadcaster transport listener started
+2026-08-17 22:58:17 info: Get room started
+2026-08-17 22:58:17 info: Get room executed successfully
+2026-08-17 22:58:17 info: Connect broadcaster transport executed successfully
+2026-08-17 22:58:17 info: Transport ICE state changed
+2026-08-17 22:58:17 info: Transport DTLS state changed
+2026-08-17 22:58:17 info: Producer listener started
+2026-08-17 22:58:17 info: Get room started
+2026-08-17 22:58:17 info: Get room executed successfully
+2026-08-17 22:58:17 info: Producer listener executed successfully:
+2026-08-17 22:58:17 info: Transport DTLS state changed
+2026-08-17 22:58:17 info: Producer listener started
+2026-08-17 22:58:17 info: Get room started
+2026-08-17 22:58:17 info: Get room executed successfully
+2026-08-17 22:58:17 info: Producer listener executed successfully:
+2026-08-17 22:58:22 info: Join as viewer listner started
+2026-08-17 22:58:22 info: Rate limiting
+2026-08-17 22:58:22 info: Rate limiting
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Fetching of router started
+2026-08-17 22:58:22 info: Fetching of router executed successfully
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Viewer joined the room
+2026-08-17 22:58:22 info: Join viewer listner successfully executed
+2026-08-17 22:58:22 info: Create viewer transport listner started
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Transport created : fab4ba90-63ac-46c0-9a46-799717211503
+2026-08-17 22:58:22 info: Viewer transport successfully created
+2026-08-17 22:58:22 info: Create viewer transport listner successfully executed
+2026-08-17 22:58:22 info: Consume lister started
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Viewer media consume successfully executed
+2026-08-17 22:58:22 info: Consume lister executed successfully
+2026-08-17 22:58:22 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 22:58:22 info: Connect consumer listner started
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Consumer transport connected successfully
+2026-08-17 22:58:22 info: Connect consumer listner executed successfully
+2026-08-17 22:58:22 info: Transport ICE state changed
+2026-08-17 22:58:22 info: Transport DTLS state changed
+2026-08-17 22:58:22 info: Transport DTLS state changed
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Viewer consumer resumed
+2026-08-17 22:58:22 info: Resume consumer listener executed successfully
+2026-08-17 22:58:22 info: Get room started
+2026-08-17 22:58:22 info: Get room executed successfully
+2026-08-17 22:58:22 info: Viewer consumer resumed
+2026-08-17 22:58:22 info: Resume consumer listener executed successfully
+2026-08-17 22:58:24 info: Get room started
+2026-08-17 22:58:24 info: Get room executed successfully
+2026-08-17 22:58:24 info: Get room started
+2026-08-17 22:58:24 info: Get room executed successfully
+2026-08-17 22:58:24 info: Get room started
+2026-08-17 22:58:24 info: Get room executed successfully
+2026-08-17 22:58:24 info: Get room started
+2026-08-17 22:58:24 info: Get room executed successfully
+2026-08-17 22:58:24 info: Get room started
+2026-08-17 22:58:24 info: Get room executed successfully
+2026-08-17 22:58:24 info: Get room started
+2026-08-17 22:58:24 info: Get room executed successfully
+2026-08-17 22:58:27 info: Get room started
+2026-08-17 22:58:27 info: Get room executed successfully
+2026-08-17 22:58:27 error: Validation error Invalid recording id
+2026-08-17 22:58:37 info: User disconnected Z5BR7np4UOJYsUkEAAAD beacuse of transport close
+2026-08-17 22:58:37 info: Handle disconnect started
+2026-08-17 22:58:37 info: Get room started
+2026-08-17 22:58:37 info: Get room executed successfully
+2026-08-17 22:58:37 info: Get room started
+2026-08-17 22:58:37 info: Get room executed successfully
+2026-08-17 22:58:37 info: Remove viewer started
+2026-08-17 22:58:37 info: Handle disconnect succesfully
+2026-08-17 22:58:37 warn: No active recording for room Z5BR7np4UOJYsUkEAAAD
+2026-08-17 22:58:37 info: Viewer removed from room
+2026-08-17 22:58:37 info: [node-1] Client connected: DPRpVgYe5USCOWIIAAAF
+2026-08-17 22:58:40 info: Join as viewer listner started
+2026-08-17 22:58:40 info: Rate limiting
+2026-08-17 22:58:40 info: Rate limiting
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Fetching of router started
+2026-08-17 22:58:40 info: Fetching of router executed successfully
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Viewer joined the room
+2026-08-17 22:58:40 info: Join viewer listner successfully executed
+2026-08-17 22:58:40 info: Create viewer transport listner started
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Transport created : 520573e3-9e38-4936-9ef6-f90783988db0
+2026-08-17 22:58:40 info: Viewer transport successfully created
+2026-08-17 22:58:40 info: Create viewer transport listner successfully executed
+2026-08-17 22:58:40 info: Consume lister started
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Viewer media consume successfully executed
+2026-08-17 22:58:40 info: Consume lister executed successfully
+2026-08-17 22:58:40 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 22:58:40 info: Connect consumer listner started
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Consumer transport connected successfully
+2026-08-17 22:58:40 info: Connect consumer listner executed successfully
+2026-08-17 22:58:40 info: Transport ICE state changed
+2026-08-17 22:58:40 info: Transport DTLS state changed
+2026-08-17 22:58:40 info: Transport DTLS state changed
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Viewer consumer resumed
+2026-08-17 22:58:40 info: Resume consumer listener executed successfully
+2026-08-17 22:58:40 info: Get room started
+2026-08-17 22:58:40 info: Get room executed successfully
+2026-08-17 22:58:40 info: Viewer consumer resumed
+2026-08-17 22:58:40 info: Resume consumer listener executed successfully
+2026-08-17 22:58:44 info: Get room started
+2026-08-17 22:58:44 info: Get room executed successfully
+2026-08-17 22:58:44 info: Get room started
+2026-08-17 22:58:44 info: Get room executed successfully
+2026-08-17 22:58:44 info: Get room started
+2026-08-17 22:58:44 info: Get room executed successfully
+2026-08-17 22:58:44 info: Get room started
+2026-08-17 22:58:44 info: Get room executed successfully
+2026-08-17 22:58:44 info: Get room started
+2026-08-17 22:58:44 info: Get room executed successfully
+2026-08-17 22:58:44 info: Get room started
+2026-08-17 22:58:44 info: Get room executed successfully
+2026-08-17 22:58:47 info: Get room started
+2026-08-17 22:58:47 info: Get room executed successfully
+2026-08-17 22:58:47 error: Validation error Invalid recording id
+2026-08-17 22:59:00 info: Get room started
+2026-08-17 22:59:00 info: Get room executed successfully
+2026-08-17 22:59:20 info: Get room started
+2026-08-17 22:59:20 info: Get room executed successfully
+2026-08-17 22:59:31 info: Redis subscribers initialized
+2026-08-17 22:59:33 info: MongoDB connected
+2026-08-17 22:59:33 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:59:33 info: Creating worker started
+2026-08-17 22:59:33 info: Creating worker started
+2026-08-17 22:59:33 info: Creating worker started
+2026-08-17 22:59:33 info: Worker created successfully
+2026-08-17 22:59:33 info: Worker created successfully
+2026-08-17 22:59:34 info: Worker created successfully
+2026-08-17 22:59:34 info: Worker pool initialized
+2026-08-17 22:59:40 info: Redis subscribers initialized
+2026-08-17 22:59:42 info: MongoDB connected
+2026-08-17 22:59:42 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:59:42 info: Creating worker started
+2026-08-17 22:59:42 info: Creating worker started
+2026-08-17 22:59:42 info: Creating worker started
+2026-08-17 22:59:42 info: Worker created successfully
+2026-08-17 22:59:42 info: Worker created successfully
+2026-08-17 22:59:42 info: Worker created successfully
+2026-08-17 22:59:42 info: Worker pool initialized
+2026-08-17 22:59:48 info: Redis subscribers initialized
+2026-08-17 22:59:50 info: MongoDB connected
+2026-08-17 22:59:50 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 22:59:50 info: Creating worker started
+2026-08-17 22:59:50 info: Creating worker started
+2026-08-17 22:59:50 info: Creating worker started
+2026-08-17 22:59:50 info: Worker created successfully
+2026-08-17 22:59:50 info: Worker created successfully
+2026-08-17 22:59:50 info: Worker created successfully
+2026-08-17 22:59:50 info: Worker pool initialized
+2026-08-17 22:59:56 info: [node-1] Client connected: 7Yp7TJg-KBLH0oNfAAAB
+2026-08-17 22:59:56 info: User disconnected 7Yp7TJg-KBLH0oNfAAAB beacuse of transport close
+2026-08-17 22:59:56 info: Handle disconnect started
+2026-08-17 22:59:56 error: RoomId not found
+2026-08-17 22:59:56 warn: No active recording for room 7Yp7TJg-KBLH0oNfAAAB
+2026-08-17 22:59:57 warn: IDK
+2026-08-17 22:59:57 info: [node-1] Client connected: 8YWJoWi9F4AIocXgAAAD
+2026-08-17 22:59:57 info: [node-1] Client connected: yCFqlLf3XHW6U22BAAAF
+2026-08-17 22:59:57 error: Room not found
+2026-08-17 23:00:07 info: Redis subscribers initialized
+2026-08-17 23:00:09 info: MongoDB connected
+2026-08-17 23:00:09 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:00:09 info: Creating worker started
+2026-08-17 23:00:09 info: Creating worker started
+2026-08-17 23:00:09 info: Creating worker started
+2026-08-17 23:00:09 info: Worker created successfully
+2026-08-17 23:00:09 info: Worker created successfully
+2026-08-17 23:00:09 info: Worker created successfully
+2026-08-17 23:00:09 info: Worker pool initialized
+2026-08-17 23:00:12 info: [node-1] Client connected: T6mQDzR_yannnM92AAAB
+2026-08-17 23:00:14 info: Create room started
+2026-08-17 23:00:14 info: Woker loads loaded successfully
+2026-08-17 23:00:14 info: Woker assigned succesfully
+2026-08-17 23:00:14 info: Creation of router started
+2026-08-17 23:00:14 info: Router created
+2026-08-17 23:00:14 info: Creation of room successfully executed
+2026-08-17 23:00:14 info: Get room started
+2026-08-17 23:00:14 info: Get room executed successfully
+2026-08-17 23:00:14 info: Broadcaster added to the room
+2026-08-17 23:00:14 info: Room created successfully
+2026-08-17 23:00:14 info: Get getRouterRtpCapabilities started
+2026-08-17 23:00:14 info: Fetching of router started
+2026-08-17 23:00:14 info: Fetching of router executed successfully
+2026-08-17 23:00:14 info: Rtp capabilities fetched successfully
+2026-08-17 23:00:14 info: Get room started
+2026-08-17 23:00:14 info: Get room executed successfully
+2026-08-17 23:00:14 info: Transport created : 9c76294e-c421-47cd-afa7-ff918b8eadf5
+2026-08-17 23:00:14 info: Get room started
+2026-08-17 23:00:14 info: Get room executed successfully
+2026-08-17 23:00:14 info: Connect broadcaster transport listener started
+2026-08-17 23:00:14 info: Get room started
+2026-08-17 23:00:14 info: Get room executed successfully
+2026-08-17 23:00:14 info: Connect broadcaster transport executed successfully
+2026-08-17 23:00:14 info: Transport ICE state changed
+2026-08-17 23:00:14 info: Transport DTLS state changed
+2026-08-17 23:00:14 info: Transport DTLS state changed
+2026-08-17 23:00:14 info: Producer listener started
+2026-08-17 23:00:14 info: Get room started
+2026-08-17 23:00:14 info: Get room executed successfully
+2026-08-17 23:00:14 info: Producer listener executed successfully:
+2026-08-17 23:00:14 info: Producer listener started
+2026-08-17 23:00:14 info: Get room started
+2026-08-17 23:00:14 info: Get room executed successfully
+2026-08-17 23:00:14 info: Producer listener executed successfully:
+2026-08-17 23:00:16 info: [node-1] Client connected: 4rBHWrLRq833EakdAAAD
+2026-08-17 23:00:16 error: Room not found
+2026-08-17 23:00:35 info: Redis subscribers initialized
+2026-08-17 23:00:37 info: MongoDB connected
+2026-08-17 23:00:37 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:00:37 info: Creating worker started
+2026-08-17 23:00:37 info: Creating worker started
+2026-08-17 23:00:37 info: Creating worker started
+2026-08-17 23:00:37 info: Worker created successfully
+2026-08-17 23:00:37 info: Worker created successfully
+2026-08-17 23:00:37 info: Worker created successfully
+2026-08-17 23:00:37 info: Worker pool initialized
+2026-08-17 23:00:41 info: SignIn started
+2026-08-17 23:00:41 info: SignIn completed
+2026-08-17 23:00:41 info: [node-1] Client connected: xSzJog3SxCH9MbfMAAAB
+2026-08-17 23:00:46 info: SignIn started
+2026-08-17 23:00:46 info: SignIn completed
+2026-08-17 23:00:46 info: [node-1] Client connected: QNvdooDGOgUXh5LAAAAD
+2026-08-17 23:00:49 info: Create room started
+2026-08-17 23:00:49 info: Woker loads loaded successfully
+2026-08-17 23:00:49 info: Woker assigned succesfully
+2026-08-17 23:00:49 info: Creation of router started
+2026-08-17 23:00:49 info: Router created
+2026-08-17 23:00:49 info: Creation of room successfully executed
+2026-08-17 23:00:49 info: Get room started
+2026-08-17 23:00:49 info: Get room executed successfully
+2026-08-17 23:00:49 info: Broadcaster added to the room
+2026-08-17 23:00:49 info: Room created successfully
+2026-08-17 23:00:49 info: Get getRouterRtpCapabilities started
+2026-08-17 23:00:49 info: Fetching of router started
+2026-08-17 23:00:49 info: Fetching of router executed successfully
+2026-08-17 23:00:49 info: Rtp capabilities fetched successfully
+2026-08-17 23:00:49 info: Get room started
+2026-08-17 23:00:49 info: Get room executed successfully
+2026-08-17 23:00:49 info: Transport created : ae266433-76bd-4175-b254-4ab5d7d1e90d
+2026-08-17 23:00:49 info: Get room started
+2026-08-17 23:00:49 info: Get room executed successfully
+2026-08-17 23:00:49 info: Connect broadcaster transport listener started
+2026-08-17 23:00:49 info: Get room started
+2026-08-17 23:00:49 info: Get room executed successfully
+2026-08-17 23:00:49 info: Connect broadcaster transport executed successfully
+2026-08-17 23:00:49 info: Transport ICE state changed
+2026-08-17 23:00:49 info: Transport DTLS state changed
+2026-08-17 23:00:49 info: Producer listener started
+2026-08-17 23:00:49 info: Get room started
+2026-08-17 23:00:49 info: Get room executed successfully
+2026-08-17 23:00:49 info: Producer listener executed successfully:
+2026-08-17 23:00:49 info: Transport DTLS state changed
+2026-08-17 23:00:49 info: Producer listener started
+2026-08-17 23:00:49 info: Get room started
+2026-08-17 23:00:49 info: Get room executed successfully
+2026-08-17 23:00:49 info: Producer listener executed successfully:
+2026-08-17 23:00:56 info: Join as viewer listner started
+2026-08-17 23:00:56 info: Rate limiting
+2026-08-17 23:00:56 info: Rate limiting
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Fetching of router started
+2026-08-17 23:00:56 info: Fetching of router executed successfully
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Viewer joined the room
+2026-08-17 23:00:56 info: Join viewer listner successfully executed
+2026-08-17 23:00:56 info: Create viewer transport listner started
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Transport created : f5d9e578-607b-4d6e-96f8-7e28f8801c84
+2026-08-17 23:00:56 info: Viewer transport successfully created
+2026-08-17 23:00:56 info: Create viewer transport listner successfully executed
+2026-08-17 23:00:56 info: Consume lister started
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Viewer media consume successfully executed
+2026-08-17 23:00:56 info: Consume lister executed successfully
+2026-08-17 23:00:56 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 23:00:56 info: Connect consumer listner started
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Consumer transport connected successfully
+2026-08-17 23:00:56 info: Connect consumer listner executed successfully
+2026-08-17 23:00:56 info: Transport ICE state changed
+2026-08-17 23:00:56 info: Transport DTLS state changed
+2026-08-17 23:00:56 info: Transport DTLS state changed
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Viewer consumer resumed
+2026-08-17 23:00:56 info: Resume consumer listener executed successfully
+2026-08-17 23:00:56 info: Get room started
+2026-08-17 23:00:56 info: Get room executed successfully
+2026-08-17 23:00:56 info: Viewer consumer resumed
+2026-08-17 23:00:56 info: Resume consumer listener executed successfully
+2026-08-17 23:01:00 info: Get room started
+2026-08-17 23:01:00 info: Get room executed successfully
+2026-08-17 23:01:00 info: Get room started
+2026-08-17 23:01:00 info: Get room executed successfully
+2026-08-17 23:01:00 info: Get room started
+2026-08-17 23:01:00 info: Get room executed successfully
+2026-08-17 23:01:00 info: Get room started
+2026-08-17 23:01:00 info: Get room executed successfully
+2026-08-17 23:01:00 info: Get room started
+2026-08-17 23:01:00 info: Get room executed successfully
+2026-08-17 23:01:00 info: Get room started
+2026-08-17 23:01:00 info: Get room executed successfully
+2026-08-17 23:01:05 info: Get room started
+2026-08-17 23:01:05 info: Get room executed successfully
+2026-08-17 23:01:06 error: Validation error Invalid recording id
+2026-08-17 23:01:17 info: Get room started
+2026-08-17 23:01:17 info: Get room executed successfully
+2026-08-17 23:01:38 info: Get room started
+2026-08-17 23:01:38 info: Get room executed successfully
+2026-08-17 23:01:58 info: Get room started
+2026-08-17 23:01:58 info: Get room executed successfully
+2026-08-17 23:02:18 info: Get room started
+2026-08-17 23:02:18 info: Get room executed successfully
+2026-08-17 23:02:38 info: Get room started
+2026-08-17 23:02:38 info: Get room executed successfully
+2026-08-17 23:02:58 info: Get room started
+2026-08-17 23:02:58 info: Get room executed successfully
+2026-08-17 23:03:18 info: Get room started
+2026-08-17 23:03:18 info: Get room executed successfully
+2026-08-17 23:03:38 info: Get room started
+2026-08-17 23:03:38 info: Get room executed successfully
+2026-08-17 23:03:58 info: Get room started
+2026-08-17 23:03:58 info: Get room executed successfully
+2026-08-17 23:04:19 info: Redis subscribers initialized
+2026-08-17 23:04:21 info: MongoDB connected
+2026-08-17 23:04:21 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:04:21 info: Creating worker started
+2026-08-17 23:04:21 info: Creating worker started
+2026-08-17 23:04:21 info: Creating worker started
+2026-08-17 23:04:21 info: Worker created successfully
+2026-08-17 23:04:21 info: Worker created successfully
+2026-08-17 23:04:21 info: Worker created successfully
+2026-08-17 23:04:21 info: Worker pool initialized
+2026-08-17 23:04:26 info: [node-1] Client connected: xtFxv_ANWbUOnVqoAAAB
+2026-08-17 23:04:26 info: [node-1] Client connected: wjXr_oeoHhn7dagZAAAD
+2026-08-17 23:04:26 error: Room not found
+2026-08-17 23:04:35 info: Redis subscribers initialized
+2026-08-17 23:04:37 info: MongoDB connected
+2026-08-17 23:04:37 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:04:37 info: Creating worker started
+2026-08-17 23:04:37 info: Creating worker started
+2026-08-17 23:04:37 info: Creating worker started
+2026-08-17 23:04:37 info: Worker created successfully
+2026-08-17 23:04:37 info: Worker created successfully
+2026-08-17 23:04:37 info: Worker created successfully
+2026-08-17 23:04:37 info: Worker pool initialized
+2026-08-17 23:04:41 info: [node-1] Client connected: Jonyvm6v9pABhDrrAAAB
+2026-08-17 23:04:41 error: Room not found
+2026-08-17 23:04:57 info: Redis subscribers initialized
+2026-08-17 23:05:00 info: MongoDB connected
+2026-08-17 23:05:00 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:05:00 info: Creating worker started
+2026-08-17 23:05:00 info: Creating worker started
+2026-08-17 23:05:00 info: Creating worker started
+2026-08-17 23:05:00 info: Worker created successfully
+2026-08-17 23:05:00 info: Worker created successfully
+2026-08-17 23:05:00 info: Worker created successfully
+2026-08-17 23:05:00 info: Worker pool initialized
+2026-08-17 23:05:05 info: SignIn started
+2026-08-17 23:05:05 info: SignIn completed
+2026-08-17 23:05:05 info: [node-1] Client connected: 7_53n-ckWsQr7O2bAAAB
+2026-08-17 23:05:08 info: SignIn started
+2026-08-17 23:05:09 info: SignIn completed
+2026-08-17 23:05:09 info: [node-1] Client connected: 5CHKUhlBaSy1cMBbAAAD
+2026-08-17 23:05:12 info: Create room started
+2026-08-17 23:05:12 info: Woker loads loaded successfully
+2026-08-17 23:05:12 info: Woker assigned succesfully
+2026-08-17 23:05:12 info: Creation of router started
+2026-08-17 23:05:12 info: Router created
+2026-08-17 23:05:12 info: Creation of room successfully executed
+2026-08-17 23:05:12 info: Get room started
+2026-08-17 23:05:12 info: Get room executed successfully
+2026-08-17 23:05:12 info: Broadcaster added to the room
+2026-08-17 23:05:12 info: Room created successfully
+2026-08-17 23:05:12 info: Get getRouterRtpCapabilities started
+2026-08-17 23:05:12 info: Fetching of router started
+2026-08-17 23:05:12 info: Fetching of router executed successfully
+2026-08-17 23:05:12 info: Rtp capabilities fetched successfully
+2026-08-17 23:05:12 info: Get room started
+2026-08-17 23:05:12 info: Get room executed successfully
+2026-08-17 23:05:12 info: Transport created : 4e7a9686-f6b5-4be0-8e76-f1834ff76423
+2026-08-17 23:05:12 info: Get room started
+2026-08-17 23:05:12 info: Get room executed successfully
+2026-08-17 23:05:12 info: Connect broadcaster transport listener started
+2026-08-17 23:05:12 info: Get room started
+2026-08-17 23:05:12 info: Get room executed successfully
+2026-08-17 23:05:12 info: Connect broadcaster transport executed successfully
+2026-08-17 23:05:12 info: Transport ICE state changed
+2026-08-17 23:05:12 info: Transport DTLS state changed
+2026-08-17 23:05:12 info: Producer listener started
+2026-08-17 23:05:12 info: Get room started
+2026-08-17 23:05:12 info: Get room executed successfully
+2026-08-17 23:05:12 info: Transport DTLS state changed
+2026-08-17 23:05:12 info: Producer listener executed successfully:
+2026-08-17 23:05:12 info: Producer listener started
+2026-08-17 23:05:12 info: Get room started
+2026-08-17 23:05:12 info: Get room executed successfully
+2026-08-17 23:05:12 info: Producer listener executed successfully:
+2026-08-17 23:05:19 info: Join as viewer listner started
+2026-08-17 23:05:19 info: Rate limiting
+2026-08-17 23:05:19 info: Rate limiting
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Fetching of router started
+2026-08-17 23:05:19 info: Fetching of router executed successfully
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Viewer joined the room
+2026-08-17 23:05:19 info: Join viewer listner successfully executed
+2026-08-17 23:05:19 info: Create viewer transport listner started
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Transport created : 22b0dd43-791c-49f4-8056-463b33ad65a7
+2026-08-17 23:05:19 info: Viewer transport successfully created
+2026-08-17 23:05:19 info: Create viewer transport listner successfully executed
+2026-08-17 23:05:19 info: Consume lister started
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Viewer media consume successfully executed
+2026-08-17 23:05:19 info: Consume lister executed successfully
+2026-08-17 23:05:19 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 23:05:19 info: Connect consumer listner started
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Consumer transport connected successfully
+2026-08-17 23:05:19 info: Connect consumer listner executed successfully
+2026-08-17 23:05:19 info: Transport ICE state changed
+2026-08-17 23:05:19 info: Transport DTLS state changed
+2026-08-17 23:05:19 info: Transport DTLS state changed
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Viewer consumer resumed
+2026-08-17 23:05:19 info: Resume consumer listener executed successfully
+2026-08-17 23:05:19 info: Get room started
+2026-08-17 23:05:19 info: Get room executed successfully
+2026-08-17 23:05:19 info: Viewer consumer resumed
+2026-08-17 23:05:19 info: Resume consumer listener executed successfully
+2026-08-17 23:05:21 info: Get room started
+2026-08-17 23:05:21 info: Get room executed successfully
+2026-08-17 23:05:21 info: Get room started
+2026-08-17 23:05:21 info: Get room executed successfully
+2026-08-17 23:05:21 info: Get room started
+2026-08-17 23:05:21 info: Get room executed successfully
+2026-08-17 23:05:21 info: Get room started
+2026-08-17 23:05:21 info: Get room executed successfully
+2026-08-17 23:05:21 info: Get room started
+2026-08-17 23:05:21 info: Get room executed successfully
+2026-08-17 23:05:21 info: Get room started
+2026-08-17 23:05:21 info: Get room executed successfully
+2026-08-17 23:05:24 info: Get room started
+2026-08-17 23:05:24 info: Get room executed successfully
+2026-08-17 23:05:24 error: Recording not found error Invalid recording id
+2026-08-17 23:05:39 info: Get room started
+2026-08-17 23:05:39 info: Get room executed successfully
+2026-08-17 23:05:59 info: Get room started
+2026-08-17 23:05:59 info: Get room executed successfully
+2026-08-17 23:06:19 info: Get room started
+2026-08-17 23:06:19 info: Get room executed successfully
+2026-08-17 23:06:32 info: Redis subscribers initialized
+2026-08-17 23:06:34 info: MongoDB connected
+2026-08-17 23:06:34 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:06:34 info: Creating worker started
+2026-08-17 23:06:34 info: Creating worker started
+2026-08-17 23:06:34 info: Creating worker started
+2026-08-17 23:06:34 info: Worker created successfully
+2026-08-17 23:06:34 info: Worker created successfully
+2026-08-17 23:06:34 info: Worker created successfully
+2026-08-17 23:06:34 info: Worker pool initialized
+2026-08-17 23:06:41 info: [node-1] Client connected: b30XOIeOpHYuCDVbAAAB
+2026-08-17 23:06:41 error: Room not found
+2026-08-17 23:06:52 info: Redis subscribers initialized
+2026-08-17 23:06:54 info: MongoDB connected
+2026-08-17 23:06:54 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:06:54 info: Creating worker started
+2026-08-17 23:06:54 info: Creating worker started
+2026-08-17 23:06:54 info: Creating worker started
+2026-08-17 23:06:54 info: Worker created successfully
+2026-08-17 23:06:54 info: Worker created successfully
+2026-08-17 23:06:54 info: Worker created successfully
+2026-08-17 23:06:54 info: Worker pool initialized
+2026-08-17 23:06:59 info: [node-1] Client connected: niBX413xrAfW74d_AAAB
+2026-08-17 23:07:01 info: SignIn started
+2026-08-17 23:07:01 info: SignIn completed
+2026-08-17 23:07:01 info: [node-1] Client connected: wIHbyrlD7XrMC29MAAAD
+2026-08-17 23:07:03 info: User disconnected niBX413xrAfW74d_AAAB beacuse of transport close
+2026-08-17 23:07:03 info: Handle disconnect started
+2026-08-17 23:07:03 error: RoomId not found
+2026-08-17 23:07:03 warn: No active recording for room niBX413xrAfW74d_AAAB
+2026-08-17 23:07:03 warn: IDK
+2026-08-17 23:07:04 info: [node-1] Client connected: yWNTTrysz7sm0zdmAAAF
+2026-08-17 23:07:11 info: Create room started
+2026-08-17 23:07:11 info: Woker loads loaded successfully
+2026-08-17 23:07:11 info: Woker assigned succesfully
+2026-08-17 23:07:11 info: Creation of router started
+2026-08-17 23:07:11 info: Router created
+2026-08-17 23:07:11 info: Creation of room successfully executed
+2026-08-17 23:07:11 info: Get room started
+2026-08-17 23:07:11 info: Get room executed successfully
+2026-08-17 23:07:11 info: Broadcaster added to the room
+2026-08-17 23:07:11 info: Room created successfully
+2026-08-17 23:07:11 info: Get getRouterRtpCapabilities started
+2026-08-17 23:07:11 info: Fetching of router started
+2026-08-17 23:07:11 info: Fetching of router executed successfully
+2026-08-17 23:07:11 info: Rtp capabilities fetched successfully
+2026-08-17 23:07:11 info: Get room started
+2026-08-17 23:07:11 info: Get room executed successfully
+2026-08-17 23:07:11 info: Transport created : 341c9325-947f-4f1c-a625-393bf999d207
+2026-08-17 23:07:11 info: Get room started
+2026-08-17 23:07:11 info: Get room executed successfully
+2026-08-17 23:07:12 info: Connect broadcaster transport listener started
+2026-08-17 23:07:12 info: Get room started
+2026-08-17 23:07:12 info: Get room executed successfully
+2026-08-17 23:07:12 info: Connect broadcaster transport executed successfully
+2026-08-17 23:07:12 info: Transport ICE state changed
+2026-08-17 23:07:12 info: Transport DTLS state changed
+2026-08-17 23:07:12 info: Producer listener started
+2026-08-17 23:07:12 info: Get room started
+2026-08-17 23:07:12 info: Get room executed successfully
+2026-08-17 23:07:12 info: Transport DTLS state changed
+2026-08-17 23:07:12 info: Producer listener executed successfully:
+2026-08-17 23:07:12 info: Producer listener started
+2026-08-17 23:07:12 info: Get room started
+2026-08-17 23:07:12 info: Get room executed successfully
+2026-08-17 23:07:12 info: Producer listener executed successfully:
+2026-08-17 23:07:20 info: Join as viewer listner started
+2026-08-17 23:07:20 info: Rate limiting
+2026-08-17 23:07:20 info: Rate limiting
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Fetching of router started
+2026-08-17 23:07:20 info: Fetching of router executed successfully
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Viewer joined the room
+2026-08-17 23:07:20 info: Join viewer listner successfully executed
+2026-08-17 23:07:20 info: Create viewer transport listner started
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Transport created : 52b239ef-6ee6-4e37-869d-e9f7b050fdf8
+2026-08-17 23:07:20 info: Viewer transport successfully created
+2026-08-17 23:07:20 info: Create viewer transport listner successfully executed
+2026-08-17 23:07:20 info: Consume lister started
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Viewer media consume successfully executed
+2026-08-17 23:07:20 info: Consume lister executed successfully
+2026-08-17 23:07:20 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 23:07:20 info: Connect consumer listner started
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Consumer transport connected successfully
+2026-08-17 23:07:20 info: Connect consumer listner executed successfully
+2026-08-17 23:07:20 info: Transport ICE state changed
+2026-08-17 23:07:20 info: Transport DTLS state changed
+2026-08-17 23:07:20 info: Transport DTLS state changed
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Viewer consumer resumed
+2026-08-17 23:07:20 info: Resume consumer listener executed successfully
+2026-08-17 23:07:20 info: Get room started
+2026-08-17 23:07:20 info: Get room executed successfully
+2026-08-17 23:07:20 info: Viewer consumer resumed
+2026-08-17 23:07:20 info: Resume consumer listener executed successfully
+2026-08-17 23:07:38 info: Get room started
+2026-08-17 23:07:38 info: Get room executed successfully
+2026-08-17 23:07:38 info: Get room started
+2026-08-17 23:07:38 info: Get room executed successfully
+2026-08-17 23:07:38 info: Get room started
+2026-08-17 23:07:38 info: Get room executed successfully
+2026-08-17 23:07:38 info: Get room started
+2026-08-17 23:07:38 info: Get room executed successfully
+2026-08-17 23:07:38 info: Get room started
+2026-08-17 23:07:38 info: Get room executed successfully
+2026-08-17 23:07:38 info: Get room started
+2026-08-17 23:07:38 info: Get room executed successfully
+2026-08-17 23:07:41 info: Get room started
+2026-08-17 23:07:41 info: Get room executed successfully
+2026-08-17 23:07:48 info: Get room started
+2026-08-17 23:07:48 info: Get room executed successfully
+2026-08-17 23:07:48 error: Recording not found error Invalid recording id
+2026-08-17 23:07:58 info: User disconnected wIHbyrlD7XrMC29MAAAD beacuse of transport close
+2026-08-17 23:07:58 info: Handle disconnect started
+2026-08-17 23:07:58 info: Get room started
+2026-08-17 23:07:58 info: Get room executed successfully
+2026-08-17 23:07:58 info: Get room started
+2026-08-17 23:07:58 info: Get room executed successfully
+2026-08-17 23:07:58 info: Get room started
+2026-08-17 23:07:58 info: Get room executed successfully
+2026-08-17 23:07:58 info: Get room started
+2026-08-17 23:07:58 info: Get room executed successfully
+2026-08-17 23:07:58 info: Get room started
+2026-08-17 23:07:58 info: Get room executed successfully
+2026-08-17 23:07:58 warn: No active recording for room wIHbyrlD7XrMC29MAAAD
+2026-08-17 23:07:58 info: Remove broadcaster success
+2026-08-17 23:07:58 info: Handle disconnect succesfully
+2026-08-17 23:07:58 info: room:e4c5963f-3f03-4abb-aa6b-a8a27c8072ba room deleted successfully
+2026-08-17 23:07:58 info: [node-1] Client connected: c3djpJEFywq47on5AAAH
+2026-08-17 23:07:58 info: User disconnected yWNTTrysz7sm0zdmAAAF beacuse of transport close
+2026-08-17 23:07:58 info: Handle disconnect started
+2026-08-17 23:07:58 warn: No active recording for room yWNTTrysz7sm0zdmAAAF
+2026-08-17 23:07:59 info: [node-1] Client connected: O8s-M6ye--SyKLxVAAAJ
+2026-08-17 23:09:05 info: Redis subscribers initialized
+2026-08-17 23:09:06 info: MongoDB connected
+2026-08-17 23:09:06 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:09:06 info: Creating worker started
+2026-08-17 23:09:06 info: Creating worker started
+2026-08-17 23:09:06 info: Creating worker started
+2026-08-17 23:09:06 info: Worker created successfully
+2026-08-17 23:09:06 info: Worker created successfully
+2026-08-17 23:09:06 info: Worker created successfully
+2026-08-17 23:09:06 info: Worker pool initialized
+2026-08-17 23:09:11 info: [node-1] Client connected: 2rq53vspJ8Hgv5nKAAAB
+2026-08-17 23:09:11 info: [node-1] Client connected: i7Bted1MUiRQ3aL2AAAD
+2026-08-17 23:09:17 info: User disconnected i7Bted1MUiRQ3aL2AAAD beacuse of transport close
+2026-08-17 23:09:17 info: Handle disconnect started
+2026-08-17 23:09:17 error: RoomId not found
+2026-08-17 23:09:17 warn: No active recording for room i7Bted1MUiRQ3aL2AAAD
+2026-08-17 23:09:17 warn: IDK
+2026-08-17 23:09:18 info: [node-1] Client connected: 9wx_qCHHWujFhr64AAAF
+2026-08-17 23:09:18 info: User disconnected 2rq53vspJ8Hgv5nKAAAB beacuse of transport close
+2026-08-17 23:09:18 info: Handle disconnect started
+2026-08-17 23:09:18 error: RoomId not found
+2026-08-17 23:09:18 warn: No active recording for room 2rq53vspJ8Hgv5nKAAAB
+2026-08-17 23:09:18 warn: IDK
+2026-08-17 23:09:19 info: [node-1] Client connected: qLZcY3-B-aSILe72AAAH
+2026-08-17 23:09:22 info: Create room started
+2026-08-17 23:09:22 info: Woker loads loaded successfully
+2026-08-17 23:09:22 info: Woker assigned succesfully
+2026-08-17 23:09:22 info: Creation of router started
+2026-08-17 23:09:22 info: Router created
+2026-08-17 23:09:22 info: Creation of room successfully executed
+2026-08-17 23:09:22 info: Get room started
+2026-08-17 23:09:22 info: Get room executed successfully
+2026-08-17 23:09:22 info: Broadcaster added to the room
+2026-08-17 23:09:22 info: Room created successfully
+2026-08-17 23:09:22 info: Get getRouterRtpCapabilities started
+2026-08-17 23:09:22 info: Fetching of router started
+2026-08-17 23:09:22 info: Fetching of router executed successfully
+2026-08-17 23:09:22 info: Rtp capabilities fetched successfully
+2026-08-17 23:09:22 info: Get room started
+2026-08-17 23:09:22 info: Get room executed successfully
+2026-08-17 23:09:22 info: Transport created : 9415300e-c073-4b29-ab0c-fe31fdf88d61
+2026-08-17 23:09:22 info: Get room started
+2026-08-17 23:09:22 info: Get room executed successfully
+2026-08-17 23:09:22 info: Connect broadcaster transport listener started
+2026-08-17 23:09:22 info: Get room started
+2026-08-17 23:09:22 info: Get room executed successfully
+2026-08-17 23:09:22 info: Connect broadcaster transport executed successfully
+2026-08-17 23:09:22 info: Transport ICE state changed
+2026-08-17 23:09:22 info: Transport DTLS state changed
+2026-08-17 23:09:22 info: Producer listener started
+2026-08-17 23:09:22 info: Get room started
+2026-08-17 23:09:22 info: Get room executed successfully
+2026-08-17 23:09:22 info: Producer listener executed successfully:
+2026-08-17 23:09:22 info: Transport DTLS state changed
+2026-08-17 23:09:22 info: Producer listener started
+2026-08-17 23:09:22 info: Get room started
+2026-08-17 23:09:22 info: Get room executed successfully
+2026-08-17 23:09:22 info: Producer listener executed successfully:
+2026-08-17 23:09:30 info: Join as viewer listner started
+2026-08-17 23:09:30 info: Rate limiting
+2026-08-17 23:09:30 info: Rate limiting
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Fetching of router started
+2026-08-17 23:09:30 info: Fetching of router executed successfully
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Viewer joined the room
+2026-08-17 23:09:30 info: Join viewer listner successfully executed
+2026-08-17 23:09:30 info: Create viewer transport listner started
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Transport created : bc606482-bb68-4e4c-830f-ef5c13d14e50
+2026-08-17 23:09:30 info: Viewer transport successfully created
+2026-08-17 23:09:30 info: Create viewer transport listner successfully executed
+2026-08-17 23:09:30 info: Consume lister started
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Viewer media consume successfully executed
+2026-08-17 23:09:30 info: Consume lister executed successfully
+2026-08-17 23:09:30 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 23:09:30 info: Connect consumer listner started
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Consumer transport connected successfully
+2026-08-17 23:09:30 info: Connect consumer listner executed successfully
+2026-08-17 23:09:30 info: Transport ICE state changed
+2026-08-17 23:09:30 info: Transport DTLS state changed
+2026-08-17 23:09:30 info: Transport DTLS state changed
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Viewer consumer resumed
+2026-08-17 23:09:30 info: Resume consumer listener executed successfully
+2026-08-17 23:09:30 info: Get room started
+2026-08-17 23:09:30 info: Get room executed successfully
+2026-08-17 23:09:30 info: Viewer consumer resumed
+2026-08-17 23:09:30 info: Resume consumer listener executed successfully
+2026-08-17 23:09:31 info: Get room started
+2026-08-17 23:09:31 info: Get room executed successfully
+2026-08-17 23:09:31 info: Get room started
+2026-08-17 23:09:31 info: Get room executed successfully
+2026-08-17 23:09:31 info: Get room started
+2026-08-17 23:09:31 info: Get room executed successfully
+2026-08-17 23:09:31 info: Get room started
+2026-08-17 23:09:31 info: Get room executed successfully
+2026-08-17 23:09:31 info: Get room started
+2026-08-17 23:09:31 info: Get room executed successfully
+2026-08-17 23:09:31 info: Get room started
+2026-08-17 23:09:31 info: Get room executed successfully
+2026-08-17 23:09:36 info: Get room started
+2026-08-17 23:09:36 info: Get room executed successfully
+2026-08-17 23:09:37 error: Recording not found error Invalid recording id
+2026-08-17 23:09:50 info: Get room started
+2026-08-17 23:09:50 info: Get room executed successfully
+2026-08-17 23:10:02 info: User disconnected 9wx_qCHHWujFhr64AAAF beacuse of transport close
+2026-08-17 23:10:02 info: Handle disconnect started
+2026-08-17 23:10:02 info: Get room started
+2026-08-17 23:10:02 info: Get room executed successfully
+2026-08-17 23:10:02 info: Get room started
+2026-08-17 23:10:02 info: Get room executed successfully
+2026-08-17 23:10:02 info: Get room started
+2026-08-17 23:10:02 info: Get room executed successfully
+2026-08-17 23:10:02 info: Get room started
+2026-08-17 23:10:02 info: Get room executed successfully
+2026-08-17 23:10:02 info: Get room started
+2026-08-17 23:10:02 info: Get room executed successfully
+2026-08-17 23:10:02 warn: No active recording for room 9wx_qCHHWujFhr64AAAF
+2026-08-17 23:10:02 info: Remove broadcaster success
+2026-08-17 23:10:02 info: Handle disconnect succesfully
+2026-08-17 23:10:02 info: room:d9336ad0-3606-4f31-87ec-5474addc0ff6 room deleted successfully
+2026-08-17 23:10:03 info: [node-1] Client connected: cuAd9CzOPfpk9LhmAAAJ
+2026-08-17 23:10:03 info: User disconnected qLZcY3-B-aSILe72AAAH beacuse of transport close
+2026-08-17 23:10:03 info: Handle disconnect started
+2026-08-17 23:10:03 warn: No active recording for room qLZcY3-B-aSILe72AAAH
+2026-08-17 23:10:04 info: [node-1] Client connected: 8NoET4Ymfg_2f8gwAAAL
+2026-08-17 23:11:28 info: Redis subscribers initialized
+2026-08-17 23:11:29 info: MongoDB connected
+2026-08-17 23:11:29 info: Database connected successfully to ac-v00shv2-shard-00-00.eplgdfn.mongodb.net
+2026-08-17 23:11:29 info: Creating worker started
+2026-08-17 23:11:29 info: Creating worker started
+2026-08-17 23:11:29 info: Creating worker started
+2026-08-17 23:11:29 info: Worker created successfully
+2026-08-17 23:11:29 info: Worker created successfully
+2026-08-17 23:11:29 info: Worker created successfully
+2026-08-17 23:11:29 info: Worker pool initialized
+2026-08-17 23:11:33 info: [node-1] Client connected: 1iIt11Y4KH4CVL-FAAAB
+2026-08-17 23:11:38 info: [node-1] Client connected: 18XdLg8tGQ-gD1PTAAAD
+2026-08-17 23:11:45 info: User disconnected 18XdLg8tGQ-gD1PTAAAD beacuse of transport close
+2026-08-17 23:11:45 info: Handle disconnect started
+2026-08-17 23:11:45 error: RoomId not found
+2026-08-17 23:11:45 warn: No active recording for room 18XdLg8tGQ-gD1PTAAAD
+2026-08-17 23:11:46 warn: IDK
+2026-08-17 23:11:46 info: [node-1] Client connected: mcIZKH44yGWdlvCsAAAF
+2026-08-17 23:11:46 info: User disconnected 1iIt11Y4KH4CVL-FAAAB beacuse of transport close
+2026-08-17 23:11:46 info: Handle disconnect started
+2026-08-17 23:11:46 error: RoomId not found
+2026-08-17 23:11:46 warn: No active recording for room 1iIt11Y4KH4CVL-FAAAB
+2026-08-17 23:11:46 warn: IDK
+2026-08-17 23:11:47 info: [node-1] Client connected: -gvhZ2j5PA9aaI2TAAAH
+2026-08-17 23:11:49 info: Create room started
+2026-08-17 23:11:49 info: Woker loads loaded successfully
+2026-08-17 23:11:49 info: Woker assigned succesfully
+2026-08-17 23:11:49 info: Creation of router started
+2026-08-17 23:11:49 info: Router created
+2026-08-17 23:11:49 info: Creation of room successfully executed
+2026-08-17 23:11:49 info: Get room started
+2026-08-17 23:11:49 info: Get room executed successfully
+2026-08-17 23:11:49 info: Broadcaster added to the room
+2026-08-17 23:11:49 info: Room created successfully
+2026-08-17 23:11:49 info: Get getRouterRtpCapabilities started
+2026-08-17 23:11:49 info: Fetching of router started
+2026-08-17 23:11:49 info: Fetching of router executed successfully
+2026-08-17 23:11:49 info: Rtp capabilities fetched successfully
+2026-08-17 23:11:49 info: Get room started
+2026-08-17 23:11:49 info: Get room executed successfully
+2026-08-17 23:11:49 info: Transport created : d710f307-20a3-4795-93aa-087fbd4e93be
+2026-08-17 23:11:49 info: Get room started
+2026-08-17 23:11:49 info: Get room executed successfully
+2026-08-17 23:11:49 info: Connect broadcaster transport listener started
+2026-08-17 23:11:49 info: Get room started
+2026-08-17 23:11:49 info: Get room executed successfully
+2026-08-17 23:11:49 info: Connect broadcaster transport executed successfully
+2026-08-17 23:11:49 info: Transport ICE state changed
+2026-08-17 23:11:49 info: Transport DTLS state changed
+2026-08-17 23:11:49 info: Producer listener started
+2026-08-17 23:11:49 info: Get room started
+2026-08-17 23:11:49 info: Get room executed successfully
+2026-08-17 23:11:49 info: Producer listener executed successfully:
+2026-08-17 23:11:49 info: Transport DTLS state changed
+2026-08-17 23:11:49 info: Producer listener started
+2026-08-17 23:11:49 info: Get room started
+2026-08-17 23:11:49 info: Get room executed successfully
+2026-08-17 23:11:49 info: Producer listener executed successfully:
+2026-08-17 23:11:59 info: Join as viewer listner started
+2026-08-17 23:11:59 info: Rate limiting
+2026-08-17 23:11:59 info: Rate limiting
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Fetching of router started
+2026-08-17 23:11:59 info: Fetching of router executed successfully
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Viewer joined the room
+2026-08-17 23:11:59 info: Join viewer listner successfully executed
+2026-08-17 23:11:59 info: Create viewer transport listner started
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Transport created : 9417e8ce-007e-4948-bf21-887fb647cd24
+2026-08-17 23:11:59 info: Viewer transport successfully created
+2026-08-17 23:11:59 info: Create viewer transport listner successfully executed
+2026-08-17 23:11:59 info: Consume lister started
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Viewer media consume successfully executed
+2026-08-17 23:11:59 info: Consume lister executed successfully
+2026-08-17 23:11:59 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:234:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-17 23:11:59 info: Connect consumer listner started
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Consumer transport connected successfully
+2026-08-17 23:11:59 info: Connect consumer listner executed successfully
+2026-08-17 23:11:59 info: Transport ICE state changed
+2026-08-17 23:11:59 info: Transport DTLS state changed
+2026-08-17 23:11:59 info: Transport DTLS state changed
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Viewer consumer resumed
+2026-08-17 23:11:59 info: Resume consumer listener executed successfully
+2026-08-17 23:11:59 info: Get room started
+2026-08-17 23:11:59 info: Get room executed successfully
+2026-08-17 23:11:59 info: Viewer consumer resumed
+2026-08-17 23:11:59 info: Resume consumer listener executed successfully
+2026-08-17 23:12:00 info: Get room started
+2026-08-17 23:12:00 info: Get room executed successfully
+2026-08-17 23:12:00 info: Get room started
+2026-08-17 23:12:00 info: Get room executed successfully
+2026-08-17 23:12:00 info: Get room started
+2026-08-17 23:12:00 info: Get room executed successfully
+2026-08-17 23:12:00 info: Get room started
+2026-08-17 23:12:00 info: Get room executed successfully
+2026-08-17 23:12:00 info: Get room started
+2026-08-17 23:12:00 info: Get room executed successfully
+2026-08-17 23:12:00 info: Get room started
+2026-08-17 23:12:00 info: Get room executed successfully
+2026-08-17 23:12:02 info: Get room started
+2026-08-17 23:12:02 info: Get room executed successfully
+2026-08-17 23:12:14 info: Get room started
+2026-08-17 23:12:14 info: Get room executed successfully
+2026-08-17 23:12:14 info: Get room started
+2026-08-17 23:12:14 info: Get room executed successfully
+2026-08-17 23:12:14 info: Get room started
+2026-08-17 23:12:14 info: Get room executed successfully
+2026-08-17 23:12:14 info: Get room started
+2026-08-17 23:12:14 info: Get room executed successfully
+2026-08-17 23:12:14 info: Get room started
+2026-08-17 23:12:14 info: Get room executed successfully
+2026-08-17 23:12:14 info: Get room started
+2026-08-17 23:12:14 info: Get room executed successfully
+2026-08-17 23:12:19 info: Get room started
+2026-08-17 23:12:19 info: Get room executed successfully
+2026-08-17 23:12:21 info: Get room started
+2026-08-17 23:12:21 info: Get room executed successfully
+2026-08-17 23:12:29 info: Transport DTLS state changed
+2026-08-17 23:12:29 info: User disconnected -gvhZ2j5PA9aaI2TAAAH beacuse of transport close
+2026-08-17 23:12:29 info: Handle disconnect started
+2026-08-17 23:12:29 info: Get room started
+2026-08-17 23:12:29 info: Get room executed successfully
+2026-08-17 23:12:29 info: Get room started
+2026-08-17 23:12:29 info: Get room executed successfully
+2026-08-17 23:12:29 info: Remove viewer started
+2026-08-17 23:12:29 info: Handle disconnect succesfully
+2026-08-17 23:12:29 warn: No active recording for room -gvhZ2j5PA9aaI2TAAAH
+2026-08-17 23:12:29 info: Viewer removed from room
+2026-08-17 23:12:30 info: User disconnected mcIZKH44yGWdlvCsAAAF beacuse of transport close
+2026-08-17 23:12:30 info: Handle disconnect started
+2026-08-17 23:12:30 info: Get room started
+2026-08-17 23:12:30 info: Get room executed successfully
+2026-08-17 23:12:30 info: Get room started
+2026-08-17 23:12:30 info: Get room executed successfully
+2026-08-17 23:12:30 info: Get room started
+2026-08-17 23:12:30 info: Get room executed successfully
+2026-08-17 23:12:30 warn: No active recording for room mcIZKH44yGWdlvCsAAAF
+2026-08-17 23:12:30 info: Remove broadcaster success
+2026-08-17 23:12:30 info: Handle disconnect succesfully
+2026-08-17 23:12:30 info: room:3dd69ae3-c0d2-4189-aa02-2ab1152e5228 room deleted successfully

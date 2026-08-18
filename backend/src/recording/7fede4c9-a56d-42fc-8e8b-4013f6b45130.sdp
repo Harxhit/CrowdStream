@@ -1,0 +1,11 @@
+v=0
+o=- 1786987533820 1 IN IP4 127.0.0.1
+s=Crowdstream Recording
+c=IN IP4 127.0.0.1
+t=0 0
+m=audio 28170 RTP/AVP 100
+a=rtpmap:100 opus/48000/2
+a=fmtp:100 maxplaybackrate=48000;stereo=1;useinbandfec=1
+m=video 22092 RTP/AVP 101
+a=rtpmap:101 VP8/90000
+a=fmtp:101 max-fs=12288;max-fr=60
