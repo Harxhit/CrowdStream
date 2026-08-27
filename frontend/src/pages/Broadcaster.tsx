@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { connectSocket , disconnectSocket } from "../socket";
 import {
   CameraOff,
   Camera,
@@ -51,6 +52,16 @@ export default function BroadcasterPage() {
     setLogs((prev) => [...prev, { message, timestamp: new Date() }]);
   };
 
+
+
+  useEffect(() => {
+    const socket = connectSocket();
+
+    return () => {
+      disconnectSocket();
+    };
+  }, []);
+
   async function startBroadcast() {
     try {
       log("Creating room...");
@@ -58,6 +69,7 @@ export default function BroadcasterPage() {
       const room = await broadcaster.createRoom();
 
       setRoomId(room.id);
+      (window as any).__csRoomId = room.id;
 
       log("Fetching RTP capabilities...");
 
@@ -84,6 +96,7 @@ export default function BroadcasterPage() {
       await broadcaster.startProducing(stream);
 
       setIsLive(true);
+      (window as any).__csLiveAt = Date.now();
 
       log("Broadcast started successfully.");
     } catch (err: any) {
