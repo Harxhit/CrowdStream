@@ -8,12 +8,15 @@ import {
   pauseConsumer,
 } from "../consumer/consumer.handler";
 import { getRouter} from "../mediasoup/router";
-import { routerToRoom, roomToRouter } from "../stores/maps";
+import { routerToRoom, roomToRouter, podRequestHandleMap } from "../stores/maps";
 import Viewer from "../models/viewer.model";
 import LiveRoom from "../models/liveRoom.models";
 import { ipHash, userAgentHash } from "../utils/hash.util";
-import { heartBeat } from "../utils/roomCordinator";
+import { getRedisRoom, heartBeat } from "../utils/roomCordinator";
 import { rateLimiter } from "../utils/rateLimitingBucket";
+import config from "../config";
+import { handleIncomingRequest, PodCommandPayload, publishCommand } from "../utils/podConnection";
+import { RequestStatus } from "../types/mediasoup";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
@@ -22,22 +25,94 @@ const registerViewerHanlder = async (socket: Socket) => {
       try {
         logger.info("Join as viewer listner started")
         const viewerId = socket.data.user?.id
+        const socketId = socket.id; 
 
         const hashedIp = ipHash(socket)
 
-        // const userRateLimit = await rateLimiter(viewerId, 'user', 'join', roomId)
-        // if (!userRateLimit.allowed) {
-        //   logger.warn('Join rate limit exceeded (user)', { viewerId, roomId, retryAt: userRateLimit.retryAt })
-        //   ack({ success: false, code: 'RATE_LIMITED', retryAt: userRateLimit.retryAt })
-        //   return
-        // }
+        const userRateLimit = await rateLimiter(viewerId, 'user', 'join', roomId)
+        if (!userRateLimit.allowed) {
+          logger.warn('Join rate limit exceeded (user)', { viewerId, roomId, retryAt: userRateLimit.retryAt })
+          ack({ success: false, code: 'RATE_LIMITED', retryAt: userRateLimit.retryAt })
+          return
+        }
 
-        // const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'join', roomId)
-        // if (!ipRateLimit.allowed) {
-        //   logger.warn('Join rate limit exceeded (ip)', { hashedIp, roomId, retryAt: ipRateLimit.retryAt })
-        //   ack({ success: false, code: 'RATE_LIMITED', retryAt: ipRateLimit.retryAt })
-        //   return
-        // }
+        const ipRateLimit = await rateLimiter(hashedIp, 'ip', 'join', roomId)
+        if (!ipRateLimit.allowed) {
+          logger.warn('Join rate limit exceeded (ip)', { hashedIp, roomId, retryAt: ipRateLimit.retryAt })
+          ack({ success: false, code: 'RATE_LIMITED', retryAt: ipRateLimit.retryAt })
+          return
+        }
+        
+        const roomKey = `room:${roomId}`; 
+        const redisRoom = await getRedisRoom(roomKey)
+
+        if(redisRoom.nodeId !== config.instanceId){
+          const type = 'joinRoom'; 
+          const requestId = crypto.randomUUID(); 
+          const date = Date.now(); 
+          const args = {socketId , roomId, socket, viewerId}; 
+          const replyTo = `pod:${config.instanceId}:response`; 
+
+          if(!redisRoom.nodeId){
+            logger.error('Redis nodeId does not exist')
+            throw new Error('POD connection failed')
+          }
+
+          podRequestHandleMap.set(requestId, {
+            requestId,
+            socketId: socket.id,
+            startDate: date,
+            requestType: 'joinRoom',
+            status: 'pending',
+            replyTo: `pod:${config.instanceId}:response`,
+            onComplete: async (result, error) => {
+              if (error) {
+                ack({ success: false, code: 'CROSS_POD_JOIN_FAILED' });
+                return;
+              }
+
+              socket.join(`room:${roomId}`);
+              socket.data.roomId = roomId;
+              
+              await joinAsViewer(roomId, socket.id);
+
+              ack({ success: true, data: result });
+
+              const userAgentHashed = userAgentHash(socket)
+
+              void Viewer.create({
+                roomId: roomId, 
+                viewerId: viewerId, 
+                socketId: socket.id, 
+                ipHash: hashedIp, 
+                userAgentHash: userAgentHashed
+              }).catch((error:any) => {
+                logger.error("Failed to persist live room", error);
+              })
+
+              void LiveRoom.updateOne(
+                { experienceRoomId: roomId },
+                {
+                  $inc: {
+                    totalViewersJoined: 1,
+                  },
+                }
+              ).catch((error) => {
+                logger.error('Increasing peak viewer count failed', error);
+              });
+            },
+          });
+
+          const payload: PodCommandPayload = {
+            type, 
+            requestId, 
+            date, 
+            args, 
+            replyTo
+          }
+          await publishCommand(payload, redisRoom.nodeId)
+          return; 
+        }
 
         const room = getRoom(roomId); 
         if(!room){
