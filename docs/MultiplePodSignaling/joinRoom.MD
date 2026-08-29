@@ -30,6 +30,7 @@ socket.on("joinRoom")
   │                                                   │   case 'joinRoom':
   │                                                   │     getRoom(roomId)      ← real local data, Pod A owns this
   │                                                   │     getRouter(routerId)
+  |                                                   |     await joinAsViewer(roomId, socketId) //Add viewer in memory map POD owning the room. 
   │                                                   │     result = { rtpCapabilities, broadcasters }
   │                                                   │
   │                                                   └─ publishResponse(
@@ -48,7 +49,6 @@ hears smessage on "pod:B:response"
   │        │
   │        ├─ socket.join(`room:${roomId}`)   ← real socket, lives on Pod B, works fine
   │        ├─ socket.data.roomId = roomId
-  │        ├─ joinAsViewer(roomId, socket.id)
   │        └─ ack({ success: true, data: result })   ← viewer FINALLY gets their answer
   │
   └─ podRequestHandleMap.delete("req-9f2")
