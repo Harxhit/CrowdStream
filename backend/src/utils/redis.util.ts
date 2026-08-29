@@ -175,15 +175,16 @@ export function initializeSubscribers(io: Server) {
       console.info('POD connection:',channel , payload); 
 
       try {
+        const parsedPayload = JSON.parse(payload);
         switch(true){
 
           case channel.endsWith(':cmd'):{
-            handleIncomingRequest(payload)
+            handleIncomingRequest(parsedPayload)
             break; 
           }
 
           case channel.endsWith(':response'): {
-            handleIncomingResponse(payload);
+            handleIncomingResponse(parsedPayload);
             break; 
           }
 
