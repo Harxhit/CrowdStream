@@ -78,3 +78,16 @@ export interface RecordingSession {
   videoPort: number; 
   recordingPath: string; 
 }
+
+export type RequestStatus = 'pending' | 'resolved' | 'error';
+
+export interface RequestMap {
+  requestId: string; 
+  socketId: string; 
+  startDate: number; 
+  requestType: string; 
+  status: RequestStatus; 
+  error?: string; 
+  replyTo: string; 
+  onComplete: (result: Record<string, unknown>, error?: string) => void;
+}

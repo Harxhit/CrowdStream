@@ -1,5 +1,5 @@
 import { ChildProcess } from "node:child_process";
-import { RecordingSession, Room, TransportInfo , WorkerInfo, WorkerLoad} from "../types/mediasoup";
+import { RecordingSession, RequestMap, Room, TransportInfo , WorkerInfo, WorkerLoad} from "../types/mediasoup";
 import type { Router } from "mediasoup/node/lib/types";
 
 /**
@@ -40,3 +40,5 @@ export const workerPool = new Map<string, WorkerInfo>()
 export const workerLoadMap  = new Map<string, WorkerLoad>()
 
 export const activeRecordings = new Map<string, RecordingSession>()
+
+export const podRequestHandleMap = new Map<string, RequestMap>()
