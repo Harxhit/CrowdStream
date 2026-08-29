@@ -8,6 +8,7 @@ import { error } from "winston";
 import { Presence, publishPresence, removeViewerFromRedisRoom, viewerCountInRedisRoom } from "./roomCordinator";
 import fs from "fs";
 import path from "path";
+import { handleIncomingRequest, handleIncomingResponse } from "./podConnection";
 
 const startUpNodes = [
     {
@@ -72,7 +73,17 @@ presenceSubscriber.on('ready', async() => {
 })
 
 presenceSubscriber.on('error', async() => {
-  console.error('Presence subscriber error',error)
+  console.error('Presence subscriber error', error)
+})
+
+//Used for POD interconnection
+export const podConnectionSubscriber = redis.duplicate(); 
+podConnectionSubscriber.on('ready', () => {
+  console.log('POD connection subsriber is ready')
+})
+
+podConnectionSubscriber.on('error', (error) => {
+  console.error('POD connection error',error)
 })
 
 //Used by chat pub/sub 
@@ -158,6 +169,35 @@ export function initializeSubscribers(io: Server) {
       }
     })
     logger.info("Redis subscribers initialized");
+
+
+    podConnectionSubscriber.on('smessage', async(channel, payload) => {
+      console.info('POD connection:',channel , payload); 
+
+      try {
+        const parsedPayload = JSON.parse(payload);
+        switch(true){
+
+          case channel.endsWith(':cmd'):{
+            handleIncomingRequest(parsedPayload)
+            break; 
+          }
+
+          case channel.endsWith(':response'): {
+            handleIncomingResponse(parsedPayload);
+            break; 
+          }
+
+          default: logger.warn(`Unkown redis channel: ${channel}`)
+        }
+        
+      } catch (error) {
+        logger.error('POD connection pmessage error',{
+          error: (error as Error).message, 
+          stack: (error as Error).stack
+        })
+      }
+    })
     
   } catch (error) {
     logger.error('Failed to process redis message',{
@@ -183,4 +223,15 @@ export async function subscribeToRoomReactions(roomId: string) {
 export const createRedisRoomKey = (roomId:string):string => {
   const roomKey = `room:${roomId}`
   return roomKey; 
+}
+
+
+// someone is asking ME to do something
+export const subscribeToPodCommands = async() => {
+  await podConnectionSubscriber.ssubscribe(`pod:${config.instanceId}:cmd`)
+}
+
+// someone is answering a request I made earlier
+export const subscribeToPodResponses = async() => {
+  await podConnectionSubscriber.ssubscribe(`pod:${config.instanceId}:response`)
 }
