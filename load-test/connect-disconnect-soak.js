@@ -1,21 +1,3 @@
-/**
- * connect-disconnect-soak.js
- * -----------------------------------------------------------------------------
- * Week 4 (State & reliability) — connect / disconnect soak test.
- *
- * Churns many Socket.IO  connect -> (optional joinRoom) -> disconnect  cycles to
- * validate that the server releases resources on disconnect (no leak) and that
- * clients keep connecting cleanly under sustained churn.
- *
- * This script drives the churn and reports CLIENT-SIDE metrics (connect / join
- * latency, success / failure, throughput). Leak detection itself is SERVER-SIDE:
- * capture the backend process RSS (and mediasoup worker / socket-map counts)
- * before and after the run — they should return to ~baseline once connections
- * settle. See  load-test/results/CONNECT-DISCONNECT-SOAK.md  for the procedure.
- *
- * Authored by Claude (Anthropic), via Claude Code — 2026-08-27.
- */
-
 const { io } = require("socket.io-client");
 
 // ---------- CLI args ----------
