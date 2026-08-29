@@ -43,20 +43,36 @@ const registerViewerHanlder = async (socket: Socket) => {
           return
         }
         
-        const roomKey = `room:${roomId}`; 
-        const redisRoom = await getRedisRoom(roomKey)
+        const roomKey = `room:${roomId}`;
+        let redisRoom;  
+        try {
+          redisRoom = await getRedisRoom(roomKey)
+        } catch (error) {
+          ack({success: false, code: 'ROOM_NOT_FOUND'})
+          logger.error('Room not found')
+          return; 
+        }
 
         if(redisRoom.nodeId !== config.instanceId){
           const type = 'joinRoom'; 
           const requestId = crypto.randomUUID(); 
           const date = Date.now(); 
-          const args = {socketId , roomId, socket, viewerId}; 
+          const args = {socketId , roomId}; 
           const replyTo = `pod:${config.instanceId}:response`; 
 
           if(!redisRoom.nodeId){
             logger.error('Redis nodeId does not exist')
             throw new Error('POD connection failed')
           }
+
+          const TIMEOUTMS = 5000;
+
+          const timeoutHandle = setTimeout(() => {
+            const entry = podRequestHandleMap.get(requestId); 
+            if(!entry) return logger.warn('Already resolved')
+            podRequestHandleMap.delete(requestId)
+            entry.onComplete({}, 'CROSS_POD_TIMEOUT');
+          }, TIMEOUTMS)
 
           podRequestHandleMap.set(requestId, {
             requestId,
@@ -66,6 +82,8 @@ const registerViewerHanlder = async (socket: Socket) => {
             status: 'pending',
             replyTo: `pod:${config.instanceId}:response`,
             onComplete: async (result, error) => {
+
+              clearTimeout(timeoutHandle)
               if (error) {
                 ack({ success: false, code: 'CROSS_POD_JOIN_FAILED' });
                 return;
@@ -74,8 +92,6 @@ const registerViewerHanlder = async (socket: Socket) => {
               socket.join(`room:${roomId}`);
               socket.data.roomId = roomId;
               
-              await joinAsViewer(roomId, socket.id);
-
               ack({ success: true, data: result });
 
               const userAgentHashed = userAgentHash(socket)
@@ -110,7 +126,11 @@ const registerViewerHanlder = async (socket: Socket) => {
             args, 
             replyTo
           }
-          await publishCommand(payload, redisRoom.nodeId)
+          const receivers = await publishCommand(payload, redisRoom.nodeId)
+          if(receivers === 0){
+            ack({success: false, code: 'CROSS_POD_UNREACHABLE'});
+            return; 
+          }
           return; 
         }
 

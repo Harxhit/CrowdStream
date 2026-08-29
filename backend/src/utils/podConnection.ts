@@ -5,6 +5,8 @@ import { redis } from "./redis.util";
 import { getRouter } from "../mediasoup/router";
 import { getRoom } from "../rooms/room.store";
 import type { RequestStatus } from "../types/mediasoup";
+import { joinAsViewer } from "../handlers/viewer.handler";
+import { publishMessage } from "./chat.util";
 
 export interface PodCommandPayload {
   type: string;       
@@ -55,7 +57,6 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 );
 
                 result = {rtpCapabilities, broadcasters}; 
-                error = 'resolved'
 
                 const payload: PodResponsePayload = {
                     requestId, 
@@ -63,6 +64,7 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 }
 
                 await publishResponse(payload, replyTo)
+                await joinAsViewer(roomId, socketId)
                 break; 
             }
             
@@ -86,6 +88,14 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
             error: (error as Error).message, 
             stack: (error as Error).stack
         })
+        const {replyTo , requestId}  = payload; 
+        const payLoad: PodResponsePayload = {
+            requestId, 
+            result: {}, 
+            error: (error as Error).message 
+
+        }
+        await publishResponse(payLoad, replyTo)
     }
 }
 
@@ -96,7 +106,14 @@ export const handleIncomingResponse = async(payload: PodResponsePayload) => {
         return; 
     }
     entry.status = payload.error ? 'error' : 'resolved'; 
-    entry.onComplete(payload.result, payload.error); 
+    try {
+        await entry.onComplete(payload.result, payload.error); 
+    } catch (error) {
+        logger.error('Handle incoming request error',{
+            error: (error as Error).message, 
+            stack: (error as Error).stack,
+        })
+    }
     podRequestHandleMap.delete(payload.requestId)
 }
 
@@ -104,7 +121,12 @@ export const publishCommand = async(payload: PodCommandPayload, targetNode:strin
     const channel = `pod:${targetNode}:cmd`
     const receivers = await redis.spublish(channel , JSON.stringify(payload))
 
-    logger.info("Redis delivered to", receivers, "subscribers")
+    if(receivers === 0){
+        logger.error(`No subscribers for ${channel} — pod may be down`, { requestId: payload.requestId });
+    }
+
+    logger.info("Redis delivered to", receivers, "subscribers"); 
+    return receivers; 
 }
 
 export const publishResponse = async(payload: PodResponsePayload, channel:string) => {
