@@ -82,7 +82,7 @@ podConnectionSubscriber.on('ready', () => {
   console.log('POD connection subsriber is ready')
 })
 
-podConnectionSubscriber.on('error', () => {
+podConnectionSubscriber.on('error', (error) => {
   console.error('POD connection error',error)
 })
 
