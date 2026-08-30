@@ -1,27 +1,3 @@
-/**
- * chat-load-fanout.js
- * -----------------------------------------------------------------------------
- * Week 5 (Real-time messaging) — chat fan-out load test.
- *
- * Spins up many viewers that join a room and listen for `chat:message`
- * broadcasts. A subset of them send messages. Measures end-to-end fan-out
- * latency (sender emit -> receiver delivery), delivery completeness, and how
- * often the server's rate limiter / moderation engage under load.
- *
- * Cross-pod: pass  --urls "http://pod1,http://pod2"  to spread clients across
- * signaling pods so fan-out exercises the Redis adapter (the Week 3/5 goal).
- *
- * Latency method: each message body embeds a nonce + the sender's wall-clock
- * send time  ("cslt|<nonce>|<sendEpochMs>").  Every receiver parses it on
- * delivery and computes (Date.now() - sendEpochMs). All sockets run in ONE
- * process, so Date.now() is a shared clock and the number is true end-to-end
- * fan-out latency (server validate + moderate + rate-limit + Redis publish +
- * broadcast). `chat:message` has no ack, which is why latency is carried in
- * the payload rather than measured with an ack round-trip.
- *
- * Authored by Claude (Anthropic), via Claude Code — 2026-08-27.
- */
-
 const { io } = require("socket.io-client");
 
 // ---------- CLI args ----------
