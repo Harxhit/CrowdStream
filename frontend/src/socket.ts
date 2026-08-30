@@ -11,6 +11,7 @@ export function connectSocket() {
     }
 
     socket = io(window.location.origin);
+    (window as any).__csSocket = socket;
 
     socket.on("connect", () => {
         console.log("Client connected", socket?.id);

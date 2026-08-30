@@ -12,6 +12,13 @@ import LiveChat from "../components/broadcaster/LiveChat";
 import ReactionOverlay from "../components/reactions/ReactionOverlay";
 import { getSocket,startHeartBeat } from "../socket";
 
+declare global {
+  interface Window {
+    __csJoinedAt?: number;
+    __csFirstFrameAt?: number;
+  }
+}
+
 interface Log {
   message: string;
   timestamp: Date;
@@ -61,6 +68,7 @@ export default function ViewerPage() {
       log("Joining room...");
 
       const caps = await viewer.joinRoom(roomId);
+      window.__csJoinedAt = Date.now();
 
       log("Loading MediaSoup device...");
 

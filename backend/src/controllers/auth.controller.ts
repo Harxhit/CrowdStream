@@ -20,6 +20,8 @@ export const me = async (request: Request, response: Response) => {
                 message: "User not found"
             });
         }
+
+        logger.info('[USER]', user)
     
         return response.status(200).json({
             success: true,

@@ -1,4 +1,3 @@
-import { Server } from "socket.io";
 import { RedisRoom } from "../types/mediasoup";
 import logger from "./logging";
 import { redis } from "./redis.util";

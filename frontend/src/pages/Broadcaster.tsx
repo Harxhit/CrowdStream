@@ -19,6 +19,13 @@ import SystemLogs from "../components/broadcaster/SystemLogs";
 import LiveChat from "../components/broadcaster/LiveChat";
 import ReactionOverlay from "../components/reactions/ReactionOverlay";
 
+declare global {
+  interface Window {
+    __csRoomId?: string;
+    __csLiveAt?: number;
+  }
+}
+
 interface Log {
   message: string;
   timestamp: Date;
@@ -58,6 +65,7 @@ export default function BroadcasterPage() {
       const room = await broadcaster.createRoom();
 
       setRoomId(room.id);
+      window.__csRoomId = room.id
 
       log("Fetching RTP capabilities...");
 
@@ -84,6 +92,7 @@ export default function BroadcasterPage() {
       await broadcaster.startProducing(stream);
 
       setIsLive(true);
+      window.__csLiveAt = Date.now();
 
       log("Broadcast started successfully.");
     } catch (err: any) {
@@ -258,6 +267,7 @@ export default function BroadcasterPage() {
                 {!isLive ? (
                   <button
                     onClick={startBroadcast}
+                    id="live-start-button"
                     className="flex items-center gap-1.5 rounded-xl bg-[#3fcf9e] px-4 py-2 text-sm font-semibold text-[#04241a] transition hover:bg-[#5fdcb2]"
                   >
                     <Play size={15} /> Go live

@@ -64,7 +64,7 @@ const createWebRtcTransport = async (
     transport.on("icestatechange", (iceState) => {
       const info = transportRegistry.get(transport.id);
 
-      logger.info("Transport ICE state changed", {
+      logger.info(`Transport ICE state changed: ${iceState}`, {
         event: "TRANSPORT_ICE_STATE_CHANGE",
         transportId: transport.id,
         roomId: info?.roomId,

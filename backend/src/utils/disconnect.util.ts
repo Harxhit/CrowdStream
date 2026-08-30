@@ -33,7 +33,7 @@ export const handleDisconnect = async(socket: Socket) => {
             removeViewer(roomId,socket.id)
             await dbCleanUp(socket.id)
         }else if(!broadcaster || !viewer){
-            logger.warn('IDK')
+            logger.warn('Not a broadcaster not a viewer')
         }
       }
 

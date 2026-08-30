@@ -1,25 +1,3 @@
-/*
- * media-fanout-capacity.js
- *
- * Purpose:
- *   Measure the REAL media-plane ceiling of the CrowdStream SFU (mediasoup),
- *   not just the signaling / control path. One broadcaster streams fake media;
- *   viewers ramp up in batches. For every viewer we measure join and
- *   first-frame latency AND sample inbound video getStats (bitrate,
- *   packet-loss %, jitter, fps, resolution).
- *
- *   getStats is captured WITHOUT any frontend changes: we use
- *   evaluateOnNewDocument to wrap window.RTCPeerConnection in each headless
- *   tab so every PeerConnection the app constructs is pushed into
- *   window.__csPCs. We then iterate those PCs and read their inbound-rtp
- *   reports directly.
- *
- *   As viewers climb, the ceiling reveals itself as falling bitrate/fps,
- *   rising packet loss, or climbing join / first-frame failures.
- *
- * Authored by Claude (Anthropic), via Claude Code — 2026-08-27.
- */
-
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
@@ -115,32 +93,181 @@ function mean(values) {
  */
 
 async function login(page) {
+  console.log("[LOGIN] Opening signin page:", `${BASE_URL}/signin`);
+
   await page.goto(`${BASE_URL}/signin`, {
     waitUntil: "networkidle2",
     timeout: 30000,
   });
 
+  console.log("[LOGIN] Signin page loaded:", page.url());
+
   await page.waitForSelector("#email", {
     timeout: WAIT_TIMEOUT_MS,
   });
 
+  console.log("[LOGIN] Login form found");
+
   await page.type("#email", TEST_EMAIL);
   await page.type("#password", TEST_PASSWORD);
 
+  console.log("[LOGIN] Credentials entered");
+
   await page.click('button[type="submit"]');
 
-  // SignInPage navigates to /dashboard after successful sign-in.
+  console.log("[LOGIN] Submit clicked");
+
+  console.log("[LOGIN] PAGE:", page.url());
+
+
   await page.waitForFunction(
     () => window.location.pathname === "/dashboard",
     { timeout: WAIT_TIMEOUT_MS }
   );
+  
+  console.log("[LOGIN] Dashboard reached:", page.url());
 
-  await page.waitForFunction(
-    () =>
-      window.__csSocket &&
-      window.__csSocket.connected === true,
-    { timeout: WAIT_TIMEOUT_MS }
-  );
+  // ---------------------------------------------------------
+  // SOCKET DEBUGGING
+  // ---------------------------------------------------------
+
+  console.log("[SOCKET] Checking window.__csSocket...");
+
+  // Attach browser-side socket listeners.
+  await page.evaluate(() => {
+    const socket = window.__csSocket;
+
+    if (!socket) {
+      console.error("[SOCKET DEBUG] __csSocket DOES NOT EXIST");
+      return;
+    }
+
+    console.log('[SOCKET]', socket.id)
+
+    console.log("[SOCKET DEBUG] Socket exists");
+
+    console.log("[SOCKET DEBUG] Initial:", {
+      connected: socket.connected,
+      disconnected: socket.disconnected,
+      id: socket.id,
+      active: socket.active,
+      uri: socket.io?.uri,
+      transport: socket.io?.engine?.transport?.name,
+      readyState: socket.io?.engine?.readyState,
+    });
+
+    socket.on("connect", () => {
+      console.log("[SOCKET DEBUG] CONNECT", {
+        id: socket.id,
+        transport: socket.io?.engine?.transport?.name,
+      });
+    });
+
+    socket.on("connect_error", (error) => {
+      console.error("[SOCKET DEBUG] CONNECT_ERROR", {
+        message: error.message,
+        description: error.description,
+        context: error.context,
+      });
+    });
+
+    socket.on("disconnect", (reason, details) => {
+      console.warn("[SOCKET DEBUG] DISCONNECT", {
+        reason,
+        details,
+      });
+    });
+  });
+
+  // Forward browser console messages to Node terminal.
+  page.on("console", (msg) => {
+    console.log(`[BROWSER ${msg.type()}] ${msg.text()}`);
+  });
+
+  // Forward browser JavaScript errors.
+  page.on("pageerror", (error) => {
+    console.error("[BROWSER PAGE ERROR]", error.message);
+  });
+
+  const socketState = await page.evaluate(() => {
+    const socket = window.__csSocket;
+
+
+    if (!socket) {
+      return {
+        exists: false,
+      };
+      throw Error('[SOCKET] not found')
+    }
+
+    return {
+      exists: true,
+      connected: socket.connected,
+      disconnected: socket.disconnected,
+      id: socket.id || null,
+      active: socket.active,
+      readyState: socket.io?.engine?.readyState || null,
+      uri: socket.io?.uri || null,
+      transport: socket.io?.engine?.transport?.name || null,
+    };
+  });
+
+  console.log("[SOCKET] Initial state:", socketState);
+
+  console.log("[SOCKET] Waiting for connection...");
+
+  try {
+    await page.waitForFunction(
+      () =>
+        window.__csSocket &&
+        window.__csSocket.connected === true,
+      { timeout: WAIT_TIMEOUT_MS }
+    );
+
+    const finalSocketState = await page.evaluate(() => {
+      const socket = window.__csSocket;
+
+      return {
+        exists: Boolean(socket),
+        connected: socket?.connected ?? false,
+        disconnected: socket?.disconnected ?? null,
+        id: socket?.id ?? null,
+        active: socket?.active ?? null,
+        readyState: socket?.io?.engine?.readyState ?? null,
+        transport: socket?.io?.engine?.transport?.name ?? null,
+      };
+    });
+
+    console.log("[SOCKET] CONNECTED:", finalSocketState);
+
+  } catch (error) {
+    console.error("[SOCKET] CONNECTION TIMEOUT");
+
+    const debugState = await page.evaluate(() => {
+      const socket = window.__csSocket;
+
+      return {
+        url: window.location.href,
+        socketExists: Boolean(socket),
+        connected: socket?.connected ?? null,
+        disconnected: socket?.disconnected ?? null,
+        socketId: socket?.id ?? null,
+        active: socket?.active ?? null,
+        readyState: socket?.io?.engine?.readyState ?? null,
+        ioUri: socket?.io?.uri ?? null,
+        transport: socket?.io?.engine?.transport?.name ?? null,
+        managerReadyState:
+          socket?.io?.engine?.readyState ?? null,
+      };
+    });
+
+    console.error("[SOCKET] DEBUG STATE:");
+    console.error(JSON.stringify(debugState, null, 2));
+
+    console.error("[SOCKET] Current page:", page.url());
+
+    throw error;
+  }
 }
 
 /*
@@ -355,15 +482,17 @@ async function launchBroadcaster(browser) {
    * Make sure the "Go live" button actually exists.
    */
 
-  await page.waitForFunction(
-    () =>
-      Array.from(
-        document.querySelectorAll("button")
-      ).some((button) =>
-        button.textContent?.includes("Go live")
-      ),
-    { timeout: WAIT_TIMEOUT_MS }
+  console.log("[BROADCASTER] URL:", await page.url());
+
+  console.log(
+    "[BROADCASTER] Title:",
+    await page.title()
   );
+
+
+  await page.waitForSelector("#live-start-button", {
+    timeout: WAIT_TIMEOUT_MS,
+  });
 
   console.log('"Go live" button found.');
 
@@ -426,7 +555,9 @@ async function launchBroadcaster(browser) {
  */
 
 async function launchViewer(browser, roomId, index) {
-  const page = await browser.newPage();
+  const context = await browser.createBrowserContext(); // isolated cookie jar
+  await context.overridePermissions(BASE_URL, ["camera", "microphone"]);
+  const page = await context.newPage();
 
   page.on("pageerror", (error) => {
     console.error(
@@ -543,6 +674,8 @@ async function launchViewer(browser, roomId, index) {
 
       error: error.message,
     };
+
+    context.close()
   }
 }
 
@@ -560,7 +693,7 @@ async function main() {
   console.log(
     "========================================"
   );
-  console.log(`Frontend:       ${BASE_URL}`);
+  console.log(`URL:       ${BASE_URL}`);
   console.log(`Batch size:     ${BATCH_SIZE}`);
   console.log(`Batch interval: ${BATCH_INTERVAL_MS}ms`);
   console.log(`Max viewers:    ${MAX_VIEWERS}`);
@@ -768,6 +901,7 @@ async function main() {
     );
   } finally {
     await browser.close();
+    context.close()
   }
 }
 

@@ -32,6 +32,12 @@ export default function ViewerVideo({
         playsInline
         controls={false}
         className="h-full w-full object-cover"
+          onPlaying={() => {
+            if (!window.__csFirstFrameAt) {
+              window.__csFirstFrameAt = Date.now();
+              console.log("[LOAD TEST] First video frame playing");
+            }
+          }}
       />
 
       {!connected && (

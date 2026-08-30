@@ -19,9 +19,9 @@ export default function ProtectedRoute() {
       })
     }
 
-    return () => {
-      disconnectSocket();
-    };
+    // return () => {
+    //   disconnectSocket();
+    // };
   }, [authenticated]);
 
   if (loading) {
