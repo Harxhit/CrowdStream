@@ -7,6 +7,7 @@ import { getRoom } from "../rooms/room.store";
 import type { RequestStatus } from "../types/mediasoup";
 import { joinAsViewer } from "../handlers/viewer.handler";
 import { publishMessage } from "./chat.util";
+import { heartBeat } from "./roomCordinator";
 
 export interface PodCommandPayload {
   type: string;       
@@ -68,7 +69,28 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 break; 
             }
             
-            case type === '': {}
+            case type === 'heartBeat': {
+                const {roomId, socketId} = args as unknown as JoinRoomArgs; 
+                
+                const room = getRoom(roomId); 
+
+                const isViewer = room.viewers.get(socketId);
+                if(!isViewer){
+                    logger.error('Viewer is not the member of room'); 
+                    return; 
+                }
+
+                result.status = 'completed'; 
+                const payload: PodResponsePayload = {
+                    requestId, 
+                    result
+                }
+
+                await publishResponse(payload, replyTo)
+                await heartBeat(roomId, socketId)
+
+                break; 
+            }
 
             case type === '': {}
             

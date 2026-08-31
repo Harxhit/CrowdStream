@@ -15,13 +15,12 @@ import { ipHash, userAgentHash } from "../utils/hash.util";
 import { getRedisRoom, heartBeat } from "../utils/roomCordinator";
 import { rateLimiter } from "../utils/rateLimitingBucket";
 import config from "../config";
-import { handleIncomingRequest, PodCommandPayload, publishCommand } from "../utils/podConnection";
-import { RequestStatus } from "../types/mediasoup";
+import { PodCommandPayload, publishCommand } from "../utils/podConnection";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
   // Handles viewer joining a room and emitting router capabilties
-  socket.on("joinRoom", async (roomId, ack) => {
+  socket.on("joinRoom", async(roomId, ack) => {
       try {
         logger.info("Join as viewer listner started")
         const viewerId = socket.data.user?.id
@@ -208,13 +207,87 @@ const registerViewerHanlder = async (socket: Socket) => {
       }
   });
   
-  
-  socket.on(`viewer:heartBeat`, () => {
+  socket.on(`viewer:heartBeat`, async () => {
     const roomId = socket.data.roomId; 
     const socketId = socket.id; 
 
     if(!roomId || !socketId){
       logger.error('Room not found')
+    }
+
+    let redisRoom; 
+    try {
+      const roomKey = `room:${roomId}`
+      redisRoom = await getRedisRoom(roomKey)
+    } catch (error) {
+      logger.error('Error finding redis room',{
+        error: (error as Error).message,
+        stack: (error as Error).stack
+      })
+      return; 
+    }
+
+    if(redisRoom.nodeId !== config.instanceId){
+      const type = 'heartBeat'
+      const requestId = crypto.randomUUID(); 
+      const date = Date.now(); 
+      const args = {roomId, socketId}
+      const replyTo =  `pod:${config.instanceId}:response`; 
+
+      const TIMEOUTMS = 5000;
+
+      const timeoutHandle = setTimeout(() => {
+      const entry = podRequestHandleMap.get(requestId); 
+        if(!entry) return logger.warn('Already resolved')
+        podRequestHandleMap.delete(requestId)
+        entry.onComplete({}, 'CROSS_POD_TIMEOUT');
+      }, TIMEOUTMS)
+
+
+      podRequestHandleMap.set(requestId, {
+        requestId, 
+        requestType : 'heartBeat', 
+        startDate: date,
+        socketId, 
+        status: 'pending',
+        replyTo, 
+
+        onComplete: async (result, error) => {
+          clearTimeout(timeoutHandle); 
+
+          if(error){
+            logger.error('Cross-pod heartbeat failed', {
+              requestId,
+              error,
+            });
+            return;
+          }
+
+          if(result.status === 'completed'){
+            //Heart beat is completed
+            return; 
+          }
+        }
+      })
+
+      const payload: PodCommandPayload = {
+        type, 
+        requestId, 
+        date, 
+        args, 
+        replyTo
+      }
+
+      if(!redisRoom.nodeId){
+        throw new Error('Redis room node not defined')
+      }
+
+      const receivers = await publishCommand(payload, redisRoom.nodeId); 
+      if(receivers === 0){
+        logger.error('Inter pod connection failed'); 
+        return; 
+      }
+      return; 
     }
 
     const room = getRoom(roomId); 
