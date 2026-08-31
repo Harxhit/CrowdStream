@@ -279,7 +279,10 @@ const registerViewerHanlder = async (socket: Socket) => {
       }
 
       if(!redisRoom.nodeId){
-        throw new Error('Redis room node not defined')
+        logger.error('Redis room node not defined');
+        clearTimeout(timeoutHandle);
+        podRequestHandleMap.delete(requestId);
+        return;
       }
 
       const receivers = await publishCommand(payload, redisRoom.nodeId); 
