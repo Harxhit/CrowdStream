@@ -77,7 +77,7 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 const isViewer = room.viewers.get(socketId);
                 if(!isViewer){
                     logger.error('Viewer is not the member of room'); 
-                    return; 
+                    throw new Error('Viewer is not the member of room'); 
                 }
 
                 result.status = 'completed'; 
