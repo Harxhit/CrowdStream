@@ -16,10 +16,10 @@ export default function Router() {
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpPage />} />
 
+        <Route path="/broadcaster" element={<BroadcasterPage />} />
+        <Route path="/viewer" element={<ViewerPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
         <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/broadcaster" element={<BroadcasterPage />} />
-          <Route path="/viewer" element={<ViewerPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
