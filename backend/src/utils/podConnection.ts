@@ -86,8 +86,8 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                     result
                 }
 
-                await publishResponse(payload, replyTo)
                 await heartBeat(roomId, socketId)
+                await publishResponse(payload, replyTo)
 
                 break; 
             }
