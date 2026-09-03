@@ -394,7 +394,9 @@ const registerViewerHanlder = async (socket: Socket) => {
         const receivers = await publishCommand(payLoad, redisRoom.nodeId)
         if(receivers === 0){
           logger.error('Inter pod connection failed'); 
-          throw new Error('Inter pod connection failed'); 
+          clearTimeout(timeoutHandle);
+          podRequestHandleMap.delete(requestId);
+          throw new Error('Inter pod connection failed');
         }
 
         return; 
