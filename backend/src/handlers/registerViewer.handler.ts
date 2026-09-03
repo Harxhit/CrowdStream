@@ -320,7 +320,8 @@ const registerViewerHanlder = async (socket: Socket) => {
           message: (error as Error).message, 
           stack: (error as Error).stack
         })
-        return; 
+        ack({success: false, code: "TRANSPORT_CREATION_FAILED" });
+        return;
       }
       if(redisRoom.nodeId !== config.instanceId){
         const type = 'createViewerTransport'
