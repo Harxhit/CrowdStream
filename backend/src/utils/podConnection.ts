@@ -99,7 +99,7 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
 
                 const isViewer = room.viewers.get(socketId); 
                 if(!isViewer){
-                    return; 
+                    throw new Error('Viewer is not the member of room'); 
                 }
 
                 const viewerTransport = await createConsumerTransport(roomId, socketId); 
