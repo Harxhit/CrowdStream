@@ -308,7 +308,98 @@ const registerViewerHanlder = async (socket: Socket) => {
   socket.on("createViewerTransport", async (roomId, ack) => {
     try {
       logger.info('Create viewer transport listner started')
-      const viewerId = socket.data.user?.id
+      const viewerId = socket.data.user?.id; 
+      const socketId = socket.id; 
+
+      const roomKey = `room:${roomId}`
+      let redisRoom
+      try {
+        redisRoom = await getRedisRoom(roomKey); 
+      } catch (error) {
+        logger.error('Error getting redis room',{
+          message: (error as Error).message, 
+          stack: (error as Error).stack
+        })
+        return; 
+      }
+      if(redisRoom.nodeId !== config.instanceId){
+        const type = 'createViewerTransport'
+        const requestId = crypto.randomUUID(); 
+        const date = Date.now(); 
+        const args = {socketId, roomId}; 
+        const replyTo =  `pod:${config.instanceId}:response`; 
+
+        const payLoad: PodCommandPayload = {
+          type, 
+          requestId, 
+          date, 
+          args, 
+          replyTo
+        }
+
+        const TIMEOUTMS = 5000; 
+
+        const timeoutHandle = setTimeout(() => {
+          const entry = podRequestHandleMap.get(requestId); 
+          if(!entry) return logger.error('Entry not found'); 
+          entry.onComplete({}, 'CROSS_POD_TIMEOUT')
+          podRequestHandleMap.delete(requestId)
+        }, TIMEOUTMS)
+
+        podRequestHandleMap.set(requestId, {
+          requestId, 
+          requestType: 'createViewerTransport',
+          socketId, 
+          startDate: date, 
+          status: 'pending',
+          replyTo, 
+
+          onComplete: async(result, error) => {
+            clearTimeout(timeoutHandle); 
+
+            if(error){
+              ack({success: false, code: "TRANSPORT_CREATION_FAILED" })
+              return; 
+            }
+
+            ack({success: true, data: result}); 
+
+            void Viewer.findOneAndUpdate(
+              {
+                roomId, 
+                viewerId: viewerId
+              },
+              {
+                $push: {
+                  transportId: result?.id
+                }
+              }, 
+              {new: true}
+            ).catch((error) => {
+              logger.error("Failed to update viewer transport", {
+                viewerId,
+                error: error,
+              });
+            });
+          }
+        })
+
+        if(!redisRoom.nodeId){
+          logger.error('Redis room node not defined');
+          clearTimeout(timeoutHandle);
+          podRequestHandleMap.delete(requestId);
+          return;
+        }
+
+        const receivers = await publishCommand(payLoad, redisRoom.nodeId)
+        if(receivers === 0){
+          logger.error('Inter pod connection failed'); 
+          throw new Error('Inter pod connection failed'); 
+        }
+
+        return; 
+      }
+
       const room = getRoom(roomId);
 
       //Find the viewer inside the room

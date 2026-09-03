@@ -5,7 +5,7 @@ import { redis } from "./redis.util";
 import { getRouter } from "../mediasoup/router";
 import { getRoom } from "../rooms/room.store";
 import type { RequestStatus } from "../types/mediasoup";
-import { joinAsViewer } from "../handlers/viewer.handler";
+import { createConsumerTransport, joinAsViewer } from "../handlers/viewer.handler";
 import { publishMessage } from "./chat.util";
 import { heartBeat } from "./roomCordinator";
 
@@ -92,7 +92,32 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 break; 
             }
 
-            case type === '': {}
+            case type === 'createViewerTransport': {
+                const {roomId, socketId} = args as unknown as JoinRoomArgs; 
+
+                const room = getRoom(roomId); 
+
+                const isViewer = room.viewers.get(socketId); 
+                if(!isViewer){
+                    return; 
+                }
+
+                const viewerTransport = await createConsumerTransport(roomId, socketId); 
+                result = {
+                    id: viewerTransport.id, 
+                    iceParameters: viewerTransport.iceParameters, 
+                    iceCandidates: viewerTransport.iceCandidates, 
+                    dtlsParameters: viewerTransport.dtlsParameters
+                }
+
+                const payLoad: PodResponsePayload = {
+                    result, 
+                    requestId
+                }
+
+                await publishResponse(payLoad, replyTo); 
+                break; 
+            }
             
             case type === '': {}
             
