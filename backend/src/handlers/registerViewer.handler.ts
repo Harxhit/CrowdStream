@@ -371,7 +371,7 @@ const registerViewerHanlder = async (socket: Socket) => {
               },
               {
                 $push: {
-                  transportId: result?.id
+                  transportIds: result?.id
                 }
               }, 
               {new: true}
