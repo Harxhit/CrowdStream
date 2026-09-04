@@ -505,6 +505,7 @@ const registerViewerHanlder = async (socket: Socket) => {
           const entry = podRequestHandleMap.get(requestId); 
           if(!entry) return logger.error('Request entry not found'); 
           podRequestHandleMap.delete(requestId)
+          ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
           entry.onComplete({}, 'CROSS_POD_TIMEOUT')
         }, TIMEOUTMS)
 
