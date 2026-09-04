@@ -44,7 +44,11 @@ socket.on("connectConsumerTransport")
   │           return
   │        }
   │
-  │        if (result.status === "completed") {
+        if (result.status === "completed") {
+           ack({ success: true })
+        } else {
+           ack({ success: false, code: "TRANSPORT_CONNECTION_FAILED" })
+        }
   │           ack({
   │             success: true
   │           })
