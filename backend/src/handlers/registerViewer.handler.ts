@@ -466,11 +466,89 @@ const registerViewerHanlder = async (socket: Socket) => {
     try {
       logger.info('Connect consumer listner started')
 
-      const roomId = socket.data.roomId;
+      const roomId = socket.data.roomId; 
+      const socketId = socket.id; 
   
       const { dtlsParameters } = payload; 
 
-      await connectConsumerTransport(roomId, socket.id, dtlsParameters);
+      let redisRoom; 
+      const roomKey = `room:${roomId}`
+      try {
+        redisRoom = await getRedisRoom(roomKey)
+      } catch (error) {
+        logger.error('Getting redis room failed',{
+          error: (error as Error).message, 
+          stack: (error as Error).stack 
+        })
+        ack({success: false, code: "TRANSPORT_CONNECTION_FAILED"})
+        return; 
+      }
+
+      if(redisRoom?.nodeId !== config.instanceId){
+        const requestId = crypto.randomUUID(); 
+        const type = 'connectViewerTransport'
+        const date = Date.now();
+        const args = {roomId, socketId, dtlsParameters}
+        const replyTo = `pod:${config.instanceId}:response`
+        
+        const payLoad: PodCommandPayload = {
+          requestId, 
+          type,
+          date, 
+          args, 
+          replyTo
+        }
+
+        const TIMEOUTMS = 5000; 
+
+        const timeoutHandle = setTimeout(() => {
+          const entry = podRequestHandleMap.get(requestId); 
+          if(!entry) return logger.error('Request entry not found'); 
+          podRequestHandleMap.delete(requestId)
+          ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
+          entry.onComplete({}, 'CROSS_POD_TIMEOUT')
+        }, TIMEOUTMS)
+
+        podRequestHandleMap.set(requestId, {
+          requestId, 
+          socketId, 
+          startDate: date, 
+          requestType : 'connectViewerTransport', 
+          status: 'pending',
+          replyTo, 
+
+          onComplete: async(result, error) => {
+            if(error){
+              logger.error('TInter pod transport connection failed')
+              ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
+              return; 
+            }
+
+            if(result.status === 'completed'){
+              ack({success: true})
+            }
+          }
+
+        })
+
+        if(!redisRoom.nodeId){
+          logger.error('Redis nodeId not found'); 
+          clearTimeout(timeoutHandle)
+          podRequestHandleMap.delete(requestId)
+          return; 
+        }
+
+
+        const receivers = await publishCommand(payLoad, redisRoom.nodeId)
+        if(receivers === 0){
+          logger.error('Inter pod connection failed'); 
+          clearTimeout(timeoutHandle)
+          podRequestHandleMap.delete(requestId)
+        }
+        return; 
+      }
+
+      await connectConsumerTransport(roomId, socketId, dtlsParameters);
 
       ack({
         success: true
