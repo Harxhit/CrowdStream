@@ -5,7 +5,7 @@ import { redis } from "./redis.util";
 import { getRouter } from "../mediasoup/router";
 import { getRoom } from "../rooms/room.store";
 import type { RequestStatus } from "../types/mediasoup";
-import { createConsumerTransport, joinAsViewer } from "../handlers/viewer.handler";
+import { connectConsumerTransport, createConsumerTransport, joinAsViewer } from "../handlers/viewer.handler";
 import { publishMessage } from "./chat.util";
 import { heartBeat } from "./roomCordinator";
 
@@ -26,6 +26,12 @@ export interface PodResponsePayload {
 interface JoinRoomArgs {
     roomId: string; 
     socketId: string; 
+}
+
+interface ConnectViewerTransportAgrs {
+    roomId: string; 
+    socketId: string; 
+    dtlsParameters: any;
 }
 
 export const handleIncomingRequest = async(payload: PodCommandPayload) => {
@@ -119,7 +125,21 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 break; 
             }
             
-            case type === '': {}
+            case type === 'connectViewerTransport': {
+                const {roomId, socketId, dtlsParameters } = args as unknown as ConnectViewerTransportAgrs; 
+
+                await connectConsumerTransport(roomId, socketId, dtlsParameters); 
+
+                result.status = 'completed'
+
+                const payLoad: PodResponsePayload = {
+                    requestId, 
+                    result
+                }
+
+                await publishResponse(payLoad, replyTo)
+                break; 
+            }
             
             case type === '': {}
             
