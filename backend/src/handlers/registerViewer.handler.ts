@@ -788,7 +788,7 @@ const registerViewerHanlder = async (socket: Socket) => {
               clearTimeout(timeoutHandle)
 
               if(result.status === 'completed'){
-                ack({success: true, data: consumerId});
+                ack({success: true, data: { consumerId }});
               }
             }
           })
