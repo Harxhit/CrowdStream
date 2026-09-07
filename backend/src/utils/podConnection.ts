@@ -7,7 +7,8 @@ import { connectConsumerTransport, createConsumerTransport, joinAsViewer } from 
 import { heartBeat } from "./roomCordinator";
 import {consume} from '../handlers/viewer.handler'
 import { pauseConsumer, resumeConsumer } from "../consumer/consumer.handler";
-
+import { createWebRtcTransport } from "../mediasoup/transport";
+import { addBroadcaster, saveBroadcasterTransport } from "./broadcaster.util";
 
 export interface PodCommandPayload {
   type: string;       
@@ -76,7 +77,33 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 break; 
             }
 
-            case(type === ''): {}
+            case(type === 'createBroadcasterTransport'): {
+                const {roomId, socketId} = args as unknown as generalArgs; 
+                const routerId = roomToRouter.get(roomId); 
+                if(!routerId){
+                    error = 'RouterId not found'
+                    throw new Error('RouterId not found')
+                }
+                const router = getRouter(routerId); 
+
+                const broadcasterTransport = await createWebRtcTransport(router,roomId, socketId, 'producer');
+                
+                result = {
+                    id: broadcasterTransport?.id,
+                    iceParameters: broadcasterTransport?.iceParameters,
+                    iceCandidates: broadcasterTransport?.iceCandidates,
+                    dtlsParameters: broadcasterTransport?.dtlsParameters,
+                }
+                addBroadcaster(roomId, socketId)
+                await saveBroadcasterTransport(roomId, socketId, broadcasterTransport)
+
+                const payLoad: PodResponsePayload = {
+                    requestId, 
+                    result
+                }
+                await publishResponse(payLoad, replyTo)
+                break; 
+            }
             case(type === ''): {}
             case(type === ''): {}
 
@@ -266,15 +293,16 @@ export const handleIncomingResponse = async(payload: PodResponsePayload) => {
     podRequestHandleMap.delete(payload.requestId)
 }
 
-export const publishCommand = async(payload: PodCommandPayload, targetNode:string) => {
+export const publishCommand = async(payload: PodCommandPayload, targetNode:string):Promise<number> => {
     const channel = `pod:${targetNode}:cmd`
-    const receivers = await redis.spublish(channel , JSON.stringify(payload))
+    const receivers = await redis.spublish(channel , JSON.stringify(payload)) as number
 
     if(receivers === 0){
         logger.error(`No subscribers for ${channel} — pod may be down`, { requestId: payload.requestId });
     }
 
     logger.info("Redis delivered to", receivers, "subscribers"); 
+
     return receivers; 
 }
 
