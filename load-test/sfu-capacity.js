@@ -10,8 +10,8 @@ function arg(name, def) {
 const BASE_URL = arg("baseUrl", "http://localhost");
 // const TOKEN = arg("token", null);
 
-const TEST_EMAIL = "harsxit04@gmail.com"
-const TEST_PASSWORD = "@Harshit1308"
+const TEST_EMAIL = process.env.CROWDSTREAM_TEST_EMAIL;
+const TEST_PASSWORD = process.env.CROWDSTREAM_TEST_PASSWORD;
 
 if (!TEST_EMAIL || !TEST_PASSWORD) {
   console.error(
