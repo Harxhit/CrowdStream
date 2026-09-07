@@ -591,7 +591,7 @@ const registerViewerHanlder = async (socket: Socket) => {
           code: "CONSUME_FAILED",
         });
 
-        return; 
+        return;
       }
 
       if(redisRoom?.nodeId !== config.instanceId){
@@ -634,12 +634,14 @@ const registerViewerHanlder = async (socket: Socket) => {
             clearTimeout(timeoutHandle)
             ack({success: true, data: { consumers: result.consumerParams }})
 
+
+            const consumerParams = result.consumerParams as {id: string}[]
             void Viewer.updateOne(
             viewerId,
             {
               $push: {
                 consumerIds: {
-                  $each: consumers.consumerParams.map((consumer) => consumer.id),
+                  $each: consumerParams.map((consumer) => consumer.id),
                 },
               },
             }
