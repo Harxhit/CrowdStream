@@ -1,4 +1,3 @@
-import config from "../config";
 import { podRequestHandleMap, roomToRouter } from "../stores/maps";
 import logger from "./logging"
 import { redis } from "./redis.util";
@@ -7,7 +6,8 @@ import { getRoom } from "../rooms/room.store";
 import { connectConsumerTransport, createConsumerTransport, joinAsViewer } from "../handlers/viewer.handler";
 import { heartBeat } from "./roomCordinator";
 import {consume} from '../handlers/viewer.handler'
-import { TransportType } from "../types/mediasoup";
+import { resumeConsumer } from "../consumer/consumer.handler";
+
 
 export interface PodCommandPayload {
   type: string;       
@@ -38,6 +38,12 @@ interface ConsumeArgs{
     roomId: string; 
     socketId: string; 
     rtpCapabilities: any
+}
+
+interface ResumeArgs{
+    roomId: string; 
+    socketId: string; 
+    consumerId: string
 }
 
 export const handleIncomingRequest = async(payload: PodCommandPayload) => {
@@ -164,6 +170,22 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
             }
             
             case type === '': {}
+
+            case type === 'resumeConsumer': {
+                const {roomId, socketId, consumerId} = args as unknown as ResumeArgs;
+
+                await resumeConsumer(roomId, socketId, consumerId)
+
+                result.status = 'completed'; 
+
+                const payLoad: PodResponsePayload = {
+                    requestId, 
+                    result
+                }
+                
+                await publishResponse(payLoad, replyTo)
+                break; 
+            }
             
             default: throw new Error(`Unkown pod command type: ${type}`)
         }

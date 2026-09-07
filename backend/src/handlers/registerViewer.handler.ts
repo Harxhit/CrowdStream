@@ -16,6 +16,7 @@ import { getRedisRoom, heartBeat } from "../utils/roomCordinator";
 import { rateLimiter } from "../utils/rateLimitingBucket";
 import config from "../config";
 import { PodCommandPayload, publishCommand } from "../utils/podConnection";
+import { redis } from "../utils/redis.util";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
@@ -727,7 +728,87 @@ const registerViewerHanlder = async (socket: Socket) => {
   // Resumes a previously paused consumer for the viewer
   socket.on("resumeConsumer", async (roomId,consumerId, ack) => {
       try {
-       resumeConsumer(roomId, socket.id, consumerId)
+        const socketId = socket.id; 
+        const roomKey = `room:${roomId}`; 
+        let redisRoom; 
+        try {
+          redisRoom = await getRedisRoom(roomKey)
+        } catch (error) {
+          logger.error('Redis room failed', {
+            error: (error as Error).message, 
+            stack: (error as Error).stack
+          })
+
+          ack({success: false, code: "RESUME_CONSUMER_FAILED"})
+
+          return; 
+        }
+
+        if(redisRoom.nodeId !== config.instanceId){
+          const requestId = crypto.randomUUID(); 
+          const date = Date.now(); 
+          const args = {roomId, socketId, consumerId}
+          const replyTo = `pod:${config.instanceId}:response`;
+
+          const payLoad : PodCommandPayload = {
+            requestId, 
+            type: 'resumeConsumer',
+            date, 
+            args, 
+            replyTo
+          }
+
+          const TIMEOUTMS = 5000; 
+          const timeoutHandle = setTimeout(() => {
+            const entry = podRequestHandleMap.get(requestId); 
+            if(!entry) return logger.error('Entry not found'); 
+            entry.onComplete({}, 'RESUME_CONSUMER_FAILED')
+            podRequestHandleMap.delete(requestId); 
+            ack({success: false, code: "RESUME_CONSUMER_FAILED" })
+          },TIMEOUTMS)
+
+          podRequestHandleMap.set(requestId, {
+            requestId, 
+            socketId,
+            requestType: 'resumeConsumer', 
+            startDate: date, 
+            replyTo, 
+            status: "pending",
+
+            onComplete: (result, error) => {
+              if(error){
+                logger.error('Resume consumer pod error',{
+                  error: error
+                })
+                return; 
+              }
+
+              clearTimeout(timeoutHandle)
+
+              if(result.status === 'completed'){
+                ack({success: true, data: consumerId});
+              }
+            }
+          })
+
+          if(!redisRoom?.nodeId){
+            logger.error('Redis nodeId not found'); 
+            clearTimeout(timeoutHandle)
+            podRequestHandleMap.delete(requestId)
+            return; 
+          }
+
+          const recievers = await publishCommand(payLoad, redisRoom.nodeId)
+          if(recievers === 0){
+            logger.error('Enter pod connection failed'); 
+            ack({success: false, code: "CONSUME_ERROR"});
+            clearTimeout(timeoutHandle)
+            podRequestHandleMap.delete(requestId)
+          }
+          return; 
+        }
+
+       resumeConsumer(roomId, socketId, consumerId)
        ack({
         success: true, 
         data: {
@@ -742,8 +823,8 @@ const registerViewerHanlder = async (socket: Socket) => {
         });
 
         ack({
-            success: false, 
-            code: "RESUME_CONSUMER_FAILED"
+          success: false, 
+          code: "RESUME_CONSUMER_FAILED"
         })
       }
     });
