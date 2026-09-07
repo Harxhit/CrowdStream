@@ -625,7 +625,7 @@ const registerViewerHanlder = async (socket: Socket) => {
               return
             }
             clearTimeout(timeoutHandle)
-            ack({success: true, data: result})
+            ack({success: true, data: { consumers: result.consumerParams }})
 
             void Viewer.updateOne(
             viewerId,
