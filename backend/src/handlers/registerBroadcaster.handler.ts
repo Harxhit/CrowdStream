@@ -8,7 +8,7 @@ import { addBroadcaster , saveBroadcasterTransport} from "../utils/broadcaster.u
 import type { Socket } from "socket.io";
 import { createWebRtcTransport } from "../mediasoup/transport";
 import apiError from '../utils/apiError'
-import {roomToRouter } from "../stores/maps";
+import {podRequestHandleMap, roomToRouter } from "../stores/maps";
 import { getRouter } from "../mediasoup/router";
 import LiveRoom from "../models/liveRoom.models";
 import config from "../config";
@@ -17,6 +17,7 @@ import { ipHash, userAgentHash } from "../utils/hash.util";
 import { getRedisRoom } from "../utils/roomCordinator";
 import ApiError from "../utils/apiError";
 import { subscribeToRoomChat, subscribeToRoomReactions, subscribeToRoomPresence } from "../utils/redis.util";
+import { PodCommandPayload, publishCommand } from "../utils/podConnection";
 
 
 const registerBroadcasterHandler = async (socket: Socket) => {
@@ -91,6 +92,7 @@ const registerBroadcasterHandler = async (socket: Socket) => {
   //Sends router capabilites
   socket.on("getRouterRtpCapabilities", async(roomId, ack) => {
     const startTime = Date.now(); 
+    const socketId = socket.id; 
     try {
       logger.info("Get getRouterRtpCapabilities started")
 
@@ -98,27 +100,94 @@ const registerBroadcasterHandler = async (socket: Socket) => {
         logger.error('RoomID not found')
         throw new apiError(404,'RoomId not found')
       }
-      const roomKey = `room:${roomId}`; 
 
-      const redisRoom = await getRedisRoom(roomKey)
-      //TODO: Implementation for different pod connections
-      if(redisRoom.nodeId !== config.instanceId){
-        logger.error('Different pod')
-        throw new ApiError(409,"Room belongs to another node")
+      const roomKey = `room:${roomId}`; 
+      let redisRoom; 
+      try {
+        redisRoom = await getRedisRoom(roomKey)
+      } catch (error) {
+        logger.error('Error finding redis room',{
+          error: (error as Error).message,
+          stack: (error as Error).stack
+        })
+
+        ack({success: false, code: 'RTP_CAPABILITES_ERROR'})
+        return; 
+      }
+
+      if(redisRoom?.nodeId !== config.instanceId){
+        const requestId = crypto.randomUUID()
+        const date = Date.now(); 
+        const args = {roomId, socketId}; 
+        const replyTo = `pod:${config.instanceId}:response`; 
+
+        const payLoad : PodCommandPayload = {
+          requestId, 
+          type: 'getRtpCapabilites', 
+          args, 
+          replyTo, 
+          date
+        }
+
+        const TIMEOUTMS = 5000; 
+        const timeOuthandle = setTimeout(() => {
+          const entry = podRequestHandleMap.get(requestId); 
+          if(!entry) return logger.warn(`Entry not found with requestId: ${requestId}`); 
+          entry.onComplete({}, 'RTP_CAPABILITIES_FAILED'); 
+          podRequestHandleMap.delete(requestId); 
+        }, TIMEOUTMS)
+
+        podRequestHandleMap.set(requestId, {
+          requestId, 
+          socketId, 
+          startDate: date, 
+          requestType: 'getRtpCapabilites', 
+          status: 'pending',
+          replyTo, 
+
+          onComplete: (result, error) => {
+            clearTimeout(timeOuthandle)
+
+            if(error){
+              logger.error('[RtpCapabilites] pod error', {
+                error : error
+              })
+
+              ack({success: false, code: 'RTP_CAPABILITES_ERROR'})
+              return; 
+            }
+
+            ack({success: true, data: result})
+          }
+
+        })
+
+        if(!redisRoom.nodeId){
+          logger.error('Redis room nodeId not found'); 
+          podRequestHandleMap.delete(requestId); 
+          ack({success: false, code: 'RTP_CAPABILITES_ERROR'})
+          return; 
+        }
+
+        let receivers: number;
+        try {
+          receivers = await publishCommand(payLoad, redisRoom.nodeId)
+        } catch (error) {
+          clearTimeout(timeOuthandle);
+          podRequestHandleMap.delete(requestId);
+          throw error;
+        }
+        if(receivers === 0){
+          logger.error('Cross [POD] connection failed'); 
+          clearTimeout(timeOuthandle);
+          podRequestHandleMap.delete(requestId); 
+          ack({success: false, code: 'RTP_CAPABILITES_ERROR'})
+        }
+        return; 
       }
 
       const routerId = roomToRouter.get(roomId); 
       const router = getRouter(routerId!)
-
-      if (!router) {
-        logger.error('Error in room router')
-        ack({
-          success:false, 
-          code: 'ROUTER_NOT_FOUND'
-        })
-        throw new apiError(404,'Room router not found')
-
-      } 
 
       const rtpCapabilites = router?.rtpCapabilities; 
 

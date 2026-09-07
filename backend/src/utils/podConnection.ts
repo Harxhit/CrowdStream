@@ -23,7 +23,7 @@ export interface PodResponsePayload {
   error?: string;        
 }
 
-interface JoinRoomArgs {
+interface generalArgs {
     roomId: string; 
     socketId: string; 
 }
@@ -54,8 +54,34 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
         let error: string | undefined; 
 
         switch(true){
+            case(type === 'getRtpCapabilites'): {
+                const {roomId, socketId} = args as unknown as generalArgs; 
+
+                const routerId = roomToRouter.get(roomId); 
+                if(!routerId){
+                    error = 'RouterId not found'
+                    throw new Error('RouterId not found')
+                }
+                const router = getRouter(routerId); 
+                const rtpCapabilites = router.rtpCapabilities; 
+
+                result = {rtpCapabilites}; 
+
+                const payLoad: PodResponsePayload = {
+                    requestId, 
+                    result
+                }
+
+                await publishResponse(payLoad, replyTo)
+                break; 
+            }
+
+            case(type === ''): {}
+            case(type === ''): {}
+            case(type === ''): {}
+
             case (type === 'joinRoom'): {
-                const {roomId, socketId} = args as unknown as JoinRoomArgs; 
+                const {roomId, socketId} = args as unknown as generalArgs; 
 
                 const room = getRoom(roomId)
 
@@ -88,7 +114,7 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
             }
             
             case type === 'heartBeat': {
-                const {roomId, socketId} = args as unknown as JoinRoomArgs; 
+                const {roomId, socketId} = args as unknown as generalArgs; 
                 
                 const room = getRoom(roomId); 
 
@@ -111,7 +137,7 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
             }
 
             case type === 'createViewerTransport': {
-                const {roomId, socketId} = args as unknown as JoinRoomArgs; 
+                const {roomId, socketId} = args as unknown as generalArgs; 
 
                 const room = getRoom(roomId); 
 
