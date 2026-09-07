@@ -4,10 +4,10 @@ import logger from "./logging"
 import { redis } from "./redis.util";
 import { getRouter } from "../mediasoup/router";
 import { getRoom } from "../rooms/room.store";
-import type { RequestStatus } from "../types/mediasoup";
 import { connectConsumerTransport, createConsumerTransport, joinAsViewer } from "../handlers/viewer.handler";
-import { publishMessage } from "./chat.util";
 import { heartBeat } from "./roomCordinator";
+import {consume} from '../handlers/viewer.handler'
+import { TransportType } from "../types/mediasoup";
 
 export interface PodCommandPayload {
   type: string;       
@@ -32,6 +32,12 @@ interface ConnectViewerTransportAgrs {
     roomId: string; 
     socketId: string; 
     dtlsParameters: any;
+}
+
+interface ConsumeArgs{
+    roomId: string; 
+    socketId: string; 
+    rtpCapabilities: any
 }
 
 export const handleIncomingRequest = async(payload: PodCommandPayload) => {
@@ -141,7 +147,21 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 break; 
             }
             
-            case type === '': {}
+            case type === 'consume': {
+                const {roomId, socketId , rtpCapabilities} = args as unknown as ConsumeArgs; 
+
+                const consumerParams = await consume(roomId, socketId, rtpCapabilities, 'consumer')
+
+                result = consumerParams; 
+
+                const payLoad: PodResponsePayload = {
+                    requestId, 
+                    result
+                }
+
+                await publishResponse(payLoad, replyTo); 
+                break; 
+            }
             
             case type === '': {}
             
