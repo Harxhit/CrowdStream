@@ -323,6 +323,7 @@ const registerViewerHanlder = async (socket: Socket) => {
         ack({success: false, code: "TRANSPORT_CREATION_FAILED" });
         return;
       }
+
       if(redisRoom.nodeId !== config.instanceId){
         const type = 'createViewerTransport'
         const requestId = crypto.randomUUID(); 
@@ -519,7 +520,7 @@ const registerViewerHanlder = async (socket: Socket) => {
 
           onComplete: async(result, error) => {
             if(error){
-              logger.error('TInter pod transport connection failed')
+              logger.error('Inter pod transport connection failed')
               ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
               return; 
             }
@@ -573,6 +574,100 @@ const registerViewerHanlder = async (socket: Socket) => {
     try {
       logger.info('Consume lister started')
       const viewerId = socket.data.user?.id; 
+      const socketId = socket.id; 
+
+      let redisRoom; 
+      const roomKey = `room:${roomId}`; 
+      try {
+        redisRoom = await getRedisRoom(roomKey)
+      } catch (error) {
+        logger.error('Error getting redis room', {
+          error: (error as Error).message, 
+          stack: (error as Error).stack
+        })
+
+        ack({
+          success: false,
+          code: "CONSUME_FAILED",
+        });
+
+        return;
+      }
+
+      if(redisRoom?.nodeId !== config.instanceId){
+        const requestId = crypto.randomUUID(); 
+        const date = Date.now(); 
+        const args = {roomId, socketId, rtpCapabilities};
+        const replyTo = `pod:${config.instanceId}:response`; 
+
+        const payLoad: PodCommandPayload = {
+          type: 'consume', 
+          requestId, 
+          args, 
+          replyTo,
+          date
+        }
+        const TIMEOUTMS = 5000; 
+        const timeoutHandle = setTimeout(() => {
+          const entry = podRequestHandleMap.get(requestId); 
+          if(!entry) return logger.error('Entry not found'); 
+          podRequestHandleMap.delete(requestId); 
+          ack({success: false, code: 'CONSUME_ERROR'}); 
+          entry.onComplete({}, 'POD_TIMEOUT')
+        },TIMEOUTMS)
+
+        podRequestHandleMap.set(requestId, {
+          requestId, 
+          socketId, 
+          startDate: date, 
+          status: 'pending', 
+          requestType: 'consume',
+          replyTo,
+
+          onComplete: (result, error) => {
+            if(error){
+              logger.error('Consume pod failure', {
+                error: error, 
+              })
+              return
+            }
+            clearTimeout(timeoutHandle)
+            ack({success: true, data: { consumers: result.consumerParams }})
+
+
+            const consumerParams = result.consumerParams as {id: string}[]
+            void Viewer.updateOne(
+            viewerId,
+            {
+              $push: {
+                consumerIds: {
+                  $each: consumerParams.map((consumer) => consumer.id),
+                },
+              },
+            }
+            ).catch((error) => {
+              logger.error("Failed to update consumer IDs", error);
+            });
+          }
+        })
+        
+        if(!redisRoom?.nodeId){
+          logger.error('Redis nodeId not found'); 
+          clearTimeout(timeoutHandle)
+          podRequestHandleMap.delete(requestId)
+          return; 
+        }
+
+        const recievers = await publishCommand(payLoad, redisRoom?.nodeId)
+        if(recievers === 0){
+          logger.error('Enter pod connection failed'); 
+          ack({success: false, code: "CONSUME_ERROR"});
+          clearTimeout(timeoutHandle)
+          podRequestHandleMap.delete(requestId)
+        }
+        return; 
+      }
+
       const consumers = await consume(roomId, socket.id, rtpCapabilities, 'consumer');
       void Viewer.updateOne(
         viewerId,
