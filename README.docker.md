@@ -59,7 +59,7 @@ docker compose -f docker-compose.local.yml up --build
 Health checks:
 
 ```bash
-curl http://localhost/backend/db/__ping   # -> PING OK
+curl http://localhost/backend/db/__ping   # -> {"success":true,"message":"Database Up"}
 curl http://localhost/backend/health      # -> HEALTH OK
 ```
 
