@@ -8,7 +8,7 @@ import {
   pauseConsumer,
 } from "../consumer/consumer.handler";
 import { getRouter} from "../mediasoup/router";
-import { routerToRoom, roomToRouter, podRequestHandleMap } from "../stores/maps";
+import {roomToRouter, podRequestHandleMap } from "../stores/maps";
 import Viewer from "../models/viewer.model";
 import LiveRoom from "../models/liveRoom.models";
 import { ipHash, userAgentHash } from "../utils/hash.util";
@@ -16,7 +16,6 @@ import { getRedisRoom, heartBeat } from "../utils/roomCordinator";
 import { rateLimiter } from "../utils/rateLimitingBucket";
 import config from "../config";
 import { PodCommandPayload, publishCommand } from "../utils/podConnection";
-import { redis } from "../utils/redis.util";
 
 const registerViewerHanlder = async (socket: Socket) => {
 
@@ -52,14 +51,16 @@ const registerViewerHanlder = async (socket: Socket) => {
           logger.error('Room not found')
           return; 
         }
-
+        
+        
         if(redisRoom.nodeId !== config.instanceId){
           const type = 'joinRoom'; 
           const requestId = crypto.randomUUID(); 
           const date = Date.now(); 
           const args = {socketId , roomId}; 
           const replyTo = `pod:${config.instanceId}:response`; 
-
+          
+          //Need to work here 
           if(!redisRoom.nodeId){
             logger.error('Redis nodeId does not exist')
             throw new Error('POD connection failed')
@@ -69,7 +70,7 @@ const registerViewerHanlder = async (socket: Socket) => {
 
           const timeoutHandle = setTimeout(() => {
             const entry = podRequestHandleMap.get(requestId); 
-            if(!entry) return logger.warn('Already resolved')
+            if(!entry) return logger.warn('Entry does not exist')
             podRequestHandleMap.delete(requestId)
             entry.onComplete({}, 'CROSS_POD_TIMEOUT');
           }, TIMEOUTMS)
@@ -85,6 +86,9 @@ const registerViewerHanlder = async (socket: Socket) => {
 
               clearTimeout(timeoutHandle)
               if (error) {
+                logger.error('Join room error', {
+                  error: error
+                })
                 ack({ success: false, code: 'CROSS_POD_JOIN_FAILED' });
                 return;
               }
@@ -239,7 +243,7 @@ const registerViewerHanlder = async (socket: Socket) => {
 
       const timeoutHandle = setTimeout(() => {
       const entry = podRequestHandleMap.get(requestId); 
-        if(!entry) return logger.warn('Already resolved')
+        if(!entry) return logger.warn('Entry does not exist')
         podRequestHandleMap.delete(requestId)
         entry.onComplete({}, 'CROSS_POD_TIMEOUT');
       }, TIMEOUTMS)
@@ -361,6 +365,9 @@ const registerViewerHanlder = async (socket: Socket) => {
             clearTimeout(timeoutHandle); 
 
             if(error){
+              logger.error('POD transport creation failed', {
+                error: error
+              })
               ack({success: false, code: "TRANSPORT_CREATION_FAILED" })
               return; 
             }
@@ -507,7 +514,6 @@ const registerViewerHanlder = async (socket: Socket) => {
           const entry = podRequestHandleMap.get(requestId); 
           if(!entry) return logger.error('Request entry not found'); 
           podRequestHandleMap.delete(requestId)
-          ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
           entry.onComplete({}, 'CROSS_POD_TIMEOUT')
         }, TIMEOUTMS)
 
@@ -520,8 +526,11 @@ const registerViewerHanlder = async (socket: Socket) => {
           replyTo, 
 
           onComplete: async(result, error) => {
+            clearTimeout(timeoutHandle)
             if(error){
-              logger.error('Inter pod transport connection failed')
+              logger.error('Inter pod transport connection failed', {
+                error: error
+              })
               ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
               return; 
             }
@@ -530,11 +539,11 @@ const registerViewerHanlder = async (socket: Socket) => {
               ack({success: true})
             }
           }
-
         })
 
         if(!redisRoom.nodeId){
           logger.error('Redis nodeId not found'); 
+          ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
           clearTimeout(timeoutHandle)
           podRequestHandleMap.delete(requestId)
           return; 
@@ -544,6 +553,7 @@ const registerViewerHanlder = async (socket: Socket) => {
         const receivers = await publishCommand(payLoad, redisRoom.nodeId)
         if(receivers === 0){
           logger.error('Inter pod connection failed'); 
+          ack({success: false, code: 'TRANSPORT_CONNECTION_FAILED'})
           clearTimeout(timeoutHandle)
           podRequestHandleMap.delete(requestId)
         }
@@ -613,7 +623,6 @@ const registerViewerHanlder = async (socket: Socket) => {
           const entry = podRequestHandleMap.get(requestId); 
           if(!entry) return logger.error('Entry not found'); 
           podRequestHandleMap.delete(requestId); 
-          ack({success: false, code: 'CONSUME_ERROR'}); 
           entry.onComplete({}, 'POD_TIMEOUT')
         },TIMEOUTMS)
 
@@ -626,13 +635,14 @@ const registerViewerHanlder = async (socket: Socket) => {
           replyTo,
 
           onComplete: (result, error) => {
+            clearTimeout(timeoutHandle)
             if(error){
               logger.error('Consume pod failure', {
                 error: error, 
               })
+              ack({success: false, code: 'CONSUME_ERROR'}); 
               return
             }
-            clearTimeout(timeoutHandle)
             ack({success: true, data: { consumers: result.consumerParams }})
 
 
@@ -654,6 +664,7 @@ const registerViewerHanlder = async (socket: Socket) => {
         
         if(!redisRoom?.nodeId){
           logger.error('Redis nodeId not found'); 
+          ack({success: false, code: 'CONSUME_ERROR'});
           clearTimeout(timeoutHandle)
           podRequestHandleMap.delete(requestId)
           return; 
@@ -704,12 +715,95 @@ const registerViewerHanlder = async (socket: Socket) => {
   });
 
   // Pauses a specific media consumer (e.g., video or audio) for the viewer
-  socket.on("pauseConsumer", async (roomId, socketId, consumerId,ack) => {
+  socket.on("pauseConsumer", async (roomId, consumerId ,ack) => {
     try {
+      const socketId = socket.id
+      const roomKey = `room:${roomId}`; 
+      let redisRoom; 
+      try {
+        redisRoom = await getRedisRoom(roomKey)
+      } catch (error) {
+        logger.error('Error getting redis room', {
+          error: (error as Error).message, 
+          stack: (error as Error).stack
+        })
+
+        ack({success: false, code: 'PAUSE_CONSUMER_ERROR'})
+        return; 
+      }
+
+      if(redisRoom.nodeId !== config.instanceId){
+          const requestId = crypto.randomUUID(); 
+          const date = Date.now(); 
+          const args = {roomId, socketId, consumerId}
+          const replyTo = `pod:${config.instanceId}:response`;
+
+          const payLoad : PodCommandPayload = {
+            requestId, 
+            type: 'pauseConsumer',
+            date, 
+            args, 
+            replyTo
+          }
+
+          const TIMEOUTMS = 5000; 
+          const timeoutHandle = setTimeout(() => {
+            const entry = podRequestHandleMap.get(requestId); 
+            if(!entry) return logger.error('Entry not found'); 
+            entry.onComplete({}, 'PAUSE_CONSUMER_ERROR')
+            podRequestHandleMap.delete(requestId); 
+          },TIMEOUTMS)
+
+          podRequestHandleMap.set(requestId, {
+            requestId, 
+            socketId,
+            requestType: 'pauseConsumer', 
+            startDate: date, 
+            replyTo, 
+            status: "pending",
+
+            onComplete: (result, error) => {
+              clearTimeout(timeoutHandle)
+              if(error){
+                logger.error('Pause consumer pod error',{
+                  error: error
+                })
+                ack({success: false, code: "PAUSE_CONSUMER_ERROR"})
+                return; 
+              }
+
+
+              if(result.status === 'completed'){
+                ack({success: true, data: { consumerId }});
+              }
+            }
+          })
+
+          if(!redisRoom?.nodeId){
+            logger.error('Redis nodeId not found'); 
+            ack({success: false, code: 'PAUSE_CONSUMER_ERROR'})
+            clearTimeout(timeoutHandle)
+            podRequestHandleMap.delete(requestId)
+            return; 
+          }
+
+          const recievers = await publishCommand(payLoad, redisRoom.nodeId)
+          if(recievers === 0){
+            logger.error('Enter pod connection failed'); 
+            ack({success: false, code: "PAUSE_CONSUMER_ERROR"});
+            clearTimeout(timeoutHandle)
+            podRequestHandleMap.delete(requestId)
+          }
+          return; 
+      }
+
       pauseConsumer(roomId, socketId, consumerId);
 
       ack({
-        success: true
+        success: true,
+        data: {
+          consumerId
+        }
       })
         
     }catch (error) {
@@ -764,7 +858,6 @@ const registerViewerHanlder = async (socket: Socket) => {
             if(!entry) return logger.error('Entry not found'); 
             entry.onComplete({}, 'RESUME_CONSUMER_FAILED')
             podRequestHandleMap.delete(requestId); 
-            ack({success: false, code: "RESUME_CONSUMER_FAILED" })
           },TIMEOUTMS)
 
           podRequestHandleMap.set(requestId, {
@@ -776,8 +869,8 @@ const registerViewerHanlder = async (socket: Socket) => {
             status: "pending",
 
             onComplete: (result, error) => {
+              clearTimeout(timeoutHandle)
               if(error){
-                clearTimeout(timeoutHandle)
                 logger.error('Resume consumer pod error',{
                   error: error
                 })
@@ -785,7 +878,6 @@ const registerViewerHanlder = async (socket: Socket) => {
                 return; 
               }
 
-              clearTimeout(timeoutHandle)
 
               if(result.status === 'completed'){
                 ack({success: true, data: { consumerId }});

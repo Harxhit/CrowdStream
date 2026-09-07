@@ -6,7 +6,7 @@ import { getRoom } from "../rooms/room.store";
 import { connectConsumerTransport, createConsumerTransport, joinAsViewer } from "../handlers/viewer.handler";
 import { heartBeat } from "./roomCordinator";
 import {consume} from '../handlers/viewer.handler'
-import { resumeConsumer } from "../consumer/consumer.handler";
+import { pauseConsumer, resumeConsumer } from "../consumer/consumer.handler";
 
 
 export interface PodCommandPayload {
@@ -169,7 +169,21 @@ export const handleIncomingRequest = async(payload: PodCommandPayload) => {
                 break; 
             }
             
-            case type === '': {}
+            case type === 'pauseConsumer': {
+                const {roomId, socketId, consumerId} = args as unknown as ResumeArgs;
+
+                await pauseConsumer(roomId, socketId, consumerId)
+
+                result.status = 'completed'; 
+
+                const payLoad: PodResponsePayload = {
+                    requestId, 
+                    result
+                }
+                
+                await publishResponse(payLoad, replyTo)
+                break; 
+            }
 
             case type === 'resumeConsumer': {
                 const {roomId, socketId, consumerId} = args as unknown as ResumeArgs;
