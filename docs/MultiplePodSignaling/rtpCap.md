@@ -178,5 +178,3 @@ POD B
   │
   └─ podRequestHandleMap.delete("req-rtp-42")
 ```
-
-```
