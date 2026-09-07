@@ -777,9 +777,11 @@ const registerViewerHanlder = async (socket: Socket) => {
 
             onComplete: (result, error) => {
               if(error){
+                clearTimeout(timeoutHandle)
                 logger.error('Resume consumer pod error',{
                   error: error
                 })
+                ack({success: false, code: "RESUME_CONSUMER_FAILED"})
                 return; 
               }
 
