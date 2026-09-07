@@ -29,7 +29,7 @@ CMD ["npm", "run", "dev"]
 FROM base AS build
 ENV NODE_ENV=production
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --include=dev
 COPY . .
 # `npm run build` = tsc + `cp -r src/scripts dist/scripts` (rateLimit.lua is read
 # at runtime via __dirname and is NOT emitted by tsc). Then prune dev deps while
