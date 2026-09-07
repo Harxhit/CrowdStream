@@ -810,7 +810,7 @@ const registerViewerHanlder = async (socket: Socket) => {
           return; 
         }
 
-       resumeConsumer(roomId, socketId, consumerId)
+       await resumeConsumer(roomId, socketId, consumerId)
        ack({
         success: true, 
         data: {
