@@ -22,6 +22,10 @@ if (!TEST_EMAIL || !TEST_PASSWORD) {
 
 
 const BATCH_SIZE = parseInt(arg("batchSize", "5"), 10);
+if (!Number.isInteger(BATCH_SIZE) || BATCH_SIZE <= 0) {
+  console.error("--batchSize must be a positive integer");
+  process.exit(1);
+}
 const BATCH_INTERVAL_MS = parseInt(
   arg("batchIntervalMs", "10000"),
   10
