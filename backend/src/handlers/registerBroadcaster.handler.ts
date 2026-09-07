@@ -169,9 +169,17 @@ const registerBroadcasterHandler = async (socket: Socket) => {
           return; 
         }
 
-        const receivers = await publishCommand(payLoad, redisRoom.nodeId)
+        let receivers: number;
+        try {
+          receivers = await publishCommand(payLoad, redisRoom.nodeId)
+        } catch (error) {
+          clearTimeout(timeOuthandle);
+          podRequestHandleMap.delete(requestId);
+          throw error;
+        }
         if(receivers === 0){
           logger.error('Cross [POD] connection failed'); 
+          clearTimeout(timeOuthandle);
           podRequestHandleMap.delete(requestId); 
           ack({success: false, code: 'RTP_CAPABILITES_ERROR'})
         }
