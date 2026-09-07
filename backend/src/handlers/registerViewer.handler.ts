@@ -795,6 +795,7 @@ const registerViewerHanlder = async (socket: Socket) => {
 
           if(!redisRoom?.nodeId){
             logger.error('Redis nodeId not found'); 
+            ack({success: false, code: 'RESUME_CONSUMER_FAILED'})
             clearTimeout(timeoutHandle)
             podRequestHandleMap.delete(requestId)
             return; 
@@ -803,7 +804,7 @@ const registerViewerHanlder = async (socket: Socket) => {
           const recievers = await publishCommand(payLoad, redisRoom.nodeId)
           if(recievers === 0){
             logger.error('Enter pod connection failed'); 
-            ack({success: false, code: "CONSUME_ERROR"});
+            ack({success: false, code: "RESUME_CONSUMER_FAILED"});
             clearTimeout(timeoutHandle)
             podRequestHandleMap.delete(requestId)
           }

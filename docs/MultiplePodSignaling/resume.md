@@ -168,7 +168,7 @@ POD B
   │          └─ ack({
   │               success: true,
   │               data: {
-  │                 status: "completed"
+  │                 consumerId    //string; 
   │               }
   │             })
   │
