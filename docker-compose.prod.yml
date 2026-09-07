@@ -1,0 +1,166 @@
+# =============================================================================
+# CrowdStream — PRODUCTION stack (optimized images)
+#
+#   cp deploy/env.docker.template backend/.env   # once, then set real secrets
+#   export HOST_PUBLIC_IP=<server public IP>     # for WebRTC to remote clients
+#   docker compose -f docker-compose.prod.yml up --build -d
+#
+# Differences from local:
+#   - backend runs compiled `node dist/index.js` (no ts-node, no bind mounts)
+#   - frontend is a static build served by nginx, which also proxies the API and
+#     acts as the :80 ingress (there is no separate nginx service)
+#   - VITE_* values are baked into the frontend at build time (build args below)
+#
+# All services use host networking. Set HOST_PUBLIC_IP (and open the RTC port
+# range on the host firewall) for media to reach clients outside the host.
+# =============================================================================
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: crowdstream-mongo
+    network_mode: host
+    command: ["mongod", "--bind_ip", "127.0.0.1", "--port", "27017"]
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+  redis-1:
+    image: redis:7-alpine
+    container_name: crowdstream-redis-1
+    network_mode: host
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./infra/redis/redis-1/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-1-data:/data
+    restart: unless-stopped
+
+  redis-2:
+    image: redis:7-alpine
+    container_name: crowdstream-redis-2
+    network_mode: host
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./infra/redis/redis-2/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-2-data:/data
+    restart: unless-stopped
+
+  redis-3:
+    image: redis:7-alpine
+    container_name: crowdstream-redis-3
+    network_mode: host
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./infra/redis/redis-3/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-3-data:/data
+    restart: unless-stopped
+
+  redis-4:
+    image: redis:7-alpine
+    container_name: crowdstream-redis-4
+    network_mode: host
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./infra/redis/redis-4/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-4-data:/data
+    restart: unless-stopped
+
+  redis-5:
+    image: redis:7-alpine
+    container_name: crowdstream-redis-5
+    network_mode: host
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./infra/redis/redis-5/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-5-data:/data
+    restart: unless-stopped
+
+  redis-6:
+    image: redis:7-alpine
+    container_name: crowdstream-redis-6
+    network_mode: host
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    volumes:
+      - ./infra/redis/redis-6/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - redis-6-data:/data
+    restart: unless-stopped
+
+  redis-init:
+    image: redis:7-alpine
+    container_name: crowdstream-redis-init
+    network_mode: host
+    depends_on:
+      - redis-1
+      - redis-2
+      - redis-3
+      - redis-4
+      - redis-5
+      - redis-6
+    volumes:
+      - ./deploy/redis/init-cluster.sh:/init-cluster.sh:ro
+    entrypoint: ["sh", "/init-cluster.sh"]
+    restart: "no"
+
+  backend:
+    build:
+      context: ./backend
+      target: prod
+    image: crowdstream-backend:prod
+    container_name: crowdstream-backend
+    network_mode: host
+    env_file:
+      - ./backend/.env
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      INSTANCE_ID: node-1
+      MONGO_DB_URL: mongodb://127.0.0.1:27017
+      REDIS_HOST: "127.0.0.1"
+      REDIS_PORT1: "6379"
+      REDIS_PORT2: "6380"
+      REDIS_PORT3: "6381"
+      PUBLIC_IP: "${HOST_PUBLIC_IP:-127.0.0.1}"
+      ANNOUCED_IP: "${HOST_PUBLIC_IP:-127.0.0.1}"
+      RECORDING_IP: "127.0.0.1"
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  # Built SPA served by nginx; also proxies /backend + /socket.io -> :3000.
+  # This is the production ingress on :80.
+  frontend:
+    build:
+      context: ./frontend
+      target: prod
+      args:
+        VITE_API_URL: "${VITE_API_URL:-/backend/api/v1}"
+        VITE_SIGNALING_URL: "${VITE_SIGNALING_URL:-/}"
+        VITE_TURN_USERNAME: "${VITE_TURN_USERNAME:-}"
+        VITE_TURN_CREDENTIAL: "${VITE_TURN_CREDENTIAL:-}"
+        VITE_TURN_UDP_URL: "${VITE_TURN_UDP_URL:-}"
+        VITE_TURN_TCP_URL: "${VITE_TURN_TCP_URL:-}"
+        VITE_TURNS_TCP_URL: "${VITE_TURNS_TCP_URL:-}"
+    image: crowdstream-frontend:prod
+    container_name: crowdstream-frontend
+    network_mode: host
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+  redis-1-data:
+  redis-2-data:
+  redis-3-data:
+  redis-4-data:
+  redis-5-data:
+  redis-6-data:

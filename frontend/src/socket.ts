@@ -11,6 +11,7 @@ export function connectSocket() {
     }
 
     socket = io(window.location.origin);
+    (window as any).__csSocket = socket;
 
     socket.on("connect", () => {
         console.log("Client connected", socket?.id);
@@ -22,6 +23,7 @@ export function connectSocket() {
 
     socket.on("connect_error", (error) => {
         console.log("Error", error.message);
+        console.log("SOCKET CONNECT ERROR DETAILS:", error);
     });
 
     socket.on("debug:instance", (data) => {

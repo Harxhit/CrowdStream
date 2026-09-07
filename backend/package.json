@@ -4,7 +4,9 @@
   "description": "> Backend system for scalable HTTP Live Streaming (HLS) using FFmpeg, built with Node.js and TypeScript.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts,d.ts --exec ts-node --files src/index.ts"
+    "dev": "nodemon --watch src --ext ts,d.ts --exec ts-node --files src/index.ts",
+    "build": "tsc -p tsconfig.json && cp -r src/scripts dist/scripts",
+    "start": "node dist/index.js"
   },
   "author": "Harshit Singh Parihar",
   "license": "ISC",

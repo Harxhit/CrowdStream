@@ -283,6 +283,9 @@ class Viewer{
             mediaStream.addTrack(track)
         })
         viewerVideo.current.srcObject = mediaStream
+        viewerVideo.current.addEventListener('loadeddata', () => {
+            (window as any).__csFirstFrameAt = Date.now();
+        }, { once: true });
         if(viewerVideo.current){
             console.log('Viewer started playing')
         }else{

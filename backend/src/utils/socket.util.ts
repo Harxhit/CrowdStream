@@ -140,10 +140,11 @@ io.on("connection", (socket) => {
     }
   })
 
-  socket.on("disconnect", async (reason) => {
-    logger.info(`User disconnected ${socket.id} beacuse of ${reason}`)
+  socket.on("disconnect", async (reason, details) => {
+    logger.info(`User disconnected, ${socket.id} reason: ${reason} details: ${details}`)
     handleDisconnect(socket)
     await stopFfmpegRecording(socket.id)
+  });
   });
 
   socket.on('start-recording',async(payload) => {

@@ -1,0 +1,15 @@
+node_modules
+dist
+logs
+*.log
+.env
+.env.*
+.git
+.gitignore
+Dockerfile
+.dockerignore
+Makefile
+README.md
+*.pem
+recording*.mp4
+src/recording/*.sdp

@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { X, Circle } from "lucide-react";
 import api from "../api/axios";
 
+import { connectSocket , disconnectSocket } from "../socket";
 import Viewer from "../viewer";
 
 import SystemLogs from "../components/broadcaster/SystemLogs";
@@ -20,7 +21,7 @@ interface Log {
 const viewer = new Viewer();
 
 export default function ViewerPage() {
-  const socket = getSocket()
+  const socket = connectSocket()
   const [searchParams] = useSearchParams();
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -51,6 +52,14 @@ export default function ViewerPage() {
       },
     ]);
   };
+
+  // useEffect(() => {
+  //   const socket = connectSocket();
+
+  //   return () => {
+  //     disconnectSocket();
+  //   };
+  // }, []);
 
   async function joinRoom(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -86,6 +95,7 @@ export default function ViewerPage() {
 
       await viewer.connectionState(roomId);
 
+      (window as any).__csJoinedAt = Date.now();
       setConnected(true);
 
       startHeartBeat();
