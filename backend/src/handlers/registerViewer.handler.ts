@@ -652,6 +652,7 @@ const registerViewerHanlder = async (socket: Socket) => {
         const recievers = await publishCommand(payLoad, redisRoom?.nodeId)
         if(recievers === 0){
           logger.error('Enter pod connection failed'); 
+          ack({success: false, code: "CONSUME_ERROR"});
           clearTimeout(timeoutHandle)
           podRequestHandleMap.delete(requestId)
         }
