@@ -323,6 +323,7 @@ const registerViewerHanlder = async (socket: Socket) => {
         ack({success: false, code: "TRANSPORT_CREATION_FAILED" });
         return;
       }
+
       if(redisRoom.nodeId !== config.instanceId){
         const type = 'createViewerTransport'
         const requestId = crypto.randomUUID(); 
@@ -584,6 +585,13 @@ const registerViewerHanlder = async (socket: Socket) => {
           error: (error as Error).message, 
           stack: (error as Error).stack
         })
+
+        ack({
+          success: false,
+          code: "CONSUME_FAILED",
+        });
+
+        return; 
       }
 
       if(redisRoom?.nodeId !== config.instanceId){
@@ -604,7 +612,7 @@ const registerViewerHanlder = async (socket: Socket) => {
           const entry = podRequestHandleMap.get(requestId); 
           if(!entry) return logger.error('Entry not found'); 
           podRequestHandleMap.delete(requestId); 
-          ack({success: false, code: 'CONSUME_FAILED'}); 
+          ack({success: false, code: 'CONSUME_ERROR'}); 
           entry.onComplete({}, 'POD_TIMEOUT')
         },TIMEOUTMS)
 
@@ -621,7 +629,6 @@ const registerViewerHanlder = async (socket: Socket) => {
               logger.error('Consume pod failure', {
                 error: error, 
               })
-              ack({success: false, code: "CONSUME_ERROR"})
               return
             }
             clearTimeout(timeoutHandle)
