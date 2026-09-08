@@ -27,6 +27,7 @@ Live session, verified across devices and networks — desktop broadcaster (left
 
 ## 📖 Table of Contents
 
+- [Demo](#-demo)
 - [Overview](#-overview)
 - [Key Features](#-key-features)
 - [Architecture](#-architecture)
