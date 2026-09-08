@@ -17,6 +17,14 @@ Self-hosted, real-time live streaming infrastructure built for scale. CrowdStrea
 
 ---
 
+## 🎬 Demo
+
+Live session, verified across devices and networks — desktop broadcaster (left) streaming to a mobile viewer over 4G (right), same session ID on both ends.
+
+![CrowdStream cross-device demo](./docs/crowdstream-cross-network-proof.gif)
+
+---
+
 ## 📖 Table of Contents
 
 - [Overview](#-overview)
