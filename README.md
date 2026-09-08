@@ -125,10 +125,28 @@ A broadcaster and a viewer can land on **different backend pods** — normal beh
 
 **How it works:**
 
-1. When a broadcaster starts a room, the owning pod creates the mediasoup Worker/Router for that room and writes a `roomId → podId` mapping into Redis.
-2. The **Socket.IO Redis adapter** connects every pod's Socket.IO instance to the same Redis pub/sub channel, so a `join-room` or chat/reaction event emitted from a socket on Pod B is transparently broadcast to sockets on Pod A (and vice versa). From the client's perspective there is a single logical signaling namespace, regardless of which pod terminated its connection.
-3. When a viewer on Pod B requests to join a room owned by Pod A, the signaling layer looks up ownership in Redis and routes the mediasoup-specific calls (`getRouterRtpCapabilities`, `createViewerTransport`, `connectConsumerTransport`, `consume`) to Pod A internally — the viewer's browser still talks to its own pod over Socket.IO/HTTPS the whole time.
-4. Chat, reactions, and viewer-presence events fan out to every pod via Redis pub/sub, so viewers stay in sync no matter which pod they're attached to.
+## 🧩 Multi-Pod Signaling
+
+Viewers can join a room whose mediasoup Router lives on a **different pod** than the one they're connected to, and the system transparently forwards the relevant calls to the owning pod and relays the response back — this path is implemented and working for `joinRoom`, `createViewerTransport`, `connectConsumerTransport`, `consume`, `pauseConsumer`, `resumeConsumer`, and viewer heartbeats.
+
+**How it works:**
+
+1. Room ownership (`roomId → nodeId`) is stored in Redis at room creation, keyed off each pod's `config.instanceId`.
+2. When a viewer's request lands on a non-owning pod, that pod doesn't reject it — it packages the call into a `PodCommandPayload` (a typed request with a `requestId`, the original args, and a `replyTo` channel scoped to itself), publishes it to the owning pod over Redis, and registers a pending entry (with a 5-second timeout) in an in-memory `podRequestHandleMap` keyed by `requestId`.
+3. The owning pod executes the actual mediasoup call locally and publishes the result back on the `replyTo` channel; the originating pod's pending entry resolves, and the viewer's `ack()` fires with the real result — the viewer's browser never needs to know a different pod handled it.
+4. If the owning pod doesn't respond within 5 seconds, or the cross-pod publish reaches zero receivers, the request fails explicitly (`CROSS_POD_TIMEOUT` / `CROSS_POD_UNREACHABLE`) rather than hanging.
+
+**Host vs. co-broadcaster:** the room's primary host always creates the room on their own pod via `createRoom`, so the host is the owning pod by construction — cross-pod forwarding for `createBroadcasterTransport`/`connectBroadcasterTransport`/`produce` is never needed on the host path. It **is** needed for a co-broadcaster joining a room already owned by a different pod — that path currently checks ownership and explicitly rejects with `409 Room belongs to another node` rather than forwarding, marked as a `TODO` in the handler.
+
+## 🗄️ Persistence (MongoDB)
+
+MongoDB is wired into the live request path, write-through on every state change — not read from yet to gate behavior (Redis is still the source of truth for live routing decisions; nothing currently queries Mongo before letting a join or produce proceed).
+
+- **`LiveRoom`** — one document per room, created on `createRoom` with `sfuNodeId` set to the owning pod's `config.instanceId` (the same value used for the Redis ownership registry), `totalViewersJoined` incremented on every successful join.
+- **`Broadcaster`** — one document per broadcaster session, with hashed IP/user-agent (`ipHash`, `userAgentHash` — not raw values), and `transportIds`/`producerIds` appended as transports and producers are created.
+- **`Viewer`** — one document per viewer session, with the same hashed identifiers, `transportIds` and `consumerIds` appended as they're created.
+
+All writes are fire-and-forget (`void Model.create(...).catch(...)`) off the critical path — persistence failures are logged but never block or fail the underlying signaling response.
 
 ```mermaid
 sequenceDiagram
@@ -198,6 +216,8 @@ sequenceDiagram
 
 With no managed load balancer in the self-hosted path, TURN/STUN traffic is split across two proxies before it reaches Coturn — HAProxy handles the TCP path, Envoy handles the UDP path. This pair stands in for a cloud ALB/NLB and works identically against a cloud-hosted deployment.
 
+> **⚠️ Local setup requirement:** Coturn needs to advertise the machine's actual public-facing IPv4 (its `external-ip` config) for ICE candidates to resolve correctly. If the machine running the server is on a mobile hotspot, the visible public IP can be behind carrier-grade NAT or change between sessions — in that case, TURN relay candidates get advertised with the wrong address, and clients on a different network than the host will fail to connect even though everything looks configured correctly. Bind Coturn's `external-ip` to a stable, reachable public IPv4 (a static IP where available, or the actual current public IP if not) before testing across networks. This is a local/self-hosted-topology concern only — a cloud deployment behind a proper NLB/TURN relay (see [Deployment Topology](#-deployment-topology--local--cloud)) doesn't have this problem, since the relay's public address is stable by design.
+
 ```mermaid
 flowchart TB
     CLIENT[WebRTC Client] -->|ICE: STUN / TURN| SPLIT{Transport type}
@@ -237,7 +257,7 @@ flowchart TB
 | **Cross-Pod Coordination** | Redis — Socket.IO adapter (pub/sub) + room-ownership registry |
 | **Media** | MediaSoup (WebRTC SFU) — one worker process per room, media plane in C++ off the event loop |
 | **Frontend** | React, Vite, mediasoup-client |
-| **Database** | MongoDB (Mongoose) — defined, not yet wired into runtime flow |
+| **Database** | MongoDB (Mongoose) —  write-through persistence for rooms, broadcasters, and viewers; not yet read from on the live request path | |
 | **NAT Traversal** | Coturn (TURN/STUN) |
 | **Proxy / Ingress** | ngrok (local) / DNS + managed ingress (cloud), Nginx, HAProxy (TCP), Envoy (UDP) |
 | **Media Processing** | FFmpeg (thumbnails now, recording planned) |
