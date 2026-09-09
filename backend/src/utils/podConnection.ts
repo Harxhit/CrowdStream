@@ -266,9 +266,9 @@ export const handleIncomingResponse = async(payload: PodResponsePayload) => {
     podRequestHandleMap.delete(payload.requestId)
 }
 
-export const publishCommand = async(payload: PodCommandPayload, targetNode:string) => {
+export const publishCommand = async(payload: PodCommandPayload, targetNode:string):Promise<number> => {
     const channel = `pod:${targetNode}:cmd`
-    const receivers = await redis.spublish(channel , JSON.stringify(payload))
+    const receivers = await redis.spublish(channel , JSON.stringify(payload)) as number
 
     if(receivers === 0){
         logger.error(`No subscribers for ${channel} — pod may be down`, { requestId: payload.requestId });
