@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { X, Circle } from "lucide-react";
+import { X, Circle, BarChart3 } from "lucide-react";
 import api from "../api/axios";
 
 import Viewer from "../viewer";
@@ -11,6 +11,7 @@ import StreamInfo from "../components/viewer/StreamInfo";
 import LiveChat from "../components/broadcaster/LiveChat";
 import ReactionOverlay from "../components/reactions/ReactionOverlay";
 import { getSocket,startHeartBeat } from "../socket";
+import frontendMemoryRoom from "../store/room.store";
 
 interface Log {
   message: string;
@@ -39,6 +40,22 @@ export default function ViewerPage() {
   const [panelOpen, setPanelOpen] = useState(false);
   const [panel, setPanel] = useState<"info" | "chat">("chat");
   const [recordingId, setRecordingId] = useState<string | null>(null);
+  const statsWindowRef = useRef<Window | null>(null);
+  const statsIntervalRef = useRef<number | null>(null);
+
+  const statsChannelRef = useRef<BroadcastChannel | null>(null);
+
+  useEffect(() => {
+    statsChannelRef.current = new BroadcastChannel("crowdstream-stats");
+
+    return () => {
+      statsChannelRef.current?.close();
+
+      if (statsIntervalRef.current) {
+        clearInterval(statsIntervalRef.current);
+      }
+    };
+  }, []);
 
   const log = (message: string) => {
     console.log(message);
@@ -89,7 +106,6 @@ export default function ViewerPage() {
       setConnected(true);
 
       startHeartBeat();
-
       log("Successfully connected.");
     } catch (err: any) {
       if (err.code === "RATE_LIMITED") {
@@ -225,6 +241,84 @@ async function downloadRecording() {
     setPanelOpen(true);
   }
 
+const goToStats = async () => {
+  if (!roomId || !socket.id) {
+    console.error("Missing roomId or socketId");
+    return;
+  }
+
+  const room = frontendMemoryRoom.get(roomId);
+
+  if (!room) {
+    console.error("Room not found:", roomId);
+    return;
+  }
+
+  const viewerData = room.viewers.get(socket.id);
+
+  if (!viewerData) {
+    console.error("Viewer not found:", socket.id);
+    return;
+  }
+
+  const transport = viewerData.transports.get("consumer");
+
+  if (!transport) {
+    console.error("Consumer transport not found");
+    return;
+  }
+
+  // Open Stats tab only once
+  if (!statsWindowRef.current || statsWindowRef.current.closed) {
+    statsWindowRef.current = window.open(
+      "/stats",
+      "_blank"
+    );
+  } else {
+    statsWindowRef.current.focus();
+  }
+
+  // Prevent multiple intervals when clicking Stats again
+  if (statsIntervalRef.current) {
+    clearInterval(statsIntervalRef.current);
+  }
+
+  const sendStats = async () => {
+    try {
+      if (!statsWindowRef.current || statsWindowRef.current.closed) {
+        if (statsIntervalRef.current) {
+          clearInterval(statsIntervalRef.current);
+          statsIntervalRef.current = null;
+        }
+
+        return;
+      }
+
+      const report = await transport.getStats();
+
+      const stats = Array.from(report.values());
+
+      statsChannelRef.current?.postMessage({
+        type: "stats",
+        roomId,
+        socketId: socket.id,
+        report: stats,
+      });
+
+    } catch (error) {
+      console.error("Failed to get WebRTC stats:", error);
+    }
+  };
+
+  // Send immediately
+  await sendStats();
+
+  // Then continuously every second
+  statsIntervalRef.current = window.setInterval(
+    sendStats,
+    1000
+  );
+};
   return (
     <main className="flex h-screen flex-col overflow-hidden bg-[#0a0f0c] text-white">
       {/* HEADER */}
@@ -239,7 +333,17 @@ async function downloadRecording() {
           </span>
         </div>
 
-        <div className="flex items-center gap-2 text-sm">
+        <div className="flex items-center gap-3 text-sm">
+          <button
+            onClick={goToStats}
+            disabled={!connected}
+            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-white/60 transition hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent"
+            aria-label="View stream statistics"
+          >
+            <BarChart3 size={15} />
+            <span className="hidden sm:inline">Stats</span>
+          </button>
+
           <span
             className={`h-2 w-2 rounded-full ${
               connected

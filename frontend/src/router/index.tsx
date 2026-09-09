@@ -7,6 +7,8 @@ import DashboardPage from "../pages/DashBoard";
 import BroadcasterPage from "../pages/Broadcaster";
 import ViewerPage from "../pages/ViewerPage";
 import ProtectedRoute from "./ProtectedRoute";
+import StatsPage from "../pages/StatePage";
+
 
 export default function Router() {
   return (
@@ -20,6 +22,7 @@ export default function Router() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/broadcaster" element={<BroadcasterPage />} />
           <Route path="/viewer" element={<ViewerPage />} />
+          <Route path="/stats" element={<StatsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
