@@ -8,8 +8,8 @@ export async function getIceServers() {
   return [
     {
       urls: [
-        import.meta.env.VITE_TURN_UDP_URL,
-        import.meta.env.VITE_TURN_TCP_URL,
+        // import.meta.env.VITE_TURN_UDP_URL,
+        // import.meta.env.VITE_TURN_TCP_URL,
         import.meta.env.VITE_TURNS_TCP_URL,
         import.meta.env.VITE_STUN_URL
       ],

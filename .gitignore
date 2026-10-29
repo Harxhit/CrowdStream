@@ -3,3 +3,7 @@ load-test/node_modules/
 
 # Runtime logs
 backend/logs/*.log
+
+#Haproxy keys
+haproxy.crt
+haproxy.key

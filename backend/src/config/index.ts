@@ -72,6 +72,7 @@ function loadConfig():Config{
         throw new Error('Invalid numeric env')
     }
 
+
     return{
         port: Number(port), 
         rtcMinPort: Number(rtcMinPort),

@@ -169,7 +169,7 @@ class Broadcaster {
       iceCandidates,
       dtlsParameters,
       iceServers,
-      iceTransportPolicy: "all" 
+      iceTransportPolicy: "relay" 
     })
 
     broadcaster.transports.set('producer', sendTransport)

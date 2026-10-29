@@ -142,6 +142,7 @@ const initWorker = async () => {
       routerIds: new Set(), 
       associatedRooms: new Set()
     })
+
   }catch (error:any) {
   logger.error('Creating worker error', {
     message: (error as Error).message, 
