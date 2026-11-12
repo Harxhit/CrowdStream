@@ -121,12 +121,6 @@ flowchart TB
 
 ## 🧩 Multi-Pod Signaling
 
-A broadcaster and a viewer can land on **different backend pods** — normal behavior behind any load balancer with more than one replica — and still end up in the same room without either client being redirected or reconnected.
-
-**How it works:**
-
-## 🧩 Multi-Pod Signaling
-
 Viewers can join a room whose mediasoup Router lives on a **different pod** than the one they're connected to, and the system transparently forwards the relevant calls to the owning pod and relays the response back — this path is implemented and working for `joinRoom`, `createViewerTransport`, `connectConsumerTransport`, `consume`, `pauseConsumer`, `resumeConsumer`, and viewer heartbeats.
 
 **How it works:**
