@@ -223,28 +223,120 @@ const registerBroadcasterHandler = async (socket: Socket) => {
     try {
       const room = getRoom(roomId);
       const hostUserId = socket.data.user?.id; 
-      const router = room.router;
+      const socketId = socket.id; 
 
       const roomKey = `room:${roomId}`; 
-      const redisRoom = await getRedisRoom(roomKey)
-      //TODO: Implementation for different pod connections
-      if(redisRoom.nodeId !== config.instanceId){
-        logger.error('Different pod')
-        throw new ApiError(409,"Room belongs to another node")
+      let redisRoom; 
+      try {
+        redisRoom = await getRedisRoom(roomKey)
+      } catch (error) {
+        logger.error('Error finding redis room',{
+          error: (error as Error).message,
+          stack: (error as Error).stack
+        })
+
+        ack({success: false, code: "TRANSPORT_CREATION_FAILED"})
+        return; 
+      }
+
+      if(redisRoom?.nodeId !== config.instanceId){
+        const requestId = crypto.randomUUID()
+        const date = Date.now(); 
+        const args = {roomId, socketId}; 
+        const replyTo = `pod:${config.instanceId}:response`; 
+
+        const payLoad : PodCommandPayload = {
+          requestId, 
+          type: 'createBroadcasterTransport', 
+          args, 
+          replyTo, 
+          date
+        }
+
+        const TIMEOUTMS = 5000; 
+        const timeOuthandle = setTimeout(() => {
+          const entry = podRequestHandleMap.get(requestId); 
+          if(!entry) return logger.warn(`Entry not found with requestId: ${requestId}`); 
+          entry.onComplete({}, 'TRANSPORT_CREATION_FAILED'); 
+          podRequestHandleMap.delete(requestId); 
+        }, TIMEOUTMS)
+
+        podRequestHandleMap.set(requestId, {
+          requestId, 
+          socketId, 
+          startDate: date, 
+          requestType: 'createBroadcasterTransport', 
+          status: 'pending',
+          replyTo, 
+
+          onComplete: (result, error) => {
+            clearTimeout(timeOuthandle)
+
+            if(error){
+              logger.error('[Transport] pod error', {
+                error : error
+              })
+
+              ack({success: false, code: 'TRANSPORT_CREATION_FAILED'})
+              return; 
+            }
+
+            ack({success: true, data: result})
+
+            void Broadcaster.findOneAndUpdate(
+              {
+                broadcasterId: hostUserId,
+                roomId,
+              },
+              {
+                $push: {
+                  transportIds: result?.id,
+                },
+              }
+            ).catch((error) => {
+              logger.error("Failed to update broadcaster transport", error);
+            });
+
+          }
+
+        })
+
+        if(!redisRoom.nodeId){
+          logger.error('Redis room nodeId not found'); 
+          podRequestHandleMap.delete(requestId); 
+          ack({success: false, code: 'TRANSPORT_CREATION_FAILED'})
+          return; 
+        }
+
+        let receivers: number;
+        try {
+          receivers = await publishCommand(payLoad, redisRoom.nodeId)
+        } catch (error) {
+          clearTimeout(timeOuthandle);
+          podRequestHandleMap.delete(requestId);
+          throw error;
+        }
+        if(receivers === 0){
+          logger.error('Cross [POD] connection failed'); 
+          clearTimeout(timeOuthandle);
+          podRequestHandleMap.delete(requestId); 
+          ack({success: false, code: 'TRANSPORT_CREATION_FAILED'})
+        }
+        return; 
       }
       
-
+      const router = room.router; 
       const broadcasterTransport =
         await createWebRtcTransport(
           router,
           roomId,
-          socket.id,
+          socketId,
           "producer"
         );
 
       await saveBroadcasterTransport(
         roomId,
-        socket.id,
+        socketId,
         broadcasterTransport
       );
 
