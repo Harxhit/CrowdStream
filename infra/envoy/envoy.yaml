@@ -3,9 +3,10 @@ static_resources:
     - name: turn_udp_listener
       address:
         socket_address:
-          address: 0.0.0.0
+          address: "::"
           port_value: 3480
           protocol: UDP
+          ipv4_compat: true
 
       listener_filters:
         - name: envoy.filters.udp_listener.udp_proxy
@@ -31,6 +32,6 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: 10.81.200.15
+                      address: 127.0.0.1
                       port_value: 3478
                       protocol: UDP

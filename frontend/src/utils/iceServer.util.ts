@@ -3,18 +3,14 @@ import api from "../api/axios";
 export async function getIceServers() {
   const response = await api.get("/turn/credentials");
 
-  const { username, credential } = response.data.data;
+  const { username, credential , urls} = response.data.data;
 
   return [
-    {
-      urls: [
-        // import.meta.env.VITE_TURN_UDP_URL,
-        // import.meta.env.VITE_TURN_TCP_URL,
-        import.meta.env.VITE_TURNS_TCP_URL,
-        import.meta.env.VITE_STUN_URL
-      ],
+    { 
+      urls, 
       username,
       credential,
     },
+    { urls: "stun:stun.l.google.com:19302" }
   ];
 }

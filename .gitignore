@@ -7,3 +7,13 @@ backend/logs/*.log
 #Haproxy keys
 haproxy.crt
 haproxy.key
+
+# TLS keys, certificates and CA material
+*.key
+*.pem
+*.crt
+*.csr
+*.srl
+turn-ca.*
+turn-server.*
+*.cnf

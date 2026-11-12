@@ -169,8 +169,14 @@ class Broadcaster {
       iceCandidates,
       dtlsParameters,
       iceServers,
-      iceTransportPolicy: "relay" 
+      iceTransportPolicy: "all" 
     })
+
+
+    console.log("TURN configuration:", {
+      iceServers,
+      iceTransportPolicy: "all",
+    });
 
     broadcaster.transports.set('producer', sendTransport)
 
@@ -232,9 +238,9 @@ class Broadcaster {
       console.log('[Broadcaster] transport state', state)
     })
     
-    // sendTransport.on("connect" , () => {
-    //   console.log('[Broadcaster] transport connected')
-    // })
+    sendTransport.on("connect" , () => {
+      console.log('[Broadcaster] transport connected')
+    })
     
     sendTransport.on('icegatheringstatechange', (state) => {
       console.log('[Broadcaster ice gathering state]', state)

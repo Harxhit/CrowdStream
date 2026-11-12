@@ -4,7 +4,7 @@
 
 coturn-log: 
 	@echo "=== COTURN Log ==="
-	turnserver -c turnserver.conf
+	tail -f /var/tmp/turn.log
 
 coturn-kill: 
 	@echo "=== Killing COTURN ==="
@@ -16,4 +16,4 @@ coturn-start:
 	@echo "===Starting TURN ==="
 	turnserver -c turnserver.conf
 	@echo "=== Verifying ==="
-	ss -ltnp | grep 3479
+	ss -ltnp | grep 3478

@@ -27,7 +27,8 @@ interface Config{
     instanceId: string; 
     videoPort: number;
     audioPort: number;
-    recordingIp: string
+    recordingIp: string;
+    publicIpV6: string
 }
 
 const checkValid = (value:string): boolean => {
@@ -59,8 +60,9 @@ function loadConfig():Config{
     const videoPort = process.env.VIDEO_PORT
     const audioPort = process.env.AUDIO_PORT
     const recordingIp = process.env.RECORDING_IP; 
+    const publicIpV6 = process.env.PUBLIC_IPV6; 
 
-    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisHost || !redisPort1 || !redisPort2 || !redisPort3 || !instanceId || !nodeEnviorment || !audioPort || !videoPort || !recordingIp){
+    if(!port || !rtcMinPort || !rtcMaxPort || !announcedIp || !corsOrigin || !publicIp || !mongoUrl || !jwtSecret || !accessTokenExpiry || !databaseName || !turnSecret || !turnTtl || !mediaSoupWorker || !mediaSoupMaxWorker || !workerThreshold || !redisHost || !redisPort1 || !redisPort2 || !redisPort3 || !instanceId || !nodeEnviorment || !audioPort || !videoPort || !recordingIp || !publicIpV6){
         logger.error('Enviorment variable missing'); 
         throw new Error('Enviorment variable is missing')
     }
@@ -97,7 +99,8 @@ function loadConfig():Config{
         nodeEnviorment, 
         audioPort: Number(audioPort), 
         videoPort: Number(videoPort), 
-        recordingIp: recordingIp
+        recordingIp: recordingIp, 
+        publicIpV6
     }
 }
 

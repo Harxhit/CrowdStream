@@ -23,12 +23,18 @@ export const getTurnCreds = async(request:Request, response: Response) => {
         .update(username)
         .digest('base64')
 
+        const host = `[${config.publicIpV6}]`;
+
         return response.status(200).json({
             success: true, 
             data: {
                 username, 
                 ttl, 
                 credential, 
+                urls: [
+                    `turn:${host}:3480?transport=udp`,
+                    `turn:${host}:3479?transport=tcp`
+                ],
             }
         })
 

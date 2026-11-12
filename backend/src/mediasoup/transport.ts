@@ -20,10 +20,26 @@ const createWebRtcTransport = async (
   const starTime = Date.now()
   try {
     const transport = await router.createWebRtcTransport({
-      listenIps : [
-        {
-          ip: config.publicIp,
-          announcedIp : config.announcedIp
+    listenInfos: [
+        { 
+          protocol: 'udp', 
+          ip: config.publicIpV6, 
+          portRange: { min: 40000, max: 40100 } 
+        },
+        { 
+          protocol: 'tcp',
+          ip: config.publicIpV6,
+          portRange: { min: 40000, max: 40100 } 
+        },
+        { 
+          protocol: 'udp',
+          ip: config.announcedIp,
+          portRange: { min: 40000, max: 40100 } 
+        },
+        { 
+          protocol: 'tcp',
+          ip: config.announcedIp,
+          portRange: { min: 40000, max: 40100 } 
         },
       ],
       enableUdp: true,

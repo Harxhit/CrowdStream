@@ -5568,3 +5568,865 @@
     at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
     at processTicksAndRejections (node:internal/process/task_queues:104:5)
 2026-10-29 12:32:05 error: RoomId not found
+2026-11-01 09:51:10 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:10:37 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:13:19 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:17:56 error: RoomId not found
+2026-11-01 10:17:56 error: RoomId not found
+2026-11-01 10:19:15 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:30:32 error: RoomId not found
+2026-11-01 10:30:32 error: RoomId not found
+2026-11-01 10:30:51 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:36:20 error: RoomId not found
+2026-11-01 10:36:21 error: RoomId not found
+2026-11-01 10:38:47 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:43:39 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:50:55 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:54:03 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 10:56:57 error: User does not exist
+2026-11-01 10:57:16 error: Password validation failed
+2026-11-01 10:57:35 error: Password validation failed
+2026-11-01 10:57:45 error: Password validation failed
+2026-11-01 10:57:55 error: RoomId not found
+2026-11-01 10:59:12 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6ae6cdeffc2a950ddd13a0af" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 11:11:59 error: No redis room exists
+2026-11-01 11:11:59 error: Room not found
+2026-11-01 11:12:02 error: No redis room exists
+2026-11-01 11:12:02 error: Room not found
+2026-11-01 11:12:20 error: No redis room exists
+2026-11-01 11:12:20 error: Room not found
+2026-11-01 11:12:21 error: RoomId not found
+2026-11-01 11:12:22 error: No redis room exists
+2026-11-01 11:12:22 error: Room not found
+2026-11-01 11:12:30 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 11:21:36 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 12:43:17 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 12:45:32 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-01 12:51:35 error: RoomId not found
+2026-11-01 12:51:37 error: RoomId not found
+2026-11-01 13:13:46 error: RoomId not found
+2026-11-05 19:39:05 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-05 19:39:25 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-05 19:40:05 error: No redis room exists
+2026-11-05 19:40:05 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-05 19:42:29 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-05 20:52:54 error: User does not exist
+2026-11-05 20:53:17 error: Password validation failed
+2026-11-05 20:53:39 error: RoomId not found
+2026-11-05 20:54:27 error: RoomId not found
+2026-11-05 20:55:19 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-05 20:56:19 error: No redis room exists
+2026-11-05 20:56:19 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 09:15:48 error: RoomId not found
+2026-11-06 09:19:19 error: RoomId not found
+2026-11-06 09:19:31 error: RoomId not found
+2026-11-06 09:29:42 error: RoomId not found
+2026-11-06 09:38:15 error: RoomId not found
+2026-11-06 09:38:26 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 09:38:29 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 09:39:17 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 09:39:41 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 09:40:35 error: RoomId not found
+2026-11-06 09:41:47 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 09:43:04 error: RoomId not found
+2026-11-06 18:30:36 error: RoomId not found
+2026-11-06 18:31:25 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:41:56 error: RoomId not found
+2026-11-06 19:42:53 error: No redis room exists
+2026-11-06 19:42:53 error: Room not found
+2026-11-06 19:42:58 error: No redis room exists
+2026-11-06 19:42:58 error: Room not found
+2026-11-06 19:43:17 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:48:01 error: Room not found
+2026-11-06 19:48:01 error: No redis room exists
+2026-11-06 19:48:01 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 19:48:01 error: Room not found
+2026-11-06 19:48:01 error: No redis room exists
+2026-11-06 19:48:01 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 19:48:14 error: RoomId not found
+2026-11-06 19:48:19 error: Room not found
+2026-11-06 19:48:19 error: No redis room exists
+2026-11-06 19:48:19 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 19:48:38 error: Room not found
+2026-11-06 19:48:38 error: No redis room exists
+2026-11-06 19:48:38 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 19:48:44 error: Room not found
+2026-11-06 19:48:44 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:102:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:48:44 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:114:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:48:48 error: Room not found
+2026-11-06 19:48:48 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:102:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:48:48 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:114:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:48:55 error: Room not found
+2026-11-06 19:48:55 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:102:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:48:55 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:114:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:48:59 error: Room not found
+2026-11-06 19:48:59 error: No redis room exists
+2026-11-06 19:48:59 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 19:48:59 error: RoomId not found
+2026-11-06 19:49:08 error: Room not found
+2026-11-06 19:49:08 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:102:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:49:08 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:114:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:49:16 error: Room not found
+2026-11-06 19:49:16 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:102:13)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:49:16 error: Error: Room not found
+    at getRoom (/home/harshit/CrowdStream/backend/src/rooms/room.store.ts:114:11)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:141:29)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:52:17 error: RoomId not found
+2026-11-06 19:53:20 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 19:55:41 error: No redis room exists
+2026-11-06 19:55:41 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 19:55:43 error: Database connection is not open
+2026-11-06 19:55:45 error: Database connection is not open
+2026-11-06 19:55:47 error: Database connection is not open
+2026-11-06 19:55:49 error: Database connection is not open
+2026-11-06 19:55:51 error: Database connection is not open
+2026-11-06 19:55:53 error: Database connection is not open
+2026-11-06 19:55:55 error: Database connection is not open
+2026-11-06 19:55:57 error: Database connection is not open
+2026-11-06 19:55:59 error: Database connection is not open
+2026-11-06 19:57:11 error: RoomId not found
+2026-11-06 19:57:13 error: RoomId not found
+2026-11-06 20:01:04 error: RoomId not found
+2026-11-06 20:02:12 error: RoomId not found
+2026-11-06 20:02:55 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 20:04:18 error: RoomId not found
+2026-11-06 20:05:36 error: No redis room exists
+2026-11-06 20:05:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:05:56 error: No redis room exists
+2026-11-06 20:05:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:06:16 error: No redis room exists
+2026-11-06 20:06:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:06:36 error: No redis room exists
+2026-11-06 20:06:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:06:56 error: No redis room exists
+2026-11-06 20:06:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:07:16 error: No redis room exists
+2026-11-06 20:07:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:07:36 error: No redis room exists
+2026-11-06 20:07:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:07:56 error: No redis room exists
+2026-11-06 20:07:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:08:16 error: No redis room exists
+2026-11-06 20:08:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:08:36 error: No redis room exists
+2026-11-06 20:08:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:08:56 error: No redis room exists
+2026-11-06 20:08:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:09:16 error: No redis room exists
+2026-11-06 20:09:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:09:36 error: No redis room exists
+2026-11-06 20:09:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:09:56 error: No redis room exists
+2026-11-06 20:09:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:10:16 error: No redis room exists
+2026-11-06 20:10:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:10:36 error: No redis room exists
+2026-11-06 20:10:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:10:56 error: No redis room exists
+2026-11-06 20:10:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:11:16 error: No redis room exists
+2026-11-06 20:11:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:11:36 error: No redis room exists
+2026-11-06 20:11:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:11:57 error: No redis room exists
+2026-11-06 20:11:57 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:12:16 error: No redis room exists
+2026-11-06 20:12:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:12:36 error: No redis room exists
+2026-11-06 20:12:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:12:56 error: No redis room exists
+2026-11-06 20:12:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:13:16 error: No redis room exists
+2026-11-06 20:13:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:13:36 error: No redis room exists
+2026-11-06 20:13:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:13:56 error: No redis room exists
+2026-11-06 20:13:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:14:16 error: No redis room exists
+2026-11-06 20:14:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:14:36 error: No redis room exists
+2026-11-06 20:14:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:14:56 error: No redis room exists
+2026-11-06 20:14:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:15:16 error: No redis room exists
+2026-11-06 20:15:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:15:36 error: No redis room exists
+2026-11-06 20:15:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:15:56 error: No redis room exists
+2026-11-06 20:15:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:16:16 error: No redis room exists
+2026-11-06 20:16:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:16:36 error: No redis room exists
+2026-11-06 20:16:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:16:56 error: No redis room exists
+2026-11-06 20:16:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:17:16 error: No redis room exists
+2026-11-06 20:17:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:17:36 error: No redis room exists
+2026-11-06 20:17:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:17:56 error: No redis room exists
+2026-11-06 20:17:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:18:16 error: No redis room exists
+2026-11-06 20:18:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:18:36 error: No redis room exists
+2026-11-06 20:18:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:18:56 error: No redis room exists
+2026-11-06 20:18:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:19:16 error: No redis room exists
+2026-11-06 20:19:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:19:22 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 20:21:43 error: No redis room exists
+2026-11-06 20:21:43 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:21:56 error: No redis room exists
+2026-11-06 20:21:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:22:03 error: No redis room exists
+2026-11-06 20:22:03 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:22:16 error: No redis room exists
+2026-11-06 20:22:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:22:23 error: No redis room exists
+2026-11-06 20:22:23 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:22:36 error: No redis room exists
+2026-11-06 20:22:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:22:43 error: No redis room exists
+2026-11-06 20:22:43 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:22:56 error: No redis room exists
+2026-11-06 20:22:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:23:03 error: No redis room exists
+2026-11-06 20:23:03 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:23:16 error: No redis room exists
+2026-11-06 20:23:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:23:23 error: No redis room exists
+2026-11-06 20:23:23 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:23:36 error: No redis room exists
+2026-11-06 20:23:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:23:43 error: No redis room exists
+2026-11-06 20:23:43 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:23:56 error: No redis room exists
+2026-11-06 20:23:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:24:03 error: No redis room exists
+2026-11-06 20:24:03 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:24:16 error: No redis room exists
+2026-11-06 20:24:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:24:23 error: No redis room exists
+2026-11-06 20:24:23 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:24:36 error: No redis room exists
+2026-11-06 20:24:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:24:43 error: No redis room exists
+2026-11-06 20:24:43 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:24:56 error: No redis room exists
+2026-11-06 20:24:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:25:03 error: No redis room exists
+2026-11-06 20:25:03 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:25:16 error: No redis room exists
+2026-11-06 20:25:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:25:23 error: No redis room exists
+2026-11-06 20:25:23 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:25:36 error: No redis room exists
+2026-11-06 20:25:36 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:25:43 error: No redis room exists
+2026-11-06 20:25:43 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:25:56 error: No redis room exists
+2026-11-06 20:25:56 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:26:03 error: No redis room exists
+2026-11-06 20:26:03 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:26:16 error: No redis room exists
+2026-11-06 20:26:16 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:26:23 error: No redis room exists
+2026-11-06 20:26:23 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:32:50 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 20:34:20 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 20:39:41 error: No redis room exists
+2026-11-06 20:39:41 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:40:05 error: Room not found
+2026-11-06 20:40:05 error: No redis room exists
+2026-11-06 20:40:05 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:40:20 error: Room not found
+2026-11-06 20:40:20 error: No redis room exists
+2026-11-06 20:40:20 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:40:41 error: Room not found
+2026-11-06 20:40:41 error: No redis room exists
+2026-11-06 20:40:41 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:41:00 error: Room not found
+2026-11-06 20:41:00 error: No redis room exists
+2026-11-06 20:41:00 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:41:20 error: Room not found
+2026-11-06 20:41:20 error: No redis room exists
+2026-11-06 20:41:20 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:41:40 error: Room not found
+2026-11-06 20:41:40 error: No redis room exists
+2026-11-06 20:41:40 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:42:01 error: Room not found
+2026-11-06 20:42:01 error: No redis room exists
+2026-11-06 20:42:01 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:42:07 error: RoomId not found
+2026-11-06 20:43:44 error: RoomId not found
+2026-11-06 20:44:14 error: RoomId not found
+2026-11-06 20:44:27 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 20:46:05 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a48c735512699d8407ab848" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 20:52:26 error: No redis room exists
+2026-11-06 20:52:26 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:52:46 error: No redis room exists
+2026-11-06 20:52:46 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:53:07 error: Fake heartbeat
+2026-11-06 20:54:25 error: RoomId not found
+2026-11-06 20:54:50 error: RoomId not found
+2026-11-06 20:55:00 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-06 20:57:01 error: No redis room exists
+2026-11-06 20:57:01 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:57:21 error: No redis room exists
+2026-11-06 20:57:21 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:57:41 error: No redis room exists
+2026-11-06 20:57:41 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:58:01 error: No redis room exists
+2026-11-06 20:58:01 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:58:21 error: No redis room exists
+2026-11-06 20:58:21 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:58:41 error: No redis room exists
+2026-11-06 20:58:41 error: Error: Redis room does not exists
+    at getRedisRoom (/home/harshit/CrowdStream/backend/src/utils/roomCordinator.ts:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:226:19)
+2026-11-06 20:58:50 error: RoomId not found
+2026-11-06 20:59:30 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-12 11:13:31 error: RoomId not found
+2026-11-12 11:14:35 error: RoomId not found
+2026-11-12 11:14:41 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-12 11:14:53 error: RoomId not found
+2026-11-12 11:15:06 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-12 11:17:16 error: RoomId not found
+2026-11-12 11:41:08 error: RoomId not found
+2026-11-12 11:43:37 error: RoomId not found
+2026-11-12 11:43:49 error: ObjectParameterError: Parameter "filter" to updateOne() must be an object, got "6a80314bbf43a568592e69db" (type string)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4405:17)
+    at model.Query.Query.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/query.js:4308:10)
+    at _update (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4173:16)
+    at model.updateOne (/home/harshit/CrowdStream/backend/node_modules/mongoose/lib/model.js:4104:10)
+    at Socket.<anonymous> (/home/harshit/CrowdStream/backend/src/handlers/registerViewer.handler.ts:684:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-11-12 11:46:14 error: RoomId not found
